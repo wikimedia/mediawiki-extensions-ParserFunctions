@@ -25,25 +25,15 @@ class ExtParserFunctions {
 	}
 
 	function ifHook( &$parser, $test = '', $then = '', $else = '' ) {
-		$test = trim( $test );
-		if ( preg_match( '/
-				(.*?)      # Before the operator (non-greedy, get the first operator not the last)
-				(?<!\n)    # Not at the start of the line, because it looks like a heading
-				(!=|==)    # The operator
-				(?!\n|$)   # Not at the end of the line either, or the end of the string
-				(.*)$      # Everything else
-				/x', $test, $matches ) ) 
-		{
-			$left = $matches[1];
-			$operator = $matches[2];
-			$right = $matches[3];
-			if ( $operator == '==' ) {
-				$test = $left == $right;
-			} else {
-				$test = $left != $right;
-			}
+		if ( trim( $test ) ) {
+			return $then;
+		} else {
+			return $else;
 		}
-		if ( $test ) {
+	}
+
+	function ifeqHook( &$parser, $left = '', $right = '', $then = '', $else = '' ) {
+		if ( trim( $left ) == trim( $right ) ) {
 			return $then;
 		} else {
 			return $else;
@@ -58,6 +48,7 @@ function wfSetupParserFunctions() {
 
 	$wgParser->setFunctionHook( 'expr', array( &$wgExtParserFunctions, 'exprHook' ) );
 	$wgParser->setFunctionHook( 'if', array( &$wgExtParserFunctions, 'ifHook' ) ) ;
+	$wgParser->setFunctionHook( 'ifeq', array( &$wgExtParserFunctions, 'ifeqHook' ) ) ;
 	
 	$wgMessageCache->addMessage( 'expr_parse_error', 'Invalid expression' );
 }
