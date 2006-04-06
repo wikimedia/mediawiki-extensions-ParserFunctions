@@ -42,7 +42,7 @@ class ExtParserFunctions {
 	}
 
 	function rand( &$parser, $min = 1, $max = 100 ) {
-		return mt_rand( $min, $max );
+		return mt_rand( intval( $min ), intval( $max ) );
 	}
 }
 
