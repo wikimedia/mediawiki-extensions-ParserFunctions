@@ -9,41 +9,73 @@ define( 'EXPR_WHITE_CLASS', " \t\r\n" );
 define( 'EXPR_NUMBER_CLASS', '0123456789.' );
 
 // Token types
-define( 'EXPR_WHITE', 'WHITE' );
-define( 'EXPR_NUMBER', 'NUMBER' );
-define( 'EXPR_NEGATIVE', 'NEGATIVE' );
-define( 'EXPR_POSITIVE', 'POSITIVE' );
-define( 'EXPR_PLUS', 'PLUS' );
-define( 'EXPR_MINUS', 'MINUS' );
-define( 'EXPR_TIMES', 'TIMES' );
-define( 'EXPR_DIVIDE', 'DIVIDE' );
-define( 'EXPR_MOD', 'MOD' );
-define( 'EXPR_OPEN', 'OPEN' );
-define( 'EXPR_CLOSE', 'CLOSE' );
-define( 'EXPR_AND', 'AND' );
-define( 'EXPR_OR', 'OR' );
-define( 'EXPR_NOT', 'NOT' );
-define( 'EXPR_EQUALITY', 'EQUALITY' );
-define( 'EXPR_ROUND', 'ROUND' );
+define( 'EXPR_WHITE', 1 );
+define( 'EXPR_NUMBER', 2 );
+define( 'EXPR_NEGATIVE', 3 );
+define( 'EXPR_POSITIVE', 4 );
+define( 'EXPR_PLUS', 5 );
+define( 'EXPR_MINUS', 6 );
+define( 'EXPR_TIMES', 7 );
+define( 'EXPR_DIVIDE', 8 );
+define( 'EXPR_MOD', 9 );
+define( 'EXPR_OPEN', 10 );
+define( 'EXPR_CLOSE', 11 );
+define( 'EXPR_AND', 12 );
+define( 'EXPR_OR', 13 );
+define( 'EXPR_NOT', 14 );
+define( 'EXPR_EQUALITY', 15 );
+define( 'EXPR_LESS', 16 );
+define( 'EXPR_GREATER', 17 );
+define( 'EXPR_LESSEQ', 18 );
+define( 'EXPR_GREATEREQ', 19 );
+define( 'EXPR_NOTEQ', 20 );
+define( 'EXPR_ROUND', 21 );
 
 class ExprParser {
-	var $expr, $end;
+	var $maxStackSize = 1000;
 
 	var $precedence = array( 
-			EXPR_NEGATIVE => 9,
-			EXPR_POSITIVE => 9,
-			EXPR_TIMES => 8,
-			EXPR_DIVIDE => 8,
-			EXPR_MOD => 8,
-			EXPR_PLUS => 6,
-			EXPR_MINUS => 6,
-			EXPR_ROUND => 5,
-			EXPR_EQUALITY => 4,
-			EXPR_AND => 3,
-			EXPR_OR => 2,
-			EXPR_OPEN => -1,
-			EXPR_CLOSE => -1
-		);
+		EXPR_NEGATIVE => 9,
+		EXPR_POSITIVE => 9,
+		EXPR_NOT => 9,
+		EXPR_TIMES => 8,
+		EXPR_DIVIDE => 8,
+		EXPR_MOD => 8,
+		EXPR_PLUS => 6,
+		EXPR_MINUS => 6,
+		EXPR_ROUND => 5,
+		EXPR_EQUALITY => 4,
+		EXPR_LESS => 4,
+		EXPR_GREATER => 4,
+		EXPR_LESSEQ => 4,
+		EXPR_GREATEREQ => 4,
+		EXPR_NOTEQ => 4,
+		EXPR_AND => 3,
+		EXPR_OR => 2,
+		EXPR_OPEN => -1,
+		EXPR_CLOSE => -1
+	);
+
+	var $names = array( 
+		EXPR_NEGATIVE => '-',
+		EXPR_POSITIVE => '+',
+		EXPR_NOT => 'not',
+		EXPR_TIMES => '*',
+		EXPR_DIVIDE => '/',
+		EXPR_MOD => 'mod',
+		EXPR_PLUS => '+',
+		EXPR_MINUS => '-',
+		EXPR_ROUND => 'round',
+		EXPR_EQUALITY => '=',
+		EXPR_LESS => '<',
+		EXPR_GREATER => '>',
+		EXPR_LESSEQ => '<=',
+		EXPR_GREATEREQ => '>=',
+		EXPR_NOTEQ => '<>',
+		EXPR_AND => 'and',
+		EXPR_OR => 'or',
+	);
+		
 
 	var $words = array(
 		'mod' => EXPR_MOD,
@@ -53,8 +85,35 @@ class ExprParser {
 		'round' => EXPR_ROUND,
 	);
 
-	function error( $msg ) {
-		$this->lastError = $msg;
+
+	/**
+	 * Add expression messages to the message cache
+	 * @static
+	 */
+	function addMessages() {
+		global $wgMessageCache;
+		$wgMessageCache->addMessages( array( 
+			'expr_stack_exhausted' => 'Expression error: stack exhausted',
+			'expr_unexpected_number' => 'Expression error: unexpected number',
+			'expr_preg_match_failure' => 'Expression error: unexpected preg_match failure',
+			'expr_unrecognised_word' => 'Expression error: unrecognised word "$1"',
+			'expr_unexpected_operator' => 'Expression error: unexpected $1 operator',
+			'expr_missing_operand' => 'Expression error: Missing operand for $1',
+			'expr_unexpected_closing_bracket' => 'Expression error: unexpected closing bracket',
+			'expr_unrecognised_punctuation' => 'Expression error: unrecognised punctuation character "$1"',
+			'expr_unclosed_bracket' => 'Expression error: unclosed bracket',
+		));
+	}
+			
+
+	function error( $msg, $parameter = false ) {
+		$this->lastErrorKey = $msg;
+		$this->lastErrorParameter = $parameter;
+		if ( $parameter === false ) {
+			$this->lastErrorMessage = wfMsg( "expr_$msg" );
+		} else {
+			$this->lastErrorMessage = wfMsg( "expr_$msg", htmlspecialchars( $parameter ) );
+		}
 	}
 
 	/**
@@ -67,16 +126,27 @@ class ExprParser {
 	function doExpression( $expr ) {
 		$operands = array();
 		$operators = array();
+
+		# Unescape inequality operators
+		$expr = strtr( $expr, array( '&lt;' => '<', '&gt;' => '>' ) );
+		
 		$p = 0;
 		$end = strlen( $expr );
 		$expecting = 'expression';
 
-		while ( $p < $end ) {
-			$char = $expr[$p];
 
+		while ( $p < $end ) {
+			if ( count( $operands ) > $this->maxStackSize || count( $operands ) > $this->maxStackSize ) {
+				$this->error( 'stack_exhausted' );
+			}
+			$char = $expr[$p];
+			$char2 = substr( $expr, $p, 2 );
+			
 			// Mega if-elseif-else construct
 			// Only binary operators fall through for processing at the bottom, the rest 
 			// finish their processing and continue
+
+			// First the unlimited length classes
 			
 			if ( false !== strpos( EXPR_WHITE_CLASS, $char ) ) {
 				// Whitespace
@@ -85,7 +155,7 @@ class ExprParser {
 			} elseif ( false !== strpos( EXPR_NUMBER_CLASS, $char ) ) {
 				// Number
 				if ( $expecting != 'expression' ) {
-					$this->error( 'Unexpected number' );
+					$this->error( 'unexpected_number' );
 					return false;
 				}
 
@@ -102,7 +172,7 @@ class ExprParser {
 				$remaining = substr( $expr, $p );
 				if ( !preg_match( '/^[A-Za-z]*/', $remaining, $matches ) ) {
 					// This should be unreachable
-					$this->error( 'Unexpected preg_match failure' );
+					$this->error( 'preg_match_failure' );
 					return false;
 				}
 				$word = strtolower( $matches[0] );
@@ -110,26 +180,42 @@ class ExprParser {
 
 				// Interpret the word
 				if ( !isset( $this->words[$word] ) ){
-					$this->error( 'Unrecognised word' );
+					$this->error( 'unrecognised_word', $word );
 					return false;
 				}
 				$op = $this->words[$word];
 				if ( $op == EXPR_NOT ) {
 					// Unary operator
 					if ( $expecting != 'expression' ) { 
-						$this->error( "Unexpected $op operator" );
+						$this->error( 'unexpected_operator', $word );
 						return false;
 					}
 					$operators[] = $op;
 					continue;
-				} else {
-					// Binary operator
-					if ( $expecting == 'expression' ) {
-						$this->error( "Unexpected $op operator" );
-						return false;
-					}
 				}
-			} elseif ( $char == '+' ) {
+				// Binary operator, fall through
+				$name = $word;
+			}
+
+			// Next the two-character operators
+			
+			elseif ( $char2 == '<=' ) {
+				$name = $char2;
+				$op = EXPR_LESSEQ;
+				$p += 2;
+			} elseif ( $char2 == '>=' ) {
+				$name = $char2;
+				$op = EXPR_GREATEREQ;
+				$p += 2;
+			} elseif ( $char2 == '<>' || $char2 == '!=' ) {
+				$name = $char2;
+				$op = EXPR_NOTEQ;
+				$p += 2;
+			}
+
+			// Finally the single-character operators
+			
+			elseif ( $char == '+' ) {
 				++$p;
 				if ( $expecting == 'expression' ) {
 					// Unary plus
@@ -150,24 +236,18 @@ class ExprParser {
 					$op = EXPR_MINUS;
 				}
 			} elseif ( $char == '*' ) {
-				if ( $expecting == 'expression' ) {
-					$this->error( 'Unexpected * operator' );
-					return false;
-				}
+				$name = $char;
 				$op = EXPR_TIMES;
 				++$p;
 			} elseif ( $char == '/' ) {
-				if ( $expecting == 'expression' ) {
-					$this->error( 'Unexpected / operator' );
-					return false;
-				}
+				$name = $char;
 				$op = EXPR_DIVIDE;
 				++$p;
 			} elseif ( $char == '(' )  {
 				if ( $expecting == 'operator' ) {
-					$this->error( 'Unexpected opening bracket' );
+					$this->error( 'unexpected_operator', '(' );
 					return false;
-				} 
+				}
 				$operators[] = EXPR_OPEN;
 				++$p;
 				continue;
@@ -175,7 +255,7 @@ class ExprParser {
 				$lastOp = end( $operators );
 				while ( $lastOp && $lastOp != EXPR_OPEN ) {
 					if ( !$this->doOperation( $lastOp, $operands ) ) {
-						$this->error( "Missing operand for $lastOp" );
+						$this->error( 'missing_operand', $this->names[$lastOp] );
 						return false;
 					}
 					array_pop( $operators );
@@ -184,29 +264,40 @@ class ExprParser {
 				if ( $lastOp ) {
 					array_pop( $operators );
 				} else {
-					$this->error( "Unexpected closing bracket" );
+					$this->error( "unexpected_closing_bracket" );
 					return false;
 				}
 				$expecting = 'operator';
 				++$p;
 				continue;
-			} elseif ( $char = '=' ) {
-				if ( $expecting == 'expression' ) {
-					$this->error( 'Unexpected = operator' );
-					return false;
-				}
+			} elseif ( $char == '=' ) {
+				$name = $char;
 				$op = EXPR_EQUALITY;
 				++$p;
+			} elseif ( $char == '<' ) {
+				$name = $char;
+				$op = EXPR_LESS;
+				++$p;
+			} elseif ( $char == '>' ) {
+				$name = $char;
+				$op = EXPR_GREATER;
+				++$p;
 			} else {
-				$this->error( "Unrecognised punctuation character" );
+				$this->error( 'unrecognised_punctuation', $char );
 				return false;
 			}
 
-			// Shunting yard magic for binary operators
+			// Binary operator processing
+			if ( $expecting == 'expression' ) {
+				$this->error( 'unexpected_operator', $name );
+				return false;
+			}
+
+			// Shunting yard magic
 			$lastOp = end( $operators );
 			while ( $lastOp && $this->precedence[$op] <= $this->precedence[$lastOp] ) {
 				if ( !$this->doOperation( $lastOp, $operands ) ) {
-					$this->error( "Missing operand for $lastOp" );
+					$this->error( 'missing_operand', $this->names[$lastOp] );
 					return false;
 				}
 				array_pop( $operators );
@@ -219,11 +310,11 @@ class ExprParser {
 		// Finish off the operator array
 		while ( $op = array_pop( $operators ) ) {
 			if ( $op == EXPR_OPEN ) {
-				$this->error( "Unclosed bracket" );
+				$this->error( 'unclosed_bracket' );
 				return false;
 			}
 			if ( !$this->doOperation( $op, $operands ) ) {
-				$this->error( "Missing operand for $lastOp" );
+				$this->error( 'missing_operand', $this->names[$op] );
 				return false;
 			}
 		}
@@ -300,7 +391,36 @@ class ExprParser {
 				$value = array_pop( $stack );
 				$stack[] = round( $value, $digits );
 				break;
-				
+			case EXPR_LESS:
+				if ( count( $stack ) < 2 ) return false;
+				$right = array_pop( $stack );
+				$left = array_pop( $stack );
+				$stack[] = ( $left < $right ) ? 1 : 0;
+				break;
+			case EXPR_GREATER:
+				if ( count( $stack ) < 2 ) return false;
+				$right = array_pop( $stack );
+				$left = array_pop( $stack );
+				$stack[] = ( $left > $right ) ? 1 : 0;
+				break;
+			case EXPR_LESSEQ:
+				if ( count( $stack ) < 2 ) return false;
+				$right = array_pop( $stack );
+				$left = array_pop( $stack );
+				$stack[] = ( $left <= $right ) ? 1 : 0;
+				break;
+			case EXPR_GREATEREQ:
+				if ( count( $stack ) < 2 ) return false;
+				$right = array_pop( $stack );
+				$left = array_pop( $stack );
+				$stack[] = ( $left >= $right ) ? 1 : 0;
+				break;
+			case EXPR_NOTEQ:
+				if ( count( $stack ) < 2 ) return false;
+				$right = array_pop( $stack );
+				$left = array_pop( $stack );
+				$stack[] = ( $left != $right ) ? 1 : 0;
+				break;
 		}
 		return true;
 	}
