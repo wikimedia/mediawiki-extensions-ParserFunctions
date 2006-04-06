@@ -32,7 +32,7 @@ define( 'EXPR_NOTEQ', 20 );
 define( 'EXPR_ROUND', 21 );
 
 class ExprParser {
-	var $maxStackSize = 1000;
+	var $maxStackSize = 100;
 
 	var $precedence = array( 
 		EXPR_NEGATIVE => 9,
@@ -136,8 +136,9 @@ class ExprParser {
 
 
 		while ( $p < $end ) {
-			if ( count( $operands ) > $this->maxStackSize || count( $operands ) > $this->maxStackSize ) {
+			if ( count( $operands ) > $this->maxStackSize || count( $operators ) > $this->maxStackSize ) {
 				$this->error( 'stack_exhausted' );
+				return false;
 			}
 			$char = $expr[$p];
 			$char2 = substr( $expr, $p, 2 );
