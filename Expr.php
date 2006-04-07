@@ -83,6 +83,7 @@ class ExprParser {
 		'or' => EXPR_OR,
 		'not' => EXPR_NOT,
 		'round' => EXPR_ROUND,
+		'div' => EXPR_DIVIDE
 	);
 
 
