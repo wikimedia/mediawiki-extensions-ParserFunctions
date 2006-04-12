@@ -27,17 +27,17 @@ class ExtParserFunctions {
 
 	function ifHook( &$parser, $test = '', $then = '', $else = '' ) {
 		if ( trim( $test ) ) {
-			return $then;
+			return trim( $then );
 		} else {
-			return $else;
+			return trim( $else );
 		}
 	}
 
 	function ifeq( &$parser, $left = '', $right = '', $then = '', $else = '' ) {
 		if ( trim( $left ) == trim( $right ) ) {
-			return $then;
+			return trim( $then );
 		} else {
-			return $else;
+			return trim( $else );
 		}
 	}
 
