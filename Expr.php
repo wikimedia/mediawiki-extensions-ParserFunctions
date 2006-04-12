@@ -103,6 +103,7 @@ class ExprParser {
 			'expr_unexpected_closing_bracket' => 'Expression error: unexpected closing bracket',
 			'expr_unrecognised_punctuation' => 'Expression error: unrecognised punctuation character "$1"',
 			'expr_unclosed_bracket' => 'Expression error: unclosed bracket',
+			'expr_division_by_zero' => 'Division by zero',
 		));
 	}
 			
@@ -256,8 +257,8 @@ class ExprParser {
 			} elseif ( $char == ')' ) {
 				$lastOp = end( $operators );
 				while ( $lastOp && $lastOp != EXPR_OPEN ) {
-					if ( !$this->doOperation( $lastOp, $operands ) ) {
-						$this->error( 'missing_operand', $this->names[$lastOp] );
+					if ( true !== ( $error = $this->doOperation( $lastOp, $operands ) ) ) {
+						$this->error( $error, $this->names[$lastOp] );
 						return false;
 					}
 					array_pop( $operators );
@@ -298,8 +299,8 @@ class ExprParser {
 			// Shunting yard magic
 			$lastOp = end( $operators );
 			while ( $lastOp && $this->precedence[$op] <= $this->precedence[$lastOp] ) {
-				if ( !$this->doOperation( $lastOp, $operands ) ) {
-					$this->error( 'missing_operand', $this->names[$lastOp] );
+				if ( true !== ( $error = $this->doOperation( $lastOp, $operands ) ) ) {
+					$this->error( $error, $this->names[$lastOp] );
 					return false;
 				}
 				array_pop( $operators );
@@ -315,8 +316,8 @@ class ExprParser {
 				$this->error( 'unclosed_bracket' );
 				return false;
 			}
-			if ( !$this->doOperation( $op, $operands ) ) {
-				$this->error( 'missing_operand', $this->names[$op] );
+			if ( true !== ( $error = $this->doOperation( $op, $operands ) ) ) {
+				$this->error( $error, $this->names[$op] );
 				return false;
 			}
 		}
@@ -327,98 +328,100 @@ class ExprParser {
 	function doOperation( $op, &$stack ) {
 		switch ( $op ) {
 			case EXPR_NEGATIVE:
-				if ( count( $stack ) < 1 ) return false;
+				if ( count( $stack ) < 1 ) return 'missing_operand';
 				$arg = array_pop( $stack );
 				$stack[] = -$arg;
 				break;
 			case EXPR_POSITIVE:
-				if ( count( $stack ) < 1 ) return false;
+				if ( count( $stack ) < 1 ) return 'missing_operand';
 				break;
 			case EXPR_TIMES:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = $left * $right;
 				break;
 			case EXPR_DIVIDE:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
+				if ( $right == 0 ) return 'division_by_zero';
 				$stack[] = $left / $right;
 				break;
 			case EXPR_MOD:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
+				if ( $right == 0 ) return 'division_by_zero';
 				$stack[] = $left % $right;
 				break;
 			case EXPR_PLUS:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = $left + $right;
 				break;
 			case EXPR_MINUS:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = $left - $right;
 				break;
 			case EXPR_AND:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left && $right ) ? 1 : 0;
 				break;
 			case EXPR_OR:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left || $right ) ? 1 : 0;
 				break;
 			case EXPR_EQUALITY:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left == $right ) ? 1 : 0;
 				break;
 			case EXPR_NOT:
-				if ( count( $stack ) < 1 ) return false;
+				if ( count( $stack ) < 1 ) return 'missing_operand';
 				$arg = array_pop( $stack );
 				$stack[] = (!$arg) ? 1 : 0;
 				break;
 			case EXPR_ROUND:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$digits = intval( array_pop( $stack ) );
 				$value = array_pop( $stack );
 				$stack[] = round( $value, $digits );
 				break;
 			case EXPR_LESS:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left < $right ) ? 1 : 0;
 				break;
 			case EXPR_GREATER:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left > $right ) ? 1 : 0;
 				break;
 			case EXPR_LESSEQ:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left <= $right ) ? 1 : 0;
 				break;
 			case EXPR_GREATEREQ:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left >= $right ) ? 1 : 0;
 				break;
 			case EXPR_NOTEQ:
-				if ( count( $stack ) < 2 ) return false;
+				if ( count( $stack ) < 2 ) return 'missing_operand';
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left != $right ) ? 1 : 0;
