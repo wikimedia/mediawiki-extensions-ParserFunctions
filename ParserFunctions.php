@@ -9,7 +9,7 @@ $wgExtensionFunctions[] = 'wfSetupParserFunctions';
 class ExtParserFunctions {
 	var $mExprParser;
 
-	function expr( &$parser, $expr = '' ) {
+	function &getExprParser() {
 		if ( !isset( $this->mExpr ) ) {
 			if ( !class_exists( 'ExprParser' ) ) {
 				require( dirname( __FILE__ ) . '/Expr.php' );
@@ -17,16 +17,33 @@ class ExtParserFunctions {
 			}
 			$this->mExprParser = new ExprParser;
 		}
-		$result = $this->mExprParser->doExpression( $expr );
+		return $this->mExprParser;
+	}
+
+	function expr( &$parser, $expr = '' ) {
+		$exprParser =& $this->getExprParser();
+		$result = $exprParser->doExpression( $expr );
 		if ( $result === false ) {
-			return $this->mExprParser->lastErrorMessage;
+			return $exprParser->lastErrorMessage;
 		} else {
 			return $result;
 		}
 	}
 
+	function ifexpr( &$parser, $expr = '', $then = '', $else = '' ) {
+		$exprParser =& $this->getExprParser();	
+		$result = $exprParser->doExpression( $expr );
+		if ( $result === false ) {
+			return $exprParser->lastErrorMessage;
+		} elseif ( $result ) {
+			return trim( $then );
+		} else {
+			return trim( $else );
+		}
+	}
+
 	function ifHook( &$parser, $test = '', $then = '', $else = '' ) {
-		if ( trim( $test ) ) {
+		if ( trim( $test ) !== '' ) {
 			return trim( $then );
 		} else {
 			return trim( $else );
@@ -54,6 +71,7 @@ function wfSetupParserFunctions() {
 	$wgParser->setFunctionHook( 'expr', array( &$wgExtParserFunctions, 'expr' ) );
 	$wgParser->setFunctionHook( 'if', array( &$wgExtParserFunctions, 'ifHook' ) );
 	$wgParser->setFunctionHook( 'ifeq', array( &$wgExtParserFunctions, 'ifeq' ) );
+	$wgParser->setFunctionHook( 'ifexpr', array( &$wgExtParserFunctions, 'ifexpr' ) );
 	$wgParser->setFunctionHook( 'rand', array( &$wgExtParserFunctions, 'rand' ) );
 }
 
