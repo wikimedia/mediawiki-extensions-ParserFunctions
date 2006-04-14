@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<title>ParserFunctions</title>
+<link rel="stylesheet" type="text/css" href="../../skins/monobook/main.css" />
+</head>
+<body>
+<div id="globalWrapper"><div style="padding: 0 5px 30px 20px">
+<h1 class="firstHeading">ParserFunctions</h1>
+
+<p>This MediaWiki extension is a collection of parser functions. Parser functions typically have the syntax:</p>
+<dl>
+<dd>{{#functionname: argument 1 | argument 2 | argument 3...}}</dd>
+</dl>
+<p>This module defines four functions at present: <tt>expr</tt>, <tt>if</tt>, <tt>ifeq</tt> and <tt>rand</tt>.</p>
+<table id="toc" class="toc" summary="Contents">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class='toclevel-1'><a href="#expr"><span class="tocnumber">1</span> <span class="toctext">expr</span></a></li>
+<li class='toclevel-1'><a href="#if"><span class="tocnumber">2</span> <span class="toctext">if</span></a></li>
+<li class='toclevel-1'><a href="#ifeq"><span class="tocnumber">3</span> <span class="toctext">ifeq</span></a></li>
+<li class='toclevel-1'><a href="#ifexpr"><span class="tocnumber">4</span> <span class="toctext">ifexpr</span></a></li>
+<li class='toclevel-1'><a href="#rand"><span class="tocnumber">5</span> <span class="toctext">rand</span></a></li>
+<li class='toclevel-1'><a href="#Installation"><span class="tocnumber">6</span> <span class="toctext">Installation</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<p><a name="expr" id="expr"></a></p>
+<h2>expr</h2>
+<p>The <tt>expr</tt> function computes mathematical expressions. The supported operators (roughly in order of precedence) are:</p>
+<dl>
+<dt>*&#160;</dt>
+<dd>Multiplication</dd>
+<dt>/ <span style="font-weight: normal">or</span> div</dt>
+<dd>Division</dd>
+<dt>+&#160;</dt>
+<dd>Addition</dd>
+<dt>-&#160;</dt>
+<dd>Subtraction (or negation)</dd>
+<dt>mod&#160;</dt>
+<dd>Modulo, gives the remainder of a division</dd>
+<dt>round&#160;</dt>
+<dd>Rounds off the number on the left to the specified number of digits after the decimal place, given on the right</dd>
+<dt>=&#160;</dt>
+<dd>Equality</dd>
+<dt>&lt;&gt; <span style="font-weight: normal">or</span>&#160;!=&#160;</dt>
+<dd>Inequality</dd>
+<dt>&lt;&#160;</dt>
+<dd>Less than</dd>
+<dt>&gt;&#160;</dt>
+<dd>Greater than</dd>
+<dt>&lt;=&#160;</dt>
+<dd>Less than or equal to</dd>
+<dt>&gt;=&#160;</dt>
+<dd>Greater than or equal to</dd>
+<dt>and&#160;</dt>
+<dd>Logical AND</dd>
+<dt>or&#160;</dt>
+<dd>Logical OR</dd>
+<dt>not&#160;</dt>
+<dd>Logical NOT</dd>
+<dt>( )&#160;</dt>
+<dd>Grouping operators</dd>
+</dl>
+<p>The boolean operators consider 0 to be false and 1 to be true.</p>
+<p>Example:</p>
+<pre>
+{{ #expr: (100 - 32) / 9 * 5 round 0 }}
+</pre>
+<p>gives:</p>
+<pre>
+38
+</pre>
+<p>which is 100°F in °C, rounded to the nearest whole number.</p>
+<p><a name="if" id="if"></a></p>
+<h2>if</h2>
+<p>The <tt>if</tt> function is an if-then-else construct. The syntax is:</p>
+<pre>
+{{ #if: <i>&lt;condition&gt;</i> | <i>&lt;then text&gt;</i> | <i>&lt;else text&gt;</i> }}
+</pre>
+<p>If the condition is an empty string or consists only of whitespace, then it is considered false, and the <i>else text</i> is returned. Otherwise, the <i>then text</i> is returned. The <i>else text</i> may be omitted, in which case the result will be blank if the condition is false.</p>
+<p>Note that the <tt>if</tt> function does <b>not</b> support "=" signs or mathematical expressions. {{#if: 1 = 2|yes|no}} will return "yes", because the string "1 = 2" is not blank. It is intended as an "if defined" structure. To compare strings, use <tt>ifeq</tt>. To compare numbers, use <tt>ifexpr</tt>.</p>
+<p><a name="ifeq" id="ifeq"></a></p>
+<h2>ifeq</h2>
+<p><tt>ifeq</tt> compares two strings, and returns another string depending on the result of that comparison. The syntax is:</p>
+<pre>
+{{ #ifeq: <i>&lt;comparison text 1&gt;</i> | <i>&lt;comparison text 2&gt;</i> | <i>&lt;equal text&gt;</i> | <i>&lt;not equal text&gt;</i> }}
+</pre>
+<p><a name="ifexpr" id="ifexpr"></a></p>
+<h2>ifexpr</h2>
+<p><tt>ifexpr</tt> evaluates a mathematical expression and returns one of two strings depending on the result.</p>
+<pre>
+{{ #ifexpr: <i>&lt;expression&gt;</i> | <i>&lt;then text&gt;</i> | <i>&lt;else text&gt;</i> }}
+</pre>
+<p>If the expression evaluates to zero, then the <i>else text</i> is returned, otherwise the <i>then text</i> is returned. Expression syntax is the same as for <tt>expr</tt>.</p>
+<p><a name="rand" id="rand"></a></p>
+<h2>rand</h2>
+<p>The <tt>rand</tt> function gives random numbers in a specified range.</p>
+<pre>
+{{ #rand: <i>&lt;minimum&gt;</i> | <i>&lt;maximum&gt;</i> }}
+</pre>
+<p>The presence of this function does not affect the cache lifetime, so the number displayed will typically only change once per edit.</p>
+<p><a name="Installation" id="Installation"></a></p>
+<h2>Installation</h2>
+<p>Put the following at the end of your LocalSettings.php:</p>
+<pre>
+require_once( "$IP/extensions/ParserFunctions/ParserFunctions.php" );
+</pre>
+</div></div>
+</body>
+</html>
