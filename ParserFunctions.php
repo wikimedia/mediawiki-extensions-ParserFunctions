@@ -36,30 +36,55 @@ class ExtParserFunctions {
 		if ( $result === false ) {
 			return $exprParser->lastErrorMessage;
 		} elseif ( $result ) {
-			return trim( $then );
+			return $then;
 		} else {
-			return trim( $else );
+			return $else;
 		}
 	}
 
 	function ifHook( &$parser, $test = '', $then = '', $else = '' ) {
-		if ( trim( $test ) !== '' ) {
-			return trim( $then );
+		if ( $test !== '' ) {
+			return $then;
 		} else {
-			return trim( $else );
+			return $else;
 		}
 	}
 
 	function ifeq( &$parser, $left = '', $right = '', $then = '', $else = '' ) {
-		if ( trim( $left ) == trim( $right ) ) {
-			return trim( $then );
+		if ( $left == $right ) {
+			return $then;
 		} else {
-			return trim( $else );
+			return $else;
 		}
 	}
-
-	function rand( &$parser, $min = 1, $max = 100 ) {
-		return mt_rand( intval( $min ), intval( $max ) );
+	
+	function switchHook( &$parser /*,...*/ ) {
+		$args = func_get_args();
+		array_shift( $args );
+		$value = array_shift( $args );
+		$found = false;
+		$parts = null;
+		foreach( $args as $arg ) {
+			$parts = array_map( 'trim', explode( '=', $arg, 2 ) );
+			if ( count( $parts ) == 2 ) {
+				if ( $found || $parts[0] == $value ) {
+					return $parts[1];
+				} # else wrong case, continue
+			} elseif ( count( $parts ) == 1 ) {
+				# Multiple input, single output
+				# If the value matches, set a flag and continue
+				if ( $parts[0] == $value ) {
+					$found = true;
+				}
+			} # else RAM corruption due to cosmic ray?
+		}
+		# Default case
+		# Check if the last item had no = sign, thus specifying the default case
+		if ( count( $parts ) == 1) {
+			return $parts[0];
+		} else {
+			return '';
+		}
 	}
 }
 
@@ -72,7 +97,7 @@ function wfSetupParserFunctions() {
 	$wgParser->setFunctionHook( 'if', array( &$wgExtParserFunctions, 'ifHook' ) );
 	$wgParser->setFunctionHook( 'ifeq', array( &$wgExtParserFunctions, 'ifeq' ) );
 	$wgParser->setFunctionHook( 'ifexpr', array( &$wgExtParserFunctions, 'ifexpr' ) );
-	$wgParser->setFunctionHook( 'rand', array( &$wgExtParserFunctions, 'rand' ) );
+	$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchHook' ) );
 }
 
 ?>
