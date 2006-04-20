@@ -64,11 +64,14 @@ class ExtParserFunctions {
 		$value = array_shift( $args );
 		$found = false;
 		$parts = null;
+		$default = null;
 		foreach( $args as $arg ) {
 			$parts = array_map( 'trim', explode( '=', $arg, 2 ) );
 			if ( count( $parts ) == 2 ) {
 				if ( $found || $parts[0] == $value ) {
 					return $parts[1];
+				} elseif ( $parts[0] == '#default' ) {
+					$default = $parts[1];
 				} # else wrong case, continue
 			} elseif ( count( $parts ) == 1 ) {
 				# Multiple input, single output
@@ -82,6 +85,8 @@ class ExtParserFunctions {
 		# Check if the last item had no = sign, thus specifying the default case
 		if ( count( $parts ) == 1) {
 			return $parts[0];
+		} elseif ( !is_null( $default ) ) {
+			return $default;
 		} else {
 			return '';
 		}
