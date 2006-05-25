@@ -5,6 +5,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 $wgExtensionFunctions[] = 'wfSetupParserFunctions';
+$wgExtensionCredits['parserhook'][] = array( 'name' => 'ParserFunctions', 'url' => 'http://meta.wikimedia.org/wiki/ParserFunctions', 'author' => 'Tim Starling' );
 
 class ExtParserFunctions {
 	var $mExprParser;
@@ -91,6 +92,11 @@ class ExtParserFunctions {
 			return '';
 		}
 	}
+	
+	function ifexist( &$parser, $title = '', $then = '', $else = '' ) {
+		$title = Title::newFromText( $title );
+		return is_object( $title ) && $title->exists() ? $then : $else;
+	}
 }
 
 function wfSetupParserFunctions() {
@@ -103,6 +109,7 @@ function wfSetupParserFunctions() {
 	$wgParser->setFunctionHook( 'ifeq', array( &$wgExtParserFunctions, 'ifeq' ) );
 	$wgParser->setFunctionHook( 'ifexpr', array( &$wgExtParserFunctions, 'ifexpr' ) );
 	$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchHook' ) );
+	$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexist' ) );	
 }
 
 ?>
