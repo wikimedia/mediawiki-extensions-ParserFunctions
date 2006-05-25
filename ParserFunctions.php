@@ -61,7 +61,7 @@ class ExtParserFunctions {
 	function switchHook( &$parser /*,...*/ ) {
 		$args = func_get_args();
 		array_shift( $args );
-		$value = array_shift( $args );
+		$value = trim(array_shift($args));
 		$found = false;
 		$parts = null;
 		$default = null;
