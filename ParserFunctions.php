@@ -142,10 +142,10 @@ function wfParserFunctionsMagicWordsIDs( &$magicWords ) {
 }
 
 function wfParserFunctionsLanguageGetMagic( &$magicWords ) {
-	$magicWords[MAG_EXPR]    = array( 0, 'expr' /* en */, 'ביטוי' /* he */);
+	$magicWords[MAG_EXPR]    = array( 0, 'expr' /* en */, 'חשב' /* he */);
 	$magicWords[MAG_IF]      = array( 0, 'if' /* en */, 'תנאי' /* he */);
-	$magicWords[MAG_IFEQ]    = array( 0, 'ifeq' /* en */, 'שיוויון' /* he */);
-	$magicWords[MAG_IFEXPR]  = array( 0, 'ifexpr' /* en */, 'תנאי ביטוי' /* he */);
+	$magicWords[MAG_IFEQ]    = array( 0, 'ifeq' /* en */, 'שווה' /* he */);
+	$magicWords[MAG_IFEXPR]  = array( 0, 'ifexpr' /* en */, 'חשב תנאי' /* he */);
 	$magicWords[MAG_SWITCH]  = array( 0, 'switch' /* en */, 'בחר' /* he */);
 	$magicWords[MAG_DEFAULT] = array( 0, '#default' /* en */, '#ברירת מחדל' /* he */);
 	$magicWords[MAG_IFEXIST] = array( 0, 'ifexist' /* en */, 'קיים' /* he */);
