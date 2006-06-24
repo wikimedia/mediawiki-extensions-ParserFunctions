@@ -7,6 +7,10 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionFunctions[] = 'wfSetupParserFunctions';
 $wgExtensionCredits['parserhook'][] = array( 'name' => 'ParserFunctions', 'url' => 'http://meta.wikimedia.org/wiki/ParserFunctions', 'author' => 'Tim Starling' );
 
+$wgHooks['MagicWordMagicWords'][]    = 'wfParserFunctionsMagicWordsArray';
+$wgHooks['MagicWordwgVariableIDs'][] = 'wfParserFunctionsMagicWordsIDs';
+$wgHooks['LanguageGetMagic'][]       = 'wfParserFunctionsLanguageGetMagic';
+
 class ExtParserFunctions {
 	var $mExprParser;
 
@@ -104,12 +108,42 @@ function wfSetupParserFunctions() {
 
 	$wgExtParserFunctions = new ExtParserFunctions;
 
-	$wgParser->setFunctionHook( 'expr', array( &$wgExtParserFunctions, 'expr' ) );
-	$wgParser->setFunctionHook( 'if', array( &$wgExtParserFunctions, 'ifHook' ) );
-	$wgParser->setFunctionHook( 'ifeq', array( &$wgExtParserFunctions, 'ifeq' ) );
-	$wgParser->setFunctionHook( 'ifexpr', array( &$wgExtParserFunctions, 'ifexpr' ) );
-	$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchHook' ) );
-	$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexist' ) );	
+	$wgParser->setFunctionHook( MAG_EXPR, array( &$wgExtParserFunctions, 'expr' ) );
+	$wgParser->setFunctionHook( MAG_IF, array( &$wgExtParserFunctions, 'ifHook' ) );
+	$wgParser->setFunctionHook( MAG_IFEQ, array( &$wgExtParserFunctions, 'ifeq' ) );
+	$wgParser->setFunctionHook( MAG_IFEXPR, array( &$wgExtParserFunctions, 'ifexpr' ) );
+	$wgParser->setFunctionHook( MAG_SWITCH, array( &$wgExtParserFunctions, 'switchHook' ) );
+	$wgParser->setFunctionHook( MAG_IFEXIST, array( &$wgExtParserFunctions, 'ifexist' ) );	
+}
+
+function wfParserFunctionsMagicWordsArray( &$magicWords ) {
+	$magicWords[] = 'MAG_EXPR';
+	$magicWords[] = 'MAG_IF';
+	$magicWords[] = 'MAG_IFEQ';
+	$magicWords[] = 'MAG_IFEXPR';
+	$magicWords[] = 'MAG_SWITCH';
+	$magicWords[] = 'MAG_IFEXIST';
+	return true;
+}
+
+function wfParserFunctionsMagicWordsIDs( &$magicWords ) {
+	$magicWords[] = MAG_EXPR;
+	$magicWords[] = MAG_IF;
+	$magicWords[] = MAG_IFEQ;
+	$magicWords[] = MAG_IFEXPR;
+	$magicWords[] = MAG_SWITCH;
+	$magicWords[] = MAG_IFEXIST;
+	return true;
+}
+
+function wfParserFunctionsLanguageGetMagic( &$magicWords ) {
+	$magicWords[MAG_EXPR]    = array( 0, 'expr' /* en */, 'ביטוי' /* he */);
+	$magicWords[MAG_IF]      = array( 0, 'if' /* en */, 'תנאי' /* he */);
+	$magicWords[MAG_IFEQ]    = array( 0, 'ifeq' /* en */, 'שיוויון' /* he */);
+	$magicWords[MAG_IFEXPR]  = array( 0, 'ifexpr' /* en */, 'תנאי ביטוי' /* he */);
+	$magicWords[MAG_SWITCH]  = array( 0, 'switch' /* en */, 'בחר' /* he */);
+	$magicWords[MAG_IFEXIST] = array( 0, 'ifexist' /* en */, 'קיים' /* he */);
+	return true;
 }
 
 ?>
