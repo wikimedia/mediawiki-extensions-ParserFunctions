@@ -322,7 +322,7 @@ class ExprParser {
 			}
 		}
 		
-		return implode( "<br/>\n", $operands );
+		return implode( "<br />\n", $operands );
 	}
 
 	function doOperation( $op, &$stack ) {
