@@ -11,6 +11,9 @@ $wgHooks['LanguageGetMagic'][]       = 'wfParserFunctionsLanguageGetMagic';
 
 class ExtParserFunctions {
 	var $mExprParser;
+	var $mTimeCache = array();
+	var $mTimeChars = 0;
+	var $mMaxTimeChars = 1000;
 
 	function &getExprParser() {
 		if ( !isset( $this->mExpr ) ) {
@@ -102,10 +105,37 @@ class ExtParserFunctions {
 		$title = Title::newFromText( $title );
 		return is_object( $title ) && $title->exists() ? $then : $else;
 	}
+
+	function time( &$parser, $format = '', $date = '' ) {
+		global $wgContLang;
+		if ( isset( $this->mTimeCache[$format][$date] ) ) {
+			return $this->mTimeCache[$format][$date];
+		}
+		
+		if ( $date !== '' ) {
+			$unix = @strtotime( $date );
+		} else {
+			$unix = time();
+		}
+		
+		if ( $unix == -1 || $unix == false ) {
+			$result = wfMsgForContent( 'pfunc_time_error' );
+		} else {
+			$this->mTimeChars += strlen( $format );
+			if ( $this->mTimeChars > $this->mMaxTimeChars ) {
+				return wfMsgForContent( 'pfunc_time_too_long' );
+			} else {
+				$ts = wfTimestamp( TS_MW, $unix );
+				$result = $wgContLang->sprintfDate( $format, $ts );
+			}
+		}
+		$this->mTimeCache[$format][$date] = $result;
+		return $result;
+	}
 }
 
 function wfSetupParserFunctions() {
-	global $wgParser, $wgMessageCache, $wgExtParserFunctions;
+	global $wgParser, $wgMessageCache, $wgExtParserFunctions, $wgMessageCache;
 
 	$wgExtParserFunctions = new ExtParserFunctions;
 
@@ -115,6 +145,10 @@ function wfSetupParserFunctions() {
 	$wgParser->setFunctionHook( 'ifexpr', array( &$wgExtParserFunctions, 'ifexpr' ) );
 	$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchHook' ) );
 	$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexist' ) );	
+	$wgParser->setFunctionHook( 'time', array( &$wgExtParserFunctions, 'time' ) );	
+
+	$wgMessageCache->addMessage( 'pfunc_time_error', "Error: invalid time" );
+	$wgMessageCache->addMessage( 'pfunc_time_too_long', "Error: too many #time calls" );
 }
 
 function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
@@ -127,6 +161,7 @@ function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 			$magicWords['switch']  = array( 0, 'בחר',         'switch' );
 			$magicWords['default'] = array( 0, '#ברירת מחדל', '#default' );
 			$magicWords['ifexist'] = array( 0, 'קיים',         'ifexist' );
+			$magicWords['time']    = array( 0, 'time' );
 			break;
 		default:
 			$magicWords['expr']    = array( 0, 'expr' );
@@ -136,6 +171,7 @@ function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 			$magicWords['switch']  = array( 0, 'switch' );
 			$magicWords['default'] = array( 0, '#default' );
 			$magicWords['ifexist'] = array( 0, 'ifexist' );
+			$magicWords['time']    = array( 0, 'time' );
 	}
 	return true;
 }
