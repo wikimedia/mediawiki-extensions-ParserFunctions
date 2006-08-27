@@ -15,6 +15,10 @@ class ExtParserFunctions {
 	var $mTimeChars = 0;
 	var $mMaxTimeChars = 1000;
 
+	function clearState() {
+		$this->mTimeChars = 0;
+	}
+
 	function &getExprParser() {
 		if ( !isset( $this->mExpr ) ) {
 			if ( !class_exists( 'ExprParser' ) ) {
@@ -135,7 +139,7 @@ class ExtParserFunctions {
 }
 
 function wfSetupParserFunctions() {
-	global $wgParser, $wgMessageCache, $wgExtParserFunctions, $wgMessageCache;
+	global $wgParser, $wgMessageCache, $wgExtParserFunctions, $wgMessageCache, $wgHooks;
 
 	$wgExtParserFunctions = new ExtParserFunctions;
 
@@ -149,6 +153,8 @@ function wfSetupParserFunctions() {
 
 	$wgMessageCache->addMessage( 'pfunc_time_error', "Error: invalid time" );
 	$wgMessageCache->addMessage( 'pfunc_time_too_long', "Error: too many #time calls" );
+
+	$wgHooks['ParserClearState'][] = array( &$wgExtParserFunctions, 'clearState' );
 }
 
 function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
