@@ -167,7 +167,7 @@ function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 			$magicWords['switch']  = array( 0, 'בחר',         'switch' );
 			$magicWords['default'] = array( 0, '#ברירת מחדל', '#default' );
 			$magicWords['ifexist'] = array( 0, 'קיים',         'ifexist' );
-			$magicWords['time']    = array( 0, 'time' );
+			$magicWords['time']    = array( 0, 'זמן',          'time' );
 			break;
 		default:
 			$magicWords['expr']    = array( 0, 'expr' );
