@@ -17,6 +17,7 @@ class ExtParserFunctions {
 
 	function clearState() {
 		$this->mTimeChars = 0;
+		return true;
 	}
 
 	function &getExprParser() {
