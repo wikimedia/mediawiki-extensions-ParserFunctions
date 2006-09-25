@@ -131,7 +131,15 @@ class ExtParserFunctions {
 				return wfMsgForContent( 'pfunc_time_too_long' );
 			} else {
 				$ts = wfTimestamp( TS_MW, $unix );
-				$result = $wgContLang->sprintfDate( $format, $ts );
+				if ( method_exists( $wgContLang, 'sprintfDate' ) ) {
+					$result = $wgContLang->sprintfDate( $format, $ts );
+				} else {
+					if ( !class_exists( 'SprintfDateCompat' ) ) {
+						require( dirname( __FILE__ ) . '/SprintfDateCompat.php' );
+					}
+
+					$result = SprintfDateCompat::sprintfDate( $format, $ts );
+				}
 			}
 		}
 		$this->mTimeCache[$format][$date] = $result;
