@@ -31,12 +31,18 @@ define( 'EXPR_GREATEREQ', 19 );
 define( 'EXPR_NOTEQ', 20 );
 define( 'EXPR_ROUND', 21 );
 
+class ExprError extends Exception {
+	public function __construct($msg, $parameter = ''){
+		$this->message = wfMsgForContent( "expr_$msg", htmlspecialchars( $parameter ) );
+	}
+}
+
 class ExprParser {
 	var $maxStackSize = 100;
 
 	var $precedence = array( 
-		EXPR_NEGATIVE => 9,
-		EXPR_POSITIVE => 9,
+		EXPR_NEGATIVE => 10,
+		EXPR_POSITIVE => 10,
 		EXPR_NOT => 9,
 		EXPR_TIMES => 8,
 		EXPR_DIVIDE => 8,
@@ -94,30 +100,20 @@ class ExprParser {
 	function addMessages() {
 		global $wgMessageCache;
 		$wgMessageCache->addMessages( array( 
-			'expr_stack_exhausted' => 'Expression error: stack exhausted',
-			'expr_unexpected_number' => 'Expression error: unexpected number',
-			'expr_preg_match_failure' => 'Expression error: unexpected preg_match failure',
-			'expr_unrecognised_word' => 'Expression error: unrecognised word "$1"',
-			'expr_unexpected_operator' => 'Expression error: unexpected $1 operator',
+			'expr_stack_exhausted' => 'Expression error: Stack exhausted',
+			'expr_unexpected_number' => 'Expression error: Unexpected number',
+			'expr_preg_match_failure' => 'Expression error: Unexpected preg_match failure',
+			'expr_unrecognised_word' => 'Expression error: Unrecognised word "$1"',
+			'expr_unexpected_operator' => 'Expression error: Unexpected $1 operator',
 			'expr_missing_operand' => 'Expression error: Missing operand for $1',
-			'expr_unexpected_closing_bracket' => 'Expression error: unexpected closing bracket',
-			'expr_unrecognised_punctuation' => 'Expression error: unrecognised punctuation character "$1"',
-			'expr_unclosed_bracket' => 'Expression error: unclosed bracket',
+			'expr_unexpected_closing_bracket' => 'Expression error: Unexpected closing bracket',
+			'expr_unrecognised_punctuation' => 'Expression error: Unrecognised punctuation character "$1"',
+			'expr_unclosed_bracket' => 'Expression error: Unclosed bracket',
 			'expr_division_by_zero' => 'Division by zero',
+			'expr_unknown_error' => 'Expression error: Unknown error ($1)',
+			'expr_not_a_number' => 'In $1: result is not a number',
 		));
 	}
-			
-
-	function error( $msg, $parameter = false ) {
-		$this->lastErrorKey = $msg;
-		$this->lastErrorParameter = $parameter;
-		if ( $parameter === false ) {
-			$this->lastErrorMessage = wfMsg( "expr_$msg" );
-		} else {
-			$this->lastErrorMessage = wfMsg( "expr_$msg", htmlspecialchars( $parameter ) );
-		}
-	}
-
 	/**
 	 * Evaluate a mathematical expression
 	 *
@@ -139,8 +135,7 @@ class ExprParser {
 
 		while ( $p < $end ) {
 			if ( count( $operands ) > $this->maxStackSize || count( $operators ) > $this->maxStackSize ) {
-				$this->error( 'stack_exhausted' );
-				return false;
+				throw new ExprError('stack_exhausted');
 			}
 			$char = $expr[$p];
 			$char2 = substr( $expr, $p, 2 );
@@ -158,8 +153,7 @@ class ExprParser {
 			} elseif ( false !== strpos( EXPR_NUMBER_CLASS, $char ) ) {
 				// Number
 				if ( $expecting != 'expression' ) {
-					$this->error( 'unexpected_number' );
-					return false;
+					throw new ExprError('unexpected_number');
 				}
 
 				// Find the rest of it
@@ -175,26 +169,24 @@ class ExprParser {
 				$remaining = substr( $expr, $p );
 				if ( !preg_match( '/^[A-Za-z]*/', $remaining, $matches ) ) {
 					// This should be unreachable
-					$this->error( 'preg_match_failure' );
-					return false;
+					throw new ExprError('preg_match_failure');
 				}
 				$word = strtolower( $matches[0] );
 				$p += strlen( $word );
 
 				// Interpret the word
 				if ( !isset( $this->words[$word] ) ){
-					$this->error( 'unrecognised_word', $word );
-					return false;
+					throw new ExprError('unrecognised_word', $word);
 				}
 				$op = $this->words[$word];
-				if ( $op == EXPR_NOT ) {
-					// Unary operator
+				// Unary operator
+				switch($op){
+				case EXPR_NOT:
 					if ( $expecting != 'expression' ) { 
-						$this->error( 'unexpected_operator', $word );
-						return false;
+						throw new ExprError('unexpected_operator', $word);
 					}
 					$operators[] = $op;
-					continue;
+					continue 2;
 				}
 				// Binary operator, fall through
 				$name = $word;
@@ -248,8 +240,7 @@ class ExprParser {
 				++$p;
 			} elseif ( $char == '(' )  {
 				if ( $expecting == 'operator' ) {
-					$this->error( 'unexpected_operator', '(' );
-					return false;
+					throw new ExprError('unexpected_operator', '(');
 				}
 				$operators[] = EXPR_OPEN;
 				++$p;
@@ -257,18 +248,14 @@ class ExprParser {
 			} elseif ( $char == ')' ) {
 				$lastOp = end( $operators );
 				while ( $lastOp && $lastOp != EXPR_OPEN ) {
-					if ( true !== ( $error = $this->doOperation( $lastOp, $operands ) ) ) {
-						$this->error( $error, $this->names[$lastOp] );
-						return false;
-					}
+					$this->doOperation( $lastOp, $operands );
 					array_pop( $operators );
 					$lastOp = end( $operators );
 				}
 				if ( $lastOp ) {
 					array_pop( $operators );
 				} else {
-					$this->error( "unexpected_closing_bracket" );
-					return false;
+					throw new ExprError('unexpected_closing_bracket');
 				}
 				$expecting = 'operator';
 				++$p;
@@ -286,23 +273,18 @@ class ExprParser {
 				$op = EXPR_GREATER;
 				++$p;
 			} else {
-				$this->error( 'unrecognised_punctuation', $char );
-				return false;
+				throw new ExprError('unrecognised_punctuation', $char);
 			}
 
 			// Binary operator processing
 			if ( $expecting == 'expression' ) {
-				$this->error( 'unexpected_operator', $name );
-				return false;
+				throw new ExprError('unexpected_operator', $name);
 			}
 
 			// Shunting yard magic
 			$lastOp = end( $operators );
 			while ( $lastOp && $this->precedence[$op] <= $this->precedence[$lastOp] ) {
-				if ( true !== ( $error = $this->doOperation( $lastOp, $operands ) ) ) {
-					$this->error( $error, $this->names[$lastOp] );
-					return false;
-				}
+				$this->doOperation( $lastOp, $operands );
 				array_pop( $operators );
 				$lastOp = end( $operators );
 			}
@@ -313,13 +295,9 @@ class ExprParser {
 		// Finish off the operator array
 		while ( $op = array_pop( $operators ) ) {
 			if ( $op == EXPR_OPEN ) {
-				$this->error( 'unclosed_bracket' );
-				return false;
+				throw new ExprError('unclosed_bracket');
 			}
-			if ( true !== ( $error = $this->doOperation( $op, $operands ) ) ) {
-				$this->error( $error, $this->names[$op] );
-				return false;
-			}
+			$this->doOperation( $op, $operands ); 
 		}
 		
 		return implode( "<br />\n", $operands );
@@ -328,106 +306,108 @@ class ExprParser {
 	function doOperation( $op, &$stack ) {
 		switch ( $op ) {
 			case EXPR_NEGATIVE:
-				if ( count( $stack ) < 1 ) return 'missing_operand';
+				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
 				$stack[] = -$arg;
 				break;
 			case EXPR_POSITIVE:
-				if ( count( $stack ) < 1 ) return 'missing_operand';
+				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				break;
 			case EXPR_TIMES:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = $left * $right;
-				break;
+					break;
 			case EXPR_DIVIDE:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				if ( $right == 0 ) return 'division_by_zero';
+				if ( $right == 0 ) throw new ExprError('division_by_zero', $this->names[$op]);
 				$stack[] = $left / $right;
 				break;
 			case EXPR_MOD:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				if ( $right == 0 ) return 'division_by_zero';
+				if ( $right == 0 ) throw new ExprError('division_by_zero', $this->names[$op]);
 				$stack[] = $left % $right;
 				break;
 			case EXPR_PLUS:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = $left + $right;
 				break;
 			case EXPR_MINUS:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = $left - $right;
 				break;
 			case EXPR_AND:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left && $right ) ? 1 : 0;
 				break;
 			case EXPR_OR:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left || $right ) ? 1 : 0;
 				break;
 			case EXPR_EQUALITY:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left == $right ) ? 1 : 0;
 				break;
 			case EXPR_NOT:
-				if ( count( $stack ) < 1 ) return 'missing_operand';
+				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
 				$stack[] = (!$arg) ? 1 : 0;
 				break;
 			case EXPR_ROUND:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$digits = intval( array_pop( $stack ) );
 				$value = array_pop( $stack );
 				$stack[] = round( $value, $digits );
 				break;
 			case EXPR_LESS:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left < $right ) ? 1 : 0;
 				break;
 			case EXPR_GREATER:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left > $right ) ? 1 : 0;
 				break;
 			case EXPR_LESSEQ:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left <= $right ) ? 1 : 0;
 				break;
 			case EXPR_GREATEREQ:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left >= $right ) ? 1 : 0;
 				break;
 			case EXPR_NOTEQ:
-				if ( count( $stack ) < 2 ) return 'missing_operand';
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left != $right ) ? 1 : 0;
 				break;
+			default:
+				// Should be impossible to reach here.
+				throw new ExprError('unknown_error');
 		}
-		return true;
 	}
 }
 

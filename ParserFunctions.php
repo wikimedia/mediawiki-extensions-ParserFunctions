@@ -32,24 +32,22 @@ class ExtParserFunctions {
 	}
 
 	function expr( &$parser, $expr = '' ) {
-		$exprParser =& $this->getExprParser();
-		$result = $exprParser->doExpression( $expr );
-		if ( $result === false ) {
-			return $exprParser->lastErrorMessage;
-		} else {
-			return $result;
+		try {
+			return $this->getExprParser()->doExpression( $expr );
+		} catch(ExprError $e) {
+			return $e->getMessage();
 		}
 	}
 
 	function ifexpr( &$parser, $expr = '', $then = '', $else = '' ) {
-		$exprParser =& $this->getExprParser();	
-		$result = $exprParser->doExpression( $expr );
-		if ( $result === false ) {
-			return $exprParser->lastErrorMessage;
-		} elseif ( $result ) {
-			return $then;
-		} else {
-			return $else;
+		try{
+			if($this->getExprParser()->doExpression( $expr )) {
+				return $then;
+			} else {
+				return $else;
+			}
+		} catch (ExprError $e){
+			return $e->getMessage();
 		}
 	}
 
