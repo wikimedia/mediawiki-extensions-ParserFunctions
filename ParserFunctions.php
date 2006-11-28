@@ -234,6 +234,7 @@ function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 			$magicWords['default'] = array( 0, '#ברירת מחדל', '#default' );
 			$magicWords['ifexist'] = array( 0, 'קיים',         'ifexist' );
 			$magicWords['time']    = array( 0, 'זמן',          'time' );
+			$magicWords['rel2abs'] = array( 0, 'יחסי למוחלט',  'rel2abs' );
 			break;
 		default:
 			$magicWords['expr']    = array( 0, 'expr' );
@@ -244,7 +245,7 @@ function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 			$magicWords['default'] = array( 0, '#default' );
 			$magicWords['ifexist'] = array( 0, 'ifexist' );
 			$magicWords['time']    = array( 0, 'time' );
-			$magicWords['rel2abs']    = array( 0, 'rel2abs' );
+			$magicWords['rel2abs'] = array( 0, 'rel2abs' );
 	}
 	return true;
 }
