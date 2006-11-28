@@ -103,7 +103,64 @@ class ExtParserFunctions {
 			return '';
 		}
 	}
-	
+
+	/**
+	 * Returns the absolute path to a subpage, relative to the current article
+	 * title. Treats titles as slash-separated paths.
+	 *
+	 * Following subpage link syntax instead of standard path syntax, an 
+	 * initial slash is treated as a relative path, and vice versa.
+	 */
+	public function rel2abs( &$parser , $to = '' ) {
+
+		$from = $parser->mTitle->getPrefixedText();
+		$to = rtrim( $to , ' /' );
+
+		// if we have an empty path, or just one containing a dot
+		if( $to == '' || $to == '.' ) {
+			return $from;
+		}
+
+		// if the path isn't relative
+		if ( substr( $to , 0 , 1) != '/' &&
+		 substr( $to , 0 , 2) != './' &&
+		 substr( $to , 0 , 3) != '../' &&
+		 $to != '..' )
+		{
+			return $to;
+		}
+		// Make a long path, containing both, enclose it in /.../
+		$fullPath = '/' . $from . '/' .  $to . '/'; 
+
+		// remove redundant current path dots
+		$fullPath = preg_replace( '!/(\./)+!', '/', $fullPath );
+
+		// remove double slashes
+		$fullPath = preg_replace( '!/{2,}!', '/', $fullPath );
+
+		// remove the enclosing slashes now
+		$fullPath = trim( $fullPath , '/' ); 
+		$exploded = explode ( '/' , $fullPath );
+		$newExploded = array();
+
+		foreach ( $exploded as $current ) {
+			if( $current == '..' ) { // removing one level
+				if( !count( $newExploded ) ){
+					// attempted to access a node above root node
+					return wfMsgForContent( 'pfunc_rel2abs_invalid_depth', $fullPath );
+				}
+				// remove last level from the stack
+				array_pop( $newExploded ); 
+			} else {
+				// add the current level to the stack
+				$newExploded[] = $current; 
+			}
+		}
+
+		// we can now join it again
+		return implode( '/' , $newExploded );
+	}
+
 	function ifexist( &$parser, $title = '', $then = '', $else = '' ) {
 		$title = Title::newFromText( $title );
 		return is_object( $title ) && $title->exists() ? $then : $else;
@@ -157,9 +214,11 @@ function wfSetupParserFunctions() {
 	$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchHook' ) );
 	$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexist' ) );	
 	$wgParser->setFunctionHook( 'time', array( &$wgExtParserFunctions, 'time' ) );	
+	$wgParser->setFunctionHook( 'rel2abs', array( &$wgExtParserFunctions, 'rel2abs' ) );	
 
 	$wgMessageCache->addMessage( 'pfunc_time_error', "Error: invalid time" );
 	$wgMessageCache->addMessage( 'pfunc_time_too_long', "Error: too many #time calls" );
+	$wgMessageCache->addMessage( 'pfunc_rel2abs_invalid_depth', "Error: Invalid depth in path: \"$1\" (tried to access a node above the root node)" );
 
 	$wgHooks['ParserClearState'][] = array( &$wgExtParserFunctions, 'clearState' );
 }
@@ -185,6 +244,7 @@ function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 			$magicWords['default'] = array( 0, '#default' );
 			$magicWords['ifexist'] = array( 0, 'ifexist' );
 			$magicWords['time']    = array( 0, 'time' );
+			$magicWords['rel2abs']    = array( 0, 'rel2abs' );
 	}
 	return true;
 }
