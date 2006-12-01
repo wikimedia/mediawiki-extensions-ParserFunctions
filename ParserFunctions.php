@@ -111,9 +111,13 @@ class ExtParserFunctions {
 	 * Following subpage link syntax instead of standard path syntax, an 
 	 * initial slash is treated as a relative path, and vice versa.
 	 */
-	public function rel2abs( &$parser , $to = '' ) {
+	public function rel2abs( &$parser , $to = '' , $from = '' ) {
 
-		$from = $parser->mTitle->getPrefixedText();
+		$from = trim($from);
+		if( $from == '' ) {
+			$from = $parser->mTitle->getPrefixedText();
+		}
+
 		$to = rtrim( $to , ' /' );
 
 		// if we have an empty path, or just one containing a dot
@@ -127,7 +131,7 @@ class ExtParserFunctions {
 		 substr( $to , 0 , 3) != '../' &&
 		 $to != '..' )
 		{
-			return $to;
+			$from = '';
 		}
 		// Make a long path, containing both, enclose it in /.../
 		$fullPath = '/' . $from . '/' .  $to . '/'; 
