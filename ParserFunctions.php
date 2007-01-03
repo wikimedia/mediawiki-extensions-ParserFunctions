@@ -13,7 +13,7 @@ class ExtParserFunctions {
 	var $mExprParser;
 	var $mTimeCache = array();
 	var $mTimeChars = 0;
-	var $mMaxTimeChars = 1000;
+	var $mMaxTimeChars = 6000; # ~10 seconds
 
 	function clearState() {
 		$this->mTimeChars = 0;
