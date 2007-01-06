@@ -66,7 +66,7 @@ class ExtParserFunctions {
 			return $else;
 		}
 	}
-	
+
 	function switchHook( &$parser /*,...*/ ) {
 		$args = func_get_args();
 		array_shift( $args );
@@ -134,7 +134,7 @@ class ExtParserFunctions {
 			$from = '';
 		}
 		// Make a long path, containing both, enclose it in /.../
-		$fullPath = '/' . $from . '/' .  $to . '/'; 
+		$fullPath = '/' . $from . '/' .  $to . '/';
 
 		// remove redundant current path dots
 		$fullPath = preg_replace( '!/(\./)+!', '/', $fullPath );
@@ -143,7 +143,7 @@ class ExtParserFunctions {
 		$fullPath = preg_replace( '!/{2,}!', '/', $fullPath );
 
 		// remove the enclosing slashes now
-		$fullPath = trim( $fullPath , '/' ); 
+		$fullPath = trim( $fullPath , '/' );
 		$exploded = explode ( '/' , $fullPath );
 		$newExploded = array();
 
@@ -154,10 +154,10 @@ class ExtParserFunctions {
 					return wfMsgForContent( 'pfunc_rel2abs_invalid_depth', $fullPath );
 				}
 				// remove last level from the stack
-				array_pop( $newExploded ); 
+				array_pop( $newExploded );
 			} else {
 				// add the current level to the stack
-				$newExploded[] = $current; 
+				$newExploded[] = $current;
 			}
 		}
 
@@ -175,13 +175,13 @@ class ExtParserFunctions {
 		if ( isset( $this->mTimeCache[$format][$date] ) ) {
 			return $this->mTimeCache[$format][$date];
 		}
-		
+
 		if ( $date !== '' ) {
 			$unix = @strtotime( $date );
 		} else {
 			$unix = time();
 		}
-		
+
 		if ( $unix == -1 || $unix == false ) {
 			$result = wfMsgForContent( 'pfunc_time_error' );
 		} else {
@@ -216,9 +216,9 @@ function wfSetupParserFunctions() {
 	$wgParser->setFunctionHook( 'ifeq', array( &$wgExtParserFunctions, 'ifeq' ) );
 	$wgParser->setFunctionHook( 'ifexpr', array( &$wgExtParserFunctions, 'ifexpr' ) );
 	$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchHook' ) );
-	$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexist' ) );	
-	$wgParser->setFunctionHook( 'time', array( &$wgExtParserFunctions, 'time' ) );	
-	$wgParser->setFunctionHook( 'rel2abs', array( &$wgExtParserFunctions, 'rel2abs' ) );	
+	$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexist' ) );
+	$wgParser->setFunctionHook( 'time', array( &$wgExtParserFunctions, 'time' ) );
+	$wgParser->setFunctionHook( 'rel2abs', array( &$wgExtParserFunctions, 'rel2abs' ) );
 
 	$wgMessageCache->addMessage( 'pfunc_time_error', "Error: invalid time" );
 	$wgMessageCache->addMessage( 'pfunc_time_too_long', "Error: too many #time calls" );

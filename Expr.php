@@ -62,7 +62,7 @@ class ExprParser {
 		EXPR_CLOSE => -1
 	);
 
-	var $names = array( 
+	var $names = array(
 		EXPR_NEGATIVE => '-',
 		EXPR_POSITIVE => '+',
 		EXPR_NOT => 'not',
@@ -81,7 +81,7 @@ class ExprParser {
 		EXPR_AND => 'and',
 		EXPR_OR => 'or',
 	);
-		
+
 
 	var $words = array(
 		'mod' => EXPR_MOD,
@@ -99,7 +99,7 @@ class ExprParser {
 	 */
 	function addMessages() {
 		global $wgMessageCache;
-		$wgMessageCache->addMessages( array( 
+		$wgMessageCache->addMessages( array(
 			'expr_stack_exhausted' => 'Expression error: Stack exhausted',
 			'expr_unexpected_number' => 'Expression error: Unexpected number',
 			'expr_preg_match_failure' => 'Expression error: Unexpected preg_match failure',
@@ -127,7 +127,7 @@ class ExprParser {
 
 		# Unescape inequality operators
 		$expr = strtr( $expr, array( '&lt;' => '<', '&gt;' => '>' ) );
-		
+
 		$p = 0;
 		$end = strlen( $expr );
 		$expecting = 'expression';
@@ -139,13 +139,13 @@ class ExprParser {
 			}
 			$char = $expr[$p];
 			$char2 = substr( $expr, $p, 2 );
-			
+
 			// Mega if-elseif-else construct
 			// Only binary operators fall through for processing at the bottom, the rest 
 			// finish their processing and continue
 
 			// First the unlimited length classes
-			
+
 			if ( false !== strpos( EXPR_WHITE_CLASS, $char ) ) {
 				// Whitespace
 				$p += strspn( $expr, EXPR_WHITE_CLASS, $p );
@@ -182,7 +182,7 @@ class ExprParser {
 				// Unary operator
 				switch($op){
 				case EXPR_NOT:
-					if ( $expecting != 'expression' ) { 
+					if ( $expecting != 'expression' ) {
 						throw new ExprError('unexpected_operator', $word);
 					}
 					$operators[] = $op;
@@ -193,7 +193,7 @@ class ExprParser {
 			}
 
 			// Next the two-character operators
-			
+
 			elseif ( $char2 == '<=' ) {
 				$name = $char2;
 				$op = EXPR_LESSEQ;
@@ -209,7 +209,7 @@ class ExprParser {
 			}
 
 			// Finally the single-character operators
-			
+
 			elseif ( $char == '+' ) {
 				++$p;
 				if ( $expecting == 'expression' ) {
@@ -297,9 +297,9 @@ class ExprParser {
 			if ( $op == EXPR_OPEN ) {
 				throw new ExprError('unclosed_bracket');
 			}
-			$this->doOperation( $op, $operands ); 
+			$this->doOperation( $op, $operands );
 		}
-		
+
 		return implode( "<br />\n", $operands );
 	}
 
