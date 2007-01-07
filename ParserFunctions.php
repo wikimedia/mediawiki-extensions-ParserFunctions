@@ -5,7 +5,12 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 $wgExtensionFunctions[] = 'wfSetupParserFunctions';
-$wgExtensionCredits['parserhook'][] = array( 'name' => 'ParserFunctions', 'url' => 'http://meta.wikimedia.org/wiki/ParserFunctions', 'author' => 'Tim Starling' );
+$wgExtensionCredits['parserhook'][] = array(
+	'name' => 'ParserFunctions',
+	'url' => 'http://meta.wikimedia.org/wiki/ParserFunctions',
+	'author' => 'Tim Starling',
+	'description' => 'Enhance parser with logical functions',
+);
 
 $wgHooks['LanguageGetMagic'][]       = 'wfParserFunctionsLanguageGetMagic';
 
