@@ -120,7 +120,7 @@ class ExtParserFunctions {
 
 		$from = trim($from);
 		if( $from == '' ) {
-			$from = $parser->mTitle->getPrefixedText();
+			$from = $parser->getTitle()->getPrefixedText();
 		}
 
 		$to = rtrim( $to , ' /' );
