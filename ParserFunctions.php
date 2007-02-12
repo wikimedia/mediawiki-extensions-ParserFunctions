@@ -172,7 +172,14 @@ class ExtParserFunctions {
 
 	function ifexist( &$parser, $title = '', $then = '', $else = '' ) {
 		$title = Title::newFromText( $title );
-		return is_object( $title ) && $title->exists() ? $then : $else;
+		if ( $title ) {
+			$id = $title->getArticleID();
+			$parser->mOutput->addLink( $title, $id );
+			if ( $id ) {
+				return $then;
+			}
+		}
+		return $else;
 	}
 
 	function time( &$parser, $format = '', $date = '' ) {
