@@ -232,7 +232,7 @@ class ExtParserFunctions {
 		if( $ntitle instanceof Title ) {
 			$bits = explode( '/', $ntitle->getPrefixedText() );
 			if( $parts <= 0 || $parts > count( $bits ) ) {
-				return implode( '/', $bits );
+				return $ntitle->getPrefixedText();
 			} else {
 				$keep = array();
 				for( $i = 0; $i < $parts; $i++ )
