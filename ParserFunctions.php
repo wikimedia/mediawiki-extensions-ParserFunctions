@@ -216,6 +216,34 @@ class ExtParserFunctions {
 		$this->mTimeCache[$format][$date] = $result;
 		return $result;
 	}
+	
+	/**
+	 * Obtain a specified number of slash-separated parts of a title,
+	 * e.g. {{#titleparts:Hello/World|1}} => "Hello"
+	 *
+	 * @param Parser $parser Parent parser
+	 * @param string $title Title to split
+	 * @param int $parts Number of parts to keep
+	 * @return string
+	 */
+	public function titleparts( $parser, $title = '', $parts = -1 ) {
+		$parts = intval( $parts );
+		$ntitle = Title::newFromText( $title );
+		if( $ntitle instanceof Title ) {
+			$bits = explode( '/', $ntitle->getPrefixedText() );
+			if( $parts <= 0 || $parts > count( $bits ) ) {
+				return implode( '/', $bits );
+			} else {
+				$keep = array();
+				for( $i = 0; $i < $parts; $i++ )
+					$keep[] = array_shift( $bits );
+				return implode( '/', $keep );			
+			}
+		} else {
+			return $title;
+		}
+	} 
+	
 }
 
 function wfSetupParserFunctions() {
@@ -231,6 +259,7 @@ function wfSetupParserFunctions() {
 	$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexist' ) );
 	$wgParser->setFunctionHook( 'time', array( &$wgExtParserFunctions, 'time' ) );
 	$wgParser->setFunctionHook( 'rel2abs', array( &$wgExtParserFunctions, 'rel2abs' ) );
+	$wgParser->setFunctionHook( 'titleparts', array( &$wgExtParserFunctions, 'titleparts' ) );
 
 	$wgMessageCache->addMessage( 'pfunc_time_error', "Error: invalid time" );
 	$wgMessageCache->addMessage( 'pfunc_time_too_long', "Error: too many #time calls" );
@@ -262,6 +291,7 @@ function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 			$magicWords['ifexist'] = array( 0, 'ifexist' );
 			$magicWords['time']    = array( 0, 'time' );
 			$magicWords['rel2abs'] = array( 0, 'rel2abs' );
+			$magicWords['titleparts'] = array( 0, 'titleparts' );
 	}
 	return true;
 }
