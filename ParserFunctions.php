@@ -270,6 +270,17 @@ function wfSetupParserFunctions() {
 
 function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 	switch ( $langCode ) {
+	        case 'fa':
+			$magicWords['expr']    = array( 0, 'حساب',         'expr' );
+			$magicWords['if']      = array( 0, 'اگر',          'if' );
+			$magicWords['ifeq']    = array( 0, 'اگرمساوی',     'ifeq' );
+			$magicWords['ifexpr']  = array( 0, 'اگرحساب',      'ifexpr' );
+			$magicWords['switch']  = array( 0, 'گزینه',        'switch' );
+			$magicWords['default'] = array( 0, '#پیش‌فرض',      '#default' );
+			$magicWords['ifexist'] = array( 0, 'اگرموجود',     'ifexist' );
+			$magicWords['time']    = array( 0, 'زمان',         'time' );
+			$magicWords['rel2abs'] = array( 0, 'نسبی‌به‌مطلق',   'rel2abs' );
+			break;
 		case 'he':
 			$magicWords['expr']    = array( 0, 'חשב',         'expr' );
 			$magicWords['if']      = array( 0, 'תנאי',        'if' );
