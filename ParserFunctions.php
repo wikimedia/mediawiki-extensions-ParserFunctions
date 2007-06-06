@@ -291,6 +291,7 @@ function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 			$magicWords['ifexist'] = array( 0, 'קיים',         'ifexist' );
 			$magicWords['time']    = array( 0, 'זמן',          'time' );
 			$magicWords['rel2abs'] = array( 0, 'יחסי למוחלט',  'rel2abs' );
+			$magicWords['titleparts'] = array( 0, 'חלק בכותרת', 'titleparts' );
 			break;
 		default:
 			$magicWords['expr']    = array( 0, 'expr' );
