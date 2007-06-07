@@ -43,7 +43,7 @@ function efParserFunctionsWords( $lang ) {
 	/**
 	 * Hebrew
 	 */
-	$words['he'] => array(
+	$words['he'] = array(
 		'expr' 		=> array( 0, 'חשב',         'expr' ),
 		'if' 		=> array( 0, 'תנאי',        'if' ),
 		'ifeq' 		=> array( 0, 'שווה',        'ifeq' ),
