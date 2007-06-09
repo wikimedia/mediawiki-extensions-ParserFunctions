@@ -8,7 +8,7 @@
  */
 function efParserFunctionsWords( $lang ) {
 	$words = array();
-	
+
 	/**
 	 * English
 	 */
@@ -24,7 +24,7 @@ function efParserFunctionsWords( $lang ) {
 		'rel2abs' 	=> array( 0, 'rel2abs' ),
 		'titleparts' => array( 0, 'titleparts' ),
 	);
-	
+
 	/**
 	 * Farsi-Persian
 	 */
@@ -54,7 +54,23 @@ function efParserFunctionsWords( $lang ) {
 		'time' 		=> array( 0, 'זמן',          'time' ),
 		'rel2abs' 	=> array( 0, 'יחסי למוחלט',  'rel2abs' ),
 		'titleparts' => array( 0, 'חלק בכותרת', 'titleparts' ),
-	);	
+	);
+
+	/**
+	 * Indonesian
+	 */
+	$words['id'] = array(
+		'expr'       => array( 0, 'hitung',       'expr' ),
+		'if'         => array( 0, 'jika',         'if' ),
+		'ifeq'       => array( 0, 'jikasama',     'ifeq' ),
+		'ifexpr'     => array( 0, 'jikahitung',   'ifexpr' ),
+		'switch'     => array( 0, 'pilih',        'switch' ),
+		'default'    => array( 0, '#baku',        '#default' ),
+		'ifexist'    => array( 0, 'jikaada',      'ifexist' ),
+		'time'       => array( 0, 'waktu',        'time' ),
+		'rel2abs'    => array( 0, 'rel2abs' ),
+		'titleparts' => array( 0, 'bagianjudul',  'titleparts' ),
+	);
 
 	# English is used as a fallback, and the English synonyms are
 	# used if a translation has not been provided for a given word
