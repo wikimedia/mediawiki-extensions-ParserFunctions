@@ -224,17 +224,23 @@ class ExtParserFunctions {
 	 * @param Parser $parser Parent parser
 	 * @param string $title Title to split
 	 * @param int $parts Number of parts to keep
+	 * @param int $offset Offset starting at 1
 	 * @return string
 	 */
-	public function titleparts( $parser, $title = '', $parts = -1 ) {
+	public function titleparts( $parser, $title = '', $parts = -1, $offset = 1 ) {
 		$parts = intval( $parts );
+		$offset = intval( $offset ) - 1;
 		$ntitle = Title::newFromText( $title );
 		if( $ntitle instanceof Title ) {
 			$bits = explode( '/', $ntitle->getPrefixedText() );
 			if( $parts <= 0 || $parts > count( $bits ) ) {
 				return $ntitle->getPrefixedText();
+			} elseif( $offset < 0 || $offset > count( $bits ) ) {
+				return $ntitle->getPrefixedText();
 			} else {
 				$keep = array();
+				for( $i = 0; $i < $offset; $i++ )
+					array_shift( $bits );
 				for( $i = 0; $i < $parts; $i++ )
 					$keep[] = array_shift( $bits );
 				return implode( '/', $keep );			
