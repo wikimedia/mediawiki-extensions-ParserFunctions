@@ -281,4 +281,4 @@ function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 	return true;
 }
 
-?>
+

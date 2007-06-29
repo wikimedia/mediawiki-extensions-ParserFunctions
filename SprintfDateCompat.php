@@ -200,4 +200,4 @@ class SprintfDateCompat {
 		return $s;
 	}
 }
-?>
+

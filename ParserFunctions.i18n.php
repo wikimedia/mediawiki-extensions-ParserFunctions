@@ -79,4 +79,3 @@ function efParserFunctionsWords( $lang ) {
 		: array_merge( $words['en'], $words[$lang] );
 }
 
-?>
