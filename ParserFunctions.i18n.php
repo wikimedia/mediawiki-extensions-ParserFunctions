@@ -21,6 +21,7 @@ function efParserFunctionsWords( $lang ) {
 		'default' 	=> array( 0, '#default' ),
 		'ifexist' 	=> array( 0, 'ifexist' ),
 		'time' 		=> array( 0, 'time' ),
+		'timel' 	=> array( 0, 'timel' ),
 		'rel2abs' 	=> array( 0, 'rel2abs' ),
 		'titleparts' => array( 0, 'titleparts' ),
 	);
@@ -44,16 +45,17 @@ function efParserFunctionsWords( $lang ) {
 	 * Hebrew
 	 */
 	$words['he'] = array(
-		'expr' 		=> array( 0, 'חשב',         'expr' ),
-		'if' 		=> array( 0, 'תנאי',        'if' ),
-		'ifeq' 		=> array( 0, 'שווה',        'ifeq' ),
-		'ifexpr' 	=> array( 0, 'חשב תנאי',    'ifexpr' ),
-		'switch' 	=> array( 0, 'בחר',         'switch' ),
-		'default' 	=> array( 0, '#ברירת מחדל', '#default' ),
-		'ifexist' 	=> array( 0, 'קיים',         'ifexist' ),
-		'time' 		=> array( 0, 'זמן',          'time' ),
-		'rel2abs' 	=> array( 0, 'יחסי למוחלט',  'rel2abs' ),
-		'titleparts' => array( 0, 'חלק בכותרת', 'titleparts' ),
+		'expr'       => array( 0, 'חשב',         'expr' ),
+		'if'         => array( 0, 'תנאי',        'if' ),
+		'ifeq'       => array( 0, 'שווה',        'ifeq' ),
+		'ifexpr'     => array( 0, 'חשב תנאי',    'ifexpr' ),
+		'switch'     => array( 0, 'בחר',         'switch' ),
+		'default'    => array( 0, '#ברירת מחדל', '#default' ),
+		'ifexist'    => array( 0, 'קיים',        'ifexist' ),
+		'time'       => array( 0, 'זמן',         'time' ),
+		'timel'      => array( 0, 'זמןמ',        'timel' ),
+		'rel2abs'    => array( 0, 'יחסי למוחלט', 'rel2abs' ),
+		'titleparts' => array( 0, 'חלק בכותרת',  'titleparts' ),
 	);
 
 	/**

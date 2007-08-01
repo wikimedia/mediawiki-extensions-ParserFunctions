@@ -182,10 +182,10 @@ class ExtParserFunctions {
 		return $else;
 	}
 
-	function time( &$parser, $format = '', $date = '' ) {
-		global $wgContLang;
-		if ( isset( $this->mTimeCache[$format][$date] ) ) {
-			return $this->mTimeCache[$format][$date];
+	function time( &$parser, $format = '', $date = '', $local = false ) {
+		global $wgContLang, $wgLocaltimezone;
+		if ( isset( $this->mTimeCache[$format][$date][$local] ) ) {
+			return $this->mTimeCache[$format][$date][$local];
 		}
 
 		if ( $date !== '' ) {
@@ -201,7 +201,21 @@ class ExtParserFunctions {
 			if ( $this->mTimeChars > $this->mMaxTimeChars ) {
 				return wfMsgForContent( 'pfunc_time_too_long' );
 			} else {
-				$ts = wfTimestamp( TS_MW, $unix );
+				if ( $local ) {
+					# Use the time zone
+					if ( isset( $wgLocaltimezone ) ) {
+						$oldtz = getenv( 'TZ' );
+						putenv( 'TZ='.$wgLocaltimezone );
+					}
+					wfSuppressWarnings(); // E_STRICT system time bitching
+					$ts = date( 'YmdHis', $unix );
+					wfRestoreWarnings();
+					if ( isset( $wgLocaltimezone ) ) {
+						putenv( 'TZ='.$oldtz );
+					}
+				} else {
+					$ts = wfTimestamp( TS_MW, $unix );
+				}
 				if ( method_exists( $wgContLang, 'sprintfDate' ) ) {
 					$result = $wgContLang->sprintfDate( $format, $ts );
 				} else {
@@ -213,8 +227,12 @@ class ExtParserFunctions {
 				}
 			}
 		}
-		$this->mTimeCache[$format][$date] = $result;
+		$this->mTimeCache[$format][$date][$local] = $result;
 		return $result;
+	}
+	
+	function localTime( &$parser, $format = '', $date = '' ) {
+		return $this->time( $parser, $format, $date, true );
 	}
 	
 	/**
@@ -264,6 +282,7 @@ function wfSetupParserFunctions() {
 	$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchHook' ) );
 	$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexist' ) );
 	$wgParser->setFunctionHook( 'time', array( &$wgExtParserFunctions, 'time' ) );
+	$wgParser->setFunctionHook( 'timel', array( &$wgExtParserFunctions, 'localTime' ) );
 	$wgParser->setFunctionHook( 'rel2abs', array( &$wgExtParserFunctions, 'rel2abs' ) );
 	$wgParser->setFunctionHook( 'titleparts', array( &$wgExtParserFunctions, 'titleparts' ) );
 
