@@ -285,10 +285,10 @@ function wfSetupParserFunctions() {
 	$wgParser->setFunctionHook( 'timel', array( &$wgExtParserFunctions, 'localTime' ) );
 	$wgParser->setFunctionHook( 'rel2abs', array( &$wgExtParserFunctions, 'rel2abs' ) );
 	$wgParser->setFunctionHook( 'titleparts', array( &$wgExtParserFunctions, 'titleparts' ) );
-
-	$wgMessageCache->addMessage( 'pfunc_time_error', "Error: invalid time" );
-	$wgMessageCache->addMessage( 'pfunc_time_too_long', "Error: too many #time calls" );
-	$wgMessageCache->addMessage( 'pfunc_rel2abs_invalid_depth', "Error: Invalid depth in path: \"$1\" (tried to access a node above the root node)" );
+	
+	require_once( dirname( __FILE__ ) . '/ParserFunctions.i18n.php' );
+	foreach( efParserFunctionsMessages() as $lang => $messages )
+		$wgMessageCache->addMessages( $messages, $lang );
 
 	$wgHooks['ParserClearState'][] = array( &$wgExtParserFunctions, 'clearState' );
 }

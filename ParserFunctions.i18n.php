@@ -81,3 +81,25 @@ function efParserFunctionsWords( $lang ) {
 		: array_merge( $words['en'], $words[$lang] );
 }
 
+function efParserFunctionsMessages () {
+	$messages =  array(
+	/*English Language*/
+'en' => array(
+	 'pfunc_time_error'             => 'Error: invalid time',
+	 'pfunc_time_too_long'          => 'Error: too many #time calls',
+	 'pfunc_rel2abs_invalid_depth'  => 'Error: Invalid depth in path: \"$1\" (tried to access a node above the root node)',
+		),
+
+/*French traduction by Bertrand GRONDIN	*/
+'fr' => array(
+	 'pfunc_time_error'            => 'Erreur: durée invalide',
+	 'pfunc_time_too_long'         => 'Erreur: parser #time appelé trop de fois',
+	 'pfunc_rel2abs_invalid_depth' => 'Erreur:  niveau de répertoire invalide dans le chemin : \"$1\" (a essayé d’accéder à un niveau au-dessus du répertoire racine)',
+),
+	);
+	
+	return $messages ;
+}
+	
+?>
+
