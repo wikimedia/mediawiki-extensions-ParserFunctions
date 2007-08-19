@@ -103,6 +103,13 @@ function efParserFunctionsMessages() {
 	 'pfunc_rel2abs_invalid_depth' => 'Erreur: niveau de répertoire invalide dans le chemin : \"$1\" (a essayé d’accéder à un niveau au-dessus du répertoire racine)',
 ),
 
+/* Hebrew */
+'he' => array(
+	 'pfunc_time_error'             => 'שגיאה: זמן שגוי',
+	 'pfunc_time_too_long'          => 'שגיאה: שימוש ב"#זמן" פעמים רבות מדי',
+	 'pfunc_rel2abs_invalid_depth'  => 'שגיאה: עומק שגוי בנתיב: \"$1\" (ניסיון כניסה לצומת מעל צומת השורש)',
+),
+
 );
 	
 	return $messages ;
