@@ -96,6 +96,13 @@ function efParserFunctionsMessages() {
 	 'pfunc_rel2abs_invalid_depth'  => 'Error: Invalid depth in path: \"$1\" (tried to access a node above the root node)',
 ),
 
+/* German */
+'de' => array(
+	 'pfunc_time_error'             => 'Fehler: ungültige Zeitangabe',
+	 'pfunc_time_too_long'          => 'Fehler: zu viele #time-Aufrufe',
+	 'pfunc_rel2abs_invalid_depth'  => 'Fehler: ungültige Tiefe in Pfad: „$1“ (Versuch, auf einen Knotenpunkt oberhalb des Hauptknotenpunktes zuzugreifen)',
+),
+
 /* French */
 'fr' => array(
 	 'pfunc_time_error'            => 'Erreur: durée invalide',
