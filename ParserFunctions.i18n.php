@@ -117,6 +117,13 @@ function efParserFunctionsMessages() {
 	 'pfunc_rel2abs_invalid_depth'  => 'שגיאה: עומק שגוי בנתיב: \"$1\" (ניסיון כניסה לצומת מעל צומת השורש)',
 ),
 
+/* Dutch */
+'nl' => array(
+	 'pfunc_time_error'             => 'Fout: ongeldige tijd',
+	 'pfunc_time_too_long'          => 'Fout: #time te vaak aangeroepen',
+	 'pfunc_rel2abs_invalid_depth'  => 'Fout: ongeldige diepte in pad: \"$1\" (probeerde een node boven de stamnode aan te roepen)',
+),
+
 );
 	
 	return $messages ;
