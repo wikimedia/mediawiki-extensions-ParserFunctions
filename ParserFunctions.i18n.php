@@ -124,7 +124,39 @@ function efParserFunctionsMessages() {
 	 'pfunc_rel2abs_invalid_depth'  => 'Fout: ongeldige diepte in pad: \"$1\" (probeerde een node boven de stamnode aan te roepen)',
 ),
 
+/* Cantonese */
+'yue' => array(
+	 'pfunc_time_error'             => '錯: 唔啱嘅時間',
+	 'pfunc_time_too_long'          => '錯: 太多 #time 呼叫',
+	 'pfunc_rel2abs_invalid_depth'  => '錯: 唔啱路徑嘅深度: \"$1\" (已經試過由頭點落個點度)',
+),
+
+/* Chinese (Simplified) */
+'zh-hans' => array(
+	 'pfunc_time_error'             => '错误: 不正确的时间',
+	 'pfunc_time_too_long'          => '错误: 过多 #time 的呼叫',
+	 'pfunc_rel2abs_invalid_depth'  => '错误: 不正确的路径深度: \"$1\" (已经尝试在顶点访问该点)',
+),
+
+
+/* Chinese (Traditional) */
+'zh-hant' => array(
+	 'pfunc_time_error'             => '錯誤: 不正確的時間',
+	 'pfunc_time_too_long'          => '錯誤: 過多 #time 的呼叫',
+	 'pfunc_rel2abs_invalid_depth'  => '錯誤: 不正確的路徑深度: \"$1\" (已經嘗試在頂點存取該點)',
+),
+
 );
-	
+
+	/* Chinese defaults, fallback to zh-hans */
+	$messages['zh'] = $messages['zh-hans'];
+	$messages['zh-cn'] = $messages['zh-hans'];
+	$messages['zh-hk'] = $messages['zh-hant'];
+	$messages['zh-sg'] = $messages['zh-hans'];
+	$messages['zh-tw'] = $messages['zh-hant'];
+
+	/* Cantonese default, fallback to yue */
+	$messages['zh-yue'] = $messages['yue'];
+
 	return $messages ;
 }
