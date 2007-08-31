@@ -273,7 +273,7 @@ class ExprParser {
 				$op = EXPR_GREATER;
 				++$p;
 			} else {
-				throw new ExprError('unrecognised_punctuation', $char);
+				throw new ExprError('unrecognised_punctuation', UtfNormal::cleanUp( $char ));
 			}
 
 			// Binary operator processing
