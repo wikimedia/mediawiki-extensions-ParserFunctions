@@ -117,6 +117,25 @@ function efParserFunctionsMessages() {
 	 'pfunc_rel2abs_invalid_depth'  => 'שגיאה: עומק שגוי בנתיב: \"$1\" (ניסיון כניסה לצומת מעל צומת השורש)',
 ),
 
+/* Kazakh Cyrillic */
+'kk-kz' => array(
+	 'pfunc_time_error'             => 'Қате: жарамсыз уақыт',
+	 'pfunc_time_too_long'          => 'Қате: #time әмірін шақыруы тым көп',
+	 'pfunc_rel2abs_invalid_depth'  => 'Қате: Мына жолдың жарамсыз терендігі "$1" (тамыр түйіннің үстіндегі түйінге қатынау талабы)',
+),
+/* Kazakh Latin */
+'kk-tr' => array(
+	 'pfunc_time_error'             => 'Qate: jaramsız waqıt',
+	 'pfunc_time_too_long'          => 'Qate: #time ämirin şaqırwı tım köp',
+	 'pfunc_rel2abs_invalid_depth'  => 'Qate: Mına joldıñ jaramsız terendigi "$1" (tamır tüýinniñ üstindegi tüýinge qatınaw talabı)',
+),
+/* Kazakh Arabic */
+'kk-cn' => array(
+	 'pfunc_time_error'             => 'قاتە: جارامسىز ۋاقىت',
+	 'pfunc_time_too_long'          => 'قاتە: #time ٵمٸرٸن شاقىرۋى تىم كٶپ',
+	 'pfunc_rel2abs_invalid_depth'  => 'قاتە: مىنا جولدىڭ جارامسىز تەرەندٸگٸ "$1" (تامىر تٷيٸننٸڭ ٷستٸندەگٸ تٷيٸنگە قاتىناۋ تالابى)',
+),
+
 /* Dutch */
 'nl' => array(
 	 'pfunc_time_error'             => 'Fout: ongeldige tijd',
@@ -147,6 +166,9 @@ function efParserFunctionsMessages() {
 ),
 
 );
+
+	/* Kazakh default, fallback to kk-kz */
+	$messages['kk'] = $messages['kk-kz'];
 
 	/* Chinese defaults, fallback to zh-hans */
 	$messages['zh'] = $messages['zh-hans'];
