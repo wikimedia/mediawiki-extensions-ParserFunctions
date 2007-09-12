@@ -143,6 +143,13 @@ function efParserFunctionsMessages() {
 	 'pfunc_rel2abs_invalid_depth'  => 'Fout: ongeldige diepte in pad: \"$1\" (probeerde een node boven de stamnode aan te roepen)',
 ),
 
+/* Swedish */
+'sv' => array(
+	 'pfunc_time_error'             => 'Fel: ogiltig tid',
+	 'pfunc_time_too_long'          => 'Fel: för många anrop av #time',
+	 'pfunc_rel2abs_invalid_depth'  => 'Fel: felaktig djup i sökväg: "$1" (försöker nå en nod ovanför rotnoden)',
+),
+
 /* Cantonese */
 'yue' => array(
 	 'pfunc_time_error'             => '錯: 唔啱嘅時間',
