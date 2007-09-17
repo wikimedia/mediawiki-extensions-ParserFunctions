@@ -117,6 +117,12 @@ function efParserFunctionsMessages() {
 	 'pfunc_rel2abs_invalid_depth'  => 'שגיאה: עומק שגוי בנתיב: \"$1\" (ניסיון כניסה לצומת מעל צומת השורש)',
 ),
 
+'hsb' => array(
+'pfunc_time_error' => 'Zmylk: njepłaćiwe časowe podaće',
+'pfunc_time_too_long' => 'Zmylk: přewjele zawołanjow #time',
+'pfunc_rel2abs_invalid_depth' => 'Zmylk: Njepłaćiwa hłubokosć w pućiku: \"$1\" (Pospyt, zo by na suk wyše hłowneho suka dohrabnyło)',
+),
+
 /* Kazakh Cyrillic */
 'kk-kz' => array(
 	 'pfunc_time_error'             => 'Қате: жарамсыз уақыт',
