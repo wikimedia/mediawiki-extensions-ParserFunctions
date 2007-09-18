@@ -96,6 +96,12 @@ function efParserFunctionsMessages() {
 	 'pfunc_rel2abs_invalid_depth'  => 'Error: Invalid depth in path: \"$1\" (tried to access a node above the root node)',
 ),
 
+'cs' => array(
+'pfunc_time_error' => 'Chyba: neplatný čas',
+'pfunc_time_too_long' => 'Chyba: příliš mnoho volání #time',
+'pfunc_rel2abs_invalid_depth' => 'Chyba: Neplatná hloubka v cestě: \"$1\" (pokus o přístup do uzlu vyššího než kořen)',
+),
+
 /* German */
 'de' => array(
 	 'pfunc_time_error'             => 'Fehler: ungültige Zeitangabe',
