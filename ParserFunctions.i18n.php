@@ -155,6 +155,12 @@ function efParserFunctionsMessages() {
 	 'pfunc_rel2abs_invalid_depth'  => 'Fout: ongeldige diepte in pad: \"$1\" (probeerde een node boven de stamnode aan te roepen)',
 ),
 
+'sk' => array(
+'pfunc_time_error' => 'Chyba: Neplatný čas',
+'pfunc_time_too_long' => 'Chyba: príliš veľa volaní #time',
+'pfunc_rel2abs_invalid_depth' => 'Chyba: Neplatná hĺbka v ceste: "$1" (pokus o prístup k uzlu nad koreňovým uzlom)',
+),
+
 /* Swedish */
 'sv' => array(
 	 'pfunc_time_error'             => 'Fel: ogiltig tid',
