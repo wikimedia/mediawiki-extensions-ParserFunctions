@@ -96,6 +96,10 @@ function efParserFunctionsMessages() {
 	 'pfunc_rel2abs_invalid_depth'  => 'Error: Invalid depth in path: \"$1\" (tried to access a node above the root node)',
 ),
 
+'ar' => array(
+'pfunc_time_error' => 'خطأ: زمن غير صحيح',
+),
+
 'cs' => array(
 'pfunc_time_error' => 'Chyba: neplatný čas',
 'pfunc_time_too_long' => 'Chyba: příliš mnoho volání #time',
@@ -146,6 +150,12 @@ function efParserFunctionsMessages() {
 	 'pfunc_time_error'             => 'قاتە: جارامسىز ۋاقىت',
 	 'pfunc_time_too_long'          => 'قاتە: #time ٵمٸرٸن شاقىرۋى تىم كٶپ',
 	 'pfunc_rel2abs_invalid_depth'  => 'قاتە: مىنا جولدىڭ جارامسىز تەرەندٸگٸ "$1" (تامىر تٷيٸننٸڭ ٷستٸندەگٸ تٷيٸنگە قاتىناۋ تالابى)',
+),
+
+'nds' => array(
+'pfunc_time_error' => 'Fehler: mit de Tiet stimmt wat nich',
+'pfunc_time_too_long' => 'Fehler: #time warrt to faken opropen',
+'pfunc_rel2abs_invalid_depth' => 'Fehler: Mit den Padd „$1“ stimmt wat nich, liggt nich ünner den Wuddelorner',
 ),
 
 /* Dutch */
