@@ -98,6 +98,8 @@ function efParserFunctionsMessages() {
 
 'ar' => array(
 'pfunc_time_error' => 'خطأ: زمن غير صحيح',
+'pfunc_time_too_long' => 'خطأ: too many #time calls',
+'pfunc_rel2abs_invalid_depth' => 'خطأ: عمق غير صحيح في المسار: \"$1\" (حاول دخول عقدة فوق العقدة الجذرية)',
 ),
 
 'cs' => array(
