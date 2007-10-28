@@ -168,9 +168,15 @@ function efParserFunctionsMessages() {
 ),
 
 'pl' => array(
-'pfunc_time_error' => 'Błąd: nieprawidłowy czas',
+'pfunc_time_error' => 'Błąd: niepoprawny czas',
 'pfunc_time_too_long' => 'Błąd: za dużo wywołań funkcji #time',
 'pfunc_rel2abs_invalid_depth' => 'Błąd: Nieprawidłowa głębokość w ścieżce: \"$1\" (próba dostępu do węzła powyżej korzenia)',
+),
+
+'pms' => array(
+'pfunc_time_error' => 'Eror: temp nen bon',
+'pfunc_time_too_long' => 'Eror: #time a ven ciamà tròpe vire',
+'pfunc_rel2abs_invalid_depth' => 'Eror: profondità nen bon-a ant ël përcors: \"$1\" (a l\'é provasse a ciamé un grop dzora a la rèis)',
 ),
 
 'sk' => array(
