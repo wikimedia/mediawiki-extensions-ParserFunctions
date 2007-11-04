@@ -97,15 +97,15 @@ function efParserFunctionsMessages() {
 ),
 
 'ar' => array(
-'pfunc_time_error' => 'خطأ: زمن غير صحيح',
-'pfunc_time_too_long' => 'خطأ: too many #time calls',
-'pfunc_rel2abs_invalid_depth' => 'خطأ: عمق غير صحيح في المسار: \"$1\" (حاول دخول عقدة فوق العقدة الجذرية)',
+	'pfunc_time_error' => 'خطأ: زمن غير صحيح',
+	'pfunc_time_too_long' => 'خطأ: too many #time calls',
+	'pfunc_rel2abs_invalid_depth' => 'خطأ: عمق غير صحيح في المسار: \"$1\" (حاول دخول عقدة فوق العقدة الجذرية)',
 ),
 
 'cs' => array(
-'pfunc_time_error' => 'Chyba: neplatný čas',
-'pfunc_time_too_long' => 'Chyba: příliš mnoho volání #time',
-'pfunc_rel2abs_invalid_depth' => 'Chyba: Neplatná hloubka v cestě: \"$1\" (pokus o přístup do uzlu vyššího než kořen)',
+	'pfunc_time_error' => 'Chyba: neplatný čas',
+	'pfunc_time_too_long' => 'Chyba: příliš mnoho volání #time',
+	'pfunc_rel2abs_invalid_depth' => 'Chyba: Neplatná hloubka v cestě: \"$1\" (pokus o přístup do uzlu vyššího než kořen)',
 ),
 
 /* German */
@@ -130,9 +130,9 @@ function efParserFunctionsMessages() {
 ),
 
 'hsb' => array(
-'pfunc_time_error' => 'Zmylk: njepłaćiwe časowe podaće',
-'pfunc_time_too_long' => 'Zmylk: přewjele zawołanjow #time',
-'pfunc_rel2abs_invalid_depth' => 'Zmylk: Njepłaćiwa hłubokosć w pućiku: \"$1\" (Pospyt, zo by na suk wyše hłowneho suka dohrabnyło)',
+	'pfunc_time_error' => 'Zmylk: njepłaćiwe časowe podaće',
+	'pfunc_time_too_long' => 'Zmylk: přewjele zawołanjow #time',
+	'pfunc_rel2abs_invalid_depth' => 'Zmylk: Njepłaćiwa hłubokosć w pućiku: \"$1\" (Pospyt, zo by na suk wyše hłowneho suka dohrabnyło)',
 ),
 
 /* Kazakh Cyrillic */
@@ -155,9 +155,9 @@ function efParserFunctionsMessages() {
 ),
 
 'nds' => array(
-'pfunc_time_error' => 'Fehler: mit de Tiet stimmt wat nich',
-'pfunc_time_too_long' => 'Fehler: #time warrt to faken opropen',
-'pfunc_rel2abs_invalid_depth' => 'Fehler: Mit den Padd „$1“ stimmt wat nich, liggt nich ünner den Wuddelorner',
+	'pfunc_time_error' => 'Fehler: mit de Tiet stimmt wat nich',
+	'pfunc_time_too_long' => 'Fehler: #time warrt to faken opropen',
+	'pfunc_rel2abs_invalid_depth' => 'Fehler: Mit den Padd „$1“ stimmt wat nich, liggt nich ünner den Wuddelorner',
 ),
 
 /* Dutch */
@@ -168,21 +168,21 @@ function efParserFunctionsMessages() {
 ),
 
 'pl' => array(
-'pfunc_time_error' => 'Błąd: niepoprawny czas',
-'pfunc_time_too_long' => 'Błąd: za dużo wywołań funkcji #time',
-'pfunc_rel2abs_invalid_depth' => 'Błąd: Nieprawidłowa głębokość w ścieżce: \"$1\" (próba dostępu do węzła powyżej korzenia)',
+	'pfunc_time_error' => 'Błąd: niepoprawny czas',
+	'pfunc_time_too_long' => 'Błąd: za dużo wywołań funkcji #time',
+	'pfunc_rel2abs_invalid_depth' => 'Błąd: Nieprawidłowa głębokość w ścieżce: \"$1\" (próba dostępu do węzła powyżej korzenia)',
 ),
 
 'pms' => array(
-'pfunc_time_error' => 'Eror: temp nen bon',
-'pfunc_time_too_long' => 'Eror: #time a ven ciamà tròpe vire',
-'pfunc_rel2abs_invalid_depth' => 'Eror: profondità nen bon-a ant ël përcors: \"$1\" (a l\'é provasse a ciamé un grop dzora a la rèis)',
+	'pfunc_time_error' => 'Eror: temp nen bon',
+	'pfunc_time_too_long' => 'Eror: #time a ven ciamà tròpe vire',
+	'pfunc_rel2abs_invalid_depth' => 'Eror: profondità nen bon-a ant ël përcors: \"$1\" (a l\'é provasse a ciamé un grop dzora a la rèis)',
 ),
 
 'sk' => array(
-'pfunc_time_error' => 'Chyba: Neplatný čas',
-'pfunc_time_too_long' => 'Chyba: príliš veľa volaní #time',
-'pfunc_rel2abs_invalid_depth' => 'Chyba: Neplatná hĺbka v ceste: „$1“ (pokus o prístup k uzlu nad koreňovým uzlom)',
+	'pfunc_time_error' => 'Chyba: Neplatný čas',
+	'pfunc_time_too_long' => 'Chyba: príliš veľa volaní #time',
+	'pfunc_rel2abs_invalid_depth' => 'Chyba: Neplatná hĺbka v ceste: „$1“ (pokus o prístup k uzlu nad koreňovým uzlom)',
 ),
 
 /* Swedish */
