@@ -122,6 +122,12 @@ function efParserFunctionsMessages() {
 	 'pfunc_rel2abs_invalid_depth' => 'Erreur: niveau de répertoire invalide dans le chemin : \"$1\" (a essayé d’accéder à un niveau au-dessus du répertoire racine)',
 ),
 
+'gl' => array(
+	'pfunc_time_error' => 'Erro: hora incorrecta',
+	'pfunc_time_too_long' => 'Erro: demasiadas chamadas a #time',
+	'pfunc_rel2abs_invalid_depth' => 'Erro: Profundidade da ruta non válida: \"$1\" (tentouse acceder a un nodo por riba do nodo raíz)',
+),
+
 /* Hebrew */
 'he' => array(
 	 'pfunc_time_error'             => 'שגיאה: זמן שגוי',
