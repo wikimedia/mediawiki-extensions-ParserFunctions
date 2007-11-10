@@ -173,6 +173,12 @@ function efParserFunctionsMessages() {
 	 'pfunc_rel2abs_invalid_depth'  => 'Fout: ongeldige diepte in pad: \"$1\" (probeerde een node boven de stamnode aan te roepen)',
 ),
 
+'oc' => array(
+	'pfunc_time_error' => 'Error: durada invalida',
+	'pfunc_time_too_long' => 'Error: parser #time apelat tròp de còps',
+	'pfunc_rel2abs_invalid_depth' => 'Error: nivèl de repertòri invalid dins lo camin : \"$1\" (a ensajat d’accedir a un nivèl al-dessús del repertòri raiç)',
+),
+
 'pl' => array(
 	'pfunc_time_error' => 'Błąd: niepoprawny czas',
 	'pfunc_time_too_long' => 'Błąd: za dużo wywołań funkcji #time',
