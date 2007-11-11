@@ -123,7 +123,7 @@ function efParserFunctionsMessages() {
 ),
 
 'gl' => array(
-	'pfunc_time_error' => 'Erro: hora incorrecta',
+	'pfunc_time_error' => 'Erro: hora non válida',
 	'pfunc_time_too_long' => 'Erro: demasiadas chamadas a #time',
 	'pfunc_rel2abs_invalid_depth' => 'Erro: Profundidade da ruta non válida: \"$1\" (tentouse acceder a un nodo por riba do nodo raíz)',
 ),
