@@ -173,6 +173,17 @@ class ExtParserFunctions {
 	function ifexist( &$parser, $title = '', $then = '', $else = '' ) {
 		$title = Title::newFromText( $title );
 		if ( $title ) {
+			/* If namespace is specified as NS_MEDIA, then we want to check the physical file,
+			 * not the "description" page.
+			 */
+			if( $title->getNamespace() == NS_MEDIA ) {
+				$file = wfFindFile($title);
+				if(!$file)
+						return $else;
+				$parser->mOutput->addImage($file->getName());
+				return $file->exists() ? $then : $else;
+
+			}
 			$id = $title->getArticleID();
 			$parser->mOutput->addLink( $title, $id );
 			if ( $id ) {
