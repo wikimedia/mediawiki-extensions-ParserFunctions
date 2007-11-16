@@ -154,9 +154,21 @@ function efParserFunctionsMessages() {
 
 /* Hebrew */
 'he' => array(
-	 'pfunc_time_error'             => 'שגיאה: זמן שגוי',
-	 'pfunc_time_too_long'          => 'שגיאה: שימוש ב"#זמן" פעמים רבות מדי',
-	 'pfunc_rel2abs_invalid_depth'  => 'שגיאה: עומק שגוי בנתיב: \"$1\" (ניסיון כניסה לצומת מעל צומת השורש)',
+	'pfunc_time_error'                      => 'שגיאה: זמן שגוי',
+	'pfunc_time_too_long'                   => 'שגיאה: שימוש ב"#זמן" פעמים רבות מדי',
+	'pfunc_rel2abs_invalid_depth'           => 'שגיאה: עומק שגוי בנתיב: "$1" (ניסיון כניסה לצומת מעל צומת השורש)',
+	'pfunc_expr_stack_exhausted'            => 'שגיאה בביטוי: המחסנית מלאה',
+	'pfunc_expr_unexpected_number'          => 'שגיאה בביטוי: מספר בלתי צפוי',
+	'pfunc_expr_preg_match_failure'         => 'שגיאה בביטוי: כישלון בלתי צפוי של התאמת ביטוי רגולרי',
+	'pfunc_expr_unrecognised_word'          => 'שגיאה בביטוי: מילה בלתי מזוהה, "$1"',
+	'pfunc_expr_unexpected_operator'        => 'שגיאה בביטוי: אופרנד $1 בלתי צפוי',
+	'pfunc_expr_missing_operand'            => 'שגיאה בביטוי: חסר אופרנד ל־$1',
+	'pfunc_expr_unexpected_closing_bracket' => 'שגיאה בביטוי: סוגריים סוגרים בלתי צפויים',
+	'pfunc_expr_unrecognised_punctuation'   => 'שגיאה בביטוי: תו פיסוק בלתי מזוהה, "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'שגיאה בביטוי: סוגריים בלתי סגורים',
+	'pfunc_expr_division_by_zero'           => 'חלוקה באפס',
+	'pfunc_expr_unknown_error'              => 'שגיאה בביטוי: שגיאה בלתי ידועה ($1)',
+	'pfunc_expr_not_a_number'               => 'התוצאה של $1 אינה מספר',
 ),
 
 'hsb' => array(
