@@ -29,7 +29,6 @@ class ExtParserFunctions {
 		if ( !isset( $this->mExpr ) ) {
 			if ( !class_exists( 'ExprParser' ) ) {
 				require( dirname( __FILE__ ) . '/Expr.php' );
-				ExprParser::addMessages();
 			}
 			$this->mExprParser = new ExprParser;
 		}
@@ -156,7 +155,7 @@ class ExtParserFunctions {
 			if( $current == '..' ) { // removing one level
 				if( !count( $newExploded ) ){
 					// attempted to access a node above root node
-					return wfMsgForContent( 'pfunc_rel2abs_invalid_depth', $fullPath );
+					return '<span class="error">' . wfMsgForContent( 'pfunc_rel2abs_invalid_depth', $fullPath ) . '</span>';
 				}
 				// remove last level from the stack
 				array_pop( $newExploded );
@@ -206,11 +205,11 @@ class ExtParserFunctions {
 		}
 
 		if ( $unix == -1 || $unix == false ) {
-			$result = wfMsgForContent( 'pfunc_time_error' );
+			$result = '<span class="error">' . wfMsgForContent( 'pfunc_time_error' ) . '</span>';
 		} else {
 			$this->mTimeChars += strlen( $format );
 			if ( $this->mTimeChars > $this->mMaxTimeChars ) {
-				return wfMsgForContent( 'pfunc_time_too_long' );
+				return '<span class="error">' . wfMsgForContent( 'pfunc_time_too_long' ) . '</span>';
 			} else {
 				if ( $local ) {
 					# Use the time zone
@@ -310,5 +309,3 @@ function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 		$magicWords[$word] = $trans;
 	return true;
 }
-
-

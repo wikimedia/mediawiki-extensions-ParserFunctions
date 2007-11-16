@@ -33,7 +33,7 @@ define( 'EXPR_ROUND', 21 );
 
 class ExprError extends Exception {
 	public function __construct($msg, $parameter = ''){
-		$this->message = wfMsgForContent( "expr_$msg", htmlspecialchars( $parameter ) );
+		$this->message = '<span class="error">' . wfMsgForContent( "pfunc_expr_$msg", htmlspecialchars( $parameter ) ) . '</span>';
 	}
 }
 
@@ -92,28 +92,6 @@ class ExprParser {
 		'div' => EXPR_DIVIDE
 	);
 
-
-	/**
-	 * Add expression messages to the message cache
-	 * @static
-	 */
-	function addMessages() {
-		global $wgMessageCache;
-		$wgMessageCache->addMessages( array(
-			'expr_stack_exhausted' => 'Expression error: Stack exhausted',
-			'expr_unexpected_number' => 'Expression error: Unexpected number',
-			'expr_preg_match_failure' => 'Expression error: Unexpected preg_match failure',
-			'expr_unrecognised_word' => 'Expression error: Unrecognised word "$1"',
-			'expr_unexpected_operator' => 'Expression error: Unexpected $1 operator',
-			'expr_missing_operand' => 'Expression error: Missing operand for $1',
-			'expr_unexpected_closing_bracket' => 'Expression error: Unexpected closing bracket',
-			'expr_unrecognised_punctuation' => 'Expression error: Unrecognised punctuation character "$1"',
-			'expr_unclosed_bracket' => 'Expression error: Unclosed bracket',
-			'expr_division_by_zero' => 'Division by zero',
-			'expr_unknown_error' => 'Expression error: Unknown error ($1)',
-			'expr_not_a_number' => 'In $1: result is not a number',
-		));
-	}
 	/**
 	 * Evaluate a mathematical expression
 	 *
@@ -410,5 +388,3 @@ class ExprParser {
 		}
 	}
 }
-
-

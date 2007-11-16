@@ -91,9 +91,21 @@ function efParserFunctionsMessages() {
 
 /* English */
 'en' => array(
-	 'pfunc_time_error'             => 'Error: invalid time',
-	 'pfunc_time_too_long'          => 'Error: too many #time calls',
-	 'pfunc_rel2abs_invalid_depth'  => 'Error: Invalid depth in path: \"$1\" (tried to access a node above the root node)',
+	'pfunc_time_error'                      => 'Error: invalid time',
+	'pfunc_time_too_long'                   => 'Error: too many #time calls',
+	'pfunc_rel2abs_invalid_depth'           => 'Error: Invalid depth in path: \"$1\" (tried to access a node above the root node)',
+	'pfunc_expr_stack_exhausted'            => 'Expression error: Stack exhausted',
+	'pfunc_expr_unexpected_number'          => 'Expression error: Unexpected number',
+	'pfunc_expr_preg_match_failure'         => 'Expression error: Unexpected preg_match failure',
+	'pfunc_expr_unrecognised_word'          => 'Expression error: Unrecognised word "$1"',
+	'pfunc_expr_unexpected_operator'        => 'Expression error: Unexpected $1 operator',
+	'pfunc_expr_missing_operand'            => 'Expression error: Missing operand for $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Expression error: Unexpected closing bracket',
+	'pfunc_expr_unrecognised_punctuation'   => 'Expression error: Unrecognised punctuation character "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'Expression error: Unclosed bracket',
+	'pfunc_expr_division_by_zero'           => 'Division by zero',
+	'pfunc_expr_unknown_error'              => 'Expression error: Unknown error ($1)',
+	'pfunc_expr_not_a_number'               => 'In $1: result is not a number',
 ),
 
 'ar' => array(
@@ -110,9 +122,21 @@ function efParserFunctionsMessages() {
 
 /* German */
 'de' => array(
-	 'pfunc_time_error'             => 'Fehler: ungültige Zeitangabe',
-	 'pfunc_time_too_long'          => 'Fehler: zu viele #time-Aufrufe',
-	 'pfunc_rel2abs_invalid_depth'  => 'Fehler: ungültige Tiefe in Pfad: „$1“ (Versuch, auf einen Knotenpunkt oberhalb des Hauptknotenpunktes zuzugreifen)',
+	'pfunc_time_error'                      => 'Fehler: ungültige Zeitangabe',
+	'pfunc_time_too_long'                   => 'Fehler: zu viele #time-Aufrufe',
+	'pfunc_rel2abs_invalid_depth'           => 'Fehler: ungültige Tiefe in Pfad: „$1“ (Versuch, auf einen Knotenpunkt oberhalb des Hauptknotenpunktes zuzugreifen)',
+	'pfunc_expr_stack_exhausted'            => 'Expression-Fehler: Stacküberlauf',
+	'pfunc_expr_unexpected_number'          => 'Expression-Fehler: Unerwartete Zahl',
+	'pfunc_expr_preg_match_failure'         => 'Expression-Fehler: Unerwartete „preg_match“-Fehlfunktion',
+	'pfunc_expr_unrecognised_word'          => 'Expression-Fehler: Unerkanntes Wort „$1“',
+	'pfunc_expr_unexpected_operator'        => 'Expression-Fehler: Unerwarteter Operator: <strong><tt>$1</tt></strong>',
+	'pfunc_expr_missing_operand'            => 'Expression-Fehler: Fehlender Operand für <strong><tt>$1</tt></strong>',
+	'pfunc_expr_unexpected_closing_bracket' => 'Expression-Fehler: Unerwartete schließende eckige Klammer',
+	'pfunc_expr_unrecognised_punctuation'   => 'Expression-Fehler: Unerkanntes Satzzeichen „$1“',
+	'pfunc_expr_unclosed_bracket'           => 'Expression-Fehler: Nicht geschlossene eckige Klammer',
+	'pfunc_expr_division_by_zero'           => 'Expression-Fehler: Division durch Null',
+	'pfunc_expr_unknown_error'              => 'Expression-Fehler: Unbekannter Fehler ($1)',
+	'pfunc_expr_not_a_number'               => 'Expression-Fehler: In $1: Ergebnis ist keine Zahl',
 ),
 
 /* French */
