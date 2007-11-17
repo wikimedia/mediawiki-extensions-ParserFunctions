@@ -153,9 +153,21 @@ function efParserFunctionsMessages() {
 
 /* French */
 'fr' => array(
-	 'pfunc_time_error'            => 'Erreur: durée invalide',
-	 'pfunc_time_too_long'         => 'Erreur: parser #time appelé trop de fois',
-	 'pfunc_rel2abs_invalid_depth' => 'Erreur: niveau de répertoire invalide dans le chemin : \"$1\" (a essayé d’accéder à un niveau au-dessus du répertoire racine)',
+	'pfunc_time_error' => 'Erreur : durée invalide',
+	'pfunc_time_too_long' => 'Erreur : parser #time appelé trop de fois',
+	'pfunc_rel2abs_invalid_depth' => 'Erreur: niveau de répertoire invalide dans le chemin : \"$1\" (a essayé d’accéder à un niveau au-dessus du répertoire racine)',
+	'pfunc_expr_stack_exhausted' => 'Expression erronée : pile épuisée',
+	'pfunc_expr_unexpected_number' => 'Expression erronée : nombre non attendu',
+	'pfunc_expr_preg_match_failure' => 'Expression erronée : echec d\'une expression non comprise',
+	'pfunc_expr_unrecognised_word' => 'Erreur d\'expression : le mot \'\'\'$1\'\'\' n\'est pas reconnu',
+	'pfunc_expr_unexpected_operator' => 'Erreur d\'expression : l\'opérateur \'\'\'$1\'\'\' n\'est pas reconnu',
+	'pfunc_expr_missing_operand' => 'Erreur d\'expression : l\'opérande \'\'\'$1\'\'\' n\'est pas reconnue',
+	'pfunc_expr_unexpected_closing_bracket' => 'Erreur d\'expression : parenthèse fermante non prévue',
+	'pfunc_expr_unrecognised_punctuation' => 'Erreur d\'expresion : caractère de ponctuation « $1 » non reconnu',
+	'pfunc_expr_unclosed_bracket' => 'Erreur d’expression : parenthèse non fermée',
+	'pfunc_expr_division_by_zero' => 'Division par zéro',
+	'pfunc_expr_unknown_error' => 'Erreur d\'expression : erreur inconnue ($1)',
+	'pfunc_expr_not_a_number' => 'Dans $1 : le résultat n\'est pas un nombre',
 ),
 
 'gl' => array(
