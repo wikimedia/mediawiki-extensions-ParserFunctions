@@ -155,7 +155,7 @@ class ExtParserFunctions {
 			if( $current == '..' ) { // removing one level
 				if( !count( $newExploded ) ){
 					// attempted to access a node above root node
-					return '<span class="error">' . wfMsgForContent( 'pfunc_rel2abs_invalid_depth', $fullPath ) . '</span>';
+					return '<strong class="error">' . wfMsgForContent( 'pfunc_rel2abs_invalid_depth', $fullPath ) . '</strong>';
 				}
 				// remove last level from the stack
 				array_pop( $newExploded );
@@ -205,11 +205,11 @@ class ExtParserFunctions {
 		}
 
 		if ( $unix == -1 || $unix == false ) {
-			$result = '<span class="error">' . wfMsgForContent( 'pfunc_time_error' ) . '</span>';
+			$result = '<strong class="error">' . wfMsgForContent( 'pfunc_time_error' ) . '</strong>';
 		} else {
 			$this->mTimeChars += strlen( $format );
 			if ( $this->mTimeChars > $this->mMaxTimeChars ) {
-				return '<span class="error">' . wfMsgForContent( 'pfunc_time_too_long' ) . '</span>';
+				return '<strong class="error">' . wfMsgForContent( 'pfunc_time_too_long' ) . '</strong>';
 			} else {
 				if ( $local ) {
 					# Use the time zone

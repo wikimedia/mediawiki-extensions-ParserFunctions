@@ -33,7 +33,7 @@ define( 'EXPR_ROUND', 21 );
 
 class ExprError extends Exception {
 	public function __construct($msg, $parameter = ''){
-		$this->message = '<span class="error">' . wfMsgForContent( "pfunc_expr_$msg", htmlspecialchars( $parameter ) ) . '</span>';
+		$this->message = '<strong class="error">' . wfMsgForContent( "pfunc_expr_$msg", htmlspecialchars( $parameter ) ) . '</strong>';
 	}
 }
 
