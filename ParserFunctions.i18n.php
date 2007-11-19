@@ -266,6 +266,18 @@ function efParserFunctionsMessages() {
 	'pfunc_time_error' => 'Błąd: niepoprawny czas',
 	'pfunc_time_too_long' => 'Błąd: za dużo wywołań funkcji #time',
 	'pfunc_rel2abs_invalid_depth' => 'Błąd: Nieprawidłowa głębokość w ścieżce: \"$1\" (próba dostępu do węzła powyżej korzenia)',
+	'pfunc_expr_stack_exhausted' => 'Błąd w wyrażeniu: Stos wyczerpany',
+	'pfunc_expr_unexpected_number' => 'Błąd w wyrażeniu: Niespodziewana liczba',
+	'pfunc_expr_preg_match_failure' => 'Błąd w wyrażeniu: Niespodziewany błąd w preg_match',
+	'pfunc_expr_unrecognised_word' => 'Błąd w wyrażeniu: Nierozpoznane słowo "$1"',
+	'pfunc_expr_unexpected_operator' => 'Błąd w wyrażeniu: Nieoczekiwany operator $1',
+	'pfunc_expr_missing_operand' => 'Błąd w wyrażeniu: Brakujący operand dla $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Błąd w wyrażeniu: Nieoczekiwany nawias zamykający',
+	'pfunc_expr_unrecognised_punctuation' => 'Błąd w wyrażeniu: Nierozpoznany znak interpunkcyjny "$1"',
+	'pfunc_expr_unclosed_bracket' => 'Błąd w wyrażeniu: Niedomknięty nawias',
+	'pfunc_expr_division_by_zero' => 'Dzielenie przez zero',
+	'pfunc_expr_unknown_error' => 'Błąd w wyrażeniu: Nieznany błąd ($1)',
+	'pfunc_expr_not_a_number' => 'W $1: wynik nie jest liczbą',
 ),
 
 'pms' => array(
