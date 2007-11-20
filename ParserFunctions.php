@@ -63,11 +63,30 @@ class ExtParserFunctions {
 		}
 	}
 
+	function ifObj( &$parser, $frame, $args ) {
+		$test = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
+		if ( $test !== '' ) {
+			return isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
+		} else {
+			return isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
+		}
+	}
+
 	function ifeq( &$parser, $left = '', $right = '', $then = '', $else = '' ) {
 		if ( $left == $right ) {
 			return $then;
 		} else {
 			return $else;
+		}
+	}
+
+	function ifeqObj( &$parser, $frame, $args ) {
+		$left = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
+		$right = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
+		if ( $left == $right ) {
+			return isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
+		} else {
+			return isset( $args[3] ) ? trim( $frame->expand( $args[3] ) ) : '';
 		}
 	}
 
@@ -78,13 +97,13 @@ class ExtParserFunctions {
 		$found = false;
 		$parts = null;
 		$default = null;
+		$mwDefault =& MagicWord::get( 'default' );
 		foreach( $args as $arg ) {
 			$parts = array_map( 'trim', explode( '=', $arg, 2 ) );
 			if ( count( $parts ) == 2 ) {
 				if ( $found || $parts[0] == $value ) {
 					return $parts[1];
 				} else {
-					$mwDefault =& MagicWord::get( 'default' );
 					if ( $mwDefault->matchStartAndRemove( $parts[0] ) ) {
 						$default = $parts[1];
 					} # else wrong case, continue
@@ -285,9 +304,21 @@ function wfSetupParserFunctions() {
 
 	$wgExtParserFunctions = new ExtParserFunctions;
 
+	// Check for SFH_OBJECT_ARGS capability
+	if ( !StubObject::isRealObject( $wgParser ) ) {
+		$wgParser->_unstub();
+	}
+	if ( defined( get_class( $wgParser ) . '::SFH_OBJECT_ARGS' ) ) {
+		// These functions accept DOM-style arguments
+		$wgParser->setFunctionHook( 'if', array( &$wgExtParserFunctions, 'ifObj' ), SFH_OBJECT_ARGS );
+		$wgParser->setFunctionHook( 'ifeq', array( &$wgExtParserFunctions, 'ifeqObj' ), SFH_OBJECT_ARGS );
+	} else {
+		$wgParser->setFunctionHook( 'if', array( &$wgExtParserFunctions, 'ifHook' ) );
+		$wgParser->setFunctionHook( 'ifeq', array( &$wgExtParserFunctions, 'ifeq' ) );
+	}
+
+	$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchHook' ) );
 	$wgParser->setFunctionHook( 'expr', array( &$wgExtParserFunctions, 'expr' ) );
-	$wgParser->setFunctionHook( 'if', array( &$wgExtParserFunctions, 'ifHook' ) );
-	$wgParser->setFunctionHook( 'ifeq', array( &$wgExtParserFunctions, 'ifeq' ) );
 	$wgParser->setFunctionHook( 'ifexpr', array( &$wgExtParserFunctions, 'ifexpr' ) );
 	$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchHook' ) );
 	$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexist' ) );
