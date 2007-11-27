@@ -151,6 +151,10 @@ function efParserFunctionsMessages() {
 	'pfunc_expr_not_a_number'               => 'Expression-Fehler: In $1: Ergebnis ist keine Zahl',
 ),
 
+'el' => array(
+	'pfunc_time_error' => 'Σφάλμα: άκυρος χρόνος',
+),
+
 /* French */
 'fr' => array(
 	'pfunc_time_error' => 'Erreur : durée invalide',
