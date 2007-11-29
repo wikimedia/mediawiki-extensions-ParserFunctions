@@ -14,14 +14,17 @@ $wgExtensionCredits['parserhook'][] = array(
 
 $wgHooks['LanguageGetMagic'][]       = 'wfParserFunctionsLanguageGetMagic';
 
+$wgMaxIfExistCount = 100;
+
 class ExtParserFunctions {
 	var $mExprParser;
 	var $mTimeCache = array();
 	var $mTimeChars = 0;
 	var $mMaxTimeChars = 6000; # ~10 seconds
 
-	function clearState() {
+	function clearState(&$parser) {
 		$this->mTimeChars = 0;
+		$parser->pf_ifexist_count = 0;
 		return true;
 	}
 
@@ -189,6 +192,13 @@ class ExtParserFunctions {
 	}
 
 	function ifexist( &$parser, $title = '', $then = '', $else = '' ) {
+		// Don't let this be called more than a certain number of times. It tends to make the database explode.
+		global $wgMaxIfExistCount;
+		$parser->pf_ifexist_count++;
+		if ($parser->pf_ifexist_count > $wgMaxIfExistCount) {
+			return $else;
+		}
+
 		$title = Title::newFromText( $title );
 		if ( $title ) {
 			/* If namespace is specified as NS_MEDIA, then we want to check the physical file,
