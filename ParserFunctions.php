@@ -13,6 +13,7 @@ $wgExtensionCredits['parserhook'][] = array(
 );
 
 $wgHooks['LanguageGetMagic'][]       = 'wfParserFunctionsLanguageGetMagic';
+$wgHooks['ParserLimitReport'][]      = 'wfParserFunctionsLimitReport';
 
 $wgMaxIfExistCount = 100;
 
@@ -347,5 +348,13 @@ function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 	require_once( dirname( __FILE__ ) . '/ParserFunctions.i18n.php' );
 	foreach( efParserFunctionsWords( $langCode ) as $word => $trans )
 		$magicWords[$word] = $trans;
+	return true;
+}
+
+function wfParserFunctionsLimitReport( $parser, &$report ) {
+	global $wgMaxIfExistCount;
+	if ( isset( $parser->pf_ifexist_count ) ) {
+		$report .= "#ifexist count: {$parser->pf_ifexist_count}/$wgMaxIfExistCount\n";
+	}
 	return true;
 }
