@@ -126,6 +126,20 @@ function efParserFunctionsMessages() {
 	'pfunc_expr_not_a_number' => 'في $1: النتيجة ليست رقما',
 ),
 
+'bg' => array(
+	'pfunc_expr_stack_exhausted' => 'Грешка в записа: Стекът е изчерпан',
+	'pfunc_expr_unexpected_number' => 'Грешка в записа: Неочаквано число',
+	'pfunc_expr_unrecognised_word' => 'Грешка в записа: Неразпозната дума "$1"',
+	'pfunc_expr_unexpected_operator' => 'Грешка в записа: Неочакван оператор $1',
+	'pfunc_expr_missing_operand' => 'Грешка в записа: Липсващ операнд в $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Грешка в записа: Една затваряща скоба в повече',
+	'pfunc_expr_unrecognised_punctuation' => 'Грешка в записа: Неразпознат пунктуационен знак "$1"',
+	'pfunc_expr_unclosed_bracket' => 'Грешка в записа: Незатворена скоба',
+	'pfunc_expr_division_by_zero' => 'Деление на нула',
+	'pfunc_expr_unknown_error' => 'Грешка в записа: Неразпозната грешка ($1)',
+	'pfunc_expr_not_a_number' => 'В $1: резултатът не е число',
+),
+
 'cs' => array(
 	'pfunc_time_error' => 'Chyba: neplatný čas',
 	'pfunc_time_too_long' => 'Chyba: příliš mnoho volání #time',
