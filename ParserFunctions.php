@@ -7,6 +7,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionFunctions[] = 'wfSetupParserFunctions';
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'ParserFunctions',
+	'version' => '1.1',
 	'url' => 'http://meta.wikimedia.org/wiki/ParserFunctions',
 	'author' => 'Tim Starling',
 	'description' => 'Enhance parser with logical functions',
@@ -199,7 +200,7 @@ class ExtParserFunctions {
 	 * Returns the absolute path to a subpage, relative to the current article
 	 * title. Treats titles as slash-separated paths.
 	 *
-	 * Following subpage link syntax instead of standard path syntax, an 
+	 * Following subpage link syntax instead of standard path syntax, an
 	 * initial slash is treated as a relative path, and vice versa.
 	 */
 	public function rel2abs( &$parser , $to = '' , $from = '' ) {
@@ -373,11 +374,11 @@ class ExtParserFunctions {
 		$this->mTimeCache[$format][$date][$local] = $result;
 		return $result;
 	}
-	
+
 	function localTime( &$parser, $format = '', $date = '' ) {
 		return $this->time( $parser, $format, $date, true );
 	}
-	
+
 	/**
 	 * Obtain a specified number of slash-separated parts of a title,
 	 * e.g. {{#titleparts:Hello/World|1}} => "Hello"
@@ -404,7 +405,7 @@ class ExtParserFunctions {
 					array_shift( $bits );
 				for( $i = 0; $i < $parts; $i++ )
 					$keep[] = array_shift( $bits );
-				return implode( '/', $keep );			
+				return implode( '/', $keep );
 			}
 		} else {
 			return $title;
@@ -456,7 +457,7 @@ function wfSetupParserFunctions() {
 	$wgParser->setFunctionHook( 'timel', array( &$wgExtParserFunctions, 'localTime' ) );
 	$wgParser->setFunctionHook( 'rel2abs', array( &$wgExtParserFunctions, 'rel2abs' ) );
 	$wgParser->setFunctionHook( 'titleparts', array( &$wgExtParserFunctions, 'titleparts' ) );
-	
+
 	require_once( dirname( __FILE__ ) . '/ParserFunctions.i18n.php' );
 	foreach( efParserFunctionsMessages() as $lang => $messages )
 		$wgMessageCache->addMessages( $messages, $lang );
