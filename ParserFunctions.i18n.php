@@ -165,6 +165,8 @@ function efParserFunctionsMessages() {
 	'pfunc_expr_division_by_zero'           => 'Expression-Fehler: Division durch Null',
 	'pfunc_expr_unknown_error'              => 'Expression-Fehler: Unbekannter Fehler ($1)',
 	'pfunc_expr_not_a_number'               => 'Expression-Fehler: In $1: Ergebnis ist keine Zahl',
+	'pfunc_ifexist_warning'                 => 'Warnung: Diese Seite enthält zuviele #ifexist-Aufrufe. Es dürfen maximal $2 Aufrufe sein, es sind aber $1 Aufrufe.',
+	'pfunc_max_ifexist_category'            => 'Seiten mit zuvielen ifexist-Aufrufen',
 ),
 
 'el' => array(
