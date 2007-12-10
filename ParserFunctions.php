@@ -26,6 +26,7 @@ class ExtParserFunctions {
 	function clearState(&$parser) {
 		$this->mTimeChars = 0;
 		$parser->pf_ifexist_count = 0;
+		$parser->pf_ifexist_breakdown = array();
 		return true;
 	}
 
@@ -255,42 +256,57 @@ class ExtParserFunctions {
 		return implode( '/' , $newExploded );
 	}
 
-	function ifexist( &$parser, $title = '', $then = '', $else = '' ) {
+	function incrementIfexistCount( $parser, $frame ) {
 		// Don't let this be called more than a certain number of times. It tends to make the database explode.
 		global $wgMaxIfExistCount;
+		$parser->pf_ifexist_count++;
+		if ( $frame ) {
+			$pdbk = $frame->getPDBK( 1 );
+			if ( !isset( $parser->pf_ifexist_breakdown[$pdbk] ) ) {
+				$parser->pf_ifexist_breakdown[$pdbk] = 0;
+			}
+			$parser->pf_ifexist_breakdown[$pdbk] ++;
+		}
+		return $parser->pf_ifexist_count <= $wgMaxIfExistCount;
+	}
 
+	function ifexist( &$parser, $title = '', $then = '', $else = '' ) {
+		return $this->ifexistCommon( $parser, false, $title, $then, $else );
+	}
+
+	function ifexistCommon( &$parser, $frame, $title = '', $then = '', $else = '' ) {
 		$title = Title::newFromText( $title );
 		if ( $title ) {
 			/* If namespace is specified as NS_MEDIA, then we want to check the physical file,
 			 * not the "description" page.
 			 */
 			if( $title->getNamespace() == NS_MEDIA ) {
-				$parser->pf_ifexist_count++;
-				if ($parser->pf_ifexist_count > $wgMaxIfExistCount) {
+				if ( !$this->incrementIfexistCount( $parser, $frame ) ) {
 					return $else;
 				}
 				$file = wfFindFile($title);
-				if(!$file)
-						return $else;
+				if ( !$file ) {
+					return $else;
+				}
 				$parser->mOutput->addImage($file->getName());
 				return $file->exists() ? $then : $else;
+			} else {
+				$pdbk = $title->getPrefixedDBkey();
+				$lc = LinkCache::singleton();
+				if ( $lc->getGoodLinkID( $pdbk ) ) {
+					return $then;
+				} elseif ( $lc->isBadLink( $pdbk ) ) {
+					return $else;
+				}
+				if ( !$this->incrementIfexistCount( $parser, $frame ) ) {
+					return $else;
+				}
 
-			}
-			$pdbk = $title->getPrefixedDBkey();
-			$lc = LinkCache::singleton();
-			if ( $lc->getGoodLinkID( $pdbk ) ) {
-				return $then;
-			} elseif ( $lc->isBadLink( $pdbk ) ) {
-				return $else;
-			}
-			$parser->pf_ifexist_count++;
-			if ($parser->pf_ifexist_count > $wgMaxIfExistCount) {
-				return $else;
-			}
-			$id = $title->getArticleID();
-			$parser->mOutput->addLink( $title, $id );
-			if ( $id ) {
-				return $then;
+				$id = $title->getArticleID();
+				$parser->mOutput->addLink( $title, $id );
+				if ( $id ) {
+					return $then;
+				}
 			}
 		}
 		return $else;
@@ -301,7 +317,7 @@ class ExtParserFunctions {
 		$then = isset( $args[1] ) ? $args[1] : null;
 		$else = isset( $args[2] ) ? $args[2] : null;
 
-		$result = $this->ifexist( $parser, $title, $then, $else );
+		$result = $this->ifexistCommon( $parser, $frame, $title, $then, $else );
 		if ( $result === null ) {
 			return '';
 		} else {
@@ -393,8 +409,20 @@ class ExtParserFunctions {
 		} else {
 			return $title;
 		}
-	} 
-	
+	}
+
+	function afterTidy( &$parser, &$text ) {
+		global $wgMaxIfexistCount;
+		if ( $parser->pf_ifexist_count > $wgMaxIfexistCount ) {
+			if ( is_callable( array( $parser->mOutput, 'addWarning' ) ) ) {
+				$warning = wfMsg( 'pfunc_ifexist_warning', $parser->pf_ifexist_count, $wgMaxIfexistCount );
+				$parser->mOutput->addWarning( $warning );
+				$cat = Title::makeTitleSafe( NS_CATEGORY, wfMsg( 'pfunc_max_ifexist_category' ) );
+				$parser->mOutput->addCategory( $cat->getDBkey(), $parser->getDefaultSort() );
+			}
+		}
+		return true;
+	}
 }
 
 function wfSetupParserFunctions() {
@@ -432,6 +460,7 @@ function wfSetupParserFunctions() {
 		$wgMessageCache->addMessages( $messages, $lang );
 
 	$wgHooks['ParserClearState'][] = array( &$wgExtParserFunctions, 'clearState' );
+	$wgHooks['ParserAfterTidy'][] = array( &$wgExtParserFunctions, 'afterTidy' );
 }
 
 function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
