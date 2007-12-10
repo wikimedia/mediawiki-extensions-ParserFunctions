@@ -418,7 +418,9 @@ class ExtParserFunctions {
 				$warning = wfMsg( 'pfunc_ifexist_warning', $parser->pf_ifexist_count, $wgMaxIfexistCount );
 				$parser->mOutput->addWarning( $warning );
 				$cat = Title::makeTitleSafe( NS_CATEGORY, wfMsg( 'pfunc_max_ifexist_category' ) );
-				$parser->mOutput->addCategory( $cat->getDBkey(), $parser->getDefaultSort() );
+				if ( $cat ) {
+					$parser->mOutput->addCategory( $cat->getDBkey(), $parser->getDefaultSort() );
+				}
 			}
 		}
 		return true;
