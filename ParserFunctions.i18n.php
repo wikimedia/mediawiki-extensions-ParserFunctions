@@ -216,7 +216,7 @@ function efParserFunctionsMessages() {
 	'pfunc_expr_unknown_error'              => 'שגיאה בביטוי: שגיאה בלתי ידועה ($1)',
 	'pfunc_expr_not_a_number'               => 'התוצאה של $1 אינה מספר',
 	'pfunc_ifexist_warning'                 => 'אזהרה: דף זה כולל יותר מדי קריאות ל"#קיים". הוא צריך לכלול פחות מ־$2, אך כעת יש $1.',
-	'pfunc_max_ifexist_category'            => 'דפים עם יותר מדי קריאות ל-קיים',
+	'pfunc_max_ifexist_category'            => 'דפים עם הוראות קיום רבות מדי',
 ),
 
 'hsb' => array(
