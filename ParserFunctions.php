@@ -413,10 +413,10 @@ class ExtParserFunctions {
 	}
 
 	function afterTidy( &$parser, &$text ) {
-		global $wgMaxIfexistCount;
-		if ( $parser->pf_ifexist_count > $wgMaxIfexistCount ) {
+		global $wgMaxIfExistCount;
+		if ( $parser->pf_ifexist_count > $wgMaxIfExistCount ) {
 			if ( is_callable( array( $parser->mOutput, 'addWarning' ) ) ) {
-				$warning = wfMsg( 'pfunc_ifexist_warning', $parser->pf_ifexist_count, $wgMaxIfexistCount );
+				$warning = wfMsg( 'pfunc_ifexist_warning', $parser->pf_ifexist_count, $wgMaxIfExistCount );
 				$parser->mOutput->addWarning( $warning );
 				$cat = Title::makeTitleSafe( NS_CATEGORY, wfMsg( 'pfunc_max_ifexist_category' ) );
 				if ( $cat ) {
