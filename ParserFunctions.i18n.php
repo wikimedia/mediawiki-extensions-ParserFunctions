@@ -126,6 +126,8 @@ function efParserFunctionsMessages() {
 	'pfunc_expr_division_by_zero' => 'القسمة على صفر',
 	'pfunc_expr_unknown_error' => 'خطأ في التعبير: خطأ غير معروف ($1)',
 	'pfunc_expr_not_a_number' => 'في $1: النتيجة ليست رقما',
+	'pfunc_ifexist_warning' => 'تحذير: هذه المقالة تحتوي على #ifexist calls كثيرة جدا. ينبغي أن تحتوي على أقل من $2، يوجد الآن $1.',
+	'pfunc_max_ifexist_category' => 'الصفحات التي تحتوي على ifexist calls كثيرة جدا',
 ),
 
 'bg' => array(
@@ -146,6 +148,19 @@ function efParserFunctionsMessages() {
 	'pfunc_time_error' => 'Chyba: neplatný čas',
 	'pfunc_time_too_long' => 'Chyba: příliš mnoho volání #time',
 	'pfunc_rel2abs_invalid_depth' => 'Chyba: Neplatná hloubka v cestě: \"$1\" (pokus o přístup do uzlu vyššího než kořen)',
+	'pfunc_expr_stack_exhausted' => 'Chyba ve výrazu: Zásobník plně obsazen',
+	'pfunc_expr_unexpected_number' => 'Chyba ve výrazu: Očekáváno číslo',
+	'pfunc_expr_unrecognised_word' => 'Chyba ve výrazu: Nerozpoznané slovo „$1“',
+	'pfunc_expr_unexpected_operator' => 'Chyba ve výrazu: Neočekávaný operátor $1',
+	'pfunc_expr_missing_operand' => 'Chyba ve výrazu: Chybí operand pro $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Chyba ve výrazu: Neočekávaná uzavírací závorka',
+	'pfunc_expr_unrecognised_punctuation' => 'Chyba ve výrazu: Nerozpoznaný interpunkční znak „$1“',
+	'pfunc_expr_unclosed_bracket' => 'Chyba ve výrazu: Neuzavřené závorky',
+	'pfunc_expr_division_by_zero' => 'Dělení nulou',
+	'pfunc_expr_unknown_error' => 'Chyba ve výrazu: Neznámá chyba ($1)',
+	'pfunc_expr_not_a_number' => 'V $1: výsledkem není číslo',
+	'pfunc_ifexist_warning' => 'Varování: Tato stránka obsahuje příliš mnoho volání funkce #ifexist. Mělo by jich být méně než $2, momentálně jich je $1.',
+	'pfunc_max_ifexist_category' => 'Stránky s příliš mnoha voláními funkce ifexist',
 ),
 
 /* German */
@@ -190,6 +205,8 @@ function efParserFunctionsMessages() {
 	'pfunc_expr_division_by_zero' => 'Division par zéro',
 	'pfunc_expr_unknown_error' => 'Erreur d\'expression : erreur inconnue ($1)',
 	'pfunc_expr_not_a_number' => 'Dans $1 : le résultat n\'est pas un nombre',
+	'pfunc_ifexist_warning' => 'Attention : Cette page contient trop d\'appels à <code>#ifexist</code>. Elle devrait en avoir moins que $2, alors qu\'elle en a $1.',
+	'pfunc_max_ifexist_category' => 'Pages avec trop d\'appels à <code>#ifexist</code>',
 ),
 
 'gl' => array(
