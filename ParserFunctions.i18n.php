@@ -252,6 +252,8 @@ function efParserFunctionsMessages() {
 	'pfunc_expr_division_by_zero' => 'Diwizija přez nulu',
 	'pfunc_expr_unknown_error' => 'Wurazowy zmylk: Njeznaty zmylk ($1)',
 	'pfunc_expr_not_a_number' => 'W $1: Wuslědk ličba njeje',
+	'pfunc_ifexist_warning' => 'Warnowanje: Tutón nastawk wobsahuje přewjele zawołanjow #ifexist. Měło mjenje hač $2 być, nětko je $1.',
+	'pfunc_max_ifexist_category' => 'Strony z přewjele zawołanjow ifexist',
 ),
 
 /* Kazakh Cyrillic */
