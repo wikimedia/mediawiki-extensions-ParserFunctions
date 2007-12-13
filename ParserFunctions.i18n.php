@@ -106,7 +106,7 @@ function efParserFunctionsMessages() {
 	'pfunc_expr_division_by_zero'           => 'Division by zero',
 	'pfunc_expr_unknown_error'              => 'Expression error: Unknown error ($1)',
 	'pfunc_expr_not_a_number'               => 'In $1: result is not a number',
-	'pfunc_ifexist_warning'                 => 'Warning: This article contains too many #ifexist calls. It should have less than $2, there are now $1.',
+	'pfunc_ifexist_warning'                 => 'Warning: This page contains too many #ifexist calls. It should have less than $2, there are now $1.',
 	'pfunc_max_ifexist_category'            => 'Pages with too many ifexist calls',
 ),
 
