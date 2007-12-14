@@ -209,23 +209,29 @@ function efParserFunctionsMessages() {
 	'pfunc_max_ifexist_category' => 'Pages avec trop d\'appels à <code>#ifexist</code>',
 ),
 
+/** Galician (Galego)
+ * @author Xosé
+ * @author Alma
+ */
 'gl' => array(
-	'pfunc_time_error' => 'Erro: hora non válida',
-	'pfunc_time_too_long' => 'Erro: demasiadas chamadas a #time',
-	'pfunc_rel2abs_invalid_depth' => 'Erro: Profundidade da ruta non válida: \"$1\" (tentouse acceder a un nodo por riba do nodo raíz)',
-	'pfunc_expr_stack_exhausted' => 'Erro de expresión: Pila esgotada',
-	'pfunc_expr_unexpected_number' => 'Erro de expresión: Número inesperado',
-	'pfunc_expr_preg_match_failure' => 'Erro de expresión: Fallo de preg_match inesperado',
-	'pfunc_expr_unrecognised_word' => 'Erro de expresión: Palabra descoñecida "$1"',
-	'pfunc_expr_unexpected_operator' => 'Erro de expresión: Operador $1 inesperado',
-	'pfunc_expr_missing_operand' => 'Erro de expresión: Falta un operador para $1',
-	'pfunc_expr_unrecognised_punctuation' => 'Erro de expresión: Signo de puntuación descoñecido "$1"',
-	'pfunc_expr_unclosed_bracket' => 'Erro de expresión: Paréntese sen pechar',
-	'pfunc_expr_division_by_zero' => 'División por cero',
-	'pfunc_expr_unknown_error' => 'Erro de expresión: Erro descoñecido ($1)',
-	'pfunc_expr_not_a_number' => 'En $1: o resultado non é un número',
-	'pfunc_ifexist_warning' => 'Advertencia: Este artigo inclúe demasiadas chamadas a #ifexists. Debería ter menos de $2 e agora hai $1.',
-	'pfunc_max_ifexist_category' => 'Páxinas con demasiadas chamadas a ifexists',
+	'pfunc_time_error'                      => 'Erro: hora non válida',
+	'pfunc_time_too_long'                   => 'Erro: demasiadas chamadas a #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Erro: Profundidade da ruta non válida: \"$1\" (tentouse acceder a un nodo por riba do nodo raíz)',
+	'pfunc_expr_stack_exhausted'            => 'Erro de expresión: Pila esgotada',
+	'pfunc_expr_unexpected_number'          => 'Erro de expresión: Número inesperado',
+	'pfunc_expr_preg_match_failure'         => 'Erro de expresión: Fallo de preg_match inesperado',
+	'pfunc_expr_unrecognised_word'          => 'Erro de expresión: Palabra descoñecida "$1"',
+	'pfunc_expr_unexpected_operator'        => 'Erro de expresión: Operador $1 inesperado',
+	'pfunc_expr_missing_operand'            => 'Erro de expresión: Falta un operador para $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Expresión de erro: Inesperado corchete',
+	'pfunc_expr_unrecognised_punctuation'   => 'Erro de expresión: Signo de puntuación descoñecido "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'Erro de expresión: Paréntese sen pechar',
+	'pfunc_expr_division_by_zero'           => 'División por cero',
+	'pfunc_expr_unknown_error'              => 'Erro de expresión: Erro descoñecido ($1)',
+	'pfunc_expr_not_a_number'               => 'En $1: o resultado non é un número',
+	'pfunc_ifexist_warning'                 => 'Advertencia: Este artigo inclúe demasiadas chamadas a #ifexists. Debería ter menos de $2 e agora hai $1.',
+	'pfunc_max_ifexist_category'            => 'Páxinas con demasiadas chamadas a ifexists',
+
 ),
 
 /* Hebrew */
@@ -288,28 +294,44 @@ function efParserFunctionsMessages() {
 	 'pfunc_rel2abs_invalid_depth'  => 'قاتە: مىنا جولدىڭ جارامسىز تەرەندٸگٸ "$1" (تامىر تٷيٸننٸڭ ٷستٸندەگٸ تٷيٸنگە قاتىناۋ تالابى)',
 ),
 
+/** Latin (Latina)
+ * @author UV
+ */
+'la' => array(
+	'pfunc_ifexist_warning'      => 'Monitio: Haec pagina nimis #ifexist adhibet. Licet uti $2, haec pagina nunc utitur $1.',
+	'pfunc_max_ifexist_category' => 'Paginae quae nimis ifexist adhibent',
+
+),
+
 'nds' => array(
 	'pfunc_time_error' => 'Fehler: mit de Tiet stimmt wat nich',
 	'pfunc_time_too_long' => 'Fehler: #time warrt to faken opropen',
 	'pfunc_rel2abs_invalid_depth' => 'Fehler: Mit den Padd „$1“ stimmt wat nich, liggt nich ünner den Wuddelorner',
 ),
 
+/** Dutch (Nederlands)
+ * @author SPQRobin
+ * @author Siebrand
+ */
 'nl' => array(
-	'pfunc_time_error' => 'Fout: ongeldige tijd',
-	'pfunc_time_too_long' => 'Fout: #time te vaak aangeroepen',
-	'pfunc_rel2abs_invalid_depth' => 'Fout: ongeldige diepte in pad: \"$1\" (probeerde een node boven de stamnode aan te roepen)',
-	'pfunc_expr_stack_exhausted' => 'Fout in uitdrukking: stack uitgeput',
-	'pfunc_expr_unexpected_number' => 'Fout in uitdrukking: onverwacht getal',
-	'pfunc_expr_preg_match_failure' => 'Fout in uitdrukking: onverwacht falen van preg_match',
-	'pfunc_expr_unrecognised_word' => 'Fout in uitdrukking: woord "$1" niet herkend',
-	'pfunc_expr_unexpected_operator' => 'Fout in uitdrukking: niet verwachte operator $1',
-	'pfunc_expr_missing_operand' => 'Fout in uitdrukking: operand voor $1 mist',
+	'pfunc_time_error'                      => 'Fout: ongeldige tijd',
+	'pfunc_time_too_long'                   => 'Fout: #time te vaak aangeroepen',
+	'pfunc_rel2abs_invalid_depth'           => 'Fout: ongeldige diepte in pad: \"$1\" (probeerde een node boven de stamnode aan te roepen)',
+	'pfunc_expr_stack_exhausted'            => 'Fout in uitdrukking: stack uitgeput',
+	'pfunc_expr_unexpected_number'          => 'Fout in uitdrukking: onverwacht getal',
+	'pfunc_expr_preg_match_failure'         => 'Fout in uitdrukking: onverwacht falen van preg_match',
+	'pfunc_expr_unrecognised_word'          => 'Fout in uitdrukking: woord "$1" niet herkend',
+	'pfunc_expr_unexpected_operator'        => 'Fout in uitdrukking: niet verwachte operator $1',
+	'pfunc_expr_missing_operand'            => 'Fout in uitdrukking: operand voor $1 mist',
 	'pfunc_expr_unexpected_closing_bracket' => 'Fout in uitdrukking: haakje sluiten op onverwachte plaats',
-	'pfunc_expr_unrecognised_punctuation' => 'Fout in uitdrukking: niet herkend leesteken "$1"',
-	'pfunc_expr_unclosed_bracket' => 'Fout in uitdrukking: niet gesloten haakje openen',
-	'pfunc_expr_division_by_zero' => 'Deling door nul',
-	'pfunc_expr_unknown_error' => 'Fout in uitdrukking: onbekende fout ($1)',
-	'pfunc_expr_not_a_number' => 'In $1: resultaat is geen getal',
+	'pfunc_expr_unrecognised_punctuation'   => 'Fout in uitdrukking: niet herkend leesteken "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'Fout in uitdrukking: niet gesloten haakje openen',
+	'pfunc_expr_division_by_zero'           => 'Deling door nul',
+	'pfunc_expr_unknown_error'              => 'Fout in uitdrukking: onbekende fout ($1)',
+	'pfunc_expr_not_a_number'               => 'In $1: resultaat is geen getal',
+	'pfunc_ifexist_warning'                 => 'Waarschuwing: deze pagina gebruik #ifexists te vaak. Dat zou minder dan $2 keer moeten zijn en is nu $1 keer.',
+	'pfunc_max_ifexist_category'            => "Pagina's die ifexist te vaak gebruiken",
+
 ),
 
 'oc' => array(
