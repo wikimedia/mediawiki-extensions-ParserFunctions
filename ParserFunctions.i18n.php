@@ -334,10 +334,26 @@ function efParserFunctionsMessages() {
 
 ),
 
+/** Occitan (Occitan)
+ * @author Cedric31
+ */
 'oc' => array(
-	'pfunc_time_error' => 'Error: durada invalida',
-	'pfunc_time_too_long' => 'Error: parser #time apelat tròp de còps',
-	'pfunc_rel2abs_invalid_depth' => 'Error: nivèl de repertòri invalid dins lo camin : \"$1\" (a ensajat d’accedir a un nivèl al-dessús del repertòri raiç)',
+	'pfunc_time_error'                      => 'Error: durada invalida',
+	'pfunc_time_too_long'                   => 'Error: parser #time apelat tròp de còps',
+	'pfunc_rel2abs_invalid_depth'           => 'Error: nivèl de repertòri invalid dins lo camin : \"$1\" (a ensajat d’accedir a un nivèl al-dessús del repertòri raiç)',
+	'pfunc_expr_unexpected_number'          => 'Expression erronèa : nombre pas esperat',
+	'pfunc_expr_preg_match_failure'         => 'Expression erronès : una expression pas compresa a pas capitat',
+	'pfunc_expr_unrecognised_word'          => "Error d'expression : lo mot '''$1''' es pas reconegut",
+	'pfunc_expr_unexpected_operator'        => "Error d'expression : l'operator '''$1''' es pas reconegut",
+	'pfunc_expr_missing_operand'            => "Error d'expression : l'operanda '''$1''' es pas reconeguda",
+	'pfunc_expr_unexpected_closing_bracket' => "Error d'expression : parentèsi tampanta pas prevista",
+	'pfunc_expr_unrecognised_punctuation'   => "Error d'expression : caractèr de ponctuacion « $1 » pas reconegut",
+	'pfunc_expr_unclosed_bracket'           => 'Error d’expression : parentèsi pas tampada',
+	'pfunc_expr_division_by_zero'           => 'Division per zèro',
+	'pfunc_expr_unknown_error'              => "Error d'expression : error desconeguda ($1)",
+	'pfunc_expr_not_a_number'               => 'Dins $1 : lo resultat es pas un nombre',
+	'pfunc_ifexist_warning'                 => "Atencion : Aquesta pagina conten tròp d'apèls a <code>#ifexist</code>. Ne deuriá aver mens que $2, alara que n'a $1.",
+	'pfunc_max_ifexist_category'            => "Paginas amb tròp d'apèls a <code>#ifexist</code>",
 ),
 
 'pl' => array(
