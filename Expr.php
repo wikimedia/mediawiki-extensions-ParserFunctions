@@ -103,20 +103,12 @@ class ExprParser {
 		$operands = array();
 		$operators = array();
 
-		# Remove HTML-style comments
-		# Not necessary in versions where StringUtils::delimiterReplace didn't exist
-		if ( is_callable( array( 'StringUtils', 'delimiterReplace' ) ) ) {
-			$expr = StringUtils::delimiterReplace( '<!--', '-->', '', $expr );
-		}
-
 		# Unescape inequality operators
 		$expr = strtr( $expr, array( '&lt;' => '<', '&gt;' => '>' ) );
-
 
 		$p = 0;
 		$end = strlen( $expr );
 		$expecting = 'expression';
-
 
 		while ( $p < $end ) {
 			if ( count( $operands ) > $this->maxStackSize || count( $operators ) > $this->maxStackSize ) {
