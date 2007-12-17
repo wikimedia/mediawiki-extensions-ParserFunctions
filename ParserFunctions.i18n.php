@@ -255,6 +255,22 @@ function efParserFunctionsMessages() {
 	'pfunc_max_ifexist_category'            => 'דפים עם הוראות קיום רבות מדי',
 ),
 
+/** Croatian (Hrvatski)
+ * @author SpeedyGonsales
+ */
+'hr' => array(
+	'pfunc_time_error'                      => 'Greška: oblik vremena nije valjan',
+	'pfunc_time_too_long'                   => 'Greška: prevelik broj #time (vremenskih) poziva',
+	'pfunc_rel2abs_invalid_depth'           => 'Greška: Nevaljana dubina putanje: \"$1\" (pokušaj pristupanja čvoru iznad korijenskog)',
+	'pfunc_expr_stack_exhausted'            => 'Greška u predlošku: prepunjen stog',
+	'pfunc_expr_unexpected_number'          => 'Greška u predlošku: Neočekivan broj',
+	'pfunc_expr_preg_match_failure'         => 'Greška u predlošku: Neočekivana preg_match greška',
+	'pfunc_expr_unrecognised_word'          => 'Greška u predlošku: Nepoznata riječ "$1"',
+	'pfunc_expr_unexpected_operator'        => 'Greška u predlošku: Neočekivani operator $1',
+	'pfunc_expr_missing_operand'            => 'Greška u predlošku: Operator $1 nedostaje',
+	'pfunc_expr_unexpected_closing_bracket' => 'Greška u predlošku: Neočekivana zatvorena zagrada',
+),
+
 'hsb' => array(
 	'pfunc_time_error' => 'Zmylk: njepłaćiwe časowe podaće',
 	'pfunc_time_too_long' => 'Zmylk: přewjele zawołanjow #time',
