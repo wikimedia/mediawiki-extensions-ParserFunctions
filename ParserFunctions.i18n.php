@@ -269,6 +269,13 @@ function efParserFunctionsMessages() {
 	'pfunc_expr_unexpected_operator'        => 'Greška u predlošku: Neočekivani operator $1',
 	'pfunc_expr_missing_operand'            => 'Greška u predlošku: Operator $1 nedostaje',
 	'pfunc_expr_unexpected_closing_bracket' => 'Greška u predlošku: Neočekivana zatvorena zagrada',
+	'pfunc_expr_unrecognised_punctuation'   => 'Greška u predlošku: Nepoznat interpunkcijski znak "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'Greška u predlošku: Nezatvorene zagrade',
+	'pfunc_expr_division_by_zero'           => 'Dijeljenje s nulom',
+	'pfunc_expr_unknown_error'              => 'Greška u predlošku: Nepoznata greška ($1)',
+	'pfunc_expr_not_a_number'               => 'U $1: rezultat nije broj',
+	'pfunc_ifexist_warning'                 => 'Upozorenje: Ova stranica sadrži previše #ifexist poziva. Treba ih biti manje od $2, trenutno ih je $1.',
+	'pfunc_max_ifexist_category'            => 'Stranica s previše ifexist poziva',
 ),
 
 'hsb' => array(
