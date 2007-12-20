@@ -298,6 +298,29 @@ function efParserFunctionsMessages() {
 	'pfunc_max_ifexist_category' => 'Strony z přewjele zawołanjow ifexist',
 ),
 
+/** Hungarian (Magyar)
+ * @author Bdanee
+ */
+'hu' => array(
+	'pfunc_time_error'                      => 'Hiba: érvénytelen idő',
+	'pfunc_time_too_long'                   => 'Hiba: a #time túl sokszor lett meghívva',
+	'pfunc_rel2abs_invalid_depth'           => 'Hiba: nem megfelelő a mélység az elérési útban: „$1” (egy olyan csomópontot akartál elérni, amely a gyökércsomópont felett van)',
+	'pfunc_expr_stack_exhausted'            => 'Hiba a kifejezésben: a verem kiürült',
+	'pfunc_expr_unexpected_number'          => 'Hiba a kifejezésben: nem várt szám',
+	'pfunc_expr_preg_match_failure'         => 'Hiba a kifejezésben: a preg_match váratlanul hibát jelzett',
+	'pfunc_expr_unrecognised_word'          => 'Hiba a kifejezésben: ismeretlen „$1” szó',
+	'pfunc_expr_unexpected_operator'        => 'Hiba a kifejezésben: nem várt $1 operátor',
+	'pfunc_expr_missing_operand'            => 'Hiba a kifejezésben: $1 egyik operandusa hiányzik',
+	'pfunc_expr_unexpected_closing_bracket' => 'Hiba a kifejezésben: nem várt zárójel',
+	'pfunc_expr_unrecognised_punctuation'   => 'Hiba a kifejezésben: ismeretlen „$1” központozó karakter',
+	'pfunc_expr_unclosed_bracket'           => 'Hiba a kifejezésben: lezáratlan zárójel',
+	'pfunc_expr_division_by_zero'           => 'Nullával való osztás',
+	'pfunc_expr_unknown_error'              => 'Hiba a kifejezésben: ismeretlen hiba ($1)',
+	'pfunc_expr_not_a_number'               => '$1: az eredmény nem szám',
+	'pfunc_ifexist_warning'                 => 'Figyelem: az oldal túl sok #ifexist hívást tartalmaz. Kevesebb, mint $2 darabnak kellene lennie, most $1 van.',
+	'pfunc_max_ifexist_category'            => 'Túl sok ifexist hívást tartalmazó lapok',
+),
+
 /* Kazakh Cyrillic */
 'kk-cyrl' => array(
 	'pfunc_time_error'                      => 'Қате: жарамсыз уақыт',
