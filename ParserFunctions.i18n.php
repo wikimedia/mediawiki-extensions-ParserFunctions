@@ -299,22 +299,64 @@ function efParserFunctionsMessages() {
 ),
 
 /* Kazakh Cyrillic */
-'kk-kz' => array(
-	 'pfunc_time_error'             => 'Қате: жарамсыз уақыт',
-	 'pfunc_time_too_long'          => 'Қате: #time әмірін шақыруы тым көп',
-	 'pfunc_rel2abs_invalid_depth'  => 'Қате: Мына жолдың жарамсыз терендігі "$1" (тамыр түйіннің үстіндегі түйінге қатынау талабы)',
+'kk-cyrl' => array(
+	'pfunc_time_error'                      => 'Қате: жарамсыз уақыт',
+	'pfunc_time_too_long'                   => 'Қате: #time шақыруы тым көп',
+	'pfunc_rel2abs_invalid_depth'           => 'Қате: Мына жолдың жарамсыз терендігі «$1» (тамыр түйіннің үстіндегі түйінге қатынау талабы)',
+	'pfunc_expr_stack_exhausted'            => 'Айтылым қатесі: Стек сарқылды',
+	'pfunc_expr_unexpected_number'          => 'Айтылым қатесі: Күтілмеген сан',
+	'pfunc_expr_preg_match_failure'         => 'Айтылым қатесі: Күтілмеген preg_match сәтсіздігі',
+	'pfunc_expr_unrecognised_word'          => 'Айтылым қатесі: Танылмаған сөз «$1»',
+	'pfunc_expr_unexpected_operator'        => 'Айтылым қатесі: Күтілмеген оператор $1',
+	'pfunc_expr_missing_operand'            => 'Айтылым қатесі: $1 үшін жоғалған операнд ',
+	'pfunc_expr_unexpected_closing_bracket' => 'Айтылым қатесі: Күтілмеген жабатын жақша',
+	'pfunc_expr_unrecognised_punctuation'   => 'Айтылым қатесі: Танылмаған тыныс белгісі «$1» ',
+	'pfunc_expr_unclosed_bracket'           => 'Айтылым қатесі: Жабылмаған жақша',
+	'pfunc_expr_division_by_zero'           => 'Нөлге бөлінуі',
+	'pfunc_expr_unknown_error'              => 'Айтылым қатесі: Белгісіз қате ($1)',
+	'pfunc_expr_not_a_number'               => '$1 дегенде: нәтиже сан емес',
+	'pfunc_ifexist_warning'                 => 'Назар салыңыз: Осы бетте тым көп #ifexist шақырымдары бар. Бұл $2 саннан кем болуы керек, мында қазір $1 бар.',
+	'pfunc_max_ifexist_category'            => 'Тым көп ifexist шақырымдары бар беттер',
 ),
 /* Kazakh Latin */
-'kk-tr' => array(
-	 'pfunc_time_error'             => 'Qate: jaramsız waqıt',
-	 'pfunc_time_too_long'          => 'Qate: #time ämirin şaqırwı tım köp',
-	 'pfunc_rel2abs_invalid_depth'  => 'Qate: Mına joldıñ jaramsız terendigi "$1" (tamır tüýinniñ üstindegi tüýinge qatınaw talabı)',
+'kk-latn' => array(
+	'pfunc_time_error'                      => 'Qate: jaramsız waqıt',
+	'pfunc_time_too_long'                   => 'Qate: #time şaqırwı tım köp',
+	'pfunc_rel2abs_invalid_depth'           => 'Qate: Mına joldıñ jaramsız terendigi «$1» (tamır tüýinniñ üstindegi tüýinge qatınaw talabı)',
+	'pfunc_expr_stack_exhausted'            => 'Aýtılım qatesi: Stek sarqıldı',
+	'pfunc_expr_unexpected_number'          => 'Aýtılım qatesi: Kütilmegen san',
+	'pfunc_expr_preg_match_failure'         => 'Aýtılım qatesi: Kütilmegen preg_match sätsizdigi',
+	'pfunc_expr_unrecognised_word'          => 'Aýtılım qatesi: Tanılmağan söz «$1»',
+	'pfunc_expr_unexpected_operator'        => 'Aýtılım qatesi: Kütilmegen operator $1',
+	'pfunc_expr_missing_operand'            => 'Aýtılım qatesi: $1 üşin joğalğan operand ',
+	'pfunc_expr_unexpected_closing_bracket' => 'Aýtılım qatesi: Kütilmegen jabatın jaqşa',
+	'pfunc_expr_unrecognised_punctuation'   => 'Aýtılım qatesi: Tanılmağan tınıs belgisi «$1» ',
+	'pfunc_expr_unclosed_bracket'           => 'Aýtılım qatesi: Jabılmağan jaqşa',
+	'pfunc_expr_division_by_zero'           => 'Nölge bölinwi',
+	'pfunc_expr_unknown_error'              => 'Aýtılım qatesi: Belgisiz qate ($1)',
+	'pfunc_expr_not_a_number'               => '$1 degende: nätïje san emes',
+	'pfunc_ifexist_warning'                 => 'Nazar salıñız: Osı bette tım köp #ifexist şaqırımdarı bar. Bul $2 sannan kem bolwı kerek, mında qazir $1 bar.',
+	'pfunc_max_ifexist_category'            => 'Tım köp ifexist şaqırımdarı bar better',
 ),
 /* Kazakh Arabic */
-'kk-cn' => array(
-	 'pfunc_time_error'             => 'قاتە: جارامسىز ۋاقىت',
-	 'pfunc_time_too_long'          => 'قاتە: #time ٵمٸرٸن شاقىرۋى تىم كٶپ',
-	 'pfunc_rel2abs_invalid_depth'  => 'قاتە: مىنا جولدىڭ جارامسىز تەرەندٸگٸ "$1" (تامىر تٷيٸننٸڭ ٷستٸندەگٸ تٷيٸنگە قاتىناۋ تالابى)',
+'kk-arab' => array(
+	'pfunc_time_error'                      => 'قاتە: جارامسىز ۋاقىت',
+	'pfunc_time_too_long'                   => 'قاتە: #time شاقىرۋى تىم كٶپ',
+	'pfunc_rel2abs_invalid_depth'           => 'قاتە: مىنا جولدىڭ جارامسىز تەرەندٸگٸ «$1» (تامىر تٷيٸننٸڭ ٷستٸندەگٸ تٷيٸنگە قاتىناۋ تالابى)',
+	'pfunc_expr_stack_exhausted'            => 'ايتىلىم قاتەسٸ: ستەك سارقىلدى',
+	'pfunc_expr_unexpected_number'          => 'ايتىلىم قاتەسٸ: كٷتٸلمەگەن سان',
+	'pfunc_expr_preg_match_failure'         => 'ايتىلىم قاتەسٸ: كٷتٸلمەگەن preg_match سٵتسٸزدٸگٸ',
+	'pfunc_expr_unrecognised_word'          => 'ايتىلىم قاتەسٸ: تانىلماعان سٶز «$1»',
+	'pfunc_expr_unexpected_operator'        => 'ايتىلىم قاتەسٸ: كٷتٸلمەگەن وپەراتور $1',
+	'pfunc_expr_missing_operand'            => 'ايتىلىم قاتەسٸ: $1 ٷشٸن جوعالعان وپەراند ',
+	'pfunc_expr_unexpected_closing_bracket' => 'ايتىلىم قاتەسٸ: كٷتٸلمەگەن جاباتىن جاقشا',
+	'pfunc_expr_unrecognised_punctuation'   => 'ايتىلىم قاتەسٸ: تانىلماعان تىنىس بەلگٸسٸ «$1» ',
+	'pfunc_expr_unclosed_bracket'           => 'ايتىلىم قاتەسٸ: جابىلماعان جاقشا',
+	'pfunc_expr_division_by_zero'           => 'نٶلگە بٶلٸنۋٸ',
+	'pfunc_expr_unknown_error'              => 'ايتىلىم قاتەسٸ: بەلگٸسٸز قاتە ($1)',
+	'pfunc_expr_not_a_number'               => '$1 دەگەندە: نٵتيجە سان ەمەس',
+	'pfunc_ifexist_warning'                 => 'نازار سالىڭىز: وسى بەتتە تىم كٶپ #ifexist شاقىرىمدارى بار. بۇل $2 ساننان كەم بولۋى كەرەك, مىندا قازٸر $1 بار.',
+	'pfunc_max_ifexist_category'            => 'تىم كٶپ ifexist شاقىرىمدارى بار بەتتەر',
 ),
 
 /** Latin (Latina)
@@ -440,8 +482,11 @@ function efParserFunctionsMessages() {
 
 );
 
-	/* Kazakh default, fallback to kk-kz */
-	$messages['kk'] = $messages['kk-kz'];
+	/* Kazakh fallbacks */
+	$messages['kk-kz'] = $messages['kk-cyrl'];
+	$messages['kk-tr'] = $messages['kk-latn'];
+	$messages['kk-cn'] = $messages['kk-arab'];
+	$messages['kk'] = $messages['kk-cyrl'];
 
 	/* Chinese defaults, fallback to zh-hans */
 	$messages['zh'] = $messages['zh-hans'];
