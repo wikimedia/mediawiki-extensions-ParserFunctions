@@ -388,29 +388,29 @@ class ExtParserFunctions {
 	 * @param int $offset Offset starting at 1
 	 * @return string
 	 */
-	public function titleparts( $parser, $title = '', $parts = -1, $offset = 1 ) {
+	public function titleparts( $parser, $title = '', $parts = 0, $offset = 0) {
 		$parts = intval( $parts );
-		$offset = intval( $offset ) - 1;
+		$offset = intval( $offset );
 		$ntitle = Title::newFromText( $title );
-		if( $ntitle instanceof Title ) {
-			$bits = explode( '/', $ntitle->getPrefixedText() );
-			if( $parts <= 0 || $parts > count( $bits ) ) {
-				return $ntitle->getPrefixedText();
-			} elseif( $offset < 0 || $offset > count( $bits ) ) {
-				return $ntitle->getPrefixedText();
+		if ( $ntitle instanceof Title ) {
+			$bits = explode( '/', $ntitle->getPrefixedText(), 25 );
+			if ( count( $bits ) <= 0 ) {
+				 return $ntitle->getPrefixedText();
 			} else {
-				$keep = array();
-				for( $i = 0; $i < $offset; $i++ )
-					array_shift( $bits );
-				for( $i = 0; $i < $parts; $i++ )
-					$keep[] = array_shift( $bits );
-				return implode( '/', $keep );			
+				if ( $offset > 0 ) {
+					--$offset;
+				}
+				if ( $parts == 0 ) {
+					return implode( '/', array_slice( $bits, $offset ) );
+				} else {
+					return implode( '/', array_slice( $bits, $offset, $parts ) );
+				}
 			}
 		} else {
 			return $title;
 		}
 	}
-
+	
 	function afterTidy( &$parser, &$text ) {
 		global $wgMaxIfExistCount;
 		if ( $parser->pf_ifexist_count > $wgMaxIfExistCount ) {
