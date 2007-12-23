@@ -474,6 +474,24 @@ function efParserFunctionsMessages() {
 	'pfunc_rel2abs_invalid_depth' => 'Chyba: Neplatná hĺbka v ceste: „$1“ (pokus o prístup k uzlu nad koreňovým uzlom)',
 ),
 
+/** Seeltersk (Seeltersk)
+ * @author Pyt
+ */
+'stq' => array(
+	'pfunc_rel2abs_invalid_depth'           => 'Failer: uungultige Djüpte in Paad: „$1“ (Fersäik, ap n Knättepunkt buppe dän Haudknättepunkt toutougriepen)',
+	'pfunc_expr_preg_match_failure'         => 'Expression-Failer: Uunferwachtede „preg_match“-Failfunktion',
+	'pfunc_expr_unrecognised_word'          => 'Expression-Failer: Nit wierkoand Woud „$1“',
+	'pfunc_expr_unexpected_operator'        => 'Expression-Failer: Uunferwachteden Operator: <strong><tt>$1</tt></strong>',
+	'pfunc_expr_missing_operand'            => 'Expression-Failer: Failenden Operand foar <strong><tt>$1</tt></strong>',
+	'pfunc_expr_unexpected_closing_bracket' => 'Expression-Failer: Uunferwachte sluutende kaantige Klammere',
+	'pfunc_expr_unrecognised_punctuation'   => 'Expression-Failer: Nit wierkoand Satsteeken „$1“',
+	'pfunc_expr_unclosed_bracket'           => 'Expression-Failer: Nit sleetene kaantige Klammer',
+	'pfunc_expr_division_by_zero'           => 'Expression-Failer: Division truch Null',
+	'pfunc_expr_unknown_error'              => 'Expression-Failer: Uunbekoanden Failer ($1)',
+	'pfunc_expr_not_a_number'               => 'Expression-Failer: In $1: Resultoat is neen Taal',
+	'pfunc_ifexist_warning'                 => 'Woarschauenge: Disse Siede änthaalt toufuul #ifexist-Aproupe. Der duuren maximoal $2 Aproupe weese, der sunt oawers $1 Aproupe.',
+),
+
 /* Swedish */
 'sv' => array(
 	 'pfunc_time_error'             => 'Fel: ogiltig tid',
