@@ -478,7 +478,11 @@ function efParserFunctionsMessages() {
  * @author Pyt
  */
 'stq' => array(
+	'pfunc_time_error'                      => 'Failer: uungultige Tiedangoawe',
+	'pfunc_time_too_long'                   => 'Failer: tou fuul #time-Aproupe',
 	'pfunc_rel2abs_invalid_depth'           => 'Failer: uungultige Djüpte in Paad: „$1“ (Fersäik, ap n Knättepunkt buppe dän Haudknättepunkt toutougriepen)',
+	'pfunc_expr_stack_exhausted'            => 'Expression-Failer: Stack-Uurloop',
+	'pfunc_expr_unexpected_number'          => 'Expression-Failer: Nit ferwachtede Taal',
 	'pfunc_expr_preg_match_failure'         => 'Expression-Failer: Uunferwachtede „preg_match“-Failfunktion',
 	'pfunc_expr_unrecognised_word'          => 'Expression-Failer: Nit wierkoand Woud „$1“',
 	'pfunc_expr_unexpected_operator'        => 'Expression-Failer: Uunferwachteden Operator: <strong><tt>$1</tt></strong>',
@@ -490,6 +494,7 @@ function efParserFunctionsMessages() {
 	'pfunc_expr_unknown_error'              => 'Expression-Failer: Uunbekoanden Failer ($1)',
 	'pfunc_expr_not_a_number'               => 'Expression-Failer: In $1: Resultoat is neen Taal',
 	'pfunc_ifexist_warning'                 => 'Woarschauenge: Disse Siede änthaalt toufuul #ifexist-Aproupe. Der duuren maximoal $2 Aproupe weese, der sunt oawers $1 Aproupe.',
+	'pfunc_max_ifexist_category'            => 'Sieden mäd toufuul ifexist-Aproupe',
 ),
 
 /* Swedish */
