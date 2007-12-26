@@ -468,6 +468,29 @@ function efParserFunctionsMessages() {
 	'pfunc_rel2abs_invalid_depth' => 'Eror: profondità nen bon-a ant ël përcors: \"$1\" (a l\'é provasse a ciamé un grop dzora a la rèis)',
 ),
 
+/** Russian (Русский)
+ * @author .:Ajvol:.
+ */
+'ru' => array(
+	'pfunc_time_error'                      => 'Ошибка: неправильное время',
+	'pfunc_time_too_long'                   => 'Ошибка: слишком много вызовов функции #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Ошибка: ошибочная глубина пути: «$1» (попытка доступа к узлу, находящемуся выше, чем корневой)',
+	'pfunc_expr_stack_exhausted'            => 'Ошибка выражения: переполнение стека',
+	'pfunc_expr_unexpected_number'          => 'Ошибка выражения: неожидаемое число',
+	'pfunc_expr_preg_match_failure'         => 'Ошибка выражения: сбой preg_match',
+	'pfunc_expr_unrecognised_word'          => 'Ошибка выражения: неопознанное слово «$1»',
+	'pfunc_expr_unexpected_operator'        => 'Ошибка выражения: неожидаемый оператор $1',
+	'pfunc_expr_missing_operand'            => 'Ошибка выражения: $1 не хватает операнда',
+	'pfunc_expr_unexpected_closing_bracket' => 'Ошибка выражения: неожидаемая закрывающая скобка',
+	'pfunc_expr_unrecognised_punctuation'   => 'Ошибка выражения: неопознанный символ пунктуации «$1»',
+	'pfunc_expr_unclosed_bracket'           => 'Ошибка выражения: незакрытая скобка',
+	'pfunc_expr_division_by_zero'           => 'Деление на ноль',
+	'pfunc_expr_unknown_error'              => 'Ошибка выражения: неизвестная ошибка ($1)',
+	'pfunc_expr_not_a_number'               => 'В $1: результат не является числом',
+	'pfunc_ifexist_warning'                 => 'Внимание: эта страница содержит $1 {{PLURAL:$1|вызов|вызова|вызовов}} #ifexist при ограничении в $2.',
+	'pfunc_max_ifexist_category'            => 'Страницы, в которых слишком много вызовов ifexist',
+),
+
 'sk' => array(
 	'pfunc_time_error' => 'Chyba: Neplatný čas',
 	'pfunc_time_too_long' => 'Chyba: príliš veľa volaní #time',
