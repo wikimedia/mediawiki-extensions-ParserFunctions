@@ -388,7 +388,13 @@ function efParserFunctionsMessages() {
 'la' => array(
 	'pfunc_ifexist_warning'      => 'Monitio: Haec pagina nimis #ifexist adhibet. Licet uti $2, haec pagina nunc utitur $1.',
 	'pfunc_max_ifexist_category' => 'Paginae quae nimis ifexist adhibent',
+),
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+'lb' => array(
+	'pfunc_expr_division_by_zero' => 'Divisioun duerch Null',
 ),
 
 'nds' => array(
