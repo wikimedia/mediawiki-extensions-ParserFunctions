@@ -150,6 +150,23 @@ function efParserFunctionsMessages() {
 	'pfunc_max_ifexist_category'            => 'Страници с твърде много извиквания на #ifexist',
 ),
 
+/** Catalan (Català)
+ * @author SMP
+ */
+'ca' => array(
+	'pfunc_time_error'                      => 'Error: temps invàlid',
+	'pfunc_expr_unexpected_number'          => "Error a l'expressió: Nombre inesperat",
+	'pfunc_expr_unrecognised_word'          => 'Error de l\'expressió: Paraula no reconeguda "$1"',
+	'pfunc_expr_unexpected_operator'        => "Error de l'expressió: Operador $1 inesperat",
+	'pfunc_expr_missing_operand'            => "Error de l'expressió: Falta l'operand de $1",
+	'pfunc_expr_unexpected_closing_bracket' => "Error de l'expressió: Parèntesi inesperat",
+	'pfunc_expr_unrecognised_punctuation'   => 'Error de l\'expressió: Signe de puntuació no reconegut "$1"',
+	'pfunc_expr_unclosed_bracket'           => "Error de l'expressió: Parèntesi no tancat",
+	'pfunc_expr_division_by_zero'           => 'Divisió entre zero',
+	'pfunc_expr_unknown_error'              => "Error de l'expressió: Desconegut ($1)",
+	'pfunc_expr_not_a_number'               => 'A $1: el resultat no és un nombre',
+),
+
 'cs' => array(
 	'pfunc_time_error' => 'Chyba: neplatný čas',
 	'pfunc_time_too_long' => 'Chyba: příliš mnoho volání #time',
