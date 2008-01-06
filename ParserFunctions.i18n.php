@@ -155,7 +155,11 @@ function efParserFunctionsMessages() {
  */
 'ca' => array(
 	'pfunc_time_error'                      => 'Error: temps invàlid',
-	'pfunc_expr_unexpected_number'          => "Error a l'expressió: Nombre inesperat",
+	'pfunc_time_too_long'                   => 'Error: massa crides #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Error: Adreça invàlida al directori: \\"$1\\" (s\'intentava accedir a un node superior de l\'arrel)',
+	'pfunc_expr_stack_exhausted'            => "Error de l'expressió: Pila exhaurida",
+	'pfunc_expr_unexpected_number'          => "Error de l'expressió: Nombre inesperat",
+	'pfunc_expr_preg_match_failure'         => "Error de l'expressió: Error de funció no compresa i inesperada",
 	'pfunc_expr_unrecognised_word'          => 'Error de l\'expressió: Paraula no reconeguda "$1"',
 	'pfunc_expr_unexpected_operator'        => "Error de l'expressió: Operador $1 inesperat",
 	'pfunc_expr_missing_operand'            => "Error de l'expressió: Falta l'operand de $1",
@@ -165,6 +169,8 @@ function efParserFunctionsMessages() {
 	'pfunc_expr_division_by_zero'           => 'Divisió entre zero',
 	'pfunc_expr_unknown_error'              => "Error de l'expressió: Desconegut ($1)",
 	'pfunc_expr_not_a_number'               => 'A $1: el resultat no és un nombre',
+	'pfunc_ifexist_warning'                 => "Alerta: Aquesta pàgina conté massa crides #ifexist. N'hi hauria d'haver menys de $2 mentre que ara n'hi ha $1.",
+	'pfunc_max_ifexist_category'            => 'Pàgines amb massa crides ifexist',
 ),
 
 'cs' => array(
@@ -420,10 +426,27 @@ function efParserFunctionsMessages() {
 	'pfunc_expr_division_by_zero' => 'Divisioun duerch Null',
 ),
 
+/** Low German (Plattdüütsch)
+ * @author Slomox
+ */
 'nds' => array(
-	'pfunc_time_error' => 'Fehler: mit de Tiet stimmt wat nich',
-	'pfunc_time_too_long' => 'Fehler: #time warrt to faken opropen',
-	'pfunc_rel2abs_invalid_depth' => 'Fehler: Mit den Padd „$1“ stimmt wat nich, liggt nich ünner den Wuddelorner',
+	'pfunc_time_error'                      => 'Fehler: mit de Tiet stimmt wat nich',
+	'pfunc_time_too_long'                   => 'Fehler: #time warrt to faken opropen',
+	'pfunc_rel2abs_invalid_depth'           => 'Fehler: Mit den Padd „$1“ stimmt wat nich, liggt nich ünner den Wuddelorner',
+	'pfunc_expr_stack_exhausted'            => 'Fehler in’n Utdruck: Stack överlopen',
+	'pfunc_expr_unexpected_number'          => 'Fehler in’n Utdruck: Unverwacht Tall',
+	'pfunc_expr_preg_match_failure'         => 'Fehler in’n Utdruck: Unverwacht Fehler bi „preg_match“',
+	'pfunc_expr_unrecognised_word'          => 'Fehler in’n Utdruck: Woort „$1“ nich kennt',
+	'pfunc_expr_unexpected_operator'        => 'Fehler in’n Utdruck: Unverwacht Operator $1',
+	'pfunc_expr_missing_operand'            => 'Fehler in’n Utdruck: Operand för $1 fehlt',
+	'pfunc_expr_unexpected_closing_bracket' => 'Fehler in’n Utdruck: Unverwacht Klammer to',
+	'pfunc_expr_unrecognised_punctuation'   => 'Fehler in’n Utdruck: Satzteken „$1“ nich kennt',
+	'pfunc_expr_unclosed_bracket'           => 'Fehler in’n Utdruck: Nich slatene Klammer',
+	'pfunc_expr_division_by_zero'           => 'Delen dör Null',
+	'pfunc_expr_unknown_error'              => 'Fehler in’n Utdruck: Unbekannten Fehler ($1)',
+	'pfunc_expr_not_a_number'               => 'In $1: wat rutkamen is, is kene Tall',
+	'pfunc_ifexist_warning'                 => 'Wohrschau: Disse Siet bruukt #ifexist to faken. De Siet dröff nich mehr as $2 hebben, hett aver $1.',
+	'pfunc_max_ifexist_category'            => 'Sieden, de #ifexist to faken bruukt',
 ),
 
 /** Dutch (Nederlands)
