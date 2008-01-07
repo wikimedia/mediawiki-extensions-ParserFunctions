@@ -217,6 +217,28 @@ function efParserFunctionsMessages() {
 	'pfunc_time_error' => 'Σφάλμα: άκυρος χρόνος',
 ),
 
+# فارسی (Huji)
+'fa' => array(
+	'pfunc_time_error'                      => 'خطا: زمان غیرمجاز',
+	'pfunc_time_too_long'                   => 'خطا: فراخوانی بیش از حد #time',
+	'pfunc_rel2abs_invalid_depth'           => 'خطا: عمق غیر مجاز در نشانی «$1» (تلاش برای دسترسی به یک نشانی فراتر از نشانی ریشه)',
+	'pfunc_expr_stack_exhausted'            => 'خطای عبارت: پشته از دست رفته',
+	'pfunc_expr_unexpected_number'          => 'خطای عبارت: عدد دور از انتظار',
+	'pfunc_expr_preg_match_failure'         => 'خطای عبارت: خطای preg_match دور از انتظار',
+	'pfunc_expr_unrecognised_word'          => 'خطای عبارت: کلمه ناشناخته «$1»',
+	'pfunc_expr_unexpected_operator'        => 'خطای عبارت: عملگر $1 دور از انتظار',
+	'pfunc_expr_missing_operand'            => 'خطای عبارت: عملگر گمشده برای $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'خطای عبارت: پرانتز بسته اضافی',
+	'pfunc_expr_unrecognised_punctuation'   => 'خطای عبارت: نویسه نقطه‌گذاری شناخته نشده «$1»',
+	'pfunc_expr_unclosed_bracket'           => 'خطای عبارت: پرانتز بسته‌نشده',
+	'pfunc_expr_division_by_zero'           => 'تقسیم بر صفر',
+	'pfunc_expr_unknown_error'              => 'خطای عبارت: خطای ناشناخته ($1)',
+	'pfunc_expr_not_a_number'               => 'در $1: نتیجه عدد نیست',
+	'pfunc_ifexist_warning'                 => 'هشدار: این صفحه حاوی فراخوانی‌های بیش از حد ifexist است. حداکثر تعداد فراخوانی مجاز $2 است، تعداد آن در این صفحه $1 است.',
+	'pfunc_max_ifexist_category'            => 'صفحه‌های دارای فراخوانی بیش از حد ifexist',
+
+),
+
 /* French */
 'fr' => array(
 	'pfunc_time_error' => 'Erreur : durée invalide',
