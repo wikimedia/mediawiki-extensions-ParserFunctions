@@ -424,6 +424,7 @@ function efParserFunctionsMessages() {
  */
 'lb' => array(
 	'pfunc_expr_division_by_zero' => 'Divisioun duerch Null',
+	'pfunc_expr_not_a_number'     => "An $1: D'Resultat ass keng Zuel",
 ),
 
 /** Low German (Plattdüütsch)
