@@ -566,10 +566,27 @@ function efParserFunctionsMessages() {
 	'pfunc_max_ifexist_category'            => 'Страницы, в которых слишком много вызовов ifexist',
 ),
 
+/** Slovak (Slovenčina)
+ * @author Helix84
+ */
 'sk' => array(
-	'pfunc_time_error' => 'Chyba: Neplatný čas',
-	'pfunc_time_too_long' => 'Chyba: príliš veľa volaní #time',
-	'pfunc_rel2abs_invalid_depth' => 'Chyba: Neplatná hĺbka v ceste: „$1“ (pokus o prístup k uzlu nad koreňovým uzlom)',
+	'pfunc_time_error'                      => 'Chyba: Neplatný čas',
+	'pfunc_time_too_long'                   => 'Chyba: príliš veľa volaní #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Chyba: Neplatná hĺbka v ceste: „$1“ (pokus o prístup k uzlu nad koreňovým uzlom)',
+	'pfunc_expr_stack_exhausted'            => 'Chyba výrazu: Zásobník vyčerpaný',
+	'pfunc_expr_unexpected_number'          => 'Chyba výrazu: Neočakávané číslo',
+	'pfunc_expr_preg_match_failure'         => 'Chyba výrazu: Neočakávané zlyhanie funkcie preg_match',
+	'pfunc_expr_unrecognised_word'          => 'Chyba výrazu: Nerozpoznané slovo „$1“',
+	'pfunc_expr_unexpected_operator'        => 'Chyba výrazu: Neočakávaný operátor $1',
+	'pfunc_expr_missing_operand'            => 'Chyba výrazu: Chýbajúci operand pre $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Chyba výrazu: Neočakávaná zatvárajúca hranatá zátvorka',
+	'pfunc_expr_unrecognised_punctuation'   => 'Chyba výrazu: Nerozpoznané diakritické znamienko „$1“',
+	'pfunc_expr_unclosed_bracket'           => 'Chyba výrazu: Neuzavretá hranatá zátvorka',
+	'pfunc_expr_division_by_zero'           => 'Chyba výrazu: Delenie nulou',
+	'pfunc_expr_unknown_error'              => 'Chyba výrazu: Neznáma chyba ($1)',
+	'pfunc_expr_not_a_number'               => 'V $1: výsledok nie je číslo',
+	'pfunc_ifexist_warning'                 => 'Upozornenie: Táto stránka obsahuje príliš veľa volaní #ifexist. Malo by ich byť menej ako $2, momentálne ich je $1.',
+	'pfunc_max_ifexist_category'            => 'Stránky s príliš veľkým počtom volaní ifexist',
 ),
 
 /** Seeltersk (Seeltersk)
