@@ -612,11 +612,23 @@ function efParserFunctionsMessages() {
 	'pfunc_max_ifexist_category'            => 'Sieden mäd toufuul ifexist-Aproupe',
 ),
 
-/* Swedish */
+/** Swedish (Svenska)
+ * @author Lejonel
+ */
 'sv' => array(
-	 'pfunc_time_error'             => 'Fel: ogiltig tid',
-	 'pfunc_time_too_long'          => 'Fel: för många anrop av #time',
-	 'pfunc_rel2abs_invalid_depth'  => 'Fel: felaktig djup i sökväg: "$1" (försöker nå en nod ovanför rotnoden)',
+	'pfunc_time_error'                      => 'Fel: ogiltig tid',
+	'pfunc_time_too_long'                   => 'Fel: för många anrop av #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Fel: felaktig djup i sökväg: "$1" (försöker nå en nod ovanför rotnoden)',
+	'pfunc_expr_unexpected_number'          => 'Fel i uttryck: Oväntat tal',
+	'pfunc_expr_unrecognised_word'          => 'Fel i uttryck: Okänt ord "$1"',
+	'pfunc_expr_unexpected_operator'        => 'Fel i uttryck: Oväntad operator $1',
+	'pfunc_expr_missing_operand'            => 'Fel i uttryck: Operand saknas för $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Fel i uttryck: Oväntad avslutande parentes',
+	'pfunc_expr_unrecognised_punctuation'   => 'Fel i uttryck: Okänt interpunktionstecken "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'Fel i uttryck: Oavslutad parentes',
+	'pfunc_expr_division_by_zero'           => 'Division med noll',
+	'pfunc_expr_unknown_error'              => 'Fel i uttryck: Okänt fel ($1)',
+	'pfunc_max_ifexist_category'            => 'Sidor med för många ifexist-anrop',
 ),
 
 /* Cantonese */
