@@ -7,11 +7,13 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionFunctions[] = 'wfSetupParserFunctions';
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'ParserFunctions',
+	'version' => '1.1',
 	'url' => 'http://meta.wikimedia.org/wiki/ParserFunctions',
 	'author' => 'Tim Starling',
 	'description' => 'Enhance parser with logical functions',
 );
 
+$wgExtensionMessagesFiles['ParserFunctions'] = dirname(__FILE__) . '/ParserFunctions.i18n.php';
 $wgHooks['LanguageGetMagic'][]       = 'wfParserFunctionsLanguageGetMagic';
 $wgHooks['ParserLimitReport'][]      = 'wfParserFunctionsLimitReport';
 
@@ -199,7 +201,7 @@ class ExtParserFunctions {
 	 * Returns the absolute path to a subpage, relative to the current article
 	 * title. Treats titles as slash-separated paths.
 	 *
-	 * Following subpage link syntax instead of standard path syntax, an 
+	 * Following subpage link syntax instead of standard path syntax, an
 	 * initial slash is treated as a relative path, and vice versa.
 	 */
 	public function rel2abs( &$parser , $to = '' , $from = '' ) {
@@ -242,6 +244,7 @@ class ExtParserFunctions {
 			if( $current == '..' ) { // removing one level
 				if( !count( $newExploded ) ){
 					// attempted to access a node above root node
+					wfLoadExtensionMessages( 'ParserFunctions' );
 					return '<strong class="error">' . wfMsgForContent( 'pfunc_rel2abs_invalid_depth', $fullPath ) . '</strong>';
 				}
 				// remove last level from the stack
@@ -338,10 +341,12 @@ class ExtParserFunctions {
 		}
 
 		if ( $unix == -1 || $unix == false ) {
+			wfLoadExtensionMessages( 'ParserFunctions' );
 			$result = '<strong class="error">' . wfMsgForContent( 'pfunc_time_error' ) . '</strong>';
 		} else {
 			$this->mTimeChars += strlen( $format );
 			if ( $this->mTimeChars > $this->mMaxTimeChars ) {
+				wfLoadExtensionMessages( 'ParserFunctions' );
 				return '<strong class="error">' . wfMsgForContent( 'pfunc_time_too_long' ) . '</strong>';
 			} else {
 				if ( $local ) {
@@ -373,11 +378,11 @@ class ExtParserFunctions {
 		$this->mTimeCache[$format][$date][$local] = $result;
 		return $result;
 	}
-	
+
 	function localTime( &$parser, $format = '', $date = '' ) {
 		return $this->time( $parser, $format, $date, true );
 	}
-	
+
 	/**
 	 * Obtain a specified number of slash-separated parts of a title,
 	 * e.g. {{#titleparts:Hello/World|1}} => "Hello"
@@ -410,11 +415,12 @@ class ExtParserFunctions {
 			return $title;
 		}
 	}
-	
+
 	function afterTidy( &$parser, &$text ) {
 		global $wgMaxIfExistCount;
 		if ( $parser->pf_ifexist_count > $wgMaxIfExistCount ) {
 			if ( is_callable( array( $parser->mOutput, 'addWarning' ) ) ) {
+				wfLoadExtensionMessages( 'ParserFunctions' );
 				$warning = wfMsg( 'pfunc_ifexist_warning', $parser->pf_ifexist_count, $wgMaxIfExistCount );
 				$parser->mOutput->addWarning( $warning );
 				$cat = Title::makeTitleSafe( NS_CATEGORY, wfMsg( 'pfunc_max_ifexist_category' ) );
@@ -428,7 +434,7 @@ class ExtParserFunctions {
 }
 
 function wfSetupParserFunctions() {
-	global $wgParser, $wgMessageCache, $wgExtParserFunctions, $wgMessageCache, $wgHooks;
+	global $wgParser, $wgExtParserFunctions, $wgHooks;
 
 	$wgExtParserFunctions = new ExtParserFunctions;
 
@@ -456,17 +462,13 @@ function wfSetupParserFunctions() {
 	$wgParser->setFunctionHook( 'timel', array( &$wgExtParserFunctions, 'localTime' ) );
 	$wgParser->setFunctionHook( 'rel2abs', array( &$wgExtParserFunctions, 'rel2abs' ) );
 	$wgParser->setFunctionHook( 'titleparts', array( &$wgExtParserFunctions, 'titleparts' ) );
-	
-	require_once( dirname( __FILE__ ) . '/ParserFunctions.i18n.php' );
-	foreach( efParserFunctionsMessages() as $lang => $messages )
-		$wgMessageCache->addMessages( $messages, $lang );
 
 	$wgHooks['ParserClearState'][] = array( &$wgExtParserFunctions, 'clearState' );
 	$wgHooks['ParserAfterTidy'][] = array( &$wgExtParserFunctions, 'afterTidy' );
 }
 
 function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
-	require_once( dirname( __FILE__ ) . '/ParserFunctions.i18n.php' );
+	require_once( dirname( __FILE__ ) . '/ParserFunctions.i18n.magic.php' );
 	foreach( efParserFunctionsWords( $langCode ) as $word => $trans )
 		$magicWords[$word] = $trans;
 	return true;

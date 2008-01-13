@@ -33,6 +33,7 @@ define( 'EXPR_ROUND', 21 );
 
 class ExprError extends Exception {
 	public function __construct($msg, $parameter = ''){
+		wfLoadExtensionMessages( 'ParserFunctions' );
 		$this->message = '<strong class="error">' . wfMsgForContent( "pfunc_expr_$msg", htmlspecialchars( $parameter ) ) . '</strong>';
 	}
 }
@@ -40,7 +41,7 @@ class ExprError extends Exception {
 class ExprParser {
 	var $maxStackSize = 100;
 
-	var $precedence = array( 
+	var $precedence = array(
 		EXPR_NEGATIVE => 10,
 		EXPR_POSITIVE => 10,
 		EXPR_NOT => 9,
@@ -118,7 +119,7 @@ class ExprParser {
 			$char2 = substr( $expr, $p, 2 );
 
 			// Mega if-elseif-else construct
-			// Only binary operators fall through for processing at the bottom, the rest 
+			// Only binary operators fall through for processing at the bottom, the rest
 			// finish their processing and continue
 
 			// First the unlimited length classes
