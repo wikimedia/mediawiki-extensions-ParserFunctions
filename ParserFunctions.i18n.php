@@ -388,6 +388,17 @@ $messages['lb'] = array(
 	'pfunc_expr_not_a_number'     => "An $1: D'Resultat ass keng Zuel",
 );
 
+/** Limburgish (Limburgs)
+ * @author Ooswesthoesbes
+ */
+$messages['li'] = array(
+	'pfunc_expr_division_by_zero' => 'Deiling door nul',
+	'pfunc_expr_unknown_error'    => 'Fout in oetdrukking: ónbekindje fout ($1)',
+	'pfunc_expr_not_a_number'     => 'In $1: rezultaot is gein getal',
+	'pfunc_ifexist_warning'       => "Waorsjuwing: dees pazjena gebroek #ifexists euverduk. Det zów minder es $2 kieër mótte zeen en 't is noe $1 kieër.",
+	'pfunc_max_ifexist_category'  => "Pazjena's die iefexist euverduk gebroeke",
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
