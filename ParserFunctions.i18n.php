@@ -27,24 +27,28 @@ $messages['en'] = array(
 	'pfunc_max_ifexist_category'            => 'Pages with too many ifexist calls',
 );
 
+/** Arabic (العربية)
+ * @author Meno25
+ * @author Siebrand
+ */
 $messages['ar'] = array(
-	'pfunc_time_error' => 'خطأ: زمن غير صحيح',
-	'pfunc_time_too_long' => 'خطأ: too many #time calls',
-	'pfunc_rel2abs_invalid_depth' => 'خطأ: عمق غير صحيح في المسار: "$1" (حاول دخول عقدة فوق العقدة الجذرية)',
-	'pfunc_expr_stack_exhausted' => 'خطأ في التعبير: ستاك مجهد',
-	'pfunc_expr_unexpected_number' => 'خطأ في التعبير: رقم غير متوقع',
-	'pfunc_expr_preg_match_failure' => 'خطأ في التعبير: فشل preg_match غير متوقع',
-	'pfunc_expr_unrecognised_word' => 'خطأ في التعبير: كلمة غير متعرف عليها "$1"',
-	'pfunc_expr_unexpected_operator' => 'خطأ في التعبير: عامل $1 غير متوقع',
-	'pfunc_expr_missing_operand' => 'خطأ في التعبير: operand مفقود ل$1',
+	'pfunc_time_error'                      => 'خطأ: زمن غير صحيح',
+	'pfunc_time_too_long'                   => 'خطأ: too many #time calls',
+	'pfunc_rel2abs_invalid_depth'           => 'خطأ: عمق غير صحيح في المسار: "$1" (حاول دخول عقدة فوق العقدة الجذرية)',
+	'pfunc_expr_stack_exhausted'            => 'خطأ في التعبير: ستاك مجهد',
+	'pfunc_expr_unexpected_number'          => 'خطأ في التعبير: رقم غير متوقع',
+	'pfunc_expr_preg_match_failure'         => 'خطأ في التعبير: فشل preg_match غير متوقع',
+	'pfunc_expr_unrecognised_word'          => 'خطأ في التعبير: كلمة غير متعرف عليها "$1"',
+	'pfunc_expr_unexpected_operator'        => 'خطأ في التعبير: عامل $1 غير متوقع',
+	'pfunc_expr_missing_operand'            => 'خطأ في التعبير: operand مفقود ل$1',
 	'pfunc_expr_unexpected_closing_bracket' => 'خطأ في التعبير: قوس إغلاق غير متوقع',
-	'pfunc_expr_unrecognised_punctuation' => 'خطأ في التعبير: علامة ترقيم غير متعرف عليها "$1"',
-	'pfunc_expr_unclosed_bracket' => 'خطأ في التعبير: قوس غير مغلق',
-	'pfunc_expr_division_by_zero' => 'القسمة على صفر',
-	'pfunc_expr_unknown_error' => 'خطأ في التعبير: خطأ غير معروف ($1)',
-	'pfunc_expr_not_a_number' => 'في $1: النتيجة ليست رقما',
-	'pfunc_ifexist_warning' => 'تحذير: هذه المقالة تحتوي على #ifexist calls كثيرة جدا. ينبغي أن تحتوي على أقل من $2، يوجد الآن $1.',
-	'pfunc_max_ifexist_category' => 'الصفحات التي تحتوي على ifexist calls كثيرة جدا',
+	'pfunc_expr_unrecognised_punctuation'   => 'خطأ في التعبير: علامة ترقيم غير متعرف عليها "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'خطأ في التعبير: قوس غير مغلق',
+	'pfunc_expr_division_by_zero'           => 'القسمة على صفر',
+	'pfunc_expr_unknown_error'              => 'خطأ في التعبير: خطأ غير معروف ($1)',
+	'pfunc_expr_not_a_number'               => 'في $1: النتيجة ليست رقما',
+	'pfunc_ifexist_warning'                 => 'تحذير: هذه المقالة تحتوي على #ifexist calls كثيرة جدا. ينبغي أن تحتوي على أقل من $2، يوجد الآن $1.',
+	'pfunc_max_ifexist_category'            => 'الصفحات التي تحتوي على ifexist calls كثيرة جدا',
 );
 
 /** Bulgarian (Български)
@@ -69,6 +73,7 @@ $messages['bg'] = array(
 
 /** Catalan (Català)
  * @author SMP
+ * @author Siebrand
  */
 $messages['ca'] = array(
 	'pfunc_time_error'                      => 'Error: temps invàlid',
@@ -90,26 +95,31 @@ $messages['ca'] = array(
 	'pfunc_max_ifexist_category'            => 'Pàgines amb massa crides ifexist',
 );
 
+/** Czech (Česky)
+ * @author Li-sung
+ * @author Danny B.
+ * @author Siebrand
+ */
 $messages['cs'] = array(
-	'pfunc_time_error' => 'Chyba: neplatný čas',
-	'pfunc_time_too_long' => 'Chyba: příliš mnoho volání #time',
-	'pfunc_rel2abs_invalid_depth' => 'Chyba: Neplatná hloubka v cestě: "$1" (pokus o přístup do uzlu vyššího než kořen)',
-	'pfunc_expr_stack_exhausted' => 'Chyba ve výrazu: Zásobník plně obsazen',
-	'pfunc_expr_unexpected_number' => 'Chyba ve výrazu: Očekáváno číslo',
-	'pfunc_expr_unrecognised_word' => 'Chyba ve výrazu: Nerozpoznané slovo „$1“',
-	'pfunc_expr_unexpected_operator' => 'Chyba ve výrazu: Neočekávaný operátor $1',
-	'pfunc_expr_missing_operand' => 'Chyba ve výrazu: Chybí operand pro $1',
+	'pfunc_time_error'                      => 'Chyba: neplatný čas',
+	'pfunc_time_too_long'                   => 'Chyba: příliš mnoho volání #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Chyba: Neplatná hloubka v cestě: "$1" (pokus o přístup do uzlu vyššího než kořen)',
+	'pfunc_expr_stack_exhausted'            => 'Chyba ve výrazu: Zásobník plně obsazen',
+	'pfunc_expr_unexpected_number'          => 'Chyba ve výrazu: Očekáváno číslo',
+	'pfunc_expr_unrecognised_word'          => 'Chyba ve výrazu: Nerozpoznané slovo „$1“',
+	'pfunc_expr_unexpected_operator'        => 'Chyba ve výrazu: Neočekávaný operátor $1',
+	'pfunc_expr_missing_operand'            => 'Chyba ve výrazu: Chybí operand pro $1',
 	'pfunc_expr_unexpected_closing_bracket' => 'Chyba ve výrazu: Neočekávaná uzavírací závorka',
-	'pfunc_expr_unrecognised_punctuation' => 'Chyba ve výrazu: Nerozpoznaný interpunkční znak „$1“',
-	'pfunc_expr_unclosed_bracket' => 'Chyba ve výrazu: Neuzavřené závorky',
-	'pfunc_expr_division_by_zero' => 'Dělení nulou',
-	'pfunc_expr_unknown_error' => 'Chyba ve výrazu: Neznámá chyba ($1)',
-	'pfunc_expr_not_a_number' => 'V $1: výsledkem není číslo',
-	'pfunc_ifexist_warning' => 'Varování: Tato stránka obsahuje příliš mnoho volání funkce #ifexist. Mělo by jich být méně než $2, momentálně jich je $1.',
-	'pfunc_max_ifexist_category' => 'Stránky s příliš mnoha voláními funkce ifexist',
+	'pfunc_expr_unrecognised_punctuation'   => 'Chyba ve výrazu: Nerozpoznaný interpunkční znak „$1“',
+	'pfunc_expr_unclosed_bracket'           => 'Chyba ve výrazu: Neuzavřené závorky',
+	'pfunc_expr_division_by_zero'           => 'Dělení nulou',
+	'pfunc_expr_unknown_error'              => 'Chyba ve výrazu: Neznámá chyba ($1)',
+	'pfunc_expr_not_a_number'               => 'V $1: výsledkem není číslo',
+	'pfunc_ifexist_warning'                 => 'Varování: Tato stránka obsahuje příliš mnoho volání funkce #ifexist. Mělo by jich být méně než $2, momentálně jich je $1.',
+	'pfunc_max_ifexist_category'            => 'Stránky s příliš mnoha voláními funkce ifexist',
 );
 
-/* German */
+/** German (Deutsch) */
 $messages['de'] = array(
 	'pfunc_time_error'                      => 'Fehler: ungültige Zeitangabe',
 	'pfunc_time_too_long'                   => 'Fehler: zu viele #time-Aufrufe',
@@ -130,6 +140,9 @@ $messages['de'] = array(
 	'pfunc_max_ifexist_category'            => 'Seiten mit zuvielen ifexist-Aufrufen',
 );
 
+/** Greek (Ελληνικά)
+ * @author Consta
+ */
 $messages['el'] = array(
 	'pfunc_time_error' => 'Σφάλμα: άκυρος χρόνος',
 );
@@ -156,30 +169,34 @@ $messages['fa'] = array(
 
 );
 
-/* French */
+/** French (Français)
+ * @author Grondin
+ * @author Sherbrooke
+ */
 $messages['fr'] = array(
-	'pfunc_time_error' => 'Erreur : durée invalide',
-	'pfunc_time_too_long' => 'Erreur : parser #time appelé trop de fois',
-	'pfunc_rel2abs_invalid_depth' => 'Erreur: niveau de répertoire invalide dans le chemin : "$1" (a essayé d’accéder à un niveau au-dessus du répertoire racine)',
-	'pfunc_expr_stack_exhausted' => 'Expression erronée : pile épuisée',
-	'pfunc_expr_unexpected_number' => 'Expression erronée : nombre non attendu',
-	'pfunc_expr_preg_match_failure' => 'Expression erronée : echec d\'une expression non comprise',
-	'pfunc_expr_unrecognised_word' => 'Erreur d\'expression : le mot \'\'\'$1\'\'\' n\'est pas reconnu',
-	'pfunc_expr_unexpected_operator' => 'Erreur d\'expression : l\'opérateur \'\'\'$1\'\'\' n\'est pas reconnu',
-	'pfunc_expr_missing_operand' => 'Erreur d\'expression : l\'opérande \'\'\'$1\'\'\' n\'est pas reconnue',
-	'pfunc_expr_unexpected_closing_bracket' => 'Erreur d\'expression : parenthèse fermante non prévue',
-	'pfunc_expr_unrecognised_punctuation' => 'Erreur d\'expresion : caractère de ponctuation « $1 » non reconnu',
-	'pfunc_expr_unclosed_bracket' => 'Erreur d’expression : parenthèse non fermée',
-	'pfunc_expr_division_by_zero' => 'Division par zéro',
-	'pfunc_expr_unknown_error' => 'Erreur d\'expression : erreur inconnue ($1)',
-	'pfunc_expr_not_a_number' => 'Dans $1 : le résultat n\'est pas un nombre',
-	'pfunc_ifexist_warning' => 'Attention : Cette page contient trop d\'appels à <code>#ifexist</code>. Elle devrait en avoir moins que $2, alors qu\'elle en a $1.',
-	'pfunc_max_ifexist_category' => 'Pages avec trop d\'appels à <code>#ifexist</code>',
+	'pfunc_time_error'                      => 'Erreur : durée invalide',
+	'pfunc_time_too_long'                   => 'Erreur : parser #time appelé trop de fois',
+	'pfunc_rel2abs_invalid_depth'           => 'Erreur: niveau de répertoire invalide dans le chemin : "$1" (a essayé d’accéder à un niveau au-dessus du répertoire racine)',
+	'pfunc_expr_stack_exhausted'            => 'Expression erronée : pile épuisée',
+	'pfunc_expr_unexpected_number'          => 'Expression erronée : nombre non attendu',
+	'pfunc_expr_preg_match_failure'         => "Expression erronée : echec d'une expression non comprise",
+	'pfunc_expr_unrecognised_word'          => "Erreur d'expression : le mot '''$1''' n'est pas reconnu",
+	'pfunc_expr_unexpected_operator'        => "Erreur d'expression : l'opérateur '''$1''' n'est pas reconnu",
+	'pfunc_expr_missing_operand'            => "Erreur d'expression : l'opérande '''$1''' n'est pas reconnue",
+	'pfunc_expr_unexpected_closing_bracket' => "Erreur d'expression : parenthèse fermante non prévue",
+	'pfunc_expr_unrecognised_punctuation'   => "Erreur d'expresion : caractère de ponctuation « $1 » non reconnu",
+	'pfunc_expr_unclosed_bracket'           => 'Erreur d’expression : parenthèse non fermée',
+	'pfunc_expr_division_by_zero'           => 'Division par zéro',
+	'pfunc_expr_unknown_error'              => "Erreur d'expression : erreur inconnue ($1)",
+	'pfunc_expr_not_a_number'               => "Dans $1 : le résultat n'est pas un nombre",
+	'pfunc_ifexist_warning'                 => "Attention : Cette page contient trop d'appels à <code>#ifexist</code>. Elle devrait en avoir moins que $2, alors qu'elle en a $1.",
+	'pfunc_max_ifexist_category'            => "Pages avec trop d'appels à <code>#ifexist</code>",
 );
 
 /** Galician (Galego)
  * @author Xosé
  * @author Alma
+ * @author Siebrand
  */
 $messages['gl'] = array(
 	'pfunc_time_error'                      => 'Erro: hora non válida',
@@ -199,10 +216,9 @@ $messages['gl'] = array(
 	'pfunc_expr_not_a_number'               => 'En $1: o resultado non é un número',
 	'pfunc_ifexist_warning'                 => 'Advertencia: Este artigo inclúe demasiadas chamadas a #ifexists. Debería ter menos de $2 e agora hai $1.',
 	'pfunc_max_ifexist_category'            => 'Páxinas con demasiadas chamadas a ifexists',
-
 );
 
-/* Hebrew */
+/** Hebrew (עברית) */
 $messages['he'] = array(
 	'pfunc_time_error'                      => 'שגיאה: זמן שגוי',
 	'pfunc_time_too_long'                   => 'שגיאה: שימוש ב"#זמן" פעמים רבות מדי',
@@ -225,6 +241,7 @@ $messages['he'] = array(
 
 /** Croatian (Hrvatski)
  * @author SpeedyGonsales
+ * @author Siebrand
  */
 $messages['hr'] = array(
 	'pfunc_time_error'                      => 'Greška: oblik vremena nije valjan',
@@ -246,24 +263,27 @@ $messages['hr'] = array(
 	'pfunc_max_ifexist_category'            => 'Stranica s previše ifexist poziva',
 );
 
+/** Upper Sorbian (Hornjoserbsce)
+ * @author Michawiki
+ */
 $messages['hsb'] = array(
-	'pfunc_time_error' => 'Zmylk: njepłaćiwe časowe podaće',
-	'pfunc_time_too_long' => 'Zmylk: přewjele zawołanjow #time',
-	'pfunc_rel2abs_invalid_depth' => 'Zmylk: Njepłaćiwa hłubokosć w pućiku: "$1" (Pospyt, zo by na suk wyše hłowneho suka dohrabnyło)',
-	'pfunc_expr_stack_exhausted' => 'Wurazowy zmylk: Staplowy skład wučerpany',
-	'pfunc_expr_unexpected_number' => 'Wurazowy zmylk: Njewočakowana ličba',
-	'pfunc_expr_preg_match_failure' => 'Wurazowy zmylk: Njewočakowana zmylna funkcija "preg_match"',
-	'pfunc_expr_unrecognised_word' => 'Wurazowy zmylk: Njespóznate słowo "$1"',
-	'pfunc_expr_unexpected_operator' => 'Wurazowy zmylk: Njewočakowany operator $1',
-	'pfunc_expr_missing_operand' => 'Wurazowy zmylk: Falowacy operand za $1',
+	'pfunc_time_error'                      => 'Zmylk: njepłaćiwe časowe podaće',
+	'pfunc_time_too_long'                   => 'Zmylk: přewjele zawołanjow #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Zmylk: Njepłaćiwa hłubokosć w pućiku: "$1" (Pospyt, zo by na suk wyše hłowneho suka dohrabnyło)',
+	'pfunc_expr_stack_exhausted'            => 'Wurazowy zmylk: Staplowy skład wučerpany',
+	'pfunc_expr_unexpected_number'          => 'Wurazowy zmylk: Njewočakowana ličba',
+	'pfunc_expr_preg_match_failure'         => 'Wurazowy zmylk: Njewočakowana zmylna funkcija "preg_match"',
+	'pfunc_expr_unrecognised_word'          => 'Wurazowy zmylk: Njespóznate słowo "$1"',
+	'pfunc_expr_unexpected_operator'        => 'Wurazowy zmylk: Njewočakowany operator $1',
+	'pfunc_expr_missing_operand'            => 'Wurazowy zmylk: Falowacy operand za $1',
 	'pfunc_expr_unexpected_closing_bracket' => 'Wurazowy zmylk: Njewočakowana kónčna róžkata spinka',
-	'pfunc_expr_unrecognised_punctuation' => 'Wurazowy zmylk: Njespóznate interpunkciske znamješko "$1"',
-	'pfunc_expr_unclosed_bracket' => 'Wurazowy zmylk: Njewotzamknjena róžkata spinka',
-	'pfunc_expr_division_by_zero' => 'Diwizija přez nulu',
-	'pfunc_expr_unknown_error' => 'Wurazowy zmylk: Njeznaty zmylk ($1)',
-	'pfunc_expr_not_a_number' => 'W $1: Wuslědk ličba njeje',
-	'pfunc_ifexist_warning' => 'Warnowanje: Tutón nastawk wobsahuje přewjele zawołanjow #ifexist. Měło mjenje hač $2 być, nětko je $1.',
-	'pfunc_max_ifexist_category' => 'Strony z přewjele zawołanjow ifexist',
+	'pfunc_expr_unrecognised_punctuation'   => 'Wurazowy zmylk: Njespóznate interpunkciske znamješko "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'Wurazowy zmylk: Njewotzamknjena róžkata spinka',
+	'pfunc_expr_division_by_zero'           => 'Diwizija přez nulu',
+	'pfunc_expr_unknown_error'              => 'Wurazowy zmylk: Njeznaty zmylk ($1)',
+	'pfunc_expr_not_a_number'               => 'W $1: Wuslědk ličba njeje',
+	'pfunc_ifexist_warning'                 => 'Warnowanje: Tutón nastawk wobsahuje přewjele zawołanjow #ifexist. Měło mjenje hač $2 być, nětko je $1.',
+	'pfunc_max_ifexist_category'            => 'Strony z přewjele zawołanjow ifexist',
 );
 
 /** Hungarian (Magyar)
@@ -289,7 +309,28 @@ $messages['hu'] = array(
 	'pfunc_max_ifexist_category'            => 'Túl sok ifexist hívást tartalmazó lapok',
 );
 
-/* Kazakh Cyrillic */
+/** ‫قازاقشا (تٴوتە)‬ (‫قازاقشا (تٴوتە)‬) */
+$messages['kk-arab'] = array(
+	'pfunc_time_error'                      => 'قاتە: جارامسىز ۋاقىت',
+	'pfunc_time_too_long'                   => 'قاتە: #time شاقىرۋى تىم كوپ',
+	'pfunc_rel2abs_invalid_depth'           => 'قاتە: مىنا جولدىڭ جارامسىز تەرەندىگى «$1» (تامىر ٴتۇيىننىڭ ۇستىندەگى تۇيىنگە قاتىناۋ تالابى)',
+	'pfunc_expr_stack_exhausted'            => 'ايتىلىم قاتەسى: ستەك سارقىلدى',
+	'pfunc_expr_unexpected_number'          => 'ايتىلىم قاتەسى: كۇتىلمەگەن سان',
+	'pfunc_expr_preg_match_failure'         => 'ايتىلىم قاتەسى: كۇتىلمەگەن preg_match ساتسىزدىگى',
+	'pfunc_expr_unrecognised_word'          => 'ايتىلىم قاتەسى: تانىلماعان ٴسوز «$1»',
+	'pfunc_expr_unexpected_operator'        => 'ايتىلىم قاتەسى: كۇتىلمەگەن وپەراتور $1',
+	'pfunc_expr_missing_operand'            => 'ايتىلىم قاتەسى: $1 ٴۇشىن جوعالعان وپەراند ',
+	'pfunc_expr_unexpected_closing_bracket' => 'ايتىلىم قاتەسى: كۇتىلمەگەن جاباتىن جاقشا',
+	'pfunc_expr_unrecognised_punctuation'   => 'ايتىلىم قاتەسى: تانىلماعان تىنىس بەلگىسى «$1» ',
+	'pfunc_expr_unclosed_bracket'           => 'ايتىلىم قاتەسى: جابىلماعان جاقشا',
+	'pfunc_expr_division_by_zero'           => 'نولگە ٴبولىنۋى',
+	'pfunc_expr_unknown_error'              => 'ايتىلىم قاتەسى: بەلگىسىز قاتە ($1)',
+	'pfunc_expr_not_a_number'               => '$1 دەگەندە: ناتىيجە سان ەمەس',
+	'pfunc_ifexist_warning'                 => 'نازار سالىڭىز: وسى بەتتە تىم كوپ #ifexist شاقىرىمدارى بار. بۇل $2 ساننان كەم بولۋى كەرەك, مىندا قازىر $1 بار.',
+	'pfunc_max_ifexist_category'            => 'تىم كوپ ifexist شاقىرىمدارى بار بەتتەر',
+);
+
+/** Kazakh (Cyrillic) (Қазақша (Cyrillic)) */
 $messages['kk-cyrl'] = array(
 	'pfunc_time_error'                      => 'Қате: жарамсыз уақыт',
 	'pfunc_time_too_long'                   => 'Қате: #time шақыруы тым көп',
@@ -309,7 +350,8 @@ $messages['kk-cyrl'] = array(
 	'pfunc_ifexist_warning'                 => 'Назар салыңыз: Осы бетте тым көп #ifexist шақырымдары бар. Бұл $2 саннан кем болуы керек, мында қазір $1 бар.',
 	'pfunc_max_ifexist_category'            => 'Тым көп ifexist шақырымдары бар беттер',
 );
-/* Kazakh Latin */
+
+/** Kazakh (Latin) (Қазақша (Latin)) */
 $messages['kk-latn'] = array(
 	'pfunc_time_error'                      => 'Qate: jaramsız waqıt',
 	'pfunc_time_too_long'                   => 'Qate: #time şaqırwı tım köp',
@@ -328,26 +370,6 @@ $messages['kk-latn'] = array(
 	'pfunc_expr_not_a_number'               => '$1 degende: nätïje san emes',
 	'pfunc_ifexist_warning'                 => 'Nazar salıñız: Osı bette tım köp #ifexist şaqırımdarı bar. Bul $2 sannan kem bolwı kerek, mında qazir $1 bar.',
 	'pfunc_max_ifexist_category'            => 'Tım köp ifexist şaqırımdarı bar better',
-);
-/* Kazakh Arabic */
-$messages['kk-arab'] = array(
-	'pfunc_time_error'                      => 'قاتە: جارامسىز ۋاقىت',
-	'pfunc_time_too_long'                   => 'قاتە: #time شاقىرۋى تىم كوپ',
-	'pfunc_rel2abs_invalid_depth'           => 'قاتە: مىنا جولدىڭ جارامسىز تەرەندىگى «$1» (تامىر ٴتۇيىننىڭ ۇستىندەگى تۇيىنگە قاتىناۋ تالابى)',
-	'pfunc_expr_stack_exhausted'            => 'ايتىلىم قاتەسى: ستەك سارقىلدى',
-	'pfunc_expr_unexpected_number'          => 'ايتىلىم قاتەسى: كۇتىلمەگەن سان',
-	'pfunc_expr_preg_match_failure'         => 'ايتىلىم قاتەسى: كۇتىلمەگەن preg_match ساتسىزدىگى',
-	'pfunc_expr_unrecognised_word'          => 'ايتىلىم قاتەسى: تانىلماعان ٴسوز «$1»',
-	'pfunc_expr_unexpected_operator'        => 'ايتىلىم قاتەسى: كۇتىلمەگەن وپەراتور $1',
-	'pfunc_expr_missing_operand'            => 'ايتىلىم قاتەسى: $1 ٴۇشىن جوعالعان وپەراند ',
-	'pfunc_expr_unexpected_closing_bracket' => 'ايتىلىم قاتەسى: كۇتىلمەگەن جاباتىن جاقشا',
-	'pfunc_expr_unrecognised_punctuation'   => 'ايتىلىم قاتەسى: تانىلماعان تىنىس بەلگىسى «$1» ',
-	'pfunc_expr_unclosed_bracket'           => 'ايتىلىم قاتەسى: جابىلماعان جاقشا',
-	'pfunc_expr_division_by_zero'           => 'نولگە ٴبولىنۋى',
-	'pfunc_expr_unknown_error'              => 'ايتىلىم قاتەسى: بەلگىسىز قاتە ($1)',
-	'pfunc_expr_not_a_number'               => '$1 دەگەندە: ناتىيجە سان ەمەس',
-	'pfunc_ifexist_warning'                 => 'نازار سالىڭىز: وسى بەتتە تىم كوپ #ifexist شاقىرىمدارى بار. بۇل $2 ساننان كەم بولۋى كەرەك, مىندا قازىر $1 بار.',
-	'pfunc_max_ifexist_category'            => 'تىم كوپ ifexist شاقىرىمدارى بار بەتتەر',
 );
 
 /** Latin (Latina)
@@ -411,11 +433,11 @@ $messages['nl'] = array(
 	'pfunc_expr_not_a_number'               => 'In $1: resultaat is geen getal',
 	'pfunc_ifexist_warning'                 => 'Waarschuwing: deze pagina gebruik #ifexists te vaak. Dat zou minder dan $2 keer moeten zijn en is nu $1 keer.',
 	'pfunc_max_ifexist_category'            => "Pagina's die ifexist te vaak gebruiken",
-
 );
 
 /** Occitan (Occitan)
  * @author Cedric31
+ * @author Siebrand
  */
 $messages['oc'] = array(
 	'pfunc_time_error'                      => 'Error: durada invalida',
@@ -436,27 +458,35 @@ $messages['oc'] = array(
 	'pfunc_max_ifexist_category'            => "Paginas amb tròp d'apèls a <code>#ifexist</code>",
 );
 
+/** Polish (Polski)
+ * @author Derbeth
+ * @author Siebrand
+ */
 $messages['pl'] = array(
-	'pfunc_time_error' => 'Błąd: niepoprawny czas',
-	'pfunc_time_too_long' => 'Błąd: za dużo wywołań funkcji #time',
-	'pfunc_rel2abs_invalid_depth' => 'Błąd: Nieprawidłowa głębokość w ścieżce: "$1" (próba dostępu do węzła powyżej korzenia)',
-	'pfunc_expr_stack_exhausted' => 'Błąd w wyrażeniu: Stos wyczerpany',
-	'pfunc_expr_unexpected_number' => 'Błąd w wyrażeniu: Niespodziewana liczba',
-	'pfunc_expr_preg_match_failure' => 'Błąd w wyrażeniu: Niespodziewany błąd w preg_match',
-	'pfunc_expr_unrecognised_word' => 'Błąd w wyrażeniu: Nierozpoznane słowo "$1"',
-	'pfunc_expr_unexpected_operator' => 'Błąd w wyrażeniu: Nieoczekiwany operator $1',
-	'pfunc_expr_missing_operand' => 'Błąd w wyrażeniu: Brakujący operand dla $1',
+	'pfunc_time_error'                      => 'Błąd: niepoprawny czas',
+	'pfunc_time_too_long'                   => 'Błąd: za dużo wywołań funkcji #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Błąd: Nieprawidłowa głębokość w ścieżce: "$1" (próba dostępu do węzła powyżej korzenia)',
+	'pfunc_expr_stack_exhausted'            => 'Błąd w wyrażeniu: Stos wyczerpany',
+	'pfunc_expr_unexpected_number'          => 'Błąd w wyrażeniu: Niespodziewana liczba',
+	'pfunc_expr_preg_match_failure'         => 'Błąd w wyrażeniu: Niespodziewany błąd w preg_match',
+	'pfunc_expr_unrecognised_word'          => 'Błąd w wyrażeniu: Nierozpoznane słowo "$1"',
+	'pfunc_expr_unexpected_operator'        => 'Błąd w wyrażeniu: Nieoczekiwany operator $1',
+	'pfunc_expr_missing_operand'            => 'Błąd w wyrażeniu: Brakujący operand dla $1',
 	'pfunc_expr_unexpected_closing_bracket' => 'Błąd w wyrażeniu: Nieoczekiwany nawias zamykający',
-	'pfunc_expr_unrecognised_punctuation' => 'Błąd w wyrażeniu: Nierozpoznany znak interpunkcyjny "$1"',
-	'pfunc_expr_unclosed_bracket' => 'Błąd w wyrażeniu: Niedomknięty nawias',
-	'pfunc_expr_division_by_zero' => 'Dzielenie przez zero',
-	'pfunc_expr_unknown_error' => 'Błąd w wyrażeniu: Nieznany błąd ($1)',
-	'pfunc_expr_not_a_number' => 'W $1: wynik nie jest liczbą',
+	'pfunc_expr_unrecognised_punctuation'   => 'Błąd w wyrażeniu: Nierozpoznany znak interpunkcyjny "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'Błąd w wyrażeniu: Niedomknięty nawias',
+	'pfunc_expr_division_by_zero'           => 'Dzielenie przez zero',
+	'pfunc_expr_unknown_error'              => 'Błąd w wyrażeniu: Nieznany błąd ($1)',
+	'pfunc_expr_not_a_number'               => 'W $1: wynik nie jest liczbą',
 );
 
+/** Piemontèis (Piemontèis)
+ * @author Bèrto 'd Sèra
+ * @author Siebrand
+ */
 $messages['pms'] = array(
-	'pfunc_time_error' => 'Eror: temp nen bon',
-	'pfunc_time_too_long' => 'Eror: #time a ven ciamà tròpe vire',
+	'pfunc_time_error'            => 'Eror: temp nen bon',
+	'pfunc_time_too_long'         => 'Eror: #time a ven ciamà tròpe vire',
 	'pfunc_rel2abs_invalid_depth' => 'Eror: profondità nen bon-a ant ël përcors: "$1" (a l\'é provasse a ciamé un grop dzora a la rèis)',
 );
 
@@ -548,31 +578,31 @@ $messages['sv'] = array(
 	'pfunc_max_ifexist_category'            => 'Sidor med för många ifexist-anrop',
 );
 
-/* Cantonese */
+/** 粵語 (粵語) */
 $messages['yue'] = array(
-	 'pfunc_time_error'             => '錯: 唔啱嘅時間',
-	 'pfunc_time_too_long'          => '錯: 太多 #time 呼叫',
-	 'pfunc_rel2abs_invalid_depth'  => '錯: 唔啱路徑嘅深度: "$1" (已經試過由頭點落個點度)',
+	'pfunc_time_error'            => '錯: 唔啱嘅時間',
+	'pfunc_time_too_long'         => '錯: 太多 #time 呼叫',
+	'pfunc_rel2abs_invalid_depth' => '錯: 唔啱路徑嘅深度: "$1" (已經試過由頭點落個點度)',
 );
 
-/* Chinese (Simplified) */
+/** Simplified Chinese (‪中文(简体)‬) */
 $messages['zh-hans'] = array(
-	 'pfunc_time_error'             => '错误: 不正确的时间',
-	 'pfunc_time_too_long'          => '错误: 过多 #time 的呼叫',
-	 'pfunc_rel2abs_invalid_depth'  => '错误: 不正确的路径深度: "$1" (已经尝试在顶点访问该点)',
+	'pfunc_time_error'            => '错误: 不正确的时间',
+	'pfunc_time_too_long'         => '错误: 过多 #time 的呼叫',
+	'pfunc_rel2abs_invalid_depth' => '错误: 不正确的路径深度: "$1" (已经尝试在顶点访问该点)',
 );
 
-/* Chinese (Traditional) */
+/** Traditional Chinese (‪中文(繁體)‬) */
 $messages['zh-hant'] = array(
-	 'pfunc_time_error'             => '錯誤: 不正確的時間',
-	 'pfunc_time_too_long'          => '錯誤: 過多 #time 的呼叫',
-	 'pfunc_rel2abs_invalid_depth'  => '錯誤: 不正確的路徑深度: "$1" (已經嘗試在頂點存取該點)',
+	'pfunc_time_error'            => '錯誤: 不正確的時間',
+	'pfunc_time_too_long'         => '錯誤: 過多 #time 的呼叫',
+	'pfunc_rel2abs_invalid_depth' => '錯誤: 不正確的路徑深度: "$1" (已經嘗試在頂點存取該點)',
 );
 
+$messages['kk'] = $messages['kk-cyrl'];
+$messages['kk-cn'] = $messages['kk-arab'];
 $messages['kk-kz'] = $messages['kk-cyrl'];
 $messages['kk-tr'] = $messages['kk-latn'];
-$messages['kk-cn'] = $messages['kk-arab'];
-$messages['kk'] = $messages['kk-cyrl'];
 $messages['zh'] = $messages['zh-hans'];
 $messages['zh-cn'] = $messages['zh-hans'];
 $messages['zh-hk'] = $messages['zh-hant'];
