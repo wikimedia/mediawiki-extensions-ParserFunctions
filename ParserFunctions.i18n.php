@@ -610,6 +610,8 @@ $messages['zh-hant'] = array(
 	'pfunc_rel2abs_invalid_depth' => '錯誤: 不正確的路徑深度: "$1" (已經嘗試在頂點存取該點)',
 );
 
+# Fallbacks:
+$messages['de-formal'] = $messages['de'];
 $messages['kk'] = $messages['kk-cyrl'];
 $messages['kk-cn'] = $messages['kk-arab'];
 $messages['kk-kz'] = $messages['kk-cyrl'];
