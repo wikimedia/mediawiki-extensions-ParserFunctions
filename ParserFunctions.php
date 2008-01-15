@@ -108,6 +108,26 @@ class ExtParserFunctions {
 		}
 	}
 
+	function iferror( &$parser, $test = '', $then = '', $else = '' ) {
+		if ( preg_match( '/<(strong|span) class="error"/', $test ) ) {
+			return $then;
+		} else {
+			return $else;
+		}
+	}
+
+	function iferrorObj( &$parser, $frame, $args ) {
+		$test = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
+		$then = isset( $args[1] ) ? $args[1] : false;
+		$else = isset( $args[2] ) ? $args[2] : false;
+		$result = $this->iferror( $parser, $test, $then, $else );
+		if ( $result === false ) {
+			return '';
+		} else {
+			return trim( $frame->expand( $result ) );
+		}
+	}
+
 	function switchHook( &$parser /*,...*/ ) {
 		$args = func_get_args();
 		array_shift( $args );
@@ -449,12 +469,13 @@ function wfSetupParserFunctions() {
 		$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchObj' ), SFH_OBJECT_ARGS );
 		$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexistObj' ), SFH_OBJECT_ARGS );
 		$wgParser->setFunctionHook( 'ifexpr', array( &$wgExtParserFunctions, 'ifexprObj' ), SFH_OBJECT_ARGS );
+		$wgParser->setFunctionHook( 'iferror', array( &$wgExtParserFunctions, 'iferrorObj' ), SFH_OBJECT_ARGS );
 	} else {
 		$wgParser->setFunctionHook( 'if', array( &$wgExtParserFunctions, 'ifHook' ) );
 		$wgParser->setFunctionHook( 'ifeq', array( &$wgExtParserFunctions, 'ifeq' ) );
 		$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchHook' ) );
 		$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexist' ) );
-		$wgParser->setFunctionHook( 'ifexpr', array( &$wgExtParserFunctions, 'ifexpr' ) );
+		$wgParser->setFunctionHook( 'iferror', array( &$wgExtParserFunctions, 'iferror' ) );
 	}
 
 	$wgParser->setFunctionHook( 'expr', array( &$wgExtParserFunctions, 'expr' ) );
