@@ -475,6 +475,7 @@ function wfSetupParserFunctions() {
 		$wgParser->setFunctionHook( 'ifeq', array( &$wgExtParserFunctions, 'ifeq' ) );
 		$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchHook' ) );
 		$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexist' ) );
+		$wgParser->setFunctionHook( 'ifexpr', array( &$wgExtParserFunctions, 'ifexpr' ) );
 		$wgParser->setFunctionHook( 'iferror', array( &$wgExtParserFunctions, 'iferror' ) );
 	}
 
