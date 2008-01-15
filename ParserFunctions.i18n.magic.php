@@ -50,6 +50,7 @@ function efParserFunctionsWords( $lang ) {
 		'if'         => array( 0, 'תנאי',        'if' ),
 		'ifeq'       => array( 0, 'שווה',        'ifeq' ),
 		'ifexpr'     => array( 0, 'חשב תנאי',    'ifexpr' ),
+		'iferror'    => array( 0, 'תנאי שגיאה',  'iferror' ),
 		'switch'     => array( 0, 'בחר',         'switch' ),
 		'default'    => array( 0, '#ברירת מחדל', '#default' ),
 		'ifexist'    => array( 0, 'קיים',        'ifexist' ),
