@@ -586,6 +586,7 @@ $messages['sv'] = array(
 	'pfunc_expr_unclosed_bracket'           => 'Fel i uttryck: Oavslutad parentes',
 	'pfunc_expr_division_by_zero'           => 'Division med noll',
 	'pfunc_expr_unknown_error'              => 'Fel i uttryck: Okänt fel ($1)',
+	'pfunc_ifexist_warning'                 => 'Varning: Den här sidan innehåller för många anrop av #ifexist. Antalet anrop måste vara mindre än $2, nu är det $1.',
 	'pfunc_max_ifexist_category'            => 'Sidor med för många ifexist-anrop',
 );
 
@@ -610,7 +611,6 @@ $messages['zh-hant'] = array(
 	'pfunc_rel2abs_invalid_depth' => '錯誤: 不正確的路徑深度: "$1" (已經嘗試在頂點存取該點)',
 );
 
-# Fallbacks:
 $messages['de-formal'] = $messages['de'];
 $messages['kk'] = $messages['kk-cyrl'];
 $messages['kk-cn'] = $messages['kk-arab'];
