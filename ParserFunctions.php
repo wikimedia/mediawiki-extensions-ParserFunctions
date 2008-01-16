@@ -313,6 +313,13 @@ class ExtParserFunctions {
 				}
 				$parser->mOutput->addImage($file->getName());
 				return $file->exists() ? $then : $else;
+			} elseif( $title->getNamespace() == NS_SPECIAL || $title->isExternal() ) {
+				// Specials and interwikis...
+				// Currently these always return false, though perhaps
+				// they should be able to do some checks?
+				//
+				// In any case, don't register them in local link tables as below...
+				return $else;
 			} else {
 				$pdbk = $title->getPrefixedDBkey();
 				$lc = LinkCache::singleton();
