@@ -53,8 +53,10 @@ $messages['ar'] = array(
 
 /** Bulgarian (Български)
  * @author Spiritia
+ * @author DCLXVI
  */
 $messages['bg'] = array(
+	'pfunc_time_error'                      => 'Грешка: невалидно време',
 	'pfunc_time_too_long'                   => 'Грешка: Твърде много извиквания на #time',
 	'pfunc_expr_stack_exhausted'            => 'Грешка в записа: Стекът е изчерпан',
 	'pfunc_expr_unexpected_number'          => 'Грешка в записа: Неочаквано число',
@@ -106,6 +108,7 @@ $messages['cs'] = array(
 	'pfunc_rel2abs_invalid_depth'           => 'Chyba: Neplatná hloubka v cestě: "$1" (pokus o přístup do uzlu vyššího než kořen)',
 	'pfunc_expr_stack_exhausted'            => 'Chyba ve výrazu: Zásobník plně obsazen',
 	'pfunc_expr_unexpected_number'          => 'Chyba ve výrazu: Očekáváno číslo',
+	'pfunc_expr_preg_match_failure'         => 'Chyba ve výrazu: Neočekávaná chyba funkce preg_match',
 	'pfunc_expr_unrecognised_word'          => 'Chyba ve výrazu: Nerozpoznané slovo „$1“',
 	'pfunc_expr_unexpected_operator'        => 'Chyba ve výrazu: Neočekávaný operátor $1',
 	'pfunc_expr_missing_operand'            => 'Chyba ve výrazu: Chybí operand pro $1',
@@ -572,6 +575,7 @@ $messages['stq'] = array(
 
 /** Swedish (Svenska)
  * @author Lejonel
+ * @author Max sonnelid
  */
 $messages['sv'] = array(
 	'pfunc_time_error'                      => 'Fel: ogiltig tid',
@@ -586,6 +590,7 @@ $messages['sv'] = array(
 	'pfunc_expr_unclosed_bracket'           => 'Fel i uttryck: Oavslutad parentes',
 	'pfunc_expr_division_by_zero'           => 'Division med noll',
 	'pfunc_expr_unknown_error'              => 'Fel i uttryck: Okänt fel ($1)',
+	'pfunc_expr_not_a_number'               => 'I $1: resultatet är inte ett nummer',
 	'pfunc_ifexist_warning'                 => 'Varning: Den här sidan innehåller för många anrop av #ifexist. Antalet anrop måste vara mindre än $2, nu är det $1.',
 	'pfunc_max_ifexist_category'            => 'Sidor med för många ifexist-anrop',
 );
