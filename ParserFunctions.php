@@ -25,6 +25,33 @@ class ExtParserFunctions {
 	var $mTimeChars = 0;
 	var $mMaxTimeChars = 6000; # ~10 seconds
 
+	function registerParser( &$parser ) {
+		if ( defined( get_class( $parser ) . '::SFH_OBJECT_ARGS' ) ) {
+			// These functions accept DOM-style arguments
+			$parser->setFunctionHook( 'if', array( &$this, 'ifObj' ), SFH_OBJECT_ARGS );
+			$parser->setFunctionHook( 'ifeq', array( &$this, 'ifeqObj' ), SFH_OBJECT_ARGS );
+			$parser->setFunctionHook( 'switch', array( &$this, 'switchObj' ), SFH_OBJECT_ARGS );
+			$parser->setFunctionHook( 'ifexist', array( &$this, 'ifexistObj' ), SFH_OBJECT_ARGS );
+			$parser->setFunctionHook( 'ifexpr', array( &$this, 'ifexprObj' ), SFH_OBJECT_ARGS );
+			$parser->setFunctionHook( 'iferror', array( &$this, 'iferrorObj' ), SFH_OBJECT_ARGS );
+		} else {
+			$parser->setFunctionHook( 'if', array( &$this, 'ifHook' ) );
+			$parser->setFunctionHook( 'ifeq', array( &$this, 'ifeq' ) );
+			$parser->setFunctionHook( 'switch', array( &$this, 'switchHook' ) );
+			$parser->setFunctionHook( 'ifexist', array( &$this, 'ifexist' ) );
+			$parser->setFunctionHook( 'ifexpr', array( &$this, 'ifexpr' ) );
+			$parser->setFunctionHook( 'iferror', array( &$this, 'iferror' ) );
+		}
+
+		$parser->setFunctionHook( 'expr', array( &$this, 'expr' ) );
+		$parser->setFunctionHook( 'time', array( &$this, 'time' ) );
+		$parser->setFunctionHook( 'timel', array( &$this, 'localTime' ) );
+		$parser->setFunctionHook( 'rel2abs', array( &$this, 'rel2abs' ) );
+		$parser->setFunctionHook( 'titleparts', array( &$this, 'titleparts' ) );
+
+		return true;
+	}
+
 	function clearState(&$parser) {
 		$this->mTimeChars = 0;
 		$parser->pf_ifexist_count = 0;
@@ -468,31 +495,14 @@ function wfSetupParserFunctions() {
 	$wgExtParserFunctions = new ExtParserFunctions;
 
 	// Check for SFH_OBJECT_ARGS capability
-	if ( class_exists( 'StubObject' ) && !StubObject::isRealObject( $wgParser ) ) {
-		$wgParser->_unstub();
-	}
-	if ( defined( get_class( $wgParser ) . '::SFH_OBJECT_ARGS' ) ) {
-		// These functions accept DOM-style arguments
-		$wgParser->setFunctionHook( 'if', array( &$wgExtParserFunctions, 'ifObj' ), SFH_OBJECT_ARGS );
-		$wgParser->setFunctionHook( 'ifeq', array( &$wgExtParserFunctions, 'ifeqObj' ), SFH_OBJECT_ARGS );
-		$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchObj' ), SFH_OBJECT_ARGS );
-		$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexistObj' ), SFH_OBJECT_ARGS );
-		$wgParser->setFunctionHook( 'ifexpr', array( &$wgExtParserFunctions, 'ifexprObj' ), SFH_OBJECT_ARGS );
-		$wgParser->setFunctionHook( 'iferror', array( &$wgExtParserFunctions, 'iferrorObj' ), SFH_OBJECT_ARGS );
+	if ( defined( 'MW_SUPPORTS_PARSERFIRSTCALLINIT' ) ) {
+		$wgHooks['ParserFirstCallInit'][] = array( &$wgExtParserFunctions, 'registerParser' );
 	} else {
-		$wgParser->setFunctionHook( 'if', array( &$wgExtParserFunctions, 'ifHook' ) );
-		$wgParser->setFunctionHook( 'ifeq', array( &$wgExtParserFunctions, 'ifeq' ) );
-		$wgParser->setFunctionHook( 'switch', array( &$wgExtParserFunctions, 'switchHook' ) );
-		$wgParser->setFunctionHook( 'ifexist', array( &$wgExtParserFunctions, 'ifexist' ) );
-		$wgParser->setFunctionHook( 'ifexpr', array( &$wgExtParserFunctions, 'ifexpr' ) );
-		$wgParser->setFunctionHook( 'iferror', array( &$wgExtParserFunctions, 'iferror' ) );
+		if ( class_exists( 'StubObject' ) && !StubObject::isRealObject( $wgParser ) ) {
+			$wgParser->_unstub();
+		}
+		$wgExtParserFunctions->registerParser( $wgParser );
 	}
-
-	$wgParser->setFunctionHook( 'expr', array( &$wgExtParserFunctions, 'expr' ) );
-	$wgParser->setFunctionHook( 'time', array( &$wgExtParserFunctions, 'time' ) );
-	$wgParser->setFunctionHook( 'timel', array( &$wgExtParserFunctions, 'localTime' ) );
-	$wgParser->setFunctionHook( 'rel2abs', array( &$wgExtParserFunctions, 'rel2abs' ) );
-	$wgParser->setFunctionHook( 'titleparts', array( &$wgExtParserFunctions, 'titleparts' ) );
 
 	$wgHooks['ParserClearState'][] = array( &$wgExtParserFunctions, 'clearState' );
 	$wgHooks['ParserAfterTidy'][] = array( &$wgExtParserFunctions, 'afterTidy' );
@@ -512,3 +522,4 @@ function wfParserFunctionsLimitReport( $parser, &$report ) {
 	}
 	return true;
 }
+
