@@ -108,9 +108,11 @@ class ExtParserFunctions {
 		}
 	}
 
-	function iferror( &$parser, $test = '', $then = '', $else = '' ) {
+	function iferror( &$parser, $test = '', $then = '', $else = false ) {
 		if ( preg_match( '/<(strong|span) class="error"/', $test ) ) {
 			return $then;
+		} elseif ( $else === false ) {
+			return $test;
 		} else {
 			return $else;
 		}
