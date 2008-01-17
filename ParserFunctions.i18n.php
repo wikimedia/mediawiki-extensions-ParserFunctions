@@ -196,6 +196,29 @@ $messages['fr'] = array(
 	'pfunc_max_ifexist_category'            => "Pages avec trop d'appels à <code>#ifexist</code>",
 );
 
+/** Franco-Provençal (Arpetan)
+ * @author ChrisPtDe
+ */
+$messages['frp'] = array(
+	'pfunc_time_error'                      => 'Èrror : durâ envalida',
+	'pfunc_time_too_long'                   => 'Èrror : parsèr #time apelâ trop de côps',
+	'pfunc_rel2abs_invalid_depth'           => 'Èrror : nivô de rèpèrtouèro envalido dens lo chemin : « $1 » (at tâchiê d’arrevar a un nivô en-dessus du rèpèrtouèro racena)',
+	'pfunc_expr_stack_exhausted'            => 'Èxprèssion fôssa : pila èpouesiê',
+	'pfunc_expr_unexpected_number'          => 'Èxprèssion fôssa : nombro emprèvu',
+	'pfunc_expr_preg_match_failure'         => 'Èxprèssion fôssa : falyita d’una èxprèssion pas comprêsa',
+	'pfunc_expr_unrecognised_word'          => "Èrror d’èxprèssion : lo mot '''$1''' est pas recognu",
+	'pfunc_expr_unexpected_operator'        => "Èrror d’èxprèssion : l’opèrator '''$1''' est pas recognu",
+	'pfunc_expr_missing_operand'            => "Èrror d’èxprèssion : l’opèranda '''$1''' est pas recognua",
+	'pfunc_expr_unexpected_closing_bracket' => 'Èrror d’èxprèssion : parentèsa cllosenta emprèvua',
+	'pfunc_expr_unrecognised_punctuation'   => 'Èrror d’èxprèssion : caractèro de ponctuacion « $1 » pas recognu',
+	'pfunc_expr_unclosed_bracket'           => 'Èrror d’èxprèssion : parentèsa pas cllôsa',
+	'pfunc_expr_division_by_zero'           => 'Division per zérô',
+	'pfunc_expr_unknown_error'              => 'Èrror d’èxprèssion : èrror encognua ($1)',
+	'pfunc_expr_not_a_number'               => 'Dens $1 : lo rèsultat est pas un nombro',
+	'pfunc_ifexist_warning'                 => 'Atencion : ceta pâge contint trop d’apèls a <code>#ifexist</code>. Devrêt nen avêr muens que $2, pendent qu’el en at $1.',
+	'pfunc_max_ifexist_category'            => 'Pâges avouéc trop d’apèls a <code>#ifexist</code>',
+);
+
 /** Galician (Galego)
  * @author Xosé
  * @author Alma
@@ -575,7 +598,6 @@ $messages['stq'] = array(
 
 /** Swedish (Svenska)
  * @author Lejonel
- * @author Max sonnelid
  */
 $messages['sv'] = array(
 	'pfunc_time_error'                      => 'Fel: ogiltig tid',
@@ -590,9 +612,32 @@ $messages['sv'] = array(
 	'pfunc_expr_unclosed_bracket'           => 'Fel i uttryck: Oavslutad parentes',
 	'pfunc_expr_division_by_zero'           => 'Division med noll',
 	'pfunc_expr_unknown_error'              => 'Fel i uttryck: Okänt fel ($1)',
-	'pfunc_expr_not_a_number'               => 'I $1: resultatet är inte ett nummer',
+	'pfunc_expr_not_a_number'               => 'I $1: resultatet är inte ett tal',
 	'pfunc_ifexist_warning'                 => 'Varning: Den här sidan innehåller för många anrop av #ifexist. Antalet anrop måste vara mindre än $2, nu är det $1.',
 	'pfunc_max_ifexist_category'            => 'Sidor med för många ifexist-anrop',
+);
+
+/** Telugu (తెలుగు)
+ * @author Mpradeep
+ */
+$messages['te'] = array(
+	'pfunc_time_error'                      => 'లోపం: సమయం సరిగ్గా లేదు',
+	'pfunc_time_too_long'                   => 'లోపం: #timeను చాలా సార్లు ఉపయోగించారు',
+	'pfunc_rel2abs_invalid_depth'           => 'లోపం: పాత్ యొక్క డెప్తు సరిగ్గాలేదు: "$1" (రూట్ నోడు కంటే పైన ఉన్న నోడు ఉపయోగించటానికి ప్రయత్నం జరిగింది)',
+	'pfunc_expr_stack_exhausted'            => 'సమాసంలో(Expression) లోపం: స్టాకు మొత్తం అయిపోయింది',
+	'pfunc_expr_unexpected_number'          => 'సమాసంలో(Expression) లోపం: ఊహించని సంఖ్య వచ్చింది',
+	'pfunc_expr_preg_match_failure'         => 'సమాసంలో(Expression) లోపం: preg_matchలో ఊహించని విఫలం',
+	'pfunc_expr_unrecognised_word'          => 'సమాసంలో(Expression) లోపం: "$1" అనే పదాన్ని గుర్తుపట్టలేకపోతున్నాను',
+	'pfunc_expr_unexpected_operator'        => 'సమాసంలో(Expression) లోపం: $1 పరికర్తను(operator) ఊహించలేదు',
+	'pfunc_expr_missing_operand'            => 'సమాసంలో(Expression) లోపం: $1కు ఒక ఆపరాండును ఇవ్వలేదు',
+	'pfunc_expr_unexpected_closing_bracket' => 'సమాసంలో(Expression) లోపం: ఊహించని బ్రాకెట్టు ముగింపు',
+	'pfunc_expr_unrecognised_punctuation'   => 'సమాసంలో(Expression) లోపం: "$1" అనే విరామ చిహ్నాన్ని గుర్తించలేకపోతున్నాను',
+	'pfunc_expr_unclosed_bracket'           => 'సమాసంలో(Expression) లోపం: బ్రాకెట్టును మూయలేదు',
+	'pfunc_expr_division_by_zero'           => 'సున్నాతో భాగించారు',
+	'pfunc_expr_unknown_error'              => 'సమాసంలో(Expression) లోపం: తెలియని లోపం ($1)',
+	'pfunc_expr_not_a_number'               => '$1లో: వచ్చిన పలితం సంఖ్య కాదు',
+	'pfunc_ifexist_warning'                 => 'హెచ్చరిక: ఈ పేజీలో #ifexistలను చాల సార్లు ఉపయోగించారు. ప్రస్తుతం $1 సార్లు ఉపయోగించారు, కానీ $2 సార్లు కంటే ఎక్కువ సార్లు ఉపయోగించకూడాదు.',
+	'pfunc_max_ifexist_category'            => 'ifexistలను మరీ ఎక్కువగా ఉపయోగిస్తున్న పేజీలు.',
 );
 
 /** 粵語 (粵語) */
