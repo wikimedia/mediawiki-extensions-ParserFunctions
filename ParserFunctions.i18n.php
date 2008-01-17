@@ -75,12 +75,11 @@ $messages['bg'] = array(
 
 /** Catalan (Català)
  * @author SMP
- * @author Siebrand
  */
 $messages['ca'] = array(
 	'pfunc_time_error'                      => 'Error: temps invàlid',
 	'pfunc_time_too_long'                   => 'Error: massa crides #time',
-	'pfunc_rel2abs_invalid_depth'           => 'Error: Adreça invàlida al directori: "$1" (s\'intentava accedir a un node superior de l\'arrel)',
+	'pfunc_rel2abs_invalid_depth'           => "Error: Adreça invàlida al directori: «$1» (s'intentava accedir a un node superior de l'arrel)",
 	'pfunc_expr_stack_exhausted'            => "Error de l'expressió: Pila exhaurida",
 	'pfunc_expr_unexpected_number'          => "Error de l'expressió: Nombre inesperat",
 	'pfunc_expr_preg_match_failure'         => "Error de l'expressió: Error de funció no compresa i inesperada",
@@ -178,16 +177,16 @@ $messages['fa'] = array(
  */
 $messages['fr'] = array(
 	'pfunc_time_error'                      => 'Erreur : durée invalide',
-	'pfunc_time_too_long'                   => 'Erreur : parser #time appelé trop de fois',
-	'pfunc_rel2abs_invalid_depth'           => 'Erreur: niveau de répertoire invalide dans le chemin : "$1" (a essayé d’accéder à un niveau au-dessus du répertoire racine)',
+	'pfunc_time_too_long'                   => 'Erreur : <code>#time</code> appelé trop de fois',
+	'pfunc_rel2abs_invalid_depth'           => 'Erreur: niveau de répertoire invalide dans le chemin : « $1 » (a essayé d’accéder à un niveau au-dessus du répertoire racine)',
 	'pfunc_expr_stack_exhausted'            => 'Expression erronée : pile épuisée',
 	'pfunc_expr_unexpected_number'          => 'Expression erronée : nombre non attendu',
-	'pfunc_expr_preg_match_failure'         => "Expression erronée : echec d'une expression non comprise",
+	'pfunc_expr_preg_match_failure'         => 'Expression erronée : échec inattendu pour <code>preg_match</code>',
 	'pfunc_expr_unrecognised_word'          => "Erreur d'expression : le mot '''$1''' n'est pas reconnu",
 	'pfunc_expr_unexpected_operator'        => "Erreur d'expression : l'opérateur '''$1''' n'est pas reconnu",
 	'pfunc_expr_missing_operand'            => "Erreur d'expression : l'opérande '''$1''' n'est pas reconnue",
 	'pfunc_expr_unexpected_closing_bracket' => "Erreur d'expression : parenthèse fermante non prévue",
-	'pfunc_expr_unrecognised_punctuation'   => "Erreur d'expresion : caractère de ponctuation « $1 » non reconnu",
+	'pfunc_expr_unrecognised_punctuation'   => "Erreur d'expression : caractère de ponctuation « $1 » non reconnu",
 	'pfunc_expr_unclosed_bracket'           => 'Erreur d’expression : parenthèse non fermée',
 	'pfunc_expr_division_by_zero'           => 'Division par zéro',
 	'pfunc_expr_unknown_error'              => "Erreur d'expression : erreur inconnue ($1)",
@@ -603,7 +602,9 @@ $messages['sv'] = array(
 	'pfunc_time_error'                      => 'Fel: ogiltig tid',
 	'pfunc_time_too_long'                   => 'Fel: för många anrop av #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Fel: felaktig djup i sökväg: "$1" (försöker nå en nod ovanför rotnoden)',
+	'pfunc_expr_stack_exhausted'            => 'Fel i uttryck: Stackutrymmet tog slut',
 	'pfunc_expr_unexpected_number'          => 'Fel i uttryck: Oväntat tal',
+	'pfunc_expr_preg_match_failure'         => 'Fel i uttryck: Oväntad fel i preg_match',
 	'pfunc_expr_unrecognised_word'          => 'Fel i uttryck: Okänt ord "$1"',
 	'pfunc_expr_unexpected_operator'        => 'Fel i uttryck: Oväntad operator $1',
 	'pfunc_expr_missing_operand'            => 'Fel i uttryck: Operand saknas för $1',
