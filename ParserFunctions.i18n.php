@@ -479,6 +479,7 @@ $messages['oc'] = array(
 	'pfunc_time_error'                      => 'Error: durada invalida',
 	'pfunc_time_too_long'                   => 'Error: parser #time apelat tròp de còps',
 	'pfunc_rel2abs_invalid_depth'           => 'Error: nivèl de repertòri invalid dins lo camin : "$1" (a ensajat d’accedir a un nivèl al-dessús del repertòri raiç)',
+	'pfunc_expr_stack_exhausted'            => 'Expression erronèa : pila agotada',
 	'pfunc_expr_unexpected_number'          => 'Expression erronèa : nombre pas esperat',
 	'pfunc_expr_preg_match_failure'         => 'Expression erronèa : una expression pas compresa a pas capitat',
 	'pfunc_expr_unrecognised_word'          => "Error d'expression : lo mot '''$1''' es pas reconegut",
