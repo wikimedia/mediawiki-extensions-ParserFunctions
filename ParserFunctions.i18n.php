@@ -471,6 +471,29 @@ $messages['nl'] = array(
 	'pfunc_max_ifexist_category'            => "Pagina's die ifexist te vaak gebruiken",
 );
 
+/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+ * @author Eirik
+ */
+$messages['nn'] = array(
+	'pfunc_time_error'                      => 'Feil: Ugyldig tid',
+	'pfunc_time_too_long'                   => 'Feil: #time er kalla for mange gonger',
+	'pfunc_rel2abs_invalid_depth'           => 'Feil: Ugyldig djupn i stien: «$1» (prøvde å nå ein node ovanfor rotnoden)',
+	'pfunc_expr_stack_exhausted'            => 'Feil i uttrykket: Stacken er tømd',
+	'pfunc_expr_unexpected_number'          => 'Feil i uttrykket: Uventa tal',
+	'pfunc_expr_preg_match_failure'         => 'Feil i uttrykket: Uventa feil i preg_match',
+	'pfunc_expr_unrecognised_word'          => 'Feil i uttrykket: Ukjent ord, «$1»',
+	'pfunc_expr_unexpected_operator'        => 'Feil i uttrykket: Uventa operatør, $1',
+	'pfunc_expr_missing_operand'            => 'Feil i uttrykket: Operand for $1 manglar',
+	'pfunc_expr_unexpected_closing_bracket' => 'Feil i uttrykket: Uventa avsluttande parentes',
+	'pfunc_expr_unrecognised_punctuation'   => 'Feil i uttrykket: Ukjent punktumsteikn, «$1»',
+	'pfunc_expr_unclosed_bracket'           => 'Feil i uttrykket: Ein parentes er ikkje avslutta',
+	'pfunc_expr_division_by_zero'           => 'Divisjon med null',
+	'pfunc_expr_unknown_error'              => 'Feil i uttrykket: Ukjend feil ($1)',
+	'pfunc_expr_not_a_number'               => 'Resultatet i $1 er ikkje eit tal',
+	'pfunc_ifexist_warning'                 => 'Åtvaring: #ifexist er kalla for mange gonger på denne sida. Han kan ikkje vere kalla fleire gonger enn $2, men er no kalla $1 gonger.',
+	'pfunc_max_ifexist_category'            => 'Sider med for mange kallingar av #ifexist',
+);
+
 /** Occitan (Occitan)
  * @author Cedric31
  * @author Siebrand
