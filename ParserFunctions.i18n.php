@@ -642,6 +642,29 @@ $messages['te'] = array(
 	'pfunc_max_ifexist_category'            => 'ifexistలను మరీ ఎక్కువగా ఉపయోగిస్తున్న పేజీలు.',
 );
 
+/** Vietnamese (Tiếng Việt)
+ * @author Vinhtantran
+ */
+$messages['vi'] = array(
+	'pfunc_time_error'                      => 'Lỗi: thời gian không hợp lệ',
+	'pfunc_time_too_long'                   => 'Lỗi: quá nhiều lần gọi #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Lỗi: độ sâu không hợp lệ trong đường dẫn "$1" (do cố gắng truy cập nút phía trên nút gốc)',
+	'pfunc_expr_stack_exhausted'            => 'Lỗi biểu thức: Đã cạn stack',
+	'pfunc_expr_unexpected_number'          => 'Lỗi biểu thức: Dư số',
+	'pfunc_expr_preg_match_failure'         => 'Lỗi biểu thức: Hàm preg_match thất bại',
+	'pfunc_expr_unrecognised_word'          => 'Lỗi biểu thức: Từ "$1" không rõ ràng',
+	'pfunc_expr_unexpected_operator'        => "Lỗi biểu thức: Dư toán tử '''$1'''",
+	'pfunc_expr_missing_operand'            => 'Lỗi biểu thức: Thiếu toán hạng trong $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Lỗi biểu thức: Dư dấu đóng ngoặc',
+	'pfunc_expr_unrecognised_punctuation'   => 'Lỗi biểu thức: Dấu câu "$1" không rõ ràng',
+	'pfunc_expr_unclosed_bracket'           => 'Lỗi biểu thức: Dấu ngoặc chưa được đóng',
+	'pfunc_expr_division_by_zero'           => 'Chia cho zero',
+	'pfunc_expr_unknown_error'              => 'Lỗi biểu thức: Lỗi không rõ nguyên nhân ($1)',
+	'pfunc_expr_not_a_number'               => 'Trong $1: kết quả không phải là kiểu số',
+	'pfunc_ifexist_warning'                 => 'Cảnh báo: Trang này có quá nhiều lần gọi hàm #ifexist. Số lần gọi nên ít hơn $2, hiện có đến $1 lần gọi.',
+	'pfunc_max_ifexist_category'            => 'Trang có quá nhiều hàm gọi ifexist',
+);
+
 /** 粵語 (粵語) */
 $messages['yue'] = array(
 	'pfunc_time_error'            => '錯: 唔啱嘅時間',
