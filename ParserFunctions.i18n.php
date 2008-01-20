@@ -143,10 +143,13 @@ $messages['de'] = array(
 );
 
 /** Greek (Ελληνικά)
+ * @author Απεργός
  * @author Consta
  */
 $messages['el'] = array(
-	'pfunc_time_error' => 'Σφάλμα: άκυρος χρόνος',
+	'pfunc_time_error'           => 'Σφάλμα: άκυρος χρόνος',
+	'pfunc_time_too_long'        => 'Σφάλμα: πάρα πολλές κλήσεις της #time',
+	'pfunc_max_ifexist_category' => 'Σελίδες με πάρα πολλές κλήσεις της ifexist',
 );
 
 # فارسی (Huji)
