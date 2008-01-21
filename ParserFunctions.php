@@ -206,7 +206,11 @@ class ExtParserFunctions {
 		$lastItemHadNoEquals = false;
 		$mwDefault =& MagicWord::get( 'default' );
 		foreach ( $args as $arg ) {
-			list( $nameNode, $index, $valueNode ) = $frame->splitBraceNode( $arg );
+			$bits = $arg->splitArg();
+			$nameNode = $bits['name'];
+			$index = $bits['index'];
+			$valueNode = $bits['value'];
+
 			if ( $index === '' ) {
 				# Found "="
 				$lastItemHadNoEquals = false;
