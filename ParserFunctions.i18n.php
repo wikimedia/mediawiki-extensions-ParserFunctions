@@ -96,6 +96,16 @@ $messages['bg'] = array(
 	'pfunc_max_ifexist_category'            => 'Страници с твърде много извиквания на #ifexist',
 );
 
+/** Bengali (বাংলা)
+ * @author Bellayet
+ */
+$messages['bn'] = array(
+	'pfunc_expr_division_by_zero' => 'শূন্য দ্বারা ভাগ করা হয়েছে',
+	'pfunc_expr_not_a_number'     => '$1: এ ফলাফল কোন সংখ্যা নয়',
+	'pfunc_ifexist_warning'       => 'সতর্কিকরণ: এই পাতায় খুব বেশি ifexist ডাকা(call) করা হয়েছে। যার সংখ্যা $2 এর হওয়া উচিত ছিল, এখন আছে $1।',
+	'pfunc_max_ifexist_category'  => 'খুব বেশি ifexist  ডাকা(call) করা হয়েছে এমন পাতাসমূহ',
+);
+
 /** Catalan (Català)
  * @author SMP
  */
