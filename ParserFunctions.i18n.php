@@ -587,6 +587,13 @@ $messages['pms'] = array(
 	'pfunc_rel2abs_invalid_depth' => 'Eror: profondità nen bon-a ant ël përcors: "$1" (a l\'é provasse a ciamé un grop dzora a la rèis)',
 );
 
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'pfunc_time_error' => 'ستونزه: ناسم وخت',
+);
+
 /** Russian (Русский)
  * @author .:Ajvol:.
  */
@@ -723,6 +730,13 @@ $messages['vi'] = array(
 	'pfunc_expr_not_a_number'               => 'Trong $1: kết quả không phải là kiểu số',
 	'pfunc_ifexist_warning'                 => 'Cảnh báo: Trang này có quá nhiều lần gọi hàm #ifexist. Số lần gọi nên ít hơn $2, hiện có đến $1 lần gọi.',
 	'pfunc_max_ifexist_category'            => 'Trang có quá nhiều hàm gọi ifexist',
+);
+
+/** Volapük (Volapük)
+ * @author Smeira
+ */
+$messages['vo'] = array(
+	'pfunc_time_error' => 'Pök: tim no lonöföl',
 );
 
 /** 粵語 (粵語) */
