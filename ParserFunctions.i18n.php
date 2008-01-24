@@ -688,6 +688,7 @@ $messages['sv'] = array(
 
 /** Telugu (తెలుగు)
  * @author Mpradeep
+ * @author Veeven
  */
 $messages['te'] = array(
 	'pfunc_time_error'                      => 'లోపం: సమయం సరిగ్గా లేదు',
@@ -704,8 +705,8 @@ $messages['te'] = array(
 	'pfunc_expr_unclosed_bracket'           => 'సమాసంలో(Expression) లోపం: బ్రాకెట్టును మూయలేదు',
 	'pfunc_expr_division_by_zero'           => 'సున్నాతో భాగించారు',
 	'pfunc_expr_unknown_error'              => 'సమాసంలో(Expression) లోపం: తెలియని లోపం ($1)',
-	'pfunc_expr_not_a_number'               => '$1లో: వచ్చిన పలితం సంఖ్య కాదు',
-	'pfunc_ifexist_warning'                 => 'హెచ్చరిక: ఈ పేజీలో #ifexistలను చాల సార్లు ఉపయోగించారు. ప్రస్తుతం $1 సార్లు ఉపయోగించారు, కానీ $2 సార్లు కంటే ఎక్కువ సార్లు ఉపయోగించకూడాదు.',
+	'pfunc_expr_not_a_number'               => '$1లో: వచ్చిన ఫలితం సంఖ్య కాదు',
+	'pfunc_ifexist_warning'                 => 'హెచ్చరిక: ఈ పేజీలో #ifexistలను చాలాసార్లు ఉపయోగించారు. ప్రస్తుతం $1 సార్లు ఉపయోగించారు, కానీ $2 సార్లు కంటే ఎక్కువ సార్లు ఉపయోగించకూడదు.',
 	'pfunc_max_ifexist_category'            => 'ifexistలను మరీ ఎక్కువగా ఉపయోగిస్తున్న పేజీలు.',
 );
 
