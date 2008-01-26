@@ -594,6 +594,16 @@ $messages['ps'] = array(
 	'pfunc_time_error' => 'ستونزه: ناسم وخت',
 );
 
+/** Portuguese (Português)
+ * @author Malafaya
+ */
+$messages['pt'] = array(
+	'pfunc_time_too_long'         => 'Erro: demasiadas chamadas a #time',
+	'pfunc_expr_division_by_zero' => 'Divisão por zero',
+	'pfunc_expr_not_a_number'     => 'Em $1: resultado não é um número',
+	'pfunc_max_ifexist_category'  => "Páginas com demasiadas chamadas 'ifexist'",
+);
+
 /** Russian (Русский)
  * @author .:Ajvol:.
  */
