@@ -126,6 +126,9 @@ class ExtParserFunctions {
 	}
 
 	function ifeqObj( &$parser, $frame, $args ) {
+		if ( !is_object( $frame ) ) {
+			throw new MWException( __METHOD__.': invalid frame' );
+		}
 		$left = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$right = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
 		if ( $left == $right ) {
