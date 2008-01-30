@@ -241,7 +241,7 @@ $messages['frp'] = array(
 	'pfunc_rel2abs_invalid_depth'           => 'Èrror : nivô de rèpèrtouèro envalido dens lo chemin : « $1 » (at tâchiê d’arrevar a un nivô en-dessus du rèpèrtouèro racena)',
 	'pfunc_expr_stack_exhausted'            => 'Èxprèssion fôssa : pila èpouesiê',
 	'pfunc_expr_unexpected_number'          => 'Èxprèssion fôssa : nombro emprèvu',
-	'pfunc_expr_preg_match_failure'         => 'Èxprèssion fôssa : falyita d’una èxprèssion pas comprêsa',
+	'pfunc_expr_preg_match_failure'         => 'Èxprèssion fôssa : falyita emprèvua por <code>preg_match</code>',
 	'pfunc_expr_unrecognised_word'          => "Èrror d’èxprèssion : lo mot '''$1''' est pas recognu",
 	'pfunc_expr_unexpected_operator'        => "Èrror d’èxprèssion : l’opèrator '''$1''' est pas recognu",
 	'pfunc_expr_missing_operand'            => "Èrror d’èxprèssion : l’opèranda '''$1''' est pas recognua",
@@ -722,19 +722,20 @@ $messages['te'] = array(
 
 /** Vietnamese (Tiếng Việt)
  * @author Vinhtantran
+ * @author Minh Nguyen
  */
 $messages['vi'] = array(
 	'pfunc_time_error'                      => 'Lỗi: thời gian không hợp lệ',
 	'pfunc_time_too_long'                   => 'Lỗi: quá nhiều lần gọi #time',
-	'pfunc_rel2abs_invalid_depth'           => 'Lỗi: độ sâu không hợp lệ trong đường dẫn "$1" (do cố gắng truy cập nút phía trên nút gốc)',
+	'pfunc_rel2abs_invalid_depth'           => 'Lỗi: độ sâu không hợp lệ trong đường dẫn “$1” (do cố gắng truy cập nút phía trên nút gốc)',
 	'pfunc_expr_stack_exhausted'            => 'Lỗi biểu thức: Đã cạn stack',
 	'pfunc_expr_unexpected_number'          => 'Lỗi biểu thức: Dư số',
 	'pfunc_expr_preg_match_failure'         => 'Lỗi biểu thức: Hàm preg_match thất bại',
-	'pfunc_expr_unrecognised_word'          => 'Lỗi biểu thức: Từ "$1" không rõ ràng',
+	'pfunc_expr_unrecognised_word'          => 'Lỗi biểu thức: Từ “$1” không rõ ràng',
 	'pfunc_expr_unexpected_operator'        => "Lỗi biểu thức: Dư toán tử '''$1'''",
 	'pfunc_expr_missing_operand'            => 'Lỗi biểu thức: Thiếu toán hạng trong $1',
 	'pfunc_expr_unexpected_closing_bracket' => 'Lỗi biểu thức: Dư dấu đóng ngoặc',
-	'pfunc_expr_unrecognised_punctuation'   => 'Lỗi biểu thức: Dấu câu "$1" không rõ ràng',
+	'pfunc_expr_unrecognised_punctuation'   => 'Lỗi biểu thức: Dấu câu “$1” không rõ ràng',
 	'pfunc_expr_unclosed_bracket'           => 'Lỗi biểu thức: Dấu ngoặc chưa được đóng',
 	'pfunc_expr_division_by_zero'           => 'Chia cho zero',
 	'pfunc_expr_unknown_error'              => 'Lỗi biểu thức: Lỗi không rõ nguyên nhân ($1)',
