@@ -13,17 +13,17 @@ function efParserFunctionsWords( $lang ) {
 	 * English
 	 */
 	$words['en'] = array(
-		'expr' 		=> array( 0, 'expr' ),
-		'if' 		=> array( 0, 'if' ),
-		'ifeq' 		=> array( 0, 'ifeq' ),
-		'ifexpr' 	=> array( 0, 'ifexpr' ),
-		'iferror'   => array( 0, 'iferror' ),
-		'switch' 	=> array( 0, 'switch' ),
-		'default' 	=> array( 0, '#default' ),
-		'ifexist' 	=> array( 0, 'ifexist' ),
-		'time' 		=> array( 0, 'time' ),
-		'timel' 	=> array( 0, 'timel' ),
-		'rel2abs' 	=> array( 0, 'rel2abs' ),
+		'expr'       => array( 0, 'expr' ),
+		'if'         => array( 0, 'if' ),
+		'ifeq'       => array( 0, 'ifeq' ),
+		'ifexpr'     => array( 0, 'ifexpr' ),
+		'iferror'    => array( 0, 'iferror' ),
+		'switch'     => array( 0, 'switch' ),
+		'default'    => array( 0, '#default' ),
+		'ifexist'    => array( 0, 'ifexist' ),
+		'time'       => array( 0, 'time' ),
+		'timel'      => array( 0, 'timel' ),
+		'rel2abs'    => array( 0, 'rel2abs' ),
 		'titleparts' => array( 0, 'titleparts' ),
 	);
 
@@ -31,15 +31,17 @@ function efParserFunctionsWords( $lang ) {
 	 * Farsi-Persian
 	 */
 	$words['fa'] = array(
-		'expr' 		=> array( 0, 'حساب',         'expr' ),
-		'if' 		=> array( 0, 'اگر',          'if' ),
-		'ifeq' 		=> array( 0, 'اگرمساوی',     'ifeq' ),
-		'ifexpr' 	=> array( 0, 'اگرحساب',      'ifexpr' ),
-		'switch' 	=> array( 0, 'گزینه',        'switch' ),
-		'default' 	=> array( 0, '#پیش‌فرض',      '#default' ),
-		'ifexist' 	=> array( 0, 'اگرموجود',     'ifexist' ),
-		'time' 		=> array( 0, 'زمان',         'time' ),
-		'rel2abs' 	=> array( 0, 'نسبی‌به‌مطلق',   'rel2abs' ),
+		'expr' 		 => array( 0, 'حساب',         'expr' ),
+		'if' 		 => array( 0, 'اگر',          'if' ),
+		'ifeq' 		 => array( 0, 'اگرمساوی',     'ifeq' ),
+		'iferror'    => array( 0, 'اگرخطا',       'iferror' ),
+		'ifexpr' 	 => array( 0, 'اگرحساب',      'ifexpr' ),
+		'switch' 	 => array( 0, 'گزینه',        'switch' ),
+		'default' 	 => array( 0, '#پیش‌فرض',      '#default' ),
+		'ifexist' 	 => array( 0, 'اگرموجود',     'ifexist' ),
+		'time' 		 => array( 0, 'زمان',         'time' ),
+		'rel2abs' 	 => array( 0, 'نسبی‌به‌مطلق',   'rel2abs' ),
+		'titleparts' => array( 0, 'پاره‌عنوان',    'titleparts' ),
 	);
 
 	/**
