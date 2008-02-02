@@ -74,6 +74,29 @@ $messages['ar'] = array(
 	'pfunc_max_ifexist_category'            => 'الصفحات التي تحتوي على ifexist calls كثيرة جدا',
 );
 
+/** Asturian (Asturianu)
+ * @author Esbardu
+ */
+$messages['ast'] = array(
+	'pfunc_time_error'                      => 'Error: tiempu non válidu',
+	'pfunc_time_too_long'                   => 'Error: demasiaes llamaes #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Error: Nivel de subdireutoriu non válidu: "$1" (intentu d\'accesu penriba del direutoriu raíz)',
+	'pfunc_expr_stack_exhausted'            => "Error d'espresión: Pila escosada",
+	'pfunc_expr_unexpected_number'          => "Error d'espresión: Númberu inesperáu",
+	'pfunc_expr_preg_match_failure'         => "Error d'espresión: Fallu inesperáu de preg_match",
+	'pfunc_expr_unrecognised_word'          => 'Error d\'espresión: Pallabra "$1" non reconocida',
+	'pfunc_expr_unexpected_operator'        => "Error d'espresión: Operador $1 inesperáu",
+	'pfunc_expr_missing_operand'            => "Error d'espresión: Falta operador en $1",
+	'pfunc_expr_unexpected_closing_bracket' => "Error d'espresión: Paréntesis final inesperáu",
+	'pfunc_expr_unrecognised_punctuation'   => 'Error d\'espresión: Caráuter de puntuación "$1" non reconocíu',
+	'pfunc_expr_unclosed_bracket'           => "Error d'espresión: Paréntesis non zarráu",
+	'pfunc_expr_division_by_zero'           => 'División por cero',
+	'pfunc_expr_unknown_error'              => "Error d'espresión: Error desconocíu ($1)",
+	'pfunc_expr_not_a_number'               => 'En $1: el resultáu nun ye un númberu',
+	'pfunc_ifexist_warning'                 => 'Avisu: Esta páxina contién demasiaes llamaes #ifexist. Habría tener menos de $2, y tien anguaño $1.',
+	'pfunc_max_ifexist_category'            => 'Páxines con demasiaes llamaes ifexist',
+);
+
 /** Bulgarian (Български)
  * @author Spiritia
  * @author DCLXVI
@@ -625,6 +648,21 @@ $messages['ru'] = array(
 	'pfunc_expr_not_a_number'               => 'В $1: результат не является числом',
 	'pfunc_ifexist_warning'                 => 'Внимание: эта страница содержит $1 {{PLURAL:$1|вызов|вызова|вызовов}} #ifexist при ограничении в $2.',
 	'pfunc_max_ifexist_category'            => 'Страницы, в которых слишком много вызовов ifexist',
+);
+
+/** Yakut (Саха тыла)
+ * @author HalanTul
+ */
+$messages['sah'] = array(
+	'pfunc_time_error'            => 'Алҕас: сыыһа кэм',
+	'pfunc_time_too_long'         => 'Алҕас: #time функция наһаа элбэхтик хатыламмыт',
+	'pfunc_rel2abs_invalid_depth' => 'Алҕас: ошибочная глубина пути: «$1» (попытка доступа к узлу, находящемуся выше, чем корневой)',
+	'pfunc_expr_stack_exhausted'  => 'Ошибка выражения: переполнение стека',
+	'pfunc_expr_division_by_zero' => 'Нуулга түҥэттии',
+	'pfunc_expr_unknown_error'    => 'Expression error (ошибка выражения): Биллибэт алҕас ($1)',
+	'pfunc_expr_not_a_number'     => '$1 иһигэр: эппиэтэ чыыһыла буолбатах',
+	'pfunc_ifexist_warning'       => 'Болҕой: бу сирэй $1 {{PLURAL:$1|ыҥырыылаах|ыҥырыылардаах}}, #ifexist баччаннан хааччахтаммытын үрдүнэн $2.',
+	'pfunc_max_ifexist_category'  => 'ifexist ыҥырыылар наһаа элбэхтик көстөр сирэйдэрэ',
 );
 
 /** Slovak (Slovenčina)
