@@ -621,6 +621,7 @@ $messages['ps'] = array(
  * @author Malafaya
  */
 $messages['pt'] = array(
+	'pfunc_time_error'            => 'Erro: tempo inválido',
 	'pfunc_time_too_long'         => 'Erro: demasiadas chamadas a #time',
 	'pfunc_expr_division_by_zero' => 'Divisão por zero',
 	'pfunc_expr_not_a_number'     => 'Em $1: resultado não é um número',
