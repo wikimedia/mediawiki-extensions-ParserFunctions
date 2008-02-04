@@ -507,6 +507,15 @@ $messages['nds'] = array(
 	'pfunc_max_ifexist_category'            => 'Sieden, de #ifexist to faken bruukt',
 );
 
+/** Nepali (नेपाली)
+ * @author SPQRobin
+ */
+$messages['ne'] = array(
+	'pfunc_time_error'            => 'त्रुटी: गलत/वा हुदैनहुने समय',
+	'pfunc_time_too_long'         => 'त्रुटी: एकदम धेरै #time callहरु',
+	'pfunc_rel2abs_invalid_depth' => 'त्रुटी: पाथमा (इनभ्यालिड)गलत गहिराइ(डेप्थ) भयो: "$1" (ले रुट नोड भन्दापनि माथिको नोडलाइ चलाउन(एकसेस) गर्न खोज्यो)',
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
@@ -667,15 +676,23 @@ $messages['ru'] = array(
  * @author HalanTul
  */
 $messages['sah'] = array(
-	'pfunc_time_error'            => 'Алҕас: сыыһа кэм',
-	'pfunc_time_too_long'         => 'Алҕас: #time функция наһаа элбэхтик хатыламмыт',
-	'pfunc_rel2abs_invalid_depth' => 'Алҕас: ошибочная глубина пути: «$1» (попытка доступа к узлу, находящемуся выше, чем корневой)',
-	'pfunc_expr_stack_exhausted'  => 'Ошибка выражения: переполнение стека',
-	'pfunc_expr_division_by_zero' => 'Нуулга түҥэттии',
-	'pfunc_expr_unknown_error'    => 'Expression error (ошибка выражения): Биллибэт алҕас ($1)',
-	'pfunc_expr_not_a_number'     => '$1 иһигэр: эппиэтэ чыыһыла буолбатах',
-	'pfunc_ifexist_warning'       => 'Болҕой: бу сирэй $1 {{PLURAL:$1|ыҥырыылаах|ыҥырыылардаах}}, #ifexist баччаннан хааччахтаммытын үрдүнэн $2.',
-	'pfunc_max_ifexist_category'  => 'ifexist ыҥырыылар наһаа элбэхтик көстөр сирэйдэрэ',
+	'pfunc_time_error'                      => 'Алҕас: сыыһа кэм',
+	'pfunc_time_too_long'                   => 'Алҕас: #time функция наһаа элбэхтик хатыламмыт',
+	'pfunc_rel2abs_invalid_depth'           => 'Алҕас: ошибочная глубина пути: «$1» (попытка доступа к узлу, находящемуся выше, чем корневой)',
+	'pfunc_expr_stack_exhausted'            => 'Ошибка выражения: переполнение стека',
+	'pfunc_expr_unexpected_number'          => 'Алҕас: кэтэһиллибэтэх чыыһыла',
+	'pfunc_expr_preg_match_failure'         => 'Алҕас: preg_match моһуоктанна',
+	'pfunc_expr_unrecognised_word'          => 'Алҕас: биллибэт тыл «$1»',
+	'pfunc_expr_unexpected_operator'        => 'Алҕас: кэтэһиллибэтэх оператор $1',
+	'pfunc_expr_missing_operand'            => 'Алҕас: $1 операнда тиийбэт',
+	'pfunc_expr_unexpected_closing_bracket' => 'Алҕас: кэтэһиллибэтэх сабар ускуопка',
+	'pfunc_expr_unrecognised_punctuation'   => 'Алҕас: биллибэт пунктуация бэлиэтэ «$1»',
+	'pfunc_expr_unclosed_bracket'           => 'Алҕас: сабыллыбатах ускуопка',
+	'pfunc_expr_division_by_zero'           => 'Нуулга түҥэттии',
+	'pfunc_expr_unknown_error'              => 'Expression error (ошибка выражения): Биллибэт алҕас ($1)',
+	'pfunc_expr_not_a_number'               => '$1 иһигэр: эппиэтэ чыыһыла буолбатах',
+	'pfunc_ifexist_warning'                 => 'Болҕой: бу сирэй $1 {{PLURAL:$1|ыҥырыылаах|ыҥырыылардаах}}, #ifexist баччаннан хааччахтаммытын үрдүнэн $2.',
+	'pfunc_max_ifexist_category'            => 'ifexist ыҥырыылар наһаа элбэхтик көстөр сирэйдэрэ',
 );
 
 /** Slovak (Slovenčina)
