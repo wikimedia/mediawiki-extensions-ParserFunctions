@@ -124,6 +124,7 @@ $messages['bg'] = array(
  * @author Bellayet
  */
 $messages['bn'] = array(
+	'pfunc_time_error'            => 'ত্রুটি: অবৈধ সময়',
 	'pfunc_expr_division_by_zero' => 'শূন্য দ্বারা ভাগ করা হয়েছে',
 	'pfunc_expr_not_a_number'     => '$1: এ ফলাফল কোন সংখ্যা নয়',
 	'pfunc_ifexist_warning'       => 'সতর্কিকরণ: এই পাতায় খুব বেশি ifexist ডাকা(call) করা হয়েছে। যার সংখ্যা $2 এর হওয়া উচিত ছিল, এখন আছে $1।',
@@ -525,6 +526,7 @@ $messages['ne'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
+	'pfunc_desc'                            => 'Verrijkt de parser met logische functies',
 	'pfunc_time_error'                      => 'Fout: ongeldige tijd',
 	'pfunc_time_too_long'                   => 'Fout: #time te vaak aangeroepen',
 	'pfunc_rel2abs_invalid_depth'           => 'Fout: ongeldige diepte in pad: "$1" (probeerde een node boven de stamnode aan te roepen)',
@@ -567,6 +569,19 @@ $messages['nn'] = array(
 	'pfunc_max_ifexist_category'            => 'Sider med for mange kallingar av #ifexist',
 );
 
+/** Norwegian (‪Norsk (bokmål)‬)
+ * @author Jon Harald Søby
+ */
+$messages['no'] = array(
+	'pfunc_time_error'            => 'Feil: ugyldig tid',
+	'pfunc_time_too_long'         => 'Feil: #time brukt for mange ganger',
+	'pfunc_rel2abs_invalid_depth' => 'Feil: Ugyldig dybde i sti: «$1» (prøvde å få tilgang til en node over rotnoden)',
+	'pfunc_expr_division_by_zero' => 'Deling på null',
+	'pfunc_expr_not_a_number'     => 'I $1: resultat er ikke et tall',
+	'pfunc_ifexist_warning'       => 'Advarsel: Denne siden bruker #ifexist for mange ganger. Den burde brukes mindre enn $2 ganger, men brukes nå $1.',
+	'pfunc_max_ifexist_category'  => 'Sider som bruker ifexist for mange ganger',
+);
+
 /** Occitan (Occitan)
  * @author Cedric31
  * @author Siebrand
@@ -594,8 +609,10 @@ $messages['oc'] = array(
 /** Polish (Polski)
  * @author Derbeth
  * @author Siebrand
+ * @author Malafaya
  */
 $messages['pl'] = array(
+	'pfunc_desc'                            => 'Melhorar analisador (parser) com funções lógicas',
 	'pfunc_time_error'                      => 'Błąd: niepoprawny czas',
 	'pfunc_time_too_long'                   => 'Błąd: za dużo wywołań funkcji #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Błąd: Nieprawidłowa głębokość w ścieżce: "$1" (próba dostępu do węzła powyżej korzenia)',
