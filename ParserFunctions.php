@@ -7,10 +7,11 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionFunctions[] = 'wfSetupParserFunctions';
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'ParserFunctions',
-	'version' => '1.1',
+	'version' => '1.1.1',
 	'url' => 'http://meta.wikimedia.org/wiki/ParserFunctions',
 	'author' => 'Tim Starling',
 	'description' => 'Enhance parser with logical functions',
+	'descriptionmsg' => 'pfunc_desc',
 );
 
 $wgExtensionMessagesFiles['ParserFunctions'] = dirname(__FILE__) . '/ParserFunctions.i18n.php';
@@ -483,7 +484,7 @@ class ExtParserFunctions {
 				wfLoadExtensionMessages( 'ParserFunctions' );
 				$warning = wfMsg( 'pfunc_ifexist_warning', $parser->pf_ifexist_count, $wgMaxIfExistCount );
 				$parser->mOutput->addWarning( $warning );
-				$cat = Title::makeTitleSafe( NS_CATEGORY, wfMsg( 'pfunc_max_ifexist_category' ) );
+				$cat = Title::makeTitleSafe( NS_CATEGORY, wfMsgForContent( 'pfunc_max_ifexist_category' ) );
 				if ( $cat ) {
 					$parser->mOutput->addCategory( $cat->getDBkey(), $parser->getDefaultSort() );
 				}

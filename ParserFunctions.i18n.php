@@ -8,6 +8,7 @@
 $messages = array();
 
 $messages['en'] = array(
+	'pfunc_desc'                            => 'Enhance parser with logical functions',
 	'pfunc_time_error'                      => 'Error: invalid time',
 	'pfunc_time_too_long'                   => 'Error: too many #time calls',
 	'pfunc_rel2abs_invalid_depth'           => 'Error: Invalid depth in path: "$1" (tried to access a node above the root node)',
@@ -177,8 +178,11 @@ $messages['cs'] = array(
 	'pfunc_max_ifexist_category'            => 'Stránky s příliš mnoha voláními funkce ifexist',
 );
 
-/** German (Deutsch) */
+/**  German (Deutsch)
+ * @author Raimond Spekking
+ */
 $messages['de'] = array(
+	'pfunc_desc'                            => 'Erweitert den Parser um logische Funktionen',
 	'pfunc_time_error'                      => 'Fehler: ungültige Zeitangabe',
 	'pfunc_time_too_long'                   => 'Fehler: zu viele #time-Aufrufe',
 	'pfunc_rel2abs_invalid_depth'           => 'Fehler: ungültige Tiefe in Pfad: „$1“ (Versuch, auf einen Knotenpunkt oberhalb des Hauptknotenpunktes zuzugreifen)',
