@@ -609,10 +609,8 @@ $messages['oc'] = array(
 /** Polish (Polski)
  * @author Derbeth
  * @author Siebrand
- * @author Malafaya
  */
 $messages['pl'] = array(
-	'pfunc_desc'                            => 'Melhorar analisador (parser) com funções lógicas',
 	'pfunc_time_error'                      => 'Błąd: niepoprawny czas',
 	'pfunc_time_too_long'                   => 'Błąd: za dużo wywołań funkcji #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Błąd: Nieprawidłowa głębokość w ścieżce: "$1" (próba dostępu do węzła powyżej korzenia)',
