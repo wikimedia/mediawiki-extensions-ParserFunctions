@@ -241,6 +241,7 @@ $messages['fa'] = array(
  * @author Sherbrooke
  */
 $messages['fr'] = array(
+	'pfunc_desc'                            => 'Augmente le parseur avec des fonctions logiques',
 	'pfunc_time_error'                      => 'Erreur : durée invalide',
 	'pfunc_time_too_long'                   => 'Erreur : <code>#time</code> appelé trop de fois',
 	'pfunc_rel2abs_invalid_depth'           => 'Erreur: niveau de répertoire invalide dans le chemin : « $1 » (a essayé d’accéder à un niveau au-dessus du répertoire racine)',
@@ -649,6 +650,7 @@ $messages['ps'] = array(
  * @author Malafaya
  */
 $messages['pt'] = array(
+	'pfunc_desc'                            => 'Melhora o analisador "parser" com funções lógicas',
 	'pfunc_time_error'                      => 'Erro: tempo inválido',
 	'pfunc_time_too_long'                   => 'Erro: demasiadas chamadas a #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Erro: Profundidade inválida no caminho: "$1" (foi tentado o acesso a um nó acima do nó raiz)',
@@ -672,6 +674,7 @@ $messages['pt'] = array(
  * @author .:Ajvol:.
  */
 $messages['ru'] = array(
+	'pfunc_desc'                            => 'Улучшенный синтаксический анализатор с логическими функциями',
 	'pfunc_time_error'                      => 'Ошибка: неправильное время',
 	'pfunc_time_too_long'                   => 'Ошибка: слишком много вызовов функции #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Ошибка: ошибочная глубина пути: «$1» (попытка доступа к узлу, находящемуся выше, чем корневой)',
@@ -718,6 +721,7 @@ $messages['sah'] = array(
  * @author Helix84
  */
 $messages['sk'] = array(
+	'pfunc_desc'                            => 'Rozšírenie syntaktického analyzátora o logické funkcie',
 	'pfunc_time_error'                      => 'Chyba: Neplatný čas',
 	'pfunc_time_too_long'                   => 'Chyba: príliš veľa volaní #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Chyba: Neplatná hĺbka v ceste: „$1“ (pokus o prístup k uzlu nad koreňovým uzlom)',
@@ -764,6 +768,7 @@ $messages['stq'] = array(
  * @author Lejonel
  */
 $messages['sv'] = array(
+	'pfunc_desc'                            => 'Lägger till logiska funktioner i parsern',
 	'pfunc_time_error'                      => 'Fel: ogiltig tid',
 	'pfunc_time_too_long'                   => 'Fel: för många anrop av #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Fel: felaktig djup i sökväg: "$1" (försöker nå en nod ovanför rotnoden)',
@@ -805,6 +810,13 @@ $messages['te'] = array(
 	'pfunc_expr_not_a_number'               => '$1లో: వచ్చిన ఫలితం సంఖ్య కాదు',
 	'pfunc_ifexist_warning'                 => 'హెచ్చరిక: ఈ పేజీలో #ifexistలను చాలాసార్లు ఉపయోగించారు. ప్రస్తుతం $1 సార్లు ఉపయోగించారు, కానీ $2 సార్లు కంటే ఎక్కువ సార్లు ఉపయోగించకూడదు.',
 	'pfunc_max_ifexist_category'            => 'ifexistలను మరీ ఎక్కువగా ఉపయోగిస్తున్న పేజీలు.',
+);
+
+/** Tajik (Тоҷикӣ)
+ * @author Ibrahim
+ */
+$messages['tg'] = array(
+	'pfunc_expr_division_by_zero' => 'Тақсим бар сифр',
 );
 
 /** Vietnamese (Tiếng Việt)
