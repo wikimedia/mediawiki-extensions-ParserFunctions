@@ -214,8 +214,11 @@ $messages['el'] = array(
 	'pfunc_max_ifexist_category' => 'Σελίδες με πάρα πολλές κλήσεις της ifexist',
 );
 
-# فارسی (Huji)
+/** فارسی (فارسی)
+ * @author Huji
+ */
 $messages['fa'] = array(
+	'pfunc_desc'                            => 'به تجزیه‌کننده، دستورهای منطقی می‌افزاید',
 	'pfunc_time_error'                      => 'خطا: زمان غیرمجاز',
 	'pfunc_time_too_long'                   => 'خطا: فراخوانی بیش از حد #time',
 	'pfunc_rel2abs_invalid_depth'           => 'خطا: عمق غیر مجاز در نشانی «$1» (تلاش برای دسترسی به یک نشانی فراتر از نشانی ریشه)',
