@@ -56,6 +56,7 @@ $messages['an'] = array(
  * @author Siebrand
  */
 $messages['ar'] = array(
+	'pfunc_desc'                            => 'بارسر ممدد بدوال منطقية',
 	'pfunc_time_error'                      => 'خطأ: زمن غير صحيح',
 	'pfunc_time_too_long'                   => 'خطأ: too many #time calls',
 	'pfunc_rel2abs_invalid_depth'           => 'خطأ: عمق غير صحيح في المسار: "$1" (حاول دخول عقدة فوق العقدة الجذرية)',
@@ -158,8 +159,10 @@ $messages['ca'] = array(
  * @author Li-sung
  * @author Danny B.
  * @author Siebrand
+ * @author Matěj Grabovský
  */
 $messages['cs'] = array(
+	'pfunc_desc'                            => 'Rozšíření syntaktického analyzátoru o logické funkce',
 	'pfunc_time_error'                      => 'Chyba: neplatný čas',
 	'pfunc_time_too_long'                   => 'Chyba: příliš mnoho volání #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Chyba: Neplatná hloubka v cestě: "$1" (pokus o přístup do uzlu vyššího než kořen)',
@@ -268,6 +271,7 @@ $messages['fr'] = array(
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
+	'pfunc_desc'                            => 'Ôgmente lo parsor avouéc des fonccions logiques.',
 	'pfunc_time_error'                      => 'Èrror : durâ envalida',
 	'pfunc_time_too_long'                   => 'Èrror : parsèr #time apelâ trop de côps',
 	'pfunc_rel2abs_invalid_depth'           => 'Èrror : nivô de rèpèrtouèro envalido dens lo chemin : « $1 » (at tâchiê d’arrevar a un nivô en-dessus du rèpèrtouèro racena)',
@@ -361,6 +365,7 @@ $messages['hr'] = array(
  * @author Michawiki
  */
 $messages['hsb'] = array(
+	'pfunc_desc'                            => 'Parser wo logiske funkcije rozšěrić',
 	'pfunc_time_error'                      => 'Zmylk: njepłaćiwe časowe podaće',
 	'pfunc_time_too_long'                   => 'Zmylk: přewjele zawołanjow #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Zmylk: Njepłaćiwa hłubokosć w pućiku: "$1" (Pospyt, zo by na suk wyše hłowneho suka dohrabnyło)',
@@ -384,6 +389,7 @@ $messages['hsb'] = array(
  * @author Bdanee
  */
 $messages['hu'] = array(
+	'pfunc_desc'                            => 'Az értelmező kiegészítése logikai funkciókkal',
 	'pfunc_time_error'                      => 'Hiba: érvénytelen idő',
 	'pfunc_time_too_long'                   => 'Hiba: a #time túl sokszor lett meghívva',
 	'pfunc_rel2abs_invalid_depth'           => 'Hiba: nem megfelelő a mélység az elérési útban: „$1” (egy olyan csomópontot akartál elérni, amely a gyökércsomópont felett van)',
@@ -850,7 +856,9 @@ $messages['vi'] = array(
  * @author Smeira
  */
 $messages['vo'] = array(
-	'pfunc_time_error' => 'Pök: tim no lonöföl',
+	'pfunc_time_error'            => 'Pök: tim no lonöföl',
+	'pfunc_expr_division_by_zero' => 'Müedam dub ser',
+	'pfunc_expr_not_a_number'     => 'In $1: sek no binon num',
 );
 
 /** 粵語 (粵語) */
