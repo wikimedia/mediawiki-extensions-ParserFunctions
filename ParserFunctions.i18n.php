@@ -489,14 +489,28 @@ $messages['lb'] = array(
 );
 
 /** Limburgish (Limburgs)
+ * @author Matthias
  * @author Ooswesthoesbes
  */
 $messages['li'] = array(
-	'pfunc_expr_division_by_zero' => 'Deiling door nul',
-	'pfunc_expr_unknown_error'    => 'Fout in oetdrukking: ónbekindje fout ($1)',
-	'pfunc_expr_not_a_number'     => 'In $1: rezultaot is gein getal',
-	'pfunc_ifexist_warning'       => "Waorsjuwing: dees pazjena gebroek #ifexists euverduk. Det zów minder es $2 kieër mótte zeen en 't is noe $1 kieër.",
-	'pfunc_max_ifexist_category'  => "Pazjena's die iefexist euverduk gebroeke",
+	'pfunc_desc'                            => 'Verrijkt de parser met logische functies',
+	'pfunc_time_error'                      => 'Fout: ongeldige tied',
+	'pfunc_time_too_long'                   => 'Fout: #time te vaok aangerope',
+	'pfunc_rel2abs_invalid_depth'           => 'Fout: ongeldige diepte in pad: "$1" (probeerde \'n node bove de stamnode aan te rope)',
+	'pfunc_expr_stack_exhausted'            => 'Fout in oetdrukking: stack oetgeput',
+	'pfunc_expr_unexpected_number'          => 'Fout in oetdrukking: onverwacht getal',
+	'pfunc_expr_preg_match_failure'         => 'Fout in oetdrukking: onverwacht fale van preg_match',
+	'pfunc_expr_unrecognised_word'          => 'Fout in oetdrukking: woord "$1" neet herkend',
+	'pfunc_expr_unexpected_operator'        => 'Fout in oetdrukking: neet verwachte operator $1',
+	'pfunc_expr_missing_operand'            => 'Fout in oetdrukking: operand veur $1 mist',
+	'pfunc_expr_unexpected_closing_bracket' => 'Fout in oetdrukking: haakje sloete op onverwachte plaats',
+	'pfunc_expr_unrecognised_punctuation'   => 'Fout in oetdrukking: neet herkend leesteke "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'Fout in oetdrukking: neet geslote haakje opene',
+	'pfunc_expr_division_by_zero'           => 'Deiling door nul',
+	'pfunc_expr_unknown_error'              => 'Fout in oetdrukking: ónbekindje fout ($1)',
+	'pfunc_expr_not_a_number'               => 'In $1: rezultaot is gein getal',
+	'pfunc_ifexist_warning'                 => "Waorsjuwing: dees pazjena gebroek #ifexists euverduk. Det zów minder es $2 kieër mótte zeen en 't is noe $1 kieër.",
+	'pfunc_max_ifexist_category'            => "Pazjena's die iefexist euverduk gebroeke",
 );
 
 /** Low German (Plattdüütsch)
@@ -560,6 +574,7 @@ $messages['nl'] = array(
  * @author Eirik
  */
 $messages['nn'] = array(
+	'pfunc_desc'                            => 'Legg til logiske funksjonar i parseren.',
 	'pfunc_time_error'                      => 'Feil: Ugyldig tid',
 	'pfunc_time_too_long'                   => 'Feil: #time er kalla for mange gonger',
 	'pfunc_rel2abs_invalid_depth'           => 'Feil: Ugyldig djupn i stien: «$1» (prøvde å nå ein node ovanfor rotnoden)',
@@ -833,6 +848,7 @@ $messages['tg'] = array(
  * @author Minh Nguyen
  */
 $messages['vi'] = array(
+	'pfunc_desc'                            => 'Nâng cao bộ xử lý với những hàm cú pháp lôgic',
 	'pfunc_time_error'                      => 'Lỗi: thời gian không hợp lệ',
 	'pfunc_time_too_long'                   => 'Lỗi: quá nhiều lần gọi #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Lỗi: độ sâu không hợp lệ trong đường dẫn “$1” (do cố gắng truy cập nút phía trên nút gốc)',
@@ -881,3 +897,4 @@ $messages['zh-hant'] = array(
 	'pfunc_time_too_long'         => '錯誤: 過多 #time 的呼叫',
 	'pfunc_rel2abs_invalid_depth' => '錯誤: 不正確的路徑深度: "$1" (已經嘗試在頂點存取該點)',
 );
+
