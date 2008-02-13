@@ -340,8 +340,10 @@ $messages['he'] = array(
 /** Croatian (Hrvatski)
  * @author SpeedyGonsales
  * @author Siebrand
+ * @author Dnik
  */
 $messages['hr'] = array(
+	'pfunc_desc'                            => 'Proširite parser logičkim funkcijama',
 	'pfunc_time_error'                      => 'Greška: oblik vremena nije valjan',
 	'pfunc_time_too_long'                   => 'Greška: prevelik broj #time (vremenskih) poziva',
 	'pfunc_rel2abs_invalid_depth'           => 'Greška: Nevaljana dubina putanje: "$1" (pokušaj pristupanja čvoru iznad korijenskog)',
@@ -612,6 +614,7 @@ $messages['no'] = array(
  * @author Siebrand
  */
 $messages['oc'] = array(
+	'pfunc_desc'                            => 'Augmenta lo parsaire amb de foncions logicas',
 	'pfunc_time_error'                      => 'Error: durada invalida',
 	'pfunc_time_too_long'                   => 'Error: parser #time apelat tròp de còps',
 	'pfunc_rel2abs_invalid_depth'           => 'Error: nivèl de repertòri invalid dins lo camin : "$1" (a ensajat d’accedir a un nivèl al-dessús del repertòri raiç)',
