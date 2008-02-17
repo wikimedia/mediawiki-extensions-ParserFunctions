@@ -122,14 +122,28 @@ $messages['bg'] = array(
 );
 
 /** Bengali (বাংলা)
+ * @author Zaheen
  * @author Bellayet
  */
 $messages['bn'] = array(
-	'pfunc_time_error'            => 'ত্রুটি: অবৈধ সময়',
-	'pfunc_expr_division_by_zero' => 'শূন্য দ্বারা ভাগ করা হয়েছে',
-	'pfunc_expr_not_a_number'     => '$1: এ ফলাফল কোন সংখ্যা নয়',
-	'pfunc_ifexist_warning'       => 'সতর্কিকরণ: এই পাতায় খুব বেশি ifexist ডাকা(call) করা হয়েছে। যার সংখ্যা $2 এর হওয়া উচিত ছিল, এখন আছে $1।',
-	'pfunc_max_ifexist_category'  => 'খুব বেশি ifexist  ডাকা(call) করা হয়েছে এমন পাতাসমূহ',
+	'pfunc_desc'                            => 'লজিকাল ফাংশন দিয়ে পার্সারকে উন্নত করুন',
+	'pfunc_time_error'                      => 'ত্রুটি: অবৈধ সময়',
+	'pfunc_time_too_long'                   => 'ত্রুটি: অত্যধিক সংখ্যক #time কল',
+	'pfunc_rel2abs_invalid_depth'           => 'ত্রুটি: পাথে অবৈধ গভীরতা: "$1" (মূল নোডের উপরের একটি নোড অ্যাক্সেস করতে চেষ্টা করেছিল)',
+	'pfunc_expr_stack_exhausted'            => 'এক্সপ্রেশন ত্রুটি: স্ট্যাক শেষ হয়ে গেছে',
+	'pfunc_expr_unexpected_number'          => 'এক্সপ্রেশন ত্রুটি: অযাচিত সংখ্যা',
+	'pfunc_expr_preg_match_failure'         => 'এক্সপ্রেশন ত্রুটি: অযাচিত preg_match ব্যর্থতা',
+	'pfunc_expr_unrecognised_word'          => 'এক্সপ্রেশন ত্রুটি: অপরিচিত শব্দ "$1"',
+	'pfunc_expr_unexpected_operator'        => 'এক্সপ্রেশন ত্রুটি: অযাচিত $1 অপারেটর',
+	'pfunc_expr_missing_operand'            => 'এক্সপ্রেশন ত্রুটি: $1-এর জন্য অপারেন্ড নেই।',
+	'pfunc_expr_unexpected_closing_bracket' => 'এক্সপ্রেশন ত্রুটি: অযাচিত সমাপ্তকারী বন্ধনী',
+	'pfunc_expr_unrecognised_punctuation'   => 'এক্সপ্রেশন ত্রুটি: অপরিচিত বিরামচিহ্ন ক্যারেক্টার "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'এক্সপ্রেশন ত্রুটি: উন্মুক্ত বন্ধনী',
+	'pfunc_expr_division_by_zero'           => 'শূন্য দ্বারা ভাগ করা হয়েছে',
+	'pfunc_expr_unknown_error'              => 'এক্সপ্রেশন ত্রুটি: অজানা ত্রুটি ($1)',
+	'pfunc_expr_not_a_number'               => '$1: এ ফলাফল কোন সংখ্যা নয়',
+	'pfunc_ifexist_warning'                 => 'সতর্কিকরণ: এই পাতায় খুব বেশি ifexist ডাকা(call) করা হয়েছে। যার সংখ্যা $2 এর হওয়া উচিত ছিল, এখন আছে $1।',
+	'pfunc_max_ifexist_category'            => 'খুব বেশি ifexist  ডাকা(call) করা হয়েছে এমন পাতাসমূহ',
 );
 
 /** Catalan (Català)
@@ -600,13 +614,15 @@ $messages['nn'] = array(
  * @author Jon Harald Søby
  */
 $messages['no'] = array(
-	'pfunc_time_error'            => 'Feil: ugyldig tid',
-	'pfunc_time_too_long'         => 'Feil: #time brukt for mange ganger',
-	'pfunc_rel2abs_invalid_depth' => 'Feil: Ugyldig dybde i sti: «$1» (prøvde å få tilgang til en node over rotnoden)',
-	'pfunc_expr_division_by_zero' => 'Deling på null',
-	'pfunc_expr_not_a_number'     => 'I $1: resultat er ikke et tall',
-	'pfunc_ifexist_warning'       => 'Advarsel: Denne siden bruker #ifexist for mange ganger. Den burde brukes mindre enn $2 ganger, men brukes nå $1.',
-	'pfunc_max_ifexist_category'  => 'Sider som bruker ifexist for mange ganger',
+	'pfunc_desc'                   => 'Utvid parser med logiske funksjoner',
+	'pfunc_time_error'             => 'Feil: ugyldig tid',
+	'pfunc_time_too_long'          => 'Feil: #time brukt for mange ganger',
+	'pfunc_rel2abs_invalid_depth'  => 'Feil: Ugyldig dybde i sti: «$1» (prøvde å få tilgang til en node over rotnoden)',
+	'pfunc_expr_unexpected_number' => 'Uttrykksfeil: Uventet nummer',
+	'pfunc_expr_division_by_zero'  => 'Deling på null',
+	'pfunc_expr_not_a_number'      => 'I $1: resultat er ikke et tall',
+	'pfunc_ifexist_warning'        => 'Advarsel: Denne siden bruker #ifexist for mange ganger. Den burde brukes mindre enn $2 ganger, men brukes nå $1.',
+	'pfunc_max_ifexist_category'   => 'Sider som bruker ifexist for mange ganger',
 );
 
 /** Occitan (Occitan)
