@@ -425,6 +425,30 @@ $messages['hu'] = array(
 	'pfunc_max_ifexist_category'            => 'Túl sok ifexist hívást tartalmazó lapok',
 );
 
+/** Japanese (日本語)
+ * @author JtFuruhata
+ */
+$messages['ja'] = array(
+	'pfunc_desc'                            => '論理関数によるパーサー拡張',
+	'pfunc_time_error'                      => 'エラー: 時刻が不正です',
+	'pfunc_time_too_long'                   => 'エラー: #time 呼び出しが多すぎます',
+	'pfunc_rel2abs_invalid_depth'           => 'エラー: パス "$1" の階層が不正です（ルート階層からのアクセスをお試しください）',
+	'pfunc_expr_stack_exhausted'            => '構文エラー: スタックが空です',
+	'pfunc_expr_unexpected_number'          => '構文エラー: 予期せぬ数字です',
+	'pfunc_expr_preg_match_failure'         => '構文エラー: 予期せぬ形で preg_match に失敗しました',
+	'pfunc_expr_unrecognised_word'          => '構文エラー: "$1" は認識できません',
+	'pfunc_expr_unexpected_operator'        => '構文エラー: 予期せぬ演算子 $1 があります',
+	'pfunc_expr_missing_operand'            => '構文エラー: $1 のオペランドがありません',
+	'pfunc_expr_unexpected_closing_bracket' => '構文エラー: 予期せぬ閉じ括弧です',
+	'pfunc_expr_unrecognised_punctuation'   => '構文エラー: 認識できない区切り文字 "$1" があります',
+	'pfunc_expr_unclosed_bracket'           => '構文エラー: 括弧が閉じられていません',
+	'pfunc_expr_division_by_zero'           => '0で除算しました',
+	'pfunc_expr_unknown_error'              => '構文エラー: 予期せぬエラー（$1）',
+	'pfunc_expr_not_a_number'               => '$1: 結果が数字ではありません',
+	'pfunc_ifexist_warning'                 => '警告: このページには多数の #ifexist 呼び出しが含まれています。これは$2個未満でなければならず、現在は$1個記述されています。',
+	'pfunc_max_ifexist_category'            => 'このページは #ifexist 呼び出しが多すぎます',
+);
+
 /** ‫قازاقشا (تٴوتە)‬ (‫قازاقشا (تٴوتە)‬) */
 $messages['kk-arab'] = array(
 	'pfunc_time_error'                      => 'قاتە: جارامسىز ۋاقىت',
@@ -614,15 +638,24 @@ $messages['nn'] = array(
  * @author Jon Harald Søby
  */
 $messages['no'] = array(
-	'pfunc_desc'                   => 'Utvid parser med logiske funksjoner',
-	'pfunc_time_error'             => 'Feil: ugyldig tid',
-	'pfunc_time_too_long'          => 'Feil: #time brukt for mange ganger',
-	'pfunc_rel2abs_invalid_depth'  => 'Feil: Ugyldig dybde i sti: «$1» (prøvde å få tilgang til en node over rotnoden)',
-	'pfunc_expr_unexpected_number' => 'Uttrykksfeil: Uventet nummer',
-	'pfunc_expr_division_by_zero'  => 'Deling på null',
-	'pfunc_expr_not_a_number'      => 'I $1: resultat er ikke et tall',
-	'pfunc_ifexist_warning'        => 'Advarsel: Denne siden bruker #ifexist for mange ganger. Den burde brukes mindre enn $2 ganger, men brukes nå $1.',
-	'pfunc_max_ifexist_category'   => 'Sider som bruker ifexist for mange ganger',
+	'pfunc_desc'                            => 'Utvid parser med logiske funksjoner',
+	'pfunc_time_error'                      => 'Feil: ugyldig tid',
+	'pfunc_time_too_long'                   => 'Feil: #time brukt for mange ganger',
+	'pfunc_rel2abs_invalid_depth'           => 'Feil: Ugyldig dybde i sti: «$1» (prøvde å få tilgang til en node over rotnoden)',
+	'pfunc_expr_stack_exhausted'            => 'Uttrykksfeil: Stakk utbrukt',
+	'pfunc_expr_unexpected_number'          => 'Uttrykksfeil: Uventet nummer',
+	'pfunc_expr_preg_match_failure'         => 'Uttrykksfeil: Uventet preg_match-feil',
+	'pfunc_expr_unrecognised_word'          => 'Uttrykksfeil: Ugjenkjennelig ord «$1»',
+	'pfunc_expr_unexpected_operator'        => 'Uttrykksfeil: Uventet $1-operator',
+	'pfunc_expr_missing_operand'            => 'Uttrykksfeil: Mangler operand for $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Uttrykksfeil: Uventet lukkende parentes',
+	'pfunc_expr_unrecognised_punctuation'   => 'Uttrykksfeil: Ugjenkjennelig tegn «$1»',
+	'pfunc_expr_unclosed_bracket'           => 'Uttrykksfeil: Åpen parentes',
+	'pfunc_expr_division_by_zero'           => 'Deling på null',
+	'pfunc_expr_unknown_error'              => 'Uttrykksfeil: Ukjent feil ($1)',
+	'pfunc_expr_not_a_number'               => 'I $1: resultat er ikke et tall',
+	'pfunc_ifexist_warning'                 => 'Advarsel: Denne siden bruker #ifexist for mange ganger. Den burde brukes mindre enn $2 ganger, men brukes nå $1.',
+	'pfunc_max_ifexist_category'            => 'Sider som bruker ifexist for mange ganger',
 );
 
 /** Occitan (Occitan)
