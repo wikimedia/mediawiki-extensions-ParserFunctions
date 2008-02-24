@@ -259,6 +259,7 @@ $messages['fa'] = array(
 /** French (Français)
  * @author Grondin
  * @author Sherbrooke
+ * @author Urhixidur
  */
 $messages['fr'] = array(
 	'pfunc_desc'                            => 'Augmente le parseur avec des fonctions logiques',
@@ -266,12 +267,12 @@ $messages['fr'] = array(
 	'pfunc_time_too_long'                   => 'Erreur : <code>#time</code> appelé trop de fois',
 	'pfunc_rel2abs_invalid_depth'           => 'Erreur: niveau de répertoire invalide dans le chemin : « $1 » (a essayé d’accéder à un niveau au-dessus du répertoire racine)',
 	'pfunc_expr_stack_exhausted'            => 'Expression erronée : pile épuisée',
-	'pfunc_expr_unexpected_number'          => 'Expression erronée : nombre non attendu',
+	'pfunc_expr_unexpected_number'          => 'Expression erronée : nombre inattendu',
 	'pfunc_expr_preg_match_failure'         => 'Expression erronée : échec inattendu pour <code>preg_match</code>',
 	'pfunc_expr_unrecognised_word'          => "Erreur d'expression : le mot '''$1''' n'est pas reconnu",
 	'pfunc_expr_unexpected_operator'        => "Erreur d'expression : l'opérateur '''$1''' n'est pas reconnu",
-	'pfunc_expr_missing_operand'            => "Erreur d'expression : l'opérande '''$1''' n'est pas reconnue",
-	'pfunc_expr_unexpected_closing_bracket' => "Erreur d'expression : parenthèse fermante non prévue",
+	'pfunc_expr_missing_operand'            => "Erreur d’expression : l’opérande '''$1''' n’est pas reconnue",
+	'pfunc_expr_unexpected_closing_bracket' => 'Erreur d’expression : parenthèse fermante inattendue',
 	'pfunc_expr_unrecognised_punctuation'   => "Erreur d'expression : caractère de ponctuation « $1 » non reconnu",
 	'pfunc_expr_unclosed_bracket'           => 'Erreur d’expression : parenthèse non fermée',
 	'pfunc_expr_division_by_zero'           => 'Division par zéro',
@@ -423,6 +424,30 @@ $messages['hu'] = array(
 	'pfunc_expr_not_a_number'               => '$1: az eredmény nem szám',
 	'pfunc_ifexist_warning'                 => 'Figyelem: az oldal túl sok #ifexist hívást tartalmaz. Kevesebb, mint $2 darabnak kellene lennie, most $1 van.',
 	'pfunc_max_ifexist_category'            => 'Túl sok ifexist hívást tartalmazó lapok',
+);
+
+/** Italian (Italiano)
+ * @author BrokenArrow
+ */
+$messages['it'] = array(
+	'pfunc_desc'                            => 'Aggiunge al parser una serie di funzioni logiche',
+	'pfunc_time_error'                      => 'Errore: orario non valido',
+	'pfunc_time_too_long'                   => 'Errore: troppe chiamate a #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Errore: profondità non valida nel percorso "$2" (si è tentato di accedere a un nodo superiore alla radice)',
+	'pfunc_expr_stack_exhausted'            => "Errore nell'espressione: stack esaurito",
+	'pfunc_expr_unexpected_number'          => "Errore nell'espressione: numero inatteso",
+	'pfunc_expr_preg_match_failure'         => "Errore nell'espressione: errore inatteso in preg_match",
+	'pfunc_expr_unrecognised_word'          => 'Errore nell\'espressione: parola "$1" non riconosciuta',
+	'pfunc_expr_unexpected_operator'        => "Errore nell'espressione: operatore $1 inatteso",
+	'pfunc_expr_missing_operand'            => "Errore nell'espressione: operando mancante per $1",
+	'pfunc_expr_unexpected_closing_bracket' => "Errore nell'espressione: parentesi chiusa inattesa",
+	'pfunc_expr_unrecognised_punctuation'   => 'Errore nell\'espressione: carattere di punteggiatura "$1" non riconosciuto',
+	'pfunc_expr_unclosed_bracket'           => "Errore nell'espressione: parentesi non chiusa",
+	'pfunc_expr_division_by_zero'           => 'Divisione per zero',
+	'pfunc_expr_unknown_error'              => "Errore nell'espressione: errore sconosciuto ($1)",
+	'pfunc_expr_not_a_number'               => 'In $1: il risultato non è un numero',
+	'pfunc_ifexist_warning'                 => 'Attenzione: in questa pagina sono presenti troppe chiamate alla funzione #ifexist. Il numero massimo è $2, al momento ve ne sono $1.',
+	'pfunc_max_ifexist_category'            => 'Pagine con troppe chiamate alla funzione ifexist',
 );
 
 /** Japanese (日本語)
