@@ -61,7 +61,7 @@ class ExtParserFunctions {
 	}
 
 	function &getExprParser() {
-		if ( !isset( $this->mExpr ) ) {
+		if ( !isset( $this->mExprParser ) ) {
 			if ( !class_exists( 'ExprParser' ) ) {
 				require( dirname( __FILE__ ) . '/Expr.php' );
 			}
