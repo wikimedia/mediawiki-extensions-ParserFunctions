@@ -426,6 +426,30 @@ $messages['hu'] = array(
 	'pfunc_max_ifexist_category'            => 'Túl sok ifexist hívást tartalmazó lapok',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author IvanLanin
+ */
+$messages['id'] = array(
+	'pfunc_desc'                            => 'Meningkatkan parser dengan fungsi logika',
+	'pfunc_time_error'                      => 'Kesalahan: time tidak valid',
+	'pfunc_time_too_long'                   => 'Kesalahan: Pemanggilan #time terlalu banyak',
+	'pfunc_rel2abs_invalid_depth'           => 'Kesalahan: Kedalaman path tidak valid: "$1" (mencoba mengakses simpul di atas simpul akar)',
+	'pfunc_expr_stack_exhausted'            => 'Kesalahan ekspresi: Stack habis',
+	'pfunc_expr_unexpected_number'          => 'Kesalahan ekspresi: Angka yang tak terduga',
+	'pfunc_expr_preg_match_failure'         => 'Kesalahan ekspresi: Kesalah preg_match yang tak terduga',
+	'pfunc_expr_unrecognised_word'          => 'Kesalahan ekspresi: Kata "$1" tak dikenal',
+	'pfunc_expr_unexpected_operator'        => 'Kesalahan ekspresi: Operator $1 tak terduga',
+	'pfunc_expr_missing_operand'            => 'Kesalahan ekspresi: Operand tak ditemukan untuk $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Kesalahan ekspresi: Kurung tutup tak terduga',
+	'pfunc_expr_unrecognised_punctuation'   => 'Kesalahan ekspresi: Karakter tanda baca "$1" tak dikenali',
+	'pfunc_expr_unclosed_bracket'           => 'Kesalahan ekspresi: Kurung tanpa tutup',
+	'pfunc_expr_division_by_zero'           => 'Pembagian oleh nol',
+	'pfunc_expr_unknown_error'              => 'Kesalahan ekspresi: Kesalah tak dikenal ($1)',
+	'pfunc_expr_not_a_number'               => 'Pada $1: hasilnya bukan angka',
+	'pfunc_ifexist_warning'                 => 'Peringatan: Halaman ini mengandung terlalu banyak panggilan #ifexist. Seharusnya lebih sedikit dari $2, sekarang ada $1.',
+	'pfunc_max_ifexist_category'            => 'Halaman dengan terlalu banyak panggilan ifexist',
+);
+
 /** Italian (Italiano)
  * @author BrokenArrow
  */

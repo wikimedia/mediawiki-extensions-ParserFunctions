@@ -70,10 +70,12 @@ function efParserFunctionsWords( $lang ) {
 		'if'         => array( 0, 'jika',         'if' ),
 		'ifeq'       => array( 0, 'jikasama',     'ifeq' ),
 		'ifexpr'     => array( 0, 'jikahitung',   'ifexpr' ),
+		'iferror'    => array( 0, 'jikasalah',   'iferror' ),
 		'switch'     => array( 0, 'pilih',        'switch' ),
 		'default'    => array( 0, '#baku',        '#default' ),
 		'ifexist'    => array( 0, 'jikaada',      'ifexist' ),
 		'time'       => array( 0, 'waktu',        'time' ),
+		'time'       => array( 0, 'waktu1',       'timel' ),
 		'rel2abs'    => array( 0, 'rel2abs' ),
 		'titleparts' => array( 0, 'bagianjudul',  'titleparts' ),
 	);
