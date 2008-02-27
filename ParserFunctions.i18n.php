@@ -430,7 +430,7 @@ $messages['hu'] = array(
  * @author IvanLanin
  */
 $messages['id'] = array(
-	'pfunc_desc'                            => 'Meningkatkan parser dengan fungsi logika',
+	'pfunc_desc'                            => 'Mengembangkan parser dengan fungsi logika',
 	'pfunc_time_error'                      => 'Kesalahan: time tidak valid',
 	'pfunc_time_too_long'                   => 'Kesalahan: Pemanggilan #time terlalu banyak',
 	'pfunc_rel2abs_invalid_depth'           => 'Kesalahan: Kedalaman path tidak valid: "$1" (mencoba mengakses simpul di atas simpul akar)',
