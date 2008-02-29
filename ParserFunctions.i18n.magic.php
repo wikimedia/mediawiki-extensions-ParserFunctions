@@ -75,7 +75,7 @@ function efParserFunctionsWords( $lang ) {
 		'default'    => array( 0, '#baku',        '#default' ),
 		'ifexist'    => array( 0, 'jikaada',      'ifexist' ),
 		'time'       => array( 0, 'waktu',        'time' ),
-		'time'       => array( 0, 'waktu1',       'timel' ),
+		'timel'      => array( 0, 'waktu1',       'timel' ),
 		'rel2abs'    => array( 0, 'rel2abs' ),
 		'titleparts' => array( 0, 'bagianjudul',  'titleparts' ),
 	);
