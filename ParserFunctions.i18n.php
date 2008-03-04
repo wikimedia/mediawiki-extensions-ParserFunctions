@@ -231,6 +231,22 @@ $messages['el'] = array(
 	'pfunc_max_ifexist_category' => 'Σελίδες με πάρα πολλές κλήσεις της ifexist',
 );
 
+/** Esperanto (Esperanto)
+ * @author Yekrats
+ */
+$messages['eo'] = array(
+	'pfunc_expr_division_by_zero' => 'Divido per nulo',
+);
+
+/** Basque (Euskara)
+ * @author SPQRobin
+ */
+$messages['eu'] = array(
+	'pfunc_time_error'            => 'Errorea: baliogabeko ordua',
+	'pfunc_time_too_long'         => 'Errorea: #time dei gehiegi',
+	'pfunc_rel2abs_invalid_depth' => 'Errorea: Baliogabeko sakonera fitxategi bidean: "$1" (root puntutik gora sartzen saiatu da)',
+);
+
 /** فارسی (فارسی)
  * @author Huji
  */
