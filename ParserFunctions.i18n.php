@@ -962,6 +962,9 @@ $messages['te'] = array(
  * @author Ibrahim
  */
 $messages['tg'] = array(
+	'pfunc_desc'                  => 'Ба таҷзеҳкунанда, дастурҳои мантиқӣ меафзояд',
+	'pfunc_time_error'            => 'Хато: замони ғайримиҷоз',
+	'pfunc_time_too_long'         => 'Хато: #time фарохонии беш аз ҳад',
 	'pfunc_expr_division_by_zero' => 'Тақсим бар сифр',
 );
 
