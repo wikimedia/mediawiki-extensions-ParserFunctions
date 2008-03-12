@@ -196,6 +196,29 @@ $messages['cs'] = array(
 	'pfunc_max_ifexist_category'            => 'Stránky s příliš mnoha voláními funkce ifexist',
 );
 
+/** Danish (Dansk)
+ * @author Morten
+ */
+$messages['da'] = array(
+	'pfunc_desc'                            => 'Udvidet parser med logiske funktioner',
+	'pfunc_time_error'                      => 'Fejl: Ugyldig tid',
+	'pfunc_time_too_long'                   => 'Felj: for mange #time kald',
+	'pfunc_expr_stack_exhausted'            => 'Udtryksfejl: Stack tømt',
+	'pfunc_expr_unexpected_number'          => 'Fejl: Uventet nummer',
+	'pfunc_expr_preg_match_failure'         => 'Udtryksfejl: Uventet preg_match fejl',
+	'pfunc_expr_unrecognised_word'          => 'Udtryksfejl: Uventet ord "$1"',
+	'pfunc_expr_unexpected_operator'        => 'Udtryksfejl: Uventet $1 operator',
+	'pfunc_expr_missing_operand'            => 'Udtryksfejl: Manglende operand til $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Udtryksfejl: Uventet "]"-tegn',
+	'pfunc_expr_unrecognised_punctuation'   => 'Udtryksfejl: Uventet tegnsætning-tegn: "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'Udtryksfejl: Uafsluttet kantet parantes',
+	'pfunc_expr_division_by_zero'           => 'Division med nul',
+	'pfunc_expr_unknown_error'              => 'Udtryksfejl: Ukendt fejl ($1)',
+	'pfunc_expr_not_a_number'               => 'I $1: Resultatet er ikke et tal',
+	'pfunc_ifexist_warning'                 => 'Advarsel: Denne side indeholder for mange #ifexist kald. Den skulle have under $2 men den har nu $1.',
+	'pfunc_max_ifexist_category'            => 'Sider med for mange ifexist kald',
+);
+
 /**  German (Deutsch)
  * @author Raimond Spekking
  */
@@ -962,10 +985,24 @@ $messages['te'] = array(
  * @author Ibrahim
  */
 $messages['tg'] = array(
-	'pfunc_desc'                  => 'Ба таҷзеҳкунанда, дастурҳои мантиқӣ меафзояд',
-	'pfunc_time_error'            => 'Хато: замони ғайримиҷоз',
-	'pfunc_time_too_long'         => 'Хато: #time фарохонии беш аз ҳад',
-	'pfunc_expr_division_by_zero' => 'Тақсим бар сифр',
+	'pfunc_desc'                            => 'Ба таҷзеҳкунанда, дастурҳои мантиқӣ меафзояд',
+	'pfunc_time_error'                      => 'Хато: замони ғайримиҷоз',
+	'pfunc_time_too_long'                   => 'Хато: #time фарохонии беш аз ҳад',
+	'pfunc_rel2abs_invalid_depth'           => 'Хато: Чуқурии ғайримиҷоз дар нишонӣ: "$1" (талош барои дастраси ба як нишонӣ болотар аз нишонии реша)',
+	'pfunc_expr_stack_exhausted'            => 'Хатои ибора: Пушта аз даст рафтааст',
+	'pfunc_expr_unexpected_number'          => 'Хатои ибора: Адади ғайримунтазир',
+	'pfunc_expr_preg_match_failure'         => 'Хатои ибора: Хатои ғайримунтазири preg_match',
+	'pfunc_expr_unrecognised_word'          => 'Хатои ибора: Калимаи ношинохта "$1"',
+	'pfunc_expr_unexpected_operator'        => 'Хатои ибора: Амалгари ғайримунтазири $1',
+	'pfunc_expr_missing_operand'            => 'Хатои ибора: Амалгари гумшуда барои  $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Хатои ибора: Қафси бастаи номунтазир',
+	'pfunc_expr_unrecognised_punctuation'   => 'Хатои ибора: Аломати нуқтагузории шинохтанашуда "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'Хатои ибора: Қафси бастанашуда',
+	'pfunc_expr_division_by_zero'           => 'Тақсим бар сифр',
+	'pfunc_expr_unknown_error'              => 'Хатои ибора: Хатои ношинос ($1)',
+	'pfunc_expr_not_a_number'               => 'Дар $1: натиҷа адад нест',
+	'pfunc_ifexist_warning'                 => 'Ҳушдор: Ин саҳифа фарохониҳои #ifexist бисёреро дар бар мегирад. Бояд кам аз $2 дошта бошад, ҳамакнун теъдоди он $1 аст.',
+	'pfunc_max_ifexist_category'            => 'Саҳифаҳои дорои беш аз ҳад фарохониҳои ifexist',
 );
 
 /** Vietnamese (Tiếng Việt)
