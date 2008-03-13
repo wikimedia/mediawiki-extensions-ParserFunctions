@@ -600,6 +600,13 @@ $messages['kk-latn'] = array(
 	'pfunc_max_ifexist_category'            => 'Tım köp ifexist şaqırımdarı bar better',
 );
 
+/** Khmer (ភាសាខ្មែរ)
+ * @author Lovekhmer
+ */
+$messages['km'] = array(
+	'pfunc_expr_division_by_zero' => 'ចែកនឹងសូន្យ',
+);
+
 /** Latin (Latina)
  * @author UV
  */
