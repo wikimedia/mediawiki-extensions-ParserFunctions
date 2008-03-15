@@ -648,6 +648,30 @@ $messages['li'] = array(
 	'pfunc_max_ifexist_category'            => "Pazjena's die iefexist euverduk gebroeke",
 );
 
+/** Marathi (मराठी)
+ * @author Kaustubh
+ */
+$messages['mr'] = array(
+	'pfunc_desc'                            => 'तार्किक कार्ये वापरून पार्सर वाढवा',
+	'pfunc_time_error'                      => 'त्रुटी: चुकीचा वेळ',
+	'pfunc_time_too_long'                   => 'त्रुटी: खूप जास्त #time कॉल्स',
+	'pfunc_rel2abs_invalid_depth'           => 'त्रुटी: मार्गामध्ये चुकीची गहनता: "$1" (रूट नोडच्या वरील नोड शोधायचा प्रयत्न केला)',
+	'pfunc_expr_stack_exhausted'            => 'एक्स्प्रेशन त्रुटी: स्टॅक संपला',
+	'pfunc_expr_unexpected_number'          => 'एक्स्प्रेशन त्रुटी: अनपेक्षित क्रमांक',
+	'pfunc_expr_preg_match_failure'         => 'एक्स्प्रेशन त्रुटी: अनपेक्षित preg_match रद्दीकरण',
+	'pfunc_expr_unrecognised_word'          => 'एक्स्प्रेशन त्रुटी: अनोळखी शब्द "$1"',
+	'pfunc_expr_unexpected_operator'        => 'एक्स्प्रेशन त्रुटी: अनोळखी $1 कार्यवाहक',
+	'pfunc_expr_missing_operand'            => 'एक्स्प्रेशन त्रुटी: $1 चा घटक सापडला नाही',
+	'pfunc_expr_unexpected_closing_bracket' => 'एक्स्प्रेशन त्रुटी: अनपेक्षित समाप्ती कंस',
+	'pfunc_expr_unrecognised_punctuation'   => 'एक्स्प्रेशन त्रुटी: अनोळखी उद्गारवाचक चिन्ह "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'एक्स्प्रेशन त्रुटी: कंस समाप्त केलेला नाही',
+	'pfunc_expr_division_by_zero'           => 'शून्य ने भागाकार',
+	'pfunc_expr_unknown_error'              => 'एक्स्प्रेशन त्रुटी: अनोळखी त्रुटी ($1)',
+	'pfunc_expr_not_a_number'               => '$1 मध्ये: निकाल संख्येत नाही',
+	'pfunc_ifexist_warning'                 => 'इशारा: या पानावर जास्तीत जास्त $2 #ifexist कॉल्स असू शकतात, सध्या $1 कॉल्स आहेत.',
+	'pfunc_max_ifexist_category'            => 'खूप सारे ifexist कॉल्स असणारी पाने',
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
