@@ -295,6 +295,14 @@ $messages['fa'] = array(
 
 );
 
+/** Finnish (Suomi)
+ * @author Nike
+ */
+$messages['fi'] = array(
+	'pfunc_expr_unclosed_bracket' => 'Virhe ilmauksessa: sulkeva sulkumerkki puuttuu',
+	'pfunc_expr_division_by_zero' => 'Virhe: Jako nollalla',
+);
+
 /** French (Français)
  * @author Grondin
  * @author Sherbrooke
