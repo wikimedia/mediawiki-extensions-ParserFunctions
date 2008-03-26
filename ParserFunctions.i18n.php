@@ -973,6 +973,13 @@ $messages['stq'] = array(
 	'pfunc_max_ifexist_category'            => 'Sieden mäd toufuul ifexist-Aproupe',
 );
 
+/** Sundanese (Basa Sunda)
+ * @author Kandar
+ */
+$messages['su'] = array(
+	'pfunc_time_error' => 'Éror: titimangsa teu valid',
+);
+
 /** Swedish (Svenska)
  * @author Lejonel
  */
