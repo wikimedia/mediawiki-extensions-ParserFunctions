@@ -30,6 +30,7 @@ define( 'EXPR_LESSEQ', 18 );
 define( 'EXPR_GREATEREQ', 19 );
 define( 'EXPR_NOTEQ', 20 );
 define( 'EXPR_ROUND', 21 );
+define( 'EXPR_EXPONENT', 22 );
 
 class ExprError extends Exception {
 	public function __construct($msg, $parameter = ''){
@@ -44,6 +45,7 @@ class ExprParser {
 	var $precedence = array(
 		EXPR_NEGATIVE => 10,
 		EXPR_POSITIVE => 10,
+		EXPR_EXPONENT => 9,
 		EXPR_NOT => 9,
 		EXPR_TIMES => 8,
 		EXPR_DIVIDE => 8,
@@ -60,7 +62,7 @@ class ExprParser {
 		EXPR_AND => 3,
 		EXPR_OR => 2,
 		EXPR_OPEN => -1,
-		EXPR_CLOSE => -1
+		EXPR_CLOSE => -1,
 	);
 
 	var $names = array(
@@ -81,6 +83,7 @@ class ExprParser {
 		EXPR_NOTEQ => '<>',
 		EXPR_AND => 'and',
 		EXPR_OR => 'or',
+		EXPR_EXPONENT => 'e',
 	);
 
 
@@ -90,7 +93,8 @@ class ExprParser {
 		'or' => EXPR_OR,
 		'not' => EXPR_NOT,
 		'round' => EXPR_ROUND,
-		'div' => EXPR_DIVIDE
+		'div' => EXPR_DIVIDE,
+		'e' => EXPR_EXPONENT,
 	);
 
 	/**
@@ -187,7 +191,7 @@ class ExprParser {
 			}
 
 			// Finally the single-character operators
-
+			
 			elseif ( $char == '+' ) {
 				++$p;
 				if ( $expecting == 'expression' ) {
@@ -381,6 +385,12 @@ class ExprParser {
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = ( $left != $right ) ? 1 : 0;
+				break;
+			case EXPR_EXPONENT:
+				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
+				$right = array_pop( $stack );
+				$left = array_pop( $stack );
+				$stack[] = $left * pow(10,$right);
 				break;
 			default:
 				// Should be impossible to reach here.
