@@ -657,6 +657,13 @@ $messages['li'] = array(
 	'pfunc_max_ifexist_category'            => "Pazjena's die iefexist euverduk gebroeke",
 );
 
+/** Malayalam (മലയാളം)
+ * @author Shijualex
+ */
+$messages['ml'] = array(
+	'pfunc_expr_division_by_zero' => 'പൂജ്യം കൊണ്ടുള്ള ഹരണം',
+);
+
 /** Marathi (मराठी)
  * @author Kaustubh
  */
