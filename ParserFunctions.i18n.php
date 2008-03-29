@@ -1086,24 +1086,78 @@ $messages['vo'] = array(
 	'pfunc_expr_not_a_number'     => 'In $1: sek no binon num',
 );
 
-/** 粵語 (粵語) */
+/** Cantonese (廣東話)
+ * @author Shinjiman
+ */
 $messages['yue'] = array(
-	'pfunc_time_error'            => '錯: 唔啱嘅時間',
-	'pfunc_time_too_long'         => '錯: 太多 #time 呼叫',
-	'pfunc_rel2abs_invalid_depth' => '錯: 唔啱路徑嘅深度: "$1" (已經試過由頭點落個點度)',
+	'pfunc_desc'                            => '用邏輯功能去加強處理器',
+	'pfunc_time_error'                      => '錯: 唔啱嘅時間',
+	'pfunc_time_too_long'                   => '錯: 太多 #time 呼叫',
+	'pfunc_rel2abs_invalid_depth'           => '錯: 唔啱路徑嘅深度: "$1" (已經試過由頭點落個點度)',
+	'pfunc_expr_stack_exhausted'            => '表達錯: 堆叠耗盡',
+	'pfunc_expr_unexpected_number'          => '表達錯: 未預料嘅數字',
+	'pfunc_expr_preg_match_failure'         => '表達錯: 未預料嘅 preg_match失敗',
+	'pfunc_expr_unrecognised_word'          => '表達錯: 未預料嘅字 "$1"',
+	'pfunc_expr_unexpected_operator'        => '表達錯: 未預料嘅 $1 運算符',
+	'pfunc_expr_missing_operand'            => '表達錯: 缺少 $1 嘅運算符',
+	'pfunc_expr_unexpected_closing_bracket' => '表達錯: 未預料嘅閂括號',
+	'pfunc_expr_unrecognised_punctuation'   => '表達錯: 未能認得到嘅標點 "$1"',
+	'pfunc_expr_unclosed_bracket'           => '表達錯: 未閂好嘅括號',
+	'pfunc_expr_division_by_zero'           => '除以零',
+	'pfunc_expr_unknown_error'              => '表達錯: 未知嘅錯 ($1)',
+	'pfunc_expr_not_a_number'               => '響 $1: 結果唔係數字',
+	'pfunc_ifexist_warning'                 => '警告: 呢一版包括咗太多嘅 #ifexist 呼叫。
+佢應該少過$2次，但係而家有$1次。',
+	'pfunc_max_ifexist_category'            => '版有太多嘅 ifexists 呼叫',
 );
 
-/** Simplified Chinese (‪中文(简体)‬) */
+/** Simplified Chinese (‪中文(简体)‬) 
+ * @author Shinjiman
+ */
 $messages['zh-hans'] = array(
-	'pfunc_time_error'            => '错误: 不正确的时间',
-	'pfunc_time_too_long'         => '错误: 过多 #time 的呼叫',
-	'pfunc_rel2abs_invalid_depth' => '错误: 不正确的路径深度: "$1" (已经尝试在顶点访问该点)',
+	'pfunc_desc'                            => '用逻辑功能去加强处理器',
+	'pfunc_time_error'                      => '错误: 不正确的时间',
+	'pfunc_time_too_long'                   => '错误: 过多 #time 的呼叫',
+	'pfunc_rel2abs_invalid_depth'           => '错误: 不正确的路径深度: "$1" (已经尝试在顶点访问该点)',
+	'pfunc_expr_stack_exhausted'            => '表达错误: 堆叠耗尽',
+	'pfunc_expr_unexpected_number'          => '表达错误: 未预料的数字',
+	'pfunc_expr_preg_match_failure'         => '表达错误: 未预料的 preg_match失败',
+	'pfunc_expr_unrecognised_word'          => '表达错误: 未预料的字 "$1"',
+	'pfunc_expr_unexpected_operator'        => '表达错误: 未预料的 $1 运算符',
+	'pfunc_expr_missing_operand'            => '表达错误: 缺少 $1 的运算符',
+	'pfunc_expr_unexpected_closing_bracket' => '表达错误: 未预料的关括号',
+	'pfunc_expr_unrecognised_punctuation'   => '表达错误: 未能认得到的标点 "$1"',
+	'pfunc_expr_unclosed_bracket'           => '表达错误: 未关闭的括号',
+	'pfunc_expr_division_by_zero'           => '除以零',
+	'pfunc_expr_unknown_error'              => '表达错误: 未知?错 ($1)',
+	'pfunc_expr_not_a_number'               => '于 $1: 结果不是数字',
+	'pfunc_ifexist_warning'                 => '警告: 这个页面中包含过多的 #ifexist 呼叫。
+它  应该少于$2次，但现在有$1次。',
+	'pfunc_max_ifexist_category'            => '页面中含有过多的 ifexists 呼叫',	
 );
 
-/** Traditional Chinese (‪中文(繁體)‬) */
+/** Traditional Chinese (‪中文(繁體)‬)
+ * @author Shinjiman
+ */
 $messages['zh-hant'] = array(
-	'pfunc_time_error'            => '錯誤: 不正確的時間',
-	'pfunc_time_too_long'         => '錯誤: 過多 #time 的呼叫',
-	'pfunc_rel2abs_invalid_depth' => '錯誤: 不正確的路徑深度: "$1" (已經嘗試在頂點存取該點)',
+	'pfunc_desc'                            => '用邏輯功能去加強處理器',
+	'pfunc_time_error'                      => '錯誤: 不正確的時間',
+	'pfunc_time_too_long'                   => '錯誤: 過多 #time 的呼叫',
+	'pfunc_rel2abs_invalid_depth'           => '錯誤: 不正確的路徑深度: "$1" (已經嘗試在頂點存取該點)',
+	'pfunc_expr_stack_exhausted'            => '表達錯誤: 堆疊耗盡',
+	'pfunc_expr_unexpected_number'          => '表達錯誤: 未預料的數字',
+	'pfunc_expr_preg_match_failure'         => '表達錯誤: 未預料的 preg_match失敗',
+	'pfunc_expr_unrecognised_word'          => '表達錯誤: 未預料的字 "$1"',
+	'pfunc_expr_unexpected_operator'        => '表達錯誤: 未預料的 $1 運算符',
+	'pfunc_expr_missing_operand'            => '表達錯誤: 缺少 $1 的運算符',
+	'pfunc_expr_unexpected_closing_bracket' => '表達錯誤: 未預料的關括號',
+	'pfunc_expr_unrecognised_punctuation'   => '表達錯誤: 未能認得到的標點 "$1"',
+	'pfunc_expr_unclosed_bracket'           => '表達錯誤: 未關閉的括號',
+	'pfunc_expr_division_by_zero'           => '除以零',
+	'pfunc_expr_unknown_error'              => '表達錯誤: 未知嘅錯 ($1)',
+	'pfunc_expr_not_a_number'               => '於 $1: 結果不是數字',
+	'pfunc_ifexist_warning'                 => '警告: 這個頁面中包含過多的 #ifexist 呼叫。
+它佢應該少於$2次，但現在有$1次。',
+	'pfunc_max_ifexist_category'            => '頁面中含有過多的 ifexists 呼叫',
 );
 
