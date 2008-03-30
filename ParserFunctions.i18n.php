@@ -147,6 +147,14 @@ $messages['bn'] = array(
 	'pfunc_max_ifexist_category'            => 'খুব বেশি ifexist  ডাকা(call) করা হয়েছে এমন পাতাসমূহ',
 );
 
+/** Breton (Brezhoneg)
+ * @author Fulup
+ */
+$messages['br'] = array(
+	'pfunc_time_error'            => 'Fazi : pad direizh',
+	'pfunc_expr_division_by_zero' => 'Rannañ dre mann',
+);
+
 /** Catalan (Català)
  * @author SMP
  */
