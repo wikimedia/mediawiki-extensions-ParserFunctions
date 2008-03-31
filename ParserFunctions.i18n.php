@@ -1046,7 +1046,7 @@ $messages['te'] = array(
 /** Tajik (Тоҷикӣ)
  * @author Ibrahim
  */
-$messages['tg'] = array(
+$messages['tg-cyrl'] = array(
 	'pfunc_desc'                            => 'Ба таҷзеҳкунанда, дастурҳои мантиқӣ меафзояд',
 	'pfunc_time_error'                      => 'Хато: замони ғайримиҷоз',
 	'pfunc_time_too_long'                   => 'Хато: #time фарохонии беш аз ҳад',
