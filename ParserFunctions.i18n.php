@@ -410,6 +410,7 @@ $messages['he'] = array(
 
 /** Croatian (Hrvatski)
  * @author SpeedyGonsales
+ * @author Dalibor Bosits
  * @author Siebrand
  * @author Dnik
  */
@@ -431,7 +432,7 @@ $messages['hr'] = array(
 	'pfunc_expr_unknown_error'              => 'Greška u predlošku: Nepoznata greška ($1)',
 	'pfunc_expr_not_a_number'               => 'U $1: rezultat nije broj',
 	'pfunc_ifexist_warning'                 => 'Upozorenje: Ova stranica sadrži previše #ifexist poziva. Treba ih biti manje od $2, trenutno ih je $1.',
-	'pfunc_max_ifexist_category'            => 'Stranica s previše ifexist poziva',
+	'pfunc_max_ifexist_category'            => 'Stranice s previše ifexist poziva',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
