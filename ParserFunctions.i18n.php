@@ -408,6 +408,31 @@ $messages['he'] = array(
 	'pfunc_max_ifexist_category'            => 'דפים עם הוראות קיום רבות מדי',
 );
 
+/** Hindi (हिन्दी)
+ * @author Kaustubh
+ */
+$messages['hi'] = array(
+	'pfunc_desc'                            => 'लॉजिकल कार्योंका इस्तेमाल करके पार्सर बढायें',
+	'pfunc_time_error'                      => 'गलती: गलत समय',
+	'pfunc_time_too_long'                   => 'गलती: बहुत सारे #time कॉल',
+	'pfunc_rel2abs_invalid_depth'           => 'गलती: पाथ में गलत गहराई: "$1" (रूट नोडके उपर वाले नोड खोजने की कोशीश की)',
+	'pfunc_expr_stack_exhausted'            => 'एक्स्प्रेशनमें गलती: स्टॅक खतम हो गया',
+	'pfunc_expr_unexpected_number'          => 'एक्स्प्रेशनमें गलती: अनपेक्षित संख्या',
+	'pfunc_expr_preg_match_failure'         => 'एक्स्प्रेशन गलती: अनपेक्षित preg_match रद्दीकरण',
+	'pfunc_expr_unrecognised_word'          => 'एक्स्प्रेशन गलती: अनिश्चित शब्द "$1"',
+	'pfunc_expr_unexpected_operator'        => 'एक्स्प्रेशन गलती: अनपेक्षित $1 ओपरेटर',
+	'pfunc_expr_missing_operand'            => 'एक्स्प्रेशन गलती: $1 का घटक मिला नहीं',
+	'pfunc_expr_unexpected_closing_bracket' => 'एक्स्प्रेशन गलती: अनपेक्षित समाप्ति ब्रैकेट',
+	'pfunc_expr_unrecognised_punctuation'   => 'एक्स्प्रेशन गलती: अनपेक्षित उद्गार चिन्ह "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'एक्स्प्रेशन गलती: ब्रैकेट बंद नहीं किया',
+	'pfunc_expr_division_by_zero'           => 'शून्य से विभाजन',
+	'pfunc_expr_unknown_error'              => 'एक्स्प्रेशन गलती: अज्ञात गलती ($1)',
+	'pfunc_expr_not_a_number'               => '$1 में: रिज़ल्ट संख्यामें नहीं हैं',
+	'pfunc_ifexist_warning'                 => 'सूचना: इस पन्ने पर बहुत सारे #ifexist कॉल्स हैं।
+ये $2 से कम होने चाहिये, पर अभी $1 हैं।',
+	'pfunc_max_ifexist_category'            => 'ढेर सारे ifexist कॉल्स होने वाले पन्ने',
+);
+
 /** Croatian (Hrvatski)
  * @author SpeedyGonsales
  * @author Dalibor Bosits
