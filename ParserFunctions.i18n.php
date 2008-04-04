@@ -695,6 +695,7 @@ $messages['li'] = array(
  * @author Shijualex
  */
 $messages['ml'] = array(
+	'pfunc_time_error'            => 'പിഴവ്:അസാധുവായ സമയം',
 	'pfunc_expr_division_by_zero' => 'പൂജ്യം കൊണ്ടുള്ള ഹരണം',
 );
 
