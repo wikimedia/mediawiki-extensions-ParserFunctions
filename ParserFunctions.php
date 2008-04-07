@@ -16,9 +16,6 @@ $wgExtensionCredits['parserhook'][] = array(
 
 $wgExtensionMessagesFiles['ParserFunctions'] = dirname(__FILE__) . '/ParserFunctions.i18n.php';
 $wgHooks['LanguageGetMagic'][]       = 'wfParserFunctionsLanguageGetMagic';
-$wgHooks['ParserLimitReport'][]      = 'wfParserFunctionsLimitReport';
-
-$wgMaxIfExistCount = 100;
 
 class ExtParserFunctions {
 	var $mExprParser;
@@ -55,7 +52,6 @@ class ExtParserFunctions {
 
 	function clearState(&$parser) {
 		$this->mTimeChars = 0;
-		$parser->pf_ifexist_count = 0;
 		$parser->pf_ifexist_breakdown = array();
 		return true;
 	}
@@ -315,8 +311,8 @@ class ExtParserFunctions {
 
 	function incrementIfexistCount( $parser, $frame ) {
 		// Don't let this be called more than a certain number of times. It tends to make the database explode.
-		global $wgMaxIfExistCount;
-		$parser->pf_ifexist_count++;
+		global $wgExpensiveParserFunctionLimit;
+		$parser->mExpensiveFunctionCount++;
 		if ( $frame ) {
 			$pdbk = $frame->getPDBK( 1 );
 			if ( !isset( $parser->pf_ifexist_breakdown[$pdbk] ) ) {
@@ -324,7 +320,7 @@ class ExtParserFunctions {
 			}
 			$parser->pf_ifexist_breakdown[$pdbk] ++;
 		}
-		return $parser->pf_ifexist_count <= $wgMaxIfExistCount;
+		return $parser->mExpensiveFunctionCount <= $wgExpensiveParserFunctionLimit;
 	}
 
 	function ifexist( &$parser, $title = '', $then = '', $else = '' ) {
@@ -357,15 +353,14 @@ class ExtParserFunctions {
 			} else {
 				$pdbk = $title->getPrefixedDBkey();
 				$lc = LinkCache::singleton();
+				if ( !$this->incrementIfexistCount( $parser, $frame ) ) {
+					return $else;
+				}
 				if ( $lc->getGoodLinkID( $pdbk ) ) {
 					return $then;
 				} elseif ( $lc->isBadLink( $pdbk ) ) {
 					return $else;
 				}
-				if ( !$this->incrementIfexistCount( $parser, $frame ) ) {
-					return $else;
-				}
-
 				$id = $title->getArticleID();
 				$parser->mOutput->addLink( $title, $id );
 				if ( $id ) {
@@ -476,22 +471,6 @@ class ExtParserFunctions {
 			return $title;
 		}
 	}
-
-	function afterTidy( &$parser, &$text ) {
-		global $wgMaxIfExistCount;
-		if ( $parser->pf_ifexist_count > $wgMaxIfExistCount ) {
-			if ( is_callable( array( $parser->mOutput, 'addWarning' ) ) ) {
-				wfLoadExtensionMessages( 'ParserFunctions' );
-				$warning = wfMsg( 'pfunc_ifexist_warning', $parser->pf_ifexist_count, $wgMaxIfExistCount );
-				$parser->mOutput->addWarning( $warning );
-				$cat = Title::makeTitleSafe( NS_CATEGORY, wfMsgForContent( 'pfunc_max_ifexist_category' ) );
-				if ( $cat ) {
-					$parser->mOutput->addCategory( $cat->getDBkey(), $parser->getDefaultSort() );
-				}
-			}
-		}
-		return true;
-	}
 }
 
 function wfSetupParserFunctions() {
@@ -510,21 +489,12 @@ function wfSetupParserFunctions() {
 	}
 
 	$wgHooks['ParserClearState'][] = array( &$wgExtParserFunctions, 'clearState' );
-	$wgHooks['ParserAfterTidy'][] = array( &$wgExtParserFunctions, 'afterTidy' );
 }
 
 function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 	require_once( dirname( __FILE__ ) . '/ParserFunctions.i18n.magic.php' );
 	foreach( efParserFunctionsWords( $langCode ) as $word => $trans )
 		$magicWords[$word] = $trans;
-	return true;
-}
-
-function wfParserFunctionsLimitReport( $parser, &$report ) {
-	global $wgMaxIfExistCount;
-	if ( isset( $parser->pf_ifexist_count ) ) {
-		$report .= "#ifexist count: {$parser->pf_ifexist_count}/$wgMaxIfExistCount\n";
-	}
 	return true;
 }
 
