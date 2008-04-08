@@ -24,9 +24,6 @@ $messages['en'] = array(
 	'pfunc_expr_division_by_zero'           => 'Division by zero',
 	'pfunc_expr_unknown_error'              => 'Expression error: Unknown error ($1)',
 	'pfunc_expr_not_a_number'               => 'In $1: result is not a number',
-	'pfunc_ifexist_warning'                 => 'Warning: This page contains too many #ifexist calls.
-It should have less than $2, there are now $1.',
-	'pfunc_max_ifexist_category'            => 'Pages with too many ifexist calls',
 );
 
 /** Aragonese (Aragonés)
@@ -48,9 +45,7 @@ $messages['an'] = array(
 	'pfunc_expr_division_by_zero'           => 'Dibisión por zero',
 	'pfunc_expr_unknown_error'              => "Error d'espresión: error esconoixito ($1)",
 	'pfunc_expr_not_a_number'               => 'En $1: o resultau no ye un numero',
-	'pfunc_ifexist_warning'                 => 'Pare cuenta: ista pachina contiene masiadas cridas #ifexist. Bi ha $1, y caldría que tenese menos de $2',
-	'pfunc_max_ifexist_category'            => 'Pachinas con masiadas cridas ifexist',
-);
+;
 
 /** Arabic (العربية)
  * @author Meno25
@@ -73,8 +68,6 @@ $messages['ar'] = array(
 	'pfunc_expr_division_by_zero'           => 'القسمة على صفر',
 	'pfunc_expr_unknown_error'              => 'خطأ في التعبير: خطأ غير معروف ($1)',
 	'pfunc_expr_not_a_number'               => 'في $1: النتيجة ليست رقما',
-	'pfunc_ifexist_warning'                 => 'تحذير: هذه المقالة تحتوي على #ifexist calls كثيرة جدا. ينبغي أن تحتوي على أقل من $2، يوجد الآن $1.',
-	'pfunc_max_ifexist_category'            => 'الصفحات التي تحتوي على ifexist calls كثيرة جدا',
 );
 
 /** Asturian (Asturianu)
@@ -96,8 +89,6 @@ $messages['ast'] = array(
 	'pfunc_expr_division_by_zero'           => 'División por cero',
 	'pfunc_expr_unknown_error'              => "Error d'espresión: Error desconocíu ($1)",
 	'pfunc_expr_not_a_number'               => 'En $1: el resultáu nun ye un númberu',
-	'pfunc_ifexist_warning'                 => 'Avisu: Esta páxina contién demasiaes llamaes #ifexist. Habría tener menos de $2, y tien anguaño $1.',
-	'pfunc_max_ifexist_category'            => 'Páxines con demasiaes llamaes ifexist',
 );
 
 /** Bulgarian (Български)
@@ -118,8 +109,6 @@ $messages['bg'] = array(
 	'pfunc_expr_division_by_zero'           => 'Деление на нула',
 	'pfunc_expr_unknown_error'              => 'Грешка в записа: Неразпозната грешка ($1)',
 	'pfunc_expr_not_a_number'               => 'В $1: резултатът не е число',
-	'pfunc_ifexist_warning'                 => 'Внимание: Тази страница съдържа твърде много извиквания на #ifexist. Броят им сега е $1, а трябва да бъдат не повече от $2.',
-	'pfunc_max_ifexist_category'            => 'Страници с твърде много извиквания на #ifexist',
 );
 
 /** Bengali (বাংলা)
@@ -143,8 +132,6 @@ $messages['bn'] = array(
 	'pfunc_expr_division_by_zero'           => 'শূন্য দ্বারা ভাগ করা হয়েছে',
 	'pfunc_expr_unknown_error'              => 'এক্সপ্রেশন ত্রুটি: অজানা ত্রুটি ($1)',
 	'pfunc_expr_not_a_number'               => '$1: এ ফলাফল কোন সংখ্যা নয়',
-	'pfunc_ifexist_warning'                 => 'সতর্কিকরণ: এই পাতায় খুব বেশি ifexist ডাকা(call) করা হয়েছে। যার সংখ্যা $2 এর হওয়া উচিত ছিল, এখন আছে $1।',
-	'pfunc_max_ifexist_category'            => 'খুব বেশি ifexist  ডাকা(call) করা হয়েছে এমন পাতাসমূহ',
 );
 
 /** Breton (Brezhoneg)
@@ -174,8 +161,6 @@ $messages['ca'] = array(
 	'pfunc_expr_division_by_zero'           => 'Divisió entre zero',
 	'pfunc_expr_unknown_error'              => "Error de l'expressió: Desconegut ($1)",
 	'pfunc_expr_not_a_number'               => 'A $1: el resultat no és un nombre',
-	'pfunc_ifexist_warning'                 => "Alerta: Aquesta pàgina conté massa crides #ifexist. N'hi hauria d'haver menys de $2 mentre que ara n'hi ha $1.",
-	'pfunc_max_ifexist_category'            => 'Pàgines amb massa crides ifexist',
 );
 
 /** Czech (Česky)
@@ -201,9 +186,7 @@ $messages['cs'] = array(
 	'pfunc_expr_division_by_zero'           => 'Dělení nulou',
 	'pfunc_expr_unknown_error'              => 'Chyba ve výrazu: Neznámá chyba ($1)',
 	'pfunc_expr_not_a_number'               => 'V $1: výsledkem není číslo',
-	'pfunc_ifexist_warning'                 => 'Varování: Tato stránka obsahuje příliš mnoho volání funkce #ifexist. Mělo by jich být méně než $2, momentálně jich je $1.',
-	'pfunc_max_ifexist_category'            => 'Stránky s příliš mnoha voláními funkce ifexist',
-);
+;
 
 /** Danish (Dansk)
  * @author Morten
@@ -224,8 +207,6 @@ $messages['da'] = array(
 	'pfunc_expr_division_by_zero'           => 'Division med nul',
 	'pfunc_expr_unknown_error'              => 'Udtryksfejl: Ukendt fejl ($1)',
 	'pfunc_expr_not_a_number'               => 'I $1: Resultatet er ikke et tal',
-	'pfunc_ifexist_warning'                 => 'Advarsel: Denne side indeholder for mange #ifexist kald. Den skulle have under $2 men den har nu $1.',
-	'pfunc_max_ifexist_category'            => 'Sider med for mange ifexist kald',
 );
 
 /**  German (Deutsch)
@@ -248,9 +229,7 @@ $messages['de'] = array(
 	'pfunc_expr_division_by_zero'           => 'Expression-Fehler: Division durch Null',
 	'pfunc_expr_unknown_error'              => 'Expression-Fehler: Unbekannter Fehler ($1)',
 	'pfunc_expr_not_a_number'               => 'Expression-Fehler: In $1: Ergebnis ist keine Zahl',
-	'pfunc_ifexist_warning'                 => 'Warnung: Diese Seite enthält zuviele #ifexist-Aufrufe. Es dürfen maximal $2 Aufrufe sein, es sind aber $1 Aufrufe.',
-	'pfunc_max_ifexist_category'            => 'Seiten mit zuvielen ifexist-Aufrufen',
-);
+;
 
 /** Greek (Ελληνικά)
  * @author Απεργός
@@ -259,8 +238,6 @@ $messages['de'] = array(
 $messages['el'] = array(
 	'pfunc_time_error'           => 'Σφάλμα: άκυρος χρόνος',
 	'pfunc_time_too_long'        => 'Σφάλμα: πάρα πολλές κλήσεις της #time',
-	'pfunc_ifexist_warning'      => 'Προειδοποίηση: Αυτή η σελίδα περιέχει πάρα πολλές κλήσεις της #ifexist.  Θα έπρεπε να έχει λιγότερες από $2, καθώς τώρα έχει $1.',
-	'pfunc_max_ifexist_category' => 'Σελίδες με πάρα πολλές κλήσεις της ifexist',
 );
 
 /** Esperanto (Esperanto)
@@ -299,8 +276,6 @@ $messages['fa'] = array(
 	'pfunc_expr_division_by_zero'           => 'تقسیم بر صفر',
 	'pfunc_expr_unknown_error'              => 'خطای عبارت: خطای ناشناخته ($1)',
 	'pfunc_expr_not_a_number'               => 'در $1: نتیجه عدد نیست',
-	'pfunc_ifexist_warning'                 => 'هشدار: این صفحه حاوی فراخوانی‌های بیش از حد ifexist است. حداکثر تعداد فراخوانی مجاز $2 است، تعداد آن در این صفحه $1 است.',
-	'pfunc_max_ifexist_category'            => 'صفحه‌های دارای فراخوانی بیش از حد ifexist',
 
 );
 
@@ -334,8 +309,6 @@ $messages['fr'] = array(
 	'pfunc_expr_division_by_zero'           => 'Division par zéro',
 	'pfunc_expr_unknown_error'              => "Erreur d'expression : erreur inconnue ($1)",
 	'pfunc_expr_not_a_number'               => "Dans $1 : le résultat n'est pas un nombre",
-	'pfunc_ifexist_warning'                 => "Attention : Cette page contient trop d'appels à <code>#ifexist</code>. Elle devrait en avoir moins que $2, alors qu'elle en a $1.",
-	'pfunc_max_ifexist_category'            => "Pages avec trop d'appels à <code>#ifexist</code>",
 );
 
 /** Franco-Provençal (Arpetan)
@@ -358,8 +331,6 @@ $messages['frp'] = array(
 	'pfunc_expr_division_by_zero'           => 'Division per zérô',
 	'pfunc_expr_unknown_error'              => 'Èrror d’èxprèssion : èrror encognua ($1)',
 	'pfunc_expr_not_a_number'               => 'Dens $1 : lo rèsultat est pas un nombro',
-	'pfunc_ifexist_warning'                 => 'Atencion : ceta pâge contint trop d’apèls a <code>#ifexist</code>. Devrêt nen avêr muens que $2, pendent qu’el en at $1.',
-	'pfunc_max_ifexist_category'            => 'Pâges avouéc trop d’apèls a <code>#ifexist</code>',
 );
 
 /** Galician (Galego)
@@ -383,8 +354,6 @@ $messages['gl'] = array(
 	'pfunc_expr_division_by_zero'           => 'División por cero',
 	'pfunc_expr_unknown_error'              => 'Erro de expresión: Erro descoñecido ($1)',
 	'pfunc_expr_not_a_number'               => 'En $1: o resultado non é un número',
-	'pfunc_ifexist_warning'                 => 'Advertencia: Este artigo inclúe demasiadas chamadas a #ifexists. Debería ter menos de $2 e agora hai $1.',
-	'pfunc_max_ifexist_category'            => 'Páxinas con demasiadas chamadas a ifexists',
 );
 
 /** Hebrew (עברית) */
@@ -404,8 +373,6 @@ $messages['he'] = array(
 	'pfunc_expr_division_by_zero'           => 'חלוקה באפס',
 	'pfunc_expr_unknown_error'              => 'שגיאה בביטוי: שגיאה בלתי ידועה ($1)',
 	'pfunc_expr_not_a_number'               => 'התוצאה של $1 אינה מספר',
-	'pfunc_ifexist_warning'                 => 'אזהרה: דף זה כולל יותר מדי קריאות ל"#קיים". הוא צריך לכלול פחות מ־$2, אך כעת יש $1.',
-	'pfunc_max_ifexist_category'            => 'דפים עם הוראות קיום רבות מדי',
 );
 
 /** Hindi (हिन्दी)
@@ -428,9 +395,6 @@ $messages['hi'] = array(
 	'pfunc_expr_division_by_zero'           => 'शून्य से विभाजन',
 	'pfunc_expr_unknown_error'              => 'एक्स्प्रेशन गलती: अज्ञात गलती ($1)',
 	'pfunc_expr_not_a_number'               => '$1 में: रिज़ल्ट संख्यामें नहीं हैं',
-	'pfunc_ifexist_warning'                 => 'सूचना: इस पन्ने पर बहुत सारे #ifexist कॉल्स हैं।
-ये $2 से कम होने चाहिये, पर अभी $1 हैं।',
-	'pfunc_max_ifexist_category'            => 'ढेर सारे ifexist कॉल्स होने वाले पन्ने',
 );
 
 /** Croatian (Hrvatski)
@@ -456,9 +420,7 @@ $messages['hr'] = array(
 	'pfunc_expr_division_by_zero'           => 'Dijeljenje s nulom',
 	'pfunc_expr_unknown_error'              => 'Greška u predlošku: Nepoznata greška ($1)',
 	'pfunc_expr_not_a_number'               => 'U $1: rezultat nije broj',
-	'pfunc_ifexist_warning'                 => 'Upozorenje: Ova stranica sadrži previše #ifexist poziva. Treba ih biti manje od $2, trenutno ih je $1.',
-	'pfunc_max_ifexist_category'            => 'Stranice s previše ifexist poziva',
-);
+;
 
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
@@ -480,8 +442,6 @@ $messages['hsb'] = array(
 	'pfunc_expr_division_by_zero'           => 'Diwizija přez nulu',
 	'pfunc_expr_unknown_error'              => 'Wurazowy zmylk: Njeznaty zmylk ($1)',
 	'pfunc_expr_not_a_number'               => 'W $1: Wuslědk ličba njeje',
-	'pfunc_ifexist_warning'                 => 'Warnowanje: Tutón nastawk wobsahuje přewjele zawołanjow #ifexist. Měło mjenje hač $2 być, nětko je $1.',
-	'pfunc_max_ifexist_category'            => 'Strony z přewjele zawołanjow ifexist',
 );
 
 /** Hungarian (Magyar)
@@ -504,8 +464,6 @@ $messages['hu'] = array(
 	'pfunc_expr_division_by_zero'           => 'Nullával való osztás',
 	'pfunc_expr_unknown_error'              => 'Hiba a kifejezésben: ismeretlen hiba ($1)',
 	'pfunc_expr_not_a_number'               => '$1: az eredmény nem szám',
-	'pfunc_ifexist_warning'                 => 'Figyelem: az oldal túl sok #ifexist hívást tartalmaz. Kevesebb, mint $2 darabnak kellene lennie, most $1 van.',
-	'pfunc_max_ifexist_category'            => 'Túl sok ifexist hívást tartalmazó lapok',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -528,8 +486,6 @@ $messages['id'] = array(
 	'pfunc_expr_division_by_zero'           => 'Pembagian oleh nol',
 	'pfunc_expr_unknown_error'              => 'Kesalahan ekspresi: Kesalah tak dikenal ($1)',
 	'pfunc_expr_not_a_number'               => 'Pada $1: hasilnya bukan angka',
-	'pfunc_ifexist_warning'                 => 'Peringatan: Halaman ini mengandung terlalu banyak panggilan #ifexist. Seharusnya lebih sedikit dari $2, sekarang ada $1.',
-	'pfunc_max_ifexist_category'            => 'Halaman dengan terlalu banyak panggilan ifexist',
 );
 
 /** Italian (Italiano)
@@ -552,8 +508,6 @@ $messages['it'] = array(
 	'pfunc_expr_division_by_zero'           => 'Divisione per zero',
 	'pfunc_expr_unknown_error'              => "Errore nell'espressione: errore sconosciuto ($1)",
 	'pfunc_expr_not_a_number'               => 'In $1: il risultato non è un numero',
-	'pfunc_ifexist_warning'                 => 'Attenzione: in questa pagina sono presenti troppe chiamate alla funzione #ifexist. Il numero massimo è $2, al momento ve ne sono $1.',
-	'pfunc_max_ifexist_category'            => 'Pagine con troppe chiamate alla funzione ifexist',
 );
 
 /** Japanese (日本語)
@@ -576,8 +530,6 @@ $messages['ja'] = array(
 	'pfunc_expr_division_by_zero'           => '0で除算しました',
 	'pfunc_expr_unknown_error'              => '構文エラー: 予期せぬエラー（$1）',
 	'pfunc_expr_not_a_number'               => '$1: 結果が数字ではありません',
-	'pfunc_ifexist_warning'                 => '警告: このページには多数の #ifexist 呼び出しが含まれています。これは$2個未満でなければならず、現在は$1個記述されています。',
-	'pfunc_max_ifexist_category'            => 'このページは #ifexist 呼び出しが多すぎます',
 );
 
 /** ‫قازاقشا (تٴوتە)‬ (‫قازاقشا (تٴوتە)‬) */
@@ -597,8 +549,6 @@ $messages['kk-arab'] = array(
 	'pfunc_expr_division_by_zero'           => 'نولگە ٴبولىنۋى',
 	'pfunc_expr_unknown_error'              => 'ايتىلىم قاتەسى: بەلگىسىز قاتە ($1)',
 	'pfunc_expr_not_a_number'               => '$1 دەگەندە: ناتىيجە سان ەمەس',
-	'pfunc_ifexist_warning'                 => 'نازار سالىڭىز: وسى بەتتە تىم كوپ #ifexist شاقىرىمدارى بار. بۇل $2 ساننان كەم بولۋى كەرەك, مىندا قازىر $1 بار.',
-	'pfunc_max_ifexist_category'            => 'تىم كوپ ifexist شاقىرىمدارى بار بەتتەر',
 );
 
 /** Kazakh (Cyrillic) (Қазақша (Cyrillic)) */
@@ -618,8 +568,6 @@ $messages['kk-cyrl'] = array(
 	'pfunc_expr_division_by_zero'           => 'Нөлге бөлінуі',
 	'pfunc_expr_unknown_error'              => 'Айтылым қатесі: Белгісіз қате ($1)',
 	'pfunc_expr_not_a_number'               => '$1 дегенде: нәтиже сан емес',
-	'pfunc_ifexist_warning'                 => 'Назар салыңыз: Осы бетте тым көп #ifexist шақырымдары бар. Бұл $2 саннан кем болуы керек, мында қазір $1 бар.',
-	'pfunc_max_ifexist_category'            => 'Тым көп ifexist шақырымдары бар беттер',
 );
 
 /** Kazakh (Latin) (Қазақша (Latin)) */
@@ -639,8 +587,6 @@ $messages['kk-latn'] = array(
 	'pfunc_expr_division_by_zero'           => 'Nölge bölinwi',
 	'pfunc_expr_unknown_error'              => 'Aýtılım qatesi: Belgisiz qate ($1)',
 	'pfunc_expr_not_a_number'               => '$1 degende: nätïje san emes',
-	'pfunc_ifexist_warning'                 => 'Nazar salıñız: Osı bette tım köp #ifexist şaqırımdarı bar. Bul $2 sannan kem bolwı kerek, mında qazir $1 bar.',
-	'pfunc_max_ifexist_category'            => 'Tım köp ifexist şaqırımdarı bar better',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -648,14 +594,6 @@ $messages['kk-latn'] = array(
  */
 $messages['km'] = array(
 	'pfunc_expr_division_by_zero' => 'ចែកនឹងសូន្យ',
-);
-
-/** Latin (Latina)
- * @author UV
- */
-$messages['la'] = array(
-	'pfunc_ifexist_warning'      => 'Monitio: Haec pagina nimis #ifexist adhibet. Licet uti $2, haec pagina nunc utitur $1.',
-	'pfunc_max_ifexist_category' => 'Paginae quae nimis ifexist adhibent',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -687,8 +625,6 @@ $messages['li'] = array(
 	'pfunc_expr_division_by_zero'           => 'Deiling door nul',
 	'pfunc_expr_unknown_error'              => 'Fout in oetdrukking: ónbekindje fout ($1)',
 	'pfunc_expr_not_a_number'               => 'In $1: rezultaot is gein getal',
-	'pfunc_ifexist_warning'                 => "Waorsjuwing: dees pazjena gebroek #ifexists euverduk. Det zów minder es $2 kieër mótte zeen en 't is noe $1 kieër.",
-	'pfunc_max_ifexist_category'            => "Pazjena's die iefexist euverduk gebroeke",
 );
 
 /** Malayalam (മലയാളം)
@@ -720,8 +656,6 @@ $messages['mr'] = array(
 	'pfunc_expr_division_by_zero'           => 'शून्य ने भागाकार',
 	'pfunc_expr_unknown_error'              => 'एक्स्प्रेशन त्रुटी: अनोळखी त्रुटी ($1)',
 	'pfunc_expr_not_a_number'               => '$1 मध्ये: निकाल संख्येत नाही',
-	'pfunc_ifexist_warning'                 => 'इशारा: या पानावर जास्तीत जास्त $2 #ifexist कॉल्स असू शकतात, सध्या $1 कॉल्स आहेत.',
-	'pfunc_max_ifexist_category'            => 'खूप सारे ifexist कॉल्स असणारी पाने',
 );
 
 /** Low German (Plattdüütsch)
@@ -743,8 +677,6 @@ $messages['nds'] = array(
 	'pfunc_expr_division_by_zero'           => 'Delen dör Null',
 	'pfunc_expr_unknown_error'              => 'Fehler in’n Utdruck: Unbekannten Fehler ($1)',
 	'pfunc_expr_not_a_number'               => 'In $1: wat rutkamen is, is kene Tall',
-	'pfunc_ifexist_warning'                 => 'Wohrschau: Disse Siet bruukt #ifexist to faken. De Siet dröff nich mehr as $2 hebben, hett aver $1.',
-	'pfunc_max_ifexist_category'            => 'Sieden, de #ifexist to faken bruukt',
 );
 
 /** Nepali (नेपाली)
@@ -777,8 +709,6 @@ $messages['nl'] = array(
 	'pfunc_expr_division_by_zero'           => 'Deling door nul',
 	'pfunc_expr_unknown_error'              => 'Fout in uitdrukking: onbekende fout ($1)',
 	'pfunc_expr_not_a_number'               => 'In $1: resultaat is geen getal',
-	'pfunc_ifexist_warning'                 => 'Waarschuwing: deze pagina gebruik #ifexists te vaak. Dat zou minder dan $2 keer moeten zijn en is nu $1 keer.',
-	'pfunc_max_ifexist_category'            => "Pagina's die ifexist te vaak gebruiken",
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -801,8 +731,6 @@ $messages['nn'] = array(
 	'pfunc_expr_division_by_zero'           => 'Divisjon med null',
 	'pfunc_expr_unknown_error'              => 'Feil i uttrykket: Ukjend feil ($1)',
 	'pfunc_expr_not_a_number'               => 'Resultatet i $1 er ikkje eit tal',
-	'pfunc_ifexist_warning'                 => 'Åtvaring: #ifexist er kalla for mange gonger på denne sida. Han kan ikkje vere kalla fleire gonger enn $2, men er no kalla $1 gonger.',
-	'pfunc_max_ifexist_category'            => 'Sider med for mange kallingar av #ifexist',
 );
 
 /** Norwegian (‪Norsk (bokmål)‬)
@@ -825,8 +753,6 @@ $messages['no'] = array(
 	'pfunc_expr_division_by_zero'           => 'Deling på null',
 	'pfunc_expr_unknown_error'              => 'Uttrykksfeil: Ukjent feil ($1)',
 	'pfunc_expr_not_a_number'               => 'I $1: resultat er ikke et tall',
-	'pfunc_ifexist_warning'                 => 'Advarsel: Denne siden bruker #ifexist for mange ganger. Den burde brukes mindre enn $2 ganger, men brukes nå $1.',
-	'pfunc_max_ifexist_category'            => 'Sider som bruker ifexist for mange ganger',
 );
 
 /** Occitan (Occitan)
@@ -850,8 +776,6 @@ $messages['oc'] = array(
 	'pfunc_expr_division_by_zero'           => 'Division per zèro',
 	'pfunc_expr_unknown_error'              => "Error d'expression : error desconeguda ($1)",
 	'pfunc_expr_not_a_number'               => 'Dins $1 : lo resultat es pas un nombre',
-	'pfunc_ifexist_warning'                 => "Atencion : Aquesta pagina conten tròp d'apèls a <code>#ifexist</code>. Ne deuriá aver mens que $2, alara que n'a $1.",
-	'pfunc_max_ifexist_category'            => "Paginas amb tròp d'apèls a <code>#ifexist</code>",
 );
 
 /** Polish (Polski)
@@ -876,9 +800,6 @@ $messages['pl'] = array(
 	'pfunc_expr_division_by_zero'           => 'Dzielenie przez zero',
 	'pfunc_expr_unknown_error'              => 'Błąd w wyrażeniu: Nieznany błąd ($1)',
 	'pfunc_expr_not_a_number'               => 'W $1: wynik nie jest liczbą',
-	'pfunc_ifexist_warning'                 => 'Uwaga: Ta strona zawiera zbyt wiele wywołań funkcji #ifexist.
-Nie może być ich więcej niż $2, obecnie jest $1.',
-	'pfunc_max_ifexist_category'            => 'Strony ze zbyt dużą ilością wywołań funkcji #ifexist',
 );
 
 /** Piemontèis (Piemontèis)
@@ -918,8 +839,6 @@ $messages['pt'] = array(
 	'pfunc_expr_division_by_zero'           => 'Divisão por zero',
 	'pfunc_expr_unknown_error'              => 'Erro de expressão: Erro desconhecido ($1)',
 	'pfunc_expr_not_a_number'               => 'Em $1: resultado não é um número',
-	'pfunc_ifexist_warning'                 => 'Aviso: Esta página contém demasiadas chamadas #ifexist. Deverá ter menos de $2, mas neste momento existem $1.',
-	'pfunc_max_ifexist_category'            => "Páginas com demasiadas chamadas 'ifexist'",
 );
 
 /** Russian (Русский)
@@ -942,8 +861,6 @@ $messages['ru'] = array(
 	'pfunc_expr_division_by_zero'           => 'Деление на ноль',
 	'pfunc_expr_unknown_error'              => 'Ошибка выражения: неизвестная ошибка ($1)',
 	'pfunc_expr_not_a_number'               => 'В $1: результат не является числом',
-	'pfunc_ifexist_warning'                 => 'Внимание: эта страница содержит $1 {{PLURAL:$1|вызов|вызова|вызовов}} #ifexist при ограничении в $2.',
-	'pfunc_max_ifexist_category'            => 'Страницы, в которых слишком много вызовов ifexist',
 );
 
 /** Yakut (Саха тыла)
@@ -966,8 +883,6 @@ $messages['sah'] = array(
 	'pfunc_expr_division_by_zero'           => 'Нуулга түҥэттии',
 	'pfunc_expr_unknown_error'              => 'Expression error (ошибка выражения): Биллибэт алҕас ($1)',
 	'pfunc_expr_not_a_number'               => '$1 иһигэр: эппиэтэ чыыһыла буолбатах',
-	'pfunc_ifexist_warning'                 => 'Болҕой: бу сирэй $1 {{PLURAL:$1|ыҥырыылаах|ыҥырыылардаах}}, #ifexist баччаннан хааччахтаммытын үрдүнэн $2.',
-	'pfunc_max_ifexist_category'            => 'ifexist ыҥырыылар наһаа элбэхтик көстөр сирэйдэрэ',
 );
 
 /** Slovak (Slovenčina)
@@ -990,8 +905,6 @@ $messages['sk'] = array(
 	'pfunc_expr_division_by_zero'           => 'Chyba výrazu: Delenie nulou',
 	'pfunc_expr_unknown_error'              => 'Chyba výrazu: Neznáma chyba ($1)',
 	'pfunc_expr_not_a_number'               => 'V $1: výsledok nie je číslo',
-	'pfunc_ifexist_warning'                 => 'Upozornenie: Táto stránka obsahuje príliš veľa volaní #ifexist. Malo by ich byť menej ako $2, momentálne ich je $1.',
-	'pfunc_max_ifexist_category'            => 'Stránky s príliš veľkým počtom volaní ifexist',
 );
 
 /** Seeltersk (Seeltersk)
@@ -1013,8 +926,6 @@ $messages['stq'] = array(
 	'pfunc_expr_division_by_zero'           => 'Expression-Failer: Division truch Null',
 	'pfunc_expr_unknown_error'              => 'Expression-Failer: Uunbekoanden Failer ($1)',
 	'pfunc_expr_not_a_number'               => 'Expression-Failer: In $1: Resultoat is neen Taal',
-	'pfunc_ifexist_warning'                 => 'Woarschauenge: Disse Siede änthaalt toufuul #ifexist-Aproupe. Der duuren maximoal $2 Aproupe weese, der sunt oawers $1 Aproupe.',
-	'pfunc_max_ifexist_category'            => 'Sieden mäd toufuul ifexist-Aproupe',
 );
 
 /** Sundanese (Basa Sunda)
@@ -1044,8 +955,6 @@ $messages['sv'] = array(
 	'pfunc_expr_division_by_zero'           => 'Division med noll',
 	'pfunc_expr_unknown_error'              => 'Fel i uttryck: Okänt fel ($1)',
 	'pfunc_expr_not_a_number'               => 'I $1: resultatet är inte ett tal',
-	'pfunc_ifexist_warning'                 => 'Varning: Den här sidan innehåller för många anrop av #ifexist. Antalet anrop måste vara mindre än $2, nu är det $1.',
-	'pfunc_max_ifexist_category'            => 'Sidor med för många ifexist-anrop',
 );
 
 /** Telugu (తెలుగు)
@@ -1068,8 +977,6 @@ $messages['te'] = array(
 	'pfunc_expr_division_by_zero'           => 'సున్నాతో భాగించారు',
 	'pfunc_expr_unknown_error'              => 'సమాసంలో(Expression) లోపం: తెలియని లోపం ($1)',
 	'pfunc_expr_not_a_number'               => '$1లో: వచ్చిన ఫలితం సంఖ్య కాదు',
-	'pfunc_ifexist_warning'                 => 'హెచ్చరిక: ఈ పేజీలో #ifexistలను చాలాసార్లు ఉపయోగించారు. ప్రస్తుతం $1 సార్లు ఉపయోగించారు, కానీ $2 సార్లు కంటే ఎక్కువ సార్లు ఉపయోగించకూడదు.',
-	'pfunc_max_ifexist_category'            => 'ifexistలను మరీ ఎక్కువగా ఉపయోగిస్తున్న పేజీలు.',
 );
 
 /** Tajik (Тоҷикӣ)
@@ -1092,8 +999,6 @@ $messages['tg-cyrl'] = array(
 	'pfunc_expr_division_by_zero'           => 'Тақсим бар сифр',
 	'pfunc_expr_unknown_error'              => 'Хатои ибора: Хатои ношинос ($1)',
 	'pfunc_expr_not_a_number'               => 'Дар $1: натиҷа адад нест',
-	'pfunc_ifexist_warning'                 => 'Ҳушдор: Ин саҳифа фарохониҳои #ifexist бисёреро дар бар мегирад. Бояд кам аз $2 дошта бошад, ҳамакнун теъдоди он $1 аст.',
-	'pfunc_max_ifexist_category'            => 'Саҳифаҳои дорои беш аз ҳад фарохониҳои ifexist',
 );
 
 /** Vietnamese (Tiếng Việt)
@@ -1117,8 +1022,6 @@ $messages['vi'] = array(
 	'pfunc_expr_division_by_zero'           => 'Chia cho zero',
 	'pfunc_expr_unknown_error'              => 'Lỗi biểu thức: Lỗi không rõ nguyên nhân ($1)',
 	'pfunc_expr_not_a_number'               => 'Trong $1: kết quả không phải là kiểu số',
-	'pfunc_ifexist_warning'                 => 'Cảnh báo: Trang này có quá nhiều lần gọi hàm #ifexist. Số lần gọi nên ít hơn $2, hiện có đến $1 lần gọi.',
-	'pfunc_max_ifexist_category'            => 'Trang có quá nhiều hàm gọi ifexist',
 );
 
 /** Volapük (Volapük)
@@ -1150,9 +1053,6 @@ $messages['yue'] = array(
 	'pfunc_expr_division_by_zero'           => '除以零',
 	'pfunc_expr_unknown_error'              => '表達錯: 未知嘅錯 ($1)',
 	'pfunc_expr_not_a_number'               => '響 $1: 結果唔係數字',
-	'pfunc_ifexist_warning'                 => '警告: 呢一版包括咗太多嘅 #ifexist 呼叫。
-佢應該少過$2次，但係而家有$1次。',
-	'pfunc_max_ifexist_category'            => '版有太多嘅 ifexists 呼叫',
 );
 
 /** Simplified Chinese (‪中文(简体)‬) 
@@ -1175,9 +1075,6 @@ $messages['zh-hans'] = array(
 	'pfunc_expr_division_by_zero'           => '除以零',
 	'pfunc_expr_unknown_error'              => '表达错误: 未知?错 ($1)',
 	'pfunc_expr_not_a_number'               => '于 $1: 结果不是数字',
-	'pfunc_ifexist_warning'                 => '警告: 这个页面中包含过多的 #ifexist 呼叫。
-它  应该少于$2次，但现在有$1次。',
-	'pfunc_max_ifexist_category'            => '页面中含有过多的 ifexists 呼叫',	
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
@@ -1200,8 +1097,5 @@ $messages['zh-hant'] = array(
 	'pfunc_expr_division_by_zero'           => '除以零',
 	'pfunc_expr_unknown_error'              => '表達錯誤: 未知嘅錯 ($1)',
 	'pfunc_expr_not_a_number'               => '於 $1: 結果不是數字',
-	'pfunc_ifexist_warning'                 => '警告: 這個頁面中包含過多的 #ifexist 呼叫。
-它佢應該少於$2次，但現在有$1次。',
-	'pfunc_max_ifexist_category'            => '頁面中含有過多的 ifexists 呼叫',
 );
 
