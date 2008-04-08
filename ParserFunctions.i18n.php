@@ -697,6 +697,7 @@ $messages['li'] = array(
 $messages['ml'] = array(
 	'pfunc_time_error'            => 'പിഴവ്:അസാധുവായ സമയം',
 	'pfunc_expr_division_by_zero' => 'പൂജ്യം കൊണ്ടുള്ള ഹരണം',
+	'pfunc_expr_not_a_number'     => '$1ല്‍: ഫലം ഒരു സംഖ്യയല്ല',
 );
 
 /** Marathi (मराठी)
