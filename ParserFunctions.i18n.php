@@ -45,7 +45,7 @@ $messages['an'] = array(
 	'pfunc_expr_division_by_zero'           => 'Dibisión por zero',
 	'pfunc_expr_unknown_error'              => "Error d'espresión: error esconoixito ($1)",
 	'pfunc_expr_not_a_number'               => 'En $1: o resultau no ye un numero',
-;
+);
 
 /** Arabic (العربية)
  * @author Meno25
@@ -186,7 +186,7 @@ $messages['cs'] = array(
 	'pfunc_expr_division_by_zero'           => 'Dělení nulou',
 	'pfunc_expr_unknown_error'              => 'Chyba ve výrazu: Neznámá chyba ($1)',
 	'pfunc_expr_not_a_number'               => 'V $1: výsledkem není číslo',
-;
+);
 
 /** Danish (Dansk)
  * @author Morten
@@ -229,7 +229,7 @@ $messages['de'] = array(
 	'pfunc_expr_division_by_zero'           => 'Expression-Fehler: Division durch Null',
 	'pfunc_expr_unknown_error'              => 'Expression-Fehler: Unbekannter Fehler ($1)',
 	'pfunc_expr_not_a_number'               => 'Expression-Fehler: In $1: Ergebnis ist keine Zahl',
-;
+);
 
 /** Greek (Ελληνικά)
  * @author Απεργός
@@ -420,7 +420,7 @@ $messages['hr'] = array(
 	'pfunc_expr_division_by_zero'           => 'Dijeljenje s nulom',
 	'pfunc_expr_unknown_error'              => 'Greška u predlošku: Nepoznata greška ($1)',
 	'pfunc_expr_not_a_number'               => 'U $1: rezultat nije broj',
-;
+);
 
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
