@@ -633,6 +633,7 @@ $messages['li'] = array(
 $messages['ml'] = array(
 	'pfunc_time_error'            => 'പിഴവ്:അസാധുവായ സമയം',
 	'pfunc_expr_division_by_zero' => 'പൂജ്യം കൊണ്ടുള്ള ഹരണം',
+	'pfunc_expr_unknown_error'    => 'Expression error: കാരണം അജ്ഞാതമായ പിഴവ്',
 	'pfunc_expr_not_a_number'     => '$1ല്‍: ഫലം ഒരു സംഖ്യയല്ല',
 );
 
@@ -999,6 +1000,28 @@ $messages['tg-cyrl'] = array(
 	'pfunc_expr_division_by_zero'           => 'Тақсим бар сифр',
 	'pfunc_expr_unknown_error'              => 'Хатои ибора: Хатои ношинос ($1)',
 	'pfunc_expr_not_a_number'               => 'Дар $1: натиҷа адад нест',
+);
+
+/** Vèneto (Vèneto)
+ * @author Candalua
+ */
+$messages['vec'] = array(
+	'pfunc_desc'                            => 'Zonta al parser na serie de funsion logiche',
+	'pfunc_time_error'                      => 'Eror: orario mìa valido',
+	'pfunc_time_too_long'                   => 'Eror: massa chiamate a #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Eror: profondità mìa valida nel percorso "$2" (se gà proà a accédar a un nodo piassè sora de la raìsa)',
+	'pfunc_expr_stack_exhausted'            => "Eror ne l'espression: stack esaurìo",
+	'pfunc_expr_unexpected_number'          => "Eror ne l'espression: xe vegnù fora un nùmaro che no se se spetava",
+	'pfunc_expr_preg_match_failure'         => "Eror ne l'espression: eror inateso in preg_match",
+	'pfunc_expr_unrecognised_word'          => 'Eror ne l\'espression: parola "$1" mìa riconossiùa',
+	'pfunc_expr_unexpected_operator'        => "Eror ne l'espression: operator $1 inateso",
+	'pfunc_expr_missing_operand'            => "Eror ne l'espression: operando mancante par $1",
+	'pfunc_expr_unexpected_closing_bracket' => "Eror ne l'espression: parentesi chiusa inatesa",
+	'pfunc_expr_unrecognised_punctuation'   => 'Eror ne l\'espression: caràtere de puntegiatura "$1" mìa riconossiùo',
+	'pfunc_expr_unclosed_bracket'           => "Eror ne l'espression: parentesi verta e mìa sarà",
+	'pfunc_expr_division_by_zero'           => 'Division par zero',
+	'pfunc_expr_unknown_error'              => "Eror ne l'espression: eror sconossiùo ($1)",
+	'pfunc_expr_not_a_number'               => "In $1: el risultato no'l xe mìa un nùmaro",
 );
 
 /** Vietnamese (Tiếng Việt)
