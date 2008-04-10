@@ -392,7 +392,7 @@ $messages['hi'] = array(
 	'pfunc_expr_unexpected_closing_bracket' => 'एक्स्प्रेशन गलती: अनपेक्षित समाप्ति ब्रैकेट',
 	'pfunc_expr_unrecognised_punctuation'   => 'एक्स्प्रेशन गलती: अनपेक्षित उद्गार चिन्ह "$1"',
 	'pfunc_expr_unclosed_bracket'           => 'एक्स्प्रेशन गलती: ब्रैकेट बंद नहीं किया',
-	'pfunc_expr_division_by_zero'           => 'शून्य से विभाजन',
+	'pfunc_expr_division_by_zero'           => 'शून्य से भाग',
 	'pfunc_expr_unknown_error'              => 'एक्स्प्रेशन गलती: अज्ञात गलती ($1)',
 	'pfunc_expr_not_a_number'               => '$1 में: रिज़ल्ट संख्यामें नहीं हैं',
 );
@@ -532,6 +532,13 @@ $messages['ja'] = array(
 	'pfunc_expr_not_a_number'               => '$1: 結果が数字ではありません',
 );
 
+/** Javanese (Basa Jawa)
+ * @author Meursault2004
+ */
+$messages['jv'] = array(
+	'pfunc_expr_division_by_zero' => 'Dipara karo das (nol)',
+);
+
 /** ‫قازاقشا (تٴوتە)‬ (‫قازاقشا (تٴوتە)‬) */
 $messages['kk-arab'] = array(
 	'pfunc_time_error'                      => 'قاتە: جارامسىز ۋاقىت',
@@ -596,6 +603,18 @@ $messages['km'] = array(
 	'pfunc_expr_division_by_zero' => 'ចែកនឹងសូន្យ',
 );
 
+/** Korean (한국어)
+ * @author ToePeu
+ */
+$messages['ko'] = array(
+	'pfunc_time_error'            => '오류: 시간이 잘못되었습니다.',
+	'pfunc_time_too_long'         => '오류: #time을 너무 많이 썼습니다.',
+	'pfunc_expr_missing_operand'  => '표현 오류: $1의 피연산자가 없습니다.',
+	'pfunc_expr_unclosed_bracket' => '표현 오류: 괄호를 닫지 않았습니다.',
+	'pfunc_expr_division_by_zero' => '0으로 나눔',
+	'pfunc_expr_unknown_error'    => '표현 오류: 알려지지 않은 오류 ($1)',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
@@ -631,10 +650,14 @@ $messages['li'] = array(
  * @author Shijualex
  */
 $messages['ml'] = array(
-	'pfunc_time_error'            => 'പിഴവ്:അസാധുവായ സമയം',
-	'pfunc_expr_division_by_zero' => 'പൂജ്യം കൊണ്ടുള്ള ഹരണം',
-	'pfunc_expr_unknown_error'    => 'Expression error: കാരണം അജ്ഞാതമായ പിഴവ്',
-	'pfunc_expr_not_a_number'     => '$1ല്‍: ഫലം ഒരു സംഖ്യയല്ല',
+	'pfunc_desc'                   => 'ലോഗിക്കല്‍ ഫങ്ഷന്‍സ് ഉപയോഗിച്ച് പാര്‍സര്‍  എന്‍‌ഹാന്‍സ് ചെയ്യുക',
+	'pfunc_time_error'             => 'പിഴവ്:അസാധുവായ സമയം',
+	'pfunc_time_too_long'          => 'പിഴവ്: വളരെയധികം #സമയ കാളുകള്‍',
+	'pfunc_expr_unexpected_number' => 'Expression error: പ്രതീക്ഷിക്കാത്ത സംഖ്യ',
+	'pfunc_expr_unrecognised_word' => 'Expression error: "$1" എന്ന തിരിച്ചറിയാന്‍ സാധിക്കാഞ്ഞ വാക്ക്',
+	'pfunc_expr_division_by_zero'  => 'പൂജ്യം കൊണ്ടുള്ള ഹരണം',
+	'pfunc_expr_unknown_error'     => 'Expression error: കാരണം അജ്ഞാതമായ പിഴവ്',
+	'pfunc_expr_not_a_number'      => '$1ല്‍: ഫലം ഒരു സംഖ്യയല്ല',
 );
 
 /** Marathi (मराठी)
