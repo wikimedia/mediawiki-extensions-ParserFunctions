@@ -537,6 +537,7 @@ $messages['ja'] = array(
  */
 $messages['jv'] = array(
 	'pfunc_expr_division_by_zero' => 'Dipara karo das (nol)',
+	'pfunc_expr_not_a_number'     => 'Ing $1: pituwasé dudu angka',
 );
 
 /** ‫قازاقشا (تٴوتە)‬ (‫قازاقشا (تٴوتە)‬) */
