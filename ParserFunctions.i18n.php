@@ -536,6 +536,7 @@ $messages['ja'] = array(
  * @author Meursault2004
  */
 $messages['jv'] = array(
+	'pfunc_time_error'            => 'Kaluputan: wektu ora absah',
 	'pfunc_expr_division_by_zero' => 'Dipara karo das (nol)',
 	'pfunc_expr_not_a_number'     => 'Ing $1: pituwasé dudu angka',
 );
@@ -806,21 +807,20 @@ $messages['oc'] = array(
 /** Polish (Polski)
  * @author Derbeth
  * @author Sp5uhe
- * @author Siebrand
  */
 $messages['pl'] = array(
 	'pfunc_desc'                            => 'Rozszerza analizator składni o funkcje logiczne',
 	'pfunc_time_error'                      => 'Błąd: niepoprawny czas',
 	'pfunc_time_too_long'                   => 'Błąd: zbyt wiele wywołań funkcji #time',
-	'pfunc_rel2abs_invalid_depth'           => 'Błąd: Nieprawidłowa głębokość w ścieżce: "$1" (próba dostępu do węzła powyżej korzenia)',
+	'pfunc_rel2abs_invalid_depth'           => 'Błąd: Nieprawidłowa głębokość w ścieżce: „$1” (próba dostępu do węzła powyżej korzenia)',
 	'pfunc_expr_stack_exhausted'            => 'Błąd w wyrażeniu: Stos wyczerpany',
 	'pfunc_expr_unexpected_number'          => 'Błąd w wyrażeniu: Nieoczekiwana liczba',
 	'pfunc_expr_preg_match_failure'         => 'Błąd w wyrażeniu: Nieoczekiwany błąd preg_match',
-	'pfunc_expr_unrecognised_word'          => 'Błąd w wyrażeniu: Nierozpoznane słowo "$1"',
+	'pfunc_expr_unrecognised_word'          => 'Błąd w wyrażeniu: Nierozpoznane słowo „$1”',
 	'pfunc_expr_unexpected_operator'        => 'Błąd w wyrażeniu: Nieoczekiwany operator $1',
 	'pfunc_expr_missing_operand'            => 'Błąd w wyrażeniu: Brak argumentu funkcji $1',
 	'pfunc_expr_unexpected_closing_bracket' => 'Błąd w wyrażeniu: Nieoczekiwany nawias zamykający',
-	'pfunc_expr_unrecognised_punctuation'   => 'Błąd w wyrażeniu: Nierozpoznany znak interpunkcyjny "$1"',
+	'pfunc_expr_unrecognised_punctuation'   => 'Błąd w wyrażeniu: Nierozpoznany znak interpunkcyjny „$1”',
 	'pfunc_expr_unclosed_bracket'           => 'Błąd w wyrażeniu: Niedomknięty nawias',
 	'pfunc_expr_division_by_zero'           => 'Dzielenie przez zero',
 	'pfunc_expr_unknown_error'              => 'Błąd w wyrażeniu: Nieznany błąd ($1)',
