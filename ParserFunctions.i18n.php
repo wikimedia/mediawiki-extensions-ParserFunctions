@@ -468,9 +468,10 @@ $messages['hu'] = array(
 
 /** Indonesian (Bahasa Indonesia)
  * @author IvanLanin
+ * @author Meursault2004
  */
 $messages['id'] = array(
-	'pfunc_desc'                            => 'Mengembangkan parser dengan fungsi logika',
+	'pfunc_desc'                            => 'Mengembangkan parser dengan fungsi logis',
 	'pfunc_time_error'                      => 'Kesalahan: time tidak valid',
 	'pfunc_time_too_long'                   => 'Kesalahan: Pemanggilan #time terlalu banyak',
 	'pfunc_rel2abs_invalid_depth'           => 'Kesalahan: Kedalaman path tidak valid: "$1" (mencoba mengakses simpul di atas simpul akar)',
@@ -484,7 +485,7 @@ $messages['id'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Kesalahan ekspresi: Karakter tanda baca "$1" tak dikenali',
 	'pfunc_expr_unclosed_bracket'           => 'Kesalahan ekspresi: Kurung tanpa tutup',
 	'pfunc_expr_division_by_zero'           => 'Pembagian oleh nol',
-	'pfunc_expr_unknown_error'              => 'Kesalahan ekspresi: Kesalah tak dikenal ($1)',
+	'pfunc_expr_unknown_error'              => 'Kesalahan ekspresi: Kesalahan tak dikenal ($1)',
 	'pfunc_expr_not_a_number'               => 'Pada $1: hasilnya bukan angka',
 );
 
@@ -536,9 +537,22 @@ $messages['ja'] = array(
  * @author Meursault2004
  */
 $messages['jv'] = array(
-	'pfunc_time_error'            => 'Kaluputan: wektu ora absah',
-	'pfunc_expr_division_by_zero' => 'Dipara karo das (nol)',
-	'pfunc_expr_not_a_number'     => 'Ing $1: pituwasé dudu angka',
+	'pfunc_desc'                            => 'Kembangna parser mawa fungsi logis',
+	'pfunc_time_error'                      => 'Kaluputan: wektu ora absah',
+	'pfunc_time_too_long'                   => 'Kaluputan: Olèhé nyeluk #time kakèhan',
+	'pfunc_rel2abs_invalid_depth'           => 'Kaluputan: Kajeroané path ora absah: "$1" (nyoba ngakses simpul sadhuwuring simpul oyot)',
+	'pfunc_expr_stack_exhausted'            => 'Kaluputan èksprèsi: Stack entèk',
+	'pfunc_expr_unexpected_number'          => 'Kaluputan èksprèsi: Angka ora kaduga',
+	'pfunc_expr_preg_match_failure'         => 'Kaluputan èksprèsi: Kaluputan preg_match sing ora kaduga',
+	'pfunc_expr_unrecognised_word'          => 'Kaluputan èksprèsi: Tembung "$1" ora ditepungi',
+	'pfunc_expr_unexpected_operator'        => 'Kaluputan èksprèsi: Operator $1 ora kaduga',
+	'pfunc_expr_missing_operand'            => 'Kaluputan èksprèsi: Operand ora ditemokaké kanggo $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Kaluputan èksprèsi: Kurung tutup ora kaduga',
+	'pfunc_expr_unrecognised_punctuation'   => 'Kaluputan èksprèsi: Karakter tandha wacan "$1" ora ditepungi',
+	'pfunc_expr_unclosed_bracket'           => 'Kaluputan èksprèsi: Kurung tanpa tutup',
+	'pfunc_expr_division_by_zero'           => 'Dipara karo das (nol)',
+	'pfunc_expr_unknown_error'              => 'Kaluputan èksprèsi: Kaluputan ora ditepungi ($1)',
+	'pfunc_expr_not_a_number'               => 'Ing $1: pituwasé dudu angka',
 );
 
 /** ‫قازاقشا (تٴوتە)‬ (‫قازاقشا (تٴوتە)‬) */
