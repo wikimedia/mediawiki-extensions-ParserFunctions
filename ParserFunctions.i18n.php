@@ -283,8 +283,20 @@ $messages['fa'] = array(
  * @author Nike
  */
 $messages['fi'] = array(
-	'pfunc_expr_unclosed_bracket' => 'Virhe ilmauksessa: sulkeva sulkumerkki puuttuu',
-	'pfunc_expr_division_by_zero' => 'Virhe: Jako nollalla',
+	'pfunc_desc'                            => 'Laajentaa jäsennintä loogisilla funktiolla.',
+	'pfunc_time_error'                      => 'Virhe: kelvoton aika',
+	'pfunc_time_too_long'                   => 'Virhe: liian monta #time-kutsua',
+	'pfunc_expr_stack_exhausted'            => 'Virhe lausekkeessa: pino loppui',
+	'pfunc_expr_unexpected_number'          => 'Virhe lausekkeessa: odottamaton numero',
+	'pfunc_expr_preg_match_failure'         => 'Virhe lausekkeessa: <tt>preg_match</tt> palautti virheen',
+	'pfunc_expr_unrecognised_word'          => 'Virhe lausekkeessa: tunnistamaton sana ”$1”',
+	'pfunc_expr_unexpected_operator'        => 'Virhe lausekkeessa: odottamaton $1-operaattori',
+	'pfunc_expr_missing_operand'            => 'Virhe lausekkeessa: operaattorin $1 edellyttämä operandi puuttuu',
+	'pfunc_expr_unexpected_closing_bracket' => 'Virhe lausekkeessa: odottamaton sulkeva sulkumerkki',
+	'pfunc_expr_unrecognised_punctuation'   => 'Virhe lausekkeessa: tunnistamaton välimerkki ”$1”',
+	'pfunc_expr_unclosed_bracket'           => 'Virhe ilmauksessa: sulkeva sulkumerkki puuttuu',
+	'pfunc_expr_division_by_zero'           => 'Virhe: Jako nollalla',
+	'pfunc_expr_unknown_error'              => 'Virhe lausekkeessa: tuntematon virhe ($1)',
 );
 
 /** French (Français)
