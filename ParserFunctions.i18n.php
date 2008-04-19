@@ -244,7 +244,21 @@ $messages['el'] = array(
  * @author Yekrats
  */
 $messages['eo'] = array(
-	'pfunc_expr_division_by_zero' => 'Divido per nulo',
+	'pfunc_desc'                            => 'Etendu sintaksan analizilon kun logikaj funkcioj',
+	'pfunc_time_error'                      => 'Eraro: nevalida tempo',
+	'pfunc_time_too_long'                   => "Eraro: tro da vokoj ''#time''",
+	'pfunc_rel2abs_invalid_depth'           => 'Eraro: Nevalida profundo en vojo: "$1" (provis atingi nodon super la radika nodo)',
+	'pfunc_expr_unexpected_number'          => 'Esprima eraro: Neatendita numeralo',
+	'pfunc_expr_preg_match_failure'         => 'Esprima eraro: Neatendita preg_match malsukceso',
+	'pfunc_expr_unrecognised_word'          => 'Esprima eraro: Nekonata vorto "$1"',
+	'pfunc_expr_unexpected_operator'        => 'Esprima eraro: Neatendita operacisimbolo $1',
+	'pfunc_expr_missing_operand'            => 'Esprima eraro: Mankas operando por $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Esprima eraro: Neatendita ferma krampo',
+	'pfunc_expr_unrecognised_punctuation'   => 'Esprima eraro: Nekonata interpunkcia simbolo "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'Esprima eraro: Malferma krampo',
+	'pfunc_expr_division_by_zero'           => 'Divido per nulo',
+	'pfunc_expr_unknown_error'              => 'Esprima eraro: Nekonata eraro ($1)',
+	'pfunc_expr_not_a_number'               => 'En $1: rezulto ne estas nombro',
 );
 
 /** Basque (Euskara)
