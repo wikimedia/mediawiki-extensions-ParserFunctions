@@ -1066,6 +1066,14 @@ $messages['tg-cyrl'] = array(
 	'pfunc_expr_not_a_number'               => 'Дар $1: натиҷа адад нест',
 );
 
+/** Ukrainian (Українська)
+ * @author Ahonc
+ */
+$messages['uk'] = array(
+	'pfunc_desc'       => 'Покращений синтаксичний аналізатор з логічними функціями',
+	'pfunc_time_error' => 'Помилка: неправильний час',
+);
+
 /** Vèneto (Vèneto)
  * @author Candalua
  */
