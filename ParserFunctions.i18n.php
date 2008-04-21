@@ -1070,13 +1070,19 @@ $messages['tg-cyrl'] = array(
  * @author Ahonc
  */
 $messages['uk'] = array(
-	'pfunc_desc'                   => 'Покращений синтаксичний аналізатор з логічними функціями',
-	'pfunc_time_error'             => 'Помилка: неправильний час',
-	'pfunc_time_too_long'          => 'Помилка: забагато викликів функції #time',
-	'pfunc_rel2abs_invalid_depth'  => 'Помилка: неправильна глибина шляху: «$1» (спроба доступу до вузла, що знаходиться вище, ніж кореневий)',
-	'pfunc_expr_stack_exhausted'   => 'Помилка виразу: стек переповнений',
-	'pfunc_expr_unexpected_number' => 'Помилка виразу: неочікуване число',
-	'pfunc_expr_division_by_zero'  => 'Ділення на нуль',
+	'pfunc_desc'                            => 'Покращений синтаксичний аналізатор з логічними функціями',
+	'pfunc_time_error'                      => 'Помилка: неправильний час',
+	'pfunc_time_too_long'                   => 'Помилка: забагато викликів функції #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Помилка: неправильна глибина шляху: «$1» (спроба доступу до вузла, що знаходиться вище, ніж кореневий)',
+	'pfunc_expr_stack_exhausted'            => 'Помилка виразу: стек переповнений',
+	'pfunc_expr_unexpected_number'          => 'Помилка виразу: неочікуване число',
+	'pfunc_expr_preg_match_failure'         => 'Помилка виразу: збій preg_match',
+	'pfunc_expr_unrecognised_word'          => 'Помилка виразу: незрозуміле слово «$1»',
+	'pfunc_expr_unexpected_operator'        => 'Помилка виразу: неочікуваний оператор $1',
+	'pfunc_expr_missing_operand'            => 'Помилка виразу: бракує операнда для $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Помилка виразу: неочікувана закрита дужка',
+	'pfunc_expr_unrecognised_punctuation'   => 'Помилка виразу: незрозумілий розділовий знак «$1»',
+	'pfunc_expr_division_by_zero'           => 'Ділення на нуль',
 );
 
 /** Vèneto (Vèneto)
