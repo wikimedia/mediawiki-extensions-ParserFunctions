@@ -1070,8 +1070,13 @@ $messages['tg-cyrl'] = array(
  * @author Ahonc
  */
 $messages['uk'] = array(
-	'pfunc_desc'       => 'Покращений синтаксичний аналізатор з логічними функціями',
-	'pfunc_time_error' => 'Помилка: неправильний час',
+	'pfunc_desc'                   => 'Покращений синтаксичний аналізатор з логічними функціями',
+	'pfunc_time_error'             => 'Помилка: неправильний час',
+	'pfunc_time_too_long'          => 'Помилка: забагато викликів функції #time',
+	'pfunc_rel2abs_invalid_depth'  => 'Помилка: неправильна глибина шляху: «$1» (спроба доступу до вузла, що знаходиться вище, ніж кореневий)',
+	'pfunc_expr_stack_exhausted'   => 'Помилка виразу: стек переповнений',
+	'pfunc_expr_unexpected_number' => 'Помилка виразу: неочікуване число',
+	'pfunc_expr_division_by_zero'  => 'Ділення на нуль',
 );
 
 /** Vèneto (Vèneto)
