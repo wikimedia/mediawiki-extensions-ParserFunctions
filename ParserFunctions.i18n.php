@@ -96,6 +96,7 @@ $messages['ast'] = array(
  * @author DCLXVI
  */
 $messages['bg'] = array(
+	'pfunc_desc'                            => 'Подобрвяване на парсера с логически функции',
 	'pfunc_time_error'                      => 'Грешка: невалидно време',
 	'pfunc_time_too_long'                   => 'Грешка: Твърде много извиквания на #time',
 	'pfunc_expr_stack_exhausted'            => 'Грешка в записа: Стекът е изчерпан',
@@ -661,6 +662,7 @@ $messages['ko'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'pfunc_time_error'            => 'Feeler: ongëlteg Zäit',
 	'pfunc_expr_division_by_zero' => 'Divisioun duerch Null',
 	'pfunc_expr_not_a_number'     => "An $1: D'Resultat ass keng Zuel",
 );
@@ -1082,6 +1084,7 @@ $messages['uk'] = array(
 	'pfunc_expr_missing_operand'            => 'Помилка виразу: бракує операнда для $1',
 	'pfunc_expr_unexpected_closing_bracket' => 'Помилка виразу: неочікувана закрита дужка',
 	'pfunc_expr_unrecognised_punctuation'   => 'Помилка виразу: незрозумілий розділовий знак «$1»',
+	'pfunc_expr_unclosed_bracket'           => 'Помилка виразу: незакрита дужка',
 	'pfunc_expr_division_by_zero'           => 'Ділення на нуль',
 );
 
