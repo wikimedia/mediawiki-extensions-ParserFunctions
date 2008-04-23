@@ -32,6 +32,7 @@ $messages['en'] = array(
  * @author Juanpabl
  */
 $messages['an'] = array(
+	'pfunc_desc'                            => 'Amillorar o parseyador con funzions lochicas',
 	'pfunc_time_error'                      => 'Error: tiempo incorreuto',
 	'pfunc_time_too_long'                   => 'Error: masiadas cridas #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Error: Fondura incorreuta en o path: "$1" (prebó d\'azeder ta un nodo por denzima d\'o nodo radiz)',
@@ -782,6 +783,8 @@ $messages['nl'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Fout in uitdrukking: niet herkend leesteken "$1"',
 	'pfunc_expr_unclosed_bracket'           => 'Fout in uitdrukking: niet gesloten haakje openen',
 	'pfunc_expr_division_by_zero'           => 'Deling door nul',
+	'pfunc_expr_invalid_argument'           => 'Ongeldige parameter voor $1: < -1 of > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Ongeldige parameter voor ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Fout in uitdrukking: onbekende fout ($1)',
 	'pfunc_expr_not_a_number'               => 'In $1: resultaat is geen getal',
 );
@@ -1093,6 +1096,8 @@ $messages['uk'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Помилка виразу: незрозумілий розділовий знак «$1»',
 	'pfunc_expr_unclosed_bracket'           => 'Помилка виразу: незакрита дужка',
 	'pfunc_expr_division_by_zero'           => 'Ділення на нуль',
+	'pfunc_expr_unknown_error'              => 'Помилка виразу: невідома помилка ($1)',
+	'pfunc_expr_not_a_number'               => 'У $1: результат не є числом',
 );
 
 /** Vèneto (Vèneto)
