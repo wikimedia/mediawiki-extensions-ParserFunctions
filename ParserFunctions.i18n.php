@@ -22,6 +22,8 @@ $messages['en'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Expression error: Unrecognised punctuation character "$1"',
 	'pfunc_expr_unclosed_bracket'           => 'Expression error: Unclosed bracket',
 	'pfunc_expr_division_by_zero'           => 'Division by zero',
+	'pfunc_expr_invalid_argument'           => 'Invalid argument for $1: < -1 or > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Invalid argument for ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Expression error: Unknown error ($1)',
 	'pfunc_expr_not_a_number'               => 'In $1: result is not a number',
 );
@@ -228,6 +230,8 @@ $messages['de'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Expression-Fehler: Unerkanntes Satzzeichen „$1“',
 	'pfunc_expr_unclosed_bracket'           => 'Expression-Fehler: Nicht geschlossene eckige Klammer',
 	'pfunc_expr_division_by_zero'           => 'Expression-Fehler: Division durch Null',
+	'pfunc_expr_invalid_argument'           => 'Ungültiges Argument für $1: < -1 oder > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Ungültiges Argument für ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Expression-Fehler: Unbekannter Fehler ($1)',
 	'pfunc_expr_not_a_number'               => 'Expression-Fehler: In $1: Ergebnis ist keine Zahl',
 );
