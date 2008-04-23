@@ -389,6 +389,7 @@ $messages['gl'] = array(
 
 /** Hebrew (עברית) */
 $messages['he'] = array(
+	'pfunc_desc'                            => 'הוספת פונקציות לוגיות למפענח',
 	'pfunc_time_error'                      => 'שגיאה: זמן שגוי',
 	'pfunc_time_too_long'                   => 'שגיאה: שימוש ב"#זמן" פעמים רבות מדי',
 	'pfunc_rel2abs_invalid_depth'           => 'שגיאה: עומק שגוי בנתיב: "$1" (ניסיון כניסה לצומת מעל צומת השורש)',
@@ -402,6 +403,8 @@ $messages['he'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'שגיאה בביטוי: תו פיסוק בלתי מזוהה, "$1"',
 	'pfunc_expr_unclosed_bracket'           => 'שגיאה בביטוי: סוגריים בלתי סגורים',
 	'pfunc_expr_division_by_zero'           => 'חלוקה באפס',
+	'pfunc_expr_invalid_argument'           => 'ארגומנט בלתי תקין לפונקציה $1: < -1 או > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'ארגומנט בלתי תקין לפונקציה ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'שגיאה בביטוי: שגיאה בלתי ידועה ($1)',
 	'pfunc_expr_not_a_number'               => 'התוצאה של $1 אינה מספר',
 );
