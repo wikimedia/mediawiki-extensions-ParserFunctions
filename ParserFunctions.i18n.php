@@ -69,6 +69,8 @@ $messages['ar'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'خطأ في التعبير: علامة ترقيم غير متعرف عليها "$1"',
 	'pfunc_expr_unclosed_bracket'           => 'خطأ في التعبير: قوس غير مغلق',
 	'pfunc_expr_division_by_zero'           => 'القسمة على صفر',
+	'pfunc_expr_invalid_argument'           => 'مدخلة غير صحيحة ل $1: < -1 أو > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'مدخلة غير صحيحة ل ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'خطأ في التعبير: خطأ غير معروف ($1)',
 	'pfunc_expr_not_a_number'               => 'في $1: النتيجة ليست رقما',
 );
@@ -339,6 +341,8 @@ $messages['fr'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => "Erreur d'expression : caractère de ponctuation « $1 » non reconnu",
 	'pfunc_expr_unclosed_bracket'           => 'Erreur d’expression : parenthèse non fermée',
 	'pfunc_expr_division_by_zero'           => 'Division par zéro',
+	'pfunc_expr_invalid_argument'           => 'Valeur incorrecte pour $1 : < -1 ou > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Valeur incorrecte pour ln : ≤ 0',
 	'pfunc_expr_unknown_error'              => "Erreur d'expression : erreur inconnue ($1)",
 	'pfunc_expr_not_a_number'               => "Dans $1 : le résultat n'est pas un nombre",
 );
@@ -412,6 +416,7 @@ $messages['he'] = array(
 
 /** Hindi (हिन्दी)
  * @author Kaustubh
+ * @author Shyam
  */
 $messages['hi'] = array(
 	'pfunc_desc'                            => 'लॉजिकल कार्योंका इस्तेमाल करके पार्सर बढायें',
@@ -428,6 +433,8 @@ $messages['hi'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'एक्स्प्रेशन गलती: अनपेक्षित उद्गार चिन्ह "$1"',
 	'pfunc_expr_unclosed_bracket'           => 'एक्स्प्रेशन गलती: ब्रैकेट बंद नहीं किया',
 	'pfunc_expr_division_by_zero'           => 'शून्य से भाग',
+	'pfunc_expr_invalid_argument'           => '$1: < -1 or > 1 के लिए अमान्य कथन',
+	'pfunc_expr_invalid_argument_ln'        => 'ln: <= 0 के लिए अमान्य कथन',
 	'pfunc_expr_unknown_error'              => 'एक्स्प्रेशन गलती: अज्ञात गलती ($1)',
 	'pfunc_expr_not_a_number'               => '$1 में: रिज़ल्ट संख्यामें नहीं हैं',
 );
@@ -586,6 +593,8 @@ $messages['jv'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Kaluputan èksprèsi: Karakter tandha wacan "$1" ora ditepungi',
 	'pfunc_expr_unclosed_bracket'           => 'Kaluputan èksprèsi: Kurung tanpa tutup',
 	'pfunc_expr_division_by_zero'           => 'Dipara karo das (nol)',
+	'pfunc_expr_invalid_argument'           => 'Argumèn ora absah kanggo $1: < -1 utawa > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Argumèn ora absah kanggo ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Kaluputan èksprèsi: Kaluputan ora ditepungi ($1)',
 	'pfunc_expr_not_a_number'               => 'Ing $1: pituwasé dudu angka',
 );
@@ -730,6 +739,8 @@ $messages['mr'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'एक्स्प्रेशन त्रुटी: अनोळखी उद्गारवाचक चिन्ह "$1"',
 	'pfunc_expr_unclosed_bracket'           => 'एक्स्प्रेशन त्रुटी: कंस समाप्त केलेला नाही',
 	'pfunc_expr_division_by_zero'           => 'शून्य ने भागाकार',
+	'pfunc_expr_invalid_argument'           => '$1 साठी अवैध अर्ग्युमेंट: < -1 किंवा > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'ln करिता अवैध अर्ग्युमेंट: <= 0',
 	'pfunc_expr_unknown_error'              => 'एक्स्प्रेशन त्रुटी: अनोळखी त्रुटी ($1)',
 	'pfunc_expr_not_a_number'               => '$1 मध्ये: निकाल संख्येत नाही',
 );
@@ -811,7 +822,7 @@ $messages['nn'] = array(
 	'pfunc_expr_not_a_number'               => 'Resultatet i $1 er ikkje eit tal',
 );
 
-/** Norwegian (‪Norsk (bokmål)‬)
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  */
 $messages['no'] = array(
@@ -829,6 +840,8 @@ $messages['no'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Uttrykksfeil: Ugjenkjennelig tegn «$1»',
 	'pfunc_expr_unclosed_bracket'           => 'Uttrykksfeil: Åpen parentes',
 	'pfunc_expr_division_by_zero'           => 'Deling på null',
+	'pfunc_expr_invalid_argument'           => 'Ugyldig argument for $1: < -1 eller > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Ugyldig argument for ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Uttrykksfeil: Ukjent feil ($1)',
 	'pfunc_expr_not_a_number'               => 'I $1: resultat er ikke et tall',
 );
@@ -852,6 +865,8 @@ $messages['oc'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => "Error d'expression : caractèr de ponctuacion « $1 » pas reconegut",
 	'pfunc_expr_unclosed_bracket'           => 'Error d’expression : parentèsi pas tampada',
 	'pfunc_expr_division_by_zero'           => 'Division per zèro',
+	'pfunc_expr_invalid_argument'           => 'Valor incorrècta per $1 : < -1 o > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Valor incorrècta per ln : ≤ 0',
 	'pfunc_expr_unknown_error'              => "Error d'expression : error desconeguda ($1)",
 	'pfunc_expr_not_a_number'               => 'Dins $1 : lo resultat es pas un nombre',
 );
@@ -914,6 +929,8 @@ $messages['pt'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Erro de expressão: Caracter de pontuação "$1" não reconhecido',
 	'pfunc_expr_unclosed_bracket'           => 'Erro de expressão: Parêntese não fechado',
 	'pfunc_expr_division_by_zero'           => 'Divisão por zero',
+	'pfunc_expr_invalid_argument'           => 'Argumento inválido para $1: < -1 or > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Argumento inválido para ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Erro de expressão: Erro desconhecido ($1)',
 	'pfunc_expr_not_a_number'               => 'Em $1: resultado não é um número',
 );
@@ -936,6 +953,8 @@ $messages['ru'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Ошибка выражения: неопознанный символ пунктуации «$1»',
 	'pfunc_expr_unclosed_bracket'           => 'Ошибка выражения: незакрытая скобка',
 	'pfunc_expr_division_by_zero'           => 'Деление на ноль',
+	'pfunc_expr_invalid_argument'           => 'Ошибочный аргумент $1: < -1 или > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Ошибочный аргумент ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Ошибка выражения: неизвестная ошибка ($1)',
 	'pfunc_expr_not_a_number'               => 'В $1: результат не является числом',
 );
@@ -980,6 +999,8 @@ $messages['sk'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Chyba výrazu: Nerozpoznané diakritické znamienko „$1“',
 	'pfunc_expr_unclosed_bracket'           => 'Chyba výrazu: Neuzavretá hranatá zátvorka',
 	'pfunc_expr_division_by_zero'           => 'Chyba výrazu: Delenie nulou',
+	'pfunc_expr_invalid_argument'           => 'Neplatný argument pre $1: < -1 alebo > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Neplatný argument pre ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Chyba výrazu: Neznáma chyba ($1)',
 	'pfunc_expr_not_a_number'               => 'V $1: výsledok nie je číslo',
 );
@@ -1014,6 +1035,7 @@ $messages['su'] = array(
 
 /** Swedish (Svenska)
  * @author Lejonel
+ * @author M.M.S.
  */
 $messages['sv'] = array(
 	'pfunc_desc'                            => 'Lägger till logiska funktioner i parsern',
@@ -1030,6 +1052,8 @@ $messages['sv'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Fel i uttryck: Okänt interpunktionstecken "$1"',
 	'pfunc_expr_unclosed_bracket'           => 'Fel i uttryck: Oavslutad parentes',
 	'pfunc_expr_division_by_zero'           => 'Division med noll',
+	'pfunc_expr_invalid_argument'           => 'Ogiltigt argument för $1: < -1 eller > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Ogiltigt argument för ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Fel i uttryck: Okänt fel ($1)',
 	'pfunc_expr_not_a_number'               => 'I $1: resultatet är inte ett tal',
 );
@@ -1096,6 +1120,7 @@ $messages['uk'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Помилка виразу: незрозумілий розділовий знак «$1»',
 	'pfunc_expr_unclosed_bracket'           => 'Помилка виразу: незакрита дужка',
 	'pfunc_expr_division_by_zero'           => 'Ділення на нуль',
+	'pfunc_expr_invalid_argument'           => 'Неправильний аргумент для $1: < -1 або > 1',
 	'pfunc_expr_unknown_error'              => 'Помилка виразу: невідома помилка ($1)',
 	'pfunc_expr_not_a_number'               => 'У $1: результат не є числом',
 );
