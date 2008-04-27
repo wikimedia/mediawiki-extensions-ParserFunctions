@@ -172,6 +172,7 @@ $messages['ca'] = array(
 /** Czech (Česky)
  * @author Li-sung
  * @author Danny B.
+ * @author Sp5uhe
  * @author Siebrand
  * @author Matěj Grabovský
  */
@@ -190,6 +191,7 @@ $messages['cs'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Chyba ve výrazu: Nerozpoznaný interpunkční znak „$1“',
 	'pfunc_expr_unclosed_bracket'           => 'Chyba ve výrazu: Neuzavřené závorky',
 	'pfunc_expr_division_by_zero'           => 'Dělení nulou',
+	'pfunc_expr_invalid_argument'           => 'Nieprawidłowy argument $1, poza zakresem od -1 do 1',
 	'pfunc_expr_unknown_error'              => 'Chyba ve výrazu: Neznámá chyba ($1)',
 	'pfunc_expr_not_a_number'               => 'V $1: výsledkem není číslo',
 );
@@ -703,6 +705,8 @@ $messages['li'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Fout in oetdrukking: neet herkend leesteke "$1"',
 	'pfunc_expr_unclosed_bracket'           => 'Fout in oetdrukking: neet geslote haakje opene',
 	'pfunc_expr_division_by_zero'           => 'Deiling door nul',
+	'pfunc_expr_invalid_argument'           => 'Ongeldige paramaeter veur $1: < -1 of > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Ongeldige paramaeter veur ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Fout in oetdrukking: ónbekindje fout ($1)',
 	'pfunc_expr_not_a_number'               => 'In $1: rezultaot is gein getal',
 );
@@ -872,8 +876,8 @@ $messages['oc'] = array(
 );
 
 /** Polish (Polski)
- * @author Derbeth
  * @author Sp5uhe
+ * @author Derbeth
  */
 $messages['pl'] = array(
 	'pfunc_desc'                            => 'Rozszerza analizator składni o funkcje logiczne',
@@ -890,6 +894,8 @@ $messages['pl'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Błąd w wyrażeniu: Nierozpoznany znak interpunkcyjny „$1”',
 	'pfunc_expr_unclosed_bracket'           => 'Błąd w wyrażeniu: Niedomknięty nawias',
 	'pfunc_expr_division_by_zero'           => 'Dzielenie przez zero',
+	'pfunc_expr_invalid_argument'           => 'Nieprawidłowy argument funkcji $1 – mniejszy od -1 lub większy od 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Nieprawidłowy argument funkcji ln – mniejszy lub równy 0',
 	'pfunc_expr_unknown_error'              => 'Błąd w wyrażeniu: Nieznany błąd ($1)',
 	'pfunc_expr_not_a_number'               => 'W $1: wynik nie jest liczbą',
 );
@@ -977,6 +983,8 @@ $messages['sah'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Алҕас: биллибэт пунктуация бэлиэтэ «$1»',
 	'pfunc_expr_unclosed_bracket'           => 'Алҕас: сабыллыбатах ускуопка',
 	'pfunc_expr_division_by_zero'           => 'Нуулга түҥэттии',
+	'pfunc_expr_invalid_argument'           => '$1 алҕас аргуменнаах: < -1 or > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'ln аргумена сыыһалаах: <= 0',
 	'pfunc_expr_unknown_error'              => 'Expression error (ошибка выражения): Биллибэт алҕас ($1)',
 	'pfunc_expr_not_a_number'               => '$1 иһигэр: эппиэтэ чыыһыла буолбатах',
 );
@@ -1143,6 +1151,8 @@ $messages['vec'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Eror ne l\'espression: caràtere de puntegiatura "$1" mìa riconossiùo',
 	'pfunc_expr_unclosed_bracket'           => "Eror ne l'espression: parentesi verta e mìa sarà",
 	'pfunc_expr_division_by_zero'           => 'Division par zero',
+	'pfunc_expr_invalid_argument'           => 'Argomento mìa valido par $1: < -1 or > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Argomento mìa valido par ln: <= 0',
 	'pfunc_expr_unknown_error'              => "Eror ne l'espression: eror sconossiùo ($1)",
 	'pfunc_expr_not_a_number'               => "In $1: el risultato no'l xe mìa un nùmaro",
 );
@@ -1166,6 +1176,8 @@ $messages['vi'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Lỗi biểu thức: Dấu câu “$1” không rõ ràng',
 	'pfunc_expr_unclosed_bracket'           => 'Lỗi biểu thức: Dấu ngoặc chưa được đóng',
 	'pfunc_expr_division_by_zero'           => 'Chia cho zero',
+	'pfunc_expr_invalid_argument'           => 'Tham số không hợp lệ cho $1: < −1 hay > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Tham số không hợp lệ cho ln: ≤ 0',
 	'pfunc_expr_unknown_error'              => 'Lỗi biểu thức: Lỗi không rõ nguyên nhân ($1)',
 	'pfunc_expr_not_a_number'               => 'Trong $1: kết quả không phải là kiểu số',
 );
