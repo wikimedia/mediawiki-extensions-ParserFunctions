@@ -46,6 +46,8 @@ $messages['an'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Error d\'espresión: caráuter de puntuazión "$1" no reconoixito',
 	'pfunc_expr_unclosed_bracket'           => "Error d'espresión: gafet sin zarrar",
 	'pfunc_expr_division_by_zero'           => 'Dibisión por zero',
+	'pfunc_expr_invalid_argument'           => 'Argumento no conforme ta $1: < -1 u > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Argumento no conforme ta ln: <=0',
 	'pfunc_expr_unknown_error'              => "Error d'espresión: error esconoixito ($1)",
 	'pfunc_expr_not_a_number'               => 'En $1: o resultau no ye un numero',
 );
@@ -191,7 +193,8 @@ $messages['cs'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Chyba ve výrazu: Nerozpoznaný interpunkční znak „$1“',
 	'pfunc_expr_unclosed_bracket'           => 'Chyba ve výrazu: Neuzavřené závorky',
 	'pfunc_expr_division_by_zero'           => 'Dělení nulou',
-	'pfunc_expr_invalid_argument'           => 'Nieprawidłowy argument $1, poza zakresem od -1 do 1',
+	'pfunc_expr_invalid_argument'           => 'Neplatný argument pro $1: < -1 nebo > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Neplatný argument pro ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Chyba ve výrazu: Neznámá chyba ($1)',
 	'pfunc_expr_not_a_number'               => 'V $1: výsledkem není číslo',
 );
@@ -1129,6 +1132,7 @@ $messages['uk'] = array(
 	'pfunc_expr_unclosed_bracket'           => 'Помилка виразу: незакрита дужка',
 	'pfunc_expr_division_by_zero'           => 'Ділення на нуль',
 	'pfunc_expr_invalid_argument'           => 'Неправильний аргумент для $1: < -1 або > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Помилковий аргумент логарифма (має бути більший від нуля)',
 	'pfunc_expr_unknown_error'              => 'Помилка виразу: невідома помилка ($1)',
 	'pfunc_expr_not_a_number'               => 'У $1: результат не є числом',
 );
