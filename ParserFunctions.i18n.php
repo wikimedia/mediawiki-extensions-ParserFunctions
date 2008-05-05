@@ -94,6 +94,8 @@ $messages['ast'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Error d\'espresión: Caráuter de puntuación "$1" non reconocíu',
 	'pfunc_expr_unclosed_bracket'           => "Error d'espresión: Paréntesis non zarráu",
 	'pfunc_expr_division_by_zero'           => 'División por cero',
+	'pfunc_expr_invalid_argument'           => 'Argumentu non válidu pa $1: < -1 o > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Argumentu non válidu pa ln: <= 0',
 	'pfunc_expr_unknown_error'              => "Error d'espresión: Error desconocíu ($1)",
 	'pfunc_expr_not_a_number'               => 'En $1: el resultáu nun ye un númberu',
 );
