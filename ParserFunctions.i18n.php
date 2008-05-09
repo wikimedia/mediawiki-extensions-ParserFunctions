@@ -303,6 +303,8 @@ $messages['fa'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'خطای عبارت: نویسه نقطه‌گذاری شناخته نشده «$1»',
 	'pfunc_expr_unclosed_bracket'           => 'خطای عبارت: پرانتز بسته‌نشده',
 	'pfunc_expr_division_by_zero'           => 'تقسیم بر صفر',
+	'pfunc_expr_invalid_argument'           => 'پارامتر غیر مجاز برای $1: < -۱ یا > ۱',
+	'pfunc_expr_invalid_argument_ln'        => 'پارامتر غیر مجاز برای لگاریتم طبیعی: <= صفر',
 	'pfunc_expr_unknown_error'              => 'خطای عبارت: خطای ناشناخته ($1)',
 	'pfunc_expr_not_a_number'               => 'در $1: نتیجه عدد نیست',
 
