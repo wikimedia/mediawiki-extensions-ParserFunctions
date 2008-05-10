@@ -272,6 +272,8 @@ $messages['eo'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Esprima eraro: Nekonata interpunkcia simbolo "$1"',
 	'pfunc_expr_unclosed_bracket'           => 'Esprima eraro: Malferma krampo',
 	'pfunc_expr_division_by_zero'           => 'Divido per nulo',
+	'pfunc_expr_invalid_argument'           => 'Nevalida argumento por $1: < -1 or > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Nevalida argumento por ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Esprima eraro: Nekonata eraro ($1)',
 	'pfunc_expr_not_a_number'               => 'En $1: rezulto ne estas nombro',
 );
@@ -538,6 +540,13 @@ $messages['id'] = array(
 	'pfunc_expr_division_by_zero'           => 'Pembagian oleh nol',
 	'pfunc_expr_unknown_error'              => 'Kesalahan ekspresi: Kesalahan tak dikenal ($1)',
 	'pfunc_expr_not_a_number'               => 'Pada $1: hasilnya bukan angka',
+);
+
+/** Ido (Ido)
+ * @author Malafaya
+ */
+$messages['io'] = array(
+	'pfunc_expr_division_by_zero' => 'Divido per zero',
 );
 
 /** Italian (Italiano)
