@@ -678,8 +678,10 @@ $messages['kk-latn'] = array(
 
 /** Khmer (ភាសាខ្មែរ)
  * @author Lovekhmer
+ * @author គីមស៊្រុន
  */
 $messages['km'] = array(
+	'pfunc_time_error'            => 'កំហុស៖ ពេលវេលាមិនត្រឹមត្រូវ',
 	'pfunc_expr_division_by_zero' => 'ចែកនឹងសូន្យ',
 );
 
