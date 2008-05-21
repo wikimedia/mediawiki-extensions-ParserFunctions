@@ -330,10 +330,10 @@ class ExtParserFunctions {
 	function ifexistCommon( &$parser, $frame, $title = '', $then = '', $else = '' ) {
 		$title = Title::newFromText( $title );
 		if ( $title ) {
-			/* If namespace is specified as NS_MEDIA, then we want to check the physical file,
-			 * not the "description" page.
-			 */
 			if( $title->getNamespace() == NS_MEDIA ) {
+				/* If namespace is specified as NS_MEDIA, then we want to
+				 * check the physical file, not the "description" page.
+				 */
 				if ( !$this->incrementIfexistCount( $parser, $frame ) ) {
 					return $else;
 				}
@@ -343,12 +343,17 @@ class ExtParserFunctions {
 				}
 				$parser->mOutput->addImage($file->getName());
 				return $file->exists() ? $then : $else;
-			} elseif( $title->getNamespace() == NS_SPECIAL || $title->isExternal() ) {
-				// Specials and interwikis...
-				// Currently these always return false, though perhaps
-				// they should be able to do some checks?
-				//
-				// In any case, don't register them in local link tables as below...
+			} elseif( $title->getNamespace() == NS_SPECIAL ) {
+				/* Don't bother with the count for special pages,
+				 * since their existence can be checked without
+				 * accessing the database.
+				 */
+				return SpecialPage::exists( $title->getDBkey() ) ? $then : $else;
+			} elseif( $title->isExternal() ) {
+				/* Can't check the existence of pages on other sites,
+				 * so just return $else.  Makes a sort of sense, since
+				 * they don't exist _locally_.
+				 */
 				return $else;
 			} else {
 				$pdbk = $title->getPrefixedDBkey();
