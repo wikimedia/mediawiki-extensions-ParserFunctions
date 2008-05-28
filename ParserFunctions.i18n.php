@@ -382,8 +382,9 @@ $messages['frp'] = array(
 
 /** Galician (Galego)
  * @author Xosé
- * @author Alma
+ * @author Toliño
  * @author Siebrand
+ * @author Alma
  */
 $messages['gl'] = array(
 	'pfunc_time_error'                      => 'Erro: hora non válida',
@@ -399,6 +400,8 @@ $messages['gl'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Erro de expresión: Signo de puntuación descoñecido "$1"',
 	'pfunc_expr_unclosed_bracket'           => 'Erro de expresión: Paréntese sen pechar',
 	'pfunc_expr_division_by_zero'           => 'División por cero',
+	'pfunc_expr_invalid_argument'           => 'Argumento inválido para $1: < -1 ou > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Argumento inválido para ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Erro de expresión: Erro descoñecido ($1)',
 	'pfunc_expr_not_a_number'               => 'En $1: o resultado non é un número',
 );
@@ -523,16 +526,17 @@ $messages['hu'] = array(
 
 /** Indonesian (Bahasa Indonesia)
  * @author IvanLanin
+ * @author Rex
  * @author Meursault2004
  */
 $messages['id'] = array(
 	'pfunc_desc'                            => 'Mengembangkan parser dengan fungsi logis',
-	'pfunc_time_error'                      => 'Kesalahan: time tidak valid',
+	'pfunc_time_error'                      => 'Kesalahan: waktu tidak valid',
 	'pfunc_time_too_long'                   => 'Kesalahan: Pemanggilan #time terlalu banyak',
 	'pfunc_rel2abs_invalid_depth'           => 'Kesalahan: Kedalaman path tidak valid: "$1" (mencoba mengakses simpul di atas simpul akar)',
 	'pfunc_expr_stack_exhausted'            => 'Kesalahan ekspresi: Stack habis',
 	'pfunc_expr_unexpected_number'          => 'Kesalahan ekspresi: Angka yang tak terduga',
-	'pfunc_expr_preg_match_failure'         => 'Kesalahan ekspresi: Kesalah preg_match yang tak terduga',
+	'pfunc_expr_preg_match_failure'         => 'Kesalahan ekspresi: Kegagalan preg_match tak terduga',
 	'pfunc_expr_unrecognised_word'          => 'Kesalahan ekspresi: Kata "$1" tak dikenal',
 	'pfunc_expr_unexpected_operator'        => 'Kesalahan ekspresi: Operator $1 tak terduga',
 	'pfunc_expr_missing_operand'            => 'Kesalahan ekspresi: Operand tak ditemukan untuk $1',
@@ -540,6 +544,8 @@ $messages['id'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Kesalahan ekspresi: Karakter tanda baca "$1" tak dikenali',
 	'pfunc_expr_unclosed_bracket'           => 'Kesalahan ekspresi: Kurung tanpa tutup',
 	'pfunc_expr_division_by_zero'           => 'Pembagian oleh nol',
+	'pfunc_expr_invalid_argument'           => 'Argumen tidak berlaku untuk $1: < -1 or > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Argumen tidak berlaku untuk ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Kesalahan ekspresi: Kesalahan tak dikenal ($1)',
 	'pfunc_expr_not_a_number'               => 'Pada $1: hasilnya bukan angka',
 );
