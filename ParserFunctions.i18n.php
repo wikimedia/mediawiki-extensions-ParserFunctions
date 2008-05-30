@@ -1236,6 +1236,8 @@ $messages['yue'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => '表達錯: 未能認得到嘅標點 "$1"',
 	'pfunc_expr_unclosed_bracket'           => '表達錯: 未閂好嘅括號',
 	'pfunc_expr_division_by_zero'           => '除以零',
+	'pfunc_expr_invalid_argument'           => '$1嘅無效參數: < -1 or > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'ln嘅無效參數: <= 0',
 	'pfunc_expr_unknown_error'              => '表達錯: 未知嘅錯 ($1)',
 	'pfunc_expr_not_a_number'               => '響 $1: 結果唔係數字',
 );
@@ -1258,6 +1260,8 @@ $messages['zh-hans'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => '表达错误: 未能认得到的标点 "$1"',
 	'pfunc_expr_unclosed_bracket'           => '表达错误: 未关闭的括号',
 	'pfunc_expr_division_by_zero'           => '除以零',
+	'pfunc_expr_invalid_argument'           => '$1的无效参数: < -1 or > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'ln的无效参数: <= 0',
 	'pfunc_expr_unknown_error'              => '表达错误: 未知?错 ($1)',
 	'pfunc_expr_not_a_number'               => '于 $1: 结果不是数字',
 );
@@ -1280,6 +1284,8 @@ $messages['zh-hant'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => '表達錯誤: 未能認得到的標點 "$1"',
 	'pfunc_expr_unclosed_bracket'           => '表達錯誤: 未關閉的括號',
 	'pfunc_expr_division_by_zero'           => '除以零',
+	'pfunc_expr_invalid_argument'           => '$1的無效參數: < -1 or > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'ln的無效參數: <= 0',
 	'pfunc_expr_unknown_error'              => '表達錯誤: 未知嘅錯 ($1)',
 	'pfunc_expr_not_a_number'               => '於 $1: 結果不是數字',
 );
