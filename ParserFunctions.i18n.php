@@ -181,7 +181,7 @@ $messages['ca'] = array(
  * @author Matěj Grabovský
  */
 $messages['cs'] = array(
-	'pfunc_desc'                            => 'Rozšíření syntaktického analyzátoru o logické funkce',
+	'pfunc_desc'                            => 'Rozšíření parseru o logické funkce',
 	'pfunc_time_error'                      => 'Chyba: neplatný čas',
 	'pfunc_time_too_long'                   => 'Chyba: příliš mnoho volání #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Chyba: Neplatná hloubka v cestě: "$1" (pokus o přístup do uzlu vyššího než kořen)',
@@ -383,8 +383,8 @@ $messages['frp'] = array(
 /** Galician (Galego)
  * @author Xosé
  * @author Toliño
- * @author Siebrand
  * @author Alma
+ * @author Siebrand
  */
 $messages['gl'] = array(
 	'pfunc_time_error'                      => 'Erro: hora non válida',
@@ -395,10 +395,10 @@ $messages['gl'] = array(
 	'pfunc_expr_preg_match_failure'         => 'Erro de expresión: Fallo de preg_match inesperado',
 	'pfunc_expr_unrecognised_word'          => 'Erro de expresión: Palabra descoñecida "$1"',
 	'pfunc_expr_unexpected_operator'        => 'Erro de expresión: Operador $1 inesperado',
-	'pfunc_expr_missing_operand'            => 'Erro de expresión: Falta un operador para $1',
+	'pfunc_expr_missing_operand'            => 'Erro de expresión: falta un operador para $1',
 	'pfunc_expr_unexpected_closing_bracket' => 'Expresión de erro: Inesperado corchete',
 	'pfunc_expr_unrecognised_punctuation'   => 'Erro de expresión: Signo de puntuación descoñecido "$1"',
-	'pfunc_expr_unclosed_bracket'           => 'Erro de expresión: Paréntese sen pechar',
+	'pfunc_expr_unclosed_bracket'           => 'Erro de expresión: paréntese sen pechar',
 	'pfunc_expr_division_by_zero'           => 'División por cero',
 	'pfunc_expr_invalid_argument'           => 'Argumento inválido para $1: < -1 ou > 1',
 	'pfunc_expr_invalid_argument_ln'        => 'Argumento inválido para ln: <= 0',
@@ -1062,8 +1062,10 @@ $messages['stq'] = array(
 
 /** Sundanese (Basa Sunda)
  * @author Kandar
+ * @author Irwangatot
  */
 $messages['su'] = array(
+	'pfunc_desc'       => 'Ngembangkeun parser kalawan fungsi logis',
 	'pfunc_time_error' => 'Éror: titimangsa teu valid',
 );
 
