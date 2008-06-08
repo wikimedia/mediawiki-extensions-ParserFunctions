@@ -708,7 +708,9 @@ $messages['ko'] = array(
  */
 $messages['lb'] = array(
 	'pfunc_time_error'            => 'Feeler: ongëlteg Zäit',
+	'pfunc_expr_unclosed_bracket' => 'Expressiouns-Feeler: Eckeg Klammer net zougemaach',
 	'pfunc_expr_division_by_zero' => 'Divisioun duerch Null',
+	'pfunc_expr_unknown_error'    => 'Expression-Feeler: Onbekannte Feeler ($1)',
 	'pfunc_expr_not_a_number'     => "An $1: D'Resultat ass keng Zuel",
 );
 
