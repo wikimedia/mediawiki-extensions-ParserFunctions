@@ -154,6 +154,7 @@ $messages['br'] = array(
 
 /** Catalan (Català)
  * @author SMP
+ * @author Jordi Roqué
  */
 $messages['ca'] = array(
 	'pfunc_time_error'                      => 'Error: temps invàlid',
@@ -169,6 +170,8 @@ $messages['ca'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Error de l\'expressió: Signe de puntuació no reconegut "$1"',
 	'pfunc_expr_unclosed_bracket'           => "Error de l'expressió: Parèntesi no tancat",
 	'pfunc_expr_division_by_zero'           => 'Divisió entre zero',
+	'pfunc_expr_invalid_argument'           => 'Valor no vàlid per a $1: < -1 ó > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Valor no vàlid per a ln: <= 0',
 	'pfunc_expr_unknown_error'              => "Error de l'expressió: Desconegut ($1)",
 	'pfunc_expr_not_a_number'               => 'A $1: el resultat no és un nombre',
 );
