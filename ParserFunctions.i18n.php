@@ -266,6 +266,7 @@ $messages['eo'] = array(
 	'pfunc_time_error'                      => 'Eraro: nevalida tempo',
 	'pfunc_time_too_long'                   => "Eraro: tro da vokoj ''#time''",
 	'pfunc_rel2abs_invalid_depth'           => 'Eraro: Nevalida profundo en vojo: "$1" (provis atingi nodon super la radika nodo)',
+	'pfunc_expr_stack_exhausted'            => 'Esprima eraro: Stako estis malplenigita',
 	'pfunc_expr_unexpected_number'          => 'Esprima eraro: Neatendita numeralo',
 	'pfunc_expr_preg_match_failure'         => 'Esprima eraro: Neatendita preg_match malsukceso',
 	'pfunc_expr_unrecognised_word'          => 'Esprima eraro: Nekonata vorto "$1"',
