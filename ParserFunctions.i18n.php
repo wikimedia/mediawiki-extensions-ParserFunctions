@@ -77,6 +77,13 @@ $messages['ar'] = array(
 	'pfunc_expr_not_a_number'               => 'في $1: النتيجة ليست رقما',
 );
 
+/** Assamese (অসমীয়া)
+ * @author Rajuonline
+ */
+$messages['as'] = array(
+	'pfunc_time_error' => 'ভুল: অযোগ্য সময়',
+);
+
 /** Asturian (Asturianu)
  * @author Esbardu
  */
@@ -391,6 +398,7 @@ $messages['frp'] = array(
  * @author Siebrand
  */
 $messages['gl'] = array(
+	'pfunc_desc'                            => 'Mellora o analizador con funcións lóxicas',
 	'pfunc_time_error'                      => 'Erro: hora non válida',
 	'pfunc_time_too_long'                   => 'Erro: demasiadas chamadas a #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Erro: Profundidade da ruta non válida: "$1" (tentouse acceder a un nodo por riba do nodo raíz)',
@@ -711,6 +719,7 @@ $messages['ko'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'pfunc_desc'                  => 'Erweidert Parser mat logesche Fonctiounen',
 	'pfunc_time_error'            => 'Feeler: ongëlteg Zäit',
 	'pfunc_expr_unclosed_bracket' => 'Expressiouns-Feeler: Eckeg Klammer net zougemaach',
 	'pfunc_expr_division_by_zero' => 'Divisioun duerch Null',
@@ -781,6 +790,30 @@ $messages['mr'] = array(
 	'pfunc_expr_not_a_number'               => '$1 मध्ये: निकाल संख्येत नाही',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Aviator
+ */
+$messages['ms'] = array(
+	'pfunc_desc'                            => 'Meningkatkan penghurai dengan fungsi-fungsi logik',
+	'pfunc_time_error'                      => 'Ralat: waktu tidak sah',
+	'pfunc_time_too_long'                   => 'Ralat: terlalu banyak panggilan #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Ralat: Kedalaman tidak sah dalam laluan: "$1" (cubaan mencapai nod di atas nod induk)',
+	'pfunc_expr_stack_exhausted'            => 'Ralat ungkapan: Tindanan tuntas',
+	'pfunc_expr_unexpected_number'          => 'Ralat ungkapan: Nombor tidak dijangka',
+	'pfunc_expr_preg_match_failure'         => 'Ralat ungkapan: Kegagalan preg_match tidak dijangka',
+	'pfunc_expr_unrecognised_word'          => 'Ralat ungkapan: Perkataan "$1" tidak dikenali',
+	'pfunc_expr_unexpected_operator'        => 'Ralat ungkapan: Pengendali $1 tidak dijangka',
+	'pfunc_expr_missing_operand'            => 'Ralat ungkapan: Kendalian bagi $1 tiada',
+	'pfunc_expr_unexpected_closing_bracket' => 'Ralat ungkapan: Tanda kurung penutup tidak dijangka',
+	'pfunc_expr_unrecognised_punctuation'   => 'Ralat ungkapan: Aksara tanda baca "$1" tidak dikenali',
+	'pfunc_expr_unclosed_bracket'           => 'Ralat ungkapan: Tanda kurung tidak ditutup',
+	'pfunc_expr_division_by_zero'           => 'Pembahagian dengan sifar',
+	'pfunc_expr_invalid_argument'           => 'Argumen bagi $1 tidak sah: < -1 atau > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Argumen bagi ln tidak sah: <= 0',
+	'pfunc_expr_unknown_error'              => 'Ralat ungkapan: Ralat tidak diketahui ($1)',
+	'pfunc_expr_not_a_number'               => 'Dalam $1: hasil bukan nombor',
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
@@ -798,6 +831,8 @@ $messages['nds'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Fehler in’n Utdruck: Satzteken „$1“ nich kennt',
 	'pfunc_expr_unclosed_bracket'           => 'Fehler in’n Utdruck: Nich slatene Klammer',
 	'pfunc_expr_division_by_zero'           => 'Delen dör Null',
+	'pfunc_expr_invalid_argument'           => 'Ungüllig Argument för $1: < -1 oder > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Ungüllig Argument för ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Fehler in’n Utdruck: Unbekannten Fehler ($1)',
 	'pfunc_expr_not_a_number'               => 'In $1: wat rutkamen is, is kene Tall',
 );
