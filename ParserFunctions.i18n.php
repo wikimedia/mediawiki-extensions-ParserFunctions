@@ -571,12 +571,13 @@ $messages['io'] = array(
 
 /** Italian (Italiano)
  * @author BrokenArrow
+ * @author Darth Kule
  */
 $messages['it'] = array(
 	'pfunc_desc'                            => 'Aggiunge al parser una serie di funzioni logiche',
 	'pfunc_time_error'                      => 'Errore: orario non valido',
 	'pfunc_time_too_long'                   => 'Errore: troppe chiamate a #time',
-	'pfunc_rel2abs_invalid_depth'           => 'Errore: profondità non valida nel percorso "$2" (si è tentato di accedere a un nodo superiore alla radice)',
+	'pfunc_rel2abs_invalid_depth'           => 'Errore: profondità non valida nel percorso "$1" (si è tentato di accedere a un nodo superiore alla radice)',
 	'pfunc_expr_stack_exhausted'            => "Errore nell'espressione: stack esaurito",
 	'pfunc_expr_unexpected_number'          => "Errore nell'espressione: numero inatteso",
 	'pfunc_expr_preg_match_failure'         => "Errore nell'espressione: errore inatteso in preg_match",
