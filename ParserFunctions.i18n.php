@@ -720,12 +720,14 @@ $messages['ko'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
-	'pfunc_desc'                  => 'Erweidert Parser mat logesche Fonctiounen',
-	'pfunc_time_error'            => 'Feeler: ongëlteg Zäit',
-	'pfunc_expr_unclosed_bracket' => 'Expressiouns-Feeler: Eckeg Klammer net zougemaach',
-	'pfunc_expr_division_by_zero' => 'Divisioun duerch Null',
-	'pfunc_expr_unknown_error'    => 'Expression-Feeler: Onbekannte Feeler ($1)',
-	'pfunc_expr_not_a_number'     => "An $1: D'Resultat ass keng Zuel",
+	'pfunc_desc'                   => 'Erweidert Parser mat logesche Fonctiounen',
+	'pfunc_time_error'             => 'Feeler: ongëlteg Zäit',
+	'pfunc_expr_unexpected_number' => 'Expressiouns-Feeler: Onerwarten Zuel',
+	'pfunc_expr_unrecognised_word' => 'Expressiouns-Feeler: Onerkantent Wuert "$1"',
+	'pfunc_expr_unclosed_bracket'  => 'Expressiouns-Feeler: Eckeg Klammer net zougemaach',
+	'pfunc_expr_division_by_zero'  => 'Divisioun duerch Null',
+	'pfunc_expr_unknown_error'     => 'Expression-Feeler: Onbekannte Feeler ($1)',
+	'pfunc_expr_not_a_number'      => "An $1: D'Resultat ass keng Zuel",
 );
 
 /** Limburgish (Limburgs)
