@@ -6,13 +6,11 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 $wgExtensionFunctions[] = 'wfSetupParserFunctions';
 $wgExtensionCredits['parserhook'][] = array(
-	'name'           => 'ParserFunctions',
-	'version'        => '1.1.2',
-	'svn-date'       => '$LastChangedDate$',
-	'svn-revision'   => '$LastChangedRevision$',
-	'url'            => 'http://meta.wikimedia.org/wiki/Help:ParserFunctions',
-	'author'         => 'Tim Starling',
-	'description'    => 'Enhance parser with logical functions',
+	'name' => 'ParserFunctions',
+	'version' => '1.1.1',
+	'url' => 'http://meta.wikimedia.org/wiki/ParserFunctions',
+	'author' => 'Tim Starling',
+	'description' => 'Enhance parser with logical functions',
 	'descriptionmsg' => 'pfunc_desc',
 );
 
@@ -330,7 +328,7 @@ class ExtParserFunctions {
 	}
 
 	function ifexistCommon( &$parser, $frame, $title = '', $then = '', $else = '' ) {
-		$title = Title::newFromText( urldecode( $title ) );
+		$title = Title::newFromText( $title );
 		if ( $title ) {
 			if( $title->getNamespace() == NS_MEDIA ) {
 				/* If namespace is specified as NS_MEDIA, then we want to
