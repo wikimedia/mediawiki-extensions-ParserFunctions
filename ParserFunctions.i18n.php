@@ -232,7 +232,7 @@ $messages['da'] = array(
 	'pfunc_expr_not_a_number'               => 'I $1: Resultatet er ikke et tal',
 );
 
-/**  German (Deutsch)
+/** German (Deutsch)
  * @author Raimond Spekking
  */
 $messages['de'] = array(
@@ -261,8 +261,8 @@ $messages['de'] = array(
  * @author Consta
  */
 $messages['el'] = array(
-	'pfunc_time_error'           => 'Σφάλμα: άκυρος χρόνος',
-	'pfunc_time_too_long'        => 'Σφάλμα: πάρα πολλές κλήσεις της #time',
+	'pfunc_time_error'    => 'Σφάλμα: άκυρος χρόνος',
+	'pfunc_time_too_long' => 'Σφάλμα: πάρα πολλές κλήσεις της #time',
 );
 
 /** Esperanto (Esperanto)
@@ -298,7 +298,7 @@ $messages['eu'] = array(
 	'pfunc_rel2abs_invalid_depth' => 'Errorea: Baliogabeko sakonera fitxategi bidean: "$1" (root puntutik gora sartzen saiatu da)',
 );
 
-/** فارسی (فارسی)
+/** Persian (فارسی)
  * @author Huji
  */
 $messages['fa'] = array(
@@ -320,7 +320,6 @@ $messages['fa'] = array(
 	'pfunc_expr_invalid_argument_ln'        => 'پارامتر غیر مجاز برای لگاریتم طبیعی: <= صفر',
 	'pfunc_expr_unknown_error'              => 'خطای عبارت: خطای ناشناخته ($1)',
 	'pfunc_expr_not_a_number'               => 'در $1: نتیجه عدد نیست',
-
 );
 
 /** Finnish (Suomi)
@@ -638,7 +637,7 @@ $messages['jv'] = array(
 	'pfunc_expr_not_a_number'               => 'Ing $1: pituwasé dudu angka',
 );
 
-/** ‫قازاقشا (تٴوتە)‬ (‫قازاقشا (تٴوتە)‬) */
+/** Kazakh (Arabic script) (‫قازاقشا (تٴوتە)‬) */
 $messages['kk-arab'] = array(
 	'pfunc_time_error'                      => 'قاتە: جارامسىز ۋاقىت',
 	'pfunc_time_too_long'                   => 'قاتە: #time شاقىرۋى تىم كوپ',
@@ -970,7 +969,7 @@ $messages['pl'] = array(
 	'pfunc_expr_not_a_number'               => 'W $1: wynik nie jest liczbą',
 );
 
-/** Piemontèis (Piemontèis)
+/** Piedmontese (Piemontèis)
  * @author Bèrto 'd Sèra
  * @author Siebrand
  */
@@ -1160,7 +1159,7 @@ $messages['te'] = array(
 	'pfunc_expr_not_a_number'               => '$1లో: వచ్చిన ఫలితం సంఖ్య కాదు',
 );
 
-/** Tajik (Тоҷикӣ)
+/** Tajik (Cyrillic) (Тоҷикӣ/tojikī (Cyrillic))
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -1264,7 +1263,7 @@ $messages['vo'] = array(
 	'pfunc_expr_not_a_number'     => 'In $1: sek no binon num',
 );
 
-/** Cantonese (廣東話)
+/** Yue (粵語)
  * @author Shinjiman
  */
 $messages['yue'] = array(
@@ -1288,7 +1287,7 @@ $messages['yue'] = array(
 	'pfunc_expr_not_a_number'               => '響 $1: 結果唔係數字',
 );
 
-/** Simplified Chinese (‪中文(简体)‬) 
+/** Simplified Chinese (‪中文(简体)‬)
  * @author Shinjiman
  */
 $messages['zh-hans'] = array(
