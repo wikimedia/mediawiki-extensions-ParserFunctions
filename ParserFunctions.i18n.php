@@ -107,6 +107,13 @@ $messages['ast'] = array(
 	'pfunc_expr_not_a_number'               => 'En $1: el resultáu nun ye un númberu',
 );
 
+/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+ * @author EugeneZelenko
+ */
+$messages['be-tarask'] = array(
+	'pfunc_time_error' => 'Памылка: няслушны час',
+);
+
 /** Bulgarian (Български)
  * @author Spiritia
  * @author DCLXVI
