@@ -1089,6 +1089,21 @@ $messages['sk'] = array(
 	'pfunc_expr_not_a_number'               => 'V $1: výsledok nie je číslo',
 );
 
+/** Serbian Cyrillic ekavian (ћирилица)
+ * @author Millosh
+ */
+$messages['sr-ec'] = array(
+	'pfunc_desc'                     => 'обогати парсер логичким функцијама',
+	'pfunc_time_error'               => 'Грешка: лоше време',
+	'pfunc_time_too_long'            => 'Грешка: превише #time позива',
+	'pfunc_expr_stack_exhausted'     => 'Грешка у изразу: стек напуњен',
+	'pfunc_expr_unexpected_number'   => 'Грешка у изразу: неочекивани број',
+	'pfunc_expr_preg_match_failure'  => 'Грешка у изразу: Неочекивана preg_match грешка',
+	'pfunc_expr_unrecognised_word'   => 'Грешка у изразу: непозната реч "$1"',
+	'pfunc_expr_unexpected_operator' => 'Грешка у изразу: непознати оператор "$1"',
+	'pfunc_expr_missing_operand'     => 'Грешка у изразу: недостаје операнд за $1',
+);
+
 /** Seeltersk (Seeltersk)
  * @author Pyt
  */
