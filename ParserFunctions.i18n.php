@@ -28,6 +28,17 @@ $messages['en'] = array(
 	'pfunc_expr_not_a_number'               => 'In $1: result is not a number',
 );
 
+/** Afrikaans (Afrikaans)
+ * @author Naudefj
+ */
+$messages['af'] = array(
+	'pfunc_desc'                  => 'Verryk die ontleder met logiese funksies',
+	'pfunc_time_error'            => 'Fout: ongeldige tyd',
+	'pfunc_time_too_long'         => 'Fout: #time te veel kere geroep',
+	'pfunc_rel2abs_invalid_depth' => 'Fout: Ongeldige diepte in pad: "$1" (probeer \'n node bo die wortelnode te roep)',
+	'pfunc_expr_division_by_zero' => 'Deling deur nul',
+);
+
 /** Aragonese (Aragonés)
  * @author Juanpabl
  */
@@ -492,6 +503,8 @@ $messages['hr'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Greška u predlošku: Nepoznat interpunkcijski znak "$1"',
 	'pfunc_expr_unclosed_bracket'           => 'Greška u predlošku: Nezatvorene zagrade',
 	'pfunc_expr_division_by_zero'           => 'Dijeljenje s nulom',
+	'pfunc_expr_invalid_argument'           => 'Nevaljani argumenti za $1: < -1 ili > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Nevaljani argument za ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Greška u predlošku: Nepoznata greška ($1)',
 	'pfunc_expr_not_a_number'               => 'U $1: rezultat nije broj',
 );
@@ -726,14 +739,15 @@ $messages['ko'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
-	'pfunc_desc'                   => 'Erweidert Parser mat logesche Fonctiounen',
-	'pfunc_time_error'             => 'Feeler: ongëlteg Zäit',
-	'pfunc_expr_unexpected_number' => 'Expressiouns-Feeler: Onerwarten Zuel',
-	'pfunc_expr_unrecognised_word' => 'Expressiouns-Feeler: Onerkantent Wuert "$1"',
-	'pfunc_expr_unclosed_bracket'  => 'Expressiouns-Feeler: Eckeg Klammer net zougemaach',
-	'pfunc_expr_division_by_zero'  => 'Divisioun duerch Null',
-	'pfunc_expr_unknown_error'     => 'Expression-Feeler: Onbekannte Feeler ($1)',
-	'pfunc_expr_not_a_number'      => "An $1: D'Resultat ass keng Zuel",
+	'pfunc_desc'                     => 'Erweidert Parser mat logesche Fonctiounen',
+	'pfunc_time_error'               => 'Feeler: ongëlteg Zäit',
+	'pfunc_expr_unexpected_number'   => 'Expressiouns-Feeler: Onerwarten Zuel',
+	'pfunc_expr_unrecognised_word'   => 'Expressiouns-Feeler: Onerkantent Wuert "$1"',
+	'pfunc_expr_unclosed_bracket'    => 'Expressiouns-Feeler: Eckeg Klammer net zougemaach',
+	'pfunc_expr_division_by_zero'    => 'Divisioun duerch Null',
+	'pfunc_expr_invalid_argument_ln' => 'Ongëltege Wert fir ln: <= 0',
+	'pfunc_expr_unknown_error'       => 'Expression-Feeler: Onbekannte Feeler ($1)',
+	'pfunc_expr_not_a_number'        => "An $1: D'Resultat ass keng Zuel",
 );
 
 /** Limburgish (Limburgs)
@@ -1093,15 +1107,23 @@ $messages['sk'] = array(
  * @author Millosh
  */
 $messages['sr-ec'] = array(
-	'pfunc_desc'                     => 'обогати парсер логичким функцијама',
-	'pfunc_time_error'               => 'Грешка: лоше време',
-	'pfunc_time_too_long'            => 'Грешка: превише #time позива',
-	'pfunc_expr_stack_exhausted'     => 'Грешка у изразу: стек напуњен',
-	'pfunc_expr_unexpected_number'   => 'Грешка у изразу: неочекивани број',
-	'pfunc_expr_preg_match_failure'  => 'Грешка у изразу: Неочекивана preg_match грешка',
-	'pfunc_expr_unrecognised_word'   => 'Грешка у изразу: непозната реч "$1"',
-	'pfunc_expr_unexpected_operator' => 'Грешка у изразу: непознати оператор "$1"',
-	'pfunc_expr_missing_operand'     => 'Грешка у изразу: недостаје операнд за $1',
+	'pfunc_desc'                            => 'обогати парсер логичким функцијама',
+	'pfunc_time_error'                      => 'Грешка: лоше време',
+	'pfunc_time_too_long'                   => 'Грешка: превише #time позива',
+	'pfunc_expr_stack_exhausted'            => 'Грешка у изразу: стек напуњен',
+	'pfunc_expr_unexpected_number'          => 'Грешка у изразу: неочекивани број',
+	'pfunc_expr_preg_match_failure'         => 'Грешка у изразу: Неочекивана preg_match грешка',
+	'pfunc_expr_unrecognised_word'          => 'Грешка у изразу: непозната реч "$1"',
+	'pfunc_expr_unexpected_operator'        => 'Грешка у изразу: непознати оператор "$1"',
+	'pfunc_expr_missing_operand'            => 'Грешка у изразу: недостаје операнд за $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Грешка у изразу: Неочекивано затварање средње заграде.',
+	'pfunc_expr_unrecognised_punctuation'   => 'Грешка у изразу: Непознати интерпункцијски карактер "$1".',
+	'pfunc_expr_unclosed_bracket'           => 'Грешка у изразу: Незатворена средња заграда.',
+	'pfunc_expr_division_by_zero'           => 'Дељење са нулом.',
+	'pfunc_expr_invalid_argument'           => 'Лош аргумент: $1 је < -1 или > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Лош аргумент: ln <= 0',
+	'pfunc_expr_unknown_error'              => 'Грешка у изразу: Непозната грешка ($1)',
+	'pfunc_expr_not_a_number'               => 'Резултат у $1 није број.',
 );
 
 /** Seeltersk (Seeltersk)
