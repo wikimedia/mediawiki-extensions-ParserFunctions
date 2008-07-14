@@ -591,6 +591,7 @@ $messages['io'] = array(
 /** Italian (Italiano)
  * @author BrokenArrow
  * @author Darth Kule
+ * @author Pietrodn
  */
 $messages['it'] = array(
 	'pfunc_desc'                            => 'Aggiunge al parser una serie di funzioni logiche',
@@ -607,6 +608,8 @@ $messages['it'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Errore nell\'espressione: carattere di punteggiatura "$1" non riconosciuto',
 	'pfunc_expr_unclosed_bracket'           => "Errore nell'espressione: parentesi non chiusa",
 	'pfunc_expr_division_by_zero'           => 'Divisione per zero',
+	'pfunc_expr_invalid_argument'           => 'Argomento non valido per $1: < -1 o > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Argomento non valido per ln: <= 0',
 	'pfunc_expr_unknown_error'              => "Errore nell'espressione: errore sconosciuto ($1)",
 	'pfunc_expr_not_a_number'               => 'In $1: il risultato non è un numero',
 );
