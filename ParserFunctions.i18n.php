@@ -595,6 +595,30 @@ $messages['hu'] = array(
 	'pfunc_expr_not_a_number'               => '$1: az eredmény nem szám',
 );
 
+/** Interlingua (Interlingua)
+ * @author McDutchie
+ */
+$messages['ia'] = array(
+	'pfunc_desc'                            => 'Meliorar le analysator syntactic con functiones logic',
+	'pfunc_time_error'                      => 'Error: tempore invalide',
+	'pfunc_time_too_long'                   => 'Error: troppo de appellos a #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Error: Profunditate invalide in cammino: "$1" (essayava acceder a un nodo superior al radice)',
+	'pfunc_expr_stack_exhausted'            => 'Error in expression: Pila exhaurite',
+	'pfunc_expr_unexpected_number'          => 'Error in expression: Numero non expectate',
+	'pfunc_expr_preg_match_failure'         => 'Error in expression: Fallimento non expectate in preg_match',
+	'pfunc_expr_unrecognised_word'          => 'Error in expression: Parola "$1" non recognoscite',
+	'pfunc_expr_unexpected_operator'        => 'Error in expression: Operator $1 non expectate',
+	'pfunc_expr_missing_operand'            => 'Error in expression: Manca un operando pro $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Error in expression: Accollada clause non expectate',
+	'pfunc_expr_unrecognised_punctuation'   => 'Error in expression: Character de punctuation "$1" non recognoscite',
+	'pfunc_expr_unclosed_bracket'           => 'Error in expression: Accollada non claudite',
+	'pfunc_expr_division_by_zero'           => 'Division per zero',
+	'pfunc_expr_invalid_argument'           => 'Argumento invalide pro $1: < -1 o > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Argumento invalide pro ln: ≤ 0',
+	'pfunc_expr_unknown_error'              => 'Error de expression: Error incognite ($1)',
+	'pfunc_expr_not_a_number'               => 'In $1: le resultato non es un numero',
+);
+
 /** Indonesian (Bahasa Indonesia)
  * @author IvanLanin
  * @author Rex
