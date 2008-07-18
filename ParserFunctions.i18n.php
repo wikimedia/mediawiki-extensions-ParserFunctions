@@ -852,7 +852,7 @@ $messages['ml'] = array(
 	'pfunc_expr_unexpected_number' => 'Expression error: പ്രതീക്ഷിക്കാത്ത സംഖ്യ',
 	'pfunc_expr_unrecognised_word' => 'Expression error: "$1" എന്ന തിരിച്ചറിയാന്‍ സാധിക്കാഞ്ഞ വാക്ക്',
 	'pfunc_expr_division_by_zero'  => 'പൂജ്യം കൊണ്ടുള്ള ഹരണം',
-	'pfunc_expr_unknown_error'     => 'Expression error: കാരണം അജ്ഞാതമായ പിഴവ്',
+	'pfunc_expr_unknown_error'     => 'Expression error: കാരണം അജ്ഞാതമായ പിഴവ് ($1)',
 	'pfunc_expr_not_a_number'      => '$1ല്‍: ഫലം ഒരു സംഖ്യയല്ല',
 );
 
@@ -1323,7 +1323,7 @@ $messages['vec'] = array(
 	'pfunc_desc'                            => 'Zonta al parser na serie de funsion logiche',
 	'pfunc_time_error'                      => 'Eror: orario mìa valido',
 	'pfunc_time_too_long'                   => 'Eror: massa chiamate a #time',
-	'pfunc_rel2abs_invalid_depth'           => 'Eror: profondità mìa valida nel percorso "$2" (se gà proà a accédar a un nodo piassè sora de la raìsa)',
+	'pfunc_rel2abs_invalid_depth'           => 'Eror: profondità mìa valida nel percorso "$1" (se gà proà a accédar a un nodo piassè sora de la raìsa)',
 	'pfunc_expr_stack_exhausted'            => "Eror ne l'espression: stack esaurìo",
 	'pfunc_expr_unexpected_number'          => "Eror ne l'espression: xe vegnù fora un nùmaro che no se se spetava",
 	'pfunc_expr_preg_match_failure'         => "Eror ne l'espression: eror inateso in preg_match",
