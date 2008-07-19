@@ -32,11 +32,14 @@ $messages['en'] = array(
  * @author Naudefj
  */
 $messages['af'] = array(
-	'pfunc_desc'                  => 'Verryk die ontleder met logiese funksies',
-	'pfunc_time_error'            => 'Fout: ongeldige tyd',
-	'pfunc_time_too_long'         => 'Fout: #time te veel kere geroep',
-	'pfunc_rel2abs_invalid_depth' => 'Fout: Ongeldige diepte in pad: "$1" (probeer \'n node bo die wortelnode te roep)',
-	'pfunc_expr_division_by_zero' => 'Deling deur nul',
+	'pfunc_desc'                     => 'Verryk die ontleder met logiese funksies',
+	'pfunc_time_error'               => 'Fout: ongeldige tyd',
+	'pfunc_time_too_long'            => 'Fout: #time te veel kere geroep',
+	'pfunc_rel2abs_invalid_depth'    => 'Fout: Ongeldige diepte in pad: "$1" (probeer \'n node bo die wortelnode te roep)',
+	'pfunc_expr_division_by_zero'    => 'Deling deur nul',
+	'pfunc_expr_invalid_argument'    => 'Ongeldige argument vir $1: < -1 of > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Ongeldige argument vir ln: <= 0',
+	'pfunc_expr_not_a_number'        => "In $1: resultaat is nie 'n getal nie",
 );
 
 /** Aragonese (Aragonés)
