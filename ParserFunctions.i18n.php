@@ -32,14 +32,24 @@ $messages['en'] = array(
  * @author Naudefj
  */
 $messages['af'] = array(
-	'pfunc_desc'                     => 'Verryk die ontleder met logiese funksies',
-	'pfunc_time_error'               => 'Fout: ongeldige tyd',
-	'pfunc_time_too_long'            => 'Fout: #time te veel kere geroep',
-	'pfunc_rel2abs_invalid_depth'    => 'Fout: Ongeldige diepte in pad: "$1" (probeer \'n node bo die wortelnode te roep)',
-	'pfunc_expr_division_by_zero'    => 'Deling deur nul',
-	'pfunc_expr_invalid_argument'    => 'Ongeldige argument vir $1: < -1 of > 1',
-	'pfunc_expr_invalid_argument_ln' => 'Ongeldige argument vir ln: <= 0',
-	'pfunc_expr_not_a_number'        => "In $1: resultaat is nie 'n getal nie",
+	'pfunc_desc'                            => 'Verryk die ontleder met logiese funksies',
+	'pfunc_time_error'                      => 'Fout: ongeldige tyd',
+	'pfunc_time_too_long'                   => 'Fout: #time te veel kere geroep',
+	'pfunc_rel2abs_invalid_depth'           => 'Fout: Ongeldige diepte in pad: "$1" (probeer \'n node bo die wortelnode te roep)',
+	'pfunc_expr_stack_exhausted'            => 'Fout in uitdrukking: stack uitgeput',
+	'pfunc_expr_unexpected_number'          => 'Fout in uitdrukking: onverwagte getal',
+	'pfunc_expr_preg_match_failure'         => 'Fout in uitdrukking: onverwagte faling van preg_match',
+	'pfunc_expr_unrecognised_word'          => 'Fout in uitdrukking: woord "$1" nie herken',
+	'pfunc_expr_unexpected_operator'        => 'Fout in uitdrukking: onverwagte operateur $1',
+	'pfunc_expr_missing_operand'            => 'Fout in uitdrukking: geen operand vir $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Fout in uitdrukking: hakkie onverwags gesluit',
+	'pfunc_expr_unrecognised_punctuation'   => 'Fout in uitdrukking: onbekende leesteken "$1"',
+	'pfunc_expr_unclosed_bracket'           => 'Fout in uitdrukking: hakkie nie gesluit nie',
+	'pfunc_expr_division_by_zero'           => 'Deling deur nul',
+	'pfunc_expr_invalid_argument'           => 'Ongeldige argument vir $1: < -1 of > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Ongeldige argument vir ln: <= 0',
+	'pfunc_expr_unknown_error'              => 'Fout in uitdrukking: onbekende fout ($1)',
+	'pfunc_expr_not_a_number'               => "In $1: resultaat is nie 'n getal nie",
 );
 
 /** Aragonese (Aragonés)
@@ -1099,6 +1109,28 @@ $messages['pt'] = array(
 	'pfunc_expr_invalid_argument_ln'        => 'Argumento inválido para ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Erro de expressão: Erro desconhecido ($1)',
 	'pfunc_expr_not_a_number'               => 'Em $1: resultado não é um número',
+);
+
+/** Romanian (Română)
+ * @author KlaudiuMihaila
+ */
+$messages['ro'] = array(
+	'pfunc_time_error'                      => 'Eroare: timp incorect',
+	'pfunc_time_too_long'                   => 'Eroare: prea multe apeluri #time',
+	'pfunc_rel2abs_invalid_depth'           => 'Eroare: adâncime incorectă în cale: "$1" (încercat accesarea unui nod deasupra nodului rădăcină)',
+	'pfunc_expr_unexpected_number'          => 'Eroare de expresie: număr neaşteptat',
+	'pfunc_expr_preg_match_failure'         => 'Eroare de expresie: eşuare preg_match neaşteptată',
+	'pfunc_expr_unrecognised_word'          => 'Eroare de expresie: "$1" este cuvânt necunoscut',
+	'pfunc_expr_unexpected_operator'        => 'Eroare de expresie: operator $1 neaşteptat',
+	'pfunc_expr_missing_operand'            => 'Eroare de expresie: operand lipsă pentru $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Eroare de expresie: paranteză închisă neaşteptată',
+	'pfunc_expr_unrecognised_punctuation'   => 'Eroare de expresie: caracter de punctuaţie "$1" necunoscut',
+	'pfunc_expr_unclosed_bracket'           => 'Eroare de expresie: paranteză neînchisă',
+	'pfunc_expr_division_by_zero'           => 'Împărţire la zero',
+	'pfunc_expr_invalid_argument'           => 'Argument incorect pentru $1: < -1 sau > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'Argument incorect pentru ln: <= 0',
+	'pfunc_expr_unknown_error'              => 'Eroare de expresie: eroare necunoscută ($1)',
+	'pfunc_expr_not_a_number'               => 'În $1: rezultatul nu este un număr',
 );
 
 /** Russian (Русский)
