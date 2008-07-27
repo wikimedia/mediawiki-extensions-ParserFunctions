@@ -81,7 +81,7 @@ $messages['an'] = array(
  * @author Siebrand
  */
 $messages['ar'] = array(
-	'pfunc_desc'                            => 'بارسر ممدد بدوال منطقية',
+	'pfunc_desc'                            => 'محلل ممدد بدوال منطقية',
 	'pfunc_time_error'                      => 'خطأ: زمن غير صحيح',
 	'pfunc_time_too_long'                   => 'خطأ: too many #time calls',
 	'pfunc_rel2abs_invalid_depth'           => 'خطأ: عمق غير صحيح في المسار: "$1" (حاول دخول عقدة فوق العقدة الجذرية)',
@@ -202,6 +202,7 @@ $messages['bn'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'এক্সপ্রেশন ত্রুটি: অপরিচিত বিরামচিহ্ন ক্যারেক্টার "$1"',
 	'pfunc_expr_unclosed_bracket'           => 'এক্সপ্রেশন ত্রুটি: উন্মুক্ত বন্ধনী',
 	'pfunc_expr_division_by_zero'           => 'শূন্য দ্বারা ভাগ করা হয়েছে',
+	'pfunc_expr_invalid_argument'           => '$1 এর জন্য ভুল শর্ত: < -1 অথবা > 1',
 	'pfunc_expr_unknown_error'              => 'এক্সপ্রেশন ত্রুটি: অজানা ত্রুটি ($1)',
 	'pfunc_expr_not_a_number'               => '$1: এ ফলাফল কোন সংখ্যা নয়',
 );
