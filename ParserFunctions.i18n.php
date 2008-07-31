@@ -924,6 +924,7 @@ $messages['ms'] = array(
  * @author Slomox
  */
 $messages['nds'] = array(
+	'pfunc_desc'                            => 'Beriekert den Parser mit logische Funkschonen',
 	'pfunc_time_error'                      => 'Fehler: mit de Tiet stimmt wat nich',
 	'pfunc_time_too_long'                   => 'Fehler: #time warrt to faken opropen',
 	'pfunc_rel2abs_invalid_depth'           => 'Fehler: Mit den Padd „$1“ stimmt wat nich, liggt nich ünner den Wuddelorner',
