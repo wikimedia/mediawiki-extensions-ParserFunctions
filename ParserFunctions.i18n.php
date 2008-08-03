@@ -396,6 +396,7 @@ $messages['fa'] = array(
 
 /** Finnish (Suomi)
  * @author Nike
+ * @author Agony
  */
 $messages['fi'] = array(
 	'pfunc_desc'                            => 'Laajentaa jäsennintä loogisilla funktiolla.',
@@ -411,7 +412,9 @@ $messages['fi'] = array(
 	'pfunc_expr_unrecognised_punctuation'   => 'Virhe lausekkeessa: tunnistamaton välimerkki ”$1”',
 	'pfunc_expr_unclosed_bracket'           => 'Virhe ilmauksessa: sulkeva sulkumerkki puuttuu',
 	'pfunc_expr_division_by_zero'           => 'Virhe: Jako nollalla',
+	'pfunc_expr_invalid_argument'           => 'Virheellinen muuttuja $1: < -1 tai > 1',
 	'pfunc_expr_unknown_error'              => 'Virhe lausekkeessa: tuntematon virhe ($1)',
+	'pfunc_expr_not_a_number'               => 'Lausekkeessa $1: tulos ei ole luku',
 );
 
 /** French (Français)
