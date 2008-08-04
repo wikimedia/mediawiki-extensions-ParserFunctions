@@ -101,6 +101,13 @@ $messages['ar'] = array(
 	'pfunc_expr_not_a_number'               => 'في $1: النتيجة ليست رقما',
 );
 
+/** Egyptian Spoken Arabic (مصرى)
+ * @author Ghaly
+ */
+$messages['arz'] = array(
+	'pfunc_expr_not_a_number' => 'فى $1: النتيجه مش رقم',
+);
+
 /** Assamese (অসমীয়া)
  * @author Rajuonline
  */
