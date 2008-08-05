@@ -105,7 +105,9 @@ $messages['ar'] = array(
  * @author Ghaly
  */
 $messages['arz'] = array(
-	'pfunc_expr_not_a_number' => 'فى $1: النتيجه مش رقم',
+	'pfunc_time_error'            => 'غلطه:وقت مش صحيح',
+	'pfunc_expr_division_by_zero' => 'القسمه على صفر',
+	'pfunc_expr_not_a_number'     => 'فى $1: النتيجه مش رقم',
 );
 
 /** Assamese (অসমীয়া)
@@ -210,6 +212,7 @@ $messages['bn'] = array(
 	'pfunc_expr_unclosed_bracket'           => 'এক্সপ্রেশন ত্রুটি: উন্মুক্ত বন্ধনী',
 	'pfunc_expr_division_by_zero'           => 'শূন্য দ্বারা ভাগ করা হয়েছে',
 	'pfunc_expr_invalid_argument'           => '$1 এর জন্য ভুল শর্ত: < -1 অথবা > 1',
+	'pfunc_expr_invalid_argument_ln'        => 'ln এর জন্য অসিদ্ধ শর্ত: <= 0',
 	'pfunc_expr_unknown_error'              => 'এক্সপ্রেশন ত্রুটি: অজানা ত্রুটি ($1)',
 	'pfunc_expr_not_a_number'               => '$1: এ ফলাফল কোন সংখ্যা নয়',
 );
