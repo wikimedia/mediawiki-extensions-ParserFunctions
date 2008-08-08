@@ -121,6 +121,7 @@ $messages['as'] = array(
  * @author Esbardu
  */
 $messages['ast'] = array(
+	'pfunc_desc'                            => "Ameyora l'análisis sintáuticu con funciones llóxiques",
 	'pfunc_time_error'                      => 'Error: tiempu non válidu',
 	'pfunc_time_too_long'                   => 'Error: demasiaes llamaes #time',
 	'pfunc_rel2abs_invalid_depth'           => 'Error: Nivel de subdireutoriu non válidu: "$1" (intentu d\'accesu penriba del direutoriu raíz)',
