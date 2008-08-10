@@ -29,6 +29,7 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Jon Harald Søby
  * @author Meno25
  */
 $messages['qqq'] = array(
@@ -301,7 +302,7 @@ $messages['cs'] = array(
 );
 
 /** Danish (Dansk)
- * @author Morten
+ * @author Morten LJ
  */
 $messages['da'] = array(
 	'pfunc_desc' => 'Udvidet parser med logiske funktioner',
