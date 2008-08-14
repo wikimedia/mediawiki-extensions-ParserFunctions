@@ -833,6 +833,30 @@ $messages['ko'] = array(
 	'pfunc_expr_unknown_error' => '표현 오류: 알려지지 않은 오류 ($1)',
 );
 
+/** Ripoarisch (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'pfunc_desc' => 'Deit em Wiki Funxione för Entscheidunge un esu dobei.',
+	'pfunc_time_error' => 'Fähler: Onjöltijje Zick.',
+	'pfunc_time_too_long' => 'Fähler: <code>#time</code> weed zo öff jebruch.',
+	'pfunc_rel2abs_invalid_depth' => 'Fähler: Zo fill „retuur“ em Pad „$1“ — mer wöre för der Aanfang zeröck jejange.',
+	'pfunc_expr_stack_exhausted' => 'Fähler en enem Ußdrock: Dä löht der <i lang="en">stack</i> övverloufe.',
+	'pfunc_expr_unexpected_number' => 'Fähler en enem Ußdrock: En Zahl dom_mer nit äwaade.',
+	'pfunc_expr_preg_match_failure' => 'Fähler en enem Ußdrock: Esu ene Fähler en „<i lang="en">preg_match</i>“ dum_mer nit äwade.',
+	'pfunc_expr_unrecognised_word' => 'Fähler en enem Ußdrock: Dat Woot „$1“ es unbikannt.',
+	'pfunc_expr_unexpected_operator' => 'Fähler en enem Ußdrock: Dat Räschezeiche „$1“ dom_mer hee nit äwaade.',
+	'pfunc_expr_missing_operand' => 'Fähler en enem Ußdrock: För dat Räschezeiche „$1“ dom_mer ävver ene Operand äwaade.',
+	'pfunc_expr_unexpected_closing_bracket' => 'Fähler en enem Ußdrock: En eckijje Klammer-Zoh dom_mer esu nit äwaade.',
+	'pfunc_expr_unrecognised_punctuation' => 'Fähler en enem Ußdrock: Dat Satzzeiche „$1“ dom_mer esu nit äwaade.',
+	'pfunc_expr_unclosed_bracket' => 'Fähler en enem Ußdrock: Do fählt en eckijje Klammer-Zoh.',
+	'pfunc_expr_division_by_zero' => 'Fähler en enem Ußdrock: Dorsch Noll jedeilt.',
+	'pfunc_expr_invalid_argument' => 'Fähler: Dä Parrameeter för <code>$1</code> moß -1 udder 1 sin, udder dozwesche lijje.',
+	'pfunc_expr_invalid_argument_ln' => 'Fähler: Dä Parrameeter för <code>ln</code> moß 0 udder kleiner wi 0 sin.',
+	'pfunc_expr_unknown_error' => 'Fähler en enem Ußdrock: Unbikannt ($1)',
+	'pfunc_expr_not_a_number' => 'Fähler en enem Ußdrock: En <code>$1</code> es dat wat erus kütt kein Zahl.',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
