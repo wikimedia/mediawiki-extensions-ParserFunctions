@@ -560,7 +560,7 @@ $messages['hi'] = array(
  * @author SpeedyGonsales
  */
 $messages['hr'] = array(
-	'pfunc_desc' => 'Proširite parser logičkim funkcijama',
+	'pfunc_desc' => 'Mogućnost proširivanja parsera logičkim funkcijama',
 	'pfunc_time_error' => 'Greška: oblik vremena nije valjan',
 	'pfunc_time_too_long' => 'Greška: prevelik broj #time (vremenskih) poziva',
 	'pfunc_rel2abs_invalid_depth' => 'Greška: Nevaljana dubina putanje: "$1" (pokušaj pristupanja čvoru iznad korijenskog)',
