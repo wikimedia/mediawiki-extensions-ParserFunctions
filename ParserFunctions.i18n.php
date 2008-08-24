@@ -418,6 +418,7 @@ $messages['fi'] = array(
 	'pfunc_desc' => 'Laajentaa jäsennintä loogisilla funktiolla.',
 	'pfunc_time_error' => 'Virhe: kelvoton aika',
 	'pfunc_time_too_long' => 'Virhe: liian monta #time-kutsua',
+	'pfunc_rel2abs_invalid_depth' => 'Virhe: Virheellinen syvyys polussa: $1 (ei juurisolmun sisällä)',
 	'pfunc_expr_stack_exhausted' => 'Virhe lausekkeessa: pino loppui',
 	'pfunc_expr_unexpected_number' => 'Virhe lausekkeessa: odottamaton numero',
 	'pfunc_expr_preg_match_failure' => 'Virhe lausekkeessa: <tt>preg_match</tt> palautti virheen',
@@ -428,7 +429,8 @@ $messages['fi'] = array(
 	'pfunc_expr_unrecognised_punctuation' => 'Virhe lausekkeessa: tunnistamaton välimerkki ”$1”',
 	'pfunc_expr_unclosed_bracket' => 'Virhe ilmauksessa: sulkeva sulkumerkki puuttuu',
 	'pfunc_expr_division_by_zero' => 'Virhe: Jako nollalla',
-	'pfunc_expr_invalid_argument' => 'Virheellinen muuttuja $1: < -1 tai > 1',
+	'pfunc_expr_invalid_argument' => 'Virheellinen arvo $1: < -1 tai > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Virheellinen arvo funktiolle ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Virhe lausekkeessa: tuntematon virhe ($1)',
 	'pfunc_expr_not_a_number' => 'Lausekkeessa $1: tulos ei ole luku',
 );
