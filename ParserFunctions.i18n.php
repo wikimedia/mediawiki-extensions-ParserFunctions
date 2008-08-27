@@ -379,6 +379,27 @@ $messages['eo'] = array(
 	'pfunc_expr_not_a_number' => 'En $1: rezulto ne estas nombro',
 );
 
+/** Spanish (Español)
+ * @author Muro de Aguas
+ */
+$messages['es'] = array(
+	'pfunc_desc' => 'Mejora el analizador lógico con funciones.',
+	'pfunc_time_error' => 'Error con la expresión: Tiempo no válido',
+	'pfunc_time_too_long' => 'Error con la expresión: se están utilizando demasiados "#time"',
+	'pfunc_expr_unexpected_number' => 'Error con la expresión: Número no esperado',
+	'pfunc_expr_unrecognised_word' => 'Error con la expresión: La palabra "$1" no se reconoce',
+	'pfunc_expr_unexpected_operator' => 'Error con la expresión: Operador $1 no esperado',
+	'pfunc_expr_missing_operand' => 'Error con la expresión: Falta un operador para $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Error con la expresión: Paréntesis de cierre no esperado',
+	'pfunc_expr_unrecognised_punctuation' => 'Error con la expresión: Carácter de puntuación no reconocido "$1"',
+	'pfunc_expr_unclosed_bracket' => 'Error con la expresión: Paréntesis sin cerrar',
+	'pfunc_expr_division_by_zero' => 'División entre cero',
+	'pfunc_expr_invalid_argument' => 'Argumento incorrecto para $1: < -1 ó > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Argumento incorrecto para ln: <= 0',
+	'pfunc_expr_unknown_error' => 'Error con la expresión: Error desconocido ($1)',
+	'pfunc_expr_not_a_number' => 'En $1: el resultado no es un número',
+);
+
 /** Basque (Euskara) */
 $messages['eu'] = array(
 	'pfunc_time_error' => 'Errorea: baliogabeko ordua',
