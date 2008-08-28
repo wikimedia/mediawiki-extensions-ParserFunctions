@@ -733,6 +733,7 @@ $messages['it'] = array(
 );
 
 /** Japanese (日本語)
+ * @author Aotake
  * @author JtFuruhata
  */
 $messages['ja'] = array(
@@ -750,6 +751,8 @@ $messages['ja'] = array(
 	'pfunc_expr_unrecognised_punctuation' => '構文エラー: 認識できない区切り文字 "$1" があります',
 	'pfunc_expr_unclosed_bracket' => '構文エラー: 括弧が閉じられていません',
 	'pfunc_expr_division_by_zero' => '0で除算しました',
+	'pfunc_expr_invalid_argument' => '$1の引数が無効です: < -1 または > 1',
+	'pfunc_expr_invalid_argument_ln' => 'ln の引数が無効です: <= 0',
 	'pfunc_expr_unknown_error' => '構文エラー: 予期せぬエラー（$1）',
 	'pfunc_expr_not_a_number' => '$1: 結果が数字ではありません',
 );
