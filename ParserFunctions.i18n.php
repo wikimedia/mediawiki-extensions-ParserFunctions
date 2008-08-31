@@ -114,6 +114,7 @@ $messages['ar'] = array(
  */
 $messages['arz'] = array(
 	'pfunc_time_error' => 'غلطه:وقت مش صحيح',
+	'pfunc_time_too_long' => 'غلط: استدعاءات #time كتيرة قوى',
 	'pfunc_expr_division_by_zero' => 'القسمه على صفر',
 	'pfunc_expr_not_a_number' => 'فى $1: النتيجه مش رقم',
 );
