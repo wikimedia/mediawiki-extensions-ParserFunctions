@@ -111,11 +111,27 @@ $messages['ar'] = array(
 
 /** Egyptian Spoken Arabic (مصرى)
  * @author Ghaly
+ * @author Meno25
+ * @author Ramsis II
  */
 $messages['arz'] = array(
+	'pfunc_desc' => 'محلل متدعم ب دوال منطقية',
 	'pfunc_time_error' => 'غلطه:وقت مش صحيح',
 	'pfunc_time_too_long' => 'غلط: استدعاءات #time كتيرة قوى',
+	'pfunc_rel2abs_invalid_depth' => 'غلط: عمق مش صحيح فى المسار: "$1" (حاول دخول عقدة فوق العقدة الجزرية)',
+	'pfunc_expr_stack_exhausted' => 'غلط فى التعبير: ستاك مجهد',
+	'pfunc_expr_unexpected_number' => 'غلط فى التعبير: رقم مش متوقع',
+	'pfunc_expr_preg_match_failure' => 'غلط تعبيري: فشل مش متوقع فى preg_match',
+	'pfunc_expr_unrecognised_word' => 'غلط تعبيري: كلمة مش متعرف عليها "$1"',
+	'pfunc_expr_unexpected_operator' => 'غلط تعبيري: عامل $1 مش متوقع',
+	'pfunc_expr_missing_operand' => 'غلط تعبيري: operand بتاع $1 ضايع',
+	'pfunc_expr_unexpected_closing_bracket' => 'غلط تعبيري:قوس قفل مش متوقع',
+	'pfunc_expr_unrecognised_punctuation' => 'غلط تعبيري:علامة الترقيم "$1" مش متعرف عليها',
+	'pfunc_expr_unclosed_bracket' => 'غلط تعبيري:قوس مش مقفول',
 	'pfunc_expr_division_by_zero' => 'القسمه على صفر',
+	'pfunc_expr_invalid_argument' => 'مدخلة مش صحيحة لـ $1: < -1 or > 1',
+	'pfunc_expr_invalid_argument_ln' => 'مدخلة مش صحيحة لـ ln: <= 0',
+	'pfunc_expr_unknown_error' => '($1)غلط تعبيري: غلط مش معروف',
 	'pfunc_expr_not_a_number' => 'فى $1: النتيجه مش رقم',
 );
 
@@ -986,6 +1002,13 @@ $messages['ms'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argumen bagi ln tidak sah: <= 0',
 	'pfunc_expr_unknown_error' => 'Ralat ungkapan: Ralat tidak diketahui ($1)',
 	'pfunc_expr_not_a_number' => 'Dalam $1: hasil bukan nombor',
+);
+
+/** Erzya (Эрзянь)
+ * @author Botuzhaleny-sodamo
+ */
+$messages['myv'] = array(
+	'pfunc_time_error' => 'Ильведевксэсь: амаштовикс шкась',
 );
 
 /** Low German (Plattdüütsch)
