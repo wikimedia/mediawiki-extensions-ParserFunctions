@@ -207,6 +207,7 @@ $messages['bg'] = array(
 	'pfunc_time_too_long' => 'Грешка: Твърде много извиквания на #time',
 	'pfunc_expr_stack_exhausted' => 'Грешка в записа: Стекът е изчерпан',
 	'pfunc_expr_unexpected_number' => 'Грешка в записа: Неочаквано число',
+	'pfunc_expr_preg_match_failure' => 'Грешка в израза: Неочакван проблем с preg_match',
 	'pfunc_expr_unrecognised_word' => 'Грешка в записа: Неразпозната дума "$1"',
 	'pfunc_expr_unexpected_operator' => 'Грешка в записа: Неочакван оператор $1',
 	'pfunc_expr_missing_operand' => 'Грешка в записа: Липсващ операнд в $1',
@@ -214,6 +215,8 @@ $messages['bg'] = array(
 	'pfunc_expr_unrecognised_punctuation' => 'Грешка в записа: Неразпознат пунктуационен знак "$1"',
 	'pfunc_expr_unclosed_bracket' => 'Грешка в записа: Незатворена скоба',
 	'pfunc_expr_division_by_zero' => 'Деление на нула',
+	'pfunc_expr_invalid_argument' => 'Невалиден аргумент за $1: < -1 или > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Невалиден аргумент за ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Грешка в записа: Неразпозната грешка ($1)',
 	'pfunc_expr_not_a_number' => 'В $1: резултатът не е число',
 );
