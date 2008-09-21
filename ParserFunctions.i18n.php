@@ -945,6 +945,30 @@ $messages['li'] = array(
 	'pfunc_expr_not_a_number' => 'In $1: rezultaot is gein getal',
 );
 
+/** Macedonian (Македонски)
+ * @author Brest
+ */
+$messages['mk'] = array(
+	'pfunc_desc' => 'Проширување на парсерот со логички функции',
+	'pfunc_time_error' => 'Грешка: погрешен фомат за време',
+	'pfunc_time_too_long' => 'Грешка: премногу #time повикувања',
+	'pfunc_rel2abs_invalid_depth' => 'Грешка: Невалидна длабочина во патеката: "$1" (обид за пристап до чвор над root чворот)',
+	'pfunc_expr_stack_exhausted' => 'Грешка во изразот: Стекот е преполн',
+	'pfunc_expr_unexpected_number' => 'Грешка во изразот: Неочекуван број',
+	'pfunc_expr_preg_match_failure' => 'Грешка во изразот: Неочекувана preg_match грешка',
+	'pfunc_expr_unrecognised_word' => 'Грешка во изразот: Непознат збор "$1"',
+	'pfunc_expr_unexpected_operator' => 'Грешка во изразот: Неочекуван $1 оператор',
+	'pfunc_expr_missing_operand' => 'Грешка во изразот: Недостасува оперант за $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Грешка во изразот: Неочекувано затворање на заграда',
+	'pfunc_expr_unrecognised_punctuation' => 'Грешка во изразот: Непознат пункциски знак "$1"',
+	'pfunc_expr_unclosed_bracket' => 'Грешка во изразот: Незатворена заграда',
+	'pfunc_expr_division_by_zero' => 'Делење со нула',
+	'pfunc_expr_invalid_argument' => 'Невалиден аргумент за $1: < -1 или > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Невалиден аргумент за ln: <= 0',
+	'pfunc_expr_unknown_error' => 'Грешка во изразот: Непозната грешка ($1)',
+	'pfunc_expr_not_a_number' => 'Во $1: резултатот не е број',
+);
+
 /** Malayalam (മലയാളം)
  * @author Shijualex
  */
