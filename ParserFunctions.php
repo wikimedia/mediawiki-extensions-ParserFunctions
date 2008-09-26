@@ -361,9 +361,11 @@ class ExtParserFunctions {
 				if ( !$this->incrementIfexistCount( $parser, $frame ) ) {
 					return $else;
 				}
-				if ( $lc->getGoodLinkID( $pdbk ) ) {
+				if ( 0 != ( $id = $lc->getGoodLinkID( $pdbk ) ) ) {
+					$parser->mOutput->addLink( $title, $id );
 					return $then;
 				} elseif ( $lc->isBadLink( $pdbk ) ) {
+					$parser->mOutput->addLink( $title, 0 );
 					return $else;
 				}
 				$id = $title->getArticleID();
