@@ -1009,6 +1009,7 @@ $messages['mr'] = array(
 
 /** Malay (Bahasa Melayu)
  * @author Aviator
+ * @author Kurniasan
  */
 $messages['ms'] = array(
 	'pfunc_desc' => 'Meningkatkan penghurai dengan fungsi-fungsi logik',
@@ -1021,7 +1022,7 @@ $messages['ms'] = array(
 	'pfunc_expr_unrecognised_word' => 'Ralat ungkapan: Perkataan "$1" tidak dikenali',
 	'pfunc_expr_unexpected_operator' => 'Ralat ungkapan: Pengendali $1 tidak dijangka',
 	'pfunc_expr_missing_operand' => 'Ralat ungkapan: Kendalian bagi $1 tiada',
-	'pfunc_expr_unexpected_closing_bracket' => 'Ralat ungkapan: Tanda kurung penutup tidak dijangka',
+	'pfunc_expr_unexpected_closing_bracket' => 'Ralat ungkapan: Penutup kurungan tidak dijangka',
 	'pfunc_expr_unrecognised_punctuation' => 'Ralat ungkapan: Aksara tanda baca "$1" tidak dikenali',
 	'pfunc_expr_unclosed_bracket' => 'Ralat ungkapan: Tanda kurung tidak ditutup',
 	'pfunc_expr_division_by_zero' => 'Pembahagian dengan sifar',
