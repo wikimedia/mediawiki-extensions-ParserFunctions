@@ -133,7 +133,7 @@ class ExtParserFunctions {
 	}
 
 	function iferror( &$parser, $test = '', $then = '', $else = false ) {
-		if ( preg_match( '/<(strong|span|p|div)\s[^>]*?class="error"/', $test ) ) {
+		if ( preg_match( '/<(?:strong|span|p|div)\s(?:[^\s>]*\s+)*?class="(?:[^"\s>]*\s+)*?error(?:\s[^">]*)?"/', $test ) ) {
 			return $then;
 		} elseif ( $else === false ) {
 			return $test;
