@@ -17,6 +17,8 @@ $wgExtensionCredits['parserhook'][] = array(
 $wgExtensionMessagesFiles['ParserFunctions'] = dirname(__FILE__) . '/ParserFunctions.i18n.php';
 $wgHooks['LanguageGetMagic'][]       = 'wfParserFunctionsLanguageGetMagic';
 
+$wgParserTestFiles[] = dirname( __FILE__ ) . "/funcsParserTests.txt";
+
 class ExtParserFunctions {
 	var $mExprParser;
 	var $mTimeCache = array();
@@ -396,21 +398,43 @@ class ExtParserFunctions {
 		if ( isset( $this->mTimeCache[$format][$date][$local] ) ) {
 			return $this->mTimeCache[$format][$date][$local];
 		}
-
-		if ( $date !== '' ) {
-			$unix = @strtotime( $date );
-		} else {
-			$unix = time();
-		}
-
-		if ( $unix == -1 || $unix == false ) {
-			wfLoadExtensionMessages( 'ParserFunctions' );
-			$result = '<strong class="error">' . wfMsgForContent( 'pfunc_time_error' ) . '</strong>';
-		} else {
-			$this->mTimeChars += strlen( $format );
-			if ( $this->mTimeChars > $this->mMaxTimeChars ) {
-				wfLoadExtensionMessages( 'ParserFunctions' );
-				return '<strong class="error">' . wfMsgForContent( 'pfunc_time_too_long' ) . '</strong>';
+		
+		#compute the timestamp string $ts
+		#PHP >= 5.2 can handle dates before 1970 or after 2038 using the DateTime object
+		#PHP < 5.2 is limited to dates between 1970 and 2038
+		
+		$invalidTime = false;
+		
+		if ( class_exists( 'DateTime' ) ) { #PHP >= 5.2
+			try { #the DateTime constructor must be used because it throws exceptions when errors occur, whereas date_create appears to just output a warning that can't really be detected from within the code
+				if ( $date !== '' ) {
+					$dateObject = new DateTime( $date );
+				} else {
+					$dateObject = new DateTime(); #use current date and time
+				}
+				
+				if ( $local ) {
+					if ( isset( $wgLocaltimezone ) ) { #convert to MediaWiki local timezone if set
+						$dateObject->setTimeZone( new DateTimeZone( $wgLocaltimezone ) );
+					} #otherwise leave in PHP default
+				} else {
+					#if local time was not requested, convert to UTC
+					$dateObject->setTimeZone( new DateTimeZone( 'UTC' ) );
+				}
+				
+				$ts = $dateObject->format( 'YmdHis' );
+			} catch (Exception $ex) {
+				$invalidTime = true;
+			}
+		} else { #PHP < 5.2
+			if ( $date !== '' ) {
+				$unix = @strtotime( $date );
+			} else {
+				$unix = time();
+			}
+			
+			if ( $unix == -1 || $unix == false ) {
+				$invalidTime = true;
 			} else {
 				if ( $local ) {
 					# Use the time zone
@@ -427,6 +451,20 @@ class ExtParserFunctions {
 				} else {
 					$ts = wfTimestamp( TS_MW, $unix );
 				}
+			}
+		}
+		
+		#format the timestamp and return the result
+		if ( $invalidTime ) {
+			wfLoadExtensionMessages( 'ParserFunctions' );
+			$result = '<strong class="error">' . wfMsgForContent( 'pfunc_time_error' ) . '</strong>';
+		} else {
+			$this->mTimeChars += strlen( $format );
+			if ( $this->mTimeChars > $this->mMaxTimeChars ) {
+				wfLoadExtensionMessages( 'ParserFunctions' );
+				return '<strong class="error">' . wfMsgForContent( 'pfunc_time_too_long' ) . '</strong>';
+			} else {
+				
 				if ( method_exists( $wgContLang, 'sprintfDate' ) ) {
 					$result = $wgContLang->sprintfDate( $format, $ts );
 				} else {
