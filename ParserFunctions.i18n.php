@@ -478,11 +478,12 @@ $messages['fi'] = array(
 
 /** French (Français)
  * @author Grondin
+ * @author IAlex
  * @author Sherbrooke
  * @author Urhixidur
  */
 $messages['fr'] = array(
-	'pfunc_desc' => 'Augmente le parseur avec des fonctions logiques',
+	'pfunc_desc' => 'Améliore le parseur avec des fonctions logiques',
 	'pfunc_time_error' => 'Erreur : durée invalide',
 	'pfunc_time_too_long' => 'Erreur : <code>#time</code> appelé trop de fois',
 	'pfunc_rel2abs_invalid_depth' => 'Erreur: niveau de répertoire invalide dans le chemin : « $1 » (a essayé d’accéder à un niveau au-dessus du répertoire racine)',
