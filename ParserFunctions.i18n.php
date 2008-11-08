@@ -913,6 +913,7 @@ $messages['lb'] = array(
 	'pfunc_expr_unexpected_number' => 'Expressiouns-Feeler: Onerwarten Zuel',
 	'pfunc_expr_unrecognised_word' => 'Expressiouns-Feeler: Onerkantent Wuert "$1"',
 	'pfunc_expr_unexpected_closing_bracket' => 'Expressiouns-Feeler: Onerwarte Klammer déi zougemaach gëtt',
+	'pfunc_expr_unrecognised_punctuation' => 'Expressiouns-Feeler: D\'Satzzeechen "$1" gouf net erkannt',
 	'pfunc_expr_unclosed_bracket' => 'Expressiouns-Feeler: Eckeg Klammer net zougemaach',
 	'pfunc_expr_division_by_zero' => 'Divisioun duerch Null',
 	'pfunc_expr_invalid_argument' => 'Ongëlteg Wert fir $1: < -1 oder > 1',
