@@ -205,6 +205,7 @@ $messages['bg'] = array(
 	'pfunc_desc' => 'Подобрвяване на парсера с логически функции',
 	'pfunc_time_error' => 'Грешка: невалидно време',
 	'pfunc_time_too_long' => 'Грешка: Твърде много извиквания на #time',
+	'pfunc_rel2abs_invalid_depth' => 'Грешка: Невалидна дълбочина в път: "$1" (опит за достъп на възел над корена)',
 	'pfunc_expr_stack_exhausted' => 'Грешка в записа: Стекът е изчерпан',
 	'pfunc_expr_unexpected_number' => 'Грешка в записа: Неочаквано число',
 	'pfunc_expr_preg_match_failure' => 'Грешка в израза: Неочакван проблем с preg_match',
