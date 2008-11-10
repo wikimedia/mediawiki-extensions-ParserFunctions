@@ -380,7 +380,7 @@ $messages['el'] = array(
  * @author Yekrats
  */
 $messages['eo'] = array(
-	'pfunc_desc' => 'Etendu sintaksan analizilon kun logikaj funkcioj',
+	'pfunc_desc' => 'Etendi sintaksan analizilon kun logikaj funkcioj',
 	'pfunc_time_error' => 'Eraro: nevalida tempo',
 	'pfunc_time_too_long' => "Eraro: tro da vokoj ''#time''",
 	'pfunc_rel2abs_invalid_depth' => 'Eraro: Nevalida profundo en vojo: "$1" (provis atingi nodon super la radika nodo)',
