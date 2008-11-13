@@ -1100,6 +1100,7 @@ $messages['nl'] = array(
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Eirik
+ * @author Frokor
  */
 $messages['nn'] = array(
 	'pfunc_desc' => 'Legg til logiske funksjonar i parseren.',
@@ -1116,6 +1117,8 @@ $messages['nn'] = array(
 	'pfunc_expr_unrecognised_punctuation' => 'Feil i uttrykket: Ukjent punktumsteikn, «$1»',
 	'pfunc_expr_unclosed_bracket' => 'Feil i uttrykket: Ein parentes er ikkje avslutta',
 	'pfunc_expr_division_by_zero' => 'Divisjon med null',
+	'pfunc_expr_invalid_argument' => 'Ugyldig argument for $1: < -1 eller > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Ugyldig argument for ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Feil i uttrykket: Ukjend feil ($1)',
 	'pfunc_expr_not_a_number' => 'Resultatet i $1 er ikkje eit tal',
 );
