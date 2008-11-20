@@ -271,6 +271,15 @@ $messages['br'] = array(
 	'pfunc_expr_not_a_number' => "E $1: An disoc'h n'eo ket un niver",
 );
 
+/** Bosnian (Bosanski)
+ * @author CERminator
+ */
+$messages['bs'] = array(
+	'pfunc_time_error' => 'Greška: vrijeme nije valjano',
+	'pfunc_time_too_long' => 'Greška: previše poziva funkcije #time',
+	'pfunc_expr_division_by_zero' => 'Dijeljenje s nulom',
+);
+
 /** Catalan (Català)
  * @author Jordi Roqué
  * @author SMP
