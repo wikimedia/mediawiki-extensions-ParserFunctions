@@ -14,10 +14,11 @@ $wgExtensionCredits['parserhook'][] = array(
 	'descriptionmsg' => 'pfunc_desc',
 );
 
-$wgExtensionMessagesFiles['ParserFunctions'] = dirname(__FILE__) . '/ParserFunctions.i18n.php';
+$dir = dirname(__FILE__) . '/';
+$wgExtensionMessagesFiles['ParserFunctions'] = $dir . 'ParserFunctions.i18n.php';
 $wgHooks['LanguageGetMagic'][]       = 'wfParserFunctionsLanguageGetMagic';
 
-$wgParserTestFiles[] = dirname( __FILE__ ) . "/funcsParserTests.txt";
+$wgParserTestFiles[] = $dir . "funcsParserTests.txt";
 
 class ExtParserFunctions {
 	var $mExprParser;
@@ -542,4 +543,3 @@ function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
 		$magicWords[$word] = $trans;
 	return true;
 }
-
