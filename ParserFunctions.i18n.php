@@ -277,6 +277,13 @@ $messages['br'] = array(
 $messages['bs'] = array(
 	'pfunc_time_error' => 'Greška: vrijeme nije valjano',
 	'pfunc_time_too_long' => 'Greška: previše poziva funkcije #time',
+	'pfunc_expr_stack_exhausted' => 'Greška izraza: Stok potrošen',
+	'pfunc_expr_unexpected_number' => 'Greška izraza: Neočekivani broj',
+	'pfunc_expr_unrecognised_word' => 'Greška izraza: Nepoznata riječ "$1"',
+	'pfunc_expr_unexpected_operator' => 'Greška izraza: Neočekivani $1 operator',
+	'pfunc_expr_missing_operand' => 'Greška izraza: Nedostaje operator za $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Greška izraza: Neočekivana zagrada zatvaranja',
+	'pfunc_expr_unclosed_bracket' => 'Greška izraza: Nezatvorena zagrada',
 	'pfunc_expr_division_by_zero' => 'Dijeljenje s nulom',
 );
 
