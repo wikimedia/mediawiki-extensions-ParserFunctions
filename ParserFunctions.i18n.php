@@ -659,6 +659,8 @@ $messages['hsb'] = array(
 	'pfunc_expr_unrecognised_punctuation' => 'Wurazowy zmylk: Njespóznate interpunkciske znamješko "$1"',
 	'pfunc_expr_unclosed_bracket' => 'Wurazowy zmylk: Njewotzamknjena róžkata spinka',
 	'pfunc_expr_division_by_zero' => 'Diwizija přez nulu',
+	'pfunc_expr_invalid_argument' => 'Njepłaćiwy argument za $1: < -1 abo > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Njepłaćiwy argument za ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Wurazowy zmylk: Njeznaty zmylk ($1)',
 	'pfunc_expr_not_a_number' => 'W $1: Wuslědk ličba njeje',
 );
@@ -775,7 +777,7 @@ $messages['it'] = array(
  * @author JtFuruhata
  */
 $messages['ja'] = array(
-	'pfunc_desc' => '論理関数によるパーサー拡張',
+	'pfunc_desc' => 'パーサーに論理関数を追加して拡張する',
 	'pfunc_time_error' => 'エラー: 時刻が不正です',
 	'pfunc_time_too_long' => 'エラー: #time 呼び出しが多すぎます',
 	'pfunc_rel2abs_invalid_depth' => 'エラー: パス "$1" の階層が不正です（ルート階層からのアクセスをお試しください）',
@@ -1320,6 +1322,29 @@ $messages['sah'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'ln аргумена сыыһалаах: <= 0',
 	'pfunc_expr_unknown_error' => 'Expression error (ошибка выражения): Биллибэт алҕас ($1)',
 	'pfunc_expr_not_a_number' => '$1 иһигэр: эппиэтэ чыыһыла буолбатах',
+);
+
+/** Sinhala (සිංහල)
+ * @author නන්දිමිතුරු
+ */
+$messages['si'] = array(
+	'pfunc_desc' => 'තාර්කීක ශ්‍රිතයන් උපයෝගී කරගනිමින් ව්‍යාකරණ විග්‍රහකය වර්ධනය කරන්න',
+	'pfunc_time_error' => 'දෝෂය: අනීතික වේලාව',
+	'pfunc_time_too_long' => 'දෝෂය: වේලා ඇමතුම් # පමණට වැඩිය',
+	'pfunc_rel2abs_invalid_depth' => 'දෝෂය: පෙතෙහි ගැඹුර අනීතිකයි: "$1" (මූල මංසලට ඉහළ මංසලක් ප්‍රවේශනයට උත්සාහ දැරිණි)',
+	'pfunc_expr_stack_exhausted' => 'ප්‍රකාශන දෝෂය: ඇසිරුම හිස්ව පැවතිණි',
+	'pfunc_expr_unexpected_number' => 'ප්‍රකාශන දෝෂය: අනපේක්‍ෂිත සංඛ්‍යාව',
+	'pfunc_expr_unrecognised_word' => 'ප්‍රකාශන දෝෂය: හඳුනානොගත් වදන "$1"',
+	'pfunc_expr_unexpected_operator' => 'ප්‍රකාශන දෝෂය: අනපේක්‍ෂිත $1 මෙහෙයුම්කාරකය',
+	'pfunc_expr_missing_operand' => 'ප්‍රකාශන දෝෂය: $1 සඳහා අස්ථානගත ප්‍රවර්ත්‍යය',
+	'pfunc_expr_unexpected_closing_bracket' => 'ප්‍රකාශන දෝෂය: අනපේක්‍ෂිත වැසීම් වරහන',
+	'pfunc_expr_unrecognised_punctuation' => 'ප්‍රකාශන දෝෂය: හඳුනානොගත් විරාම අක්ෂරය "$1"',
+	'pfunc_expr_unclosed_bracket' => 'ප්‍රකාශන දෝෂය: නොවැසූ වරහන',
+	'pfunc_expr_division_by_zero' => 'ශුන්‍යයෙන් බෙදීම',
+	'pfunc_expr_invalid_argument' => '$1: < -1 හෝ > 1 සඳහා අනීතික විස්තාරකය',
+	'pfunc_expr_invalid_argument_ln' => 'ln: <= 0 සඳහා අනීතික විස්තාරකය',
+	'pfunc_expr_unknown_error' => 'ප්‍රකාශන දෝෂය: අඥාත දෝෂය ($1)',
+	'pfunc_expr_not_a_number' => '$1: හි ප්‍රතිඵලය සංඛ්‍යාවක් නොවේ',
 );
 
 /** Slovak (Slovenčina)
