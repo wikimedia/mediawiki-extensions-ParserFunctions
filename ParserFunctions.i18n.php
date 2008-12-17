@@ -966,6 +966,13 @@ $messages['li'] = array(
 	'pfunc_expr_not_a_number' => 'In $1: rezultaot is gein getal',
 );
 
+/** Lithuanian (Lietuvių)
+ * @author Hugo.arg
+ */
+$messages['lt'] = array(
+	'pfunc_time_error' => 'Klaida: neteisingas laikas',
+);
+
 /** Macedonian (Македонски)
  * @author Brest
  */
