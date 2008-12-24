@@ -494,6 +494,7 @@ $messages['fi'] = array(
 );
 
 /** French (Français)
+ * @author Crochet.david
  * @author Grondin
  * @author IAlex
  * @author Sherbrooke
@@ -507,7 +508,7 @@ $messages['fr'] = array(
 	'pfunc_expr_stack_exhausted' => 'Expression erronée : pile épuisée',
 	'pfunc_expr_unexpected_number' => 'Expression erronée : nombre inattendu',
 	'pfunc_expr_preg_match_failure' => 'Expression erronée : échec inattendu pour <code>preg_match</code>',
-	'pfunc_expr_unrecognised_word' => "Erreur d'expression : le mot '''$1''' n'est pas reconnu",
+	'pfunc_expr_unrecognised_word' => "Erreur d'expression : le mot « $1 » n'est pas reconnu",
 	'pfunc_expr_unexpected_operator' => "Erreur d'expression : l'opérateur '''$1''' n'est pas reconnu",
 	'pfunc_expr_missing_operand' => "Erreur d’expression : l’opérande '''$1''' n’est pas reconnue",
 	'pfunc_expr_unexpected_closing_bracket' => 'Erreur d’expression : parenthèse fermante inattendue',
