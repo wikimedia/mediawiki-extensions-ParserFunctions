@@ -418,12 +418,16 @@ $messages['eo'] = array(
 
 /** Spanish (Español)
  * @author Muro de Aguas
+ * @author Remember the dot
  */
 $messages['es'] = array(
 	'pfunc_desc' => 'Mejora el analizador lógico con funciones.',
 	'pfunc_time_error' => 'Error con la expresión: Tiempo no válido',
 	'pfunc_time_too_long' => 'Error con la expresión: se están utilizando demasiados "#time"',
+	'pfunc_rel2abs_invalid_depth' => 'Error: Profundidad inválido en ruta: «$1» (trataste de acceder un nodo arriba del nodo raíz)',
+	'pfunc_expr_stack_exhausted' => 'Error de expresión: Pila agotada',
 	'pfunc_expr_unexpected_number' => 'Error con la expresión: Número no esperado',
+	'pfunc_expr_preg_match_failure' => 'Error de expresión: Fracaso preg_match no esperado',
 	'pfunc_expr_unrecognised_word' => 'Error con la expresión: La palabra "$1" no se reconoce',
 	'pfunc_expr_unexpected_operator' => 'Error con la expresión: Operador $1 no esperado',
 	'pfunc_expr_missing_operand' => 'Error con la expresión: Falta un operador para $1',
@@ -1330,6 +1334,30 @@ $messages['sah'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'ln аргумена сыыһалаах: <= 0',
 	'pfunc_expr_unknown_error' => 'Expression error (ошибка выражения): Биллибэт алҕас ($1)',
 	'pfunc_expr_not_a_number' => '$1 иһигэр: эппиэтэ чыыһыла буолбатах',
+);
+
+/** Sicilian (Sicilianu)
+ * @author Santu
+ */
+$messages['scn'] = array(
+	'pfunc_desc' => 'Ci junci ô parser na sèrii di funzioni lòggichi',
+	'pfunc_time_error' => 'Sbàgghiu: uràriu nun vàlidu',
+	'pfunc_time_too_long' => 'Sbàgghiu: troppi chiamati a #time',
+	'pfunc_rel2abs_invalid_depth' => 'Sbàgghiu: prufunnità non vàlida ntô pircorsu "$1" (si tintau di tràsiri a nu nodu cchiù supra di la ràdica)',
+	'pfunc_expr_stack_exhausted' => 'Sbàgghiu nti la sprissioni: lu stack finìu',
+	'pfunc_expr_unexpected_number' => 'Sbàgghiu nti la sprissioni: nùmmiru non privistu',
+	'pfunc_expr_preg_match_failure' => "Sbàgghiu nti la sprissioni: sbàgghiu non privistu 'n preg_match",
+	'pfunc_expr_unrecognised_word' => 'Sbàgghiu nti la sprissioni: palora "$1" non canusciuta',
+	'pfunc_expr_unexpected_operator' => 'Sbàgghiu nti la sprissioni: upiraturi $1 non privistu',
+	'pfunc_expr_missing_operand' => 'Sbàgghiu nti la sprissioni: upirandu mancanti pi $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Sbàgghiu nti la sprissioni: parèntisi chiusa non aspittata',
+	'pfunc_expr_unrecognised_punctuation' => 'Sbàgghiu nti la sprissioni: caràttiri di puntiggiatura "$1" non canusciutu',
+	'pfunc_expr_unclosed_bracket' => 'Sbàgghiu nti la sprissioni: parèntisi non chiuruta',
+	'pfunc_expr_division_by_zero' => 'Divisioni pi zeru',
+	'pfunc_expr_invalid_argument' => 'Argumentu non vàlidu pi $1: < -1 o > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Argumentu non vàlidu pi ln: <= 0',
+	'pfunc_expr_unknown_error' => 'Sbàgghiu nti la sprissioni: sbàgghiu scanusciutu ($1)',
+	'pfunc_expr_not_a_number' => 'Nti $1: lu risurtatu nun è nu nùmmiru',
 );
 
 /** Sinhala (සිංහල)
