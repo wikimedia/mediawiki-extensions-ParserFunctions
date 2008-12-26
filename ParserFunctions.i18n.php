@@ -273,18 +273,27 @@ $messages['br'] = array(
 
 /** Bosnian (Bosanski)
  * @author CERminator
+ * @author Seha
  */
 $messages['bs'] = array(
+	'pfunc_desc' => 'Povisi parser sa logičnim funkcijama',
 	'pfunc_time_error' => 'Greška: vrijeme nije valjano',
 	'pfunc_time_too_long' => 'Greška: previše poziva funkcije #time',
+	'pfunc_rel2abs_invalid_depth' => 'Graška: Nevrijedeća dubina u putu: "$1" (pokušaj dolaska na nula tačku iza korijenske nula tačke)',
 	'pfunc_expr_stack_exhausted' => 'Greška izraza: Stok potrošen',
 	'pfunc_expr_unexpected_number' => 'Greška izraza: Neočekivani broj',
+	'pfunc_expr_preg_match_failure' => 'Razvojna greška: Neočekivana greška preg-pogotka',
 	'pfunc_expr_unrecognised_word' => 'Greška izraza: Nepoznata riječ "$1"',
 	'pfunc_expr_unexpected_operator' => 'Greška izraza: Neočekivani $1 operator',
 	'pfunc_expr_missing_operand' => 'Greška izraza: Nedostaje operator za $1',
 	'pfunc_expr_unexpected_closing_bracket' => 'Greška izraza: Neočekivana zagrada zatvaranja',
+	'pfunc_expr_unrecognised_punctuation' => 'Razvojna greška: Nije prepoznat karakter punktacije "$1"',
 	'pfunc_expr_unclosed_bracket' => 'Greška izraza: Nezatvorena zagrada',
 	'pfunc_expr_division_by_zero' => 'Dijeljenje s nulom',
+	'pfunc_expr_invalid_argument' => 'Nevažeći argument za $1: : < -1 ili > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Nevažeći argument za ln: <= 0',
+	'pfunc_expr_unknown_error' => 'Razvojna greška: Nepoznata greška ($1)',
+	'pfunc_expr_not_a_number' => 'u $1: rezultat nije broj',
 );
 
 /** Catalan (Català)
@@ -381,6 +390,30 @@ $messages['de'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Ungültiges Argument für ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Expression-Fehler: Unbekannter Fehler ($1)',
 	'pfunc_expr_not_a_number' => 'Expression-Fehler: In $1: Ergebnis ist keine Zahl',
+);
+
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'pfunc_desc' => 'Rozšyrja parser wó logiske funkcije',
+	'pfunc_time_error' => 'Zmólka: njepłaśiwy cas',
+	'pfunc_time_too_long' => 'Zmólka: pśewjele zawołanjow #time',
+	'pfunc_rel2abs_invalid_depth' => 'Zmólka: Njepłaśiwy dłym w sćažce: "$1" (wopyt na suk pśistup měś, kótaryž jo wušej kórjenjowego suka)',
+	'pfunc_expr_stack_exhausted' => 'Wurazowa zmólka: Stack wupócerany',
+	'pfunc_expr_unexpected_number' => 'Wurazowa zmólka: Njewócakana licba',
+	'pfunc_expr_preg_match_failure' => 'Wurazowa zmólka: Njewócakana zmólkata funkcija preg_match',
+	'pfunc_expr_unrecognised_word' => 'Wurazowa zmólka: Njespóznane słowo "$1"',
+	'pfunc_expr_unexpected_operator' => 'Wurazowa zmólka: Njewócakany opeator $1',
+	'pfunc_expr_missing_operand' => 'Wurazowa zmólka: Felujucy operand za $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Wurazowa zmólka: Njewócakana kóńcajuca rožkata spinka',
+	'pfunc_expr_unrecognised_punctuation' => 'Wurazowa zmólka: Njespóznane interpunkciske znamuško "$1"',
+	'pfunc_expr_unclosed_bracket' => 'Wurazowa zmólka: Žedna kóńcajuca spinka',
+	'pfunc_expr_division_by_zero' => 'Diwizija pśez nul',
+	'pfunc_expr_invalid_argument' => 'Njepłaśiwy argument $1: < -1 abo > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Njepłaśiwy argument za ln: <= 0',
+	'pfunc_expr_unknown_error' => 'Wurazowa zmólka: Njeznata zmólka ($1)',
+	'pfunc_expr_not_a_number' => 'W $1: wuslědk njejo licba',
 );
 
 /** Greek (Ελληνικά)
