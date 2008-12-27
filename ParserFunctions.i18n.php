@@ -1105,6 +1105,13 @@ $messages['myv'] = array(
 	'pfunc_time_error' => 'Ильведевксэсь: амаштовикс шкась',
 );
 
+/** Nahuatl (Nāhuatl)
+ * @author Fluence
+ */
+$messages['nah'] = array(
+	'pfunc_time_error' => 'Ahcuallōtl: ahcualli cāhuitl',
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
