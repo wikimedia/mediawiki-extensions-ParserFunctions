@@ -452,12 +452,13 @@ $messages['eo'] = array(
 /** Spanish (Español)
  * @author Muro de Aguas
  * @author Remember the dot
+ * @author Sanbec
  */
 $messages['es'] = array(
 	'pfunc_desc' => 'Mejora el analizador lógico con funciones.',
 	'pfunc_time_error' => 'Error con la expresión: Tiempo no válido',
 	'pfunc_time_too_long' => 'Error con la expresión: se están utilizando demasiados "#time"',
-	'pfunc_rel2abs_invalid_depth' => 'Error: Profundidad inválido en ruta: «$1» (trataste de acceder un nodo arriba del nodo raíz)',
+	'pfunc_rel2abs_invalid_depth' => 'Error: Profundidad no válida en la ruta: «$1» (trataste de acceder a un nodo por encima de la raíz)',
 	'pfunc_expr_stack_exhausted' => 'Error de expresión: Pila agotada',
 	'pfunc_expr_unexpected_number' => 'Error con la expresión: Número no esperado',
 	'pfunc_expr_preg_match_failure' => 'Error de expresión: Fracaso preg_match no esperado',
