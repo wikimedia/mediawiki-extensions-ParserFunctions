@@ -919,11 +919,13 @@ $messages['kk-latn'] = array(
 
 /** Khmer (ភាសាខ្មែរ)
  * @author Lovekhmer
+ * @author Thearith
  * @author គីមស៊្រុន
  */
 $messages['km'] = array(
 	'pfunc_time_error' => 'កំហុស៖ ពេលវេលាមិនត្រឹមត្រូវ',
 	'pfunc_expr_division_by_zero' => 'ចែកនឹងសូន្យ',
+	'pfunc_expr_not_a_number' => 'ក្នុង $1: លទ្ធផល​មិន​មែន​ជា​លេខ​ទេ',
 );
 
 /** Korean (한국어)
