@@ -192,9 +192,27 @@ $messages['bcc'] = array(
 
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author EugeneZelenko
+ * @author Jim-by
  */
 $messages['be-tarask'] = array(
+	'pfunc_desc' => 'Палепшаны парсэр з лягічнымі функцыямі',
 	'pfunc_time_error' => 'Памылка: няслушны час',
+	'pfunc_time_too_long' => 'Памылка: зашмат выклікаў функцыі #time',
+	'pfunc_rel2abs_invalid_depth' => 'Памылка: Няслушныя глыбіня шляху: «$1» (спроба доступу да вузла, які знаходзіцца вышэй карэннага)',
+	'pfunc_expr_stack_exhausted' => 'Памылка выразу: Стэк перапоўнены',
+	'pfunc_expr_unexpected_number' => 'Памылка выразу: Нечаканая лічба',
+	'pfunc_expr_preg_match_failure' => 'Памылка выразу: Нечаканая памылка preg_match',
+	'pfunc_expr_unrecognised_word' => 'Памылка выразу: Нераспазнанае слова «$1»',
+	'pfunc_expr_unexpected_operator' => 'Памылка выразу: Нечаканы апэратар $1',
+	'pfunc_expr_missing_operand' => 'Памылка выразу: Няма апэранду $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Памылка выразу: Нечаканая закрываючая дужка',
+	'pfunc_expr_unrecognised_punctuation' => 'Памылка выразу: Нераспазнаны сымбаль пунктуацыі «$1»',
+	'pfunc_expr_unclosed_bracket' => 'Памылка выразу: Незакрытая дужка',
+	'pfunc_expr_division_by_zero' => 'Дзяленьне на нуль',
+	'pfunc_expr_invalid_argument' => 'Памылковы аргумэнт для $1: < -1 ці > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Памылковы аргумэнт для ln: <= 0',
+	'pfunc_expr_unknown_error' => 'Памылка выразу: невядомая памылка ($1)',
+	'pfunc_expr_not_a_number' => 'У $1: вынік не зьяўляецца лічбай',
 );
 
 /** Bulgarian (Български)
