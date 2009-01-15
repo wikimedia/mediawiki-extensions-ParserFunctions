@@ -193,21 +193,22 @@ $messages['bcc'] = array(
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author EugeneZelenko
  * @author Jim-by
+ * @author Red Winged Duck
  */
 $messages['be-tarask'] = array(
-	'pfunc_desc' => 'Палепшаны парсэр з лягічнымі функцыямі',
+	'pfunc_desc' => 'Палепшаны парсэр зь лягічнымі функцыямі',
 	'pfunc_time_error' => 'Памылка: няслушны час',
 	'pfunc_time_too_long' => 'Памылка: зашмат выклікаў функцыі #time',
-	'pfunc_rel2abs_invalid_depth' => 'Памылка: Няслушныя глыбіня шляху: «$1» (спроба доступу да вузла, які знаходзіцца вышэй карэннага)',
-	'pfunc_expr_stack_exhausted' => 'Памылка выразу: Стэк перапоўнены',
-	'pfunc_expr_unexpected_number' => 'Памылка выразу: Нечаканая лічба',
-	'pfunc_expr_preg_match_failure' => 'Памылка выразу: Нечаканая памылка preg_match',
-	'pfunc_expr_unrecognised_word' => 'Памылка выразу: Нераспазнанае слова «$1»',
-	'pfunc_expr_unexpected_operator' => 'Памылка выразу: Нечаканы апэратар $1',
-	'pfunc_expr_missing_operand' => 'Памылка выразу: Няма апэранду $1',
-	'pfunc_expr_unexpected_closing_bracket' => 'Памылка выразу: Нечаканая закрываючая дужка',
-	'pfunc_expr_unrecognised_punctuation' => 'Памылка выразу: Нераспазнаны сымбаль пунктуацыі «$1»',
-	'pfunc_expr_unclosed_bracket' => 'Памылка выразу: Незакрытая дужка',
+	'pfunc_rel2abs_invalid_depth' => 'Памылка: няслушная глыбіня шляху: «$1» (спроба доступу да вузла, які знаходзіцца вышэй карэннага)',
+	'pfunc_expr_stack_exhausted' => 'Памылка выразу: стэк перапоўнены',
+	'pfunc_expr_unexpected_number' => 'Памылка выразу: нечаканая лічба',
+	'pfunc_expr_preg_match_failure' => 'Памылка выразу: нечаканая памылка preg_match',
+	'pfunc_expr_unrecognised_word' => 'Памылка выразу: нераспазнанае слова «$1»',
+	'pfunc_expr_unexpected_operator' => 'Памылка выразу: нечаканы апэратар $1',
+	'pfunc_expr_missing_operand' => 'Памылка выразу: няма апэранду $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Памылка выразу: нечаканая закрываючая дужка',
+	'pfunc_expr_unrecognised_punctuation' => 'Памылка выразу: нераспазнаны сымбаль пунктуацыі «$1»',
+	'pfunc_expr_unclosed_bracket' => 'Памылка выразу: незакрытая дужка',
 	'pfunc_expr_division_by_zero' => 'Дзяленьне на нуль',
 	'pfunc_expr_invalid_argument' => 'Памылковы аргумэнт для $1: < -1 ці > 1',
 	'pfunc_expr_invalid_argument_ln' => 'Памылковы аргумэнт для ln: <= 0',
@@ -623,6 +624,30 @@ $messages['gl'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argumento inválido para ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Erro de expresión: erro descoñecido ($1)',
 	'pfunc_expr_not_a_number' => 'En $1: o resultado non é un número',
+);
+
+/** Swiss German (Alemannisch)
+ * @author Als-Holder
+ */
+$messages['gsw'] = array(
+	'pfunc_desc' => 'Erwyteret dr Parser um logischi Funktione',
+	'pfunc_time_error' => 'Fähler: uugiltigi Zytaagab',
+	'pfunc_time_too_long' => 'Fähler: z vyyl #time-Ufruef',
+	'pfunc_rel2abs_invalid_depth' => 'Fähler: uugültigi Tiefi im Pfad: „$1“ (Versuech, uf e Chnotepunkt oberhalb vum Hauptchnotepunkt zuezgryfe)',
+	'pfunc_expr_stack_exhausted' => 'Expression-Fähler: Stackiberlauf',
+	'pfunc_expr_unexpected_number' => 'Expression-Fähler: Nit erwarteti Zahl',
+	'pfunc_expr_preg_match_failure' => 'Expression-Fähler: Nit erwarteti „preg_match“-Fählfunktion',
+	'pfunc_expr_unrecognised_word' => 'Expression-Fähler: Nit erkannt Wort „$1“',
+	'pfunc_expr_unexpected_operator' => 'Expression-Fähler: Nit erwartete Operator: <tt>$1</tt>',
+	'pfunc_expr_missing_operand' => 'Expression-Fähler: Operand fir <tt>$1</tt> fählt',
+	'pfunc_expr_unexpected_closing_bracket' => 'Expression-Fähler: Nit erwarteti schließendi eckigi Chlammere',
+	'pfunc_expr_unrecognised_punctuation' => 'Expression-Fähler: Nit erkannt Satzzeiche „$1“',
+	'pfunc_expr_unclosed_bracket' => 'Expression-Fähler: Nit gschlosseni eckige Chlammere',
+	'pfunc_expr_division_by_zero' => 'Expression-Fähler: Division dur Null',
+	'pfunc_expr_invalid_argument' => 'Nit giltig Argument fir $1: < -1 oder > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Nit giltig Argument fir ln: <= 0',
+	'pfunc_expr_unknown_error' => 'Expression-Fähler: Nit bekannte Fehler ($1)',
+	'pfunc_expr_not_a_number' => 'Expression-Fähler: In $1: Ergebnis isch kei Zahl',
 );
 
 /** Hebrew (עברית) */
@@ -1495,6 +1520,7 @@ $messages['sr-ec'] = array(
  * @author Pyt
  */
 $messages['stq'] = array(
+	'pfunc_desc' => 'Ärwiedert dän Parser uum logiske Funktione',
 	'pfunc_time_error' => 'Failer: uungultige Tiedangoawe',
 	'pfunc_time_too_long' => 'Failer: tou fuul #time-Aproupe',
 	'pfunc_rel2abs_invalid_depth' => 'Failer: uungultige Djüpte in Paad: „$1“ (Fersäik, ap n Knättepunkt buppe dän Haudknättepunkt toutougriepen)',
@@ -1508,6 +1534,8 @@ $messages['stq'] = array(
 	'pfunc_expr_unrecognised_punctuation' => 'Expression-Failer: Nit wierkoand Satsteeken „$1“',
 	'pfunc_expr_unclosed_bracket' => 'Expression-Failer: Nit sleetene kaantige Klammer',
 	'pfunc_expr_division_by_zero' => 'Expression-Failer: Division truch Null',
+	'pfunc_expr_invalid_argument' => 'Uungultich Argument foar $1: < -1 of > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Uungultich Argument foar ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Expression-Failer: Uunbekoanden Failer ($1)',
 	'pfunc_expr_not_a_number' => 'Expression-Failer: In $1: Resultoat is neen Taal',
 );
@@ -1637,6 +1665,30 @@ $messages['tl'] = array(
 	'pfunc_expr_not_a_number' => 'Sa $1: ang kinalabasan ay hindi isang bilang',
 );
 
+/** Turkish (Türkçe)
+ * @author Joseph
+ */
+$messages['tr'] = array(
+	'pfunc_desc' => 'Derleyiciyi mantıksal fonksiyonlarla geliştir',
+	'pfunc_time_error' => 'Hata: geçersiz zaman',
+	'pfunc_time_too_long' => 'Hata: çok fazla #time çağrısı',
+	'pfunc_rel2abs_invalid_depth' => 'Hata: Yolda geçersiz derinlik: "$1" (kök düğümünün üstünde bir düğüme erişmeye çalıştı)',
+	'pfunc_expr_stack_exhausted' => 'İfade hatası: Stack bitti',
+	'pfunc_expr_unexpected_number' => 'İfade hatası: Beklenmeyen sayı',
+	'pfunc_expr_preg_match_failure' => 'İfade hatası: Beklenmedik preg_match arızası',
+	'pfunc_expr_unrecognised_word' => 'İfade hatası: Tanınmayan "$1" kelimesi',
+	'pfunc_expr_unexpected_operator' => 'İfade hatası: Beklenmedik $1 operatörü',
+	'pfunc_expr_missing_operand' => 'İfade hatası: $1 için eksik terim',
+	'pfunc_expr_unexpected_closing_bracket' => 'İfade hatası: Beklenmedik kapa parantez',
+	'pfunc_expr_unrecognised_punctuation' => 'İfade hatası: Tanınmayan noktalama karakteri "$1"',
+	'pfunc_expr_unclosed_bracket' => 'İfade hatası: Kapanmamış parantez',
+	'pfunc_expr_division_by_zero' => 'Sıfır ile bölme',
+	'pfunc_expr_invalid_argument' => '$1 için geçersiz değişken: < -1 ya da > 1',
+	'pfunc_expr_invalid_argument_ln' => 'ln için geçersiz değişken: <= 0',
+	'pfunc_expr_unknown_error' => 'İfade hatası: Bilinmeyen hata ($1)',
+	'pfunc_expr_not_a_number' => "$1'de: sonuç bir sayı değil",
+);
+
 /** Ukrainian (Українська)
  * @author Ahonc
  */
@@ -1716,6 +1768,7 @@ $messages['vi'] = array(
 $messages['vo'] = array(
 	'pfunc_time_error' => 'Pök: tim no lonöföl',
 	'pfunc_expr_division_by_zero' => 'Müedam dub ser',
+	'pfunc_expr_unknown_error' => 'Notidotapöl: pöl nesevädik ($1)',
 	'pfunc_expr_not_a_number' => 'In $1: sek no binon num',
 );
 
