@@ -411,6 +411,13 @@ $messages['de'] = array(
 	'pfunc_expr_not_a_number' => 'Expression-Fehler: In $1: Ergebnis ist keine Zahl',
 );
 
+/** Swiss High German (Schweizer Hochdeutsch)
+ * @author MichaelFrey
+ */
+$messages['de-ch'] = array(
+	'pfunc_expr_unexpected_closing_bracket' => 'Expression-Fehler: Unerwartete schliessende eckige Klammer',
+);
+
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
  */
