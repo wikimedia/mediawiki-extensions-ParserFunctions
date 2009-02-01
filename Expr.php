@@ -46,6 +46,9 @@ define( 'EXPR_CEIL', 34 );
 define( 'EXPR_POW', 35 );
 define( 'EXPR_PI', 36 );
 
+// Tolerance for comparison and integer conversions
+define( 'EXPR_TOLERANCE', 1e-10 );
+
 class ExprError extends Exception {
 	public function __construct($msg, $parameter = ''){
 		wfLoadExtensionMessages( 'ParserFunctions' );
@@ -153,24 +156,39 @@ class ExprParser {
 	);
 
 	/**
-	 * Checks if $expr is an integer within one part in 10^10.
+	 * Tests whether the fractional difference between two numbers
+	 * is within EXPR_TOLERANCE of each other.
+	 */
+	function toleranceComparison( $a, $b ) {
+		if( $b == 0 || $a == 0 ) {
+			if( $a == $b ) {
+				return 0;
+			} elseif( $a > $b ) {
+				return 1;
+			} else {
+				return -1;
+			}
+		}
+	
+		$c = (( $a / $b ) - ( $b / $a )) / 2.0;
+		if( abs( $c ) < EXPR_TOLERANCE ) {
+			return 0;
+		} elseif( $c > 0 ) {
+			return 1;
+		} else {
+			return -1;
+		}
+	}
+
+	/**
+	 * Checks if $expr is an integer within EXPR_TOLERANCE
 	 * If so, recast as integer and return, else return $expr unchanged.
-	 *
-	 * Explicit checking for round-off errors should eliminate 
-	 * many bugs associated with floating point conversion to integers.
 	 */
 	function checkInteger( $expr ) {
-		$intval = (int)$expr;
-
-		if( $expr >= 0 ) {
-			if( $expr - $intval > 0.9999999999 ) { $intval += 1; }
-		} else {
-			if( $expr - $intval < -0.9999999999 ) { $intval -= 1; }
-		}
-
-		if( abs( $intval - $expr ) < 0.0000000001 ) {
+		$intval = round($expr);
+		if( toleranceComparison( $expr, $intval ) == 0 ) {
 			return $intval;
-		} else { 
+		} else {
 			return $expr;
 		}
 	}
@@ -453,7 +471,7 @@ class ExprParser {
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $this->checkInteger( $left ) == $this->checkInteger( $right ) ) ? 1 : 0;
+				$stack[] = ( $this->toleranceComparison( $left, $right ) == 0 ) ? 1 : 0;
 				break;
 			case EXPR_NOT:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
@@ -464,37 +482,37 @@ class ExprParser {
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$digits = intval( array_pop( $stack ) );
 				$value = array_pop( $stack );
-				$stack[] = round( $this->checkInteger( $value ), $digits );
+				$stack[] = round( $value, $digits );
 				break;
 			case EXPR_LESS:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $this->checkInteger( $left ) < $this->checkInteger( $right ) ) ? 1 : 0;
+				$stack[] = ( $this->toleranceComparison( $left, $right ) < 0 ) ? 1 : 0;
 				break;
 			case EXPR_GREATER:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $this->checkInteger( $left ) > $this->checkInteger( $right ) ) ? 1 : 0;
+				$stack[] = ( $this->toleranceComparison( $left, $right ) > 0 ) ? 1 : 0;
 				break;
 			case EXPR_LESSEQ:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $this->checkInteger( $left ) <= $this->checkInteger( $right ) ) ? 1 : 0;
+				$stack[] = ( $this->toleranceComparison( $left, $right ) <= 0 ) ? 1 : 0;
 				break;
 			case EXPR_GREATEREQ:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $this->checkInteger( $left ) >= $this->checkInteger( $right ) ) ? 1 : 0;
+				$stack[] = ( $this->toleranceComparison( $left, $right ) >= 0 ) ? 1 : 0;
 				break;
 			case EXPR_NOTEQ:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $this->checkInteger( $left ) != $this->checkInteger( $right ) ) ? 1 : 0;
+				$stack[] = ( $this->toleranceComparison( $left, $right ) != 0 ) ? 1 : 0;
 				break;
 			case EXPR_EXPONENT:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
