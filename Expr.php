@@ -153,6 +153,29 @@ class ExprParser {
 	);
 
 	/**
+	 * Checks if $expr is an integer within one part in 10^10.
+	 * If so, recast as integer and return, else return $expr unchanged.
+	 *
+	 * Explicit checking for round-off errors should eliminate 
+	 * many bugs associated with floating point conversion to integers.
+	 */
+	function checkInteger( $expr ) {
+		$intval = (int)$expr;
+
+		if( $expr >= 0 ) {
+			if( $expr - $intval > 0.9999999999 ) { $intval += 1; }
+		} else {
+			if( $expr - $intval < -0.9999999999 ) { $intval -= 1; }
+		}
+
+		if( abs( $intval - $expr ) < 0.0000000001 ) {
+			return $intval;
+		} else { 
+			return $expr;
+		}
+	}
+
+	/**
 	 * Evaluate a mathematical expression
 	 *
 	 * The algorithm here is based on the infix to RPN algorithm given in
@@ -400,7 +423,7 @@ class ExprParser {
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				if ( $right == 0 ) throw new ExprError('division_by_zero', $this->names[$op]);
-				$stack[] = $left % $right;
+				$stack[] = $this->checkInteger( $left ) % $this->checkInteger( $right );
 				break;
 			case EXPR_PLUS:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
@@ -430,7 +453,7 @@ class ExprParser {
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $left == $right ) ? 1 : 0;
+				$stack[] = ( $this->checkInteger( $left ) == $this->checkInteger( $right ) ) ? 1 : 0;
 				break;
 			case EXPR_NOT:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
@@ -441,43 +464,43 @@ class ExprParser {
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$digits = intval( array_pop( $stack ) );
 				$value = array_pop( $stack );
-				$stack[] = round( $value, $digits );
+				$stack[] = round( $this->checkInteger( $value ), $digits );
 				break;
 			case EXPR_LESS:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $left < $right ) ? 1 : 0;
+				$stack[] = ( $this->checkInteger( $left ) < $this->checkInteger( $right ) ) ? 1 : 0;
 				break;
 			case EXPR_GREATER:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $left > $right ) ? 1 : 0;
+				$stack[] = ( $this->checkInteger( $left ) > $this->checkInteger( $right ) ) ? 1 : 0;
 				break;
 			case EXPR_LESSEQ:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $left <= $right ) ? 1 : 0;
+				$stack[] = ( $this->checkInteger( $left ) <= $this->checkInteger( $right ) ) ? 1 : 0;
 				break;
 			case EXPR_GREATEREQ:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $left >= $right ) ? 1 : 0;
+				$stack[] = ( $this->checkInteger( $left ) >= $this->checkInteger( $right ) ) ? 1 : 0;
 				break;
 			case EXPR_NOTEQ:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $left != $right ) ? 1 : 0;
+				$stack[] = ( $this->checkInteger( $left ) != $this->checkInteger( $right ) ) ? 1 : 0;
 				break;
 			case EXPR_EXPONENT:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = $left * pow(10,$right);
+				$stack[] = $left * pow(10, $this->checkInteger( $right ) );
 				break;
 			case EXPR_SINE:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
@@ -530,17 +553,17 @@ class ExprParser {
 			case EXPR_FLOOR:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
-				$stack[] = floor($arg);
+				$stack[] = floor( $this->checkInteger( $arg ) );
 				break;
 			case EXPR_TRUNC:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
-				$stack[] = (int)$arg;
+				$stack[] = (int)( $this->checkInteger( $arg ) );
 				break;
 			case EXPR_CEIL:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
-				$stack[] = ceil($arg);
+				$stack[] = ceil( $this->checkInteger( $arg ) );
 				break;
 			case EXPR_POW:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
