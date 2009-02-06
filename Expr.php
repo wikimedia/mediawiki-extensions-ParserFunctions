@@ -186,7 +186,7 @@ class ExprParser {
 	 */
 	function checkInteger( $expr ) {
 		$intval = round($expr);
-		if( toleranceComparison( $expr, $intval ) == 0 ) {
+		if( $this->toleranceComparison( $expr, $intval ) == 0 ) {
 			return $intval;
 		} else {
 			return $expr;
