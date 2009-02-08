@@ -1020,6 +1020,7 @@ $messages['ksh'] = array(
 $messages['lb'] = array(
 	'pfunc_desc' => 'Erweidert Parser mat logesche Fonctiounen',
 	'pfunc_time_error' => 'Feeler: ongëlteg Zäit',
+	'pfunc_time_too_long' => 'Feeler: ze dacks #time opgeruff',
 	'pfunc_expr_unexpected_number' => 'Expressiouns-Feeler: Onerwarten Zuel',
 	'pfunc_expr_unrecognised_word' => 'Expressiouns-Feeler: Onerkantent Wuert "$1"',
 	'pfunc_expr_unexpected_closing_bracket' => 'Expressiouns-Feeler: Onerwarte Klammer déi zougemaach gëtt',
@@ -1804,52 +1805,51 @@ $messages['yue'] = array(
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
- * @author Shinjiman
  * @author Philip
+ * @author Shinjiman
  */
 $messages['zh-hans'] = array(
-	'pfunc_desc'                            => '用逻辑功能去加强分析程序',
-	'pfunc_time_error'                      => '错误：无效时间',
-	'pfunc_time_too_long'                   => '错误：#time调用次数过多',
-	'pfunc_rel2abs_invalid_depth'           => '错误：无效路径深度：“$1”（尝试访问根节点以上节点）',
-	'pfunc_expr_stack_exhausted'            => '表达式错误：堆栈耗尽',
-	'pfunc_expr_unexpected_number'          => '表达式错误：未预料的数字',
-	'pfunc_expr_preg_match_failure'         => '表达式错误：未预料的preg_match失败',
-	'pfunc_expr_unrecognised_word'          => '表达式错误：无法识别的词语“$1”',
-	'pfunc_expr_unexpected_operator'        => '表达式错误：未预料的$1操作符',
-	'pfunc_expr_missing_operand'            => '表达式错误：缺少$1的操作数',
+	'pfunc_desc' => '用逻辑功能去加强分析程序',
+	'pfunc_time_error' => '错误：无效时间',
+	'pfunc_time_too_long' => '错误：#time调用次数过多',
+	'pfunc_rel2abs_invalid_depth' => '错误：无效路径深度：“$1”（尝试访问根节点以上节点）',
+	'pfunc_expr_stack_exhausted' => '表达式错误：堆栈耗尽',
+	'pfunc_expr_unexpected_number' => '表达式错误：未预料的数字',
+	'pfunc_expr_preg_match_failure' => '表达式错误：未预料的preg_match失败',
+	'pfunc_expr_unrecognised_word' => '表达式错误：无法识别的词语“$1”',
+	'pfunc_expr_unexpected_operator' => '表达式错误：未预料的$1操作符',
+	'pfunc_expr_missing_operand' => '表达式错误：缺少$1的操作数',
 	'pfunc_expr_unexpected_closing_bracket' => '表达式错误：未预料的反括号',
-	'pfunc_expr_unrecognised_punctuation'   => '表达式错误：无法识别的标点“$1”',
-	'pfunc_expr_unclosed_bracket'           => '表达式错误：未封闭的括号',
-	'pfunc_expr_division_by_zero'           => '零除',
-	'pfunc_expr_invalid_argument'           => '$1的无效参数：< -1 或 > 1',
-	'pfunc_expr_invalid_argument_ln'        => 'ln的无效参数：<= 0',
-	'pfunc_expr_unknown_error'              => '表达式错误：未知错误（$1）',
-	'pfunc_expr_not_a_number'               => '在$1中：结果不是数字',
+	'pfunc_expr_unrecognised_punctuation' => '表达式错误：无法识别的标点“$1”',
+	'pfunc_expr_unclosed_bracket' => '表达式错误：未封闭的括号',
+	'pfunc_expr_division_by_zero' => '零除',
+	'pfunc_expr_invalid_argument' => '$1的无效参数：< -1 或 > 1',
+	'pfunc_expr_invalid_argument_ln' => 'ln的无效参数：<= 0',
+	'pfunc_expr_unknown_error' => '表达式错误：未知错误（$1）',
+	'pfunc_expr_not_a_number' => '在$1中：结果不是数字',
 );
-
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Shinjiman
  */
 $messages['zh-hant'] = array(
-	'pfunc_desc'                            => '用邏輯功能去加強分析程式',
-	'pfunc_time_error'                      => '錯誤：無效時間',
-	'pfunc_time_too_long'                   => '錯誤：過多的#time呼叫',
-	'pfunc_rel2abs_invalid_depth'           => '錯誤：無效路徑深度：「$1」（嘗試訪問頂點以上節點）',
-	'pfunc_expr_stack_exhausted'            => '表達式錯誤：堆疊耗盡',
-	'pfunc_expr_unexpected_number'          => '表達式錯誤：未預料的數字',
-	'pfunc_expr_preg_match_failure'         => '表達式錯誤：未預料的preg_match失敗',
-	'pfunc_expr_unrecognised_word'          => '表達式錯誤：無法識別的詞語「$1」',
-	'pfunc_expr_unexpected_operator'        => '表達式錯誤：未預料的$1運算子',
-	'pfunc_expr_missing_operand'            => '表達式錯誤：缺少$1的運算元',
+	'pfunc_desc' => '用邏輯功能去加強分析程式',
+	'pfunc_time_error' => '錯誤：無效時間',
+	'pfunc_time_too_long' => '錯誤：過多的#time呼叫',
+	'pfunc_rel2abs_invalid_depth' => '錯誤：無效路徑深度：「$1」（嘗試訪問頂點以上節點）',
+	'pfunc_expr_stack_exhausted' => '表達式錯誤：堆疊耗盡',
+	'pfunc_expr_unexpected_number' => '表達式錯誤：未預料的數字',
+	'pfunc_expr_preg_match_failure' => '表達式錯誤：未預料的preg_match失敗',
+	'pfunc_expr_unrecognised_word' => '表達式錯誤：無法識別的詞語「$1」',
+	'pfunc_expr_unexpected_operator' => '表達式錯誤：未預料的$1運算子',
+	'pfunc_expr_missing_operand' => '表達式錯誤：缺少$1的運算元',
 	'pfunc_expr_unexpected_closing_bracket' => '表達式錯誤：未預料的反括號',
-	'pfunc_expr_unrecognised_punctuation'   => '表達式錯誤：無法識別的標點「$1」',
-	'pfunc_expr_unclosed_bracket'           => '表達式錯誤：未封閉的括號',
-	'pfunc_expr_division_by_zero'           => '零除',
-	'pfunc_expr_invalid_argument'           => '$1的無效參量：< -1 或 > 1',
-	'pfunc_expr_invalid_argument_ln'        => 'ln的無效參量：<= 0',
-	'pfunc_expr_unknown_error'              => '表達式錯誤：未知錯誤（$1）',
-	'pfunc_expr_not_a_number'               => '在$1中：結果不是數字',
+	'pfunc_expr_unrecognised_punctuation' => '表達式錯誤：無法識別的標點「$1」',
+	'pfunc_expr_unclosed_bracket' => '表達式錯誤：未封閉的括號',
+	'pfunc_expr_division_by_zero' => '零除',
+	'pfunc_expr_invalid_argument' => '$1的無效參量：< -1 或 > 1',
+	'pfunc_expr_invalid_argument_ln' => 'ln的無效參量：<= 0',
+	'pfunc_expr_unknown_error' => '表達式錯誤：未知錯誤（$1）',
+	'pfunc_expr_not_a_number' => '在$1中：結果不是數字',
 );
 
