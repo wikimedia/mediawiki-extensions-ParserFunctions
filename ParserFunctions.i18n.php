@@ -1807,7 +1807,7 @@ $messages['yue'] = array(
  * @author Shinjiman
  * @author Philip
  */
-$messages['en'] = array(
+$messages['zh-hans'] = array(
 	'pfunc_desc'                            => '用逻辑功能去加强分析程序',
 	'pfunc_time_error'                      => '错误：无效时间',
 	'pfunc_time_too_long'                   => '错误：#time调用次数过多',
