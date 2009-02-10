@@ -1225,6 +1225,7 @@ $messages['nl'] = array(
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Eirik
  * @author Frokor
+ * @author Harald Khan
  */
 $messages['nn'] = array(
 	'pfunc_desc' => 'Legg til logiske funksjonar i parseren.',
