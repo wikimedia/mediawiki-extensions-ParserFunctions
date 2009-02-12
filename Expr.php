@@ -157,8 +157,6 @@ class ExprParser {
 		
 		if ($haveBC === null) {
 			$haveBC = extension_loaded( 'bcmath' );
-			if ($haveBC) // Set to precision of 14.
-				bcscale(16);
 		}
 		
 		return $haveBC;
@@ -178,6 +176,11 @@ class ExprParser {
 		# Unescape inequality operators
 		$expr = strtr( $expr, array( '&lt;' => '<', '&gt;' => '>',
 			'&minus;' => '-', '−' => '-' ) );
+			
+		## initialise BC
+		if ( $this->haveBC() ) {
+			bcscale(16);
+		}
 
 		$p = 0;
 		$end = strlen( $expr );
@@ -582,10 +585,7 @@ class ExprParser {
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
 				if ( $arg <= 0 ) throw new ExprError('invalid_argument_ln', $this->names[$op]);
-				if ($haveBC) // ln(x) = 1^(1/e)
-					$stack[] = bcpow( $arg, bcdiv( 1, exp(1) ) );
-				else
-					$stack[] = log($arg);
+				$stack[] = log( doubleval($arg) );
 				break;
 			case EXPR_ABS:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
