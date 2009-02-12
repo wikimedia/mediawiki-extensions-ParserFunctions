@@ -46,9 +46,6 @@ define( 'EXPR_CEIL', 34 );
 define( 'EXPR_POW', 35 );
 define( 'EXPR_PI', 36 );
 
-// Tolerance for comparison and integer conversions
-define( 'EXPR_TOLERANCE', 1e-10 );
-
 class ExprError extends Exception {
 	public function __construct($msg, $parameter = ''){
 		wfLoadExtensionMessages( 'ParserFunctions' );
@@ -154,43 +151,17 @@ class ExprParser {
 		'ceil' => EXPR_CEIL,
 		'pi' => EXPR_PI,
 	);
-
-	/**
-	 * Tests whether the fractional difference between two numbers
-	 * is within EXPR_TOLERANCE of each other.
-	 */
-	function toleranceComparison( $a, $b ) {
-		if( $b == 0 || $a == 0 ) {
-			if( $a == $b ) {
-				return 0;
-			} elseif( $a > $b ) {
-				return 1;
-			} else {
-				return -1;
-			}
-		}
 	
-		$c = (( $a / $b ) - ( $b / $a )) / 2.0;
-		if( abs( $c ) < EXPR_TOLERANCE ) {
-			return 0;
-		} elseif( $c > 0 ) {
-			return 1;
-		} else {
-			return -1;
+	function haveBC() {
+		static $haveBC = null;
+		
+		if ($haveBC === null) {
+			$haveBC = extension_loaded( 'bcmath' );
+			if ($haveBC) // Set to precision of 14.
+				bcscale(16);
 		}
-	}
-
-	/**
-	 * Checks if $expr is an integer within EXPR_TOLERANCE
-	 * If so, recast as integer and return, else return $expr unchanged.
-	 */
-	function checkInteger( $expr ) {
-		$intval = round($expr);
-		if( $this->toleranceComparison( $expr, $intval ) == 0 ) {
-			return $intval;
-		} else {
-			return $expr;
-		}
+		
+		return $haveBC;
 	}
 
 	/**
@@ -414,11 +385,16 @@ class ExprParser {
 	}
 
 	function doOperation( $op, &$stack ) {
+		$haveBC = $this->haveBC();
 		switch ( $op ) {
 			case EXPR_NEGATIVE:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
-				$stack[] = -$arg;
+				
+				if ($haveBC)
+					$stack[] = bcmul( '-1', $arg );
+				else
+					$stack[] = -$arg;
 				break;
 			case EXPR_POSITIVE:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
@@ -427,98 +403,140 @@ class ExprParser {
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = $left * $right;
-					break;
+				if ($haveBC)
+					$stack[] = bcmul( $left, $right );
+				else
+					$stack[] = $left * $right;
+				break;
 			case EXPR_DIVIDE:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				if ( $right == 0 ) throw new ExprError('division_by_zero', $this->names[$op]);
-				$stack[] = $left / $right;
+				if ($haveBC)
+					$stack[] = bcdiv( $left, $right );
+				else
+					$stack[] = $left / $right;
 				break;
 			case EXPR_MOD:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				if ( $right == 0 ) throw new ExprError('division_by_zero', $this->names[$op]);
-				$stack[] = $this->checkInteger( $left ) % $this->checkInteger( $right );
+				if ($haveBC)
+					$stack[] = bcmod( $left, $right );
+				else
+					$stack[] = $left % $right;
 				break;
 			case EXPR_PLUS:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = $left + $right;
+				if ($haveBC)
+					$stack[] = bcadd( $left, $right );
+				else
+					$stack[] = $left + $right;
 				break;
 			case EXPR_MINUS:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = $left - $right;
+				if ($haveBC)
+					$stack[] = bcsub( $left, $right );
+				else
+					$stack[] = $left - $right;
 				break;
 			case EXPR_AND:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
+				// PHP seems to treat "0" and "" appropriately for this to work.
 				$stack[] = ( $left && $right ) ? 1 : 0;
 				break;
 			case EXPR_OR:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
+				// PHP seems to treat "0" and "" appropriately for this to work.
 				$stack[] = ( $left || $right ) ? 1 : 0;
 				break;
 			case EXPR_EQUALITY:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $this->toleranceComparison( $left, $right ) == 0 ) ? 1 : 0;
+				if ($haveBC)
+					$stack[] = ( bccompWithTolerance( $left, $right ) == 0 ) ? 1 : 0;
+				else
+					$stack[] = ( $left == $right ) ? 1 : 0;
 				break;
 			case EXPR_NOT:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
+				// PHP seems to treat "0" and "" appropriately for this to work.
 				$stack[] = (!$arg) ? 1 : 0;
 				break;
 			case EXPR_ROUND:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$digits = intval( array_pop( $stack ) );
 				$value = array_pop( $stack );
-				$stack[] = round( $value, $digits );
+				if ($haveBC)
+					$stack[] = bcround( $value, $digits );
+				else
+					$stack[] = round( $value, $digits );
 				break;
 			case EXPR_LESS:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $this->toleranceComparison( $left, $right ) < 0 ) ? 1 : 0;
+				if ($haveBC)
+					$stack[] = ( bccompWithTolerance( $left, $right ) == -1 ) ? 1 : 0;
+				else
+					$stack[] = ( $left < $right ) ? 1 : 0;
 				break;
 			case EXPR_GREATER:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $this->toleranceComparison( $left, $right ) > 0 ) ? 1 : 0;
+				if ($haveBC)
+					$stack[] = ( bccompWithTolerance( $left, $right ) == 1 ) ? 1 : 0;
+				else
+					$stack[] = ( $left > $right ) ? 1 : 0;
 				break;
 			case EXPR_LESSEQ:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $this->toleranceComparison( $left, $right ) <= 0 ) ? 1 : 0;
+				if ($haveBC)
+					$stack[] = ( bccompWithTolerance( $left, $right ) != 1 ) ? 1 : 0;
+				else
+					$stack[] = ( $left <= $right ) ? 1 : 0;
 				break;
 			case EXPR_GREATEREQ:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $this->toleranceComparison( $left, $right ) >= 0 ) ? 1 : 0;
+				if ($haveBC)
+					$stack[] = ( bccompWithTolerance( $left, $right ) != -1 ) ? 1 : 0;
+				else
+					$stack[] = ( $left >= $right ) ? 1 : 0;
 				break;
 			case EXPR_NOTEQ:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $this->toleranceComparison( $left, $right ) != 0 ) ? 1 : 0;
+				if ($haveBC)
+					$stack[] = ( bccompWithTolerance( $left, $right ) != 0 ) ? 1 : 0;
+				else
+					$stack[] = ( $left != $right ) ? 1 : 0;
 				break;
 			case EXPR_EXPONENT:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = $left * pow(10, $this->checkInteger( $right ) );
+				if ($haveBC)
+					$stack[] = bcmul( $left, bcpow(10, $right) );
+				else
+					$stack[] = $left * pow(10,$right);
 				break;
 			case EXPR_SINE:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
@@ -555,43 +573,125 @@ class ExprParser {
 			case EXPR_EXP:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
-				$stack[] = exp($arg);
+				if ($haveBC) // Inaccurate, I know...
+					$stack[] = bcpow( exp(1), $arg );
+				else
+					$stack[] = exp($arg);
 				break;
 			case EXPR_LN:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
 				if ( $arg <= 0 ) throw new ExprError('invalid_argument_ln', $this->names[$op]);
-				$stack[] = log($arg);
+				if ($haveBC) // ln(x) = 1^(1/e)
+					$stack[] = bcpow( $arg, bcdiv( 1, exp(1) ) );
+				else
+					$stack[] = log($arg);
 				break;
 			case EXPR_ABS:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
-				$stack[] = abs($arg);
+				if ($haveBC)
+					$stack[] = bcabs( $arg );
+				else
+					$stack[] = abs($arg);
 				break;
 			case EXPR_FLOOR:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
-				$stack[] = floor( $this->checkInteger( $arg ) );
+				if ($haveBC)
+					$stack[] = bcfloor( $arg );
+				else
+					$stack[] = floor($arg);
 				break;
 			case EXPR_TRUNC:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
-				$stack[] = (int)( $this->checkInteger( $arg ) );
+				if ($haveBC)
+					$stack[] = bcadd( $arg, '0', 0 );
+				else
+					$stack[] = (int)$arg;
 				break;
 			case EXPR_CEIL:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
-				$stack[] = ceil( $this->checkInteger( $arg ) );
+				$stack[] = ceil($arg);
 				break;
 			case EXPR_POW:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				if ( false === ($stack[] = pow($left, $right)) ) throw new ExprError('division_by_zero', $this->names[$op]);
+				$result = false;
+				if ($haveBC)
+					$result = pow( $left, $right );
+				else
+					$result = bcpow( $left, $right );
+				
+				if ( false === $result )
+					throw new ExprError('division_by_zero', $this->names[$op]);
 				break;
 			default:
 				// Should be impossible to reach here.
 				throw new ExprError('unknown_error');
 		}
+	}
+}
+
+function bccompWithTolerance( $left, $right ) {
+	$left = bcround( $left, 14 );
+	$right = bcround( $right, 14 );
+	return bccomp( $left, $right, 14 );
+}
+
+// User-contributed documentation by 'Charles' at
+//  http://us3.php.net/manual/en/ref.bc.php
+//  with modifications for readability.
+function bcround($strval, $precision = 0) {
+    if (false !== ($pos = strpos($strval, '.')) &&
+    		( strlen($strval) - $pos - 1) > $precision ) {
+        $zeros = str_repeat("0", $precision);
+        
+        if ( bccomp( $strval, 0 ) >= 0 ) {
+	        return bcadd($strval, "0.{$zeros}5", $precision);
+		} else {
+			return bcsub($strval, "0.{$zeros}5", $precision);
+		}
+    } else {
+        return $strval;
+    }
+} 
+
+function bcabs( $strval, $precision = 0 ) {
+	if ( bccomp( $strval, 0 ) >= 0 ) { // Handle precision
+		return bcmul( $strval, 1, $precision );
+	} else {
+		return bcmul( $strval, -1, $precision );
+	}
+}
+
+function bcceil($strval, $precision = 0) {
+	if ( bccomp( '0', $strval ) == -1 ) {
+		// Negative number, just truncate.
+		return bcadd( '0', $strval, $precision );
+	} elseif( bccomp( '0', $strval ) == -1 ) {
+		// Positive number, truncate and maybe add one.
+		$truncated = bcadd( '0', $strval, $precision );
+		
+		if ( bccomp( $truncated, $strval ) != 0 ) {
+			return bcadd( $truncated, '1', $precision );
+		}
+	} else {
+			// Exactly zero
+			return bcadd( $strval, '0', $precision );
+	}
+} 
+
+function bcfloor( $strval, $precision = 0 ) {
+	// Cheating -- subtract 1 from bcceil :D
+	$ceil = bcceil( $strval, $precision );
+	
+	if ( bccomp( $ceil, $strval ) == 0 ) {
+		return $ceil;
+	} else {
+		return bcsub( $ceil, '1', $precision );
 	}
 }
