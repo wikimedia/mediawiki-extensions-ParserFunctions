@@ -453,14 +453,24 @@ class ExprParser {
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				// PHP seems to treat "0" and "" appropriately for this to work.
+				
+				// Fix handling of 0.0, 0.00, etc
+				if ($hasBC) {
+					$right = bccompWithTolerance( $right, '0' ) != 0;
+					$left = bccompWithTolerance( $left, '0' ) != 0;
+				}
+				
 				$stack[] = ( $left && $right ) ? 1 : 0;
 				break;
 			case EXPR_OR:
 				if ( count( $stack ) < 2 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				// PHP seems to treat "0" and "" appropriately for this to work.
+				// Fix handling of 0.0, 0.00, etc
+				if ($hasBC) {
+					$right = bccompWithTolerance( $right, '0' ) != 0;
+					$left = bccompWithTolerance( $left, '0' ) != 0;
+				}
 				$stack[] = ( $left || $right ) ? 1 : 0;
 				break;
 			case EXPR_EQUALITY:
@@ -475,7 +485,10 @@ class ExprParser {
 			case EXPR_NOT:
 				if ( count( $stack ) < 1 ) throw new ExprError('missing_operand', $this->names[$op]);
 				$arg = array_pop( $stack );
-				// PHP seems to treat "0" and "" appropriately for this to work.
+				// Fix handling of 0.0, 0.00, etc
+				if ($haveBC) {
+					$arg = (bccompWithTolerance( $arg, '0' ) != 0);
+				}
 				$stack[] = (!$arg) ? 1 : 0;
 				break;
 			case EXPR_ROUND:
