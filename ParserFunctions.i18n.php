@@ -444,11 +444,28 @@ $messages['dsb'] = array(
 
 /** Greek (Ελληνικά)
  * @author Consta
+ * @author Dead3y3
  * @author Απεργός
  */
 $messages['el'] = array(
+	'pfunc_desc' => 'Βελτιώνει το συντακτικό αναλυτή με λογικές συναρτήσεις',
 	'pfunc_time_error' => 'Σφάλμα: άκυρος χρόνος',
 	'pfunc_time_too_long' => 'Σφάλμα: πάρα πολλές κλήσεις της #time',
+	'pfunc_rel2abs_invalid_depth' => 'Σφάλμα: Άκυρο βάθος στη διαδρομή: «$1» (έγινε προσπάθεια για πρόσβαση σε έναν κόμβο πάνω από τον ριζικό κόμβο)',
+	'pfunc_expr_stack_exhausted' => 'Σφάλμα έκφρασης: Η στοίβα εξαντλήθηκε',
+	'pfunc_expr_unexpected_number' => 'Σφάλμα έκφρασης: Μη αναμενόμενος αριθμός',
+	'pfunc_expr_preg_match_failure' => 'Σφάλμα έκφρασης: Μη αναμενόμενη αποτυχία preg_match',
+	'pfunc_expr_unrecognised_word' => 'Σφάλμα έκφρασης: Μη αναγνωρίσιμη λέξη "$1"',
+	'pfunc_expr_unexpected_operator' => 'Σφάλμα έκφρασης: Μη αναμενόμενος τελεστής $1',
+	'pfunc_expr_missing_operand' => 'Σφάλμα έκφρασης: Λείπει ο τελεστέος για την έκφραση $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Σφάλμα έκφρασης: Μη αναμενόμενη αγκύλη κλεισίματος',
+	'pfunc_expr_unrecognised_punctuation' => 'Σφάλμα έκφρασης: Μη αναγνρίσμος χαρακτήρας στίξης "$1"',
+	'pfunc_expr_unclosed_bracket' => 'Σφάλμα έκφρασης: Αγκύλη χωρίς κλείσιμο',
+	'pfunc_expr_division_by_zero' => 'Διαίρεση με το μηδέν',
+	'pfunc_expr_invalid_argument' => 'Άκυρη παράμετρος για το $1: < -1 ή > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Άκυρη παράμετρος για το ln: <= 0',
+	'pfunc_expr_unknown_error' => 'Σφάλμα έκφρασης: Άγνωστο σφάλμα ($1)',
+	'pfunc_expr_not_a_number' => 'Στο $1: το αποτέλεσμα δεν είναι αριθμός',
 );
 
 /** Esperanto (Esperanto)
