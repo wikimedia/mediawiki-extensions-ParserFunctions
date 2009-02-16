@@ -455,7 +455,7 @@ class ExprParser {
 				$left = array_pop( $stack );
 				
 				// Fix handling of 0.0, 0.00, etc
-				if ($hasBC) {
+				if ($haveBC) {
 					$right = bccompWithTolerance( $right, '0' ) != 0;
 					$left = bccompWithTolerance( $left, '0' ) != 0;
 				}
@@ -467,7 +467,7 @@ class ExprParser {
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				// Fix handling of 0.0, 0.00, etc
-				if ($hasBC) {
+				if ($haveBC) {
 					$right = bccompWithTolerance( $right, '0' ) != 0;
 					$left = bccompWithTolerance( $left, '0' ) != 0;
 				}
