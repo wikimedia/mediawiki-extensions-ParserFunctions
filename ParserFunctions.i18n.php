@@ -580,26 +580,27 @@ $messages['fi'] = array(
  * @author IAlex
  * @author Sherbrooke
  * @author Urhixidur
+ * @author Verdy p
  */
 $messages['fr'] = array(
 	'pfunc_desc' => 'Améliore le parseur avec des fonctions logiques',
 	'pfunc_time_error' => 'Erreur : durée invalide',
-	'pfunc_time_too_long' => 'Erreur : <code>#time</code> appelé trop de fois',
-	'pfunc_rel2abs_invalid_depth' => 'Erreur: niveau de répertoire invalide dans le chemin : « $1 » (a essayé d’accéder à un niveau au-dessus du répertoire racine)',
-	'pfunc_expr_stack_exhausted' => 'Expression erronée : pile épuisée',
-	'pfunc_expr_unexpected_number' => 'Expression erronée : nombre inattendu',
-	'pfunc_expr_preg_match_failure' => 'Expression erronée : échec inattendu pour <code>preg_match</code>',
-	'pfunc_expr_unrecognised_word' => "Erreur d'expression : le mot « $1 » n'est pas reconnu",
-	'pfunc_expr_unexpected_operator' => "Erreur d'expression : l'opérateur '''$1''' n'est pas reconnu",
-	'pfunc_expr_missing_operand' => "Erreur d’expression : l’opérande '''$1''' n’est pas reconnue",
+	'pfunc_time_too_long' => 'Erreur : appels trop nombreux à <code>#time</code>',
+	'pfunc_rel2abs_invalid_depth' => 'Erreur: profondeur invalide dans le chemin « $1 » (a essayé d’accéder à un niveau au-dessus du nœud racine)',
+	'pfunc_expr_stack_exhausted' => 'Erreur d’expression : pile épuisée',
+	'pfunc_expr_unexpected_number' => 'Erreur d’expression : nombre inattendu',
+	'pfunc_expr_preg_match_failure' => 'Erreur d’expression : échec inattendu de <code>preg_match</code>',
+	'pfunc_expr_unrecognised_word' => 'Erreur d’expression : mot « $1 » non reconnu',
+	'pfunc_expr_unexpected_operator' => "Erreur d’expression : opérateur '''$1''' inattendu",
+	'pfunc_expr_missing_operand' => "Erreur d’expression : opérande manquant pour '''$1'''",
 	'pfunc_expr_unexpected_closing_bracket' => 'Erreur d’expression : parenthèse fermante inattendue',
-	'pfunc_expr_unrecognised_punctuation' => "Erreur d'expression : caractère de ponctuation « $1 » non reconnu",
+	'pfunc_expr_unrecognised_punctuation' => 'Erreur d’expression : caractère de ponctuation « $1 » non reconnu',
 	'pfunc_expr_unclosed_bracket' => 'Erreur d’expression : parenthèse non fermée',
 	'pfunc_expr_division_by_zero' => 'Division par zéro',
-	'pfunc_expr_invalid_argument' => 'Valeur incorrecte pour $1 : < -1 ou > 1',
-	'pfunc_expr_invalid_argument_ln' => 'Valeur incorrecte pour ln : ≤ 0',
-	'pfunc_expr_unknown_error' => "Erreur d'expression : erreur inconnue ($1)",
-	'pfunc_expr_not_a_number' => "Dans $1 : le résultat n'est pas un nombre",
+	'pfunc_expr_invalid_argument' => "Argument incorrect pour '''$1''' : &lt; -1 ou &gt; 1",
+	'pfunc_expr_invalid_argument_ln' => "Argument incorrect pour '''ln''' : ≤ 0",
+	'pfunc_expr_unknown_error' => 'Erreur d’expression : erreur inconnue ($1)',
+	'pfunc_expr_not_a_number' => 'Dans $1 : le résultat n’est pas un nombre',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -849,6 +850,7 @@ $messages['id'] = array(
  * @author Malafaya
  */
 $messages['io'] = array(
+	'pfunc_time_error' => 'Eroro: ne-valida tempo',
 	'pfunc_expr_division_by_zero' => 'Divido per zero',
 );
 
