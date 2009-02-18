@@ -416,9 +416,12 @@ class ExprParser {
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				if ( $right == 0 ) throw new ExprError('division_by_zero', $this->names[$op]);
-				if ($haveBC)
+				if ($haveBC) {
+					if ( bcCompWithTolerance( 0, $right ) == 0 ) {
+						throw new ExprError('division_by_zero', $this->names[$op]);
+					}
 					$stack[] = bcdiv( $left, $right );
-				else
+				} else
 					$stack[] = $left / $right;
 				break;
 			case EXPR_MOD:
