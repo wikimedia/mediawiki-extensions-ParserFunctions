@@ -661,7 +661,8 @@ function bccompWithTolerance( $left, $right ) {
 function bcround($strval, $precision = 0) {
     if (false !== ($pos = strpos($strval, '.')) &&
     		( strlen($strval) - $pos - 1) > $precision ) {
-        $zeros = str_repeat("0", $precision);
+
+        $zeros = ($precision > 0) ? str_repeat("0", $precision) : '';
         
         if ( bccomp( $strval, 0 ) >= 0 ) {
 	        return bcadd($strval, "0.{$zeros}5", $precision);
