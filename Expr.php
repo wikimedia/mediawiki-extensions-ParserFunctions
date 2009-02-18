@@ -635,9 +635,9 @@ class ExprParser {
 				$left = array_pop( $stack );
 				$result = false;
 				if ($haveBC)
-					$result = pow( $left, $right );
-				else
 					$result = bcpow( $left, $right );
+				else
+					$result = pow( $left, $right );
 				
 				if ( false === $result )
 					throw new ExprError('division_by_zero', $this->names[$op]);
