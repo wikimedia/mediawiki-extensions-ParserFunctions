@@ -1009,6 +1009,7 @@ $messages['ko'] = array(
 	'pfunc_expr_unclosed_bracket' => '표현 오류: 괄호를 닫지 않았습니다.',
 	'pfunc_expr_division_by_zero' => '0으로 나눔',
 	'pfunc_expr_unknown_error' => '표현 오류: 알려지지 않은 오류 ($1)',
+	'pfunc_expr_not_a_number' => '$1: 결과가 숫자가 아닙니다.',
 );
 
 /** Ripoarisch (Ripoarisch)
@@ -1374,6 +1375,30 @@ $messages['pt'] = array(
 	'pfunc_expr_missing_operand' => 'Erro de expressão: Falta operando para $1',
 	'pfunc_expr_unexpected_closing_bracket' => 'Erro de expressão: Parêntese de fecho inesperado',
 	'pfunc_expr_unrecognised_punctuation' => 'Erro de expressão: Caracter de pontuação "$1" não reconhecido',
+	'pfunc_expr_unclosed_bracket' => 'Erro de expressão: Parêntese não fechado',
+	'pfunc_expr_division_by_zero' => 'Divisão por zero',
+	'pfunc_expr_invalid_argument' => 'Argumento inválido para $1: < -1 or > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Argumento inválido para ln: <= 0',
+	'pfunc_expr_unknown_error' => 'Erro de expressão: Erro desconhecido ($1)',
+	'pfunc_expr_not_a_number' => 'Em $1: resultado não é um número',
+);
+
+/** Brazilian Portuguese (Português do Brasil)
+ * @author Eduardo.mps
+ */
+$messages['pt-br'] = array(
+	'pfunc_desc' => 'Melhora o analisador (parser) com funções lógicas',
+	'pfunc_time_error' => 'Erro: tempo inválido',
+	'pfunc_time_too_long' => 'Erro: muitas chamadas a #time',
+	'pfunc_rel2abs_invalid_depth' => 'Erro: Profundidade inválida no caminho: "$1" (foi tentado o acesso a um nó acima do nó raiz)',
+	'pfunc_expr_stack_exhausted' => 'Erro de expressão: Pilha esgotada',
+	'pfunc_expr_unexpected_number' => 'Erro de expressão: Número inesperado',
+	'pfunc_expr_preg_match_failure' => 'Erro de expressão: Falha em preg_match inesperada',
+	'pfunc_expr_unrecognised_word' => 'Erro de expressão: Palavra "$1" não reconhecida',
+	'pfunc_expr_unexpected_operator' => 'Erro de expressão: Operador $1 inesperado',
+	'pfunc_expr_missing_operand' => 'Erro de expressão: Falta operando para $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Erro de expressão: Parêntese de fechamento inesperado',
+	'pfunc_expr_unrecognised_punctuation' => 'Erro de expressão: Caractere de pontuação "$1" não reconhecido',
 	'pfunc_expr_unclosed_bracket' => 'Erro de expressão: Parêntese não fechado',
 	'pfunc_expr_division_by_zero' => 'Divisão por zero',
 	'pfunc_expr_invalid_argument' => 'Argumento inválido para $1: < -1 or > 1',
