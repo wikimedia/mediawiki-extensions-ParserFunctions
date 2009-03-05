@@ -367,22 +367,26 @@ $messages['cs'] = array(
 );
 
 /** Danish (Dansk)
+ * @author Byrial
  * @author Morten LJ
  */
 $messages['da'] = array(
-	'pfunc_desc' => 'Udvidet parser med logiske funktioner',
+	'pfunc_desc' => 'Udvider parser med logiske funktioner',
 	'pfunc_time_error' => 'Fejl: Ugyldig tid',
-	'pfunc_time_too_long' => 'Felj: for mange #time kald',
-	'pfunc_expr_stack_exhausted' => 'Udtryksfejl: Stack tømt',
-	'pfunc_expr_unexpected_number' => 'Fejl: Uventet nummer',
-	'pfunc_expr_preg_match_failure' => 'Udtryksfejl: Uventet preg_match fejl',
+	'pfunc_time_too_long' => 'Felj: for mange kald af #time',
+	'pfunc_rel2abs_invalid_depth' => 'Fejl: Ugyldig dybde i sti: "$1" (prøvede at tilgå en knude over rodknuden)',
+	'pfunc_expr_stack_exhausted' => 'Udtryksfejl: Stak tømt',
+	'pfunc_expr_unexpected_number' => 'Fejl: Uventet tal',
+	'pfunc_expr_preg_match_failure' => 'Udtryksfejl: Uventet fejl i preg_match',
 	'pfunc_expr_unrecognised_word' => 'Udtryksfejl: Uventet ord "$1"',
-	'pfunc_expr_unexpected_operator' => 'Udtryksfejl: Uventet $1 operator',
+	'pfunc_expr_unexpected_operator' => 'Udtryksfejl: Uventet "$1"-operator',
 	'pfunc_expr_missing_operand' => 'Udtryksfejl: Manglende operand til $1',
-	'pfunc_expr_unexpected_closing_bracket' => 'Udtryksfejl: Uventet "]"-tegn',
+	'pfunc_expr_unexpected_closing_bracket' => 'Udtryksfejl: Uventet lukkende parentes',
 	'pfunc_expr_unrecognised_punctuation' => 'Udtryksfejl: Uventet tegnsætning-tegn: "$1"',
 	'pfunc_expr_unclosed_bracket' => 'Udtryksfejl: Uafsluttet kantet parantes',
 	'pfunc_expr_division_by_zero' => 'Division med nul',
+	'pfunc_expr_invalid_argument' => 'Ugyldigt argument for $1: < -1 eller > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Ugyldigt argument for ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Udtryksfejl: Ukendt fejl ($1)',
 	'pfunc_expr_not_a_number' => 'I $1: Resultatet er ikke et tal',
 );
