@@ -1433,6 +1433,14 @@ $messages['ro'] = array(
 	'pfunc_expr_not_a_number' => 'În $1: rezultatul nu este un număr',
 );
 
+/** Tarandíne (Tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'pfunc_time_error' => 'Errore: Orarie invalide',
+	'pfunc_expr_division_by_zero' => 'Divisione pe zero',
+);
+
 /** Russian (Русский)
  * @author Александр Сигачёв
  */
