@@ -320,6 +320,7 @@ $messages['bs'] = array(
  * @author SMP
  */
 $messages['ca'] = array(
+	'pfunc_desc' => 'Millora el processat amb funcions lògiques',
 	'pfunc_time_error' => 'Error: temps invàlid',
 	'pfunc_time_too_long' => 'Error: massa crides #time',
 	'pfunc_rel2abs_invalid_depth' => "Error: Adreça invàlida al directori: «$1» (s'intentava accedir a un node superior de l'arrel)",
