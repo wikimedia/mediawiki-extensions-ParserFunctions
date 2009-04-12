@@ -1005,10 +1005,13 @@ $messages['km'] = array(
 /** Korean (한국어)
  * @author Kwj2772
  * @author ToePeu
+ * @author Yknok29
  */
 $messages['ko'] = array(
 	'pfunc_time_error' => '오류: 시간이 잘못되었습니다.',
 	'pfunc_time_too_long' => '오류: #time을 너무 많이 썼습니다.',
+	'pfunc_expr_unexpected_number' => '표현 오류: 예측하지 못한 숫자',
+	'pfunc_expr_unrecognised_word' => '표현 오류: 인식되지 않는 단어 "$1"',
 	'pfunc_expr_missing_operand' => '표현 오류: $1의 피연산자가 없습니다.',
 	'pfunc_expr_unexpected_closing_bracket' => '표현 오류: 예상치 못한 괄호 닫기',
 	'pfunc_expr_unclosed_bracket' => '표현 오류: 괄호를 닫지 않았습니다.',
