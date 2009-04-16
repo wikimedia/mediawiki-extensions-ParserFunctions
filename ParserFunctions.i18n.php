@@ -1008,6 +1008,7 @@ $messages['km'] = array(
  * @author Yknok29
  */
 $messages['ko'] = array(
+	'pfunc_desc' => '논리적 기능과 함께 분석의 질을 높임',
 	'pfunc_time_error' => '오류: 시간이 잘못되었습니다.',
 	'pfunc_time_too_long' => '오류: #time을 너무 많이 썼습니다.',
 	'pfunc_expr_unexpected_number' => '표현 오류: 예측하지 못한 숫자',
