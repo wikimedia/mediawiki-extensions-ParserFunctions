@@ -329,8 +329,10 @@ class ExtParserFunctions {
 		return $this->ifexistCommon( $parser, false, $title, $then, $else );
 	}
 
-	function ifexistCommon( &$parser, $frame, $title = '', $then = '', $else = '' ) {
-		$title = Title::newFromText( $title );
+	function ifexistCommon( &$parser, $frame, $titletext = '', $then = '', $else = '' ) {
+		global $wgContLang;
+		$title = Title::newFromText( $titletext );
+		$wgContLang->findVariantLink( $titletext, $title, true );
 		if ( $title ) {
 			if( $title->getNamespace() == NS_MEDIA ) {
 				/* If namespace is specified as NS_MEDIA, then we want to
