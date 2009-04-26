@@ -6,6 +6,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 $wgExtensionFunctions[] = 'wfSetupParserFunctions';
 $wgExtensionCredits['parserhook'][] = array(
+	'path' => __FILE__,
 	'name' => 'ParserFunctions',
 	'version' => '1.1.1',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:ParserFunctions',
