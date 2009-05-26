@@ -8,23 +8,32 @@ $wgExtensionFunctions[] = 'wfSetupParserFunctions';
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'ParserFunctions',
-	'version' => '1.1.1',
+	'version' => '1.2.0',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:ParserFunctions',
-	'author' => 'Tim Starling',
+	'author' => array('Tim Starling', 'Robert Rohde', 'Ross McClure', 'Juraj Simlovic'),
 	'description' => 'Enhance parser with logical functions',
 	'descriptionmsg' => 'pfunc_desc',
 );
 
 $wgExtensionMessagesFiles['ParserFunctions'] = dirname(__FILE__) . '/ParserFunctions.i18n.php';
 $wgHooks['LanguageGetMagic'][]       = 'wfParserFunctionsLanguageGetMagic';
+$wgHooks['ParserAfterStrip'][] 	 = 'ExtParserFunctions::loadRegex';
 
 $wgParserTestFiles[] = dirname( __FILE__ ) . "/funcsParserTests.txt";
+
+//Defines the maximum length of a string that string functions are allowed to operate on
+//Prevention against denial of service by string function abuses.
+if( !isset($wgStringFunctionsLimit) ) {
+	$wgStringFunctionsLimit = 1000;
+}
 
 class ExtParserFunctions {
 	var $mExprParser;
 	var $mTimeCache = array();
 	var $mTimeChars = 0;
 	var $mMaxTimeChars = 6000; # ~10 seconds
+
+	static $markerRegex = false;
 
 	function registerParser( &$parser ) {
 		if ( defined( get_class( $parser ) . '::SFH_OBJECT_ARGS' ) ) {
@@ -50,6 +59,15 @@ class ExtParserFunctions {
 		$parser->setFunctionHook( 'rel2abs', array( &$this, 'rel2abs' ) );
 		$parser->setFunctionHook( 'titleparts', array( &$this, 'titleparts' ) );
 
+		//String Functions
+		$parser->setFunctionHook( 'len',      array(&$this, 'runLen'      ));
+		$parser->setFunctionHook( 'pos',      array(&$this, 'runPos'      ));
+		$parser->setFunctionHook( 'rpos',     array(&$this, 'runRPos'     ));
+		$parser->setFunctionHook( 'sub',      array(&$this, 'runSub'      ));
+		$parser->setFunctionHook( 'count',    array(&$this, 'runCount'    ));
+		$parser->setFunctionHook( 'replace',  array(&$this, 'runReplace'  ));
+		$parser->setFunctionHook( 'explode',  array(&$this, 'runExplode'  ));
+
 		return true;
 	}
 
@@ -57,6 +75,39 @@ class ExtParserFunctions {
 		$this->mTimeChars = 0;
 		$parser->pf_ifexist_breakdown = array();
 		return true;
+	}
+
+	/* Called by ParserAfterStrip.  Preloads the syntax for unique markers
+	   so that we can avoid reconstructing it on every operation.  */
+	static function loadRegex( &$parser ) {
+		wfProfileIn( __METHOD__ );
+
+		$prefix = preg_quote( $parser->uniqPrefix(), '/' );
+
+		// The first line represents Parser from release 1.12 forward.
+		// subsequent lines are hacks to accomodate old Mediawiki versions.
+		if ( defined('Parser::MARKER_SUFFIX') )
+			$suffix = preg_quote( Parser::MARKER_SUFFIX, '/' );
+		elseif ( isset($parser->mMarkerSuffix) )
+			$suffix = preg_quote( $parser->mMarkerSuffix, '/' );
+		elseif ( defined('MW_PARSER_VERSION') && 
+				strcmp( MW_PARSER_VERSION, '1.6.1' ) > 0 )
+			$suffix = "QINU\x07";
+		else $suffix = 'QINU';
+		
+		self::$markerRegex = '/' .$prefix. '(?:(?!' .$suffix. ').)*' . $suffix . '/us';
+
+		wfProfileOut( __METHOD__ );
+		return true;
+	}
+
+	// Removes unique markers from passed parameters, used by string functions.
+	private function killMarkers ( $text ) {
+		if( self::$markerRegex ) {
+			return preg_replace( self::$markerRegex , '' , $text );
+		} else {
+			return $text;
+		}
 	}
 
 	function &getExprParser() {
@@ -528,6 +579,253 @@ class ExtParserFunctions {
 		} else {
 			return $title;
 		}
+	}
+
+	// Verifies parameter is less than max string length.
+	private function checkLength( $text ) {
+		global $wgStringFunctionsLimit;
+		return ( mb_strlen( $text ) < $wgStringFunctionsLimit );
+	}
+
+	// Generates error message.  Called when string is too long.
+	private function tooLongError() {
+		global $wgStringFunctionsLimit;
+		wfLoadExtensionMessages( 'ParserFunctions' );
+		
+		return '<strong class="error">' . 
+			wfMsgForContent( "pfunc_string_too_long", 
+				htmlspecialchars( $wgStringFunctionsLimit ) ) .
+			'</strong>';
+	}
+
+	/**
+	 * {{#len:string}}
+	 * 
+	 * Reports number of characters in string.
+	 */
+	function runLen ( &$parser, $inStr = '' ) {
+		wfProfileIn( __METHOD__ );
+
+		$inStr = $this->killMarkers( (string)$inStr );
+		$len = mb_strlen( $inStr );
+
+		wfProfileOut( __METHOD__ );
+		return $len;
+	}
+
+	/**
+	 * {{#pos: string | needle | offset}}
+	 *
+	 * Finds first occurence of "needle" in "string" starting at "offset".
+	 *
+	 * Note: If the needle is an empty string, single space is used instead.
+	 * Note: If the needle is not found, -1 is returned.
+	 */
+	function runPos ( &$parser, $inStr = '', $inNeedle = '', $inOffset = 0 ) {
+		wfProfileIn( __METHOD__ );
+
+		$inStr = $this->killMarkers( (string)$inStr );
+		$inNeedle = $this->killMarkers( (string)$inNeedle );
+		
+		if( !$this->checkLength( $inStr ) || 
+		    !$this->checkLength( $inNeedle ) ) {
+			wfProfileOut( __METHOD__ );
+			return $this->tooLongError();
+		}
+
+		if( $inNeedle == '' ) { $inNeedle = ' '; }
+
+		$pos = mb_strpos( $inStr, $inNeedle, $inOffset );
+		if( $pos === false ) { $pos = -1; }
+
+		wfProfileOut( __METHOD__ );
+		return $pos;
+	}
+
+	/**
+	 * {{#rpos: string | needle}}
+	 *
+	 * Finds last occurence of "needle" in "string".
+	 *
+	 * Note: If the needle is an empty string, single space is used instead.
+	 * Note: If the needle is not found, -1 is returned.
+	 */
+	function runRPos ( &$parser, $inStr = '', $inNeedle = '' ) {
+		wfProfileIn( __METHOD__ );
+
+		$inStr = $this->killMarkers( (string)$inStr );
+		$inNeedle = $this->killMarkers( (string)$inNeedle );
+		
+		if( !$this->checkLength( $inStr ) || 
+		    !$this->checkLength( $inNeedle ) ) {
+			wfProfileOut( __METHOD__ );
+			return $this->tooLongError();
+		}
+
+		if( $inNeedle == '' ) { $inNeedle = ' '; }
+
+		$pos = mb_strrpos( $inStr, $inNeedle );
+		if( $pos === false ) { $pos = -1; }
+
+		wfProfileOut( __METHOD__ );
+		return $pos;
+	}
+
+	/**
+	 * {{#sub: string | start | length }}
+	 *
+	 * Returns substring of "string" starting at "start" and having
+	 * "length" characters.	
+	 *
+	 * Note: If length is zero, the rest of the input is returned.
+	 * Note: A negative value for "start" operates from the end of the 
+	 *   "string".
+	 * Note: A negative value for "length" returns a string reduced in
+	 *   length by that amount.
+	 */
+	function runSub ( &$parser, $inStr = '', $inStart = 0, $inLength = 0 ) {
+		wfProfileIn( __METHOD__ );
+
+		$inStr = $this->killMarkers( (string)$inStr );
+
+		if( !$this->checkLength( $inStr ) ) {
+			wfProfileOut( __METHOD__ );
+			return $this->tooLongError();
+		}
+		
+		if ( intval($inLength) == 0 ) {
+			$result = mb_substr( $inStr, $inStart );
+		} else {
+			$result = mb_substr( $inStr, $inStart, $inLength );
+		}
+
+		wfProfileOut( __METHOD__ );
+		return $result;	
+	}
+
+	/**
+	 * {{#count: string | substr }}
+	 *
+	 * Returns number of occurences of "substr" in "string".
+	 *
+	 * Note: If "substr" is empty, a single space is used.
+	 */
+	function runCount ( &$parser, $inStr = '', $inSubStr = '' ) {
+		wfProfileIn( __METHOD__ );
+
+		$inStr = $this->killMarkers( (string)$inStr );
+		$inSubStr = $this->killMarkers( (string)$inSubStr );
+
+		if( !$this->checkLength( $inStr ) ||
+		    !$this->checkLength( $inSubStr ) ) {
+			wfProfileOut( __METHOD__ );
+			return $this->tooLongError();
+		}
+
+		if( $inSubStr == '' ) { $inSubStr = ' '; }
+			
+		$result = mb_substr_count( $inStr, $inSubStr );
+
+		wfProfileOut( __METHOD__ );
+		return $result;	
+	}
+
+	/**
+	 * {{#replace:string | from | to | limit }}
+	 *
+	 * Replaces each occurence of "from" in "string" with "to".
+	 * At most "limit" replacements are performed.
+	 * 
+	 * Note: Armored against replacements that would generate huge strings.
+	 * Note: If "from" is an empty string, single space is used instead.
+	 */
+	function runReplace( &$parser, $inStr = '', 
+			$inReplaceFrom = '', $inReplaceTo = '', $inLimit = -1 ) {
+		global $wgStringFunctionsLimit;
+		wfProfileIn( __METHOD__ );
+
+		$inStr = $this->killMarkers( (string)$inStr );
+		$inReplaceFrom = $this->killMarkers( (string)$inReplaceFrom );
+		$inReplaceTo = $this->killMarkers( (string)$inReplaceTo );
+
+		if( !$this->checkLength( $inStr ) ||
+		    !$this->checkLength( $inReplaceFrom ) ||
+		    !$this->checkLength( $inReplaceTo ) ) { 
+			wfProfileOut( __METHOD__ );
+			return $this->tooLongError();
+		}
+
+		if( $inReplaceFrom == '' ) { $inReplaceFrom = ' '; }
+
+		// Precompute limit to avoid generating enormous string:
+		$diff = mb_strlen( $inReplaceTo ) - mb_strlen( $inReplaceFrom );
+		if( $diff > 0 ) {
+			$limit = ( ( $wgStringFunctionsLimit - mb_strlen( $inStr ) ) / $diff ) + 1;
+		} else {
+			$limit = -1;
+		}
+
+		$inLimit = intval($inLimit);
+		if( $inLimit >= 0 ) {
+			if( $limit > $inLimit || $limit == -1 ) { $limit = $inLimit; }
+		}
+
+		// Use regex to allow limit and handle UTF-8 correctly.
+		$inReplaceFrom = preg_quote( $inReplaceFrom, '/' );
+		$inReplaceTo = preg_quote( $inReplaceTo, '/' );
+
+		$result = preg_replace( '/' . $inReplaceFrom . '/u', 
+						$inReplaceTo, $inStr, $limit);
+
+		if( !$this->checkLength( $result ) ) {
+			wfProfileOut( __METHOD__ );
+			return $this->tooLongError();
+		}
+
+		wfProfileOut( __METHOD__ );
+		return $result;
+	}
+
+
+	/**
+	 * {{#explode:string | delimiter | position}}
+	 *
+	 * Breaks "string" into chunks seperated by "delimiter" and returns the
+	 * chunk identified by "position".
+	 *
+	 * Note: Negative position can be used to specify tokens from the end.
+	 * Note: If the divider is an empty string, single space is used instead.
+	 * Note: Empty string is returned if there are not enough exploded chunks.
+	 */
+	function runExplode ( &$parser, $inStr = '', $inDiv = '', $inPos = 0 ) {
+		wfProfileIn( __METHOD__ );
+
+		$inStr = $this->killMarkers( (string)$inStr );
+		$inDiv = $this->killMarkers( (string)$inDiv );
+
+		if( $inDiv == '' ) { $inDiv = ' '; }
+
+		if( !$this->checkLength( $inStr ) ||
+		    !$this->checkLength( $inDiv ) ) { 
+			wfProfileOut( __METHOD__ );
+			return $this->tooLongError();
+		}
+
+		$inStr = preg_quote( $inStr, '/' );
+		$inDiv = preg_quote( $inDiv, '/' );
+		
+		$matches = preg_split( '/'.$inDiv.'/u', $inStr );
+		
+		if( $inPos >= 0 && isset( $matches[$inPos] ) ) {
+			$result = $matches[$inPos];
+		} elseif ( $inPos < 0 && isset( $matches[count($matches) + $inPos] ) ) {
+			$result = $matches[count($matches) + $inPos];
+		} else {
+			$result = '';
+		}
+
+		wfProfileOut( __METHOD__ );
+		return $result;
 	}
 }
 

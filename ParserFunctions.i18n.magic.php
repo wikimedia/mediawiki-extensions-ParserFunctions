@@ -25,6 +25,13 @@ function efParserFunctionsWords( $lang ) {
 		'timel'      => array( 0, 'timel' ),
 		'rel2abs'    => array( 0, 'rel2abs' ),
 		'titleparts' => array( 0, 'titleparts' ),
+		'len'        => array( 0, 'len' ),
+		'pos'        => array( 0, 'pos' ),
+		'rpos'       => array( 0, 'rpos' ),
+		'sub'        => array( 0, 'sub' ),
+		'count'      => array( 0, 'count' ),
+		'replace'    => array( 0, 'replace' ),
+		'explode'    => array( 0, 'explode' ),
 	);
 
 	/**

@@ -26,6 +26,7 @@ $messages['en'] = array(
 	'pfunc_expr_invalid_argument_ln'        => 'Invalid argument for ln: <= 0',
 	'pfunc_expr_unknown_error'              => 'Expression error: Unknown error ($1)',
 	'pfunc_expr_not_a_number'               => 'In $1: result is not a number',
+	'pfunc_string_too_long'                 => 'Error: String exceeds $1 character limit',
 );
 
 /** Message documentation (Message documentation)

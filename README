@@ -5,8 +5,7 @@ ParserFunctions v1.1.1
 3. How to config
 
 1. Licensing
-Dual licensed under GNU GPL and DWTFYWWI. See COPYING for more license 
-information.
+Licensed under GNU GPL. See COPYING for more license information.
 
 2. How to install
    a. Download this tarbell and extract the contents to $IP/extensions/ParserFunctions/
