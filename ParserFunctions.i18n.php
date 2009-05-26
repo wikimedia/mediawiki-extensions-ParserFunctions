@@ -314,6 +314,7 @@ $messages['bs'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Nevažeći argument za ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Razvojna greška: Nepoznata greška ($1)',
 	'pfunc_expr_not_a_number' => 'u $1: rezultat nije broj',
+	'pfunc_string_too_long' => 'Greška: Niz prelazi limit od $1 znakova',
 );
 
 /** Catalan (Català)
@@ -394,6 +395,7 @@ $messages['da'] = array(
 );
 
 /** German (Deutsch)
+ * @author Metalhead64
  * @author Raimond Spekking
  */
 $messages['de'] = array(
@@ -415,6 +417,7 @@ $messages['de'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Ungültiges Argument für ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Expression-Fehler: Unbekannter Fehler ($1)',
 	'pfunc_expr_not_a_number' => 'Expression-Fehler: In $1: Ergebnis ist keine Zahl',
+	'pfunc_string_too_long' => 'Fehler: Zeichenkette überschreitet Zeichenlimit von $1',
 );
 
 /** Swiss High German (Schweizer Hochdeutsch)
@@ -607,6 +610,7 @@ $messages['fr'] = array(
 	'pfunc_expr_invalid_argument_ln' => "Argument incorrect pour '''ln''' : ≤ 0",
 	'pfunc_expr_unknown_error' => 'Erreur d’expression : erreur inconnue ($1)',
 	'pfunc_expr_not_a_number' => 'Dans $1 : le résultat n’est pas un nombre',
+	'pfunc_string_too_long' => 'Erreur: La chaîne dépasse la limite maximal de $1 caractère{{PLURAL:$1||s}}',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -655,6 +659,7 @@ $messages['gl'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argumento inválido para ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Erro de expresión: erro descoñecido ($1)',
 	'pfunc_expr_not_a_number' => 'En $1: o resultado non é un número',
+	'pfunc_string_too_long' => 'Erro: a cadea excede o límite de $1 caracteres',
 );
 
 /** Swiss German (Alemannisch)
@@ -679,6 +684,7 @@ $messages['gsw'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Nit giltig Argument fir ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Expression-Fähler: Nit bekannte Fehler ($1)',
 	'pfunc_expr_not_a_number' => 'Expression-Fähler: In $1: Ergebnis isch kei Zahl',
+	'pfunc_string_too_long' => 'Fähler: d Zeichechette het meh wie di zuelässig Zahl vu $1 Zeiche',
 );
 
 /** Hebrew (עברית) */
@@ -889,6 +895,7 @@ $messages['it'] = array(
 
 /** Japanese (日本語)
  * @author Aotake
+ * @author Fryed-peach
  * @author JtFuruhata
  */
 $messages['ja'] = array(
@@ -910,6 +917,7 @@ $messages['ja'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'ln の引数が無効です: <= 0',
 	'pfunc_expr_unknown_error' => '構文エラー: 予期せぬエラー（$1）',
 	'pfunc_expr_not_a_number' => '$1: 結果が数字ではありません',
+	'pfunc_string_too_long' => 'エラー: 文字列が文字数制限 $1 を超えました',
 );
 
 /** Javanese (Basa Jawa)
@@ -1031,7 +1039,7 @@ $messages['ksh'] = array(
 	'pfunc_desc' => 'Deit em Wiki Funxione för Entscheidunge un esu dobei.',
 	'pfunc_time_error' => 'Fähler: Onjöltijje Zick.',
 	'pfunc_time_too_long' => 'Fähler: <code>#time</code> weed zo öff jebruch.',
-	'pfunc_rel2abs_invalid_depth' => 'Fähler: Zo fill „retuur“ em Pad „$1“ — mer wöre för der Aanfang zeröck jejange.',
+	'pfunc_rel2abs_invalid_depth' => 'Fähler: Zo fill „retuur“ em Pahd „$1“ — mer wöre wigger wi för der Aanfang zeröck jejange.',
 	'pfunc_expr_stack_exhausted' => 'Fähler en enem Ußdrock: Dä löht der <i lang="en">stack</i> övverloufe.',
 	'pfunc_expr_unexpected_number' => 'Fähler en enem Ußdrock: En Zahl dom_mer nit äwaade.',
 	'pfunc_expr_preg_match_failure' => 'Fähler en enem Ußdrock: Esu ene Fähler en „<i lang="en">preg_match</i>“ dum_mer nit äwade.',
@@ -1046,6 +1054,7 @@ $messages['ksh'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Fähler: Dä Parrameeter för <code>ln</code> moß 0 udder kleiner wi 0 sin.',
 	'pfunc_expr_unknown_error' => 'Fähler en enem Ußdrock: Unbikannt ($1)',
 	'pfunc_expr_not_a_number' => 'Fähler en enem Ußdrock: En <code>$1</code> es dat wat erus kütt kein Zahl.',
+	'pfunc_string_too_long' => 'Fähler en enem Ußdrock: En Zeijshereih es länger wi $1 Zeijshe.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -1261,6 +1270,7 @@ $messages['nl'] = array(
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Eirik
  * @author Frokor
+ * @author Gunnernett
  * @author Harald Khan
  */
 $messages['nn'] = array(
@@ -1282,6 +1292,7 @@ $messages['nn'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Ugyldig argument for ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Feil i uttrykket: Ukjend feil ($1)',
 	'pfunc_expr_not_a_number' => 'Resultatet i $1 er ikkje eit tal',
+	'pfunc_string_too_long' => 'Feil: Strengen går over grensa på $1 teikn',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
@@ -1568,6 +1579,7 @@ $messages['sk'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Neplatný argument pre ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Chyba výrazu: Neznáma chyba ($1)',
 	'pfunc_expr_not_a_number' => 'V $1: výsledok nie je číslo',
+	'pfunc_string_too_long' => 'Chyba: Reťazec prekračuje limit $1 znakov',
 );
 
 /** Serbian Cyrillic ekavian (ћирилица)
@@ -1629,6 +1641,7 @@ $messages['su'] = array(
 /** Swedish (Svenska)
  * @author Lejonel
  * @author M.M.S.
+ * @author Najami
  */
 $messages['sv'] = array(
 	'pfunc_desc' => 'Lägger till logiska funktioner i parsern',
@@ -1649,6 +1662,7 @@ $messages['sv'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Ogiltigt argument för ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Fel i uttryck: Okänt fel ($1)',
 	'pfunc_expr_not_a_number' => 'I $1: resultatet är inte ett tal',
+	'pfunc_string_too_long' => 'Fel: Strängen överskrider gränsen på $1 tecken',
 );
 
 /** Telugu (తెలుగు)
@@ -1764,6 +1778,7 @@ $messages['tr'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'ln için geçersiz değişken: <= 0',
 	'pfunc_expr_unknown_error' => 'İfade hatası: Bilinmeyen hata ($1)',
 	'pfunc_expr_not_a_number' => "$1'de: sonuç bir sayı değil",
+	'pfunc_string_too_long' => 'Hata: Dize $1 karakter sınırını geçiyor',
 );
 
 /** Ukrainian (Українська)
