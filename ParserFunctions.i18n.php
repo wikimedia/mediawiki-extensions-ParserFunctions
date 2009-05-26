@@ -701,6 +701,7 @@ $messages['he'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'ארגומנט בלתי תקין לפונקציה ln: <= 0',
 	'pfunc_expr_unknown_error' => 'שגיאה בביטוי: שגיאה בלתי ידועה ($1)',
 	'pfunc_expr_not_a_number' => 'התוצאה של $1 אינה מספר',
+	'pfunc_string_too_long' => 'שגיאה: המחרוזת עוברת את גבול התווים המותר, $1',
 );
 
 /** Hindi (हिन्दी)
