@@ -589,12 +589,13 @@ class ExtParserFunctions {
 
 	// Generates error message.  Called when string is too long.
 	private function tooLongError() {
-		global $wgStringFunctionsLimit;
+		global $wgStringFunctionsLimit, $wgContLang;
 		wfLoadExtensionMessages( 'ParserFunctions' );
 		
 		return '<strong class="error">' . 
-			wfMsgForContent( "pfunc_string_too_long", 
-				htmlspecialchars( $wgStringFunctionsLimit ) ) .
+			wfMsgExt( 'pfunc_string_too_long',
+				array( 'escape', 'parsemag' ), 
+				$wgContLang->formatNum( $wgStringFunctionsLimit ) ) .
 			'</strong>';
 	}
 
