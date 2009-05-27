@@ -32,10 +32,12 @@ $messages['en'] = array(
 /** Message documentation (Message documentation)
  * @author Jon Harald Søby
  * @author Meno25
+ * @author Siebrand
  */
 $messages['qqq'] = array(
 	'pfunc_desc' => 'Short description of the ParserFunctions extension, shown on [[Special:Version]].',
 	'pfunc_expr_division_by_zero' => '{{Identical|Divizion by zero}}',
+	'pfunc_string_too_long' => 'PLURAL is supported for $1.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -215,6 +217,7 @@ $messages['be-tarask'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Памылковы аргумэнт для ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Памылка выразу: невядомая памылка ($1)',
 	'pfunc_expr_not_a_number' => 'У $1: вынік не зьяўляецца лічбай',
+	'pfunc_string_too_long' => 'Памылка: у радку перавышаны ліміт $1 {{PLURAL:$1|сымбаль|сымбалі|сымбаляў}}',
 );
 
 /** Bulgarian (Български)
@@ -449,6 +452,7 @@ $messages['dsb'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Njepłaśiwy argument za ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Wurazowa zmólka: Njeznata zmólka ($1)',
 	'pfunc_expr_not_a_number' => 'W $1: wuslědk njejo licba',
+	'pfunc_string_too_long' => 'Zmólka: Znamješkowy rěd pśekčaca limit $1 znamješkow',
 );
 
 /** Greek (Ελληνικά)
@@ -783,6 +787,7 @@ $messages['hsb'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Njepłaćiwy argument za ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Wurazowy zmylk: Njeznaty zmylk ($1)',
 	'pfunc_expr_not_a_number' => 'W $1: Wuslědk ličba njeje',
+	'pfunc_string_too_long' => 'Zmylk: Znamješkowy slěd překročuje limit $1 znamješkow',
 );
 
 /** Hungarian (Magyar)
@@ -831,6 +836,7 @@ $messages['ia'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argumento invalide pro ln: ≤ 0',
 	'pfunc_expr_unknown_error' => 'Error de expression: Error incognite ($1)',
 	'pfunc_expr_not_a_number' => 'In $1: le resultato non es un numero',
+	'pfunc_string_too_long' => 'Error: Le catena excede le limite de $1 {{PLURAL:$1|character|characteres}}',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1265,6 +1271,7 @@ $messages['nl'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Ongeldige parameter voor ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Fout in uitdrukking: onbekende fout ($1)',
 	'pfunc_expr_not_a_number' => 'In $1: resultaat is geen getal',
+	'pfunc_string_too_long' => 'Fout: De tekst is langer dan de limiet van $1 {{PLURAL:$1|karakter|karakters}}',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -1297,6 +1304,7 @@ $messages['nn'] = array(
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
+ * @author Laaknor
  */
 $messages['no'] = array(
 	'pfunc_desc' => 'Utvid parser med logiske funksjoner',
@@ -1317,6 +1325,7 @@ $messages['no'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Ugyldig argument for ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Uttrykksfeil: Ukjent feil ($1)',
 	'pfunc_expr_not_a_number' => 'I $1: resultat er ikke et tall',
+	'pfunc_string_too_long' => 'Feil: Strengen går over grensen på $1 tegn',
 );
 
 /** Occitan (Occitan)
@@ -1341,6 +1350,7 @@ $messages['oc'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Valor incorrècta per ln : ≤ 0',
 	'pfunc_expr_unknown_error' => "Error d'expression : error desconeguda ($1)",
 	'pfunc_expr_not_a_number' => 'Dins $1 : lo resultat es pas un nombre',
+	'pfunc_string_too_long' => 'Error : La cadena depassa lo limit maximal de $1 caractèr{{PLURAL:$1||s}}',
 );
 
 /** Polish (Polski)
@@ -1366,6 +1376,7 @@ $messages['pl'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Nieprawidłowy argument funkcji ln – mniejszy lub równy 0',
 	'pfunc_expr_unknown_error' => 'Błąd w wyrażeniu – nieznany błąd ($1)',
 	'pfunc_expr_not_a_number' => 'W $1: wynik nie jest liczbą',
+	'pfunc_string_too_long' => 'Błąd – długość ciągu znaków przekracza dopuszczalne $1',
 );
 
 /** Piedmontese (Piemontèis)
@@ -1484,6 +1495,7 @@ $messages['ru'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Ошибочный аргумент ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Ошибка выражения: неизвестная ошибка ($1)',
 	'pfunc_expr_not_a_number' => 'В $1: результат не является числом',
+	'pfunc_string_too_long' => 'Ошибка: строка превышает ограничение в $1 символов',
 );
 
 /** Yakut (Саха тыла)
