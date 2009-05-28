@@ -594,7 +594,7 @@ class ExtParserFunctions {
 		
 		return '<strong class="error">' . 
 			wfMsgExt( 'pfunc_string_too_long',
-				array( 'escape', 'parsemag' ), 
+				array( 'escape', 'parsemag', 'content' ), 
 				$wgContLang->formatNum( $wgStringFunctionsLimit ) ) .
 			'</strong>';
 	}
