@@ -349,6 +349,7 @@ $messages['ca'] = array(
  * @author Danny B.
  * @author Li-sung
  * @author Matěj Grabovský
+ * @author Mormegil
  * @author Sp5uhe
  */
 $messages['cs'] = array(
@@ -370,6 +371,7 @@ $messages['cs'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Neplatný argument pro ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Chyba ve výrazu: Neznámá chyba ($1)',
 	'pfunc_expr_not_a_number' => 'V $1: výsledkem není číslo',
+	'pfunc_string_too_long' => 'Chyba: Řetězec je delší než $1 {{PLURAL:$1|znak|znaky|znaků}}, což je limit',
 );
 
 /** Danish (Dansk)
