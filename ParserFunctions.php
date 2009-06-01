@@ -617,7 +617,7 @@ class ExtParserFunctions {
 	/**
 	 * {{#pos: string | needle | offset}}
 	 *
-	 * Finds first occurence of "needle" in "string" starting at "offset".
+	 * Finds first occurrence of "needle" in "string" starting at "offset".
 	 *
 	 * Note: If the needle is an empty string, single space is used instead.
 	 * Note: If the needle is not found, -1 is returned.
@@ -646,7 +646,7 @@ class ExtParserFunctions {
 	/**
 	 * {{#rpos: string | needle}}
 	 *
-	 * Finds last occurence of "needle" in "string".
+	 * Finds last occurrence of "needle" in "string".
 	 *
 	 * Note: If the needle is an empty string, single space is used instead.
 	 * Note: If the needle is not found, -1 is returned.
@@ -707,7 +707,7 @@ class ExtParserFunctions {
 	/**
 	 * {{#count: string | substr }}
 	 *
-	 * Returns number of occurences of "substr" in "string".
+	 * Returns number of occurrences of "substr" in "string".
 	 *
 	 * Note: If "substr" is empty, a single space is used.
 	 */
@@ -734,7 +734,7 @@ class ExtParserFunctions {
 	/**
 	 * {{#replace:string | from | to | limit }}
 	 *
-	 * Replaces each occurence of "from" in "string" with "to".
+	 * Replaces each occurrence of "from" in "string" with "to".
 	 * At most "limit" replacements are performed.
 	 * 
 	 * Note: Armored against replacements that would generate huge strings.
@@ -791,7 +791,7 @@ class ExtParserFunctions {
 	/**
 	 * {{#explode:string | delimiter | position}}
 	 *
-	 * Breaks "string" into chunks seperated by "delimiter" and returns the
+	 * Breaks "string" into chunks separated by "delimiter" and returns the
 	 * chunk identified by "position".
 	 *
 	 * Note: Negative position can be used to specify tokens from the end.
