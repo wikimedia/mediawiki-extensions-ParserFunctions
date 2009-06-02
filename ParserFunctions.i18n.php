@@ -1866,6 +1866,7 @@ $messages['vi'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Tham số không hợp lệ cho ln: ≤ 0',
 	'pfunc_expr_unknown_error' => 'Lỗi biểu thức: Lỗi không rõ nguyên nhân ($1)',
 	'pfunc_expr_not_a_number' => 'Trong $1: kết quả không phải là kiểu số',
+	'pfunc_string_too_long' => 'Lỗi: Chuỗi vượt quá giới hạn $1 ký tự',
 );
 
 /** Volapük (Volapük)
