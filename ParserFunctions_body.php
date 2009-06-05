@@ -187,7 +187,7 @@ class ExtParserFunctions {
 			return '';
 		}
 		$primary = trim( $frame->expand( array_shift( $args ) ) );
-		$found = false;
+		$found = $defaultFound = false;
 		$default = null;
 		$lastItemHadNoEquals = false;
 		$mwDefault =& MagicWord::get( 'default' );
@@ -209,7 +209,7 @@ class ExtParserFunctions {
 					if ( $test == $primary ) {
 						# Found a match, return now
 						return trim( $frame->expand( $valueNode ) );
-					} elseif ( $mwDefault->matchStartAndRemove( $test ) ) {
+					} elseif ( $defaultFound || $mwDefault->matchStartAndRemove( $test ) ) {
 						$default = $valueNode;
 					} # else wrong case, continue
 				}
@@ -220,6 +220,8 @@ class ExtParserFunctions {
 				$test = trim( $frame->expand( $valueNode ) );
 				if ( $test == $primary ) {
 					$found = true;
+				} elseif ( $mwDefault->matchStartAndRemove( $test ) ) {
+					$defaultFound = true;
 				}
 			}
 		}

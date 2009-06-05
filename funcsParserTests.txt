@@ -41,3 +41,14 @@ Time test after the 2038 32-bit Apocalype
 <p>2061
 </p>
 !! end
+
+!! test
+Bug 19093: Default values don't fall through in switch
+!! input
+<{{#switch: foo | bar | #default = DEF }}>
+<{{#switch: foo | #default | bar = DEF }}>
+!! result
+<p>&lt;DEF&gt;
+&lt;DEF&gt;
+</p>
+!! end
