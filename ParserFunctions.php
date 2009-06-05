@@ -620,7 +620,7 @@ class ExtParserFunctions {
 	 * Finds first occurrence of "needle" in "string" starting at "offset".
 	 *
 	 * Note: If the needle is an empty string, single space is used instead.
-	 * Note: If the needle is not found, -1 is returned.
+	 * Note: If the needle is not found, empty string is returned.
 	 */
 	function runPos ( &$parser, $inStr = '', $inNeedle = '', $inOffset = 0 ) {
 		wfProfileIn( __METHOD__ );
@@ -637,7 +637,7 @@ class ExtParserFunctions {
 		if( $inNeedle == '' ) { $inNeedle = ' '; }
 
 		$pos = mb_strpos( $inStr, $inNeedle, $inOffset );
-		if( $pos === false ) { $pos = -1; }
+		if( $pos === false ) { $pos = ""; }
 
 		wfProfileOut( __METHOD__ );
 		return $pos;
