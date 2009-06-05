@@ -149,7 +149,7 @@ class ExtParserFunctions {
 		$args = func_get_args();
 		array_shift( $args );
 		$primary = trim(array_shift($args));
-		$found = false;
+		$found = $defaultFound = false;
 		$parts = null;
 		$default = null;
 		$mwDefault =& MagicWord::get( 'default' );
@@ -160,7 +160,7 @@ class ExtParserFunctions {
 				if ( $found || $parts[0] == $primary ) {
 					# Found a match, return now
 					return $parts[1];
-				} elseif ( $mwDefault->matchStartAndRemove( $parts[0] ) ) {
+				} elseif ( $defaultFound || $mwDefault->matchStartAndRemove( $parts[0] ) ) {
 					$default = $parts[1];
 				} # else wrong case, continue
 			} elseif ( count( $parts ) == 1 ) {
@@ -168,6 +168,8 @@ class ExtParserFunctions {
 				# If the value matches, set a flag and continue
 				if ( $parts[0] == $primary ) {
 					$found = true;
+				} elseif ( $mwDefault->matchStartAndRemove( $parts[0] ) ) {
+					$defaultFound = true;
 				}
 			} # else RAM corruption due to cosmic ray?
 		}
