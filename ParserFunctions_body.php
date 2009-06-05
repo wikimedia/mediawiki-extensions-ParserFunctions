@@ -160,11 +160,9 @@ class ExtParserFunctions {
 				if ( $found || $parts[0] == $primary ) {
 					# Found a match, return now
 					return $parts[1];
-				} else {
-					if ( $mwDefault->matchStartAndRemove( $parts[0] ) ) {
-						$default = $parts[1];
-					} # else wrong case, continue
-				}
+				} elseif ( $mwDefault->matchStartAndRemove( $parts[0] ) ) {
+					$default = $parts[1];
+				} # else wrong case, continue
 			} elseif ( count( $parts ) == 1 ) {
 				# Multiple input, single output
 				# If the value matches, set a flag and continue
@@ -211,11 +209,9 @@ class ExtParserFunctions {
 					if ( $test == $primary ) {
 						# Found a match, return now
 						return trim( $frame->expand( $valueNode ) );
-					} else {
-						if ( $mwDefault->matchStartAndRemove( $test ) ) {
-							$default = $valueNode;
-						} # else wrong case, continue
-					}
+					} elseif ( $mwDefault->matchStartAndRemove( $test ) ) {
+						$default = $valueNode;
+					} # else wrong case, continue
 				}
 			} else {
 				# Multiple input, single output
