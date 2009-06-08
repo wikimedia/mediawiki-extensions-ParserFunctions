@@ -623,22 +623,25 @@ $messages['fr'] = array(
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
-	'pfunc_desc' => 'Ôgmente lo parsor avouéc des fonccions logiques.',
-	'pfunc_time_error' => 'Èrror : durâ envalida',
-	'pfunc_time_too_long' => 'Èrror : parsèr #time apelâ trop de côps',
-	'pfunc_rel2abs_invalid_depth' => 'Èrror : nivô de rèpèrtouèro envalido dens lo chemin : « $1 » (at tâchiê d’arrevar a un nivô en-dessus du rèpèrtouèro racena)',
-	'pfunc_expr_stack_exhausted' => 'Èxprèssion fôssa : pila èpouesiê',
-	'pfunc_expr_unexpected_number' => 'Èxprèssion fôssa : nombro emprèvu',
-	'pfunc_expr_preg_match_failure' => 'Èxprèssion fôssa : falyita emprèvua por <code>preg_match</code>',
-	'pfunc_expr_unrecognised_word' => "Èrror d’èxprèssion : lo mot '''$1''' est pas recognu",
-	'pfunc_expr_unexpected_operator' => "Èrror d’èxprèssion : l’opèrator '''$1''' est pas recognu",
-	'pfunc_expr_missing_operand' => "Èrror d’èxprèssion : l’opèranda '''$1''' est pas recognua",
+	'pfunc_desc' => 'Mèlyore lo parsor avouéc des fonccions logiques.',
+	'pfunc_time_error' => 'Èrror : temps envalido',
+	'pfunc_time_too_long' => 'Èrror : trop grant nombro d’apèls a <code>#time</code>',
+	'pfunc_rel2abs_invalid_depth' => 'Èrror : provondior envalida dens lo chemin « $1 » (at tâchiê d’arrevar a un nivél en-dessus du nuod racena)',
+	'pfunc_expr_stack_exhausted' => 'Èrror d’èxprèssion : pila èpouesiê',
+	'pfunc_expr_unexpected_number' => 'Èrror d’èxprèssion : nombro emprèvu',
+	'pfunc_expr_preg_match_failure' => 'Èrror d’èxprèssion : falyita emprèvua de <code>preg_match</code>',
+	'pfunc_expr_unrecognised_word' => 'Èrror d’èxprèssion : mot « $1 » pas recognu',
+	'pfunc_expr_unexpected_operator' => 'Èrror d’èxprèssion : opèrator « $1 » emprèvu',
+	'pfunc_expr_missing_operand' => 'Èrror d’èxprèssion : opèrando manquent por « $1 »',
 	'pfunc_expr_unexpected_closing_bracket' => 'Èrror d’èxprèssion : parentèsa cllosenta emprèvua',
 	'pfunc_expr_unrecognised_punctuation' => 'Èrror d’èxprèssion : caractèro de ponctuacion « $1 » pas recognu',
 	'pfunc_expr_unclosed_bracket' => 'Èrror d’èxprèssion : parentèsa pas cllôsa',
 	'pfunc_expr_division_by_zero' => 'Division per zérô',
+	'pfunc_expr_invalid_argument' => 'Argument fôx por « $1 » : < -1 ou ben > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Argument fôx por « ln » : ≤ 0',
 	'pfunc_expr_unknown_error' => 'Èrror d’èxprèssion : èrror encognua ($1)',
 	'pfunc_expr_not_a_number' => 'Dens $1 : lo rèsultat est pas un nombro',
+	'pfunc_string_too_long' => 'Èrror : la chêna dèpâsse la limita d’amont de $1 caractèro{{PLURAL:$1||s}}',
 );
 
 /** Galician (Galego)
@@ -1841,6 +1844,7 @@ $messages['vec'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argomento mìa valido par ln: <= 0',
 	'pfunc_expr_unknown_error' => "Eror ne l'espression: eror sconossiùo ($1)",
 	'pfunc_expr_not_a_number' => "In $1: el risultato no'l xe mìa un nùmaro",
+	'pfunc_string_too_long' => 'Eròr: la stringa la va fora dal limite de {{PLURAL:$1|1 caràtere|$1 caràteri}}',
 );
 
 /** Vietnamese (Tiếng Việt)
