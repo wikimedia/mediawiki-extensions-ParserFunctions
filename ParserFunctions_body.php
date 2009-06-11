@@ -562,8 +562,8 @@ class ExtParserFunctions {
 	function runPos ( &$parser, $inStr = '', $inNeedle = '', $inOffset = 0 ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( (string)$inStr );
-		$inNeedle = $this->killMarkers( (string)$inNeedle );
+		$inStr = $this->killMarkers( $parser, (string)$inStr );
+		$inNeedle = $this->killMarkers( $parser, (string)$inNeedle );
 		
 		if( !$this->checkLength( $inStr ) || 
 		    !$this->checkLength( $inNeedle ) ) {
@@ -591,8 +591,8 @@ class ExtParserFunctions {
 	function runRPos ( &$parser, $inStr = '', $inNeedle = '' ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( (string)$inStr );
-		$inNeedle = $this->killMarkers( (string)$inNeedle );
+		$inStr = $this->killMarkers( $parser, (string)$inStr );
+		$inNeedle = $this->killMarkers( $parser, (string)$inNeedle );
 		
 		if( !$this->checkLength( $inStr ) || 
 		    !$this->checkLength( $inNeedle ) ) {
@@ -624,7 +624,7 @@ class ExtParserFunctions {
 	function runSub ( &$parser, $inStr = '', $inStart = 0, $inLength = 0 ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( (string)$inStr );
+		$inStr = $this->killMarkers( $parser, (string)$inStr );
 
 		if( !$this->checkLength( $inStr ) ) {
 			wfProfileOut( __METHOD__ );
@@ -651,8 +651,8 @@ class ExtParserFunctions {
 	function runCount ( &$parser, $inStr = '', $inSubStr = '' ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( (string)$inStr );
-		$inSubStr = $this->killMarkers( (string)$inSubStr );
+		$inStr = $this->killMarkers( $parser, (string)$inStr );
+		$inSubStr = $this->killMarkers( $parser, (string)$inSubStr );
 
 		if( !$this->checkLength( $inStr ) ||
 		    !$this->checkLength( $inSubStr ) ) {
@@ -682,9 +682,9 @@ class ExtParserFunctions {
 		global $wgPFStringLengthLimit;
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( (string)$inStr );
-		$inReplaceFrom = $this->killMarkers( (string)$inReplaceFrom );
-		$inReplaceTo = $this->killMarkers( (string)$inReplaceTo );
+		$inStr = $this->killMarkers( $parser, (string)$inStr );
+		$inReplaceFrom = $this->killMarkers( $parser, (string)$inReplaceFrom );
+		$inReplaceTo = $this->killMarkers( $parser, (string)$inReplaceTo );
 
 		if( !$this->checkLength( $inStr ) ||
 		    !$this->checkLength( $inReplaceFrom ) ||
@@ -738,8 +738,8 @@ class ExtParserFunctions {
 	function runExplode ( &$parser, $inStr = '', $inDiv = '', $inPos = 0 ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( (string)$inStr );
-		$inDiv = $this->killMarkers( (string)$inDiv );
+		$inStr = $this->killMarkers( $parser, (string)$inStr );
+		$inDiv = $this->killMarkers( $parser, (string)$inDiv );
 
 		if( $inDiv == '' ) { $inDiv = ' '; }
 
