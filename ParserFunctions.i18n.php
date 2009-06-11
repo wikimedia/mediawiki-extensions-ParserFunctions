@@ -460,6 +460,7 @@ $messages['dsb'] = array(
 /** Greek (Ελληνικά)
  * @author Consta
  * @author Dead3y3
+ * @author Omnipaedista
  * @author Απεργός
  */
 $messages['el'] = array(
@@ -481,6 +482,7 @@ $messages['el'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Άκυρη παράμετρος για το ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Σφάλμα έκφρασης: Άγνωστο σφάλμα ($1)',
 	'pfunc_expr_not_a_number' => 'Στο $1: το αποτέλεσμα δεν είναι αριθμός',
+	'pfunc_string_too_long' => 'Σφάλμα: ο ορμαθός υπερβαίνει $1 το όριο χαρακτήρων',
 );
 
 /** Esperanto (Esperanto)
@@ -1422,6 +1424,7 @@ $messages['pt'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argumento inválido para ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Erro de expressão: Erro desconhecido ($1)',
 	'pfunc_expr_not_a_number' => 'Em $1: resultado não é um número',
+	'pfunc_string_too_long' => 'Erro: cadeia de carateres excede o limite de $1 carateres',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
