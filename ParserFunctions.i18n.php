@@ -1528,6 +1528,7 @@ $messages['sah'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'ln аргумена сыыһалаах: <= 0',
 	'pfunc_expr_unknown_error' => 'Expression error (ошибка выражения): Биллибэт алҕас ($1)',
 	'pfunc_expr_not_a_number' => '$1 иһигэр: эппиэтэ чыыһыла буолбатах',
+	'pfunc_string_too_long' => 'Алҕас: Устуруока уһуна $1 бэлиэннэн хааччахха баппат',
 );
 
 /** Sicilian (Sicilianu)
