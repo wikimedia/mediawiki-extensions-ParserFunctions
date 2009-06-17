@@ -110,6 +110,7 @@ $messages['ar'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'مدخلة غير صحيحة ل ln: <= 0',
 	'pfunc_expr_unknown_error' => 'خطأ في التعبير: خطأ غير معروف ($1)',
 	'pfunc_expr_not_a_number' => 'في $1: النتيجة ليست رقما',
+	'pfunc_string_too_long' => 'خطأ: السلسلة تتجاوز الحد $1 حرف',
 );
 
 /** Egyptian Spoken Arabic (مصرى)
@@ -870,6 +871,7 @@ $messages['id'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argumen tidak berlaku untuk ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Kesalahan ekspresi: Kesalahan tak dikenal ($1)',
 	'pfunc_expr_not_a_number' => 'Pada $1: hasilnya bukan angka',
+	'pfunc_string_too_long' => 'Kesalahan: String melebihi limit $1 karakter',
 );
 
 /** Ido (Ido)
