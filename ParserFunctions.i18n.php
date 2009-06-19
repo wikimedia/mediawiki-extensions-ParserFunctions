@@ -1480,7 +1480,20 @@ $messages['ro'] = array(
  */
 $messages['roa-tara'] = array(
 	'pfunc_time_error' => 'Errore: Orarie invalide',
+	'pfunc_expr_stack_exhausted' => 'Espressione in errore: Stack anghiute',
+	'pfunc_expr_unexpected_number' => 'Espressione in errore: Numere inaspettate',
+	'pfunc_expr_preg_match_failure' => 'Espressione in errore: preg_match inaspettate e fallite',
+	'pfunc_expr_unrecognised_word' => 'Espressione in errore: Parola scanusciute "$1"',
+	'pfunc_expr_unexpected_operator' => 'Espressione in errore: Operatore $1 inaspettate',
+	'pfunc_expr_missing_operand' => 'Espressione in errore: Operande zumbate pe $1',
+	'pfunc_expr_unexpected_closing_bracket' => "Espressione in errore: Non g'onne state achiuse le parendesi",
+	'pfunc_expr_unrecognised_punctuation' => 'Espressione in errore: Carattere de punde "$1" scanusciute',
+	'pfunc_expr_unclosed_bracket' => 'Espressione in errore: Parendesi non achiuse',
 	'pfunc_expr_division_by_zero' => 'Divisione pe zero',
+	'pfunc_expr_invalid_argument' => 'Argomende invalide pe $1: < -1 o > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Argomende invalide pe ln: <= 0',
+	'pfunc_expr_unknown_error' => 'Espressione in errore: Errore scanusciute ($1)',
+	'pfunc_expr_not_a_number' => "In $1: 'u resultate non g'è 'nu numere",
 );
 
 /** Russian (Русский)
