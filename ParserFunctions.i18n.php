@@ -508,6 +508,7 @@ $messages['eo'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Nevalida argumento por ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Esprima eraro: Nekonata eraro ($1)',
 	'pfunc_expr_not_a_number' => 'En $1: rezulto ne estas nombro',
+	'pfunc_string_too_long' => 'Eraro: Ĉeno preterpasas signo-limon $1',
 );
 
 /** Spanish (Español)
@@ -1663,6 +1664,7 @@ $messages['stq'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Uungultich Argument foar ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Expression-Failer: Uunbekoanden Failer ($1)',
 	'pfunc_expr_not_a_number' => 'Expression-Failer: In $1: Resultoat is neen Taal',
+	'pfunc_string_too_long' => 'Failer: Teekenkätte is laanger as dät Teekenlimit fon $1',
 );
 
 /** Sundanese (Basa Sunda)
