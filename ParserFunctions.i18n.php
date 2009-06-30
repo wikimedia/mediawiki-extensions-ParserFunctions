@@ -512,6 +512,7 @@ $messages['eo'] = array(
 );
 
 /** Spanish (Español)
+ * @author Crazymadlover
  * @author Muro de Aguas
  * @author Remember the dot
  * @author Sanbec
@@ -535,6 +536,7 @@ $messages['es'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argumento incorrecto para ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Error con la expresión: Error desconocido ($1)',
 	'pfunc_expr_not_a_number' => 'En $1: el resultado no es un número',
+	'pfunc_string_too_long' => 'Error: la cadena excede el límite de $1 caracteres',
 );
 
 /** Basque (Euskara) */
