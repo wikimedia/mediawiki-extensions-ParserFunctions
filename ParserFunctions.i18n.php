@@ -1094,6 +1094,7 @@ $messages['lb'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Ongëltege Wert fir ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Expression-Feeler: Onbekannte Feeler ($1)',
 	'pfunc_expr_not_a_number' => "An $1: D'Resultat ass keng Zuel",
+	'pfunc_string_too_long' => "Feeler: D'Zeecheketten ass méi laang wéi d'Limit vu(n) $1 Zeechen",
 );
 
 /** Limburgish (Limburgs)
