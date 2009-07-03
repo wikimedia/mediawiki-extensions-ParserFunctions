@@ -572,6 +572,7 @@ $messages['fa'] = array(
 
 /** Finnish (Suomi)
  * @author Agony
+ * @author Cimon Avaro
  * @author Nike
  */
 $messages['fi'] = array(
@@ -593,6 +594,7 @@ $messages['fi'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Virheellinen arvo funktiolle ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Virhe lausekkeessa: tuntematon virhe ($1)',
 	'pfunc_expr_not_a_number' => 'Lausekkeessa $1: tulos ei ole luku',
+	'pfunc_string_too_long' => 'Virhe: Merkkijono ylittää $1 merkin ylärajan',
 );
 
 /** French (Français)
