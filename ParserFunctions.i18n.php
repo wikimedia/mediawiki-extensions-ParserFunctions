@@ -539,11 +539,14 @@ $messages['es'] = array(
 	'pfunc_string_too_long' => 'Error: la cadena excede el límite de $1 caracteres',
 );
 
-/** Basque (Euskara) */
+/** Basque (Euskara)
+ * @author Kobazulo
+ */
 $messages['eu'] = array(
 	'pfunc_time_error' => 'Errorea: baliogabeko ordua',
 	'pfunc_time_too_long' => 'Errorea: #time dei gehiegi',
 	'pfunc_rel2abs_invalid_depth' => 'Errorea: Baliogabeko sakonera fitxategi bidean: "$1" (root puntutik gora sartzen saiatu da)',
+	'pfunc_expr_division_by_zero' => 'Zeroz zatitu',
 );
 
 /** Persian (فارسی)
