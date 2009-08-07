@@ -828,6 +828,7 @@ $messages['hu'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Az ln érvénytelen paramétert kapott: <= 0',
 	'pfunc_expr_unknown_error' => 'Hiba a kifejezésben: ismeretlen hiba ($1)',
 	'pfunc_expr_not_a_number' => '$1: az eredmény nem szám',
+	'pfunc_string_too_long' => 'Hiba: a sztring túllépte a(z) $1 karakteres határt',
 );
 
 /** Interlingua (Interlingua)
