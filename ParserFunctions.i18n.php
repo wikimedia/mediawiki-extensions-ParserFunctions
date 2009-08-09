@@ -539,6 +539,13 @@ $messages['es'] = array(
 	'pfunc_string_too_long' => 'Error: la cadena excede el límite de $1 caracteres',
 );
 
+/** Estonian (Eesti)
+ * @author Pikne
+ */
+$messages['et'] = array(
+	'pfunc_desc' => 'Laiendab parserit loogiliste funktsioonidega.',
+);
+
 /** Basque (Euskara)
  * @author Kobazulo
  */
@@ -915,6 +922,7 @@ $messages['it'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argomento non valido per ln: <= 0',
 	'pfunc_expr_unknown_error' => "Errore nell'espressione: errore sconosciuto ($1)",
 	'pfunc_expr_not_a_number' => 'In $1: il risultato non è un numero',
+	'pfunc_string_too_long' => 'Errore: la stringa supera il limite di $1 {{PLURAL:$1|carattere|caratteri}}',
 );
 
 /** Japanese (日本語)
@@ -1037,16 +1045,18 @@ $messages['km'] = array(
 );
 
 /** Korean (한국어)
+ * @author Klutzy
  * @author Kwj2772
  * @author ToePeu
  * @author Yknok29
  */
 $messages['ko'] = array(
-	'pfunc_desc' => '논리적 기능과 함께 분석의 질을 높임',
+	'pfunc_desc' => '파서에 논리 함수를 추가',
 	'pfunc_time_error' => '오류: 시간이 잘못되었습니다.',
 	'pfunc_time_too_long' => '오류: #time을 너무 많이 썼습니다.',
-	'pfunc_expr_unexpected_number' => '표현 오류: 예측하지 못한 숫자',
-	'pfunc_expr_unrecognised_word' => '표현 오류: 인식되지 않는 단어 "$1"',
+	'pfunc_expr_unexpected_number' => '표현식 오류: 예상치 못한 값',
+	'pfunc_expr_preg_match_failure' => '표현식 오류: 예상치 못한 preg_match 오류',
+	'pfunc_expr_unrecognised_word' => '표현식 오류: 알 수 없는 단어 ‘$1’',
 	'pfunc_expr_unexpected_operator' => '표현 오류: 잘못된 $1 연산자',
 	'pfunc_expr_missing_operand' => '표현 오류: $1의 피연산자가 없습니다.',
 	'pfunc_expr_unexpected_closing_bracket' => '표현 오류: 예상치 못한 괄호 닫기',
@@ -1461,6 +1471,7 @@ $messages['pt-br'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argumento inválido para ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Erro de expressão: Erro desconhecido ($1)',
 	'pfunc_expr_not_a_number' => 'Em $1: resultado não é um número',
+	'pfunc_string_too_long' => 'Erro: cadeia de caracteres excede o limite de $1 caracteres',
 );
 
 /** Quechua (Runa Simi)
