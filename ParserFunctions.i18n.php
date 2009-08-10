@@ -1506,6 +1506,7 @@ $messages['ro'] = array(
 	'pfunc_time_error' => 'Eroare: timp incorect',
 	'pfunc_time_too_long' => 'Eroare: prea multe apeluri #time',
 	'pfunc_rel2abs_invalid_depth' => 'Eroare: adâncime incorectă în cale: "$1" (încercat accesarea unui nod deasupra nodului rădăcină)',
+	'pfunc_expr_stack_exhausted' => 'Eroare de expresie: Stivă epuizată',
 	'pfunc_expr_unexpected_number' => 'Eroare de expresie: număr neaşteptat',
 	'pfunc_expr_preg_match_failure' => 'Eroare de expresie: eşuare preg_match neaşteptată',
 	'pfunc_expr_unrecognised_word' => 'Eroare de expresie: "$1" este cuvânt necunoscut',
@@ -1519,6 +1520,7 @@ $messages['ro'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argument incorect pentru ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Eroare de expresie: eroare necunoscută ($1)',
 	'pfunc_expr_not_a_number' => 'În $1: rezultatul nu este un număr',
+	'pfunc_string_too_long' => 'Eroare: Şirul depăşeşte limita de caractere de $1',
 );
 
 /** Tarandíne (Tarandíne)
@@ -1689,6 +1691,29 @@ $messages['sr-ec'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Лош аргумент: ln <= 0',
 	'pfunc_expr_unknown_error' => 'Грешка у изразу: Непозната грешка ($1)',
 	'pfunc_expr_not_a_number' => 'Резултат у $1 није број.',
+);
+
+/** latinica (latinica)
+ * @author Michaello
+ */
+$messages['sr-el'] = array(
+	'pfunc_desc' => 'obogati parser logičkim funkcijama',
+	'pfunc_time_error' => 'Greška: loše vreme',
+	'pfunc_time_too_long' => 'Greška: previše #time poziva',
+	'pfunc_expr_stack_exhausted' => 'Greška u izrazu: stek napunjen',
+	'pfunc_expr_unexpected_number' => 'Greška u izrazu: neočekivani broj',
+	'pfunc_expr_preg_match_failure' => 'Greška u izrazu: Neočekivana preg_match greška',
+	'pfunc_expr_unrecognised_word' => 'Greška u izrazu: nepoznata reč "$1"',
+	'pfunc_expr_unexpected_operator' => 'Greška u izrazu: nepoznati operator "$1"',
+	'pfunc_expr_missing_operand' => 'Greška u izrazu: nedostaje operand za $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Greška u izrazu: Neočekivano zatvaranje srednje zagrade.',
+	'pfunc_expr_unrecognised_punctuation' => 'Greška u izrazu: Nepoznati interpunkcijski karakter "$1".',
+	'pfunc_expr_unclosed_bracket' => 'Greška u izrazu: Nezatvorena srednja zagrada.',
+	'pfunc_expr_division_by_zero' => 'Deljenje sa nulom.',
+	'pfunc_expr_invalid_argument' => 'Loš argument: $1 je < -1 ili > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Loš argument: ln <= 0',
+	'pfunc_expr_unknown_error' => 'Greška u izrazu: Nepoznata greška ($1)',
+	'pfunc_expr_not_a_number' => 'Rezultat u $1 nije broj.',
 );
 
 /** Seeltersk (Seeltersk)
