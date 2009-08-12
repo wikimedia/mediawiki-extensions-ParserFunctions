@@ -30,13 +30,12 @@ $wgPFStringLengthLimit = 1000;
  */
 $wgPFEnableStringFunctions = false;
 
-
 /** REGISTRATION */
 $wgExtensionFunctions[] = 'wfSetupParserFunctions';
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'ParserFunctions',
-	'version' => '1.2.0',
+	'version' => '1.3.0',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:ParserFunctions',
 	'author' => array('Tim Starling', 'Robert Rohde', 'Ross McClure', 'Juraj Simlovic'),
 	'description' => 'Enhance parser with logical functions',
@@ -45,10 +44,8 @@ $wgExtensionCredits['parserhook'][] = array(
 
 $wgAutoloadClasses['ExtParserFunctions'] = dirname(__FILE__).'/ParserFunctions_body.php';
 $wgExtensionMessagesFiles['ParserFunctions'] = dirname(__FILE__) . '/ParserFunctions.i18n.php';
-$wgHooks['LanguageGetMagic'][]       = 'wfParserFunctionsLanguageGetMagic';
 
 $wgParserTestFiles[] = dirname( __FILE__ ) . "/funcsParserTests.txt";
-
 
 function wfSetupParserFunctions() {
 	global $wgParser, $wgPFHookStub, $wgHooks;
@@ -66,13 +63,6 @@ function wfSetupParserFunctions() {
 	}
 
 	$wgHooks['ParserClearState'][] = array( &$wgPFHookStub, 'clearState' );
-}
-
-function wfParserFunctionsLanguageGetMagic( &$magicWords, $langCode ) {
-	require_once( dirname( __FILE__ ) . '/ParserFunctions.i18n.magic.php' );
-	foreach( efParserFunctionsWords( $langCode ) as $word => $trans )
-		$magicWords[$word] = $trans;
-	return true;
 }
 
 /**
