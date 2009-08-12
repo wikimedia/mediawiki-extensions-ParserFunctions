@@ -1601,6 +1601,7 @@ $messages['sah'] = array(
 );
 
 /** Sicilian (Sicilianu)
+ * @author Melos
  * @author Santu
  */
 $messages['scn'] = array(
@@ -1622,6 +1623,7 @@ $messages['scn'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argumentu non vàlidu pi ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Sbàgghiu nti la sprissioni: sbàgghiu scanusciutu ($1)',
 	'pfunc_expr_not_a_number' => 'Nti $1: lu risurtatu nun è nu nùmmiru',
+	'pfunc_string_too_long' => 'Erruri: la stringa supira lu limiti di $1 carattiri',
 );
 
 /** Sinhala (සිංහල)
