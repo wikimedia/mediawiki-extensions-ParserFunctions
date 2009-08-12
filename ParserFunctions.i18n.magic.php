@@ -5,6 +5,7 @@ $magicWords = array();
 /**
  * English
  */
+$magicWords['en'] = array(
 	'expr'       => array( 0, 'expr' ),
 	'if'         => array( 0, 'if' ),
 	'ifeq'       => array( 0, 'ifeq' ),
