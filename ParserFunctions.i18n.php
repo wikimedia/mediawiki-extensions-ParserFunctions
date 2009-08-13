@@ -1239,6 +1239,8 @@ $messages['ms'] = array(
  */
 $messages['myv'] = array(
 	'pfunc_time_error' => 'Ильведевксэсь: амаштовикс шкась',
+	'pfunc_expr_stack_exhausted' => 'Ёвтавкссонть ильведевкс: стекесь тыц пешксе',
+	'pfunc_expr_division_by_zero' => 'Нольсэ йавома',
 );
 
 /** Nahuatl (Nāhuatl)
