@@ -768,6 +768,7 @@ $messages['hi'] = array(
  * @author Dalibor Bosits
  * @author Dnik
  * @author SpeedyGonsales
+ * @author Suradnik13
  */
 $messages['hr'] = array(
 	'pfunc_desc' => 'Mogućnost proširivanja parsera logičkim funkcijama',
@@ -788,6 +789,7 @@ $messages['hr'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Nevaljani argument za ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Greška u predlošku: Nepoznata greška ($1)',
 	'pfunc_expr_not_a_number' => 'U $1: rezultat nije broj',
+	'pfunc_string_too_long' => 'Greška: Niz prelazi ograničenje od $1 znakova',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
@@ -1148,6 +1150,7 @@ $messages['lt'] = array(
 );
 
 /** Macedonian (Македонски)
+ * @author Bjankuloski06
  * @author Brest
  */
 $messages['mk'] = array(
@@ -1169,6 +1172,7 @@ $messages['mk'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Невалиден аргумент за ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Грешка во изразот: Непозната грешка ($1)',
 	'pfunc_expr_not_a_number' => 'Во $1: резултатот не е број',
+	'pfunc_string_too_long' => 'Грешка: Низата го надминува ограничувањето на $1 знаци',
 );
 
 /** Malayalam (മലയാളം)
