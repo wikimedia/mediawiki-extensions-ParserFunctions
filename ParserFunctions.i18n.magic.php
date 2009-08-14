@@ -93,6 +93,24 @@ $magicWords['id'] = array(
 	'titleparts'   => array( '0', 'bagianjudul', 'titleparts' ),
 );
 
+$magicWords['nl'] = array(
+	'expr'         => array( '0', 'expressie', 'expr' ),
+	'if'           => array( '0', 'als', 'if' ),
+	'ifeq'         => array( '0', 'alsgelijk', 'ifeq' ),
+	'ifexpr'       => array( '0', 'alsexpressie', 'ifexpr' ),
+	'iferror'      => array( '0', 'alsfout', 'iferror' ),
+	'switch'       => array( '0', 'schakelen', 'switch' ),
+	'default'      => array( '0', '#standaard', '#default' ),
+	'ifexist'      => array( '0', 'alsbestaat', 'ifexist' ),
+	'time'         => array( '0', 'tijd', 'time' ),
+	'timel'        => array( '0', 'tijdl', 'timel' ),
+	'rel2abs'      => array( '0', 'relatiefnaarabsoluut', 'rel2abs' ),
+	'titleparts'   => array( '0', 'paginanaamdelen', 'titleparts' ),
+	'count'        => array( '0', 'telling', 'count' ),
+	'replace'      => array( '0', 'vervangen', 'replace' ),
+	'explode'      => array( '0', 'exploderen', 'explode' ),
+);
+
 $magicWords['yi'] = array(
 	'expr'         => array( '0', 'רעכן', 'חשב', 'expr' ),
 	'if'           => array( '0', 'תנאי', 'if' ),
