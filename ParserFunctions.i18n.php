@@ -400,6 +400,7 @@ $messages['da'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Ugyldigt argument for ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Udtryksfejl: Ukendt fejl ($1)',
 	'pfunc_expr_not_a_number' => 'I $1: Resultatet er ikke et tal',
+	'pfunc_string_too_long' => 'Feil: Strengen overskrider grænsen på $1 tegn',
 );
 
 /** German (Deutsch)
