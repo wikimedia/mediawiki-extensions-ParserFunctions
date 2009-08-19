@@ -79,6 +79,20 @@ $magicWords['he'] = array(
 	'titleparts'   => array( '0', 'חלק בכותרת', 'titleparts' ),
 );
 
+$magicWords['hu'] = array(
+	'expr'         => array( '0', 'kif', 'expr' ),
+	'if'           => array( '0', 'ha', 'if' ),
+	'ifeq'         => array( '0', 'haegyenlő', 'ifeq' ),
+	'ifexpr'       => array( '0', 'hakif', 'ifexpr' ),
+	'iferror'      => array( '0', 'hahibás', 'iferror' ),
+	'default'      => array( '0', '#alapértelmezett', '#default' ),
+	'ifexist'      => array( '0', 'halétezik', 'ifexist' ),
+	'time'         => array( '0', 'idő', 'time' ),
+	'len'          => array( '0', 'hossz', 'len' ),
+	'pos'          => array( '0', 'pozíció', 'pos' ),
+	'rpos'         => array( '0', 'jpozíció', 'rpos' ),
+);
+
 $magicWords['id'] = array(
 	'expr'         => array( '0', 'hitung', 'expr' ),
 	'if'           => array( '0', 'jika', 'if' ),

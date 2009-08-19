@@ -1759,6 +1759,7 @@ $messages['stq'] = array(
 $messages['su'] = array(
 	'pfunc_desc' => 'Ngembangkeun parser kalawan fungsi logis',
 	'pfunc_time_error' => 'Éror: titimangsa teu valid',
+	'pfunc_expr_division_by_zero' => 'Pambagi ku nol',
 );
 
 /** Swedish (Svenska)
@@ -2014,6 +2015,7 @@ $messages['yue'] = array(
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
+ * @author Liangent
  * @author Philip
  * @author Shinjiman
  */
@@ -2036,6 +2038,7 @@ $messages['zh-hans'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'ln的无效参数：<= 0',
 	'pfunc_expr_unknown_error' => '表达式错误：未知错误（$1）',
 	'pfunc_expr_not_a_number' => '在$1中：结果不是数字',
+	'pfunc_string_too_long' => '错误：字符串超过$1字符限制',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
