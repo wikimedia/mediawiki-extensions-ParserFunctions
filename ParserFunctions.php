@@ -44,6 +44,7 @@ $wgExtensionCredits['parserhook'][] = array(
 
 $wgAutoloadClasses['ExtParserFunctions'] = dirname(__FILE__).'/ParserFunctions_body.php';
 $wgExtensionMessagesFiles['ParserFunctions'] = dirname(__FILE__) . '/ParserFunctions.i18n.php';
+$wgExtensionMessagesFiles['ParserFunctionsMagic'] = dirname(__FILE__) . '/ParserFunctions.i18n.magic.php';
 
 $wgParserTestFiles[] = dirname( __FILE__ ) . "/funcsParserTests.txt";
 
