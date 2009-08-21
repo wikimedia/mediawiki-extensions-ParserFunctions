@@ -125,6 +125,10 @@ $magicWords['nl'] = array(
 	'explode'      => array( '0', 'exploderen', 'explode' ),
 );
 
+$magicWords['ru'] = array(
+	'replace'      => array( '0', 'замена', 'replace' ),
+);
+
 $magicWords['yi'] = array(
 	'expr'         => array( '0', 'רעכן', 'חשב', 'expr' ),
 	'if'           => array( '0', 'תנאי', 'if' ),
