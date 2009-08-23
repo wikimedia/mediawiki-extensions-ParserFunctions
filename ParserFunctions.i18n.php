@@ -1679,7 +1679,7 @@ $messages['sk'] = array(
 	'pfunc_string_too_long' => 'Chyba: Reťazec prekračuje limit $1 znakov',
 );
 
-/** Serbian Cyrillic ekavian (ћирилица)
+/** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Millosh
  */
 $messages['sr-ec'] = array(
@@ -1702,7 +1702,7 @@ $messages['sr-ec'] = array(
 	'pfunc_expr_not_a_number' => 'Резултат у $1 није број.',
 );
 
-/** latinica (latinica)
+/** Serbian Latin ekavian (Srpski (latinica))
  * @author Michaello
  */
 $messages['sr-el'] = array(
