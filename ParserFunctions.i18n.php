@@ -545,6 +545,7 @@ $messages['es'] = array(
  */
 $messages['et'] = array(
 	'pfunc_desc' => 'Laiendab parserit loogiliste funktsioonidega.',
+	'pfunc_expr_division_by_zero' => 'Nulliga jagamine',
 );
 
 /** Basque (Euskara)
