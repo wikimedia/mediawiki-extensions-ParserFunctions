@@ -275,7 +275,7 @@ $messages['bn'] = array(
  * @author Fulup
  */
 $messages['br'] = array(
-	'pfunc_desc' => "Barrekaat a ra ar parser gant arc'hwelioù poellek.",
+	'pfunc_desc' => "Gwellaat a ra ar parser gant arc'hwelioù poellek",
 	'pfunc_time_error' => 'Fazi : pad direizh',
 	'pfunc_time_too_long' => 'Fazi : betek re eo bet galvet #time',
 	'pfunc_rel2abs_invalid_depth' => "Fazi : Donder direizh evit an hent : \"\$1\" (klasket ez eus bet mont d'ul live a-us d'ar c'havlec'h-mamm)",
