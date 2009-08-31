@@ -293,6 +293,7 @@ $messages['br'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Talvoudenn direizh evit ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Kemennad faziek : Fazi dianav ($1)',
 	'pfunc_expr_not_a_number' => "E $1: An disoc'h n'eo ket un niver",
+	'pfunc_string_too_long' => "Fazi : Dreist d'ar vevenn uhelañ a $1 arouezenn eo an neudennad",
 );
 
 /** Bosnian (Bosanski)
