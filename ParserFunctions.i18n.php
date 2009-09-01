@@ -62,6 +62,7 @@ $messages['af'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Ongeldige argument vir ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Fout in uitdrukking: onbekende fout ($1)',
 	'pfunc_expr_not_a_number' => "In $1: resultaat is nie 'n getal nie",
+	'pfunc_string_too_long' => 'Fout: String oorskry $1 karakter limiet',
 );
 
 /** Aragonese (Aragonés)
