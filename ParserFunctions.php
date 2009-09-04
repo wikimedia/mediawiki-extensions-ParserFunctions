@@ -49,19 +49,11 @@ $wgExtensionMessagesFiles['ParserFunctionsMagic'] = dirname(__FILE__) . '/Parser
 $wgParserTestFiles[] = dirname( __FILE__ ) . "/funcsParserTests.txt";
 
 function wfSetupParserFunctions() {
-	global $wgParser, $wgPFHookStub, $wgHooks;
+	global $wgPFHookStub, $wgHooks;
 
 	$wgPFHookStub = new ParserFunctions_HookStub;
 
-	// Check for SFH_OBJECT_ARGS capability
-	if ( defined( 'MW_SUPPORTS_PARSERFIRSTCALLINIT' ) ) {
-		$wgHooks['ParserFirstCallInit'][] = array( &$wgPFHookStub, 'registerParser' );
-	} else {
-		if ( class_exists( 'StubObject' ) && !StubObject::isRealObject( $wgParser ) ) {
-			$wgParser->_unstub();
-		}
-		$wgPFHookStub->registerParser( $wgParser );
-	}
+	$wgHooks['ParserFirstCallInit'][] = array( &$wgPFHookStub, 'registerParser' );
 
 	$wgHooks['ParserClearState'][] = array( &$wgPFHookStub, 'clearState' );
 }
