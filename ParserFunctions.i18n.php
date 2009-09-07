@@ -940,7 +940,7 @@ $messages['ja'] = array(
 	'pfunc_desc' => 'パーサーに論理関数を追加して拡張する',
 	'pfunc_time_error' => 'エラー: 時刻が不正です',
 	'pfunc_time_too_long' => 'エラー: #time 呼び出しが多すぎます',
-	'pfunc_rel2abs_invalid_depth' => 'エラー: パス "$1" の階層が不正です（ルート階層からのアクセスをお試しください）',
+	'pfunc_rel2abs_invalid_depth' => 'エラー: パス "$1" の階層が不正です(ルート階層からのアクセスをお試しください)',
 	'pfunc_expr_stack_exhausted' => '構文エラー: スタックが空です',
 	'pfunc_expr_unexpected_number' => '構文エラー: 予期せぬ数字です',
 	'pfunc_expr_preg_match_failure' => '構文エラー: 予期せぬ形で preg_match に失敗しました',
@@ -953,7 +953,7 @@ $messages['ja'] = array(
 	'pfunc_expr_division_by_zero' => '0で除算しました',
 	'pfunc_expr_invalid_argument' => '$1の引数が無効です: < -1 または > 1',
 	'pfunc_expr_invalid_argument_ln' => 'ln の引数が無効です: <= 0',
-	'pfunc_expr_unknown_error' => '構文エラー: 予期せぬエラー（$1）',
+	'pfunc_expr_unknown_error' => '構文エラー: 予期せぬエラー($1)',
 	'pfunc_expr_not_a_number' => '$1: 結果が数字ではありません',
 	'pfunc_string_too_long' => 'エラー: 文字列が文字数制限 $1 を超えました',
 );
