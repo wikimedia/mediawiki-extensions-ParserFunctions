@@ -125,6 +125,17 @@ $magicWords['nl'] = array(
 	'explode'      => array( '0', 'exploderen', 'explode' ),
 );
 
+$magicWords['pt'] = array(
+	'if'           => array( '0', 'se', 'if' ),
+	'ifeq'         => array( '0', 'seigual', 'ifeq' ),
+	'ifexpr'       => array( '0', 'seexpr', 'ifexpr' ),
+	'iferror'      => array( '0', 'seerro', 'iferror' ),
+	'default'      => array( '0', '#padrão', '#padrao', '#default' ),
+	'ifexist'      => array( '0', 'seexiste', 'ifexist' ),
+	'titleparts'   => array( '0', 'partesdotítulo', 'partesdotitulo', 'titleparts' ),
+	'len'          => array( '0', 'comprimento', 'len' ),
+);
+
 $magicWords['ru'] = array(
 	'replace'      => array( '0', 'замена', 'replace' ),
 );
