@@ -693,6 +693,13 @@ $messages['gl'] = array(
 	'pfunc_string_too_long' => 'Erro: a cadea excede o límite de $1 caracteres',
 );
 
+/** Ancient Greek (Ἀρχαία ἑλληνικὴ)
+ * @author Omnipaedista
+ */
+$messages['grc'] = array(
+	'pfunc_expr_division_by_zero' => 'Διαίρεσις διὰ τοῦ μηδενός',
+);
+
 /** Swiss German (Alemannisch)
  * @author Als-Holder
  */
