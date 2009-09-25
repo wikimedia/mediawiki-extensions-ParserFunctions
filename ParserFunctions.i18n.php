@@ -1086,7 +1086,7 @@ $messages['ksh'] = array(
 	'pfunc_desc' => 'Deit em Wiki Funxione för Entscheidunge un esu dobei.',
 	'pfunc_time_error' => 'Fähler: Onjöltijje Zick.',
 	'pfunc_time_too_long' => 'Fähler: <code>#time</code> weed zo öff jebruch.',
-	'pfunc_rel2abs_invalid_depth' => 'Fähler: Zo fill „retuur“ em Pahd „$1“ — mer wöre wigger wi för der Aanfang zeröck jejange.',
+	'pfunc_rel2abs_invalid_depth' => 'Fähler: Zo fill „retuur“ em Pahdt „$1“ — mer wöre wigger wi för der Aanfang zeröck jejange.',
 	'pfunc_expr_stack_exhausted' => 'Fähler en enem Ußdrock: Dä löht der <i lang="en">stack</i> övverloufe.',
 	'pfunc_expr_unexpected_number' => 'Fähler en enem Ußdrock: En Zahl dom_mer nit äwaade.',
 	'pfunc_expr_preg_match_failure' => 'Fähler en enem Ußdrock: Esu ene Fähler en „<i lang="en">preg_match</i>“ dum_mer nit äwade.',
