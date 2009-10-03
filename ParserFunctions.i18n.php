@@ -325,6 +325,7 @@ $messages['bs'] = array(
 
 /** Catalan (Català)
  * @author Jordi Roqué
+ * @author Qllach
  * @author SMP
  */
 $messages['ca'] = array(
@@ -346,6 +347,7 @@ $messages['ca'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Valor no vàlid per a ln: <= 0',
 	'pfunc_expr_unknown_error' => "Error de l'expressió: Desconegut ($1)",
 	'pfunc_expr_not_a_number' => 'A $1: el resultat no és un nombre',
+	'pfunc_string_too_long' => 'Error: La cadena és $1 caràcters massa llarga',
 );
 
 /** Czech (Česky)
