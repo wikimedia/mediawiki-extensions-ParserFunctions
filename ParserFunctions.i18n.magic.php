@@ -107,6 +107,27 @@ $magicWords['id'] = array(
 	'titleparts'   => array( '0', 'bagianjudul', 'titleparts' ),
 );
 
+$magicWords['mr'] = array(
+	'expr'         => array( '0', 'करण', 'expr' ),
+	'if'           => array( '0', 'जर', 'इफ', 'if' ),
+	'ifeq'         => array( '0', 'जरसम', 'ifeq' ),
+	'ifexpr'       => array( '0', 'जरकरण', 'ifexpr' ),
+	'iferror'      => array( '0', 'जरत्रुटी', 'iferror' ),
+	'switch'       => array( '0', 'कळ', 'सांगकळ', 'असेलतरसांग', 'असलेतरसांग', 'स्वीच', 'switch' ),
+	'default'      => array( '0', 'अविचल', '#default' ),
+	'ifexist'      => array( '0', 'जरअसेल', 'जराआहे', 'ifexist' ),
+	'time'         => array( '0', 'वेळ', 'time' ),
+	'timel'        => array( '0', 'वेळस्था', 'timel' ),
+	'titleparts'   => array( '0', 'शीर्षकखंड', 'टाइटलपार्ट्स', 'titleparts' ),
+	'len'          => array( '0', 'लांबी', 'len' ),
+	'pos'          => array( '0', 'स्थशोध', 'pos' ),
+	'rpos'         => array( '0', 'माग्चास्थशोध', 'rpos' ),
+	'sub'          => array( '0', 'उप', 'sub' ),
+	'count'        => array( '0', 'मोज', 'मोजा', 'count' ),
+	'replace'      => array( '0', 'नेबदल', 'रिप्लेस', 'replace' ),
+	'explode'      => array( '0', 'एकफोड', 'explode' ),
+);
+
 $magicWords['nl'] = array(
 	'expr'         => array( '0', 'expressie', 'expr' ),
 	'if'           => array( '0', 'als', 'if' ),
