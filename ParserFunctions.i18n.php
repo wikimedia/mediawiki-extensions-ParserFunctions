@@ -1933,6 +1933,7 @@ $messages['tr'] = array(
 );
 
 /** Ukrainian (Українська)
+ * @author AS
  * @author Ahonc
  */
 $messages['uk'] = array(
@@ -1954,6 +1955,7 @@ $messages['uk'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Помилковий аргумент логарифма (має бути більший від нуля)',
 	'pfunc_expr_unknown_error' => 'Помилка виразу: невідома помилка ($1)',
 	'pfunc_expr_not_a_number' => 'У $1: результат не є числом',
+	'pfunc_string_too_long' => 'Помилка: довжина рядка перевищує межу в {{PLURAL:$1|$1 символ|$1 символи|$1 символів}}',
 );
 
 /** Vèneto (Vèneto)
