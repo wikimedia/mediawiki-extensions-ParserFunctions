@@ -438,6 +438,31 @@ $messages['de-ch'] = array(
 	'pfunc_expr_unexpected_closing_bracket' => 'Expression-Fehler: Unerwartete schliessende eckige Klammer',
 );
 
+/** Zazaki (Zazaki)
+ * @author Aspar
+ */
+$messages['diq'] = array(
+	'pfunc_desc' => 'Enhance parser with logical functions',
+	'pfunc_time_error' => 'xeta: zemano nemeqbul',
+	'pfunc_time_too_long' => 'xeta:zaf zêd mesajê #timeyi',
+	'pfunc_rel2abs_invalid_depth' => 'Hata: Yolda geçersiz derinlik: "$1" (kök düğümünün üstünde bir düğüme erişmeye çalıştı)',
+	'pfunc_expr_stack_exhausted' => 'xetaya ifadeyi: stack qediya',
+	'pfunc_expr_unexpected_number' => 'xetaya ifadeyi: amaro bêtexmin',
+	'pfunc_expr_preg_match_failure' => 'xetaya ifadeyi: arızaya preg_matchi yo bêtexmin',
+	'pfunc_expr_unrecognised_word' => 'xetaya ifadeyi: çekuya "$1"i nêşinasiyeno',
+	'pfunc_expr_unexpected_operator' => 'xetaya ifadeyi: operatorê $1i yo bêtexmin',
+	'pfunc_expr_missing_operand' => 'xetaya ifadeyi: qey $1i termo kêm',
+	'pfunc_expr_unexpected_closing_bracket' => 'xetaya ifadeyi: parantez bıqefelno bêtexmin',
+	'pfunc_expr_unrecognised_punctuation' => 'xetaya ifadeyi: karakterê noqtakerdışê "$1"i yo ke nêşınasiyeno',
+	'pfunc_expr_unclosed_bracket' => 'xetaya ifadeyi: parantezo nêqefelnaye',
+	'pfunc_expr_division_by_zero' => 'pê sıfır teqsim ker',
+	'pfunc_expr_invalid_argument' => 'Invalid argument for $1: < -1 or > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Invalid argument for ln: <= 0',
+	'pfunc_expr_unknown_error' => 'xetaya ifadeyi: neticeya ke nêzaniyena ($1)',
+	'pfunc_expr_not_a_number' => '$1 de: netice yew amar niyo',
+	'pfunc_string_too_long' => 'xeta: rêze heddê karakteri yo $1i veciyaya',
+);
+
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
  */
