@@ -1212,6 +1212,7 @@ $messages['mk'] = array(
 );
 
 /** Malayalam (മലയാളം)
+ * @author Praveenp
  * @author Shijualex
  */
 $messages['ml'] = array(
@@ -1223,6 +1224,7 @@ $messages['ml'] = array(
 	'pfunc_expr_division_by_zero' => 'പൂജ്യം കൊണ്ടുള്ള ഹരണം',
 	'pfunc_expr_unknown_error' => 'Expression error: കാരണം അജ്ഞാതമായ പിഴവ് ($1)',
 	'pfunc_expr_not_a_number' => '$1ല്‍: ഫലം ഒരു സംഖ്യയല്ല',
+	'pfunc_string_too_long' => 'പിശക്: പദം ലിപികളുടെ പരിധിയായ $1 അതിലംഘിക്കുന്നു',
 );
 
 /** Marathi (मराठी)
