@@ -107,6 +107,22 @@ $magicWords['id'] = array(
 	'titleparts'   => array( '0', 'bagianjudul', 'titleparts' ),
 );
 
+$magicWords['ko'] = array(
+	'default'      => array( '0', '#기본값', '#default' ),
+	'time'         => array( '0', '시간', 'time' ),
+	'timel'        => array( '0', '지역시간', 'timel' ),
+);
+
+$magicWords['mg'] = array(
+	'if'           => array( '0', 'raha', 'if' ),
+	'ifeq'         => array( '0', 'rahamitovy', 'ifeq' ),
+	'ifexpr'       => array( '0', 'rahamarina', 'ifexpr' ),
+	'iferror'      => array( '0', 'rahadiso', 'iferror' ),
+	'default'      => array( '0', '#tsipalotra', '#default' ),
+	'ifexist'      => array( '0', 'rahamisy', 'ifexist' ),
+	'time'         => array( '0', 'lera', 'time' ),
+);
+
 $magicWords['mr'] = array(
 	'expr'         => array( '0', 'करण', 'expr' ),
 	'if'           => array( '0', 'जर', 'इफ', 'if' ),
@@ -114,8 +130,8 @@ $magicWords['mr'] = array(
 	'ifexpr'       => array( '0', 'जरकरण', 'ifexpr' ),
 	'iferror'      => array( '0', 'जरत्रुटी', 'iferror' ),
 	'switch'       => array( '0', 'कळ', 'सांगकळ', 'असेलतरसांग', 'असलेतरसांग', 'स्वीच', 'switch' ),
-	'default'      => array( '0', 'अविचल', '#default' ),
-	'ifexist'      => array( '0', 'जरअसेल', 'जराआहे', 'ifexist' ),
+	'default'      => array( '0', '#अविचल', '#default' ),
+	'ifexist'      => array( '0', 'जरअसेल', 'जरआहे', 'ifexist' ),
 	'time'         => array( '0', 'वेळ', 'time' ),
 	'timel'        => array( '0', 'वेळस्था', 'timel' ),
 	'titleparts'   => array( '0', 'शीर्षकखंड', 'टाइटलपार्ट्स', 'titleparts' ),
@@ -126,6 +142,18 @@ $magicWords['mr'] = array(
 	'count'        => array( '0', 'मोज', 'मोजा', 'count' ),
 	'replace'      => array( '0', 'नेबदल', 'रिप्लेस', 'replace' ),
 	'explode'      => array( '0', 'एकफोड', 'explode' ),
+);
+
+$magicWords['nds-nl'] = array(
+	'if'           => array( '0', 'as', 'als', 'if' ),
+	'ifeq'         => array( '0', 'asgelieke', 'alsgelijk', 'ifeq' ),
+	'ifexpr'       => array( '0', 'asexpressie', 'alsexpressie', 'ifexpr' ),
+	'iferror'      => array( '0', 'asfout', 'alsfout', 'iferror' ),
+	'default'      => array( '0', '#standard', '#standaard', '#default' ),
+	'ifexist'      => array( '0', 'asbesteet', 'alsbestaat', 'ifexist' ),
+	'time'         => array( '0', 'tied', 'tijd', 'time' ),
+	'timel'        => array( '0', 'tiedl', 'tijdl', 'timel' ),
+	'rel2abs'      => array( '0', 'relatiefnaorabseluut', 'relatiefnaarabsoluut', 'rel2abs' ),
 );
 
 $magicWords['nl'] = array(
