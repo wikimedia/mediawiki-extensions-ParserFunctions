@@ -1488,10 +1488,11 @@ $messages['ps'] = array(
 );
 
 /** Portuguese (Português)
+ * @author Hamilton Abreu
  * @author Malafaya
  */
 $messages['pt'] = array(
-	'pfunc_desc' => 'Melhora o analisador "parser" com funções lógicas',
+	'pfunc_desc' => 'Adiciona funções lógicas ao analisador sintáctico',
 	'pfunc_time_error' => 'Erro: tempo inválido',
 	'pfunc_time_too_long' => 'Erro: demasiadas chamadas a #time',
 	'pfunc_rel2abs_invalid_depth' => 'Erro: Profundidade inválida no caminho: "$1" (foi tentado o acesso a um nó acima do nó raiz)',
