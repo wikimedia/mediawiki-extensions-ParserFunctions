@@ -1016,6 +1016,14 @@ $messages['jv'] = array(
 	'pfunc_expr_not_a_number' => 'Ing $1: pituwasé dudu angka',
 );
 
+/** Georgian (ქართული)
+ * @author BRUTE
+ */
+$messages['ka'] = array(
+	'pfunc_expr_invalid_argument' => 'მცდარი არგუმენტი $1: < -1 ან > 1',
+	'pfunc_expr_invalid_argument_ln' => 'მცდარი არგუმენტი ln: <= 0',
+);
+
 /** Kazakh (Arabic script) (‫قازاقشا (تٴوتە)‬) */
 $messages['kk-arab'] = array(
 	'pfunc_time_error' => 'قاتە: جارامسىز ۋاقىت',
