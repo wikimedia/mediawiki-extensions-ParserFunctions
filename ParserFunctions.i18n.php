@@ -1573,8 +1573,10 @@ $messages['qu'] = array(
 
 /** Romanian (Română)
  * @author KlaudiuMihaila
+ * @author Stelistcristi
  */
 $messages['ro'] = array(
+	'pfunc_desc' => 'Îmbunătăţiţi parser-ul cu funcţii logice',
 	'pfunc_time_error' => 'Eroare: timp incorect',
 	'pfunc_time_too_long' => 'Eroare: prea multe apeluri #time',
 	'pfunc_rel2abs_invalid_depth' => 'Eroare: adâncime incorectă în cale: "$1" (încercat accesarea unui nod deasupra nodului rădăcină)',
@@ -1919,6 +1921,13 @@ $messages['th'] = array(
 	'pfunc_expr_not_a_number' => '$1: ผลลัพธ์ไม่สามารถแทนด้วยจำนวน (NAN or not a number)',
 );
 
+/** Turkmen (Türkmençe)
+ * @author Hanberke
+ */
+$messages['tk'] = array(
+	'pfunc_time_error' => 'Säwlik: nädogry wagt',
+);
+
 /** Tagalog (Tagalog)
  * @author AnakngAraw
  */
@@ -2114,6 +2123,7 @@ $messages['zh-hans'] = array(
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
+ * @author Gaoxuewei
  * @author Shinjiman
  */
 $messages['zh-hant'] = array(
@@ -2135,5 +2145,6 @@ $messages['zh-hant'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'ln的無效參量：<= 0',
 	'pfunc_expr_unknown_error' => '表達式錯誤：未知錯誤（$1）',
 	'pfunc_expr_not_a_number' => '在$1中：結果不是數字',
+	'pfunc_string_too_long' => '錯誤：字符串超過$1字符限制',
 );
 
