@@ -1926,6 +1926,18 @@ $messages['th'] = array(
  */
 $messages['tk'] = array(
 	'pfunc_time_error' => 'Säwlik: nädogry wagt',
+	'pfunc_expr_stack_exhausted' => 'Aňlatma säwligi: Stek gutardy',
+	'pfunc_expr_unexpected_number' => 'Aňlatma säwligi: Garaşylmaýan san',
+	'pfunc_expr_preg_match_failure' => 'Aňlatma säwligi: Garaşylmaýan preg_match näsazlygy',
+	'pfunc_expr_unrecognised_word' => 'Aňlatma säwligi: Bilinmeýan "$1" sözi',
+	'pfunc_expr_unexpected_operator' => 'Aňlatma säwligi: Garaşylmaýan $1 operatory',
+	'pfunc_expr_missing_operand' => 'Aňlatma säwligi: $1 üçin kem operand',
+	'pfunc_expr_unexpected_closing_bracket' => 'Aňlatma säwligi: Garaşylmaýan ýapyjy ýaý',
+	'pfunc_expr_unrecognised_punctuation' => 'Aňlatma säwligi: Bilinmeýän punktuasiýa simwoly "$1"',
+	'pfunc_expr_unclosed_bracket' => 'Aňlatma säwligi: Ýapylmadyk ýaý',
+	'pfunc_expr_division_by_zero' => 'Nola bölmek',
+	'pfunc_expr_invalid_argument' => '$1: < -1 ýa-da > 1 üçin nädogry argument',
+	'pfunc_expr_invalid_argument_ln' => 'ln: <= 0 üçin nädogry argument',
 );
 
 /** Tagalog (Tagalog)
