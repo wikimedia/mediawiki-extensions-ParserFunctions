@@ -245,6 +245,7 @@ $messages['bg'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Невалиден аргумент за ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Грешка в записа: Неразпозната грешка ($1)',
 	'pfunc_expr_not_a_number' => 'В $1: резултатът не е число',
+	'pfunc_string_too_long' => 'Грешка: Низът превишава лимита от $1 знака',
 );
 
 /** Bengali (বাংলা)
