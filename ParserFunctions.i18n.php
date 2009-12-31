@@ -1948,7 +1948,10 @@ $messages['th'] = array(
  * @author Hanberke
  */
 $messages['tk'] = array(
+	'pfunc_desc' => 'Parseri logiki funksiýalar bilen güýçlendir',
 	'pfunc_time_error' => 'Säwlik: nädogry wagt',
+	'pfunc_time_too_long' => 'Säwlik: aşa köp #time çagyryşlary',
+	'pfunc_rel2abs_invalid_depth' => 'Säwlik: Ýolda nädogry çuňluk: "$1" (kök düwüniň üstündäki bir düwüne barjak boldy)',
 	'pfunc_expr_stack_exhausted' => 'Aňlatma säwligi: Stek gutardy',
 	'pfunc_expr_unexpected_number' => 'Aňlatma säwligi: Garaşylmaýan san',
 	'pfunc_expr_preg_match_failure' => 'Aňlatma säwligi: Garaşylmaýan preg_match näsazlygy',
@@ -1961,6 +1964,9 @@ $messages['tk'] = array(
 	'pfunc_expr_division_by_zero' => 'Nola bölmek',
 	'pfunc_expr_invalid_argument' => '$1: < -1 ýa-da > 1 üçin nädogry argument',
 	'pfunc_expr_invalid_argument_ln' => 'ln: <= 0 üçin nädogry argument',
+	'pfunc_expr_unknown_error' => 'Aňlatma säwligi: Näbelli säwlik ($1)',
+	'pfunc_expr_not_a_number' => '$1-de: netije san däl',
+	'pfunc_string_too_long' => 'Säwlik: Setir $1 simwol çäginden geçýär',
 );
 
 /** Tagalog (Tagalog)
