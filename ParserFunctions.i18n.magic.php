@@ -30,10 +30,42 @@ $magicWords['en'] = array(
 $magicWords['ar'] = array(
 	'expr'         => array( '0', 'تعبير', 'expr' ),
 	'if'           => array( '0', 'لو', 'if' ),
+	'ifeq'         => array( '0', 'لومعادلة', 'ifeq' ),
+	'ifexpr'       => array( '0', 'لوتعبير', 'ifexpr' ),
 	'iferror'      => array( '0', 'لوخطأ', 'iferror' ),
+	'switch'       => array( '0', 'تبديل', 'switch' ),
 	'default'      => array( '0', '#افتراضي', '#default' ),
 	'ifexist'      => array( '0', 'لوموجود', 'ifexist' ),
 	'time'         => array( '0', 'وقت', 'time' ),
+	'timel'        => array( '0', 'تيمل', 'timel' ),
+	'rel2abs'      => array( '0', 'ريلتوآبس', 'rel2abs' ),
+	'titleparts'   => array( '0', 'أجزاء_العنوان', 'titleparts' ),
+	'len'          => array( '0', 'لين', 'len' ),
+	'pos'          => array( '0', 'بوس', 'pos' ),
+	'rpos'         => array( '0', 'آربوس', 'rpos' ),
+	'sub'          => array( '0', 'متفرع', 'sub' ),
+	'count'        => array( '0', 'عدد', 'count' ),
+	'replace'      => array( '0', 'استبدال', 'replace' ),
+	'explode'      => array( '0', 'انفجار', 'explode' ),
+);
+
+$magicWords['arz'] = array(
+	'expr'         => array( '0', 'تعبير', 'expr' ),
+	'if'           => array( '0', 'لو', 'if' ),
+	'ifeq'         => array( '0', 'لومعادلة', 'ifeq' ),
+	'ifexpr'       => array( '0', 'لوتعبير', 'ifexpr' ),
+	'iferror'      => array( '0', 'لوخطأ', 'iferror' ),
+	'switch'       => array( '0', 'تبديل', 'switch' ),
+	'default'      => array( '0', '#افتراضي', '#default' ),
+	'ifexist'      => array( '0', 'لوموجود', 'ifexist' ),
+	'time'         => array( '0', 'وقت', 'time' ),
+	'timel'        => array( '0', 'تيمل', 'timel' ),
+	'rel2abs'      => array( '0', 'ريلتوآبس', 'rel2abs' ),
+	'titleparts'   => array( '0', 'أجزاء_العنوان', 'titleparts' ),
+	'len'          => array( '0', 'لين', 'len' ),
+	'pos'          => array( '0', 'بوس', 'pos' ),
+	'rpos'         => array( '0', 'آربوس', 'rpos' ),
+	'sub'          => array( '0', 'متفرع', 'sub' ),
 	'count'        => array( '0', 'عدد', 'count' ),
 	'replace'      => array( '0', 'استبدال', 'replace' ),
 	'explode'      => array( '0', 'انفجار', 'explode' ),
@@ -121,6 +153,17 @@ $magicWords['mg'] = array(
 	'default'      => array( '0', '#tsipalotra', '#default' ),
 	'ifexist'      => array( '0', 'rahamisy', 'ifexist' ),
 	'time'         => array( '0', 'lera', 'time' ),
+);
+
+$magicWords['ml'] = array(
+	'if'           => array( '0', 'എങ്കിൽ', 'if' ),
+	'default'      => array( '0', '#സ്വതവേ', '#default' ),
+	'ifexist'      => array( '0', 'ഉണ്ടെങ്കിൽ', 'ifexist' ),
+	'time'         => array( '0', 'സമയം', 'time' ),
+	'timel'        => array( '0', 'സമയം|', 'timel' ),
+	'sub'          => array( '0', 'ഉപം', 'sub' ),
+	'count'        => array( '0', 'എണ്ണുക', 'count' ),
+	'replace'      => array( '0', 'മാറ്റിച്ചേർക്കുക', 'replace' ),
 );
 
 $magicWords['mr'] = array(
