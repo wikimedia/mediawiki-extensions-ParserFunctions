@@ -1228,6 +1228,7 @@ $messages['ml'] = array(
 	'pfunc_desc' => 'ലോഗിക്കല്‍ ഫങ്ഷന്‍സ് ഉപയോഗിച്ച് പാര്‍സര്‍  എന്‍‌ഹാന്‍സ് ചെയ്യുക',
 	'pfunc_time_error' => 'പിഴവ്:അസാധുവായ സമയം',
 	'pfunc_time_too_long' => 'പിഴവ്: വളരെയധികം #സമയ കാളുകള്‍',
+	'pfunc_rel2abs_invalid_depth' => 'പിഴവ്: പഥത്തിൽ അസാധുവായ ആഴം: "$1" (റൂട്ട് തലത്തിനും മുകളിലുള്ള തലം എടുക്കാനുള്ള ശ്രമം)',
 	'pfunc_expr_unexpected_number' => 'Expression error: പ്രതീക്ഷിക്കാത്ത സംഖ്യ',
 	'pfunc_expr_unrecognised_word' => 'Expression error: "$1" എന്ന തിരിച്ചറിയാന്‍ സാധിക്കാഞ്ഞ വാക്ക്',
 	'pfunc_expr_division_by_zero' => 'പൂജ്യം കൊണ്ടുള്ള ഹരണം',
