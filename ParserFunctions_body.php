@@ -407,7 +407,7 @@ class ExtParserFunctions {
 					if ( isset( $wgLocaltimezone ) ) {
 						$tz = new DateTimeZone( $wgLocaltimezone );
 					} else {
-						$tz = new DateTimeZone( 'UTC' );
+						$tz = new DateTimeZone( date_default_timezone_get() );
 					}
 				} else {
 					# if local time was not requested, convert to UTC
