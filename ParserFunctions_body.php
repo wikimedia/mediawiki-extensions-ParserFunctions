@@ -710,7 +710,7 @@ class ExtParserFunctions {
 
 		// Use regex to allow limit and handle UTF-8 correctly.
 		$inReplaceFrom = preg_quote( $inReplaceFrom, '/' );
-		$inReplaceTo = preg_quote( $inReplaceTo, '/' );
+		$inReplaceTo = strtr( $inReplaceTo, array("\\" => "\\\\", '$'=>"\\$" ) );
 
 		$result = preg_replace( '/' . $inReplaceFrom . '/u', 
 						$inReplaceTo, $inStr, $limit);
