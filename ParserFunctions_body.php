@@ -749,7 +749,6 @@ class ExtParserFunctions {
 			return $this->tooLongError();
 		}
 
-		$inStr = preg_quote( $inStr, '/' );
 		$inDiv = preg_quote( $inDiv, '/' );
 		
 		$matches = preg_split( '/'.$inDiv.'/u', $inStr );
@@ -766,4 +765,3 @@ class ExtParserFunctions {
 		return $result;
 	}
 }
-
