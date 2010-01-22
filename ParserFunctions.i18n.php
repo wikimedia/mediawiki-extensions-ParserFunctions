@@ -804,8 +804,8 @@ $messages['hi'] = array(
 /** Croatian (Hrvatski)
  * @author Dalibor Bosits
  * @author Dnik
+ * @author Ex13
  * @author SpeedyGonsales
- * @author Suradnik13
  */
 $messages['hr'] = array(
 	'pfunc_desc' => 'Mogućnost proširivanja parsera logičkim funkcijama',
