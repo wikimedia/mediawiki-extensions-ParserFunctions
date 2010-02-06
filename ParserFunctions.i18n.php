@@ -1262,6 +1262,7 @@ $messages['mr'] = array(
 );
 
 /** Malay (Bahasa Melayu)
+ * @author Aurora
  * @author Aviator
  * @author Kurniasan
  */
@@ -1284,6 +1285,7 @@ $messages['ms'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argumen bagi ln tidak sah: <= 0',
 	'pfunc_expr_unknown_error' => 'Ralat ungkapan: Ralat tidak diketahui ($1)',
 	'pfunc_expr_not_a_number' => 'Dalam $1: hasil bukan nombor',
+	'pfunc_string_too_long' => 'Ralat: Rentetan melampaui batas aksara $1',
 );
 
 /** Erzya (Эрзянь)
