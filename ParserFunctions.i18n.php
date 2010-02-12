@@ -2145,7 +2145,7 @@ $messages['yue'] = array(
  * @author Shinjiman
  */
 $messages['zh-hans'] = array(
-	'pfunc_desc' => '用逻辑功能去加强分析程序',
+	'pfunc_desc' => '用逻辑函数加强解析器',
 	'pfunc_time_error' => '错误：无效时间',
 	'pfunc_time_too_long' => '错误：#time调用次数过多',
 	'pfunc_rel2abs_invalid_depth' => '错误：无效路径深度：“$1”（尝试访问根节点以上节点）',
@@ -2168,10 +2168,11 @@ $messages['zh-hans'] = array(
 
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Gaoxuewei
+ * @author Liangent
  * @author Shinjiman
  */
 $messages['zh-hant'] = array(
-	'pfunc_desc' => '用邏輯功能去加強分析程式',
+	'pfunc_desc' => '用邏輯函數加強解析器',
 	'pfunc_time_error' => '錯誤：無效時間',
 	'pfunc_time_too_long' => '錯誤：過多的#time呼叫',
 	'pfunc_rel2abs_invalid_depth' => '錯誤：無效路徑深度：「$1」（嘗試訪問頂點以上節點）',
