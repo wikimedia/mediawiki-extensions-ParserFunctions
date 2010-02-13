@@ -6,6 +6,12 @@
 
 # fixme: #time seems to be accepting input as local time, which strikes me as wrong
 
+!! article
+File:Dionysos-Brunnen am Kölner Dom.jpg
+!! text
+blah blah
+!! endarticle
+
 !! test
 Input times should probably be UTC, not local time
 !! input
@@ -50,5 +56,36 @@ Bug 19093: Default values don't fall through in switch
 !! result
 <p>&lt;DEF&gt;
 &lt;DEF&gt;
+</p>
+!! end
+
+!! test
+{{#ifexist}}
+!! input
+{{#ifexist:Media:Foobar.jpg|Found|Not found}}
+{{#ifexist:Main Page|Found|Not found}}
+{{#ifexist:Missing|Found|Not found}}
+!! result
+<p>Found
+Found
+Not found
+</p>
+!! end
+
+!! test
+Bug 14779 - {{#ifexist}} does not recognise URL encoded filenames 
+Based on http://test.wikipedia.org/wiki/User:Raymond/ifexist
+!! input
+{{#ifexist:Media:F%6fobar.jpg|found|not found}}
+[[:File:Dionysos-Brunnen am Kölner Dom.jpg]]
+{{#ifexist:File:Dionysos-Brunnen am Kölner Dom.jpg|found|not found}}
+[[:File:Dionysos-Brunnen_am_K%C3%B6lner_Dom.jpg]]
+{{#ifexist:File:Dionysos-Brunnen_am_K%C3%B6lner_Dom.jpg|found|not found}}
+!! result
+<p>found
+<a href="/wiki/File:Dionysos-Brunnen_am_K%C3%B6lner_Dom.jpg" title="File:Dionysos-Brunnen am Kölner Dom.jpg">File:Dionysos-Brunnen am Kölner Dom.jpg</a>
+found
+<a href="/wiki/File:Dionysos-Brunnen_am_K%C3%B6lner_Dom.jpg" title="File:Dionysos-Brunnen am Kölner Dom.jpg">File:Dionysos-Brunnen_am_Kölner_Dom.jpg</a>
+found
 </p>
 !! end
