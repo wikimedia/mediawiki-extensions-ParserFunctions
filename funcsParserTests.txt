@@ -7,6 +7,13 @@
 # fixme: #time seems to be accepting input as local time, which strikes me as wrong
 
 !! article
+Main Page
+!! text
+We need to repeat here in case only this file is being run.
+Otherwise, it already leaks from parserTests.txt.
+!! endarticle
+
+!! article
 File:Dionysos-Brunnen am Kölner Dom.jpg
 !! text
 blah blah
@@ -87,5 +94,91 @@ Based on http://test.wikipedia.org/wiki/User:Raymond/ifexist
 found
 <a href="/wiki/File:Dionysos-Brunnen_am_K%C3%B6lner_Dom.jpg" title="File:Dionysos-Brunnen am Kölner Dom.jpg">File:Dionysos-Brunnen_am_Kölner_Dom.jpg</a>
 found
+</p>
+!! end
+
+!! test
+#if
+!! input
+{{#if: | yes | no}}
+{{#if: string | yes | no}}
+{{#if:      | yes | no}}
+{{#if:
+
+
+| yes | no}}
+{{#if: 1==2 | yes | no}}
+{{#if: foo | yes }}
+{{#if: | yes }}(empty)
+{{#if: foo | | no}}(empty)
+{{#if: {{{1}}} | yes | no}}
+{{#if: {{{1|}}} | yes | no}}
+!! result
+<p>no
+yes
+no
+no
+yes
+yes
+(empty)
+(empty)
+yes
+no
+</p>
+!! end
+
+!! test
+#ifeq
+!!input
+{{#ifeq: 01 | 1 | yes | no}}
+{{#ifeq: 0 | -0 | yes | no}}
+{{#ifeq: foo | bar | yes | no}}
+{{#ifeq: foo | Foo | yes | no}}
+{{#ifeq: "01" | "1" | yes | no}}
+!! result
+<p>yes
+yes
+no
+no
+no
+</p>
+!! end
+
+!! test
+#iferror
+!!input
+{{#iferror: {{#expr: 1 + 2 }} | error | correct }}
+{{#iferror: {{#expr: 1 + X }} | error | correct }}
+{{#iferror: {{#expr: 1 + 2 }} | error }}
+{{#iferror: {{#expr: 1 + X }} | error }}
+{{#iferror: {{#expr: 1 + 2 }} }}
+{{#iferror: {{#expr: 1 + X }} }}empty
+!! result
+<p>correct
+error
+3
+error
+3
+empty
+</p>
+!! end
+
+
+!! test
+#ifexpr
+!! input
+{{#ifexpr: | yes | no}}
+{{#ifexpr: 1 > 0 | yes }}
+{{#ifexpr: 1 < 0 | yes }}empty
+{{#ifexpr: 1 > 0 | | no}}empty
+{{#ifexpr: 1 < 0 | | no}}
+{{#ifexpr: 1 > 0 }}empty
+!! result
+<p>no
+yes
+empty
+empty
+no
+empty
 </p>
 !! end
