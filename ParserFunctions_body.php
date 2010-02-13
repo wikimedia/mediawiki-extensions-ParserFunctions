@@ -321,8 +321,8 @@ class ExtParserFunctions {
 	function ifexistCommon( &$parser, $frame, $titletext = '', $then = '', $else = '' ) {
 		global $wgContLang;
 		$title = Title::newFromText( $titletext );
-		if( is_null( $title ) ) # It my be urlencoded (bug 14779)
-			$title = Title::newFromUrl( urldecode( $titletext ) );
+		if( is_null( $title ) ) # It may be urlencoded (bug 14779)
+			$title = Title::newFromURL( urldecode( $titletext ) );
 
 		$wgContLang->findVariantLink( $titletext, $title, true );
 		if ( $title ) {
