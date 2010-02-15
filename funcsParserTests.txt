@@ -7,10 +7,12 @@
 # fixme: #time seems to be accepting input as local time, which strikes me as wrong
 
 !! article
-Main Page
+ParserFunctions page
 !! text
-We need to repeat here in case only this file is being run.
-Otherwise, it already leaks from parserTests.txt.
+A sample page so we can test ifexist.
+
+This used to be a Main Page, but that caused duplicate article
+warnings when running the normal tests at the same time.
 !! endarticle
 
 !! article
@@ -70,7 +72,7 @@ Bug 19093: Default values don't fall through in switch
 {{#ifexist}}
 !! input
 {{#ifexist:Media:Foobar.jpg|Found|Not found}}
-{{#ifexist:Main Page|Found|Not found}}
+{{#ifexist:ParserFunctions page|Found|Not found}}
 {{#ifexist:Missing|Found|Not found}}
 !! result
 <p>Found
