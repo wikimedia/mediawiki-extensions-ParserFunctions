@@ -81,6 +81,12 @@ $magicWords['cs'] = array(
 	'replace'      => array( '0', 'nahradit', 'replace' ),
 );
 
+$magicWords['es'] = array(
+	'if'           => array( '0', 'si', 'if' ),
+	'ifexpr'       => array( '0', 'siexpr', 'ifexpr' ),
+	'iferror'      => array( '0', 'sierror', 'iferror' ),
+);
+
 $magicWords['fa'] = array(
 	'expr'         => array( '0', 'حساب', 'expr' ),
 	'if'           => array( '0', 'اگر', 'if' ),
@@ -217,6 +223,10 @@ $magicWords['nl'] = array(
 	'explode'      => array( '0', 'exploderen', 'explode' ),
 );
 
+$magicWords['ps'] = array(
+	'time'         => array( '0', 'وخت', 'time' ),
+);
+
 $magicWords['pt'] = array(
 	'if'           => array( '0', 'se', 'if' ),
 	'ifeq'         => array( '0', 'seigual', 'ifeq' ),
@@ -230,6 +240,30 @@ $magicWords['pt'] = array(
 
 $magicWords['ru'] = array(
 	'replace'      => array( '0', 'замена', 'replace' ),
+);
+
+$magicWords['sv'] = array(
+	'expr'         => array( '0', 'utr', 'expr' ),
+	'if'           => array( '0', 'om', 'if' ),
+	'ifeq'         => array( '0', 'omlika', 'ifeq' ),
+	'ifexpr'       => array( '0', 'omutr', 'ifexpr' ),
+	'iferror'      => array( '0', 'omfel', 'iferror' ),
+	'switch'       => array( '0', 'växel', 'switch' ),
+	'default'      => array( '0', '#standard', '#default' ),
+	'ifexist'      => array( '0', 'omfinns', 'ifexist' ),
+	'time'         => array( '0', 'tid', 'time' ),
+	'replace'      => array( '0', 'ersätt', 'replace' ),
+);
+
+$magicWords['uk'] = array(
+	'expr'         => array( '0', 'вираз', 'expr' ),
+	'if'           => array( '0', 'якщо', 'if' ),
+	'ifeq'         => array( '0', 'якщорівні', 'рівні', 'ifeq' ),
+	'ifexpr'       => array( '0', 'якщовираз', 'ifexpr' ),
+	'iferror'      => array( '0', 'якщопомилка', 'iferror' ),
+	'switch'       => array( '0', 'вибірка', 'switch' ),
+	'default'      => array( '0', '#інакше', '#default' ),
+	'ifexist'      => array( '0', 'якщоіснує', 'ifexist' ),
 );
 
 $magicWords['yi'] = array(
