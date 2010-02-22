@@ -38,7 +38,6 @@ $wgExtensionCredits['parserhook'][] = array(
 	'version' => '1.3.0',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:ParserFunctions',
 	'author' => array('Tim Starling', 'Robert Rohde', 'Ross McClure', 'Juraj Simlovic'),
-	'description' => 'Enhance parser with logical functions',
 	'descriptionmsg' => 'pfunc_desc',
 );
 
