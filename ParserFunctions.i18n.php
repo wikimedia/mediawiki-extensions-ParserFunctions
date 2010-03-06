@@ -1757,6 +1757,7 @@ $messages['sk'] = array(
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Millosh
+ * @author Verlor
  */
 $messages['sr-ec'] = array(
 	'pfunc_desc' => 'обогати парсер логичким функцијама',
@@ -1776,6 +1777,7 @@ $messages['sr-ec'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Лош аргумент: ln <= 0',
 	'pfunc_expr_unknown_error' => 'Грешка у изразу: Непозната грешка ($1)',
 	'pfunc_expr_not_a_number' => 'Резултат у $1 није број.',
+	'pfunc_string_too_long' => 'Грешка: реч прекорачује $1  слова, што је постављено ограничење',
 );
 
 /** Serbian Latin ekavian (Srpski (latinica))
