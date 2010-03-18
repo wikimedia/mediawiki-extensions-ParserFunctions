@@ -211,7 +211,6 @@ class ExtParserFunctions {
 					# Multiple input match
 					return trim( $frame->expand( $valueNode ) );
 				} else {
-					$test = trim( $frame->expand( $nameNode ) );
 					if ( $test == $primary ) {
 						# Found a match, return now
 						return trim( $frame->expand( $valueNode ) );
