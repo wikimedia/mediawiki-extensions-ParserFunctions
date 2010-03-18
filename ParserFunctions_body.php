@@ -67,7 +67,11 @@ class ExtParserFunctions {
 
 	function ifexpr( &$parser, $expr = '', $then = '', $else = '' ) {
 		try{
-			if($this->getExprParser()->doExpression( $expr )) {
+			$ret = $this->getExprParser()->doExpression( $expr );
+			if ( is_numeric( $ret ) ) {
+				$ret = floatval( $ret );
+			}
+			if( $ret ) {
 				return $then;
 			} else {
 				return $else;
