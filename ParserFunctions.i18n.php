@@ -1755,6 +1755,20 @@ $messages['sk'] = array(
 	'pfunc_string_too_long' => 'Chyba: Reťazec prekračuje limit $1 znakov',
 );
 
+/** Slovenian (Slovenščina)
+ * @author Dbc334
+ */
+$messages['sl'] = array(
+	'pfunc_desc' => 'Izboljša razčlenjevalnik z logičnimi funkcijami',
+	'pfunc_time_error' => 'Napaka: neveljaven čas',
+	'pfunc_time_too_long' => 'Napaka: preveč klicev #time',
+	'pfunc_expr_division_by_zero' => 'Deljenje z ničlo',
+	'pfunc_expr_invalid_argument' => 'Napačen argument za $1: < -1 ali > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Napačen argument za ln: <= 0',
+	'pfunc_expr_not_a_number' => 'V $1: rezultat ni število',
+	'pfunc_string_too_long' => 'Napaka: Niz presega omejitev $1 {{PLURAL:$1|znaka|znakov}}',
+);
+
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Millosh
  * @author Verlor
