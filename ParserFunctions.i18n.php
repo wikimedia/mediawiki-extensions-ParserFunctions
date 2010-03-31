@@ -666,7 +666,7 @@ $messages['fr'] = array(
 	'pfunc_expr_invalid_argument_ln' => "Argument incorrect pour '''ln''' : ≤ 0",
 	'pfunc_expr_unknown_error' => 'Erreur d’expression : erreur inconnue ($1)',
 	'pfunc_expr_not_a_number' => 'Dans $1 : le résultat n’est pas un nombre',
-	'pfunc_string_too_long' => 'Erreur: La chaîne dépasse la limite maximal de $1 caractère{{PLURAL:$1||s}}',
+	'pfunc_string_too_long' => 'Erreur : La chaîne dépasse la limite maximale de $1 caractère{{PLURAL:$1||s}}',
 );
 
 /** Franco-Provençal (Arpetan)
