@@ -407,6 +407,7 @@ $messages['da'] = array(
 );
 
 /** German (Deutsch)
+ * @author LWChris
  * @author Metalhead64
  * @author Raimond Spekking
  */
@@ -414,21 +415,21 @@ $messages['de'] = array(
 	'pfunc_desc' => 'Erweitert den Parser um logische Funktionen',
 	'pfunc_time_error' => 'Fehler: ungültige Zeitangabe',
 	'pfunc_time_too_long' => 'Fehler: zu viele #time-Aufrufe',
-	'pfunc_rel2abs_invalid_depth' => 'Fehler: ungültige Tiefe in Pfad: „$1“ (Versuch, auf einen Knotenpunkt oberhalb des Hauptknotenpunktes zuzugreifen)',
+	'pfunc_rel2abs_invalid_depth' => 'Fehler: ungültige Tiefe in Pfad: "$1" (Versuch, auf einen Knotenpunkt oberhalb des Hauptknotenpunktes zuzugreifen)',
 	'pfunc_expr_stack_exhausted' => 'Expression-Fehler: Stacküberlauf',
 	'pfunc_expr_unexpected_number' => 'Expression-Fehler: Unerwartete Zahl',
-	'pfunc_expr_preg_match_failure' => 'Expression-Fehler: Unerwartete „preg_match“-Fehlfunktion',
-	'pfunc_expr_unrecognised_word' => 'Expression-Fehler: Unerkanntes Wort „$1“',
-	'pfunc_expr_unexpected_operator' => 'Expression-Fehler: Unerwarteter Operator: <tt>$1</tt>',
+	'pfunc_expr_preg_match_failure' => 'Expression-Fehler: Unerwartete "preg_match"-Fehlfunktion',
+	'pfunc_expr_unrecognised_word' => 'Expression-Fehler: Unerkanntes Wort "$1"',
+	'pfunc_expr_unexpected_operator' => 'Expression-Fehler: Unerwarteter Operator <tt>$1</tt>',
 	'pfunc_expr_missing_operand' => 'Expression-Fehler: Fehlender Operand für <tt>$1</tt>',
 	'pfunc_expr_unexpected_closing_bracket' => 'Expression-Fehler: Unerwartete schließende eckige Klammer',
-	'pfunc_expr_unrecognised_punctuation' => 'Expression-Fehler: Unerkanntes Satzzeichen „$1“',
+	'pfunc_expr_unrecognised_punctuation' => 'Expression-Fehler: Unerkanntes Satzzeichen "$1"',
 	'pfunc_expr_unclosed_bracket' => 'Expression-Fehler: Nicht geschlossene eckige Klammer',
-	'pfunc_expr_division_by_zero' => 'Expression-Fehler: Division durch Null',
+	'pfunc_expr_division_by_zero' => 'Division durch Null',
 	'pfunc_expr_invalid_argument' => 'Ungültiges Argument für $1: < -1 oder > 1',
 	'pfunc_expr_invalid_argument_ln' => 'Ungültiges Argument für ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Expression-Fehler: Unbekannter Fehler ($1)',
-	'pfunc_expr_not_a_number' => 'Expression-Fehler: In $1: Ergebnis ist keine Zahl',
+	'pfunc_expr_not_a_number' => 'In $1: Ergebnis ist keine Zahl',
 	'pfunc_string_too_long' => 'Fehler: Zeichenkette überschreitet Zeichenlimit von $1',
 );
 
@@ -522,9 +523,9 @@ $messages['el'] = array(
  */
 $messages['eo'] = array(
 	'pfunc_desc' => 'Etendi sintaksan analizilon kun logikaj funkcioj',
-	'pfunc_time_error' => 'Eraro: nevalida tempo',
+	'pfunc_time_error' => 'Eraro: malvalida tempo',
 	'pfunc_time_too_long' => "Eraro: tro da vokoj ''#time''",
-	'pfunc_rel2abs_invalid_depth' => 'Eraro: Nevalida profundo en vojo: "$1" (provis atingi nodon super la radika nodo)',
+	'pfunc_rel2abs_invalid_depth' => 'Eraro: Malvalida profundo en vojo: "$1" (provis atingi nodon super la radika nodo)',
 	'pfunc_expr_stack_exhausted' => 'Esprima eraro: Stako estis malplenigita',
 	'pfunc_expr_unexpected_number' => 'Esprima eraro: Neatendita numeralo',
 	'pfunc_expr_preg_match_failure' => 'Esprima eraro: Neatendita preg_match malsukceso',
@@ -535,8 +536,8 @@ $messages['eo'] = array(
 	'pfunc_expr_unrecognised_punctuation' => 'Esprima eraro: Nekonata interpunkcia simbolo "$1"',
 	'pfunc_expr_unclosed_bracket' => 'Esprima eraro: Malferma krampo',
 	'pfunc_expr_division_by_zero' => 'Divido per nulo',
-	'pfunc_expr_invalid_argument' => 'Nevalida argumento por $1: < -1 or > 1',
-	'pfunc_expr_invalid_argument_ln' => 'Nevalida argumento por ln: <= 0',
+	'pfunc_expr_invalid_argument' => 'Malvalida argumento por $1: < -1 or > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Malvalida argumento por ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Esprima eraro: Nekonata eraro ($1)',
 	'pfunc_expr_not_a_number' => 'En $1: rezulto ne estas nombro',
 	'pfunc_string_too_long' => 'Eraro: Ĉeno preterpasas signo-limon $1',
@@ -1225,20 +1226,20 @@ $messages['mk'] = array(
  * @author Shijualex
  */
 $messages['ml'] = array(
-	'pfunc_desc' => 'ലോഗിക്കല്‍ ഫങ്ഷന്‍സ് ഉപയോഗിച്ച് പാര്‍സര്‍  എന്‍‌ഹാന്‍സ് ചെയ്യുക',
+	'pfunc_desc' => 'ലോഗിക്കൽ ഫങ്ഷൻസ് ഉപയോഗിച്ച് പാർസർ  എൻ‌ഹാൻസ് ചെയ്യുക',
 	'pfunc_time_error' => 'പിഴവ്:അസാധുവായ സമയം',
-	'pfunc_time_too_long' => 'പിഴവ്: വളരെയധികം #സമയ കാളുകള്‍',
+	'pfunc_time_too_long' => 'പിഴവ്: വളരെയധികം #സമയ കാളുകൾ',
 	'pfunc_rel2abs_invalid_depth' => 'പിഴവ്: പഥത്തിൽ അസാധുവായ ആഴം: "$1" (റൂട്ട് തലത്തിനും മുകളിലുള്ള തലം എടുക്കാനുള്ള ശ്രമം)',
 	'pfunc_expr_unexpected_number' => 'പ്രയോഗരീതിയിൽ പിഴവ്: പ്രതീക്ഷിക്കാത്ത സംഖ്യ',
 	'pfunc_expr_preg_match_failure' => 'പ്രയോഗരീതിയിൽ പിഴവ്: അപ്രതീക്ഷിതമായ preg_match പരാജയം',
-	'pfunc_expr_unrecognised_word' => 'പ്രയോഗരീതിയിൽ പിഴവ്: "$1" എന്ന തിരിച്ചറിയാന്‍ സാധിക്കാഞ്ഞ വാക്ക്',
+	'pfunc_expr_unrecognised_word' => 'പ്രയോഗരീതിയിൽ പിഴവ്: "$1" എന്ന തിരിച്ചറിയാൻ സാധിക്കാഞ്ഞ വാക്ക്',
 	'pfunc_expr_unexpected_operator' => 'പ്രയോഗരീതിയിൽ പിഴവ്: അപ്രതീക്ഷിതമായ $1 ഓപ്പറേറ്റർ',
 	'pfunc_expr_unexpected_closing_bracket' => 'പ്രയോഗരീതിയിൽ പിഴവ്: അപ്രതീക്ഷിതമായി കോഷ്ഠകം അടച്ചിരിക്കുന്നു',
 	'pfunc_expr_unrecognised_punctuation' => 'പ്രയോഗരീതിയിൽ പിഴവ്: തിരിച്ചറിയാൻ കഴിയാത്ത വിരാമചിഹ്നം "$1"',
 	'pfunc_expr_unclosed_bracket' => 'പ്രയോഗരീതിയിൽ പിഴവ്: അടയ്ക്കാത്ത കോഷ്ഠകം',
 	'pfunc_expr_division_by_zero' => 'പൂജ്യം കൊണ്ടുള്ള ഹരണം',
 	'pfunc_expr_unknown_error' => 'പ്രയോഗരീതിയിൽ പിഴവ്: കാരണം അജ്ഞാതമായ പിഴവ് ($1)',
-	'pfunc_expr_not_a_number' => '$1-ല്‍: ഫലം ഒരു സംഖ്യയല്ല',
+	'pfunc_expr_not_a_number' => '$1-ൽ: ഫലം ഒരു സംഖ്യയല്ല',
 	'pfunc_string_too_long' => 'പിഴവ്: പദം ലിപികളുടെ പരിധിയായ $1 അതിലംഘിക്കുന്നു',
 );
 
