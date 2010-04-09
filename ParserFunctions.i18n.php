@@ -2137,6 +2137,15 @@ $messages['vo'] = array(
 	'pfunc_expr_not_a_number' => 'In $1: sek no binon num',
 );
 
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'pfunc_time_error' => 'גרײַז: אומגילטיגע צײַט',
+	'pfunc_expr_unexpected_operator' => 'אויסדריק גרײַז: אומגעריכטער $1 אפעראַטאר',
+	'pfunc_expr_unclosed_bracket' => 'אויסדריק גרײַז: אומגעשלאסענער קלאַמער',
+);
+
 /** Yue (粵語)
  * @author Shinjiman
  */
