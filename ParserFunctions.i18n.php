@@ -2144,6 +2144,7 @@ $messages['yi'] = array(
 	'pfunc_time_error' => 'גרײַז: אומגילטיגע צײַט',
 	'pfunc_expr_unexpected_operator' => 'אויסדריק גרײַז: אומגעריכטער $1 אפעראַטאר',
 	'pfunc_expr_unclosed_bracket' => 'אויסדריק גרײַז: אומגעשלאסענער קלאַמער',
+	'pfunc_expr_not_a_number' => 'אין $1: רעזולטאַט איז נישט קיין נומער',
 );
 
 /** Yue (粵語)
