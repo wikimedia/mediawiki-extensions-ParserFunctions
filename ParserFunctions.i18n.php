@@ -1104,16 +1104,22 @@ $messages['ko'] = array(
 	'pfunc_desc' => '파서에 논리 함수를 추가',
 	'pfunc_time_error' => '오류: 시간이 잘못되었습니다.',
 	'pfunc_time_too_long' => '오류: #time을 너무 많이 썼습니다.',
+	'pfunc_rel2abs_invalid_depth' => '오류: 경로 구조가 잘못되었습니다: "$1" (루트 노드 위의 노드에 접속을 시도했습니다)',
+	'pfunc_expr_stack_exhausted' => '표현 오류: 스택이 비어 있습니다.',
 	'pfunc_expr_unexpected_number' => '표현식 오류: 예상치 못한 값',
 	'pfunc_expr_preg_match_failure' => '표현식 오류: 예상치 못한 preg_match 오류',
 	'pfunc_expr_unrecognised_word' => '표현식 오류: 알 수 없는 단어 ‘$1’',
 	'pfunc_expr_unexpected_operator' => '표현 오류: 잘못된 $1 연산자',
 	'pfunc_expr_missing_operand' => '표현 오류: $1의 피연산자가 없습니다.',
 	'pfunc_expr_unexpected_closing_bracket' => '표현 오류: 예상치 못한 괄호 닫기',
+	'pfunc_expr_unrecognised_punctuation' => '표현 오류: 알 수 없는 문자 "$1"',
 	'pfunc_expr_unclosed_bracket' => '표현 오류: 괄호를 닫지 않았습니다.',
 	'pfunc_expr_division_by_zero' => '0으로 나눔',
+	'pfunc_expr_invalid_argument' => '$1 함수의 변수가 잘못되었습니다: < -1 또는 > 1',
+	'pfunc_expr_invalid_argument_ln' => '자연로그의 진수가 잘못되었습니다: <= 0',
 	'pfunc_expr_unknown_error' => '표현 오류: 알려지지 않은 오류 ($1)',
 	'pfunc_expr_not_a_number' => '$1: 결과가 숫자가 아닙니다.',
+	'pfunc_string_too_long' => '오류: $1자 제한을 초과하였습니다.',
 );
 
 /** Ripoarisch (Ripoarisch)
