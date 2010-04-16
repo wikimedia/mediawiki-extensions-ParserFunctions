@@ -64,7 +64,7 @@ function wfSetupParserFunctions() {
 class ParserFunctions_HookStub {
 	var $realObj;
 
-	function registerParser( &$parser ) {
+	function registerParser( $parser ) {
 		global $wgPFEnableStringFunctions;
 
 		if ( defined( get_class( $parser ) . '::SFH_OBJECT_ARGS' ) ) {
@@ -105,7 +105,7 @@ class ParserFunctions_HookStub {
 	}
 
 	/** Defer ParserClearState */
-	function clearState( &$parser ) {
+	function clearState( $parser ) {
 		if ( !is_null( $this->realObj ) ) {
 			$this->realObj->clearState( $parser );
 		}
