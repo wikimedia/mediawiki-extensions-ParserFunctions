@@ -1122,7 +1122,7 @@ $messages['ko'] = array(
 	'pfunc_string_too_long' => '오류: $1자 제한을 초과하였습니다.',
 );
 
-/** Ripoarisch (Ripoarisch)
+/** Colognian (Ripoarisch)
  * @author Purodha
  */
 $messages['ksh'] = array(
@@ -2153,7 +2153,7 @@ $messages['yi'] = array(
 	'pfunc_expr_not_a_number' => 'אין $1: רעזולטאַט איז נישט קיין נומער',
 );
 
-/** Yue (粵語)
+/** Cantonese (粵語)
  * @author Shinjiman
  */
 $messages['yue'] = array(
