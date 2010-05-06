@@ -1527,14 +1527,14 @@ $messages['pt'] = array(
 	'pfunc_expr_unexpected_operator' => 'Erro de expressão: Operador $1 inesperado',
 	'pfunc_expr_missing_operand' => 'Erro de expressão: Falta operando para $1',
 	'pfunc_expr_unexpected_closing_bracket' => 'Erro de expressão: Parêntese de fecho inesperado',
-	'pfunc_expr_unrecognised_punctuation' => 'Erro de expressão: Caracter de pontuação "$1" não reconhecido',
+	'pfunc_expr_unrecognised_punctuation' => 'Erro de expressão: Carácter de pontuação "$1" não reconhecido',
 	'pfunc_expr_unclosed_bracket' => 'Erro de expressão: Parêntese não fechado',
 	'pfunc_expr_division_by_zero' => 'Divisão por zero',
 	'pfunc_expr_invalid_argument' => 'Argumento inválido para $1: < -1 or > 1',
 	'pfunc_expr_invalid_argument_ln' => 'Argumento inválido para ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Erro de expressão: Erro desconhecido ($1)',
 	'pfunc_expr_not_a_number' => 'Em $1: resultado não é um número',
-	'pfunc_string_too_long' => 'Erro: cadeia de carateres excede o limite de $1 carateres',
+	'pfunc_string_too_long' => 'Erro: Texto excede o limite de $1 caracteres',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
