@@ -81,10 +81,29 @@ $magicWords['cs'] = array(
 	'replace'      => array( '0', 'nahradit', 'replace' ),
 );
 
+$magicWords['eo'] = array(
+	'expr'         => array( '0', 'espr', 'esprimo', 'expr' ),
+	'if'           => array( '0', 'se', 'if' ),
+	'ifeq'         => array( '0', 'seekv', 'seekvacio', 'ifeq' ),
+	'ifexpr'       => array( '0', 'seespr', 'seeksprimo', 'ifexpr' ),
+	'iferror'      => array( '0', 'seeraras', 'iferror' ),
+	'switch'       => array( '0', 'ŝaltu', 'ŝalti', 'sxaltu', 'sxalti', 'switch' ),
+	'default'      => array( '0', '#defaŭlte', '#defauxlte', '#default' ),
+	'ifexist'      => array( '0', 'seekzistas', 'ifexist' ),
+	'time'         => array( '0', 'tempo', 'time' ),
+	'timel'        => array( '0', 'tempoo', 'timel' ),
+);
+
 $magicWords['es'] = array(
 	'if'           => array( '0', 'si', 'if' ),
 	'ifexpr'       => array( '0', 'siexpr', 'ifexpr' ),
 	'iferror'      => array( '0', 'sierror', 'iferror' ),
+	'switch'       => array( '0', 'según', 'switch' ),
+	'ifexist'      => array( '0', 'siexiste', 'ifexist' ),
+	'time'         => array( '0', 'tiempo', 'time' ),
+	'len'          => array( '0', 'long', 'longitud', 'len' ),
+	'replace'      => array( '0', 'reemplazar', 'replace' ),
+	'explode'      => array( '0', 'separar', 'explode' ),
 );
 
 $magicWords['fa'] = array(
@@ -146,9 +165,15 @@ $magicWords['id'] = array(
 );
 
 $magicWords['ko'] = array(
+	'expr'         => array( '0', '계산', 'expr' ),
+	'switch'       => array( '0', '스위치', 'switch' ),
 	'default'      => array( '0', '#기본값', '#default' ),
 	'time'         => array( '0', '시간', 'time' ),
 	'timel'        => array( '0', '지역시간', 'timel' ),
+	'len'          => array( '0', '길이', 'len' ),
+	'count'        => array( '0', '개수', 'count' ),
+	'replace'      => array( '0', '교체', 'replace' ),
+	'explode'      => array( '0', '분리', 'explode' ),
 );
 
 $magicWords['mg'] = array(
@@ -221,6 +246,22 @@ $magicWords['nl'] = array(
 	'count'        => array( '0', 'telling', 'count' ),
 	'replace'      => array( '0', 'vervangen', 'replace' ),
 	'explode'      => array( '0', 'exploderen', 'explode' ),
+);
+
+$magicWords['nn'] = array(
+	'expr'         => array( '0', 'uttrykk', 'expr' ),
+	'if'           => array( '0', 'om', 'if' ),
+	'ifeq'         => array( '0', 'omlik', 'ifeq' ),
+	'ifexpr'       => array( '0', 'omuttrykk', 'ifexpr' ),
+	'iferror'      => array( '0', 'omfeil', 'iferror' ),
+	'switch'       => array( '0', 'byt', 'switch' ),
+	'ifexist'      => array( '0', 'omfinst', 'ifexist' ),
+	'time'         => array( '0', 'tid', 'time' ),
+	'timel'        => array( '0', 'tidl', 'timel' ),
+	'rel2abs'      => array( '0', 'reltilabs', 'rel2abs' ),
+	'titleparts'   => array( '0', 'titteldelar', 'titleparts' ),
+	'len'          => array( '0', 'lengd', 'len' ),
+	'replace'      => array( '0', 'erstatt', 'replace' ),
 );
 
 $magicWords['ps'] = array(
