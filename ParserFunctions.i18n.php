@@ -65,6 +65,18 @@ $messages['af'] = array(
 	'pfunc_string_too_long' => 'Fout: String oorskry $1 karakter limiet',
 );
 
+/** Gheg Albanian (Gegë)
+ * @author Mdupont
+ */
+$messages['aln'] = array(
+	'pfunc_desc' => 'Enhance parser me funksione logjike',
+	'pfunc_time_error' => 'Gabim: koha e pavlefshme',
+	'pfunc_time_too_long' => 'Gabim: kohë shumë # thirrjet',
+	'pfunc_rel2abs_invalid_depth' => 'Gabim: thellësia e pavlefshme në rrugën: "$1" (u përpoq për të hyrë në një nyjë mbi nyjen e rrënjë)',
+	'pfunc_expr_stack_exhausted' => 'gabim Shprehja: qipi rraskapitur',
+	'pfunc_expr_unexpected_number' => 'gabim Shprehja: Numri i papritur',
+);
+
 /** Aragonese (Aragonés)
  * @author Juanpabl
  */
