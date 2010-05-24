@@ -2035,6 +2035,7 @@ $messages['tl'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Hindi tanggap na pangangatwiran (argumento) para sa ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Kamalian sa pagpapahayag: Hindi nalalamang kamalian ($1)',
 	'pfunc_expr_not_a_number' => 'Sa $1: ang kinalabasan ay hindi isang bilang',
+	'pfunc_string_too_long' => 'Kamalian: Lumampas ang bagting sa $1 hangganang panitik',
 );
 
 /** Turkish (Türkçe)
