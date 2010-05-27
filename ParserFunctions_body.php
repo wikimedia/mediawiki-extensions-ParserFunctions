@@ -288,6 +288,7 @@ class ExtParserFunctions {
 			if( $current == '..' ) { // removing one level
 				if( !count( $newExploded ) ){
 					// attempted to access a node above root node
+					wfLoadExtensionMessages( 'ParserFunctions' );
 					return '<strong class="error">' . wfMsgForContent( 'pfunc_rel2abs_invalid_depth', $fullPath ) . '</strong>';
 				}
 				// remove last level from the stack
@@ -459,10 +460,12 @@ class ExtParserFunctions {
 		
 		#format the timestamp and return the result
 		if ( $invalidTime ) {
+			wfLoadExtensionMessages( 'ParserFunctions' );
 			$result = '<strong class="error">' . wfMsgForContent( 'pfunc_time_error' ) . '</strong>';
 		} else {
 			$this->mTimeChars += strlen( $format );
 			if ( $this->mTimeChars > $this->mMaxTimeChars ) {
+				wfLoadExtensionMessages( 'ParserFunctions' );
 				return '<strong class="error">' . wfMsgForContent( 'pfunc_time_too_long' ) . '</strong>';
 			} else {
 				
@@ -527,6 +530,7 @@ class ExtParserFunctions {
 	// Generates error message.  Called when string is too long.
 	private function tooLongError() {
 		global $wgPFStringLengthLimit, $wgContLang;
+		wfLoadExtensionMessages( 'ParserFunctions' );
 		
 		return '<strong class="error">' . 
 			wfMsgExt( 'pfunc_string_too_long',
