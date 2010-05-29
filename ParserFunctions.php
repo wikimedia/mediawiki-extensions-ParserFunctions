@@ -92,13 +92,14 @@ class ParserFunctions_HookStub {
 
 		//String Functions
 		if ( $wgPFEnableStringFunctions ) {
-			$parser->setFunctionHook( 'len',      array(&$this, 'runLen'      ));
-			$parser->setFunctionHook( 'pos',      array(&$this, 'runPos'      ));
-			$parser->setFunctionHook( 'rpos',     array(&$this, 'runRPos'     ));
-			$parser->setFunctionHook( 'sub',      array(&$this, 'runSub'      ));
-			$parser->setFunctionHook( 'count',    array(&$this, 'runCount'    ));
-			$parser->setFunctionHook( 'replace',  array(&$this, 'runReplace'  ));
-			$parser->setFunctionHook( 'explode',  array(&$this, 'runExplode'  ));
+			$parser->setFunctionHook( 'len',       array( &$this, 'runLen'       ) );
+			$parser->setFunctionHook( 'pos',       array( &$this, 'runPos'       ) );
+			$parser->setFunctionHook( 'rpos',      array( &$this, 'runRPos'      ) );
+			$parser->setFunctionHook( 'sub',       array( &$this, 'runSub'       ) );
+			$parser->setFunctionHook( 'count',     array( &$this, 'runCount'     ) );
+			$parser->setFunctionHook( 'replace',   array( &$this, 'runReplace'   ) );
+			$parser->setFunctionHook( 'explode',   array( &$this, 'runExplode'   ) );
+			$parser->setFunctionHook( 'urldecode', array( &$this, 'runUrlDecode' ) );
 		}
 
 		return true;

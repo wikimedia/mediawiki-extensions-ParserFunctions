@@ -25,6 +25,7 @@ $magicWords['en'] = array(
 	'count'      => array( 0, 'count' ),
 	'replace'    => array( 0, 'replace' ),
 	'explode'    => array( 0, 'explode' ),
+	'urldecode'  => array( 0, 'urldecode' ),
 );
 
 $magicWords['ar'] = array(

@@ -767,4 +767,24 @@ class ExtParserFunctions {
 		wfProfileOut( __METHOD__ );
 		return $result;
 	}
+
+	/**
+	 * {{#urldecode:string}}
+	 *
+	 * Decodes URL-encoded (like%20that) strings.
+	 */
+	function runUrlDecode( $parser, $inStr = '' ) {
+		wfProfileIn( __METHOD__ );
+
+		$inStr = $this->killMarkers( $parser, (string)$inStr );
+		if ( !$this->checkLength( $inStr ) ) {
+			wfProfileOut( __METHOD__ );
+			return $this->tooLongError();
+		}
+
+		$result = urldecode( $inStr );
+
+		wfProfileOut( __METHOD__ );
+		return $result;
+	}
 }
