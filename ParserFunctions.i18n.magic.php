@@ -48,6 +48,7 @@ $magicWords['ar'] = array(
 	'count'        => array( '0', 'عدد', 'count' ),
 	'replace'      => array( '0', 'استبدال', 'replace' ),
 	'explode'      => array( '0', 'انفجار', 'explode' ),
+	'urldecode'    => array( '0', 'فك_مسار', 'urldecode' ),
 );
 
 $magicWords['arz'] = array(
