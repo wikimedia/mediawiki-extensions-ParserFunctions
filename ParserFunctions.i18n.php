@@ -1836,6 +1836,7 @@ $messages['sr-el'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Loš argument: ln <= 0',
 	'pfunc_expr_unknown_error' => 'Greška u izrazu: Nepoznata greška ($1)',
 	'pfunc_expr_not_a_number' => 'Rezultat u $1 nije broj.',
+	'pfunc_string_too_long' => 'Greška: reč prekoračuje $1  slova, što je postavljeno ograničenje',
 );
 
 /** Seeltersk (Seeltersk)
