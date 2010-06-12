@@ -364,6 +364,14 @@ $messages['ca'] = array(
 	'pfunc_string_too_long' => 'Error: La cadena és $1 caràcters massa llarga',
 );
 
+/** Chechen (Нохчийн)
+ * @author Sasan700
+ */
+$messages['ce'] = array(
+	'pfunc_expr_stack_exhausted' => 'Яздарехь гlалат ду: хьаладуьззина татол',
+	'pfunc_expr_unrecognised_word' => 'Яздарехь гlалат ду: дойзуш доцу дош «$1»',
+);
+
 /** Czech (Česky)
  * @author Danny B.
  * @author Li-sung
@@ -1653,6 +1661,7 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (Русский)
+ * @author G0rn
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
