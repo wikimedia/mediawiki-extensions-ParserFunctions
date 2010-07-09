@@ -46,6 +46,7 @@ $wgExtensionMessagesFiles['ParserFunctions'] = dirname(__FILE__) . '/ParserFunct
 $wgExtensionMessagesFiles['ParserFunctionsMagic'] = dirname(__FILE__) . '/ParserFunctions.i18n.magic.php';
 
 $wgParserTestFiles[] = dirname( __FILE__ ) . "/funcsParserTests.txt";
+$wgParserTestFiles[] = dirname( __FILE__ ) . "/stringFunctionTests.txt";
 
 function wfSetupParserFunctions() {
 	global $wgPFHookStub, $wgHooks;
