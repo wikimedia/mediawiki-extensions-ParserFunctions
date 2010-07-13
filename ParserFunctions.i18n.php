@@ -1214,6 +1214,7 @@ $messages['li'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Ongeldige paramaeter veur ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Fout in oetdrukking: ónbekindje fout ($1)',
 	'pfunc_expr_not_a_number' => 'In $1: rezultaot is gein getal',
+	'pfunc_string_too_long' => 'Fout: De teks is lenger es de limiet van $1 {{PLURAL:$1|teike|teikes}}',
 );
 
 /** Lithuanian (Lietuvių)
