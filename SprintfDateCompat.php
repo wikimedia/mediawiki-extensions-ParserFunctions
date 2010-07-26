@@ -3,7 +3,7 @@
 # sprintfDate support for MW<1.8 installations
 class SprintfDateCompat {
 
-	function sprintfDate( $format, $ts ) {
+	static function sprintfDate( $format, $ts ) {
 		global $wgContLang;
 
 		$s = '';
