@@ -1532,6 +1532,7 @@ $messages['pms'] = array(
  */
 $messages['ps'] = array(
 	'pfunc_time_error' => 'ستونزه: ناسم وخت',
+	'pfunc_expr_division_by_zero' => 'وېش په صفر',
 );
 
 /** Portuguese (Português)
