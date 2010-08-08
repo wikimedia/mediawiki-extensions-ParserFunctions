@@ -729,7 +729,7 @@ class ExtParserFunctions {
 
 
 	/**
-	 * {{#explode:string | delimiter | position}}
+	 * {{#explode:string | delimiter | position | limit}}
 	 *
 	 * Breaks "string" into chunks separated by "delimiter" and returns the
 	 * chunk identified by "position".
@@ -738,7 +738,7 @@ class ExtParserFunctions {
 	 * Note: If the divider is an empty string, single space is used instead.
 	 * Note: Empty string is returned if there are not enough exploded chunks.
 	 */
-	function runExplode ( $parser, $inStr = '', $inDiv = '', $inPos = 0 ) {
+	function runExplode ( $parser, $inStr = '', $inDiv = '', $inPos = 0, $inLim = null ) {
 		wfProfileIn( __METHOD__ );
 
 		$inStr = $this->killMarkers( $parser, (string)$inStr );
@@ -754,7 +754,7 @@ class ExtParserFunctions {
 
 		$inDiv = preg_quote( $inDiv, '/' );
 		
-		$matches = preg_split( '/'.$inDiv.'/u', $inStr );
+		$matches = preg_split( '/'.$inDiv.'/u', $inStr, $inLim );
 		
 		if( $inPos >= 0 && isset( $matches[$inPos] ) ) {
 			$result = $matches[$inPos];
