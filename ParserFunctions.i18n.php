@@ -612,6 +612,7 @@ $messages['eu'] = array(
 
 /** Persian (فارسی)
  * @author Huji
+ * @author Wayiran
  */
 $messages['fa'] = array(
 	'pfunc_desc' => 'به تجزیه‌گر، دستورهای منطقی می‌افزاید',
@@ -632,6 +633,7 @@ $messages['fa'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'پارامتر غیر مجاز برای لگاریتم طبیعی: <= صفر',
 	'pfunc_expr_unknown_error' => 'خطای عبارت: خطای ناشناخته ($1)',
 	'pfunc_expr_not_a_number' => 'در $1: نتیجه عدد نیست',
+	'pfunc_string_too_long' => 'خطا: رشته از محدودیت نویسه‌ای $1 تجاوز می‌کند',
 );
 
 /** Finnish (Suomi)
