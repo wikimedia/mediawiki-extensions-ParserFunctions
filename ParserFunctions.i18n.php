@@ -34,9 +34,10 @@ $messages['en'] = array(
  * @author Jon Harald Søby
  * @author Meno25
  * @author Siebrand
+ * @author The Evil IP address
  */
 $messages['qqq'] = array(
-	'pfunc_desc' => 'Short description of the ParserFunctions extension, shown on [[Special:Version]].',
+	'pfunc_desc' => '{{desc}}',
 	'pfunc_expr_division_by_zero' => '{{Identical|Divizion by zero}}',
 	'pfunc_string_too_long' => 'PLURAL is supported for $1.',
 );
