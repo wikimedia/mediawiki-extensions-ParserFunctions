@@ -1262,6 +1262,7 @@ $messages['ml'] = array(
 	'pfunc_time_error' => 'പിഴവ്:അസാധുവായ സമയം',
 	'pfunc_time_too_long' => 'പിഴവ്: വളരെയധികം #സമയ കാളുകൾ',
 	'pfunc_rel2abs_invalid_depth' => 'പിഴവ്: പഥത്തിൽ അസാധുവായ ആഴം: "$1" (റൂട്ട് തലത്തിനും മുകളിലുള്ള തലം എടുക്കാനുള്ള ശ്രമം)',
+	'pfunc_expr_stack_exhausted' => 'എക്സ്‌പ്രെഷൻ പിഴവ്: സ്റ്റാക്ക് പുറന്തള്ളിയിരിക്കുന്നു',
 	'pfunc_expr_unexpected_number' => 'പ്രയോഗരീതിയിൽ പിഴവ്: പ്രതീക്ഷിക്കാത്ത സംഖ്യ',
 	'pfunc_expr_preg_match_failure' => 'പ്രയോഗരീതിയിൽ പിഴവ്: അപ്രതീക്ഷിതമായ preg_match പരാജയം',
 	'pfunc_expr_unrecognised_word' => 'പ്രയോഗരീതിയിൽ പിഴവ്: "$1" എന്ന തിരിച്ചറിയാൻ സാധിക്കാഞ്ഞ വാക്ക്',
