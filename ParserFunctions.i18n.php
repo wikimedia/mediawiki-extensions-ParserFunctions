@@ -1271,6 +1271,8 @@ $messages['ml'] = array(
 	'pfunc_expr_unrecognised_punctuation' => 'പ്രയോഗരീതിയിൽ പിഴവ്: തിരിച്ചറിയാൻ കഴിയാത്ത വിരാമചിഹ്നം "$1"',
 	'pfunc_expr_unclosed_bracket' => 'പ്രയോഗരീതിയിൽ പിഴവ്: അടയ്ക്കാത്ത കോഷ്ഠകം',
 	'pfunc_expr_division_by_zero' => 'പൂജ്യം കൊണ്ടുള്ള ഹരണം',
+	'pfunc_expr_invalid_argument' => '$1:< -1 അല്ലെങ്കിൽ > 1 എന്നതിനു നൽകിയ അസാധുവായ ആർഗ്യുമെന്റ്',
+	'pfunc_expr_invalid_argument_ln' => 'ln: <= 0 എന്നതിനു നൽകിയ അസാധുവായ ആർഗ്യുമെന്റ്',
 	'pfunc_expr_unknown_error' => 'പ്രയോഗരീതിയിൽ പിഴവ്: കാരണം അജ്ഞാതമായ പിഴവ് ($1)',
 	'pfunc_expr_not_a_number' => '$1-ൽ: ഫലം ഒരു സംഖ്യയല്ല',
 	'pfunc_string_too_long' => 'പിഴവ്: പദം ലിപികളുടെ പരിധിയായ $1 അതിലംഘിക്കുന്നു',
