@@ -1267,6 +1267,7 @@ $messages['ml'] = array(
 	'pfunc_expr_preg_match_failure' => 'പ്രയോഗരീതിയിൽ പിഴവ്: അപ്രതീക്ഷിതമായ preg_match പരാജയം',
 	'pfunc_expr_unrecognised_word' => 'പ്രയോഗരീതിയിൽ പിഴവ്: "$1" എന്ന തിരിച്ചറിയാൻ സാധിക്കാഞ്ഞ വാക്ക്',
 	'pfunc_expr_unexpected_operator' => 'പ്രയോഗരീതിയിൽ പിഴവ്: അപ്രതീക്ഷിതമായ $1 ഓപ്പറേറ്റർ',
+	'pfunc_expr_missing_operand' => 'എക്സ്പ്രെഷൻ പിഴവ്: $1 എന്നതിനുള്ള പ്രവർത്തനഘടകം നൽകിയിട്ടില്ല',
 	'pfunc_expr_unexpected_closing_bracket' => 'പ്രയോഗരീതിയിൽ പിഴവ്: അപ്രതീക്ഷിതമായി കോഷ്ഠകം അടച്ചിരിക്കുന്നു',
 	'pfunc_expr_unrecognised_punctuation' => 'പ്രയോഗരീതിയിൽ പിഴവ്: തിരിച്ചറിയാൻ കഴിയാത്ത വിരാമചിഹ്നം "$1"',
 	'pfunc_expr_unclosed_bracket' => 'പ്രയോഗരീതിയിൽ പിഴവ്: അടയ്ക്കാത്ത കോഷ്ഠകം',
