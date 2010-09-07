@@ -995,6 +995,7 @@ $messages['it'] = array(
  * @author Aotake
  * @author Fryed-peach
  * @author JtFuruhata
+ * @author 青子守歌
  */
 $messages['ja'] = array(
 	'pfunc_desc' => 'パーサーに論理関数を追加して拡張する',
@@ -1006,7 +1007,7 @@ $messages['ja'] = array(
 	'pfunc_expr_preg_match_failure' => '構文エラー: 予期せぬ形で preg_match に失敗しました',
 	'pfunc_expr_unrecognised_word' => '構文エラー: "$1" は認識できません',
 	'pfunc_expr_unexpected_operator' => '構文エラー: 予期せぬ演算子 $1 があります',
-	'pfunc_expr_missing_operand' => '構文エラー: $1 のオペランドがありません',
+	'pfunc_expr_missing_operand' => '構文エラー: $1 の演算対象がありません',
 	'pfunc_expr_unexpected_closing_bracket' => '構文エラー: 予期せぬ閉じ括弧です',
 	'pfunc_expr_unrecognised_punctuation' => '構文エラー: 認識できない区切り文字 "$1" があります',
 	'pfunc_expr_unclosed_bracket' => '構文エラー: 括弧が閉じられていません',
