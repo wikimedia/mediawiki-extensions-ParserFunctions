@@ -6,7 +6,7 @@ class ExtParserFunctions {
 	var $mTimeChars = 0;
 	var $mMaxTimeChars = 6000; # ~10 seconds
 
-	function clearState( $parser) {
+	function clearState( $parser ) {
 		$this->mTimeChars = 0;
 		$parser->pf_ifexist_breakdown = array();
 		$parser->pf_markerRegex = null;
@@ -27,16 +27,16 @@ class ExtParserFunctions {
 
 		// The first line represents Parser from release 1.12 forward.
 		// subsequent lines are hacks to accomodate old Mediawiki versions.
-		if ( defined('Parser::MARKER_SUFFIX') )
+		if ( defined( 'Parser::MARKER_SUFFIX' ) )
 			$suffix = preg_quote( Parser::MARKER_SUFFIX, '/' );
-		elseif ( isset($parser->mMarkerSuffix) )
+		elseif ( isset( $parser->mMarkerSuffix ) )
 			$suffix = preg_quote( $parser->mMarkerSuffix, '/' );
-		elseif ( defined('MW_PARSER_VERSION') && 
+		elseif ( defined( 'MW_PARSER_VERSION' ) &&
 				strcmp( MW_PARSER_VERSION, '1.6.1' ) > 0 )
 			$suffix = "QINU\x07";
 		else $suffix = 'QINU';
-		
-		$parser->pf_markerRegex = '/' .$prefix. '(?:(?!' .$suffix. ').)*' . $suffix . '/us';
+
+		$parser->pf_markerRegex = '/' . $prefix . '(?:(?!' . $suffix . ').)*' . $suffix . '/us';
 
 		wfProfileOut( __METHOD__ );
 		return $parser->pf_markerRegex;
@@ -60,23 +60,23 @@ class ExtParserFunctions {
 	function expr( $parser, $expr = '' ) {
 		try {
 			return $this->getExprParser()->doExpression( $expr );
-		} catch(ExprError $e) {
+		} catch ( ExprError $e ) {
 			return $e->getMessage();
 		}
 	}
 
 	function ifexpr( $parser, $expr = '', $then = '', $else = '' ) {
-		try{
+		try {
 			$ret = $this->getExprParser()->doExpression( $expr );
 			if ( is_numeric( $ret ) ) {
 				$ret = floatval( $ret );
 			}
-			if( $ret ) {
+			if ( $ret ) {
 				return $then;
 			} else {
 				return $else;
 			}
-		} catch (ExprError $e){
+		} catch ( ExprError $e ) {
 			return $e->getMessage();
 		}
 	}
@@ -152,12 +152,12 @@ class ExtParserFunctions {
 	function switchHook( $parser /*,...*/ ) {
 		$args = func_get_args();
 		array_shift( $args );
-		$primary = trim(array_shift($args));
+		$primary = trim( array_shift( $args ) );
 		$found = $defaultFound = false;
 		$parts = null;
 		$default = null;
 		$mwDefault =& MagicWord::get( 'default' );
-		foreach( $args as $arg ) {
+		foreach ( $args as $arg ) {
 			$parts = array_map( 'trim', explode( '=', $arg, 2 ) );
 			if ( count( $parts ) == 2 ) {
 				# Found "="
@@ -179,7 +179,7 @@ class ExtParserFunctions {
 		}
 		# Default case
 		# Check if the last item had no = sign, thus specifying the default case
-		if ( count( $parts ) == 1) {
+		if ( count( $parts ) == 1 ) {
 			return $parts[0];
 		} elseif ( !is_null( $default ) ) {
 			return $default;
@@ -250,22 +250,22 @@ class ExtParserFunctions {
 	 */
 	public function rel2abs( $parser , $to = '' , $from = '' ) {
 
-		$from = trim($from);
-		if( $from == '' ) {
+		$from = trim( $from );
+		if ( $from == '' ) {
 			$from = $parser->getTitle()->getPrefixedText();
 		}
 
 		$to = rtrim( $to , ' /' );
 
 		// if we have an empty path, or just one containing a dot
-		if( $to == '' || $to == '.' ) {
+		if ( $to == '' || $to == '.' ) {
 			return $from;
 		}
 
 		// if the path isn't relative
-		if ( substr( $to , 0 , 1) != '/' &&
-		 substr( $to , 0 , 2) != './' &&
-		 substr( $to , 0 , 3) != '../' &&
+		if ( substr( $to , 0 , 1 ) != '/' &&
+		 substr( $to , 0 , 2 ) != './' &&
+		 substr( $to , 0 , 3 ) != '../' &&
 		 $to != '..' )
 		{
 			$from = '';
@@ -285,8 +285,8 @@ class ExtParserFunctions {
 		$newExploded = array();
 
 		foreach ( $exploded as $current ) {
-			if( $current == '..' ) { // removing one level
-				if( !count( $newExploded ) ){
+			if ( $current == '..' ) { // removing one level
+				if ( !count( $newExploded ) ) {
 					// attempted to access a node above root node
 					wfLoadExtensionMessages( 'ParserFunctions' );
 					return '<strong class="error">' . wfMsgForContent( 'pfunc_rel2abs_invalid_depth', $fullPath ) . '</strong>';
@@ -326,26 +326,26 @@ class ExtParserFunctions {
 		$title = Title::newFromText( $titletext );
 		$wgContLang->findVariantLink( $titletext, $title, true );
 		if ( $title ) {
-			if( $title->getNamespace() == NS_MEDIA ) {
+			if ( $title->getNamespace() == NS_MEDIA ) {
 				/* If namespace is specified as NS_MEDIA, then we want to
 				 * check the physical file, not the "description" page.
 				 */
 				if ( !$this->incrementIfexistCount( $parser, $frame ) ) {
 					return $else;
 				}
-				$file = wfFindFile($title);
+				$file = wfFindFile( $title );
 				if ( !$file ) {
 					return $else;
 				}
-				$parser->mOutput->addImage($file->getName());
+				$parser->mOutput->addImage( $file->getName() );
 				return $file->exists() ? $then : $else;
-			} elseif( $title->getNamespace() == NS_SPECIAL ) {
+			} elseif ( $title->getNamespace() == NS_SPECIAL ) {
 				/* Don't bother with the count for special pages,
 				 * since their existence can be checked without
 				 * accessing the database.
 				 */
 				return SpecialPage::exists( $title->getDBkey() ) ? $then : $else;
-			} elseif( $title->isExternal() ) {
+			} elseif ( $title->isExternal() ) {
 				/* Can't check the existence of pages on other sites,
 				 * so just return $else.  Makes a sort of sense, since
 				 * they don't exist _locally_.
@@ -392,16 +392,16 @@ class ExtParserFunctions {
 		if ( isset( $this->mTimeCache[$format][$date][$local] ) ) {
 			return $this->mTimeCache[$format][$date][$local];
 		}
-		
-		#compute the timestamp string $ts
-		#PHP >= 5.2 can handle dates before 1970 or after 2038 using the DateTime object
-		#PHP < 5.2 is limited to dates between 1970 and 2038
-		
+
+		# compute the timestamp string $ts
+		# PHP >= 5.2 can handle dates before 1970 or after 2038 using the DateTime object
+		# PHP < 5.2 is limited to dates between 1970 and 2038
+
 		$invalidTime = false;
-		
-		if ( class_exists( 'DateTime' ) ) { #PHP >= 5.2
-			# the DateTime constructor must be used because it throws exceptions 
-			# when errors occur, whereas date_create appears to just output a warning 
+
+		if ( class_exists( 'DateTime' ) ) { # PHP >= 5.2
+			# the DateTime constructor must be used because it throws exceptions
+			# when errors occur, whereas date_create appears to just output a warning
 			# that can't really be detected from within the code
 			try {
 				# Determine timezone
@@ -427,16 +427,16 @@ class ExtParserFunctions {
 
 				# Generate timestamp
 				$ts = $dateObject->format( 'YmdHis' );
-			} catch (Exception $ex) {
+			} catch ( Exception $ex ) {
 				$invalidTime = true;
 			}
-		} else { #PHP < 5.2
+		} else { # PHP < 5.2
 			if ( $date !== '' ) {
 				$unix = @strtotime( $date );
 			} else {
 				$unix = time();
 			}
-			
+
 			if ( $unix == -1 || $unix == false ) {
 				$invalidTime = true;
 			} else {
@@ -444,21 +444,21 @@ class ExtParserFunctions {
 					# Use the time zone
 					if ( isset( $wgLocaltimezone ) ) {
 						$oldtz = getenv( 'TZ' );
-						putenv( 'TZ='.$wgLocaltimezone );
+						putenv( 'TZ=' . $wgLocaltimezone );
 					}
 					wfSuppressWarnings(); // E_STRICT system time bitching
 					$ts = date( 'YmdHis', $unix );
 					wfRestoreWarnings();
 					if ( isset( $wgLocaltimezone ) ) {
-						putenv( 'TZ='.$oldtz );
+						putenv( 'TZ=' . $oldtz );
 					}
 				} else {
 					$ts = wfTimestamp( TS_MW, $unix );
 				}
 			}
 		}
-		
-		#format the timestamp and return the result
+
+		# format the timestamp and return the result
 		if ( $invalidTime ) {
 			wfLoadExtensionMessages( 'ParserFunctions' );
 			$result = '<strong class="error">' . wfMsgForContent( 'pfunc_time_error' ) . '</strong>';
@@ -468,16 +468,7 @@ class ExtParserFunctions {
 				wfLoadExtensionMessages( 'ParserFunctions' );
 				return '<strong class="error">' . wfMsgForContent( 'pfunc_time_too_long' ) . '</strong>';
 			} else {
-				
-				if ( method_exists( $wgContLang, 'sprintfDate' ) ) {
-					$result = $wgContLang->sprintfDate( $format, $ts );
-				} else {
-					if ( !class_exists( 'SprintfDateCompat' ) ) {
-						require( dirname( __FILE__ ) . '/SprintfDateCompat.php' );
-					}
-
-					$result = SprintfDateCompat::sprintfDate( $format, $ts );
-				}
+				$result = $wgContLang->sprintfDate( $format, $ts );
 			}
 		}
 		$this->mTimeCache[$format][$date][$local] = $result;
@@ -498,7 +489,7 @@ class ExtParserFunctions {
 	 * @param int $offset Offset starting at 1
 	 * @return string
 	 */
-	public function titleparts( $parser, $title = '', $parts = 0, $offset = 0) {
+	public function titleparts( $parser, $title = '', $parts = 0, $offset = 0 ) {
 		$parts = intval( $parts );
 		$offset = intval( $offset );
 		$ntitle = Title::newFromText( $title );
@@ -531,17 +522,17 @@ class ExtParserFunctions {
 	private function tooLongError() {
 		global $wgPFStringLengthLimit, $wgContLang;
 		wfLoadExtensionMessages( 'ParserFunctions' );
-		
-		return '<strong class="error">' . 
+
+		return '<strong class="error">' .
 			wfMsgExt( 'pfunc_string_too_long',
-				array( 'escape', 'parsemag', 'content' ), 
+				array( 'escape', 'parsemag', 'content' ),
 				$wgContLang->formatNum( $wgPFStringLengthLimit ) ) .
 			'</strong>';
 	}
 
 	/**
 	 * {{#len:string}}
-	 * 
+	 *
 	 * Reports number of characters in string.
 	 */
 	function runLen ( $parser, $inStr = '' ) {
@@ -567,17 +558,17 @@ class ExtParserFunctions {
 
 		$inStr = $this->killMarkers( $parser, (string)$inStr );
 		$inNeedle = $this->killMarkers( $parser, (string)$inNeedle );
-		
-		if( !$this->checkLength( $inStr ) || 
+
+		if ( !$this->checkLength( $inStr ) ||
 		    !$this->checkLength( $inNeedle ) ) {
 			wfProfileOut( __METHOD__ );
 			return $this->tooLongError();
 		}
 
-		if( $inNeedle == '' ) { $inNeedle = ' '; }
+		if ( $inNeedle == '' ) { $inNeedle = ' '; }
 
 		$pos = mb_strpos( $inStr, $inNeedle, $inOffset );
-		if( $pos === false ) { $pos = ""; }
+		if ( $pos === false ) { $pos = ""; }
 
 		wfProfileOut( __METHOD__ );
 		return $pos;
@@ -596,17 +587,17 @@ class ExtParserFunctions {
 
 		$inStr = $this->killMarkers( $parser, (string)$inStr );
 		$inNeedle = $this->killMarkers( $parser, (string)$inNeedle );
-		
-		if( !$this->checkLength( $inStr ) || 
+
+		if ( !$this->checkLength( $inStr ) ||
 		    !$this->checkLength( $inNeedle ) ) {
 			wfProfileOut( __METHOD__ );
 			return $this->tooLongError();
 		}
 
-		if( $inNeedle == '' ) { $inNeedle = ' '; }
+		if ( $inNeedle == '' ) { $inNeedle = ' '; }
 
 		$pos = mb_strrpos( $inStr, $inNeedle );
-		if( $pos === false ) { $pos = -1; }
+		if ( $pos === false ) { $pos = -1; }
 
 		wfProfileOut( __METHOD__ );
 		return $pos;
@@ -616,10 +607,10 @@ class ExtParserFunctions {
 	 * {{#sub: string | start | length }}
 	 *
 	 * Returns substring of "string" starting at "start" and having
-	 * "length" characters.	
+	 * "length" characters.
 	 *
 	 * Note: If length is zero, the rest of the input is returned.
-	 * Note: A negative value for "start" operates from the end of the 
+	 * Note: A negative value for "start" operates from the end of the
 	 *   "string".
 	 * Note: A negative value for "length" returns a string reduced in
 	 *   length by that amount.
@@ -629,19 +620,19 @@ class ExtParserFunctions {
 
 		$inStr = $this->killMarkers( $parser, (string)$inStr );
 
-		if( !$this->checkLength( $inStr ) ) {
+		if ( !$this->checkLength( $inStr ) ) {
 			wfProfileOut( __METHOD__ );
 			return $this->tooLongError();
 		}
-		
-		if ( intval($inLength) == 0 ) {
+
+		if ( intval( $inLength ) == 0 ) {
 			$result = mb_substr( $inStr, $inStart );
 		} else {
 			$result = mb_substr( $inStr, $inStart, $inLength );
 		}
 
 		wfProfileOut( __METHOD__ );
-		return $result;	
+		return $result;
 	}
 
 	/**
@@ -657,18 +648,18 @@ class ExtParserFunctions {
 		$inStr = $this->killMarkers( $parser, (string)$inStr );
 		$inSubStr = $this->killMarkers( $parser, (string)$inSubStr );
 
-		if( !$this->checkLength( $inStr ) ||
+		if ( !$this->checkLength( $inStr ) ||
 		    !$this->checkLength( $inSubStr ) ) {
 			wfProfileOut( __METHOD__ );
 			return $this->tooLongError();
 		}
 
-		if( $inSubStr == '' ) { $inSubStr = ' '; }
-			
+		if ( $inSubStr == '' ) { $inSubStr = ' '; }
+
 		$result = mb_substr_count( $inStr, $inSubStr );
 
 		wfProfileOut( __METHOD__ );
-		return $result;	
+		return $result;
 	}
 
 	/**
@@ -676,11 +667,11 @@ class ExtParserFunctions {
 	 *
 	 * Replaces each occurrence of "from" in "string" with "to".
 	 * At most "limit" replacements are performed.
-	 * 
+	 *
 	 * Note: Armored against replacements that would generate huge strings.
 	 * Note: If "from" is an empty string, single space is used instead.
 	 */
-	function runReplace( $parser, $inStr = '', 
+	function runReplace( $parser, $inStr = '',
 			$inReplaceFrom = '', $inReplaceTo = '', $inLimit = -1 ) {
 		global $wgPFStringLengthLimit;
 		wfProfileIn( __METHOD__ );
@@ -689,36 +680,36 @@ class ExtParserFunctions {
 		$inReplaceFrom = $this->killMarkers( $parser, (string)$inReplaceFrom );
 		$inReplaceTo = $this->killMarkers( $parser, (string)$inReplaceTo );
 
-		if( !$this->checkLength( $inStr ) ||
+		if ( !$this->checkLength( $inStr ) ||
 		    !$this->checkLength( $inReplaceFrom ) ||
-		    !$this->checkLength( $inReplaceTo ) ) { 
+		    !$this->checkLength( $inReplaceTo ) ) {
 			wfProfileOut( __METHOD__ );
 			return $this->tooLongError();
 		}
 
-		if( $inReplaceFrom == '' ) { $inReplaceFrom = ' '; }
+		if ( $inReplaceFrom == '' ) { $inReplaceFrom = ' '; }
 
 		// Precompute limit to avoid generating enormous string:
 		$diff = mb_strlen( $inReplaceTo ) - mb_strlen( $inReplaceFrom );
-		if( $diff > 0 ) {
+		if ( $diff > 0 ) {
 			$limit = ( ( $wgPFStringLengthLimit - mb_strlen( $inStr ) ) / $diff ) + 1;
 		} else {
 			$limit = -1;
 		}
 
-		$inLimit = intval($inLimit);
-		if( $inLimit >= 0 ) {
-			if( $limit > $inLimit || $limit == -1 ) { $limit = $inLimit; }
+		$inLimit = intval( $inLimit );
+		if ( $inLimit >= 0 ) {
+			if ( $limit > $inLimit || $limit == -1 ) { $limit = $inLimit; }
 		}
 
 		// Use regex to allow limit and handle UTF-8 correctly.
 		$inReplaceFrom = preg_quote( $inReplaceFrom, '/' );
 		$inReplaceTo = StringUtils::escapeRegexReplacement( $inReplaceTo );
 
-		$result = preg_replace( '/' . $inReplaceFrom . '/u', 
-						$inReplaceTo, $inStr, $limit);
+		$result = preg_replace( '/' . $inReplaceFrom . '/u',
+						$inReplaceTo, $inStr, $limit );
 
-		if( !$this->checkLength( $result ) ) {
+		if ( !$this->checkLength( $result ) ) {
 			wfProfileOut( __METHOD__ );
 			return $this->tooLongError();
 		}
@@ -744,22 +735,22 @@ class ExtParserFunctions {
 		$inStr = $this->killMarkers( $parser, (string)$inStr );
 		$inDiv = $this->killMarkers( $parser, (string)$inDiv );
 
-		if( $inDiv == '' ) { $inDiv = ' '; }
+		if ( $inDiv == '' ) { $inDiv = ' '; }
 
-		if( !$this->checkLength( $inStr ) ||
-		    !$this->checkLength( $inDiv ) ) { 
+		if ( !$this->checkLength( $inStr ) ||
+		    !$this->checkLength( $inDiv ) ) {
 			wfProfileOut( __METHOD__ );
 			return $this->tooLongError();
 		}
 
 		$inDiv = preg_quote( $inDiv, '/' );
-		
-		$matches = preg_split( '/'.$inDiv.'/u', $inStr, $inLim );
-		
-		if( $inPos >= 0 && isset( $matches[$inPos] ) ) {
+
+		$matches = preg_split( '/' . $inDiv . '/u', $inStr, $inLim );
+
+		if ( $inPos >= 0 && isset( $matches[$inPos] ) ) {
 			$result = $matches[$inPos];
-		} elseif ( $inPos < 0 && isset( $matches[count($matches) + $inPos] ) ) {
-			$result = $matches[count($matches) + $inPos];
+		} elseif ( $inPos < 0 && isset( $matches[count( $matches ) + $inPos] ) ) {
+			$result = $matches[count( $matches ) + $inPos];
 		} else {
 			$result = '';
 		}

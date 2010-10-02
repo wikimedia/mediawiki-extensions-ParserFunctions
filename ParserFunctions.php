@@ -4,9 +4,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'This file is a MediaWiki extension, it is not a valid entry point' );
 }
 
-
 /**
- * CONFIGURATION 
+ * CONFIGURATION
  * These variables may be overridden in LocalSettings.php after you include the
  * extension file.
  */
@@ -20,12 +19,12 @@ $wgPFStringLengthLimit = 1000;
 /**
  * Enable string functions.
  *
- * Set this to true if you want your users to be able to implement their own 
- * parsers in the ugliest, most inefficient programming language known to man: 
+ * Set this to true if you want your users to be able to implement their own
+ * parsers in the ugliest, most inefficient programming language known to man:
  * MediaWiki wikitext with ParserFunctions.
  *
  * WARNING: enabling this may have an adverse impact on the sanity of your users.
- * An alternative, saner solution for embedding complex text processing in 
+ * An alternative, saner solution for embedding complex text processing in
  * MediaWiki templates can be found at: http://www.mediawiki.org/wiki/Extension:Lua
  */
 $wgPFEnableStringFunctions = false;
@@ -35,15 +34,15 @@ $wgExtensionFunctions[] = 'wfSetupParserFunctions';
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'ParserFunctions',
-	'version' => '1.3.0',
+	'version' => '1.4.0',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:ParserFunctions',
-	'author' => array('Tim Starling', 'Robert Rohde', 'Ross McClure', 'Juraj Simlovic'),
+	'author' => array( 'Tim Starling', 'Robert Rohde', 'Ross McClure', 'Juraj Simlovic' ),
 	'descriptionmsg' => 'pfunc_desc',
 );
 
-$wgAutoloadClasses['ExtParserFunctions'] = dirname(__FILE__).'/ParserFunctions_body.php';
-$wgExtensionMessagesFiles['ParserFunctions'] = dirname(__FILE__) . '/ParserFunctions.i18n.php';
-$wgExtensionMessagesFiles['ParserFunctionsMagic'] = dirname(__FILE__) . '/ParserFunctions.i18n.magic.php';
+$wgAutoloadClasses['ExtParserFunctions'] = dirname( __FILE__ ) . '/ParserFunctions_body.php';
+$wgExtensionMessagesFiles['ParserFunctions'] = dirname( __FILE__ ) . '/ParserFunctions.i18n.php';
+$wgExtensionMessagesFiles['ParserFunctionsMagic'] = dirname( __FILE__ ) . '/ParserFunctions.i18n.magic.php';
 
 $wgParserTestFiles[] = dirname( __FILE__ ) . "/funcsParserTests.txt";
 $wgParserTestFiles[] = dirname( __FILE__ ) . "/stringFunctionTests.txt";
@@ -91,7 +90,7 @@ class ParserFunctions_HookStub {
 		$parser->setFunctionHook( 'rel2abs', array( &$this, 'rel2abs' ) );
 		$parser->setFunctionHook( 'titleparts', array( &$this, 'titleparts' ) );
 
-		//String Functions
+		// String Functions
 		if ( $wgPFEnableStringFunctions ) {
 			$parser->setFunctionHook( 'len',       array( &$this, 'runLen'       ) );
 			$parser->setFunctionHook( 'pos',       array( &$this, 'runPos'       ) );
