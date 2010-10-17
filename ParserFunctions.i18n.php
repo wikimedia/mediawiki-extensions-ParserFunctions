@@ -1234,7 +1234,7 @@ $messages['lt'] = array(
  */
 $messages['mk'] = array(
 	'pfunc_desc' => 'Проширување на можностите на парсерот со логички функции',
-	'pfunc_time_error' => 'Грешка: погрешен фомат за време',
+	'pfunc_time_error' => 'Грешка: погрешен формат за време',
 	'pfunc_time_too_long' => 'Грешка: премногу #time повикувања',
 	'pfunc_rel2abs_invalid_depth' => 'Грешка: Неважечка длабочина во патеката: „$1“ (обид за пристап до јазол над коренот)',
 	'pfunc_expr_stack_exhausted' => 'Грешка во изразот: Складот е преполн',
@@ -1694,6 +1694,17 @@ $messages['ru'] = array(
 	'pfunc_expr_unknown_error' => 'Ошибка выражения: неизвестная ошибка ($1)',
 	'pfunc_expr_not_a_number' => 'В $1: результат не является числом',
 	'pfunc_string_too_long' => 'Ошибка: строка превышает ограничение в $1 символов',
+);
+
+/** Rusyn (Русиньскый)
+ * @author Gazeb
+ */
+$messages['rue'] = array(
+	'pfunc_desc' => 'Росшырїня парсера о лоґічны функції',
+	'pfunc_time_error' => 'Хына: неплатный час',
+	'pfunc_time_too_long' => 'Хыба: дуже много кликаня #time',
+	'pfunc_rel2abs_invalid_depth' => 'Хыба: Неплатна глубка в стежцї: "$1" (проба  о приступ до узла высшого як корїнь)',
+	'pfunc_expr_division_by_zero' => 'Дїлїня нулов',
 );
 
 /** Yakut (Саха тыла)
