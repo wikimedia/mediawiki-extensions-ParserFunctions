@@ -1228,6 +1228,15 @@ $messages['lt'] = array(
 	'pfunc_time_error' => 'Klaida: neteisingas laikas',
 );
 
+/** Latvian (Latviešu)
+ * @author Papuass
+ */
+$messages['lv'] = array(
+	'pfunc_time_error' => 'Kļūda: nederīgs laiks',
+	'pfunc_time_too_long' => 'Kļūda: pārāk daudz #time izsaukumu',
+	'pfunc_expr_division_by_zero' => 'Dalīšana ar nulli',
+);
+
 /** Macedonian (Македонски)
  * @author Bjankuloski06
  * @author Brest
@@ -2222,6 +2231,14 @@ $messages['yi'] = array(
 	'pfunc_expr_unexpected_operator' => 'אויסדריק גרײַז: אומגעריכטער $1 אפעראַטאר',
 	'pfunc_expr_unclosed_bracket' => 'אויסדריק גרײַז: אומגעשלאסענער קלאַמער',
 	'pfunc_expr_not_a_number' => 'אין $1: רעזולטאַט איז נישט קיין נומער',
+);
+
+/** Yoruba (Yorùbá)
+ * @author Demmy
+ */
+$messages['yo'] = array(
+	'pfunc_expr_division_by_zero' => 'Pínpín pẹ̀lú òdo',
+	'pfunc_expr_not_a_number' => 'Nínú $1: èsì kìí ṣe nọ́mbà',
 );
 
 /** Cantonese (粵語)
