@@ -128,6 +128,13 @@ $messages['ar'] = array(
 	'pfunc_string_too_long' => 'خطأ: السلسلة تتجاوز الحد $1 حرف',
 );
 
+/** Aramaic (ܐܪܡܝܐ)
+ * @author Basharh
+ */
+$messages['arc'] = array(
+	'pfunc_time_error' => 'ܦܘܕܐ: ܥܕܢܐ ܠܐ ܬܪܝܨܬܐ',
+);
+
 /** Egyptian Spoken Arabic (مصرى)
  * @author Ghaly
  * @author Meno25
