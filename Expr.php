@@ -48,7 +48,6 @@ define( 'EXPR_PI', 36 );
 
 class ExprError extends Exception {
 	public function __construct( $msg, $parameter = '' ) {
-		wfLoadExtensionMessages( 'ParserFunctions' );
 		$this->message = '<strong class="error">' . wfMsgForContent( "pfunc_expr_$msg", htmlspecialchars( $parameter ) ) . '</strong>';
 	}
 }
