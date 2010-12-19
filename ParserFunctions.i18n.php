@@ -1814,6 +1814,7 @@ $messages['scn'] = array(
 );
 
 /** Sinhala (සිංහල)
+ * @author Budhajeewa
  * @author නන්දිමිතුරු
  */
 $messages['si'] = array(
@@ -1834,6 +1835,7 @@ $messages['si'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'ln: <= 0 සඳහා අනීතික විස්තාරකය',
 	'pfunc_expr_unknown_error' => 'ප්‍රකාශන දෝෂය: අඥාත දෝෂය ($1)',
 	'pfunc_expr_not_a_number' => '$1: හි ප්‍රතිඵලය සංඛ්‍යාවක් නොවේ',
+	'pfunc_string_too_long' => 'Error: වදන් පෙළ අකුරු $1 සීමාව ඉක්මවයි',
 );
 
 /** Slovak (Slovenčina)
