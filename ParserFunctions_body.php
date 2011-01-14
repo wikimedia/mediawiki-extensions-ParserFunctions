@@ -47,6 +47,9 @@ class ExtParserFunctions {
 		return preg_replace( $this->getMarkerRegex( $parser ), '' , $text );
 	}
 
+	/**
+	 * @return ExprParser
+	 */
 	function &getExprParser() {
 		if ( !isset( $this->mExprParser ) ) {
 			if ( !class_exists( 'ExprParser' ) ) {
