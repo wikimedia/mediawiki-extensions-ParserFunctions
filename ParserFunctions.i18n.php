@@ -2333,27 +2333,28 @@ $messages['zh-hans'] = array(
 /** Traditional Chinese (‪中文(繁體)‬)
  * @author Gaoxuewei
  * @author Liangent
+ * @author Mark85296341
  * @author Shinjiman
  */
 $messages['zh-hant'] = array(
 	'pfunc_desc' => '用邏輯函數加強解析器',
 	'pfunc_time_error' => '錯誤：無效時間',
-	'pfunc_time_too_long' => '錯誤：過多的#time呼叫',
+	'pfunc_time_too_long' => '錯誤：過多的 #time 呼叫',
 	'pfunc_rel2abs_invalid_depth' => '錯誤：無效路徑深度：「$1」（嘗試訪問頂點以上節點）',
 	'pfunc_expr_stack_exhausted' => '表達式錯誤：堆疊耗盡',
 	'pfunc_expr_unexpected_number' => '表達式錯誤：未預料的數字',
-	'pfunc_expr_preg_match_failure' => '表達式錯誤：未預料的preg_match失敗',
+	'pfunc_expr_preg_match_failure' => '表達式錯誤：未預料的 preg_match 失敗',
 	'pfunc_expr_unrecognised_word' => '表達式錯誤：無法識別的詞語「$1」',
-	'pfunc_expr_unexpected_operator' => '表達式錯誤：未預料的$1運算子',
-	'pfunc_expr_missing_operand' => '表達式錯誤：缺少$1的運算元',
+	'pfunc_expr_unexpected_operator' => '表達式錯誤：未預料的 $1 運算子',
+	'pfunc_expr_missing_operand' => '表達式錯誤：缺少 $1 的運算元',
 	'pfunc_expr_unexpected_closing_bracket' => '表達式錯誤：未預料的反括號',
 	'pfunc_expr_unrecognised_punctuation' => '表達式錯誤：無法識別的標點「$1」',
 	'pfunc_expr_unclosed_bracket' => '表達式錯誤：未封閉的括號',
-	'pfunc_expr_division_by_zero' => '零除',
-	'pfunc_expr_invalid_argument' => '$1的無效參量：< -1 或 > 1',
-	'pfunc_expr_invalid_argument_ln' => 'ln的無效參量：<= 0',
+	'pfunc_expr_division_by_zero' => '除以零',
+	'pfunc_expr_invalid_argument' => '$1 的無效參量：< -1 或 > 1',
+	'pfunc_expr_invalid_argument_ln' => 'ln 的無效參量：<= 0',
 	'pfunc_expr_unknown_error' => '表達式錯誤：未知錯誤（$1）',
-	'pfunc_expr_not_a_number' => '在$1中：結果不是數字',
+	'pfunc_expr_not_a_number' => '在 $1 中：結果不是數字',
 	'pfunc_string_too_long' => '錯誤：字符串超過$1字符限制',
 );
 
