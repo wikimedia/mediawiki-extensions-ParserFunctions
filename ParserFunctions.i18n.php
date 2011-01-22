@@ -192,7 +192,7 @@ $messages['ast'] = array(
 	'pfunc_expr_not_a_number' => 'En $1: el resultáu nun ye un númberu',
 );
 
-/** Bashkir (Башҡорт)
+/** Bashkir (Башҡортса)
  * @author Assele
  */
 $messages['ba'] = array(
@@ -241,7 +241,7 @@ $messages['bcc'] = array(
 	'pfunc_expr_not_a_number' => 'ته $1: نتیجه یک عددی نهنت',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -1892,7 +1892,7 @@ $messages['sl'] = array(
 	'pfunc_string_too_long' => 'Napaka: Niz presega omejitev $1 {{PLURAL:$1|znaka|znakov}}',
 );
 
-/** Serbian Cyrillic ekavian (Српски (ћирилица))
+/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
  * @author Millosh
  * @author Verlor
  */
@@ -1917,7 +1917,7 @@ $messages['sr-ec'] = array(
 	'pfunc_string_too_long' => 'Грешка: реч прекорачује $1  слова, што је постављено ограничење',
 );
 
-/** Serbian Latin ekavian (Srpski (latinica))
+/** Serbian Latin ekavian (‪Srpski (latinica)‬)
  * @author Michaello
  */
 $messages['sr-el'] = array(
