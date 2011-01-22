@@ -1078,11 +1078,13 @@ $messages['jv'] = array(
 
 /** Georgian (ქართული)
  * @author BRUTE
+ * @author Dawid Deutschland
  */
 $messages['ka'] = array(
 	'pfunc_time_error' => 'შეცდომა: არასწორი დრო',
 	'pfunc_expr_invalid_argument' => 'მცდარი არგუმენტი $1: < -1 ან > 1',
 	'pfunc_expr_invalid_argument_ln' => 'მცდარი არგუმენტი ln: <= 0',
+	'pfunc_expr_not_a_number' => '$1: შედექში ციფრი არაა',
 );
 
 /** Kazakh (Arabic script) (‫قازاقشا (تٴوتە)‬) */
