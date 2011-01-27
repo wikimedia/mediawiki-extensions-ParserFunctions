@@ -512,6 +512,29 @@ class ExtParserFunctions {
 		}
 	}
 
+	/**
+	 * Get a ConvertParser object
+	 * @return ConvertParser
+	 */
+	protected function &getConvertParser() {
+		if ( !isset( $this->mConvertParser ) ) {
+			if ( !class_exists( 'ConvertParser' ) ) {
+				require( dirname( __FILE__ ) . '/Convert.php' );
+			}
+			$this->mConvertParser = new ConvertParser;
+		}
+		return $this->mConvertParser;
+	}
+
+	public function convert( /*...*/ ) {
+		try {
+			$args = func_get_args();
+			return $this->getConvertParser()->execute( $args );
+		} catch ( ConvertError $e ) {
+			return $e->getMessage();
+		}
+	}
+
 	// Verifies parameter is less than max string length.
 	private function checkLength( $text ) {
 		global $wgPFStringLengthLimit;

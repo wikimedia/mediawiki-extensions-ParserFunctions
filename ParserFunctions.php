@@ -46,6 +46,7 @@ $wgExtensionMessagesFiles['ParserFunctionsMagic'] = dirname( __FILE__ ) . '/Pars
 
 $wgParserTestFiles[] = dirname( __FILE__ ) . "/funcsParserTests.txt";
 $wgParserTestFiles[] = dirname( __FILE__ ) . "/stringFunctionTests.txt";
+$wgParserTestFiles[] = dirname( __FILE__ ) . "/convertTests.txt";
 
 function wfSetupParserFunctions() {
 	global $wgPFHookStub, $wgHooks;
@@ -89,6 +90,7 @@ class ParserFunctions_HookStub {
 		$parser->setFunctionHook( 'timel', array( &$this, 'localTime' ) );
 		$parser->setFunctionHook( 'rel2abs', array( &$this, 'rel2abs' ) );
 		$parser->setFunctionHook( 'titleparts', array( &$this, 'titleparts' ) );
+		$parser->setFunctionHook( 'convert', array( &$this, 'convert' ) );
 
 		// String Functions
 		if ( $wgPFEnableStringFunctions ) {
