@@ -699,15 +699,16 @@ $messages['da'] = array(
 );
 
 /** German (Deutsch)
+ * @author Kghbln
  * @author LWChris
  * @author Metalhead64
  * @author Raimond Spekking
  */
 $messages['de'] = array(
 	'pfunc_desc' => 'Erweitert den Parser um logische Funktionen',
-	'pfunc_time_error' => 'Fehler: ungültige Zeitangabe',
-	'pfunc_time_too_long' => 'Fehler: zu viele #time-Aufrufe',
-	'pfunc_rel2abs_invalid_depth' => 'Fehler: ungültige Tiefe in Pfad: „$1“ (Versuch, auf einen Knotenpunkt oberhalb des Hauptknotenpunktes zuzugreifen)',
+	'pfunc_time_error' => 'Fehler: Ungültige Zeitangabe',
+	'pfunc_time_too_long' => 'Fehler: Zu viele #time-Aufrufe',
+	'pfunc_rel2abs_invalid_depth' => 'Fehler: Ungültige Pfadtiefe: „$1“ (Zugriff auf einen Knotenpunkt oberhalb des Hauptknotenpunktes ist empfohlen)',
 	'pfunc_expr_stack_exhausted' => 'Expression-Fehler: Stacküberlauf',
 	'pfunc_expr_unexpected_number' => 'Expression-Fehler: Unerwartete Zahl',
 	'pfunc_expr_preg_match_failure' => 'Expression-Fehler: Unerwartete „preg_match“-Fehlfunktion',
@@ -1516,23 +1517,23 @@ $messages['lv'] = array(
 $messages['mk'] = array(
 	'pfunc_desc' => 'Проширување на можностите на парсерот со логички функции',
 	'pfunc_time_error' => 'Грешка: погрешен формат за време',
-	'pfunc_time_too_long' => 'Грешка: премногу #time повикувања',
-	'pfunc_rel2abs_invalid_depth' => 'Грешка: Неважечка длабочина во патеката: „$1“ (обид за пристап до јазол над коренот)',
+	'pfunc_time_too_long' => 'Грешка: премногу повикувања на функцијата #time',
+	'pfunc_rel2abs_invalid_depth' => 'Грешка: Неважечка длабочина во патеката: „$1“ (обид за пристап до јазол кој се наоѓа повисоко од коренитиот)',
 	'pfunc_expr_stack_exhausted' => 'Грешка во изразот: Складот е преполн',
 	'pfunc_expr_unexpected_number' => 'Грешка во изразот: Неочекуван број',
-	'pfunc_expr_preg_match_failure' => 'Грешка во изразот: Неочекувана preg_match грешка',
-	'pfunc_expr_unrecognised_word' => 'Грешка во изразот: Непознат збор "$1"',
+	'pfunc_expr_preg_match_failure' => 'Грешка во изразот: Неочекуван проблем со preg_match',
+	'pfunc_expr_unrecognised_word' => 'Грешка во изразот: Непрепознаен збор „$1“',
 	'pfunc_expr_unexpected_operator' => 'Грешка во изразот: Неочекуван оператор $1',
-	'pfunc_expr_missing_operand' => 'Грешка во изразот: Недостасува оперант за $1',
+	'pfunc_expr_missing_operand' => 'Грешка во изразот: Недостасува операнд за $1',
 	'pfunc_expr_unexpected_closing_bracket' => 'Грешка во изразот: Неочекувано затворање на заграда',
 	'pfunc_expr_unrecognised_punctuation' => 'Грешка во изразот: Непрепознаен интерпункциски знак „$1“',
 	'pfunc_expr_unclosed_bracket' => 'Грешка во изразот: Незатворена заграда',
 	'pfunc_expr_division_by_zero' => 'Делење со нула',
-	'pfunc_expr_invalid_argument' => 'Невалиден аргумент за $1: < -1 или > 1',
-	'pfunc_expr_invalid_argument_ln' => 'Невалиден аргумент за ln: <= 0',
+	'pfunc_expr_invalid_argument' => 'Неважечки аргумент за $1: < -1 или > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Неважечки аргумент за ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Грешка во изразот: Непозната грешка ($1)',
 	'pfunc_expr_not_a_number' => 'Во $1: резултатот не е број',
-	'pfunc_string_too_long' => 'Грешка: Низата го надминува ограничувањето на $1 знаци',
+	'pfunc_string_too_long' => 'Грешка: низата го надминува ограничувањето од $1 знаци',
 );
 
 /** Malayalam (മലയാളം)
@@ -1772,7 +1773,7 @@ $messages['pl'] = array(
 	'pfunc_desc' => 'Rozszerza analizator składni o funkcje logiczne',
 	'pfunc_time_error' => 'Błąd – niepoprawny czas',
 	'pfunc_time_too_long' => 'Błąd – zbyt wiele wywołań funkcji #time',
-	'pfunc_rel2abs_invalid_depth' => 'Błąd – nieprawidłowa głębokość w ścieżce: „$1” (próba dostępu do węzła powyżej korzenia)',
+	'pfunc_rel2abs_invalid_depth' => 'Błąd – nieprawidłowa głębokość w ścieżce „$1” (próba dostępu do węzła powyżej korzenia)',
 	'pfunc_expr_stack_exhausted' => 'Błąd w wyrażeniu – stos wyczerpany',
 	'pfunc_expr_unexpected_number' => 'Błąd w wyrażeniu – nieoczekiwana liczba',
 	'pfunc_expr_preg_match_failure' => 'Błąd w wyrażeniu – nieoczekiwany błąd preg_match',
@@ -1786,7 +1787,7 @@ $messages['pl'] = array(
 	'pfunc_expr_invalid_argument' => 'Nieprawidłowy argument funkcji $1 – mniejszy od -1 lub większy od 1',
 	'pfunc_expr_invalid_argument_ln' => 'Nieprawidłowy argument funkcji ln – mniejszy lub równy 0',
 	'pfunc_expr_unknown_error' => 'Błąd w wyrażeniu – nieznany błąd ($1)',
-	'pfunc_expr_not_a_number' => 'W $1: wynik nie jest liczbą',
+	'pfunc_expr_not_a_number' => 'W $1 – wynik nie jest liczbą',
 	'pfunc_string_too_long' => 'Błąd – długość ciągu znaków przekracza dopuszczalne $1',
 );
 
