@@ -135,8 +135,8 @@ class ConvertParser {
 		if( $this->targetUnit->dimension->value != $this->sourceUnit->dimension->value ){
 			throw new ConvertError(
 				'dimensionmismatch',
-				$this->sourceUnit->dimension->getName(true),
-				$this->targetUnit->dimension->getName(true)
+				$this->sourceUnit->dimension->getLocalisedName(true),
+				$this->targetUnit->dimension->getLocalisedName(true)
 			);
 		}
 
@@ -206,8 +206,8 @@ class ConvertParser {
 		} else {
 			# Need to round to a similar accuracy as the original value.  To do that we
 			# select the accuracy which will as closely as possible preserve the maximum
-			# percentage error in the value.  So 36ft = 36 ± 0.5 ft, so the uncertainty
-			# is ±0.5/36 = ±1.4%.  In metres this is 10.9728 ± 1.4%, or 10.9728 ± 0.154
+			# percentage error in the value.  So 36ft = 36 Â± 0.5 ft, so the uncertainty
+			# is Â±0.5/36 = Â±1.4%.  In metres this is 10.9728 Â± 1.4%, or 10.9728 Â± 0.154
 			# we take the stance of choosing the limit which is *more* precise than the
 			# original value.
 
@@ -698,7 +698,7 @@ class ConvertUnit {
 			if( $link && !wfEmptyMsg( "$msg-link" ) ){
 				$title = Title::newFromText( wfMsgForContentNoTrans( "$msg-link" ) );
 				if( $title instanceof Title ){
-					$msgText = "[[$title|$msgText]]";
+					$msgText = "[[{$title->getFullText()}|$msgText]]";
 				}
 			}
 

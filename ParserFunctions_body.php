@@ -52,9 +52,6 @@ class ExtParserFunctions {
 	 */
 	function &getExprParser() {
 		if ( !isset( $this->mExprParser ) ) {
-			if ( !class_exists( 'ExprParser' ) ) {
-				require( dirname( __FILE__ ) . '/Expr.php' );
-			}
 			$this->mExprParser = new ExprParser;
 		}
 		return $this->mExprParser;
@@ -518,9 +515,6 @@ class ExtParserFunctions {
 	 */
 	protected function &getConvertParser() {
 		if ( !isset( $this->mConvertParser ) ) {
-			if ( !class_exists( 'ConvertParser' ) ) {
-				require( dirname( __FILE__ ) . '/Convert.php' );
-			}
 			$this->mConvertParser = new ConvertParser;
 		}
 		return $this->mConvertParser;
