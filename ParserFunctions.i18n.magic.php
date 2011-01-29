@@ -29,6 +29,7 @@ $magicWords['en'] = array(
 	'decimalplaces' => array( 0, '#dp' ),
 	'significantfigures' => array( 0, '#sf' ),
 	'abbreviate' => array( 0, '#abbreviate' ),
+	'language' => array( 0, '#language' ),
 	'len' => array( 0, 'len' ),
 	'pos' => array( 0, 'pos' ),
 	'rpos' => array( 0, 'rpos' ),

@@ -55,17 +55,17 @@ $messages['en'] = array(
 	'pfunc-convert-dimension-fuelefficiencynegative' => 'fuelefficiencynegative',
 
 	# LENGTH
-	'pfunc-convert-unit-length-gigametre' => '{{PLURAL:$1|gigametre|gigametres}}',
-	'pfunc-convert-unit-length-megametre' => '{{PLURAL:$1|megametre|megametres}}',
-	'pfunc-convert-unit-length-kilometre' => '{{PLURAL:$1|kilometre|kilometres}}',
-	'pfunc-convert-unit-length-hectometre' => '{{PLURAL:$1|hectometre|hectometres}}',
-	'pfunc-convert-unit-length-decametre' => '{{PLURAL:$1|decametre|decametres}}',
-	'pfunc-convert-unit-length-metre' => '{{PLURAL:$1|metre|metres}}',
-	'pfunc-convert-unit-length-decimetre' => '{{PLURAL:$1|decimetre|decimetres}}',
-	'pfunc-convert-unit-length-centimetre' => '{{PLURAL:$1|centimetre|centimetres}}',
-	'pfunc-convert-unit-length-millimetre' => '{{PLURAL:$1|millimetre|millimetres}}',
-	'pfunc-convert-unit-length-micrometre' => '{{PLURAL:$1|micrometre|micrometres}}',
-	'pfunc-convert-unit-length-nanometre' => '{{PLURAL:$1|nanometre|nanometres}}',
+	'pfunc-convert-unit-length-gigametre' => '{{PLURAL:$1|gigameter|gigameters}}',
+	'pfunc-convert-unit-length-megametre' => '{{PLURAL:$1|megameter|megameters}}',
+	'pfunc-convert-unit-length-kilometre' => '{{PLURAL:$1|kilometer|kilometers}}',
+	'pfunc-convert-unit-length-hectometre' => '{{PLURAL:$1|hectometer|hectometers}}',
+	'pfunc-convert-unit-length-decametre' => '{{PLURAL:$1|decameter|decameters}}',
+	'pfunc-convert-unit-length-metre' => '{{PLURAL:$1|meter|meters}}',
+	'pfunc-convert-unit-length-decimetre' => '{{PLURAL:$1|decimeter|decimeters}}',
+	'pfunc-convert-unit-length-centimetre' => '{{PLURAL:$1|centimeter|centimeters}}',
+	'pfunc-convert-unit-length-millimetre' => '{{PLURAL:$1|millimeter|millimeters}}',
+	'pfunc-convert-unit-length-micrometre' => '{{PLURAL:$1|micrometer|micrometers}}',
+	'pfunc-convert-unit-length-nanometre' => '{{PLURAL:$1|nanometer|nanometers}}',
 	'pfunc-convert-unit-length-angstrom' => '{{PLURAL:$1|angstrom|angstroms}}',
 	'pfunc-convert-unit-length-mile' => '{{PLURAL:$1|mile|miles}}',
 	'pfunc-convert-unit-length-furlong' => '{{PLURAL:$1|furlong|furlongs}}',
@@ -124,10 +124,10 @@ $messages['en'] = array(
 	'pfunc-convert-unit-length-astronomicalunit-abbr' => 'AU',
 
 	# AREA #
-	'pfunc-convert-unit-area-squarekilometre' => '{{PLURAL:$1|square kilometre|square kilometres}}',
-	'pfunc-convert-unit-area-squaremetre' => '{{PLURAL:$1|square metre|square metres}}',
-	'pfunc-convert-unit-area-squarecentimetre' => '{{PLURAL:$1|square centimetre|square centimetres}}',
-	'pfunc-convert-unit-area-squaremillimetre' => '{{PLURAL:$1|square millimetre|square millimetres}}',
+	'pfunc-convert-unit-area-squarekilometre' => '{{PLURAL:$1|square kilometer|square kilometers}}',
+	'pfunc-convert-unit-area-squaremetre' => '{{PLURAL:$1|square meter|square meters}}',
+	'pfunc-convert-unit-area-squarecentimetre' => '{{PLURAL:$1|square centimeter|square centimeters}}',
+	'pfunc-convert-unit-area-squaremillimetre' => '{{PLURAL:$1|square millimeter|square millimeters}}',
 	'pfunc-convert-unit-area-hectare' => '{{PLURAL:$1|hectare|hectares}}',
 	'pfunc-convert-unit-area-squaremile' => '{{PLURAL:$1|square mile|square miles}}',
 	'pfunc-convert-unit-area-acre' => '{{PLURAL:$1|acre|acres}}',
@@ -166,13 +166,13 @@ $messages['en'] = array(
 	'pfunc-convert-unit-time-minute-abbr' => 'min',
 	
 	# VOLUME #
-	'pfunc-convert-unit-volume-cubicmetre'      => '{{PLURAL:$1|cubic metre|cubic metres}}',
-	'pfunc-convert-unit-volume-cubiccentimetre' => '{{PLURAL:$1|cubic centimetre|cubic centimetres}}',
-	'pfunc-convert-unit-volume-cubicmillimetre' => '{{PLURAL:$1|cubic millimetre|cubic millimetres}}',
-	'pfunc-convert-unit-volume-kilolitre'       => '{{PLURAL:$1|kilolitre|kilolitres}}',
-	'pfunc-convert-unit-volume-litre'           => '{{PLURAL:$1|litre|litres}}',
-	'pfunc-convert-unit-volume-centilitre'      => '{{PLURAL:$1|centilitre|centilitres}}',
-	'pfunc-convert-unit-volume-millilitre'      => '{{PLURAL:$1|millilitre|millilitres}}',
+	'pfunc-convert-unit-volume-cubicmetre'      => '{{PLURAL:$1|cubic meter|cubic meters}}',
+	'pfunc-convert-unit-volume-cubiccentimetre' => '{{PLURAL:$1|cubic centimeter|cubic centimeters}}',
+	'pfunc-convert-unit-volume-cubicmillimetre' => '{{PLURAL:$1|cubic millimeter|cubic millimeters}}',
+	'pfunc-convert-unit-volume-kilolitre'       => '{{PLURAL:$1|kiloliter|kiloliters}}',
+	'pfunc-convert-unit-volume-litre'           => '{{PLURAL:$1|liter|liters}}',
+	'pfunc-convert-unit-volume-centilitre'      => '{{PLURAL:$1|centiliter|centiliters}}',
+	'pfunc-convert-unit-volume-millilitre'      => '{{PLURAL:$1|milliliter|milliliters}}',
 	'pfunc-convert-unit-volume-cubicyard'       => '{{PLURAL:$1|cubic yard|cubic yards}}',
 	'pfunc-convert-unit-volume-cubicfoot'       => '{{PLURAL:$1|cubic foot|cubic feet}}',
 	'pfunc-convert-unit-volume-cubicinch'       => '{{PLURAL:$1|cubic inch|cubic inches}}',
@@ -245,7 +245,7 @@ $messages['en'] = array(
 	'pfunc-convert-unit-pressure-barye'             => 'barye',
 	'pfunc-convert-unit-pressure-atmosphere'        => '{{PLURAL:$1|atmosphere|atmospheres}}',
 	'pfunc-convert-unit-pressure-torr'              => '{{PLURAL:$1|Torr|Torr}}',
-	'pfunc-convert-unit-pressure-mmhg'              => '{{PLURAL:$1|milimetre of mercury|milimetres of mercury}}',
+	'pfunc-convert-unit-pressure-mmhg'              => '{{PLURAL:$1|milimeter of mercury|milimeters of mercury}}',
 	'pfunc-convert-unit-pressure-inhg'              => '{{PLURAL:$1|inch of mercury|inches of mercury}}',
 	'pfunc-convert-unit-pressure-psi'               => '{{PLURAL:$1|pound per square-inch|pounds per square-inch}}',
 	
@@ -809,6 +809,43 @@ $messages['el'] = array(
 	'pfunc_expr_unknown_error' => 'Σφάλμα έκφρασης: Άγνωστο σφάλμα ($1)',
 	'pfunc_expr_not_a_number' => 'Στο $1: το αποτέλεσμα δεν είναι αριθμός',
 	'pfunc_string_too_long' => 'Σφάλμα: ο ορμαθός υπερβαίνει $1 το όριο χαρακτήρων',
+);
+
+/**
+ * British english
+ * @author Happy-melon
+ */
+$messages['en-gb'] = array(
+	# LENGTH
+	'pfunc-convert-unit-length-gigametre' => '{{PLURAL:$1|gigametre|gigametres}}',
+	'pfunc-convert-unit-length-megametre' => '{{PLURAL:$1|megametre|megametres}}',
+	'pfunc-convert-unit-length-kilometre' => '{{PLURAL:$1|kilometre|kilometres}}',
+	'pfunc-convert-unit-length-hectometre' => '{{PLURAL:$1|hectometre|hectometres}}',
+	'pfunc-convert-unit-length-decametre' => '{{PLURAL:$1|decametre|decametres}}',
+	'pfunc-convert-unit-length-metre' => '{{PLURAL:$1|metre|metres}}',
+	'pfunc-convert-unit-length-decimetre' => '{{PLURAL:$1|decimetre|decimetres}}',
+	'pfunc-convert-unit-length-centimetre' => '{{PLURAL:$1|centimetre|centimetres}}',
+	'pfunc-convert-unit-length-millimetre' => '{{PLURAL:$1|millimetre|millimetres}}',
+	'pfunc-convert-unit-length-micrometre' => '{{PLURAL:$1|micrometre|micrometres}}',
+	'pfunc-convert-unit-length-nanometre' => '{{PLURAL:$1|nanometre|nanometres}}',
+	
+	# AREA #
+	'pfunc-convert-unit-area-squarekilometre'  => '{{PLURAL:$1|square kilometre|square kilometres}}',
+	'pfunc-convert-unit-area-squaremetre'      => '{{PLURAL:$1|square metre|square metres}}',
+	'pfunc-convert-unit-area-squarecentimetre' => '{{PLURAL:$1|square centimetre|square centimetres}}',
+	'pfunc-convert-unit-area-squaremillimetre' => '{{PLURAL:$1|square millimetre|square millimetres}}',
+	
+	# VOLUME #
+	'pfunc-convert-unit-volume-cubicmetre'      => '{{PLURAL:$1|cubic metre|cubic metres}}',
+	'pfunc-convert-unit-volume-cubiccentimetre' => '{{PLURAL:$1|cubic centimetre|cubic centimetres}}',
+	'pfunc-convert-unit-volume-cubicmillimetre' => '{{PLURAL:$1|cubic millimetre|cubic millimetres}}',
+	'pfunc-convert-unit-volume-kilolitre'       => '{{PLURAL:$1|kilolitre|kilolitres}}',
+	'pfunc-convert-unit-volume-litre'           => '{{PLURAL:$1|litre|litres}}',
+	'pfunc-convert-unit-volume-centilitre'      => '{{PLURAL:$1|centilitre|centilitres}}',
+	'pfunc-convert-unit-volume-millilitre'      => '{{PLURAL:$1|millilitre|millilitres}}',
+
+	# PRESSURE
+	'pfunc-convert-unit-pressure-mmhg'              => '{{PLURAL:$1|milimetre of mercury|milimetres of mercury}}',
 );
 
 /** Esperanto (Esperanto)

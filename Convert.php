@@ -38,6 +38,10 @@ class ConvertParser {
 	protected $decimalPlaces;
 	protected $significantFigures;
 
+	# What language to display the units in
+	# @var Language
+	protected $language;
+
 	# The last value converted, which will be used for PLURAL evaluation
 	protected $lastValue;
 
@@ -56,6 +60,8 @@ class ConvertParser {
 			= $this->significantFigures
 			= $this->decimalPlaces
 			= null;
+
+		$this->language = true; # prompts wfGetLangObj() to use $wgContLang
 	}
 
 	/**
@@ -83,6 +89,7 @@ class ConvertParser {
 			'significantfigures' => null,
 			'abbreviate' => null,
 			'rawsuffix' => null,
+			'language' => null,
 		);
 		if( !is_object( $magicWords ) ){
 			foreach( $magicWords as $key => &$val ){
@@ -120,6 +127,10 @@ class ConvertParser {
 					if( intval( $parts[1] ) > 0 ){
 						$this->significantFigures = intval( $parts[1] );
 					}
+
+				} elseif( $magicWords->language->matchStartAndRemove( $parts[0] ) ) {
+					# if this is an invalid code we'll get $wgContLang back
+					$this->language = Language::factory( $parts[1] );
 				}
 
 			} elseif( $magicWords->linkunit->matchStartAndRemove( $parts[0] ) ) {
@@ -187,7 +198,8 @@ class ConvertParser {
 			$unit = $this->targetUnit->getText(
 				$this->lastValue,
 				$this->link,
-				$this->abbreviate
+				$this->abbreviate,
+				$this->language
 			);
 			return  "$string $unit";
 		}
@@ -689,55 +701,62 @@ class ConvertUnit {
 	 * Get the text of the unit
 	 * @param $value String number for PLURAL support
 	 * @param $link Bool
+	 * @param $language Language
 	 * @return String
 	 */
-	public function getText( $value, $link=false, $abbreviate=false ){
+	public function getText( $value, $link=false, $abbreviate=false, $language=null ){
 		global $wgContLang;
 		$value = $wgContLang->formatNum( $value );
-		$abbr = $abbreviate ? '-abbr' : '';
 
 		if( !is_array( $this->unitName ) ){
-			$msg = "pfunc-convert-unit-{$this->dimension->getName()}-{$this->unitName}";
-			$msgText = wfMsgExt( "$msg$abbr", array( 'parsemag', 'content' ), $value );
-			if( $link && !wfEmptyMsg( "$msg-link" ) ){
-				$title = Title::newFromText( wfMsgForContentNoTrans( "$msg-link" ) );
-				$msgText = "[[{$title->getFullText()}|$msgText]]";
-			}
+			$msgText = $this->getTextFromMessage(
+				"pfunc-convert-unit-{$this->dimension->getName()}-{$this->unitName}",
+				$value, $link, $abbreviate, $language
+			);
 
 		} elseif( !wfEmptyMsg( "pfunc-convert-unit-{$this->dimension->getName(true)}-{$this->unitName[0]}-{$this->unitName[1]}" ) ){
 			# A wiki has created, say, [[MediaWiki:pfunc-convert-unit-speed-metres-second]]
 			# so they can have it display "<metres per second>" rather than
 			# "<metres>/<second>"
-			$msg = "pfunc-convert-unit-{$this->dimension->getName(true)}-{$this->unitName[0]}-{$this->unitName[1]}";
-			$msgText = wfMsgExt( "$msg$abbr", array( 'parsemag', 'content' ), $value );
-			if( $link && !wfEmptyMsg( "$msg-link" ) ){
-				$title = Title::newFromText( wfMsgForContentNoTrans( "$msg-link" ) );
-				if( $title instanceof Title ){
-					$msgText = "[[{$title->getFullText()}|$msgText]]";
-				}
-			}
+			$msgText = $this->getTextFromMessage(
+				"pfunc-convert-unit-{$this->dimension->getName(true)}-{$this->unitName[0]}-{$this->unitName[1]}",
+				$value, $link, $abbreviate, $language
+			);
 
 		} else {
 			$dimensionNames = $this->dimension->getName();
-			$msg = "pfunc-convert-unit-{$dimensionNames[0]}-{$this->unitName[0]}";
-			$msgText = wfMsgExt( "$msg$abbr", array( 'parsemag', 'content' ), $value );
-			if( $link && !wfEmptyMsg( "$msg-link" ) ){
-				$title = Title::newFromText( wfMsgForContentNoTrans( "$msg-link" ) );
-				$msgText = "[[{$title->getFullText()}|$msgText]]";
-			}
-
-			$msg2 = "pfunc-convert-unit-{$dimensionNames[1]}-{$this->unitName[1]}";
-			$msg2Text = wfMsgExt( "$msg2$abbr", array( 'parsemag', 'content' ), 1 ); # Singular for denominator
-			if( $link && !wfEmptyMsg( "$msg2-link" ) ){
-				$title = Title::newFromText( wfMsgForContentNoTrans( "$msg2-link" ) );
-				if( $title instanceof Title ){
-					$msg2Text = "[[{$title->getFullText()}|$msg2Text]]";
-				}
-			}
+			$msgText = $this->getTextFromMessage(
+				"pfunc-convert-unit-{$dimensionNames[0]}-{$this->unitName[0]}",
+				$value, $link, $abbreviate, $language
+			);
+			$msg2Text = $this->getTextFromMessage(
+				"pfunc-convert-unit-{$dimensionNames[1]}-{$this->unitName[1]}",
+				1, # Singular for denominator
+				$link, $abbreviate, $language
+			);
 			$msgText = "$msgText/$msg2Text";
 		}
 
 		return $msgText;
+	}
+
+	protected function getTextFromMessage( $key, $number, $link, $abbreviate, $language ){
+		$abbr = $abbreviate ? '-abbr' : '';
+
+		$text = wfMsgExt(
+			"$key$abbr",
+			array( 'parsemag', 'language' => $language ),
+			$number
+		);
+
+		if( $link && !wfEmptyMsg( "$key-link" ) ){
+			$title = Title::newFromText( wfMsgForContentNoTrans( "$key-link" ) );
+			if( $title instanceof Title ){
+				$text = "[[{$title->getFullText()}|$text]]";
+			}
+		}
+		
+		return $text;
 	}
 
 	/**

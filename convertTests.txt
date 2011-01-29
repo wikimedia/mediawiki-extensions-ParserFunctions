@@ -3,7 +3,7 @@ Simple conversion
 !! input
 {{#convert: 10 m | km }}
 !!result
-<p>0.01 kilometres
+<p>0.01 kilometers
 </p>
 !! end
 
@@ -19,14 +19,14 @@ Position and formatting of numbers and units
 *{{#convert: 10.0E2 km | m }}
 *{{#convert: 10.0E2.5 km | m }}
 !! result
-<ul><li>0.01 kilometres
-</li><li>0.01 kilometres
-</li><li>10,000 metres
-</li><li>10,000- metres
-</li><li>1,000,000 metres
-</li><li>100 metres
-</li><li>1,000,000 metres
-</li><li>1,000,000.5,000 metres
+<ul><li>0.01 kilometers
+</li><li>0.01 kilometers
+</li><li>10,000 meters
+</li><li>10,000- meters
+</li><li>1,000,000 meters
+</li><li>100 meters
+</li><li>1,000,000 meters
+</li><li>1,000,000.5,000 meters
 </li></ul>
 
 !! end
@@ -46,17 +46,17 @@ Precision 1
 *{{#convert: 19 m | km }}
 *{{#convert: 20 m | km }}
 !! result
-<ul><li>0.01 kilometres
-</li><li>0.011 kilometres
-</li><li>0.012 kilometres
-</li><li>0.013 kilometres
-</li><li>0.014 kilometres
-</li><li>0.015 kilometres
-</li><li>0.016 kilometres
-</li><li>0.017 kilometres
-</li><li>0.018 kilometres
-</li><li>0.019 kilometres
-</li><li>0.02 kilometres
+<ul><li>0.01 kilometers
+</li><li>0.011 kilometers
+</li><li>0.012 kilometers
+</li><li>0.013 kilometers
+</li><li>0.014 kilometers
+</li><li>0.015 kilometers
+</li><li>0.016 kilometers
+</li><li>0.017 kilometers
+</li><li>0.018 kilometers
+</li><li>0.019 kilometers
+</li><li>0.02 kilometers
 </li></ul>
 
 !! end
@@ -73,14 +73,14 @@ Precision 2
 *{{#convert: 10.6 m | km }}
 *{{#convert: 10.7 m | km }}
 !! result
-<ul><li>0.0100 kilometres
-</li><li>0.0101 kilometres
-</li><li>0.0102 kilometres
-</li><li>0.0103 kilometres
-</li><li>0.0104 kilometres
-</li><li>0.0105 kilometres
-</li><li>0.0106 kilometres
-</li><li>0.0107 kilometres
+<ul><li>0.0100 kilometers
+</li><li>0.0101 kilometers
+</li><li>0.0102 kilometers
+</li><li>0.0103 kilometers
+</li><li>0.0104 kilometers
+</li><li>0.0105 kilometers
+</li><li>0.0106 kilometers
+</li><li>0.0107 kilometers
 </li></ul>
 
 !! end
@@ -90,7 +90,7 @@ String interpolation
 !! input
 {{#convert: 25, 26, 27, 28, 29, and 30 km }}
 !! result
-<p>25,000, 26,000, 27,000, 28,000, 29,000, and 30,000 metres
+<p>25,000, 26,000, 27,000, 28,000, 29,000, and 30,000 meters
 </p>
 !! end
 
@@ -99,7 +99,7 @@ Precision 3
 !! input
 {{#convert: 25, 26, 27, 28, 29, and 30 miles }}
 !! result
-<p>40,000, 42,000, 43,000, 45,000, 47,000, and 50,000 metres
+<p>40,000, 42,000, 43,000, 45,000, 47,000, and 50,000 meters
 </p>
 !! end
 
@@ -108,7 +108,7 @@ Precision 4
 !! input
 {{#convert:35000, 35E3, 35.0E3, 350E2, 3.500E4, 35000E0, 350000E-1 m | km }}
 !! result
-<p>35, 35, 35.0, 35, 35.00, 35, 35 kilometres
+<p>35, 35, 35.0, 35, 35.00, 35, 35 kilometers
 </p>
 !! end
 
@@ -120,10 +120,10 @@ Precision 4
 *{{#convert: 25 | #sourceunit = km | #sourceunit = mm }}
 *{{#convert: 25 | #sourceunit = km | cm }}
 !! result
-<ul><li>25,000 metres
-</li><li>25,000 metres
-</li><li>0.025 metres
-</li><li>2,500,000 centimetres
+<ul><li>25,000 meters
+</li><li>25,000 meters
+</li><li>0.025 meters
+</li><li>2,500,000 centimeters
 </li></ul>
 
 !! end
@@ -142,16 +142,16 @@ Precision overrides
 *{{#convert: 1 mi | #sf = 5 }}
 *{{#convert: 1 mi | #sf = -8 }}
 !! result
-<ul><li>1,609 metres
-</li><li>1,609.3 metres
-</li><li>1,600 metres
-</li><li>1,609.344 metres
-</li><li>0 metres
-</li><li>2,000 metres
-</li><li>2,000 metres
-</li><li>1,610 metres
-</li><li>1,609.3 metres
-</li><li>2,000 metres
+<ul><li>1,609 meters
+</li><li>1,609.3 meters
+</li><li>1,600 meters
+</li><li>1,609.344 meters
+</li><li>0 meters
+</li><li>2,000 meters
+</li><li>2,000 meters
+</li><li>1,610 meters
+</li><li>1,609.3 meters
+</li><li>2,000 meters
 </li></ul>
 
 !! end
@@ -186,8 +186,26 @@ Errors
 *{{#convert: 25 km | #targetunit = #sourceunit }}
 *{{#convert: 25 km | #sourceunit = #targetunit }}
 !! result
-<ul><li>25 kilometres
-</li><li>25 kilometres
+<ul><li>25 kilometers
+</li><li>25 kilometers
+</li></ul>
+
+!! end
+
+!! test
+#language
+!! input
+*{{#convert: 10  m | km | #language=en-gb }}
+*{{#convert: 10m | km | #language = en-gb }}
+*{{#convert: 10 km | m |#language=en-gb}}
+*{{#convert: 10 pa | mmhg | #language = en-gb }}
+*{{#convert: 10 pa | mmhg | #language = /../evil/attack }}
+!! result
+<ul><li>0.01 kilometres
+</li><li>0.01 kilometres
+</li><li>10,000 metres
+</li><li>0.1 milimetres of mercury
+</li><li>0.1 milimeters of mercury
 </li></ul>
 
 !! end
