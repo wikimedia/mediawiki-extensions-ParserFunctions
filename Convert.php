@@ -4,11 +4,12 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'This file is a MediaWiki extension, it is not a valid entry point' );
 }
 
-class ConvertError extends Exception {
+class ConvertError extends MWException {
 	public function __construct( $msg /*...*/ ) {
 		$args = func_get_args();
 		array_shift( $args );
-		$this->message = '<strong class="error">' . wfMsgExt( "pfunc-convert-$msg", 'parseinline', $args ) . '</strong>';
+		array_map( 'htmlspecialchars', $args );
+		$this->message = '<strong class="error">' . wfMsgForContent( "pfunc-convert-$msg", $args ) . '</strong>';
 	}
 }
 
@@ -74,48 +75,62 @@ class ConvertParser {
 		$string = trim( array_shift( $args ) );
 
 		# Process the rest of the args
-		$sourceUnit =& MagicWord::get( 'sourceunit' );
-		$targetUnit =& MagicWord::get( 'targetunit' );
-		$linkUnit =& MagicWord::get( 'linkunit' );
-		$dp =& MagicWord::get( 'decimalplaces' );
-		$sf =& MagicWord::get( 'significantfigures' );
-		$abbr =& MagicWord::get( 'abbreviate' );
-		$raw =& MagicWord::get( 'rawsuffix' );
+		static $magicWords = array(
+			'sourceunit' => null,
+			'targetunit' => null,
+			'linkunit' => null,
+			'decimalplaces' => null,
+			'significantfigures' => null,
+			'abbreviate' => null,
+			'rawsuffix' => null,
+		);
+		if( !is_object( $magicWords ) ){
+			foreach( $magicWords as $key => &$val ){
+				$magicWords[$key] =& MagicWord::get( $key );
+			}
+			# The $magicWords[key]->function() syntax doesn't work, so cast to
+			# object so we can use $magicWords->key->function() instead
+			$magicWords = (object)$magicWords;
+		}
 
 		$n = 0; # Count of unnamed parameters
 		foreach ( $args as $arg ) {
 			$parts = array_map( 'trim', explode( '=', $arg, 2 ) );
 			if ( count( $parts ) == 2 ) {
 				# Found "="
-				if ( $sourceUnit->matchStartAndRemove( $parts[0] ) ) {
-					if( $targetUnit->matchStartAndRemove( $parts[1] ) ){
+				if ( $magicWords->sourceunit->matchStartAndRemove( $parts[0] ) ) {
+					if( $magicWords->targetunit->matchStartAndRemove( $parts[1] ) ){
 						$this->targetUnit =& $this->sourceUnit;
 					} else {
 						$this->sourceUnit = new ConvertUnit( $parts[1] );
 					}
 
-				} elseif ( $targetUnit->matchStartAndRemove( $parts[0] ) ) {
-					if( $sourceUnit->matchStartAndRemove( $parts[1] ) ){
+				} elseif ( $magicWords->targetunit->matchStartAndRemove( $parts[0] ) ) {
+					if( $magicWords->sourceunit->matchStartAndRemove( $parts[1] ) ){
 						$this->targetUnit =& $this->sourceUnit;
 					} else {
 						$this->targetUnit = new ConvertUnit( $parts[1] );
 					}
 
-				} elseif( $dp->matchStartAndRemove( $parts[0] ) ) {
+				} elseif( $magicWords->decimalplaces->matchStartAndRemove( $parts[0] ) ) {
 					$this->decimalPlaces = intval( $parts[1] );
 
-				} elseif( $sf->matchStartAndRemove( $parts[0] ) ) {
+				} elseif( $magicWords->significantfigures->matchStartAndRemove( $parts[0] ) ) {
 					# It doesn't make any sense to have negative sig-figs
 					if( intval( $parts[1] ) > 0 ){
 						$this->significantFigures = intval( $parts[1] );
 					}
 				}
-			} elseif( $linkUnit->matchStartAndRemove( $parts[0] ) ) {
+
+			} elseif( $magicWords->linkunit->matchStartAndRemove( $parts[0] ) ) {
 				$this->link = true;
-			} elseif( $abbr->matchStartAndRemove( $parts[0] ) ) {
+
+			} elseif( $magicWords->abbreviate->matchStartAndRemove( $parts[0] ) ) {
 				$this->abbreviate = true;
-			} elseif( $raw->matchStartAndRemove( $parts[0] ) ) {
+
+			} elseif( $magicWords->rawsuffix->matchStartAndRemove( $parts[0] ) ) {
 				$this->raw = true;
+
 			} elseif( $parts[0] != '' && !$n++ && !$this->targetUnit instanceof ConvertUnit ){
 				# First unnamed parameter = output unit
 				$this->targetUnit = new ConvertUnit( $parts[0] );

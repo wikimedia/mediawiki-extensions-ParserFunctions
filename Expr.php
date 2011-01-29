@@ -46,7 +46,7 @@ define( 'EXPR_CEIL', 34 );
 define( 'EXPR_POW', 35 );
 define( 'EXPR_PI', 36 );
 
-class ExprError extends Exception {
+class ExprError extends MWException {
 	public function __construct( $msg, $parameter = '' ) {
 		$this->message = '<strong class="error">' . wfMsgForContent( "pfunc_expr_$msg", htmlspecialchars( $parameter ) ) . '</strong>';
 	}
