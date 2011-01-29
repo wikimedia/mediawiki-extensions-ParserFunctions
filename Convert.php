@@ -16,7 +16,7 @@ class ConvertError extends MWException {
 class ConvertParser {
 
 	# A regex which matches the body of the string and the source unit separately
-	const UNITS_REGEX = '/^(.+?)\s*([a-z]+\^?\d?(?:\/\w+\^?\d?)*)$/i';
+	const UNITS_REGEX = '/^(.+?)([a-z]+\^?\d?(?:\/\w+\^?\d?)*)$/i';
 
 	# A regex which matches a number
 	const NUM_REGEX = '/\b((?:\+|\-|&minus;|\x2212)?(\d+(?:\.\d+)?)(?:E(?:\+|\-|&minus;|\x2212)?\d+)?)\b/i';
@@ -151,6 +151,10 @@ class ConvertParser {
 		# Get the source unit, if not already set.  This throws ConvertError on failure
 		if ( !$this->sourceUnit instanceof ConvertUnit ){
 			$this->deduceSourceUnit( $string );
+		} else {
+			# The string has no unit on the end, so it's been trimmed to the end of the
+			# last digit, meaning the unit specified by #sourceunit won't have any space
+			$string .= ' ';
 		}
 
 		# Use the default unit (SI usually)
@@ -190,10 +194,10 @@ class ConvertParser {
 		$string = preg_replace_callback(
 			self::NUM_REGEX,
 			array( $this, 'convert' ),
-			trim( preg_replace( self::UNITS_REGEX, '$1', $string ) )
+			ltrim( preg_replace( self::UNITS_REGEX, '$1', $string ) )
 		);
 		if( $this->raw ){
-			return $string;
+			return trim( $string );
 		} else {
 			$unit = $this->targetUnit->getText(
 				$this->lastValue,
@@ -201,7 +205,7 @@ class ConvertParser {
 				$this->abbreviate,
 				$this->language
 			);
-			return  "$string $unit";
+			return  $string . $unit;
 		}
 	}
 
@@ -737,7 +741,7 @@ class ConvertUnit {
 			$msgText = "$msgText/$msg2Text";
 		}
 
-		return $msgText;
+		return trim( $msgText );
 	}
 
 	protected function getTextFromMessage( $key, $number, $link, $abbreviate, $language ){
