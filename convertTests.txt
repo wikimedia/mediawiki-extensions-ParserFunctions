@@ -198,14 +198,30 @@ Errors
 *{{#convert: 10  m | km | #language=en-gb }}
 *{{#convert: 10m | km | #language = en-gb }}
 *{{#convert: 10 km | m |#language=en-gb}}
-*{{#convert: 10 pa | mmhg | #language = en-gb }}
-*{{#convert: 10 pa | mmhg | #language = /../evil/attack }}
+*{{#convert: 10 Pa | mmHg | #language = en-gb }}
 !! result
 <ul><li>0.01  kilometres
 </li><li>0.01kilometres
 </li><li>10,000 metres
 </li><li>0.1 milimetres of mercury
+</li></ul>
+
+!! end
+
+!! test
+Case sensitivity
+!! input
+*{{#convert: 10 mm | m }}
+*{{#convert: 10 Mm | m }}
+*{{#convert: 10 km | Mm }}
+*{{#convert: 10 Pa | mmHg }}
+*{{#convert: 10 pa | mmHg  }}
+!! result
+<ul><li>0.01 meters
+</li><li>10,000,000 meters
+</li><li>0.01 megameters
 </li><li>0.1 milimeters of mercury
+</li><li><strong class="error">Error: unknown unit "pa"</strong>
 </li></ul>
 
 !! end

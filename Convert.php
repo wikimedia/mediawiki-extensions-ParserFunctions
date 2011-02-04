@@ -472,14 +472,14 @@ class ConvertUnit {
 	protected static $units = array(
 		ConvertDimension::DIM_LENGTH => array(
 			'gigametre'        => array( 1000000000, 'Gm' ),
-			'megametre'        => array( 1000000, '(?:(?-i)Mm)' ), # Case-sensitivity is forced
+			'megametre'        => array( 1000000, 'Mm' ), # Case-sensitivity is forced
 			'kilometre'        => array( 1000, 'km' ),
 			'hectometre'       => array( 100, 'hm' ),
 			'decametre'        => array( 10, 'dam' ),
 			'metre'            => array( 1, 'm' ),
 			'decimetre'        => array( 0.1, 'dm' ),
 			'centimetre'       => array( 0.01, 'cm' ),
-			'millimetre'       => array( 0.001, '(?:(?-i)mm)' ), # Case-sensitivity is forced
+			'millimetre'       => array( 0.001, 'mm' ), # Case-sensitivity is forced
 			'micrometre'       => array( 0.0001, '\x03BCm|\x00B5m|um' ), # There are two similar mu characters
 			'nanometre'        => array( 0.0000001, 'nm' ),
 			'angstrom'         => array( 0.00000001, '\x00C5' ),
@@ -495,8 +495,8 @@ class ConvertUnit {
 			'inch'             => array( 0.0254, 'inch|inches|in' ),
 
 			'nauticalmile'     => array( 1852, 'nauticalmiles?|nmi' ),
-			'nauticalmileuk'   => array( 1853.184, 'oldUKnmi|Brnmi|admi' ),
-			'nauticalmileus'   => array( 1853.24496, 'oldUSnmi' ),
+			'nauticalmileuk'   => array( 1853.184, 'old[Uu][Kk]nmi|[Bb]rnmi|admi' ),
+			'nauticalmileus'   => array( 1853.24496, 'old[Uu][Ss]nmi' ),
 
 			'gigaparsec'       => array( 3.0856775813057E25, 'gigaparsecs?|Gpc' ),
 			'megaparsec'       => array( 3.0856775813057E22, 'megaparsecs?|Mpc' ),
@@ -506,7 +506,7 @@ class ConvertUnit {
 			'mrgalightyear'    => array( 9.4607304725808E21, 'megalightyears?|Mly' ),
 			'kilolightyear'    => array( 9.4607304725808E18, 'kilolightyears?|kly' ),
 			'lightyear'        => array( 9.4607304725808E15, 'lightyears?|ly' ),
-			'astronomicalunit' => array( 149597870700, 'astronomicalunits?|AU' ),
+			'astronomicalunit' => array( 149597870700, 'astronomicalunits?|AU|au' ),
 		),
 
 		ConvertDimension::DIM_AREA => array(
@@ -575,11 +575,11 @@ class ConvertUnit {
 
 		ConvertDimension::DIM_PRESSURE => array(
 			'gigapascal'        => array( 1000000000, 'GPa' ),
-			'megapascal'        => array( 1000000, '(?:(?-i)M[Pp]a)' ), # Case-sensitivity is forced
+			'megapascal'        => array( 1000000, 'MPa' ), # Case-sensitivity is forced
 			'kilopascal'        => array( 1000, 'kPa' ),
 			'hectopascal'       => array( 100, 'hPa' ),
 			'pascal'            => array( 1, 'Pa' ),
-			'millipascal'       => array( 0.001, '(?:(?-i)m[Pp]a)' ), # Case-sensitivity is forced
+			'millipascal'       => array( 0.001, 'mPa' ), # Case-sensitivity is forced
 
 			'bar'               => array( 100000, 'bar' ),
 			'decibar'           => array( 10000, 'dbar' ),
@@ -609,7 +609,7 @@ class ConvertUnit {
 
 	# An array of preprocessing conversions to apply to units
 	protected static $unitConversions = array(
-		'/^mph$/ui' => 'mi/h',
+		'/^mph$/u' => 'mi/h',
 	);
 
 	# Map of UNIT => DIMENSION, created on construct
@@ -664,7 +664,7 @@ class ConvertUnit {
 			# Single unit
 			foreach( self::$units as $dimension => $units ){
 				foreach( $units as $unit => $data ){
-					if( $rawUnit == $unit || preg_match( "/^({$data[1]})$/ui", $parts[0] ) ){
+					if( $rawUnit == $unit || preg_match( "/^({$data[1]})$/u", $parts[0] ) ){
 						$this->dimension = new ConvertDimension( self::$dimensionMap[$unit] );
 						$this->conversion = self::$units[$this->dimension->value][$unit][0];
 						$this->regex = $data[1];
