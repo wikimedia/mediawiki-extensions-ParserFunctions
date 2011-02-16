@@ -19,7 +19,10 @@ class ConvertParser {
 	const UNITS_REGEX = '/^(.+?)([a-z]+\^?\d?(?:\/\w+\^?\d?)*)$/i';
 
 	# A regex which matches a number
-	const NUM_REGEX = '/\b((?:\+|\-|&minus;|\x2212)?(\d+(?:\.\d+)?)(?:E(?:\+|\-|&minus;|\x2212)?\d+)?)\b/i';
+	const NUM_REGEX = '/\b((?:\+|\-|&minus;|\x{2212})?(\d+(?:\.\d+)?)(?:E(?:\+|\-|&minus;|\x{2212})?\d+)?)\b/iu';
+
+	# A regex *FRAGMENT* which matches SI prefixes
+	const PREFIX_REGEX = '[YZEPTGMkh(da)dcm\x{03BC}\x{00B5}npfazy]?';
 
 	# ConvertUnit objects
 	protected $sourceUnit;
@@ -464,136 +467,146 @@ class ConvertUnit {
 	 *     DIMENSION => array(
 	 *         UNIT => array(
 	 *             CONVERSION,
-	 *             REGEX
+	 *             REGEX,
+	 *             TAKES_SI_PREFIXES,
 	 *         )
 	 *     )
 	 * )
 	 */
 	protected static $units = array(
 		ConvertDimension::DIM_LENGTH => array(
-			'gigametre'        => array( 1000000000, 'Gm' ),
-			'megametre'        => array( 1000000, 'Mm' ), # Case-sensitivity is forced
-			'kilometre'        => array( 1000, 'km' ),
-			'hectometre'       => array( 100, 'hm' ),
-			'decametre'        => array( 10, 'dam' ),
-			'metre'            => array( 1, 'm' ),
-			'decimetre'        => array( 0.1, 'dm' ),
-			'centimetre'       => array( 0.01, 'cm' ),
-			'millimetre'       => array( 0.001, 'mm' ), # Case-sensitivity is forced
-			'micrometre'       => array( 0.0001, '\x03BCm|\x00B5m|um' ), # There are two similar mu characters
-			'nanometre'        => array( 0.0000001, 'nm' ),
-			'angstrom'         => array( 0.00000001, '\x00C5' ),
+			'metre'            => array( 1, 'm', true ),
+			'angstrom'         => array( 0.00000001, '\x{00C5}', false ),
 
-			'mile'             => array( 1609.344, 'mi|miles?' ),
-			'furlong'          => array( 201.168, 'furlong' ),
-			'chain'            => array( 20.1168 , 'chain' ),
-			'rod'              => array( 5.0292, 'rod|pole|perch' ),
-			'fathom'           => array( 1.8288, 'fathom' ),
-			'yard'             => array( 0.9144, 'yards?|yd' ),
-			'foot'             => array( 0.3048, 'foot|feet|ft' ),
-			'hand'             => array( 0.1016, 'hands?' ),
-			'inch'             => array( 0.0254, 'inch|inches|in' ),
+			'mile'             => array( 1609.344, 'mi|miles?', false ),
+			'furlong'          => array( 201.168, 'furlong', false ),
+			'chain'            => array( 20.1168 , 'chain', false ),
+			'rod'              => array( 5.0292, 'rod|pole|perch', false ),
+			'fathom'           => array( 1.8288, 'fathom', false ),
+			'yard'             => array( 0.9144, 'yards?|yd', false ),
+			'foot'             => array( 0.3048, 'foot|feet|ft', false ),
+			'hand'             => array( 0.1016, 'hands?', false ),
+			'inch'             => array( 0.0254, 'inch|inches|in', false ),
 
-			'nauticalmile'     => array( 1852, 'nauticalmiles?|nmi' ),
-			'nauticalmileuk'   => array( 1853.184, 'old[Uu][Kk]nmi|[Bb]rnmi|admi' ),
-			'nauticalmileus'   => array( 1853.24496, 'old[Uu][Ss]nmi' ),
+			'nauticalmile'     => array( 1852, 'nauticalmiles?|nmi', false ),
+			'nauticalmileuk'   => array( 1853.184, 'old[Uu][Kk]nmi|[Bb]rnmi|admi', false ),
+			'nauticalmileus'   => array( 1853.24496, 'old[Uu][Ss]nmi', false ),
 
-			'gigaparsec'       => array( 3.0856775813057E25, 'gigaparsecs?|Gpc' ),
-			'megaparsec'       => array( 3.0856775813057E22, 'megaparsecs?|Mpc' ),
-			'kiloparsec'       => array( 3.0856775813057E19, 'kiloparsecs?|kpc' ),
-			'parsec'           => array( 3.0856775813057E16, 'parsecs?|pc' ),
-			'gigalightyear'    => array( 9.4607304725808E24, 'gigalightyears?|Gly' ),
-			'mrgalightyear'    => array( 9.4607304725808E21, 'megalightyears?|Mly' ),
-			'kilolightyear'    => array( 9.4607304725808E18, 'kilolightyears?|kly' ),
-			'lightyear'        => array( 9.4607304725808E15, 'lightyears?|ly' ),
-			'astronomicalunit' => array( 149597870700, 'astronomicalunits?|AU|au' ),
+			'parsec'           => array( 3.0856775813057E16, 'parsecs?|pc', true ),
+			'lightyear'        => array( 9.4607304725808E15, 'lightyears?|ly', true ),
+			'astronomicalunit' => array( 149597870700, 'astronomicalunits?|AU|au', false ),
 		),
 
 		ConvertDimension::DIM_AREA => array(
-			'squarekilometre'    => array( 1E6, 'km2|km\^2' ),
-			'squaremetre' => array( 1, 'm2|m\^2' ),
-			'squarecentimetre'   => array( 1E-4, 'cm2|cm\^2' ),
-			'squaremillimetre'   => array( 1E-6, 'mm2|mm\^2' ),
-			'hectare'            => array( 1E4, 'hectares?|ha' ),
+			'squarekilometre'    => array( 1E6, 'km2|km\^2', false ),
+			'squaremetre'        => array( 1, 'm2|m\^2', false ),
+			'squarecentimetre'   => array( 1E-4, 'cm2|cm\^2', false ),
+			'squaremillimetre'   => array( 1E-6, 'mm2|mm\^2', false ),
+			'hectare'            => array( 1E4, 'hectares?|ha', false ),
 
-			'squaremile'         => array( 2589988.110336, 'sqmi|mi2|mi\^2' ),
-			'acre'               => array( 4046.856422 , 'acres?' ),
-			'squareyard'         => array( 0.83612736, 'sqyd|yd2|yd\^2' ),
-			'squarefoot'         => array( 0.09290304, 'sqft|ft2|ft\^2' ),
-			'squareinch'         => array( 0.00064516, 'sqin|in2|in\^2' ),
+			'squaremile'         => array( 2589988.110336, 'sqmi|mi2|mi\^2', false ),
+			'acre'               => array( 4046.856422, 'acres?', false ),
+			'squareyard'         => array( 0.83612736, 'sqyd|yd2|yd\^2', false ),
+			'squarefoot'         => array( 0.09290304, 'sqft|ft2|ft\^2', false ),
+			'squareinch'         => array( 0.00064516, 'sqin|in2|in\^2', false ),
 
-			'squarenauticalmile' => array( 3429904, 'sqnmi|nmi2|nmi\^2' ),
-			'dunam'              => array( 1000, 'dunam' ),
-			'tsubo'              => array( 3.305785, 'tsubo' ),
+			'squarenauticalmile' => array( 3429904, 'sqnmi|nmi2|nmi\^2', false ),
+			'dunam'              => array( 1000, 'dunam', false ),
+			'tsubo'              => array( 3.305785, 'tsubo', false ),
 		),
 
 		ConvertDimension::DIM_VOLUME => array(
-			'cubicmetre'      => array( 1, 'm3|m\^3' ),
-			'cubiccentimetre' => array( 1E-6, 'cm3|cm\^3' ),
-			'cubicmillimetre' => array( 1E-9, 'mm3|mm\^3' ),
-			'kilolitre'       => array( 1, 'kl' ),
-			'litre'           => array( 1E-3 , 'l' ),
-			'centilitre'      => array( 1E-5, 'cl' ),
-			'millilitre'      => array( 1E-6, 'ml' ),
+			'cubicmetre'      => array( 1, 'm3|m\^3', false ),
+			'cubiccentimetre' => array( 1E-6, 'cm3|cm\^3', false ),
+			'cubicmillimetre' => array( 1E-9, 'mm3|mm\^3', false ),
+			'litre'           => array( 1E-3 , 'l', true ),
 
-			'cubicyard'       => array( 0.764554857984, 'cuyd|yd3|yd\^3' ),
-			'cubicfoot'       => array( 0.028316846592, 'cuft|ft3|ft\^3' ),
-			'cubicinch'       => array( 0.000016387064, 'cuin|in3|in\^3' ),
-			'barrel'          => array( 0.16365924, 'bbl|barrels?|impbbl' ),
-			'bushel'          => array( 0.03636872, 'bsh|bushels?|impbsh' ),
-			'gallon'          => array( 0.00454609, 'gal|gallons?|impgal' ),
-			'quart'           => array( 0.0011365225, 'qt|quarts?|impqt' ),
-			'pint'            => array( 0.00056826125, 'pt|pints?|imppt' ),
-			'fluidounce'      => array( 0.0000284130625, 'floz|impfloz' ),
+			'cubicyard'       => array( 0.764554857984, 'cuyd|yd3|yd\^3', false ),
+			'cubicfoot'       => array( 0.028316846592, 'cuft|ft3|ft\^3', false ),
+			'cubicinch'       => array( 0.000016387064, 'cuin|in3|in\^3', false ),
+			'barrel'          => array( 0.16365924, 'bbl|barrels?|impbbl', false ),
+			'bushel'          => array( 0.03636872, 'bsh|bushels?|impbsh', false ),
+			'gallon'          => array( 0.00454609, 'gal|gallons?|impgal', false ),
+			'quart'           => array( 0.0011365225, 'qt|quarts?|impqt', false ),
+			'pint'            => array( 0.00056826125, 'pt|pints?|imppt', false ),
+			'fluidounce'      => array( 0.0000284130625, 'floz|impfloz', false ),
 
-			'barrelus'        => array( 0.119240471196, 'usbbl' ),
-			'barreloil'       => array( 0.158987294928, 'oilbbl' ),
-			'barrelbeer'      => array( 0.117347765304, 'beerbbl' ),
-			'usgallon'        => array( 0.003785411784, 'usgal' ),
-			'usquart'         => array( 0.000946352946, 'usqt' ),
-			'uspint'          => array( 0.000473176473, 'uspt' ),
-			'usfluidounce'    => array( 0.0000295735295625, 'usfloz' ),
-			'usdrybarrel'     => array( 0.11562819898508, 'usdrybbl' ),
-			'usbushel'        => array( 0.03523907016688, 'usbsh' ),
-			'usdrygallon'     => array( 0.00440488377086, 'usdrygal' ),
-			'usdryquart'      => array( 0.001101220942715, 'usdryqt' ),
-			'usdrypint'       => array( 0.0005506104713575, 'usdrypt' ),
+			'barrelus'        => array( 0.119240471196, 'usbbl', false ),
+			'barreloil'       => array( 0.158987294928, 'oilbbl', false ),
+			'barrelbeer'      => array( 0.117347765304, 'beerbbl', false ),
+			'usgallon'        => array( 0.003785411784, 'usgal', false ),
+			'usquart'         => array( 0.000946352946, 'usqt', false ),
+			'uspint'          => array( 0.000473176473, 'uspt', false ),
+			'usfluidounce'    => array( 0.0000295735295625, 'usfloz', false ),
+			'usdrybarrel'     => array( 0.11562819898508, 'usdrybbl', false ),
+			'usbushel'        => array( 0.03523907016688, 'usbsh', false ),
+			'usdrygallon'     => array( 0.00440488377086, 'usdrygal', false ),
+			'usdryquart'      => array( 0.001101220942715, 'usdryqt', false ),
+			'usdrypint'       => array( 0.0005506104713575, 'usdrypt', false ),
 		),
 
 		ConvertDimension::DIM_TIME => array(
-			'year'   => array( 31557600, 'yr' ),
-			'day'    => array( 86400, 'days?' ),
-			'hour'   => array( 3600, 'hours?|hr|h' ),
-			'minute' => array( 60, 'minutes?|mins?' ),
-			'second' => array( 1, 's' ),
+			'year'   => array( 31557600, 'yr', true ),
+			'day'    => array( 86400, 'd|days?', false ),
+			'hour'   => array( 3600, 'hours?|hr|h', false ),
+			'minute' => array( 60, 'minutes?|mins?', false ),
+			'second' => array( 1, 's', false ),
 		),
 
 		ConvertDimension::DIM_SPEED => array(
-			'knot' => array( 0.514444444, 'knot|kn' ),
-			'speedoflight' => array( 2.9979E8, 'c' ),
+			'knot' => array( 0.514444444, 'knot|kn', false ),
+			'speedoflight' => array( 2.9979E8, 'c', false ),
 		),
 
 		ConvertDimension::DIM_PRESSURE => array(
-			'gigapascal'        => array( 1000000000, 'GPa' ),
-			'megapascal'        => array( 1000000, 'MPa' ), # Case-sensitivity is forced
-			'kilopascal'        => array( 1000, 'kPa' ),
-			'hectopascal'       => array( 100, 'hPa' ),
-			'pascal'            => array( 1, 'Pa' ),
-			'millipascal'       => array( 0.001, 'mPa' ), # Case-sensitivity is forced
+			'pascal'            => array( 1, 'Pa', true ),
 
-			'bar'               => array( 100000, 'bar' ),
-			'decibar'           => array( 10000, 'dbar' ),
-			'milibar'           => array( 100 , 'mbar|mb' ),
-			'kilobarye'         => array( 100, 'kba' ),
-			'barye'             => array( 0.1, 'ba' ),
+			'bar'               => array( 100000, 'bar', false ),
+			'decibar'           => array( 10000, 'dbar', false ),
+			'milibar'           => array( 100 , 'mbar|mb', false ),
+			'kilobarye'         => array( 100, 'kba', false ),
+			'barye'             => array( 0.1, 'ba', false ),
 			
-			'atmosphere'        => array( 101325, 'atm|atmospheres?' ),
-			'torr'              => array( 133.32237, 'torr' ),
-			'mmhg'              => array( 133.322387415, 'mmHg' ),
-			'inhg'              => array( 3386.38864034, 'inHg' ),
-			'psi'               => array( 6894.757293, 'psi' ),
+			'atmosphere'        => array( 101325, 'atm|atmospheres?', false ),
+			'torr'              => array( 133.32237, 'torr', false ),
+			'mmhg'              => array( 133.322387415, 'mmHg', false ),
+			'inhg'              => array( 3386.38864034, 'inHg', false ),
+			'psi'               => array( 6894.757293, 'psi', false ),
 		),
 		# TODO: other dimensions as needed
+	);
+
+	/**
+	 * array(
+	 *     PREFIX => array(
+	 *         CONVERSION,
+	 *         REGEX,
+	 *     )
+	 * )
+	 * They're out of order because this is the order in which they are tested, and
+	 * some prefixes are much more likely to occur than others
+	 */
+	protected static $prefixes = array(
+		'kilo'  => array( 1E3,  'k' ),
+		'mili'  => array( 1E-3, 'm' ),
+		'centi' => array( 1E-2, 'c' ),
+		'giga'  => array( 1E9,  'G' ),
+		'micro' => array( 1E-6, '(?:\x{03BC}|\x{00B5})' ), # There are two similar mu characters
+		'mega'  => array( 1E6,  'M' ),
+		'nano'  => array( 1E-9, 'n' ),
+		'hecto' => array( 1E2,  'h' ),
+		'deca'  => array( 1E1,  'da' ),
+		'deci'  => array( 1E-1, 'd' ),
+		'yotta' => array( 1E24, 'Y' ),
+		'zetta' => array( 1E21, 'Z' ),
+		'exa'   => array( 1E18, 'E' ),
+		'peta'  => array( 1E15, 'P' ),
+		'tera'  => array( 1E12, 'T' ),
+		'pico'  => array( 1E-12, 'p' ),
+		'femto' => array( 1E-15, 'f' ),
+		'atto'  => array( 1E-18, 'a' ),
+		'zepto' => array( 1E-21, 'z' ),
+		'yocto' => array( 1E-24, 'y' ),
 	);
 
 	# Default units for each dimension
@@ -630,6 +643,9 @@ class ConvertUnit {
 	# The name of the unit (key into $units[$dimension] above
 	protected $unitName;
 
+	# The SI prefix, if applicable
+	protected $prefix = null;
+
 	/***************** MEMBER FUNCTIONS *****************/
 
 	/**
@@ -664,11 +680,25 @@ class ConvertUnit {
 			# Single unit
 			foreach( self::$units as $dimension => $units ){
 				foreach( $units as $unit => $data ){
-					if( $rawUnit == $unit || preg_match( "/^({$data[1]})$/u", $parts[0] ) ){
+					if( $rawUnit == $unit
+						|| ( !$data[2] && preg_match( "/^({$data[1]})$/u", $parts[0] ) )
+						|| (  $data[2] && preg_match( "/^(" . ConvertParser::PREFIX_REGEX . ")(" . $data[1] . ")$/u", $parts[0] ) ) )
+					{
 						$this->dimension = new ConvertDimension( self::$dimensionMap[$unit] );
-						$this->conversion = self::$units[$this->dimension->value][$unit][0];
+						$this->conversion = $data[0];
 						$this->regex = $data[1];
 						$this->unitName = $unit;
+
+						# Grab the SI prefix, if it's allowed and there is one
+						if( $data[2] && !preg_match( "/^({$data[1]})$/u", $parts[0] ) ){
+							foreach( self::$prefixes as $prefix => $pdata ){
+								if( preg_match( "/^({$pdata[1]})({$data[1]})$/u", $parts[0] ) ){
+									$this->prefix = $prefix;
+									break;
+								}
+							}
+						}
+
 						return;
 					}
 				}
@@ -685,6 +715,7 @@ class ConvertUnit {
 			$this->conversion = $top->conversion / $bottom->conversion;
 			$this->regex = "(?:{$top->regex})/(?:{$bottom->regex})";
 			$this->unitName = array( $top->unitName, $bottom->unitName );
+			$this->prefix = array( $top->prefix, $bottom->prefix );
 			return;
 
 		} else {
@@ -694,7 +725,9 @@ class ConvertUnit {
 	}
 
 	public function getConversion(){
-		return $this->conversion;
+		return $this->prefix
+			? $this->conversion * self::$prefixes[$this->prefix][0]
+			: $this->conversion;
 	}
 
 	public function getRegex(){
@@ -714,7 +747,9 @@ class ConvertUnit {
 
 		if( !is_array( $this->unitName ) ){
 			$msgText = $this->getTextFromMessage(
-				"pfunc-convert-unit-{$this->dimension->getName()}-{$this->unitName}",
+				$this->dimension->getName(),
+				$this->unitName,
+				$this->prefix,
 				$value, $link, $abbreviate, $language
 			);
 
@@ -723,18 +758,24 @@ class ConvertUnit {
 			# so they can have it display "<metres per second>" rather than
 			# "<metres>/<second>"
 			$msgText = $this->getTextFromMessage(
-				"pfunc-convert-unit-{$this->dimension->getName(true)}-{$this->unitName[0]}-{$this->unitName[1]}",
+				$this->dimension->getName(true),
+				"{$this->unitName[0]}-{$this->unitName[1]}",
+				$this->prefix, # This will probably be rubbish, but it's the wiki users' problem, not ours
 				$value, $link, $abbreviate, $language
 			);
 
 		} else {
 			$dimensionNames = $this->dimension->getName();
 			$msgText = $this->getTextFromMessage(
-				"pfunc-convert-unit-{$dimensionNames[0]}-{$this->unitName[0]}",
+				$dimensionNames[0],
+				$this->unitName[0],
+				$this->prefix[0],
 				$value, $link, $abbreviate, $language
 			);
 			$msg2Text = $this->getTextFromMessage(
-				"pfunc-convert-unit-{$dimensionNames[1]}-{$this->unitName[1]}",
+				$dimensionNames[1],
+				$this->unitName[1],
+				$this->prefix[1],
 				1, # Singular for denominator
 				$link, $abbreviate, $language
 			);
@@ -744,17 +785,24 @@ class ConvertUnit {
 		return trim( $msgText );
 	}
 
-	protected function getTextFromMessage( $key, $number, $link, $abbreviate, $language ){
+	protected function getTextFromMessage( $dimension, $unit, $prefix, $number, $link, $abbreviate, $language ){
 		$abbr = $abbreviate ? '-abbr' : '';
+		$prefix = $prefix === null
+			? ''
+			: wfMsgExt( "pfunc-convert-prefix-$prefix$abbr", array( 'parsemag', 'language' => $language ) );
 
 		$text = wfMsgExt(
-			"$key$abbr",
+			"pfunc-convert-unit-$dimension-$unit$abbr",
 			array( 'parsemag', 'language' => $language ),
-			$number
+			$number,
+			$prefix
 		);
 
-		if( $link && !wfEmptyMsg( "$key-link" ) ){
-			$title = Title::newFromText( wfMsgForContentNoTrans( "$key-link" ) );
+		if( $link && !wfEmptyMsg( "pfunc-convert-unit-$dimension-$unit-link" ) ){
+			$title = Title::newFromText(
+				wfMsgForContentNoTrans( "pfunc-convert-unit-$dimension-$unit-link" ),
+				$prefix
+			);
 			if( $title instanceof Title ){
 				$text = "[[{$title->getFullText()}|$text]]";
 			}
