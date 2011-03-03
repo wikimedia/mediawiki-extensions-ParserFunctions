@@ -1343,9 +1343,11 @@ $messages['jv'] = array(
  */
 $messages['ka'] = array(
 	'pfunc_time_error' => 'შეცდომა: არასწორი დრო',
+	'pfunc_expr_division_by_zero' => 'გაყოფა ნულით',
 	'pfunc_expr_invalid_argument' => 'მცდარი არგუმენტი $1: < -1 ან > 1',
 	'pfunc_expr_invalid_argument_ln' => 'მცდარი არგუმენტი ln: <= 0',
 	'pfunc_expr_not_a_number' => '$1: შედექში ციფრი არაა',
+	'pfunc_string_too_long' => 'შეცდომა: სტრიქონის ზომა აღემატება $1 სიმბოლოს ლიმიტს',
 );
 
 /** Kazakh (Arabic script) (‫قازاقشا (تٴوتە)‬) */
