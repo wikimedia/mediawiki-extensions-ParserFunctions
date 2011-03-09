@@ -1478,6 +1478,7 @@ $messages['lb'] = array(
 	'pfunc_desc' => 'Erweidert Parser mat logesche Fonctiounen',
 	'pfunc_time_error' => 'Feeler: ongëlteg Zäit',
 	'pfunc_time_too_long' => 'Feeler: ze dacks #time opgeruff',
+	'pfunc_expr_stack_exhausted' => 'Expressiouns-Feeler: Stack iwwergelaf',
 	'pfunc_expr_unexpected_number' => 'Expressiouns-Feeler: Onerwarten Zuel',
 	'pfunc_expr_unrecognised_word' => 'Expressiouns-Feeler: Onerkantent Wuert "$1"',
 	'pfunc_expr_unexpected_operator' => 'Expression-Feeler: Onerwarten Operateur: <tt>$1</tt>',
