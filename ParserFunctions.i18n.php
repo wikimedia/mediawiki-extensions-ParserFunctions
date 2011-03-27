@@ -406,6 +406,7 @@ $messages['as'] = array(
 
 /** Asturian (Asturianu)
  * @author Esbardu
+ * @author Xuacu
  */
 $messages['ast'] = array(
 	'pfunc_desc' => "Ameyora l'análisis sintáuticu con funciones llóxiques",
@@ -426,6 +427,7 @@ $messages['ast'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argumentu non válidu pa ln: <= 0',
 	'pfunc_expr_unknown_error' => "Error d'espresión: Error desconocíu ($1)",
 	'pfunc_expr_not_a_number' => 'En $1: el resultáu nun ye un númberu',
+	'pfunc_string_too_long' => 'Error: la cadena pasa la llende de $1 caráuteres',
 );
 
 /** Bashkir (Башҡортса)
