@@ -2185,10 +2185,11 @@ $messages['sq'] = array(
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
  * @author Millosh
+ * @author Rancher
  * @author Verlor
  */
 $messages['sr-ec'] = array(
-	'pfunc_desc' => 'обогати парсер логичким функцијама',
+	'pfunc_desc' => 'Проширује рашчлањивач с логичким функцијама',
 	'pfunc_time_error' => 'Грешка: лоше време',
 	'pfunc_time_too_long' => 'Грешка: превише #time позива',
 	'pfunc_expr_stack_exhausted' => 'Грешка у изразу: стек напуњен',
