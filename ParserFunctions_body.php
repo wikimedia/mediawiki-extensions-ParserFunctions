@@ -336,7 +336,8 @@ class ExtParserFunctions {
 				if ( !$file ) {
 					return $else;
 				}
-				$parser->mOutput->addImage( $file->getName() );
+				$parser->mOutput->addImage(
+					$file->getName(), $file->getTimestamp(), $file->getSha1() );
 				return $file->exists() ? $then : $else;
 			} elseif ( $title->getNamespace() == NS_SPECIAL ) {
 				/* Don't bother with the count for special pages,
