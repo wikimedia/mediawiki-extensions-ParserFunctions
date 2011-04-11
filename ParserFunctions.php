@@ -30,7 +30,6 @@ $wgPFStringLengthLimit = 1000;
 $wgPFEnableStringFunctions = false;
 
 /** REGISTRATION */
-$wgExtensionFunctions[] = 'wfSetupParserFunctions';
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'ParserFunctions',
@@ -51,79 +50,46 @@ $wgParserTestFiles[] = dirname( __FILE__ ) . "/funcsParserTests.txt";
 $wgParserTestFiles[] = dirname( __FILE__ ) . "/stringFunctionTests.txt";
 $wgParserTestFiles[] = dirname( __FILE__ ) . "/convertTests.txt";
 
-function wfSetupParserFunctions() {
-	global $wgPFHookStub, $wgHooks;
+$wgHooks['ParserFirstCallInit'][] = 'wfRegisterParserFunctions';
 
-	$wgPFHookStub = new ParserFunctions_HookStub;
+function wfRegisterParserFunctions( $parser ) {
+	global $wgPFEnableStringFunctions;
 
-	$wgHooks['ParserFirstCallInit'][] = array( &$wgPFHookStub, 'registerParser' );
-
-	$wgHooks['ParserClearState'][] = array( &$wgPFHookStub, 'clearState' );
-}
-
-/**
- * Stub class to defer loading of the bulk of the code until a parser function is
- * actually used.
- */
-class ParserFunctions_HookStub {
-	var $realObj;
-
-	function registerParser( $parser ) {
-		global $wgPFEnableStringFunctions;
-
-		if ( defined( get_class( $parser ) . '::SFH_OBJECT_ARGS' ) ) {
-			// These functions accept DOM-style arguments
-			$parser->setFunctionHook( 'if', array( &$this, 'ifObj' ), SFH_OBJECT_ARGS );
-			$parser->setFunctionHook( 'ifeq', array( &$this, 'ifeqObj' ), SFH_OBJECT_ARGS );
-			$parser->setFunctionHook( 'switch', array( &$this, 'switchObj' ), SFH_OBJECT_ARGS );
-			$parser->setFunctionHook( 'ifexist', array( &$this, 'ifexistObj' ), SFH_OBJECT_ARGS );
-			$parser->setFunctionHook( 'ifexpr', array( &$this, 'ifexprObj' ), SFH_OBJECT_ARGS );
-			$parser->setFunctionHook( 'iferror', array( &$this, 'iferrorObj' ), SFH_OBJECT_ARGS );
-		} else {
-			$parser->setFunctionHook( 'if', array( &$this, 'ifHook' ) );
-			$parser->setFunctionHook( 'ifeq', array( &$this, 'ifeq' ) );
-			$parser->setFunctionHook( 'switch', array( &$this, 'switchHook' ) );
-			$parser->setFunctionHook( 'ifexist', array( &$this, 'ifexist' ) );
-			$parser->setFunctionHook( 'ifexpr', array( &$this, 'ifexpr' ) );
-			$parser->setFunctionHook( 'iferror', array( &$this, 'iferror' ) );
-		}
-
-		$parser->setFunctionHook( 'expr', array( &$this, 'expr' ) );
-		$parser->setFunctionHook( 'time', array( &$this, 'time' ) );
-		$parser->setFunctionHook( 'timel', array( &$this, 'localTime' ) );
-		$parser->setFunctionHook( 'rel2abs', array( &$this, 'rel2abs' ) );
-		$parser->setFunctionHook( 'titleparts', array( &$this, 'titleparts' ) );
-		$parser->setFunctionHook( 'convert', array( &$this, 'convert' ) );
-
-		// String Functions
-		if ( $wgPFEnableStringFunctions ) {
-			$parser->setFunctionHook( 'len',       array( &$this, 'runLen'       ) );
-			$parser->setFunctionHook( 'pos',       array( &$this, 'runPos'       ) );
-			$parser->setFunctionHook( 'rpos',      array( &$this, 'runRPos'      ) );
-			$parser->setFunctionHook( 'sub',       array( &$this, 'runSub'       ) );
-			$parser->setFunctionHook( 'count',     array( &$this, 'runCount'     ) );
-			$parser->setFunctionHook( 'replace',   array( &$this, 'runReplace'   ) );
-			$parser->setFunctionHook( 'explode',   array( &$this, 'runExplode'   ) );
-			$parser->setFunctionHook( 'urldecode', array( &$this, 'runUrlDecode' ) );
-		}
-
-		return true;
+	if ( defined( get_class( $parser ) . '::SFH_OBJECT_ARGS' ) ) {
+		// These functions accept DOM-style arguments
+		$parser->setFunctionHook( 'if', 'ExtParserFunctions::ifObj', SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'ifeq', 'ExtParserFunctions::ifeqObj', SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'switch', 'ExtParserFunctions::switchObj', SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'ifexist', 'ExtParserFunctions::ifexistObj', SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'ifexpr', 'ExtParserFunctions::ifexprObj', SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'iferror', 'ExtParserFunctions::iferrorObj', SFH_OBJECT_ARGS );
+	} else {
+		$parser->setFunctionHook( 'if', 'ExtParserFunctions::ifHook' );
+		$parser->setFunctionHook( 'ifeq', 'ExtParserFunctions::ifeq' );
+		$parser->setFunctionHook( 'switch', 'ExtParserFunctions::switchHook' );
+		$parser->setFunctionHook( 'ifexist', 'ExtParserFunctions::ifexist' );
+		$parser->setFunctionHook( 'ifexpr', 'ExtParserFunctions::ifexpr' );
+		$parser->setFunctionHook( 'iferror', 'ExtParserFunctions::iferror' );
 	}
 
-	/** Defer ParserClearState */
-	function clearState( $parser ) {
-		if ( !is_null( $this->realObj ) ) {
-			$this->realObj->clearState( $parser );
-		}
-		return true;
+	$parser->setFunctionHook( 'expr', 'ExtParserFunctions::expr' );
+	$parser->setFunctionHook( 'time', 'ExtParserFunctions::time' );
+	$parser->setFunctionHook( 'timel', 'ExtParserFunctions::localTime' );
+	$parser->setFunctionHook( 'rel2abs', 'ExtParserFunctions::rel2abs' );
+	$parser->setFunctionHook( 'titleparts', 'ExtParserFunctions::titleparts' );
+	$parser->setFunctionHook( 'convert', 'ExtParserFunctions::convert' );
+
+	// String Functions
+	if ( $wgPFEnableStringFunctions ) {
+		$parser->setFunctionHook( 'len',       'ExtParserFunctions::runLen'       );
+		$parser->setFunctionHook( 'pos',       'ExtParserFunctions::runPos'       );
+		$parser->setFunctionHook( 'rpos',      'ExtParserFunctions::runRPos'      );
+		$parser->setFunctionHook( 'sub',       'ExtParserFunctions::runSub'       );
+		$parser->setFunctionHook( 'count',     'ExtParserFunctions::runCount'     );
+		$parser->setFunctionHook( 'replace',   'ExtParserFunctions::runReplace'   );
+		$parser->setFunctionHook( 'explode',   'ExtParserFunctions::runExplode'   );
+		$parser->setFunctionHook( 'urldecode', 'ExtParserFunctions::runUrlDecode' );
 	}
 
-	/** Pass through function call */
-	function __call( $name, $args ) {
-		if ( is_null( $this->realObj ) ) {
-			$this->realObj = new ExtParserFunctions;
-			$this->realObj->clearState( $args[0] );
-		}
-		return call_user_func_array( array( $this->realObj, $name ), $args );
-	}
+	return true;
 }

@@ -1,22 +1,38 @@
 <?php
 
 class ExtParserFunctions {
-	var $mExprParser;
-	var $mTimeCache = array();
-	var $mTimeChars = 0;
-	var $mMaxTimeChars = 6000; # ~10 seconds
+	static $mExprParser;
+	static $mConvertParser;
+	static $mTimeCache = array();
+	static $mTimeChars = 0;
+	static $mMaxTimeChars = 6000; # ~10 seconds
 
-	function clearState( $parser ) {
-		$this->mTimeChars = 0;
+	public static function clearState( $parser ) {
+		self::$mTimeChars = 0;
 		$parser->pf_ifexist_breakdown = array();
 		$parser->pf_markerRegex = null;
 		return true;
 	}
 
 	/**
+	 * Register ParserClearState hook.
+	 * We defer this until needed to avoid the loading of the code of this file
+	 * when no parser function is actually called.
+	 */
+	public static function registerClearHook() {
+		static $done = false;
+		if( !$done ) {
+			global $wgHooks;
+			$wgHooks['ParserClearState'][] = __CLASS__ . '::clearState';
+			$done = true;
+		}
+	}
+
+	/**
 	 * Get the marker regex. Cached.
 	 */
-	function getMarkerRegex( $parser ) {
+	public static function getMarkerRegex( $parser ) {
+		self::registerClearHook();
 		if ( isset( $parser->pf_markerRegex ) ) {
 			return $parser->pf_markerRegex;
 		}
@@ -43,31 +59,31 @@ class ExtParserFunctions {
 	}
 
 	// Removes unique markers from passed parameters, used by string functions.
-	private function killMarkers ( $parser, $text ) {
-		return preg_replace( $this->getMarkerRegex( $parser ), '' , $text );
+	private static function killMarkers ( $parser, $text ) {
+		return preg_replace( self::getMarkerRegex( $parser ), '' , $text );
 	}
 
 	/**
 	 * @return ExprParser
 	 */
-	function &getExprParser() {
-		if ( !isset( $this->mExprParser ) ) {
-			$this->mExprParser = new ExprParser;
+	public static function &getExprParser() {
+		if ( !isset( self::$mExprParser ) ) {
+			self::$mExprParser = new ExprParser;
 		}
-		return $this->mExprParser;
+		return self::$mExprParser;
 	}
 
-	function expr( $parser, $expr = '' ) {
+	public static function expr( $parser, $expr = '' ) {
 		try {
-			return $this->getExprParser()->doExpression( $expr );
+			return self::getExprParser()->doExpression( $expr );
 		} catch ( ExprError $e ) {
 			return $e->getMessage();
 		}
 	}
 
-	function ifexpr( $parser, $expr = '', $then = '', $else = '' ) {
+	public static function ifexpr( $parser, $expr = '', $then = '', $else = '' ) {
 		try {
-			$ret = $this->getExprParser()->doExpression( $expr );
+			$ret = self::getExprParser()->doExpression( $expr );
 			if ( is_numeric( $ret ) ) {
 				$ret = floatval( $ret );
 			}
@@ -81,18 +97,18 @@ class ExtParserFunctions {
 		}
 	}
 
-	function ifexprObj( $parser, $frame, $args ) {
+	public static function ifexprObj( $parser, $frame, $args ) {
 		$expr = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$then = isset( $args[1] ) ? $args[1] : '';
 		$else = isset( $args[2] ) ? $args[2] : '';
-		$result = $this->ifexpr( $parser, $expr, $then, $else );
+		$result = self::ifexpr( $parser, $expr, $then, $else );
 		if ( is_object( $result ) ) {
 			$result = trim( $frame->expand( $result ) );
 		}
 		return $result;
 	}
 
-	function ifHook( $parser, $test = '', $then = '', $else = '' ) {
+	public static function ifHook( $parser, $test = '', $then = '', $else = '' ) {
 		if ( $test !== '' ) {
 			return $then;
 		} else {
@@ -100,7 +116,7 @@ class ExtParserFunctions {
 		}
 	}
 
-	function ifObj( $parser, $frame, $args ) {
+	public static function ifObj( $parser, $frame, $args ) {
 		$test = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		if ( $test !== '' ) {
 			return isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
@@ -109,7 +125,7 @@ class ExtParserFunctions {
 		}
 	}
 
-	function ifeq( $parser, $left = '', $right = '', $then = '', $else = '' ) {
+	public static function ifeq( $parser, $left = '', $right = '', $then = '', $else = '' ) {
 		if ( $left == $right ) {
 			return $then;
 		} else {
@@ -117,7 +133,7 @@ class ExtParserFunctions {
 		}
 	}
 
-	function ifeqObj( $parser, $frame, $args ) {
+	public static function ifeqObj( $parser, $frame, $args ) {
 		$left = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$right = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
 		if ( $left == $right ) {
@@ -127,7 +143,7 @@ class ExtParserFunctions {
 		}
 	}
 
-	function iferror( $parser, $test = '', $then = '', $else = false ) {
+	public static function iferror( $parser, $test = '', $then = '', $else = false ) {
 		if ( preg_match( '/<(?:strong|span|p|div)\s(?:[^\s>]*\s+)*?class="(?:[^"\s>]*\s+)*?error(?:\s[^">]*)?"/', $test ) ) {
 			return $then;
 		} elseif ( $else === false ) {
@@ -137,11 +153,11 @@ class ExtParserFunctions {
 		}
 	}
 
-	function iferrorObj( $parser, $frame, $args ) {
+	public static function iferrorObj( $parser, $frame, $args ) {
 		$test = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$then = isset( $args[1] ) ? $args[1] : false;
 		$else = isset( $args[2] ) ? $args[2] : false;
-		$result = $this->iferror( $parser, $test, $then, $else );
+		$result = self::iferror( $parser, $test, $then, $else );
 		if ( $result === false ) {
 			return '';
 		} else {
@@ -149,7 +165,7 @@ class ExtParserFunctions {
 		}
 	}
 
-	function switchHook( $parser /*,...*/ ) {
+	public static function switchHook( $parser /*,...*/ ) {
 		$args = func_get_args();
 		array_shift( $args );
 		$primary = trim( array_shift( $args ) );
@@ -188,7 +204,7 @@ class ExtParserFunctions {
 		}
 	}
 
-	function switchObj( $parser, $frame, $args ) {
+	public static function switchObj( $parser, $frame, $args ) {
 		if ( count( $args ) == 0 ) {
 			return '';
 		}
@@ -248,7 +264,7 @@ class ExtParserFunctions {
 	 * Following subpage link syntax instead of standard path syntax, an
 	 * initial slash is treated as a relative path, and vice versa.
 	 */
-	public function rel2abs( $parser , $to = '' , $from = '' ) {
+	public static function rel2abs( $parser , $to = '' , $from = '' ) {
 
 		$from = trim( $from );
 		if ( $from == '' ) {
@@ -302,9 +318,10 @@ class ExtParserFunctions {
 		return implode( '/' , $newExploded );
 	}
 
-	function incrementIfexistCount( $parser, $frame ) {
+	public static function incrementIfexistCount( $parser, $frame ) {
 		// Don't let this be called more than a certain number of times. It tends to make the database explode.
 		global $wgExpensiveParserFunctionLimit;
+		self::registerClearHook();
 		$parser->mExpensiveFunctionCount++;
 		if ( $frame ) {
 			$pdbk = $frame->getPDBK( 1 );
@@ -316,11 +333,11 @@ class ExtParserFunctions {
 		return $parser->mExpensiveFunctionCount <= $wgExpensiveParserFunctionLimit;
 	}
 
-	function ifexist( $parser, $title = '', $then = '', $else = '' ) {
-		return $this->ifexistCommon( $parser, false, $title, $then, $else );
+	public static function ifexist( $parser, $title = '', $then = '', $else = '' ) {
+		return self::ifexistCommon( $parser, false, $title, $then, $else );
 	}
 
-	function ifexistCommon( $parser, $frame, $titletext = '', $then = '', $else = '' ) {
+	public static function ifexistCommon( $parser, $frame, $titletext = '', $then = '', $else = '' ) {
 		global $wgContLang;
 		$title = Title::newFromText( $titletext );
 		$wgContLang->findVariantLink( $titletext, $title, true );
@@ -329,7 +346,7 @@ class ExtParserFunctions {
 				/* If namespace is specified as NS_MEDIA, then we want to
 				 * check the physical file, not the "description" page.
 				 */
-				if ( !$this->incrementIfexistCount( $parser, $frame ) ) {
+				if ( !self::incrementIfexistCount( $parser, $frame ) ) {
 					return $else;
 				}
 				$file = wfFindFile( $title );
@@ -354,7 +371,7 @@ class ExtParserFunctions {
 			} else {
 				$pdbk = $title->getPrefixedDBkey();
 				$lc = LinkCache::singleton();
-				if ( !$this->incrementIfexistCount( $parser, $frame ) ) {
+				if ( !self::incrementIfexistCount( $parser, $frame ) ) {
 					return $else;
 				}
 				if ( 0 != ( $id = $lc->getGoodLinkID( $pdbk ) ) ) {
@@ -374,12 +391,12 @@ class ExtParserFunctions {
 		return $else;
 	}
 
-	function ifexistObj( $parser, $frame, $args ) {
+	public static function ifexistObj( $parser, $frame, $args ) {
 		$title = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$then = isset( $args[1] ) ? $args[1] : null;
 		$else = isset( $args[2] ) ? $args[2] : null;
 
-		$result = $this->ifexistCommon( $parser, $frame, $title, $then, $else );
+		$result = self::ifexistCommon( $parser, $frame, $title, $then, $else );
 		if ( $result === null ) {
 			return '';
 		} else {
@@ -387,10 +404,11 @@ class ExtParserFunctions {
 		}
 	}
 
-	function time( $parser, $format = '', $date = '', $local = false ) {
+	public static function time( $parser, $format = '', $date = '', $local = false ) {
 		global $wgContLang, $wgLocaltimezone;
-		if ( isset( $this->mTimeCache[$format][$date][$local] ) ) {
-			return $this->mTimeCache[$format][$date][$local];
+		self::registerClearHook();
+		if ( isset( self::$mTimeCache[$format][$date][$local] ) ) {
+			return self::$mTimeCache[$format][$date][$local];
 		}
 
 		# compute the timestamp string $ts
@@ -462,19 +480,19 @@ class ExtParserFunctions {
 		if ( $invalidTime ) {
 			$result = '<strong class="error">' . wfMsgForContent( 'pfunc_time_error' ) . '</strong>';
 		} else {
-			$this->mTimeChars += strlen( $format );
-			if ( $this->mTimeChars > $this->mMaxTimeChars ) {
+			self::$mTimeChars += strlen( $format );
+			if ( self::$mTimeChars > self::$mMaxTimeChars ) {
 				return '<strong class="error">' . wfMsgForContent( 'pfunc_time_too_long' ) . '</strong>';
 			} else {
 				$result = $wgContLang->sprintfDate( $format, $ts );
 			}
 		}
-		$this->mTimeCache[$format][$date][$local] = $result;
+		self::$mTimeCache[$format][$date][$local] = $result;
 		return $result;
 	}
 
-	function localTime( $parser, $format = '', $date = '' ) {
-		return $this->time( $parser, $format, $date, true );
+	public static function localTime( $parser, $format = '', $date = '' ) {
+		return self::time( $parser, $format, $date, true );
 	}
 
 	/**
@@ -487,7 +505,7 @@ class ExtParserFunctions {
 	 * @param int $offset Offset starting at 1
 	 * @return string
 	 */
-	public function titleparts( $parser, $title = '', $parts = 0, $offset = 0 ) {
+	public static function titleparts( $parser, $title = '', $parts = 0, $offset = 0 ) {
 		$parts = intval( $parts );
 		$offset = intval( $offset );
 		$ntitle = Title::newFromText( $title );
@@ -514,17 +532,17 @@ class ExtParserFunctions {
 	 * Get a ConvertParser object
 	 * @return ConvertParser
 	 */
-	protected function &getConvertParser() {
-		if ( !isset( $this->mConvertParser ) ) {
-			$this->mConvertParser = new ConvertParser;
+	protected static function &getConvertParser() {
+		if ( !isset( self::$mConvertParser ) ) {
+			self::$mConvertParser = new ConvertParser;
 		}
-		return $this->mConvertParser;
+		return self::$mConvertParser;
 	}
 
-	public function convert( /*...*/ ) {
+	public static function convert( /*...*/ ) {
 		try {
 			$args = func_get_args();
-			return $this->getConvertParser()->execute( $args );
+			return self::getConvertParser()->execute( $args );
 		} catch ( ConvertError $e ) {
 			return $e->getMessage();
 		}
@@ -537,7 +555,7 @@ class ExtParserFunctions {
 	}
 
 	// Generates error message.  Called when string is too long.
-	private function tooLongError() {
+	private static function tooLongError() {
 		global $wgPFStringLengthLimit, $wgContLang;
 		return '<strong class="error">' .
 			wfMsgExt( 'pfunc_string_too_long',
@@ -551,10 +569,10 @@ class ExtParserFunctions {
 	 *
 	 * Reports number of characters in string.
 	 */
-	function runLen ( $parser, $inStr = '' ) {
+	public static function runLen ( $parser, $inStr = '' ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( $parser, (string)$inStr );
+		$inStr = self::killMarkers( $parser, (string)$inStr );
 		$len = mb_strlen( $inStr );
 
 		wfProfileOut( __METHOD__ );
@@ -569,16 +587,16 @@ class ExtParserFunctions {
 	 * Note: If the needle is an empty string, single space is used instead.
 	 * Note: If the needle is not found, empty string is returned.
 	 */
-	function runPos ( $parser, $inStr = '', $inNeedle = '', $inOffset = 0 ) {
+	public static function runPos ( $parser, $inStr = '', $inNeedle = '', $inOffset = 0 ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( $parser, (string)$inStr );
-		$inNeedle = $this->killMarkers( $parser, (string)$inNeedle );
+		$inStr = self::killMarkers( $parser, (string)$inStr );
+		$inNeedle = self::killMarkers( $parser, (string)$inNeedle );
 
-		if ( !$this->checkLength( $inStr ) ||
-		    !$this->checkLength( $inNeedle ) ) {
+		if ( !self::checkLength( $inStr ) ||
+		    !self::checkLength( $inNeedle ) ) {
 			wfProfileOut( __METHOD__ );
-			return $this->tooLongError();
+			return self::tooLongError();
 		}
 
 		if ( $inNeedle == '' ) { $inNeedle = ' '; }
@@ -598,16 +616,16 @@ class ExtParserFunctions {
 	 * Note: If the needle is an empty string, single space is used instead.
 	 * Note: If the needle is not found, -1 is returned.
 	 */
-	function runRPos ( $parser, $inStr = '', $inNeedle = '' ) {
+	public static function runRPos ( $parser, $inStr = '', $inNeedle = '' ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( $parser, (string)$inStr );
-		$inNeedle = $this->killMarkers( $parser, (string)$inNeedle );
+		$inStr = self::killMarkers( $parser, (string)$inStr );
+		$inNeedle = self::killMarkers( $parser, (string)$inNeedle );
 
-		if ( !$this->checkLength( $inStr ) ||
-		    !$this->checkLength( $inNeedle ) ) {
+		if ( !self::checkLength( $inStr ) ||
+		    !self::checkLength( $inNeedle ) ) {
 			wfProfileOut( __METHOD__ );
-			return $this->tooLongError();
+			return self::tooLongError();
 		}
 
 		if ( $inNeedle == '' ) { $inNeedle = ' '; }
@@ -631,14 +649,14 @@ class ExtParserFunctions {
 	 * Note: A negative value for "length" returns a string reduced in
 	 *   length by that amount.
 	 */
-	function runSub ( $parser, $inStr = '', $inStart = 0, $inLength = 0 ) {
+	public static function runSub ( $parser, $inStr = '', $inStart = 0, $inLength = 0 ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( $parser, (string)$inStr );
+		$inStr = self::killMarkers( $parser, (string)$inStr );
 
-		if ( !$this->checkLength( $inStr ) ) {
+		if ( !self::checkLength( $inStr ) ) {
 			wfProfileOut( __METHOD__ );
-			return $this->tooLongError();
+			return self::tooLongError();
 		}
 
 		if ( intval( $inLength ) == 0 ) {
@@ -658,16 +676,16 @@ class ExtParserFunctions {
 	 *
 	 * Note: If "substr" is empty, a single space is used.
 	 */
-	function runCount ( $parser, $inStr = '', $inSubStr = '' ) {
+	public static function runCount ( $parser, $inStr = '', $inSubStr = '' ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( $parser, (string)$inStr );
-		$inSubStr = $this->killMarkers( $parser, (string)$inSubStr );
+		$inStr = self::killMarkers( $parser, (string)$inStr );
+		$inSubStr = self::killMarkers( $parser, (string)$inSubStr );
 
-		if ( !$this->checkLength( $inStr ) ||
-		    !$this->checkLength( $inSubStr ) ) {
+		if ( !self::checkLength( $inStr ) ||
+		    !self::checkLength( $inSubStr ) ) {
 			wfProfileOut( __METHOD__ );
-			return $this->tooLongError();
+			return self::tooLongError();
 		}
 
 		if ( $inSubStr == '' ) { $inSubStr = ' '; }
@@ -687,20 +705,20 @@ class ExtParserFunctions {
 	 * Note: Armored against replacements that would generate huge strings.
 	 * Note: If "from" is an empty string, single space is used instead.
 	 */
-	function runReplace( $parser, $inStr = '',
+	public static function runReplace( $parser, $inStr = '',
 			$inReplaceFrom = '', $inReplaceTo = '', $inLimit = -1 ) {
 		global $wgPFStringLengthLimit;
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( $parser, (string)$inStr );
-		$inReplaceFrom = $this->killMarkers( $parser, (string)$inReplaceFrom );
-		$inReplaceTo = $this->killMarkers( $parser, (string)$inReplaceTo );
+		$inStr = self::killMarkers( $parser, (string)$inStr );
+		$inReplaceFrom = self::killMarkers( $parser, (string)$inReplaceFrom );
+		$inReplaceTo = self::killMarkers( $parser, (string)$inReplaceTo );
 
-		if ( !$this->checkLength( $inStr ) ||
-		    !$this->checkLength( $inReplaceFrom ) ||
-		    !$this->checkLength( $inReplaceTo ) ) {
+		if ( !self::checkLength( $inStr ) ||
+		    !self::checkLength( $inReplaceFrom ) ||
+		    !self::checkLength( $inReplaceTo ) ) {
 			wfProfileOut( __METHOD__ );
-			return $this->tooLongError();
+			return self::tooLongError();
 		}
 
 		if ( $inReplaceFrom == '' ) { $inReplaceFrom = ' '; }
@@ -725,9 +743,9 @@ class ExtParserFunctions {
 		$result = preg_replace( '/' . $inReplaceFrom . '/u',
 						$inReplaceTo, $inStr, $limit );
 
-		if ( !$this->checkLength( $result ) ) {
+		if ( !self::checkLength( $result ) ) {
 			wfProfileOut( __METHOD__ );
-			return $this->tooLongError();
+			return self::tooLongError();
 		}
 
 		wfProfileOut( __METHOD__ );
@@ -745,18 +763,18 @@ class ExtParserFunctions {
 	 * Note: If the divider is an empty string, single space is used instead.
 	 * Note: Empty string is returned if there are not enough exploded chunks.
 	 */
-	function runExplode ( $parser, $inStr = '', $inDiv = '', $inPos = 0, $inLim = null ) {
+	public static function runExplode ( $parser, $inStr = '', $inDiv = '', $inPos = 0, $inLim = null ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( $parser, (string)$inStr );
-		$inDiv = $this->killMarkers( $parser, (string)$inDiv );
+		$inStr = self::killMarkers( $parser, (string)$inStr );
+		$inDiv = self::killMarkers( $parser, (string)$inDiv );
 
 		if ( $inDiv == '' ) { $inDiv = ' '; }
 
-		if ( !$this->checkLength( $inStr ) ||
-		    !$this->checkLength( $inDiv ) ) {
+		if ( !self::checkLength( $inStr ) ||
+		    !self::checkLength( $inDiv ) ) {
 			wfProfileOut( __METHOD__ );
-			return $this->tooLongError();
+			return self::tooLongError();
 		}
 
 		$inDiv = preg_quote( $inDiv, '/' );
@@ -780,13 +798,13 @@ class ExtParserFunctions {
 	 *
 	 * Decodes URL-encoded (like%20that) strings.
 	 */
-	function runUrlDecode( $parser, $inStr = '' ) {
+	public static function runUrlDecode( $parser, $inStr = '' ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = $this->killMarkers( $parser, (string)$inStr );
-		if ( !$this->checkLength( $inStr ) ) {
+		$inStr = self::killMarkers( $parser, (string)$inStr );
+		if ( !self::checkLength( $inStr ) ) {
 			wfProfileOut( __METHOD__ );
-			return $this->tooLongError();
+			return self::tooLongError();
 		}
 
 		$result = urldecode( $inStr );
