@@ -549,7 +549,7 @@ class ExtParserFunctions {
 	}
 
 	// Verifies parameter is less than max string length.
-	private function checkLength( $text ) {
+	private static function checkLength( $text ) {
 		global $wgPFStringLengthLimit;
 		return ( mb_strlen( $text ) < $wgPFStringLengthLimit );
 	}
