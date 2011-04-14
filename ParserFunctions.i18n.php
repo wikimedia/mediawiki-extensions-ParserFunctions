@@ -511,7 +511,7 @@ $messages['be-tarask'] = array(
  * @author Spiritia
  */
 $messages['bg'] = array(
-	'pfunc_desc' => 'Подобрвяване на парсера с логически функции',
+	'pfunc_desc' => 'Подобряване на парсера с логически функции',
 	'pfunc_time_error' => 'Грешка: невалидно време',
 	'pfunc_time_too_long' => 'Грешка: Твърде много извиквания на #time',
 	'pfunc_rel2abs_invalid_depth' => 'Грешка: Невалидна дълбочина в път: "$1" (опит за достъп на възел над корена)',
