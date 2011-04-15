@@ -204,6 +204,13 @@ class ExtParserFunctions {
 		}
 	}
 
+	/**
+	 * @static
+	 * @param $parser Parser
+	 * @param $frame PPFrame
+	 * @param $args
+	 * @return string
+	 */
 	public static function switchObj( $parser, $frame, $args ) {
 		if ( count( $args ) == 0 ) {
 			return '';
@@ -263,6 +270,8 @@ class ExtParserFunctions {
 	 *
 	 * Following subpage link syntax instead of standard path syntax, an
 	 * initial slash is treated as a relative path, and vice versa.
+	 *
+	 * @param $parser Parser
 	 */
 	public static function rel2abs( $parser , $to = '' , $from = '' ) {
 
@@ -318,6 +327,12 @@ class ExtParserFunctions {
 		return implode( '/' , $newExploded );
 	}
 
+	/**
+	 * @static
+	 * @param $parser Parser
+	 * @param $frame PPFrame
+	 * @return bool
+	 */
 	public static function incrementIfexistCount( $parser, $frame ) {
 		// Don't let this be called more than a certain number of times. It tends to make the database explode.
 		global $wgExpensiveParserFunctionLimit;
