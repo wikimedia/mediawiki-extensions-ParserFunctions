@@ -449,6 +449,11 @@ class ExtParserFunctions {
 					# if local time was not requested, convert to UTC
 					$tz = new DateTimeZone( 'UTC' );
 				}
+				
+				# Correct for DateTime interpreting 'XXXX' as XX:XX o'clock
+				if ( preg_match( '/^[0-9]{4}$/', $date ) ) {
+					$date = '00:00 '.$date;
+				}
 
 				# Parse date
 				if ( $date !== '' ) {
