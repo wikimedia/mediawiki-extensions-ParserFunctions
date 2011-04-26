@@ -419,11 +419,11 @@ class ExtParserFunctions {
 		}
 	}
 
-	public static function time( $parser, $format = '', $date = '', $local = false ) {
-		global $wgContLang, $wgLocaltimezone;
+	public static function time( $parser, $format = '', $date = '', $language = '', $local = false ) {
+		global $wgLang, $wgContLang, $wgLocaltimezone;
 		self::registerClearHook();
-		if ( isset( self::$mTimeCache[$format][$date][$local] ) ) {
-			return self::$mTimeCache[$format][$date][$local];
+		if ( isset( self::$mTimeCache[$format][$date][$language][$local] ) ) {
+			return self::$mTimeCache[$format][$date][$language][$local];
 		}
 
 		# compute the timestamp string $ts
@@ -504,15 +504,22 @@ class ExtParserFunctions {
 			if ( self::$mTimeChars > self::$mMaxTimeChars ) {
 				return '<strong class="error">' . wfMsgForContent( 'pfunc_time_too_long' ) . '</strong>';
 			} else {
-				$result = $wgContLang->sprintfDate( $format, $ts );
+				if ( $language == 'user' ) { // use user's interface language
+					$result = $wgLang->sprintfDate( $format, $ts );
+				} elseif ( $language !== '' ) { // use whatever language is passed as a parameter
+					$langObject = Language::factory( $language );
+					$result = $langObject->sprintfDate( $format, $ts );
+				} else { // use wiki's content language
+					$result = $wgContLang->sprintfDate( $format, $ts );
+				}
 			}
 		}
-		self::$mTimeCache[$format][$date][$local] = $result;
+		self::$mTimeCache[$format][$date][$language][$local] = $result;
 		return $result;
 	}
 
-	public static function localTime( $parser, $format = '', $date = '' ) {
-		return self::time( $parser, $format, $date, true );
+	public static function localTime( $parser, $format = '', $date = '', $language = '' ) {
+		return self::time( $parser, $format, $date, $language, true );
 	}
 
 	/**
