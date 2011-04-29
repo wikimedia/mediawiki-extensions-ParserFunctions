@@ -430,6 +430,13 @@ $messages['ast'] = array(
 	'pfunc_string_too_long' => 'Error: la cadena pasa la llende de $1 caráuteres',
 );
 
+/** Azerbaijani (Azərbaycanca)
+ * @author Cekli829
+ */
+$messages['az'] = array(
+	'pfunc_time_error' => 'Xəta: yanlış zaman',
+);
+
 /** Bashkir (Башҡортса)
  * @author Assele
  */
