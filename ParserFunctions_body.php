@@ -505,14 +505,11 @@ class ExtParserFunctions {
 				return '<strong class="error">' . wfMsgForContent( 'pfunc_time_too_long' ) . '</strong>';
 			} else {
 				if ( $ts < 100000000000000 ) { // Language can't deal with years after 9999
-					if ( $language == 'user' ) { // use user's interface language
-						$parser->getOptions()->getUserLang();
-						$result = $wgLang->sprintfDate( $format, $ts );
-					} elseif ( $language !== '' ) { // use whatever language is passed as a parameter
+					if ( $language !== '' ) { // use whatever language is passed as a parameter
 						$langObject = Language::factory( $language );
 						$result = $langObject->sprintfDate( $format, $ts );
 					} else { // use wiki's content language
-						$result = $wgContLang->sprintfDate( $format, $ts );
+						$result = $parser->getFunctionLang()->sprintfDate( $format, $ts );
 					}
 				} else {
 					return '<strong class="error">' . wfMsgForContent( 'pfunc_time_too_big' ) . '</strong>';
