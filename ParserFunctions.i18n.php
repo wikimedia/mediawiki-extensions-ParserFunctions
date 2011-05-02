@@ -12,6 +12,7 @@ $messages['en'] = array(
 	'pfunc_desc'                            => 'Enhance parser with logical functions',
 	'pfunc_time_error'                      => 'Error: invalid time',
 	'pfunc_time_too_long'                   => 'Error: too many #time calls',
+	'pfunc_time_too_big'                    => 'Error: #time only supports years up to 9999',
 	'pfunc_rel2abs_invalid_depth'           => 'Error: Invalid depth in path: "$1" (tried to access a node above the root node)',
 	'pfunc_expr_stack_exhausted'            => 'Expression error: Stack exhausted',
 	'pfunc_expr_unexpected_number'          => 'Expression error: Unexpected number',
