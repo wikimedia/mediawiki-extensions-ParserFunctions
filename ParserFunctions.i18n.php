@@ -717,6 +717,7 @@ $messages['de'] = array(
 	'pfunc_desc' => 'Erweitert den Parser um logische Funktionen',
 	'pfunc_time_error' => 'Fehler: Ungültige Zeitangabe',
 	'pfunc_time_too_long' => 'Fehler: Zu viele #time-Aufrufe',
+	'pfunc_time_too_big' => 'Fehler: #time unterstützt nur Jahre bis 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Fehler: Ungültige Pfadtiefe: „$1“ (Zugriff auf einen Knotenpunkt oberhalb des Hauptknotenpunktes ist empfohlen)',
 	'pfunc_expr_stack_exhausted' => 'Expression-Fehler: Stacküberlauf',
 	'pfunc_expr_unexpected_number' => 'Expression-Fehler: Unerwartete Zahl',
@@ -1025,6 +1026,7 @@ $messages['frp'] = array(
 
 /** Galician (Galego)
  * @author Alma
+ * @author Elisardojm
  * @author Toliño
  * @author Xosé
  */
@@ -1032,6 +1034,7 @@ $messages['gl'] = array(
 	'pfunc_desc' => 'Mellora o analizador con funcións lóxicas',
 	'pfunc_time_error' => 'Erro: hora non válida',
 	'pfunc_time_too_long' => 'Erro: demasiadas chamadas #time',
+	'pfunc_time_too_big' => 'Erro: #time só permite anos ata o 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Erro: profundidade da ruta non válida: "$1" (tentouse acceder a un nodo por riba do nodo raíz)',
 	'pfunc_expr_stack_exhausted' => 'Erro de expresión: pila esgotada',
 	'pfunc_expr_unexpected_number' => 'Erro de expresión: número inesperado',
@@ -1242,6 +1245,7 @@ $messages['id'] = array(
 	'pfunc_desc' => 'Mengembangkan parser dengan fungsi logis',
 	'pfunc_time_error' => 'Kesalahan: waktu tidak valid',
 	'pfunc_time_too_long' => 'Kesalahan: Pemanggilan #time terlalu banyak',
+	'pfunc_time_too_big' => 'Galat: #time hanya mendukung tahun hingga 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Kesalahan: Kedalaman path tidak valid: "$1" (mencoba mengakses simpul di atas simpul akar)',
 	'pfunc_expr_stack_exhausted' => 'Kesalahan ekspresi: Stack habis',
 	'pfunc_expr_unexpected_number' => 'Kesalahan ekspresi: Angka yang tak terduga',
@@ -1299,12 +1303,14 @@ $messages['it'] = array(
  * @author Aotake
  * @author Fryed-peach
  * @author JtFuruhata
+ * @author Ohgi
  * @author 青子守歌
  */
 $messages['ja'] = array(
 	'pfunc_desc' => 'パーサーに論理関数を追加して拡張する',
 	'pfunc_time_error' => 'エラー: 時刻が不正です',
 	'pfunc_time_too_long' => 'エラー: #time 呼び出しが多すぎます',
+	'pfunc_time_too_big' => 'エラー: #timeは最大で9999年までです。',
 	'pfunc_rel2abs_invalid_depth' => 'エラー: パス "$1" の階層が不正です(ルート階層からのアクセスをお試しください)',
 	'pfunc_expr_stack_exhausted' => '構文エラー: スタックが空です',
 	'pfunc_expr_unexpected_number' => '構文エラー: 予期せぬ数字です',
@@ -1554,6 +1560,7 @@ $messages['mk'] = array(
 	'pfunc_desc' => 'Проширување на можностите на парсерот со логички функции',
 	'pfunc_time_error' => 'Грешка: погрешен формат за време',
 	'pfunc_time_too_long' => 'Грешка: премногу повикувања на функцијата #time',
+	'pfunc_time_too_big' => 'Грешка: #time поддржува само години до 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Грешка: Неважечка длабочина во патеката: „$1“ (обид за пристап до јазол кој се наоѓа повисоко од коренитиот)',
 	'pfunc_expr_stack_exhausted' => 'Грешка во изразот: Складот е преполн',
 	'pfunc_expr_unexpected_number' => 'Грешка во изразот: Неочекуван број',
@@ -1580,6 +1587,7 @@ $messages['ml'] = array(
 	'pfunc_desc' => 'ലോജിക്കൽ ഫങ്ഷൻസ് ഉപയോഗിച്ച് പാർസർ വിപുലപ്പെടുത്തുക',
 	'pfunc_time_error' => 'പിഴവ്:അസാധുവായ സമയം',
 	'pfunc_time_too_long' => 'പിഴവ്: വളരെയധികം #സമയ കാളുകൾ',
+	'pfunc_time_too_big' => 'പിഴവ്: 9999 വരെയുള്ള വർഷങ്ങൾ മാത്രമേ #time പിന്തുണയ്ക്കുന്നുള്ളു',
 	'pfunc_rel2abs_invalid_depth' => 'പിഴവ്: പഥത്തിൽ അസാധുവായ ആഴം: "$1" (റൂട്ട് തലത്തിനും മുകളിലുള്ള തലം എടുക്കാനുള്ള ശ്രമം)',
 	'pfunc_expr_stack_exhausted' => 'എക്സ്‌പ്രെഷൻ പിഴവ്: സ്റ്റാക്ക് പുറന്തള്ളിയിരിക്കുന്നു',
 	'pfunc_expr_unexpected_number' => 'പ്രയോഗരീതിയിൽ പിഴവ്: പ്രതീക്ഷിക്കാത്ത സംഖ്യ',
@@ -1704,6 +1712,7 @@ $messages['nl'] = array(
 	'pfunc_desc' => 'Verrijkt de parser met logische functies',
 	'pfunc_time_error' => 'Fout: ongeldige tijd',
 	'pfunc_time_too_long' => 'Fout: #time te vaak aangeroepen',
+	'pfunc_time_too_big' => 'Fout: #time ondersteunt jaren tot maximaal 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Fout: ongeldige diepte in pad: "$1" (probeerde een node boven de stamnode aan te roepen)',
 	'pfunc_expr_stack_exhausted' => 'Fout in uitdrukking: stack uitgeput',
 	'pfunc_expr_unexpected_number' => 'Fout in uitdrukking: onverwacht getal',
@@ -2148,6 +2157,7 @@ $messages['sl'] = array(
 	'pfunc_desc' => 'Izboljša razčlenjevalnik z logičnimi funkcijami',
 	'pfunc_time_error' => 'Napaka: neveljaven čas',
 	'pfunc_time_too_long' => 'Napaka: preveč klicev #time',
+	'pfunc_time_too_big' => 'Napaka: #time podpira samo leta do 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Napaka: Neveljavna globina poti: »$1« (poskus dostopanja do vozlišča višjega od korenskega vozlišča)',
 	'pfunc_expr_stack_exhausted' => 'Napaka v izrazu: Sklad je izčrpan',
 	'pfunc_expr_unexpected_number' => 'Napaka v izrazu: Nepričakovani število',
@@ -2533,6 +2543,7 @@ $messages['vi'] = array(
 	'pfunc_desc' => 'Nâng cao bộ xử lý với những hàm cú pháp lôgic',
 	'pfunc_time_error' => 'Lỗi: thời gian không hợp lệ',
 	'pfunc_time_too_long' => 'Lỗi: quá nhiều lần gọi #time',
+	'pfunc_time_too_big' => 'Lỗi: #time chỉ hỗ trợ các năm cho tới 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Lỗi: độ sâu không hợp lệ trong đường dẫn “$1” (do cố gắng truy cập nút phía trên nút gốc)',
 	'pfunc_expr_stack_exhausted' => 'Lỗi biểu thức: Đã cạn stack',
 	'pfunc_expr_unexpected_number' => 'Lỗi biểu thức: Dư số',
