@@ -496,6 +496,7 @@ $messages['be-tarask'] = array(
 	'pfunc_desc' => 'Палепшаны парсэр зь лягічнымі функцыямі',
 	'pfunc_time_error' => 'Памылка: няслушны час',
 	'pfunc_time_too_long' => 'Памылка: зашмат выклікаў функцыі #time',
+	'pfunc_time_too_big' => 'Памылка: #time падтрымлівае гады толькі ў дыяпазоне да 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Памылка: няслушная глыбіня шляху: «$1» (спроба доступу да вузла, які знаходзіцца вышэй карэннага)',
 	'pfunc_expr_stack_exhausted' => 'Памылка выразу: стэк перапоўнены',
 	'pfunc_expr_unexpected_number' => 'Памылка выразу: нечаканая лічба',
@@ -572,6 +573,7 @@ $messages['br'] = array(
 	'pfunc_desc' => "Gwellaat a ra ar parser gant arc'hwelioù poellek",
 	'pfunc_time_error' => 'Fazi : pad direizh',
 	'pfunc_time_too_long' => 'Fazi : betek re eo bet galvet #time',
+	'pfunc_time_too_big' => 'Fazi: #time ne skor nemet bloazioù betek 9999',
 	'pfunc_rel2abs_invalid_depth' => "Fazi : Donder direizh evit an hent : \"\$1\" (klasket ez eus bet mont d'ul live a-us d'ar c'havlec'h-mamm)",
 	'pfunc_expr_stack_exhausted' => 'Kemennad faziek : pil riñset',
 	'pfunc_expr_unexpected_number' => "Kemennad faziek : niver dic'hortoz",
@@ -1085,11 +1087,14 @@ $messages['gsw'] = array(
 	'pfunc_string_too_long' => 'Fähler: d Zeichechette het meh wie di zuelässig Zahl vu $1 Zeiche',
 );
 
-/** Hebrew (עברית) */
+/** Hebrew (עברית)
+ * @author Amire80
+ */
 $messages['he'] = array(
 	'pfunc_desc' => 'הוספת פונקציות לוגיות למפענח',
 	'pfunc_time_error' => 'שגיאה: זמן שגוי',
 	'pfunc_time_too_long' => 'שגיאה: שימוש ב"#זמן" פעמים רבות מדי',
+	'pfunc_time_too_big' => 'שגיאה: #זמן תומכת רק בשנים עד 9999',
 	'pfunc_rel2abs_invalid_depth' => 'שגיאה: עומק שגוי בנתיב: "$1" (ניסיון כניסה לצומת מעל צומת השורש)',
 	'pfunc_expr_stack_exhausted' => 'שגיאה בביטוי: המחסנית מלאה',
 	'pfunc_expr_unexpected_number' => 'שגיאה בביטוי: מספר בלתי צפוי',
@@ -1193,6 +1198,7 @@ $messages['hu'] = array(
 	'pfunc_desc' => 'Az értelmező kiegészítése logikai funkciókkal',
 	'pfunc_time_error' => 'Hiba: érvénytelen idő',
 	'pfunc_time_too_long' => 'Hiba: a #time túl sokszor lett meghívva',
+	'pfunc_time_too_big' => 'Hiba: a #time csak 9999-ig támogatja az éveket',
 	'pfunc_rel2abs_invalid_depth' => 'Hiba: nem megfelelő a mélység az elérési útban: „$1” (egy olyan csomópontot akartál elérni, amely a gyökércsomópont felett van)',
 	'pfunc_expr_stack_exhausted' => 'Hiba a kifejezésben: a verem kiürült',
 	'pfunc_expr_unexpected_number' => 'Hiba a kifejezésben: nem várt szám',
@@ -1218,6 +1224,7 @@ $messages['ia'] = array(
 	'pfunc_desc' => 'Meliorar le analysator syntactic con functiones logic',
 	'pfunc_time_error' => 'Error: tempore invalide',
 	'pfunc_time_too_long' => 'Error: troppo de appellos a #time',
+	'pfunc_time_too_big' => 'Error: #time supporta solmente annos usque a 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Error: Profunditate invalide in cammino: "$1" (essayava acceder a un nodo superior al radice)',
 	'pfunc_expr_stack_exhausted' => 'Error in expression: Pila exhaurite',
 	'pfunc_expr_unexpected_number' => 'Error in expression: Numero non expectate',
@@ -1273,6 +1280,7 @@ $messages['io'] = array(
 );
 
 /** Italian (Italiano)
+ * @author Beta16
  * @author BrokenArrow
  * @author Darth Kule
  * @author Pietrodn
@@ -1281,6 +1289,7 @@ $messages['it'] = array(
 	'pfunc_desc' => 'Aggiunge al parser una serie di funzioni logiche',
 	'pfunc_time_error' => 'Errore: orario non valido',
 	'pfunc_time_too_long' => 'Errore: troppe chiamate a #time',
+	'pfunc_time_too_big' => "Errore: #time supporta solo fino all'anno 9999",
 	'pfunc_rel2abs_invalid_depth' => 'Errore: profondità non valida nel percorso "$1" (si è tentato di accedere a un nodo superiore alla radice)',
 	'pfunc_expr_stack_exhausted' => "Errore nell'espressione: stack esaurito",
 	'pfunc_expr_unexpected_number' => "Errore nell'espressione: numero inatteso",
@@ -1818,6 +1827,7 @@ $messages['pl'] = array(
 	'pfunc_desc' => 'Rozszerza analizator składni o funkcje logiczne',
 	'pfunc_time_error' => 'Błąd – niepoprawny czas',
 	'pfunc_time_too_long' => 'Błąd – zbyt wiele wywołań funkcji #time',
+	'pfunc_time_too_big' => 'Błąd – rok w #time nie może być większy niż 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Błąd – nieprawidłowa głębokość w ścieżce „$1” (próba dostępu do węzła powyżej korzenia)',
 	'pfunc_expr_stack_exhausted' => 'Błąd w wyrażeniu – stos wyczerpany',
 	'pfunc_expr_unexpected_number' => 'Błąd w wyrażeniu – nieoczekiwana liczba',
@@ -1878,6 +1888,7 @@ $messages['pt'] = array(
 	'pfunc_desc' => 'Adiciona funções lógicas ao analisador sintáctico',
 	'pfunc_time_error' => 'Erro: tempo inválido',
 	'pfunc_time_too_long' => 'Erro: demasiadas chamadas a #time',
+	'pfunc_time_too_big' => 'Erro: #time só lida com anos até 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Erro: Profundidade inválida no caminho: "$1" (foi tentado o acesso a um nó acima do nó raiz)',
 	'pfunc_expr_stack_exhausted' => 'Erro de expressão: Pilha esgotada',
 	'pfunc_expr_unexpected_number' => 'Erro de expressão: Número inesperado',
@@ -1898,11 +1909,13 @@ $messages['pt'] = array(
 
 /** Brazilian Portuguese (Português do Brasil)
  * @author Eduardo.mps
+ * @author Giro720
  */
 $messages['pt-br'] = array(
 	'pfunc_desc' => 'Melhora o analisador (parser) com funções lógicas',
 	'pfunc_time_error' => 'Erro: tempo inválido',
 	'pfunc_time_too_long' => 'Erro: muitas chamadas a #time',
+	'pfunc_time_too_big' => 'Erro: #time só lida com anos até 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Erro: Profundidade inválida no caminho: "$1" (foi tentado o acesso a um nó acima do nó raiz)',
 	'pfunc_expr_stack_exhausted' => 'Erro de expressão: Pilha esgotada',
 	'pfunc_expr_unexpected_number' => 'Erro de expressão: Número inesperado',
@@ -2005,6 +2018,7 @@ $messages['ru'] = array(
 	'pfunc_desc' => 'Улучшенный синтаксический анализатор с логическими функциями',
 	'pfunc_time_error' => 'Ошибка: неправильное время',
 	'pfunc_time_too_long' => 'Ошибка: слишком много вызовов функции #time',
+	'pfunc_time_too_big' => 'Ошибка. Параметр #time не может превышать 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Ошибка: ошибочная глубина пути: «$1» (попытка доступа к узлу, находящемуся выше, чем корневой)',
 	'pfunc_expr_stack_exhausted' => 'Ошибка выражения: переполнение стека',
 	'pfunc_expr_unexpected_number' => 'Ошибка выражения: неожидаемое число',
