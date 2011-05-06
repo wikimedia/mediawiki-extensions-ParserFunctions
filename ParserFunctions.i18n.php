@@ -665,6 +665,7 @@ $messages['cs'] = array(
 	'pfunc_desc' => 'Rozšíření parseru o logické funkce',
 	'pfunc_time_error' => 'Chyba: neplatný čas',
 	'pfunc_time_too_long' => 'Chyba: příliš mnoho volání #time',
+	'pfunc_time_too_big' => 'Chyba: #time nepodporuje roky nad 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Chyba: Neplatná hloubka v cestě: "$1" (pokus o přístup do uzlu vyššího než kořen)',
 	'pfunc_expr_stack_exhausted' => 'Chyba ve výrazu: Zásobník plně obsazen',
 	'pfunc_expr_unexpected_number' => 'Chyba ve výrazu: Očekáváno číslo',
@@ -983,6 +984,7 @@ $messages['fr'] = array(
 	'pfunc_desc' => 'Améliore le parseur avec des fonctions logiques',
 	'pfunc_time_error' => 'Erreur : durée invalide',
 	'pfunc_time_too_long' => 'Erreur : appels trop nombreux à <code>#time</code>',
+	'pfunc_time_too_big' => 'Erreur : #time prend uniquement en charge des années jusqu’à 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Erreur: profondeur invalide dans le chemin « $1 » (a essayé d’accéder à un niveau au-dessus du nœud racine)',
 	'pfunc_expr_stack_exhausted' => 'Erreur d’expression : pile épuisée',
 	'pfunc_expr_unexpected_number' => 'Erreur d’expression : nombre inattendu',
@@ -1854,6 +1856,7 @@ $messages['pms'] = array(
 	'pfunc_desc' => 'Mijora ël parse con funsion lògiche',
 	'pfunc_time_error' => 'Eror: temp nen bon',
 	'pfunc_time_too_long' => 'Eror: #time a ven ciamà tròpe vire',
+	'pfunc_time_too_big' => 'Eror: #time a përmëtt mach agn fin al 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Eror: profondità nen bon-a ant ël përcors: "$1" (a l\'é provasse a ciamé un grop dzora a la rèis)',
 	'pfunc_expr_stack_exhausted' => "Eror ëd l'espression: stach esaurìa",
 	'pfunc_expr_unexpected_number' => "Eror ëd l'espression: nùmer pa spetà",
@@ -2662,11 +2665,13 @@ $messages['zh-hans'] = array(
  * @author Liangent
  * @author Mark85296341
  * @author Shinjiman
+ * @author Waihorace
  */
 $messages['zh-hant'] = array(
 	'pfunc_desc' => '用邏輯函數加強解析器',
 	'pfunc_time_error' => '錯誤：無效時間',
 	'pfunc_time_too_long' => '錯誤：過多的 #time 呼叫',
+	'pfunc_time_too_big' => '錯誤：#時間只支援至9999年',
 	'pfunc_rel2abs_invalid_depth' => '錯誤：無效路徑深度：「$1」（嘗試訪問頂點以上節點）',
 	'pfunc_expr_stack_exhausted' => '表達式錯誤：堆疊耗盡',
 	'pfunc_expr_unexpected_number' => '表達式錯誤：未預料的數字',
