@@ -1618,12 +1618,14 @@ $messages['ml'] = array(
 );
 
 /** Marathi (मराठी)
+ * @author Htt
  * @author Kaustubh
  */
 $messages['mr'] = array(
 	'pfunc_desc' => 'तार्किक कार्ये वापरून पार्सर वाढवा',
 	'pfunc_time_error' => 'त्रुटी: चुकीचा वेळ',
 	'pfunc_time_too_long' => 'त्रुटी: खूप जास्त #time कॉल्स',
+	'pfunc_time_too_big' => 'चूक: #वेळ फक्त ९९९९ सालापर्यंतच्या वर्षांना समर्थन देते',
 	'pfunc_rel2abs_invalid_depth' => 'त्रुटी: मार्गामध्ये चुकीची गहनता: "$1" (रूट नोडच्या वरील नोड शोधायचा प्रयत्न केला)',
 	'pfunc_expr_stack_exhausted' => 'एक्स्प्रेशन त्रुटी: स्टॅक संपला',
 	'pfunc_expr_unexpected_number' => 'एक्स्प्रेशन त्रुटी: अनपेक्षित क्रमांक',
