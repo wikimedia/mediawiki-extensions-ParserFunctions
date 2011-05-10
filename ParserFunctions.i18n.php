@@ -1946,6 +1946,7 @@ $messages['qu'] = array(
 	'pfunc_desc' => 'Parser nisqata sullwa ruranakunawan allinchay',
 	'pfunc_time_error' => 'Pantasqa: Pachaqa manam allinchu',
 	'pfunc_time_too_long' => 'Pantasqa: nisyu "#time" (pacha)',
+	'pfunc_time_too_big' => "Pantasqa: #time nisqaqa 9999 watallakamam watakunata q'imin",
 	'pfunc_rel2abs_invalid_depth' => 'Pantasqa: ñanpa ukhu kayninqa manam allinchu: "$1" (saphi khipu hawanpi kaq khiputam aypayta munaspa)',
 	'pfunc_expr_stack_exhausted' => 'Rikuchikuypi pantasqa: Nisyu tawqa',
 	'pfunc_expr_unexpected_number' => 'Rikuchikuypi pantasqa: Mana suyakusqa yupay',
