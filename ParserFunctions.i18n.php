@@ -2307,6 +2307,7 @@ $messages['su'] = array(
 );
 
 /** Swedish (Svenska)
+ * @author Ainali
  * @author Lejonel
  * @author M.M.S.
  * @author Najami
@@ -2315,6 +2316,7 @@ $messages['sv'] = array(
 	'pfunc_desc' => 'Lägger till logiska funktioner i parsern',
 	'pfunc_time_error' => 'Fel: ogiltig tid',
 	'pfunc_time_too_long' => 'Fel: för många anrop av #time',
+	'pfunc_time_too_big' => 'Fel: # tid stöder endast år fram till 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Fel: felaktig djup i sökväg: "$1" (försöker nå en nod ovanför rotnoden)',
 	'pfunc_expr_stack_exhausted' => 'Fel i uttryck: Stackutrymmet tog slut',
 	'pfunc_expr_unexpected_number' => 'Fel i uttryck: Oväntat tal',
