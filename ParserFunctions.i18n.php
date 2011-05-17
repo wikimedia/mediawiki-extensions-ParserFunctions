@@ -1071,6 +1071,7 @@ $messages['gsw'] = array(
 	'pfunc_desc' => 'Erwyteret dr Parser um logischi Funktione',
 	'pfunc_time_error' => 'Fähler: uugiltigi Zytaagab',
 	'pfunc_time_too_long' => 'Fähler: z vyyl #time-Ufruef',
+	'pfunc_time_too_big' => 'Fähler: #time unterstitzt nume Johr bis 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Fähler: uugültigi Tiefi im Pfad: „$1“ (Versuech, uf e Chnotepunkt oberhalb vum Hauptchnotepunkt zuezgryfe)',
 	'pfunc_expr_stack_exhausted' => 'Expression-Fähler: Stackiberlauf',
 	'pfunc_expr_unexpected_number' => 'Expression-Fähler: Nit erwarteti Zahl',
