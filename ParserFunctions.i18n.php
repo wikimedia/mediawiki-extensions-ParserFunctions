@@ -687,11 +687,13 @@ $messages['cs'] = array(
 /** Danish (Dansk)
  * @author Byrial
  * @author Morten LJ
+ * @author Peter Alberti
  */
 $messages['da'] = array(
 	'pfunc_desc' => 'Udvider parser med logiske funktioner',
 	'pfunc_time_error' => 'Fejl: Ugyldig tid',
-	'pfunc_time_too_long' => 'Felj: for mange kald af #time',
+	'pfunc_time_too_long' => 'Fejl: for mange kald af #time',
+	'pfunc_time_too_big' => 'Fejl: #time understøtter kun årstal frem til 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Fejl: Ugyldig dybde i sti: "$1" (prøvede at tilgå en knude over rodknuden)',
 	'pfunc_expr_stack_exhausted' => 'Udtryksfejl: Stak tømt',
 	'pfunc_expr_unexpected_number' => 'Fejl: Uventet tal',
@@ -707,7 +709,7 @@ $messages['da'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Ugyldigt argument for ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Udtryksfejl: Ukendt fejl ($1)',
 	'pfunc_expr_not_a_number' => 'I $1: Resultatet er ikke et tal',
-	'pfunc_string_too_long' => 'Feil: Strengen overskrider grænsen på $1 tegn',
+	'pfunc_string_too_long' => 'Fejl: Strengen overskrider grænsen på $1 tegn',
 );
 
 /** German (Deutsch)
@@ -920,6 +922,7 @@ $messages['eu'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Ebraminio
  * @author Huji
  * @author Wayiran
  */
@@ -927,6 +930,7 @@ $messages['fa'] = array(
 	'pfunc_desc' => 'به تجزیه‌گر، دستورهای منطقی می‌افزاید',
 	'pfunc_time_error' => 'خطا: زمان غیرمجاز',
 	'pfunc_time_too_long' => 'خطا: فراخوانی بیش از حد #time',
+	'pfunc_time_too_big' => 'خطا: <span style="direction: ltr; unicode-bidi: bidi-override;">#time</span> تا سال ۹۹۹۹ را فقط حمایت می‌کند.',
 	'pfunc_rel2abs_invalid_depth' => 'خطا: عمق غیر مجاز در نشانی «$1» (تلاش برای دسترسی به یک نشانی فراتر از نشانی ریشه)',
 	'pfunc_expr_stack_exhausted' => 'خطای عبارت: پشته از دست رفته',
 	'pfunc_expr_unexpected_number' => 'خطای عبارت: عدد دور از انتظار',
