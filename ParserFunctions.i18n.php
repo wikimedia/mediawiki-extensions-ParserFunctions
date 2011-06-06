@@ -341,12 +341,14 @@ $messages['an'] = array(
 );
 
 /** Arabic (العربية)
+ * @author Aiman titi
  * @author Meno25
  */
 $messages['ar'] = array(
 	'pfunc_desc' => 'محلل ممدد بدوال منطقية',
 	'pfunc_time_error' => 'خطأ: زمن غير صحيح',
 	'pfunc_time_too_long' => 'خطأ: استدعاءات #time كثيرة جدا',
+	'pfunc_time_too_big' => 'خطأ : # الوقت يدعم فقط حتى 9999 سنة',
 	'pfunc_rel2abs_invalid_depth' => 'خطأ: عمق غير صحيح في المسار: "$1" (حاول دخول عقدة فوق العقدة الجذرية)',
 	'pfunc_expr_stack_exhausted' => 'خطأ في التعبير: ستاك مجهد',
 	'pfunc_expr_unexpected_number' => 'خطأ في التعبير: رقم غير متوقع',
