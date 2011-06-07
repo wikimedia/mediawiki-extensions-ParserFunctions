@@ -2220,11 +2220,13 @@ $messages['sl'] = array(
 
 /** Albanian (Shqip)
  * @author Olsi
+ * @author Vinie007
  */
 $messages['sq'] = array(
 	'pfunc_desc' => 'Enhance parser me funksione logjike',
 	'pfunc_time_error' => 'Gabim: kohë e pavlefshme',
 	'pfunc_time_too_long' => 'Gabim: shumë #thirrje kohe',
+	'pfunc_time_too_big' => 'Gabim: # kohë mbështet vetëm vjet deri në 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Gabim: thellësi e pavlefshme në rrugë: "$1" (u përpoq për të hyrë në një nyje mbi nyjen e rrënjës)',
 	'pfunc_expr_stack_exhausted' => 'Gabim shprehjeje: Stack exhausted',
 	'pfunc_expr_unexpected_number' => 'Gabim shprehjeje: Numër i papritur',
