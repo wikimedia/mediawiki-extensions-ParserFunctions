@@ -602,6 +602,7 @@ $messages['bs'] = array(
 	'pfunc_desc' => 'Povisi parser sa logičnim funkcijama',
 	'pfunc_time_error' => 'Greška: vrijeme nije valjano',
 	'pfunc_time_too_long' => 'Greška: previše poziva funkcije #time',
+	'pfunc_time_too_big' => 'Greška: #time samo podržava godine do 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Graška: Nevrijedeća dubina u putu: "$1" (pokušaj dolaska na nula tačku iza korijenske nula tačke)',
 	'pfunc_expr_stack_exhausted' => 'Greška izraza: Stok potrošen',
 	'pfunc_expr_unexpected_number' => 'Greška izraza: Neočekivani broj',
