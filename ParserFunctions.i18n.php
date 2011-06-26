@@ -1476,6 +1476,7 @@ $messages['ko'] = array(
 	'pfunc_desc' => '파서에 논리 함수를 추가',
 	'pfunc_time_error' => '오류: 시간이 잘못되었습니다.',
 	'pfunc_time_too_long' => '오류: #time을 너무 많이 썼습니다.',
+	'pfunc_time_too_big' => '오류: #time 함수는 9999년까지만을 지원합니다.',
 	'pfunc_rel2abs_invalid_depth' => '오류: 경로 구조가 잘못되었습니다: "$1" (루트 노드 위의 노드에 접속을 시도했습니다)',
 	'pfunc_expr_stack_exhausted' => '표현 오류: 스택이 비어 있습니다.',
 	'pfunc_expr_unexpected_number' => '표현식 오류: 예상치 못한 값',
