@@ -1502,6 +1502,7 @@ $messages['ksh'] = array(
 	'pfunc_desc' => 'Deit em Wiki Funxione för Entscheidunge un esu dobei.',
 	'pfunc_time_error' => 'Fähler: Onjöltijje Zick.',
 	'pfunc_time_too_long' => 'Fähler: <code>#time</code> weed zo öff jebruch.',
+	'pfunc_time_too_big' => 'Ene Fähleres opjefalle: <code lang="en">#time</code> kann bloß bes nohm Johr 9999 jonn.',
 	'pfunc_rel2abs_invalid_depth' => 'Fähler: Zo fill „retuur“ em Pahdt „$1“ — mer wöre wigger wi för der Aanfang zeröck jejange.',
 	'pfunc_expr_stack_exhausted' => 'Fähler en enem Ußdrock: Dä löht der <i lang="en">stack</i> övverloufe.',
 	'pfunc_expr_unexpected_number' => 'Fähler en enem Ußdrock: En Zahl dom_mer nit äwaade.',
@@ -1667,6 +1668,7 @@ $messages['mr'] = array(
 );
 
 /** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
  * @author Aurora
  * @author Aviator
  * @author Kurniasan
@@ -1675,6 +1677,7 @@ $messages['ms'] = array(
 	'pfunc_desc' => 'Meningkatkan penghurai dengan fungsi-fungsi logik',
 	'pfunc_time_error' => 'Ralat: waktu tidak sah',
 	'pfunc_time_too_long' => 'Ralat: terlalu banyak panggilan #time',
+	'pfunc_time_too_big' => 'Ralat: #time hanya menyokong tahun sehingga 9999',
 	'pfunc_rel2abs_invalid_depth' => 'Ralat: Kedalaman tidak sah dalam laluan: "$1" (cubaan mencapai nod di atas nod induk)',
 	'pfunc_expr_stack_exhausted' => 'Ralat ungkapan: Tindanan tuntas',
 	'pfunc_expr_unexpected_number' => 'Ralat ungkapan: Nombor tidak dijangka',
