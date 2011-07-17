@@ -1994,6 +1994,7 @@ $messages['qu'] = array(
 
 /** Romanian (Română)
  * @author KlaudiuMihaila
+ * @author Minisarm
  * @author Stelistcristi
  */
 $messages['ro'] = array(
@@ -2008,7 +2009,7 @@ $messages['ro'] = array(
 	'pfunc_expr_unexpected_operator' => 'Eroare de expresie: operator $1 neașteptat',
 	'pfunc_expr_missing_operand' => 'Eroare de expresie: operand lipsă pentru $1',
 	'pfunc_expr_unexpected_closing_bracket' => 'Eroare de expresie: paranteză închisă neașteptată',
-	'pfunc_expr_unrecognised_punctuation' => 'Eroare de expresie: caracter de punctuație "$1" necunoscut',
+	'pfunc_expr_unrecognised_punctuation' => 'Eroare de expresie: caracter de punctuație „$1” necunoscut',
 	'pfunc_expr_unclosed_bracket' => 'Eroare de expresie: paranteză neînchisă',
 	'pfunc_expr_division_by_zero' => 'Împărțire la zero',
 	'pfunc_expr_invalid_argument' => 'Argument incorect pentru $1: < -1 sau > 1',
