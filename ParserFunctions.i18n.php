@@ -2026,6 +2026,7 @@ $messages['roa-tara'] = array(
 	'pfunc_desc' => "L'analizzatore avanzate cu le funziune loggeche",
 	'pfunc_time_error' => 'Errore: Orarie invalide',
 	'pfunc_time_too_long' => 'Errore: stonne troppe #time chiamate',
+	'pfunc_time_too_big' => "Errore: #time vole sulamende valore de anne 'mbonde a 9999",
 	'pfunc_rel2abs_invalid_depth' => "Errore: Profondità invalide jndr'à 'u percorse: \"\$1\" (s'à pruvate a pigghià 'nu node sus a 'u node radice)",
 	'pfunc_expr_stack_exhausted' => 'Espressione in errore: Stack anghiute',
 	'pfunc_expr_unexpected_number' => 'Espressione in errore: Numere inaspettate',
