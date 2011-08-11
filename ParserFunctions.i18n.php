@@ -2672,6 +2672,7 @@ $messages['yue'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Liangent
+ * @author PhiLiP
  * @author Philip
  * @author Shinjiman
  */
@@ -2679,6 +2680,7 @@ $messages['zh-hans'] = array(
 	'pfunc_desc' => '用逻辑函数加强解析器',
 	'pfunc_time_error' => '错误：无效时间',
 	'pfunc_time_too_long' => '错误：#time调用次数过多',
+	'pfunc_time_too_big' => '错误：#time只支持到9999年',
 	'pfunc_rel2abs_invalid_depth' => '错误：无效路径深度：“$1”（尝试访问根节点以上节点）',
 	'pfunc_expr_stack_exhausted' => '表达式错误：堆栈耗尽',
 	'pfunc_expr_unexpected_number' => '表达式错误：未预料的数字',
