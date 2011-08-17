@@ -829,6 +829,23 @@ $messages['el'] = array(
 	'pfunc_string_too_long' => 'Σφάλμα: ο ορμαθός υπερβαίνει $1 το όριο χαρακτήρων',
 );
 
+/**
+ * British english
+ * @author Happy-melon
+ */
+$messages['en-gb'] = array(
+	'pfunc-convert-unit-length-metre' => '{{PLURAL:$1|$2metre|$2metres}}',
+	'pfunc-convert-unit-area-squarekilometre'  => '{{PLURAL:$1|square kilometre|square kilometres}}',
+	'pfunc-convert-unit-area-squaremetre'      => '{{PLURAL:$1|square metre|square metres}}',
+	'pfunc-convert-unit-area-squarecentimetre' => '{{PLURAL:$1|square centimetre|square centimetres}}',
+	'pfunc-convert-unit-area-squaremillimetre' => '{{PLURAL:$1|square millimetre|square millimetres}}',
+	'pfunc-convert-unit-volume-cubicmetre'      => '{{PLURAL:$1|cubic metre|cubic metres}}',
+	'pfunc-convert-unit-volume-cubiccentimetre' => '{{PLURAL:$1|cubic centimetre|cubic centimetres}}',
+	'pfunc-convert-unit-volume-cubicmillimetre' => '{{PLURAL:$1|cubic millimetre|cubic millimetres}}',
+	'pfunc-convert-unit-volume-litre'           => '{{PLURAL:$1|$2litre|$2litres}}',
+	'pfunc-convert-unit-pressure-mmhg'              => '{{PLURAL:$1|milimetre of mercury|milimetres of mercury}}',
+);
+
 /** Esperanto (Esperanto)
  * @author Yekrats
  */
