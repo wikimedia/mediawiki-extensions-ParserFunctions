@@ -829,30 +829,6 @@ $messages['el'] = array(
 	'pfunc_string_too_long' => 'Σφάλμα: ο ορμαθός υπερβαίνει $1 το όριο χαρακτήρων',
 );
 
-/**
- * British english
- * @author Happy-melon
- */
-$messages['en-gb'] = array(
-	# LENGTH
-	'pfunc-convert-unit-length-metre' => '{{PLURAL:$1|$2metre|$2metres}}',
-	
-	# AREA #
-	'pfunc-convert-unit-area-squarekilometre'  => '{{PLURAL:$1|square kilometre|square kilometres}}',
-	'pfunc-convert-unit-area-squaremetre'      => '{{PLURAL:$1|square metre|square metres}}',
-	'pfunc-convert-unit-area-squarecentimetre' => '{{PLURAL:$1|square centimetre|square centimetres}}',
-	'pfunc-convert-unit-area-squaremillimetre' => '{{PLURAL:$1|square millimetre|square millimetres}}',
-	
-	# VOLUME #
-	'pfunc-convert-unit-volume-cubicmetre'      => '{{PLURAL:$1|cubic metre|cubic metres}}',
-	'pfunc-convert-unit-volume-cubiccentimetre' => '{{PLURAL:$1|cubic centimetre|cubic centimetres}}',
-	'pfunc-convert-unit-volume-cubicmillimetre' => '{{PLURAL:$1|cubic millimetre|cubic millimetres}}',
-	'pfunc-convert-unit-volume-litre'           => '{{PLURAL:$1|$2litre|$2litres}}',
-
-	# PRESSURE
-	'pfunc-convert-unit-pressure-mmhg'              => '{{PLURAL:$1|milimetre of mercury|milimetres of mercury}}',
-);
-
 /** Esperanto (Esperanto)
  * @author Yekrats
  */
@@ -1998,14 +1974,15 @@ $messages['qu'] = array(
  * @author Stelistcristi
  */
 $messages['ro'] = array(
-	'pfunc_desc' => 'Îmbunătățiți parser-ul cu funcții logice',
+	'pfunc_desc' => 'Îmbunătățește parserul cu funcții logice',
 	'pfunc_time_error' => 'Eroare: timp incorect',
 	'pfunc_time_too_long' => 'Eroare: prea multe apeluri #time',
-	'pfunc_rel2abs_invalid_depth' => 'Eroare: adâncime incorectă în cale: "$1" (încercat accesarea unui nod deasupra nodului rădăcină)',
-	'pfunc_expr_stack_exhausted' => 'Eroare de expresie: Stivă epuizată',
+	'pfunc_time_too_big' => 'Eroare: #time acceptă doar ani până la 9999',
+	'pfunc_rel2abs_invalid_depth' => 'Eroare: adâncime incorectă în cale: „$1” (încercat accesarea unui nod deasupra nodului rădăcină)',
+	'pfunc_expr_stack_exhausted' => 'Eroare de expresie: stivă epuizată',
 	'pfunc_expr_unexpected_number' => 'Eroare de expresie: număr neașteptat',
 	'pfunc_expr_preg_match_failure' => 'Eroare de expresie: eșuare preg_match neașteptată',
-	'pfunc_expr_unrecognised_word' => 'Eroare de expresie: "$1" este cuvânt necunoscut',
+	'pfunc_expr_unrecognised_word' => 'Eroare de expresie: „$1” este un cuvânt nerecunoscut',
 	'pfunc_expr_unexpected_operator' => 'Eroare de expresie: operator $1 neașteptat',
 	'pfunc_expr_missing_operand' => 'Eroare de expresie: operand lipsă pentru $1',
 	'pfunc_expr_unexpected_closing_bracket' => 'Eroare de expresie: paranteză închisă neașteptată',
@@ -2016,7 +1993,7 @@ $messages['ro'] = array(
 	'pfunc_expr_invalid_argument_ln' => 'Argument incorect pentru ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Eroare de expresie: eroare necunoscută ($1)',
 	'pfunc_expr_not_a_number' => 'În $1: rezultatul nu este un număr',
-	'pfunc_string_too_long' => 'Eroare: Şirul depășește limita de caractere de $1',
+	'pfunc_string_too_long' => 'Eroare: șirul depășește limita de caractere de $1',
 );
 
 /** Tarandíne (Tarandíne)
@@ -2097,7 +2074,7 @@ $messages['rue'] = array(
 	'pfunc_string_too_long' => 'Хыба: Ланц є довшый як $1 {{PLURAL:$1|знак|знакы|знаків}}, што є ліміт',
 );
 
-/** Yakut (Саха тыла)
+/** Sakha (Саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
