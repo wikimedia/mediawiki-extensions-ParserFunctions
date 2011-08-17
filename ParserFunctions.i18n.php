@@ -28,12 +28,12 @@ $messages['en'] = array(
 	'pfunc_expr_invalid_argument_ln'        => 'Invalid argument for ln: <= 0.',
 	'pfunc_expr_unknown_error'              => 'Expression error: Unknown error ($1).',
 	'pfunc_expr_not_a_number'               => 'In $1: Result is not a number.',
-	'pfunc_string_too_long'                 => 'Error: String exceeds $1 character limit',
+	'pfunc_string_too_long'                 => 'Error: String exceeds $1 character limit.',
 	'pfunc-convert-dimensionmismatch'       => 'Error: Cannot convert between units of "$1" and "$2".',
 	'pfunc-convert-unknownunit'             => 'Error: Unknown unit "$1".',
 	'pfunc-convert-unknowndimension'        => 'Error: Unknown dimension "$1".',
 	'pfunc-convert-invalidcompoundunit'     => 'Error: Invalid compound unit "$1".',
-	'pfunc-convert-nounit'                  => 'Error: No source unit given',
+	'pfunc-convert-nounit'                  => 'Error: No source unit given.',
 	'pfunc-convert-doublecompoundunit'      => 'Error: Cannot parse double compound units like "$1".',
 
 	# DIMENSION NAMES
