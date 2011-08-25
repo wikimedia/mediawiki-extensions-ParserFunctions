@@ -563,7 +563,7 @@ class ConvertUnit {
 
 			'bar'               => array( 100000, 'bar', false ),
 			'decibar'           => array( 10000, 'dbar', false ),
-			'milibar'           => array( 100 , 'mbar|mb', false ),
+			'millibar'          => array( 100 , 'mbar|mb', false ),
 			'kilobarye'         => array( 100, 'kba', false ),
 			'barye'             => array( 0.1, 'ba', false ),
 			
@@ -588,7 +588,7 @@ class ConvertUnit {
 	 */
 	protected static $prefixes = array(
 		'kilo'  => array( 1E3,  'k' ),
-		'mili'  => array( 1E-3, 'm' ),
+		'milli' => array( 1E-3, 'm' ),
 		'centi' => array( 1E-2, 'c' ),
 		'giga'  => array( 1E9,  'G' ),
 		'micro' => array( 1E-6, '(?:\x{03BC}|\x{00B5})' ), # There are two similar mu characters
