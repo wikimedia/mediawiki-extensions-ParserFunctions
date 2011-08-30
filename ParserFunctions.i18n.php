@@ -269,6 +269,7 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Jon Harald Søby
+ * @author Kghbln
  * @author Meno25
  * @author Siebrand
  * @author The Evil IP address
@@ -277,6 +278,8 @@ $messages['qqq'] = array(
 	'pfunc_desc' => '{{desc}}',
 	'pfunc_expr_division_by_zero' => '{{Identical|Divizion by zero}}',
 	'pfunc_string_too_long' => 'PLURAL is supported for $1.',
+	'pfunc-convert-unit-length-parsec-abbr' => 'The $2 is directly connected to the abbreviated unit to hold abbreviations like "kilo", "milli", "pico", etc.',
+	'pfunc-convert-unit-length-lightyear-abbr' => 'The $2 is directly connected to the abbreviated unit to hold abbreviations like "kilo", "milli", "pico", etc.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -775,6 +778,7 @@ $messages['cs'] = array(
 	'pfunc-convert-prefix-atto' => 'atto',
 	'pfunc-convert-prefix-zepto' => 'zepto',
 	'pfunc-convert-prefix-yocto' => 'yokto',
+	'pfunc-convert-prefix-milli-abbr' => 'm',
 	'pfunc-convert-unit-length-metre' => '{{PLURAL:$1|$2metr|$2metry|$2metrů}}',
 	'pfunc-convert-unit-length-mile' => '{{PLURAL:$1|míle|míle|mil}}',
 	'pfunc-convert-unit-length-foot' => '{{PLURAL:$1|stopa|stopy|stop}}',
@@ -786,6 +790,13 @@ $messages['cs'] = array(
 	'pfunc-convert-unit-area-acre' => '{{PLURAL:$1|akr|akry|akrů}}',
 	'pfunc-convert-unit-area-squarefoot' => '{{PLURAL:$1|čtvereční stopa|čtvereční stopy|čtverečních stop}}',
 	'pfunc-convert-unit-area-squareinch' => '{{PLURAL:$1|čtvereční palec|čtvereční palce|čtverečních palců}}',
+	'pfunc-convert-unit-area-squarekilometre-abbr' => 'km²',
+	'pfunc-convert-unit-area-squaremetre-abbr' => 'm²',
+	'pfunc-convert-unit-area-squarecentimetre-abbr' => 'cm²',
+	'pfunc-convert-unit-area-squaremillimetre-abbr' => 'mm²',
+	'pfunc-convert-unit-volume-cubicmetre-abbr' => 'm³',
+	'pfunc-convert-unit-volume-cubiccentimetre-abbr' => 'cm³',
+	'pfunc-convert-unit-volume-litre-abbr' => '$2l',
 	'pfunc-convert-unit-pressure-pascal' => '{{PLURAL:$1|$2pascal|$2pascaly|$2pascalů}}',
 	'pfunc-convert-unit-pressure-atmosphere' => '{{PLURAL:$1|atmosféra|atmosféry|atmosfér}}',
 	'pfunc-convert-unit-pressure-torr' => '{{PLURAL:$1|torr|torry|torrů}}',
@@ -921,8 +932,8 @@ $messages['de'] = array(
 	'pfunc-convert-unit-length-nauticalmile-abbr' => 'nmi',
 	'pfunc-convert-unit-length-nauticalmileuk-abbr' => 'nmi (Brit)',
 	'pfunc-convert-unit-length-nauticalmileus-abbr' => 'nmi (US, vor 1954)',
-	'pfunc-convert-unit-length-parsec-abbr' => '$2 pc',
-	'pfunc-convert-unit-length-lightyear-abbr' => '$2 Lj',
+	'pfunc-convert-unit-length-parsec-abbr' => '$2pc',
+	'pfunc-convert-unit-length-lightyear-abbr' => '$2lj',
 	'pfunc-convert-unit-length-astronomicalunit-abbr' => 'AE',
 	'pfunc-convert-unit-area-squarekilometre' => '{{PLURAL:$1|Quadratkilometer|Quadratkilometer}}',
 	'pfunc-convert-unit-area-squaremetre' => '{{PLURAL:$1|Quadratmeter|Quadratmeter}}',
@@ -3441,6 +3452,7 @@ $messages['nl'] = array(
 	'pfunc-convert-prefix-atto' => 'atto',
 	'pfunc-convert-prefix-zepto' => 'zepto',
 	'pfunc-convert-prefix-yocto' => 'yocto',
+	'pfunc-convert-prefix-milli-abbr' => 'm',
 	'pfunc-convert-unit-length-metre' => '{{PLURAL:$1|meter|meter}}',
 	'pfunc-convert-unit-length-angstrom' => '{{PLURAL:$1|angstrom|angstrom}}',
 	'pfunc-convert-unit-length-mile' => '{{PLURAL:$1|mijl|mijl}}',
