@@ -202,13 +202,13 @@ class ConvertParser {
 		if( $this->raw ){
 			return trim( $string );
 		} else {
-			$unit = $this->targetUnit->getText(
+			return $this->targetUnit->getText(
+				$string,
 				$this->lastValue,
 				$this->link,
 				$this->abbreviate,
 				$this->language
 			);
-			return  $string . $unit;
 		}
 	}
 
@@ -736,12 +736,13 @@ class ConvertUnit {
 
 	/**
 	 * Get the text of the unit
+	 * @param $string String Original text, with the number converted
 	 * @param $value String number for PLURAL support
 	 * @param $link Bool
 	 * @param $language Language
 	 * @return String
 	 */
-	public function getText( $value, $link=false, $abbreviate=false, $language=null ){
+	public function getText( $string, $value, $link=false, $abbreviate=false, $language=null ){
 		global $wgContLang;
 		$value = $wgContLang->formatNum( $value );
 
@@ -750,7 +751,7 @@ class ConvertUnit {
 				$this->dimension->getName(),
 				$this->unitName,
 				$this->prefix,
-				$value, $link, $abbreviate, $language
+				$string, $value, $link, $abbreviate, $language
 			);
 
 		} elseif( !wfEmptyMsg( "pfunc-convert-unit-{$this->dimension->getName(true)}-{$this->unitName[0]}-{$this->unitName[1]}" ) ){
@@ -761,7 +762,7 @@ class ConvertUnit {
 				$this->dimension->getName(true),
 				"{$this->unitName[0]}-{$this->unitName[1]}",
 				$this->prefix, # This will probably be rubbish, but it's the wiki users' problem, not ours
-				$value, $link, $abbreviate, $language
+				$string, $value, $link, $abbreviate, $language
 			);
 
 		} else {
@@ -770,12 +771,13 @@ class ConvertUnit {
 				$dimensionNames[0],
 				$this->unitName[0],
 				$this->prefix[0],
-				$value, $link, $abbreviate, $language
+				$string, $value, $link, $abbreviate, $language
 			);
 			$msg2Text = $this->getTextFromMessage(
 				$dimensionNames[1],
 				$this->unitName[1],
 				$this->prefix[1],
+				'',
 				1, # Singular for denominator
 				$link, $abbreviate, $language
 			);
@@ -785,7 +787,7 @@ class ConvertUnit {
 		return trim( $msgText );
 	}
 
-	protected function getTextFromMessage( $dimension, $unit, $prefix, $number, $link, $abbreviate, $language ){
+	protected function getTextFromMessage( $dimension, $unit, $prefix, $string, $number, $link, $abbreviate, $language ){
 		$abbr = $abbreviate ? '-abbr' : '';
 		$prefix = $prefix === null
 			? ''
@@ -794,6 +796,7 @@ class ConvertUnit {
 		$text = wfMsgExt(
 			"pfunc-convert-unit-$dimension-$unit$abbr",
 			array( 'parsemag', 'language' => $language ),
+			$string,
 			$number,
 			$prefix
 		);
