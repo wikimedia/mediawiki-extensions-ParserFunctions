@@ -29,6 +29,11 @@ $wgPFStringLengthLimit = 1000;
  */
 $wgPFEnableStringFunctions = false;
 
+/**
+ * Enable Convert parser for converting between units of measurement
+ */
+$wgPFEnableConvert = false;
+
 /** REGISTRATION */
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
@@ -53,7 +58,7 @@ $wgParserTestFiles[] = dirname( __FILE__ ) . "/convertTests.txt";
 $wgHooks['ParserFirstCallInit'][] = 'wfRegisterParserFunctions';
 
 function wfRegisterParserFunctions( $parser ) {
-	global $wgPFEnableStringFunctions;
+	global $wgPFEnableStringFunctions, $wgPFEnableConvert;
 
 	if ( defined( get_class( $parser ) . '::SFH_OBJECT_ARGS' ) ) {
 		// These functions accept DOM-style arguments
@@ -77,7 +82,6 @@ function wfRegisterParserFunctions( $parser ) {
 	$parser->setFunctionHook( 'timel', 'ExtParserFunctions::localTime' );
 	$parser->setFunctionHook( 'rel2abs', 'ExtParserFunctions::rel2abs' );
 	$parser->setFunctionHook( 'titleparts', 'ExtParserFunctions::titleparts' );
-	$parser->setFunctionHook( 'convert', 'ExtParserFunctions::convert' );
 
 	// String Functions
 	if ( $wgPFEnableStringFunctions ) {
@@ -89,6 +93,10 @@ function wfRegisterParserFunctions( $parser ) {
 		$parser->setFunctionHook( 'replace',   'ExtParserFunctions::runReplace'   );
 		$parser->setFunctionHook( 'explode',   'ExtParserFunctions::runExplode'   );
 		$parser->setFunctionHook( 'urldecode', 'ExtParserFunctions::runUrlDecode' );
+	}
+
+	if( $wgPFEnableConvert ) {
+		$parser->setFunctionHook( 'convert', 'ExtParserFunctions::convert' );
 	}
 
 	return true;

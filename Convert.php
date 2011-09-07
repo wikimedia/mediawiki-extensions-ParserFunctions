@@ -24,8 +24,14 @@ class ConvertParser {
 	# A regex *FRAGMENT* which matches SI prefixes
 	const PREFIX_REGEX = '[YZEPTGMkh(da)dcm\x{03BC}\x{00B5}npfazy]?';
 
-	# ConvertUnit objects
+	/**
+	 * @var ConvertUnit
+	 */
 	protected $sourceUnit;
+
+	/**
+	 * @var ConvertUnit
+	 */
 	protected $targetUnit;
 
 	# Whether to abbreviate the output unit
@@ -48,6 +54,9 @@ class ConvertParser {
 	# The last value converted, which will be used for PLURAL evaluation
 	protected $lastValue;
 
+	/**
+	 * Reset the parser so it isn't contaminated by the results of previous parses
+	 */
 	public function clearState(){
 		# Make sure we break any references set up in the parameter passing below
 		unset( $this->sourceUnit );
@@ -176,6 +185,11 @@ class ConvertParser {
 		return $this->processString( $string );
 	}
 
+	/**
+	 * Find the unit at the end of the string and load $this->sourceUnit with an appropriate
+	 * ConvertUnit, or throw an exception if the unit is unrecognised.
+	 * @param  $string
+	 */
 	protected function deduceSourceUnit( $string ){
 		# Get the unit from the end of the string
 		$matches = array();
@@ -191,6 +205,7 @@ class ConvertParser {
 	/**
 	 * Identify the values to be converted, and convert them
 	 * @param  $string String
+	 * @return String
 	 */
 	protected function processString( $string ){
 		# Replace values
@@ -216,7 +231,7 @@ class ConvertParser {
 	 * Express a value in the $sourceUnit in terms of the $targetUnit, preserving
 	 * an appropriate degree of accuracy.
 	 * @param  $value String
-	 * @return void
+	 * @return String
 	 */
 	public function convert( $value ){
 		global $wgContLang;
@@ -374,6 +389,11 @@ class ConvertDimension {
 	public $value;
 	protected $name;
 
+	/**
+	 * Constructor
+	 * @param  $var ConvertDimension|Int a dimension constant or existing unit
+	 * @param  $var2 ConvertDimension|Int optionally another dimension constant for a compound unit $var/$var2
+	 */
 	public function __construct( $var, $var2=null ){
 		static $legalDimensionsFlip;
 
@@ -418,8 +438,8 @@ class ConvertDimension {
 			if( in_array( $this->value, array_keys( self::$legalDimensions ) ) ){
 				$this->name = self::$legalDimensions[$this->value];
 				$this->compoundName = array(
-					self::$legalDimensions[$var],
-					self::$legalDimensions[$var2],
+					self::$legalDimensions[$dim],
+					self::$legalDimensions[$dim2],
 				);
 			} else {
 				# Some combinations of units are fine (carats per bushel is a perfectly good,
@@ -442,6 +462,8 @@ class ConvertDimension {
 
 	/**
 	 * Get the name, or names, of the dimension
+	 * @param $expandCompound Bool Whether to return a string instead of an array of strings in
+	 *     case of a compound unit
 	 * @return String|Array of String
 	 */
 	public function getName( $expandCompound = false ){
@@ -630,7 +652,9 @@ class ConvertUnit {
 
 	/***************** MEMBER VARIABLES *****************/
 
-	# @var ConvertDimension
+	/**
+	 * @var ConvertDimension
+	 */
 	public $dimension;
 
 	# What number you need to multiply this unit by to get the equivalent
@@ -665,6 +689,10 @@ class ConvertUnit {
 		$this->parseUnit( $rawUnit );
 	}
 
+	/**
+	 * Parse a raw unit string, and populate member variables
+	 * @param  $rawUnit String
+	 */
 	protected function parseUnit( $rawUnit ){
 
 		# Do mappings like 'mph' --> 'mi/h'
@@ -724,12 +752,39 @@ class ConvertUnit {
 		}
 	}
 
+	/**
+	 * Get the mathematical factor which will convert a measurement in this unit into a
+	 * measurement in the SI base unit for the dimension
+	 * @return double
+	 */
 	public function getConversion(){
-		return $this->prefix
-			? $this->conversion * self::$prefixes[$this->prefix][0]
-			: $this->conversion;
+		return $this->conversion * $this->getPrefixConversion();
 	}
 
+	/**
+	 * Get the conversion factor associated with the prefix(es) in the unit
+	 * @return double
+	 */
+	public function getPrefixConversion(){
+		if( !$this->prefix ){
+			return 1;
+		} elseif( is_array( $this->prefix ) ){
+			$x = $this->prefix[0] !== null
+				? self::$prefixes[$this->prefix[0]][0]
+				: 1;
+			if( $this->prefix[1] !== null ){
+				$x *= self::$prefixes[$this->prefix[1]][0];
+			}
+			return $x;
+		} else {
+			return self::$prefixes[$this->prefix][0];
+		}
+	}
+
+	/**
+	 * Get a regular expression which will match keywords for this unit
+	 * @return String
+	 */
 	public function getRegex(){
 		return $this->regex;
 	}
@@ -739,6 +794,7 @@ class ConvertUnit {
 	 * @param $string String Original text, with the number converted
 	 * @param $value String number for PLURAL support
 	 * @param $link Bool
+	 * @param $abbreviate Bool
 	 * @param $language Language
 	 * @return String
 	 */
@@ -787,6 +843,18 @@ class ConvertUnit {
 		return trim( $msgText );
 	}
 
+	/**
+	 * Retrieve the unit text from actual messages
+	 * @param  $dimension String
+	 * @param  $unit String
+	 * @param  $prefix String
+	 * @param  $string String
+	 * @param  $number String the actual value (for {{PLURAL}} etc)
+	 * @param  $link Bool
+	 * @param  $abbreviate Bool
+	 * @param  $language Language|Bool|null
+	 * @return String
+	 */
 	protected function getTextFromMessage( $dimension, $unit, $prefix, $string, $number, $link, $abbreviate, $language ){
 		$abbr = $abbreviate ? '-abbr' : '';
 		$prefix = $prefix === null
