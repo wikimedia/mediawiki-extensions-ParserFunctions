@@ -182,6 +182,19 @@ class ConvertParser {
 			);
 		}
 
+		# If the Language hasn't been deliberately specified, get it from the wiki's
+		# content language, but run it through a configurable map first
+		if( $this->language === true ){
+			global $wgContLang, $wgPFUnitLanguageVariants;
+			$code = $wgContLang->getCode();
+			if( isset( $wgPFUnitLanguageVariants[$code] ) ){
+				$this->language = Language::factory( $wgPFUnitLanguageVariants[$code] );
+			} else {
+				# Ok, actually *do* use $wgContLang
+				$this->language = true;
+			}
+		}
+
 		return $this->processString( $string );
 	}
 

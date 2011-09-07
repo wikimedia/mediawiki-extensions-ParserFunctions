@@ -34,6 +34,18 @@ $wgPFEnableStringFunctions = false;
  */
 $wgPFEnableConvert = false;
 
+/**
+ * The language for 'en' is actually 'en-us', which insists on using non-canonical translations
+ * of the SI base units ("meter" rather than "metre" and "liter" rather than "litre").  We
+ * can avoid contaminatng dialects by internally mapping languages by default; this is
+ * configurable so you can remove it if you like, or add other maps if that's useful.
+ * Essentially, if your wiki's $wgContLang appears as a key in this array, the value is
+ * what is used as the default language for {{#convert}} output.
+ */
+$wgPFUnitLanguageVariants = array(
+   'en' => 'en-gb'
+);
+
 /** REGISTRATION */
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
