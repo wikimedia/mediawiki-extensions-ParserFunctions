@@ -505,7 +505,7 @@ class ExtParserFunctions {
 				return '<strong class="error">' . wfMsgForContent( 'pfunc_time_too_long' ) . '</strong>';
 			} else {
 				if ( $ts < 100000000000000 ) { // Language can't deal with years after 9999
-					if ( Language::isValidBuiltInCode( $language ) ) {
+					if ( $language !== '' && Language::isValidBuiltInCode( $language ) ) {
 						// use whatever language is passed as a parameter
 						$langObject = Language::factory( $language );
 						$result = $langObject->sprintfDate( $format, $ts );
