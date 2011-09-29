@@ -481,14 +481,14 @@ class ExtParserFunctions {
 				if ( $local ) {
 					# Use the time zone
 					if ( isset( $wgLocaltimezone ) ) {
-						$oldtz = getenv( 'TZ' );
-						putenv( 'TZ=' . $wgLocaltimezone );
+						$oldtz = date_default_timezone_get();
+						date_default_timezone_set( $wgLocaltimezone );
 					}
 					wfSuppressWarnings(); // E_STRICT system time bitching
 					$ts = date( 'YmdHis', $unix );
 					wfRestoreWarnings();
 					if ( isset( $wgLocaltimezone ) ) {
-						putenv( 'TZ=' . $oldtz );
+						date_default_timezone_set( $oldtz );
 					}
 				} else {
 					$ts = wfTimestamp( TS_MW, $unix );
