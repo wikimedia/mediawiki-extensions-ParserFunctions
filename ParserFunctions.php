@@ -69,6 +69,10 @@ $wgParserTestFiles[] = dirname( __FILE__ ) . "/convertTests.txt";
 
 $wgHooks['ParserFirstCallInit'][] = 'wfRegisterParserFunctions';
 
+/**
+ * @param $parser Parser
+ * @return bool
+ */
 function wfRegisterParserFunctions( $parser ) {
 	global $wgPFEnableStringFunctions, $wgPFEnableConvert;
 
