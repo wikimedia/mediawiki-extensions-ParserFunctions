@@ -693,8 +693,7 @@ class ExtParserFunctions {
 		if ( intval( $inLength ) == 0 ) {
 			$result = mb_substr( $inStr, $inStart );
 		} else {
-			$inStart = intval( $inStart ); // prevents warnings when inStart is an empty string
-			$result = mb_substr( $inStr, $inStart, $inLength );
+			$result = mb_substr( $inStr, intval( $inStart ), intval( $inLength ) );
 		}
 
 		wfProfileOut( __METHOD__ );
