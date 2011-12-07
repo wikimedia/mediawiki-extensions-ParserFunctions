@@ -437,19 +437,10 @@ class ExtParserFunctions {
 			# when errors occur, whereas date_create appears to just output a warning
 			# that can't really be detected from within the code
 			try {
-				# Determine timezone
-				if ( $local ) {
-					 # convert to MediaWiki local timezone if set
-					if ( isset( $wgLocaltimezone ) ) {
-						$tz = new DateTimeZone( $wgLocaltimezone );
-					} else {
-						$tz = new DateTimeZone( date_default_timezone_get() );
-					}
-				} else {
-					# if local time was not requested, convert to UTC
-					$tz = new DateTimeZone( 'UTC' );
-				}
-				
+
+				# Default input timezone is UTC.
+				$utc = new DateTimeZone( 'UTC' );
+
 				# Correct for DateTime interpreting 'XXXX' as XX:XX o'clock
 				if ( preg_match( '/^[0-9]{4}$/', $date ) ) {
 					$date = '00:00 '.$date;
@@ -457,43 +448,53 @@ class ExtParserFunctions {
 
 				# Parse date
 				if ( $date !== '' ) {
-					$dateObject = new DateTime( $date, $tz );
+					# UTC is a default input timezone.
+					$dateObject = new DateTime( $date, $utc );
 				} else {
 					# use current date and time
-					$dateObject = new DateTime( 'now', $tz );
+					$dateObject = new DateTime( 'now', $utc );
 				}
-
+				# Set output timezone.
+				if ( $local ) {
+					if ( isset( $wgLocaltimezone ) ) {
+						$tz = new DateTimeZone( $wgLocaltimezone );
+					} else {
+						$tz = new DateTimeZone( date_defaulttimezone_get() );
+					}
+					$dateObject->setTimezone( $tz );
+				} else {
+					$dateObject->setTimezone( $utc );
+				}
 				# Generate timestamp
 				$ts = $dateObject->format( 'YmdHis' );
+
 			} catch ( Exception $ex ) {
 				$invalidTime = true;
 			}
 		} else { # PHP < 5.2
+			$oldtz = date_default_timezone_get();
+			# UTC is a default inpu timezone.
+			date_default_timezone_set( 'UTC' );
 			if ( $date !== '' ) {
-				$unix = @strtotime( $date );
+				wfSuppressWarnings();
+				$unix = strtotime( $date );
+				wfRestoreWarnings();
 			} else {
 				$unix = time();
 			}
-
 			if ( $unix == -1 || $unix == false ) {
 				$invalidTime = true;
 			} else {
-				if ( $local ) {
-					# Use the time zone
-					if ( isset( $wgLocaltimezone ) ) {
-						$oldtz = date_default_timezone_get();
-						date_default_timezone_set( $wgLocaltimezone );
-					}
-					wfSuppressWarnings(); // E_STRICT system time bitching
-					$ts = date( 'YmdHis', $unix );
-					wfRestoreWarnings();
-					if ( isset( $wgLocaltimezone ) ) {
-						date_default_timezone_set( $oldtz );
-					}
-				} else {
-					$ts = wfTimestamp( TS_MW, $unix );
+				# Set output timezone.
+				if ( $local && isset( $wgLocaltimezone ) ) {
+					date_default_timezone_set( $wgLocaltimezone );
 				}
+				# Generate timestamp
+				wfSuppressWarnings(); // E_STRICT system time bitching
+				$ts = date( 'YmdHis', $unix );
+				wfRestoreWarnings();
 			}
+			date_default_timezone_set( $oldtz );
 		}
 
 		# format the timestamp and return the result
