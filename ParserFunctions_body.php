@@ -385,11 +385,12 @@ class ExtParserFunctions {
 				return $else;
 			} else {
 				$pdbk = $title->getPrefixedDBkey();
-				$lc = LinkCache::singleton();
 				if ( !self::incrementIfexistCount( $parser, $frame ) ) {
 					return $else;
 				}
-				if ( 0 != ( $id = $lc->getGoodLinkID( $pdbk ) ) ) {
+				$lc = LinkCache::singleton();
+				$id = $lc->getGoodLinkID( $pdbk );
+				if ( $id != 0 ) {
 					$parser->mOutput->addLink( $title, $id );
 					return $then;
 				} elseif ( $lc->isBadLink( $pdbk ) ) {
