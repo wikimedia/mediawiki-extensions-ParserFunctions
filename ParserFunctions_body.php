@@ -433,8 +433,14 @@ class ExtParserFunctions {
 	public static function time( $parser, $format = '', $date = '', $language = '', $local = false ) {
 		global $wgLocaltimezone;
 		self::registerClearHook();
-		if ( isset( self::$mTimeCache[$format][$date][$language][$local] ) ) {
-			return self::$mTimeCache[$format][$date][$language][$local];
+		if ( $date === '' ) {
+			$cacheKey = $parser->getOptions()->getTimestamp();
+			$date = wfTimestamp( TS_ISO_8601, $cacheKey );
+		} else {
+			$cacheKey = $date;
+		}
+		if ( isset( self::$mTimeCache[$format][$cacheKey][$language][$local] ) ) {
+			return self::$mTimeCache[$format][$cacheKey][$language][$local];
 		}
 
 		# compute the timestamp string $ts
@@ -456,13 +462,9 @@ class ExtParserFunctions {
 			}
 
 			# Parse date
-			if ( $date !== '' ) {
-				# UTC is a default input timezone.
-				$dateObject = new DateTime( $date, $utc );
-			} else {
-				# use current date and time
-				$dateObject = new DateTime( 'now', $utc );
-			}
+			# UTC is a default input timezone.
+			$dateObject = new DateTime( $date, $utc );
+
 			# Set output timezone.
 			if ( $local ) {
 				if ( isset( $wgLocaltimezone ) ) {
@@ -503,7 +505,7 @@ class ExtParserFunctions {
 				}
 			}
 		}
-		self::$mTimeCache[$format][$date][$language][$local] = $result;
+		self::$mTimeCache[$format][$cacheKey][$language][$local] = $result;
 		return $result;
 	}
 
