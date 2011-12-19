@@ -400,7 +400,7 @@ class ExtParserFunctions {
 					if ( isset( $wgLocaltimezone ) ) {
 						$tz = new DateTimeZone( $wgLocaltimezone );
 					} else {
-						$tz = new DateTimeZone( date_defaulttimezone_get() );
+						$tz = new DateTimeZone( date_default_timezone_get() );
 					}
 					$dateObject->setTimezone( $tz );
 				} else {
