@@ -108,28 +108,12 @@ class ExtParserFunctions {
 		return $result;
 	}
 
-	public static function ifHook( $parser, $test = '', $then = '', $else = '' ) {
-		if ( $test !== '' ) {
-			return $then;
-		} else {
-			return $else;
-		}
-	}
-
 	public static function ifObj( $parser, $frame, $args ) {
 		$test = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		if ( $test !== '' ) {
 			return isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
 		} else {
 			return isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
-		}
-	}
-
-	public static function ifeq( $parser, $left = '', $right = '', $then = '', $else = '' ) {
-		if ( $left == $right ) {
-			return $then;
-		} else {
-			return $else;
 		}
 	}
 
@@ -165,47 +149,7 @@ class ExtParserFunctions {
 		}
 	}
 
-	public static function switchHook( $parser /*,...*/ ) {
-		$args = func_get_args();
-		array_shift( $args );
-		$primary = trim( array_shift( $args ) );
-		$found = $defaultFound = false;
-		$parts = null;
-		$default = null;
-		$mwDefault =& MagicWord::get( 'default' );
-		foreach ( $args as $arg ) {
-			$parts = array_map( 'trim', explode( '=', $arg, 2 ) );
-			if ( count( $parts ) == 2 ) {
-				# Found "="
-				if ( $found || $parts[0] == $primary ) {
-					# Found a match, return now
-					return $parts[1];
-				} elseif ( $defaultFound || $mwDefault->matchStartAndRemove( $parts[0] ) ) {
-					$default = $parts[1];
-				} # else wrong case, continue
-			} elseif ( count( $parts ) == 1 ) {
-				# Multiple input, single output
-				# If the value matches, set a flag and continue
-				if ( $parts[0] == $primary ) {
-					$found = true;
-				} elseif ( $mwDefault->matchStartAndRemove( $parts[0] ) ) {
-					$defaultFound = true;
-				}
-			} # else RAM corruption due to cosmic ray?
-		}
-		# Default case
-		# Check if the last item had no = sign, thus specifying the default case
-		if ( count( $parts ) == 1 ) {
-			return $parts[0];
-		} elseif ( !is_null( $default ) ) {
-			return $default;
-		} else {
-			return '';
-		}
-	}
-
 	/**
-	 * @static
 	 * @param $parser Parser
 	 * @param $frame PPFrame
 	 * @param $args
@@ -346,10 +290,6 @@ class ExtParserFunctions {
 			$parser->pf_ifexist_breakdown[$pdbk] ++;
 		}
 		return $parser->mExpensiveFunctionCount <= $wgExpensiveParserFunctionLimit;
-	}
-
-	public static function ifexist( $parser, $title = '', $then = '', $else = '' ) {
-		return self::ifexistCommon( $parser, false, $title, $then, $else );
 	}
 
 	public static function ifexistCommon( $parser, $frame, $titletext = '', $then = '', $else = '' ) {
