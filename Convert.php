@@ -54,6 +54,8 @@ class ConvertParser {
 	# The last value converted, which will be used for PLURAL evaluation
 	protected $lastValue;
 
+	protected $precision;
+
 	/**
 	 * Reset the parser so it isn't contaminated by the results of previous parses
 	 */
