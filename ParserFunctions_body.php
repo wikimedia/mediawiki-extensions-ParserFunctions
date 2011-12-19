@@ -439,73 +439,46 @@ class ExtParserFunctions {
 
 		# compute the timestamp string $ts
 		# PHP >= 5.2 can handle dates before 1970 or after 2038 using the DateTime object
-		# PHP < 5.2 is limited to dates between 1970 and 2038
 
 		$invalidTime = false;
 
-		if ( class_exists( 'DateTime' ) ) { # PHP >= 5.2
-			# the DateTime constructor must be used because it throws exceptions
-			# when errors occur, whereas date_create appears to just output a warning
-			# that can't really be detected from within the code
-			try {
+		# the DateTime constructor must be used because it throws exceptions
+		# when errors occur, whereas date_create appears to just output a warning
+		# that can't really be detected from within the code
+		try {
 
-				# Default input timezone is UTC.
-				$utc = new DateTimeZone( 'UTC' );
+			# Default input timezone is UTC.
+			$utc = new DateTimeZone( 'UTC' );
 
-				# Correct for DateTime interpreting 'XXXX' as XX:XX o'clock
-				if ( preg_match( '/^[0-9]{4}$/', $date ) ) {
-					$date = '00:00 '.$date;
-				}
-
-				# Parse date
-				if ( $date !== '' ) {
-					# UTC is a default input timezone.
-					$dateObject = new DateTime( $date, $utc );
-				} else {
-					# use current date and time
-					$dateObject = new DateTime( 'now', $utc );
-				}
-				# Set output timezone.
-				if ( $local ) {
-					if ( isset( $wgLocaltimezone ) ) {
-						$tz = new DateTimeZone( $wgLocaltimezone );
-					} else {
-						$tz = new DateTimeZone( date_default_timezone_get() );
-					}
-					$dateObject->setTimezone( $tz );
-				} else {
-					$dateObject->setTimezone( $utc );
-				}
-				# Generate timestamp
-				$ts = $dateObject->format( 'YmdHis' );
-
-			} catch ( Exception $ex ) {
-				$invalidTime = true;
+			# Correct for DateTime interpreting 'XXXX' as XX:XX o'clock
+			if ( preg_match( '/^[0-9]{4}$/', $date ) ) {
+				$date = '00:00 '.$date;
 			}
-		} else { # PHP < 5.2
-			$oldtz = date_default_timezone_get();
-			# UTC is a default inpu timezone.
-			date_default_timezone_set( 'UTC' );
+
+			# Parse date
 			if ( $date !== '' ) {
-				wfSuppressWarnings();
-				$unix = strtotime( $date );
-				wfRestoreWarnings();
+				# UTC is a default input timezone.
+				$dateObject = new DateTime( $date, $utc );
 			} else {
-				$unix = time();
+				# use current date and time
+				$dateObject = new DateTime( 'now', $utc );
 			}
-			if ( $unix == -1 || $unix == false ) {
-				$invalidTime = true;
-			} else {
-				# Set output timezone.
-				if ( $local && isset( $wgLocaltimezone ) ) {
-					date_default_timezone_set( $wgLocaltimezone );
+			# Set output timezone.
+			if ( $local ) {
+				if ( isset( $wgLocaltimezone ) ) {
+					$tz = new DateTimeZone( $wgLocaltimezone );
+				} else {
+					$tz = new DateTimeZone( date_default_timezone_get() );
 				}
-				# Generate timestamp
-				wfSuppressWarnings(); // E_STRICT system time bitching
-				$ts = date( 'YmdHis', $unix );
-				wfRestoreWarnings();
+				$dateObject->setTimezone( $tz );
+			} else {
+				$dateObject->setTimezone( $utc );
 			}
-			date_default_timezone_set( $oldtz );
+			# Generate timestamp
+			$ts = $dateObject->format( 'YmdHis' );
+
+		} catch ( Exception $ex ) {
+			$invalidTime = true;
 		}
 
 		# format the timestamp and return the result
