@@ -7,6 +7,10 @@ class ExtParserFunctions {
 	static $mTimeChars = 0;
 	static $mMaxTimeChars = 6000; # ~10 seconds
 
+	/**
+	 * @param $parser Parser
+	 * @return bool
+	 */
 	public static function clearState( $parser ) {
 		self::$mTimeChars = 0;
 		$parser->pf_ifexist_breakdown = array();
@@ -30,6 +34,8 @@ class ExtParserFunctions {
 
 	/**
 	 * Get the marker regex. Cached.
+	 * @param $parser Parser
+	 * @return
 	 */
 	public static function getMarkerRegex( $parser ) {
 		self::registerClearHook();
@@ -41,16 +47,7 @@ class ExtParserFunctions {
 
 		$prefix = preg_quote( $parser->uniqPrefix(), '/' );
 
-		// The first line represents Parser from release 1.12 forward.
-		// subsequent lines are hacks to accomodate old Mediawiki versions.
-		if ( defined( 'Parser::MARKER_SUFFIX' ) )
-			$suffix = preg_quote( Parser::MARKER_SUFFIX, '/' );
-		elseif ( isset( $parser->mMarkerSuffix ) )
-			$suffix = preg_quote( $parser->mMarkerSuffix, '/' );
-		elseif ( defined( 'MW_PARSER_VERSION' ) &&
-				strcmp( MW_PARSER_VERSION, '1.6.1' ) > 0 )
-			$suffix = "QINU\x07";
-		else $suffix = 'QINU';
+		$suffix = preg_quote( Parser::MARKER_SUFFIX, '/' );
 
 		$parser->pf_markerRegex = '/' . $prefix . '(?:(?!' . $suffix . ').)*' . $suffix . '/us';
 
@@ -58,7 +55,11 @@ class ExtParserFunctions {
 		return $parser->pf_markerRegex;
 	}
 
-	// Removes unique markers from passed parameters, used by string functions.
+	/**
+	 * @param $parser Parser
+	 * @param $text string
+	 * @return string
+	 */
 	private static function killMarkers ( $parser, $text ) {
 		return preg_replace( self::getMarkerRegex( $parser ), '' , $text );
 	}
@@ -73,6 +74,11 @@ class ExtParserFunctions {
 		return self::$mExprParser;
 	}
 
+	/**
+	 * @param $parser Parser
+	 * @param $expr string
+	 * @return string
+	 */
 	public static function expr( $parser, $expr = '' ) {
 		try {
 			return self::getExprParser()->doExpression( $expr );
@@ -81,6 +87,13 @@ class ExtParserFunctions {
 		}
 	}
 
+	/**
+	 * @param $parser Parser
+	 * @param $expr string
+	 * @param $then string
+	 * @param $else string
+	 * @return string
+	 */
 	public static function ifexpr( $parser, $expr = '', $then = '', $else = '' ) {
 		try {
 			$ret = self::getExprParser()->doExpression( $expr );
@@ -97,6 +110,12 @@ class ExtParserFunctions {
 		}
 	}
 
+	/**
+	 * @param $parser Parser
+	 * @param $frame PPFrame
+	 * @param $args array
+	 * @return string
+	 */
 	public static function ifexprObj( $parser, $frame, $args ) {
 		$expr = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$then = isset( $args[1] ) ? $args[1] : '';
@@ -108,6 +127,12 @@ class ExtParserFunctions {
 		return $result;
 	}
 
+	/**
+	 * @param $parser Parser
+	 * @param $frame PPFrame
+	 * @param $args array
+	 * @return string
+	 */
 	public static function ifObj( $parser, $frame, $args ) {
 		$test = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		if ( $test !== '' ) {
@@ -117,6 +142,12 @@ class ExtParserFunctions {
 		}
 	}
 
+	/**
+	 * @param $parser Parser
+	 * @param $frame PPFrame
+	 * @param $args array
+	 * @return string
+	 */
 	public static function ifeqObj( $parser, $frame, $args ) {
 		$left = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$right = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
@@ -127,6 +158,13 @@ class ExtParserFunctions {
 		}
 	}
 
+	/**
+	 * @param $parser Parser
+	 * @param $test string
+	 * @param $then string
+	 * @param $else bool
+	 * @return bool|string
+	 */
 	public static function iferror( $parser, $test = '', $then = '', $else = false ) {
 		if ( preg_match( '/<(?:strong|span|p|div)\s(?:[^\s>]*\s+)*?class="(?:[^"\s>]*\s+)*?error(?:\s[^">]*)?"/', $test ) ) {
 			return $then;
@@ -137,6 +175,12 @@ class ExtParserFunctions {
 		}
 	}
 
+	/**
+	 * @param $parser Parser
+	 * @param $frame PPFrame
+	 * @param $args array
+	 * @return string
+	 */
 	public static function iferrorObj( $parser, $frame, $args ) {
 		$test = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$then = isset( $args[1] ) ? $args[1] : false;
@@ -216,6 +260,10 @@ class ExtParserFunctions {
 	 * initial slash is treated as a relative path, and vice versa.
 	 *
 	 * @param $parser Parser
+	 * @param $to string
+	 * @param $from string
+	 *
+	 * @return string
 	 */
 	public static function rel2abs( $parser , $to = '' , $from = '' ) {
 
@@ -272,7 +320,6 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @static
 	 * @param $parser Parser
 	 * @param $frame PPFrame
 	 * @return bool
@@ -292,6 +339,15 @@ class ExtParserFunctions {
 		return $parser->mExpensiveFunctionCount <= $wgExpensiveParserFunctionLimit;
 	}
 
+	/**
+	 * @param $parser Parser
+	 * @param $frame PPFrame
+	 * @param $titletext string
+	 * @param $then string
+	 * @param $else string
+	 *
+	 * @return string
+	 */
 	public static function ifexistCommon( $parser, $frame, $titletext = '', $then = '', $else = '' ) {
 		global $wgContLang;
 		$title = Title::newFromText( $titletext );
@@ -347,6 +403,12 @@ class ExtParserFunctions {
 		return $else;
 	}
 
+	/**
+	 * @param $parser Parser
+	 * @param $frame PPFrame
+	 * @param $args array
+	 * @return string
+	 */
 	public static function ifexistObj( $parser, $frame, $args ) {
 		$title = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$then = isset( $args[1] ) ? $args[1] : null;
@@ -360,8 +422,16 @@ class ExtParserFunctions {
 		}
 	}
 
+	/**
+	 * @param $parser Parser
+	 * @param $format string
+	 * @param $date string
+	 * @param $language string
+	 * @param $local string|bool
+	 * @return string
+	 */
 	public static function time( $parser, $format = '', $date = '', $language = '', $local = false ) {
-		global $wgLang, $wgContLang, $wgLocaltimezone;
+		global $wgLocaltimezone;
 		self::registerClearHook();
 		if ( isset( self::$mTimeCache[$format][$date][$language][$local] ) ) {
 			return self::$mTimeCache[$format][$date][$language][$local];
@@ -464,6 +534,13 @@ class ExtParserFunctions {
 		return $result;
 	}
 
+	/**
+	 * @param $parser Parser
+	 * @param $format string
+	 * @param $date string
+	 * @param $language string
+	 * @return string
+	 */
 	public static function localTime( $parser, $format = '', $date = '', $language = '' ) {
 		return self::time( $parser, $format, $date, $language, true );
 	}
@@ -472,10 +549,10 @@ class ExtParserFunctions {
 	 * Obtain a specified number of slash-separated parts of a title,
 	 * e.g. {{#titleparts:Hello/World|1}} => "Hello"
 	 *
-	 * @param Parser $parser Parent parser
-	 * @param string $title Title to split
-	 * @param int $parts Number of parts to keep
-	 * @param int $offset Offset starting at 1
+	 * @param $parser Parent parser
+	 * @param $title string Title to split
+	 * @param $parts int Number of parts to keep
+	 * @param $offset int Offset starting at 1
 	 * @return string
 	 */
 	public static function titleparts( $parser, $title = '', $parts = 0, $offset = 0 ) {
@@ -512,6 +589,9 @@ class ExtParserFunctions {
 		return self::$mConvertParser;
 	}
 
+	/**
+	 * @return string
+	 */
 	public static function convert( /*...*/ ) {
 		try {
 			$args = func_get_args();
@@ -521,13 +601,20 @@ class ExtParserFunctions {
 		}
 	}
 
-	// Verifies parameter is less than max string length.
+	/**
+	 *  Verifies parameter is less than max string length.
+	 * @param $text
+	 * @return bool
+	 */
 	private static function checkLength( $text ) {
 		global $wgPFStringLengthLimit;
 		return ( mb_strlen( $text ) < $wgPFStringLengthLimit );
 	}
 
-	// Generates error message.  Called when string is too long.
+	/**
+	 * Generates error message.  Called when string is too long.
+	 * @return string
+	 */
 	private static function tooLongError() {
 		global $wgPFStringLengthLimit, $wgContLang;
 		return '<strong class="error">' .
@@ -541,6 +628,9 @@ class ExtParserFunctions {
 	 * {{#len:string}}
 	 *
 	 * Reports number of characters in string.
+	 * @param $parser Parser
+	 * @param $inStr string
+	 * @return int
 	 */
 	public static function runLen ( $parser, $inStr = '' ) {
 		wfProfileIn( __METHOD__ );
@@ -559,6 +649,11 @@ class ExtParserFunctions {
 	 *
 	 * Note: If the needle is an empty string, single space is used instead.
 	 * Note: If the needle is not found, empty string is returned.
+	 * @param $parser Parser
+	 * @param $inStr string
+	 * @param $inNeedle int
+	 * @param $inOffset int
+	 * @return int|string
 	 */
 	public static function runPos ( $parser, $inStr = '', $inNeedle = '', $inOffset = 0 ) {
 		wfProfileIn( __METHOD__ );
@@ -588,6 +683,10 @@ class ExtParserFunctions {
 	 *
 	 * Note: If the needle is an empty string, single space is used instead.
 	 * Note: If the needle is not found, -1 is returned.
+	 * @param $parser Parser
+	 * @param $inStr string
+	 * @param $inNeedle int
+	 * @return int|string
 	 */
 	public static function runRPos ( $parser, $inStr = '', $inNeedle = '' ) {
 		wfProfileIn( __METHOD__ );
@@ -621,6 +720,12 @@ class ExtParserFunctions {
 	 *   "string".
 	 * Note: A negative value for "length" returns a string reduced in
 	 *   length by that amount.
+	 *
+	 * @param $parser Parser
+	 * @param $inStr string
+	 * @param $inStart int
+	 * @param $inLength int
+	 * @return string
 	 */
 	public static function runSub ( $parser, $inStr = '', $inStart = 0, $inLength = 0 ) {
 		wfProfileIn( __METHOD__ );
@@ -648,6 +753,10 @@ class ExtParserFunctions {
 	 * Returns number of occurrences of "substr" in "string".
 	 *
 	 * Note: If "substr" is empty, a single space is used.
+	 * @param $parser
+	 * @param $inStr string
+	 * @param $inSubStr string
+	 * @return int|string
 	 */
 	public static function runCount ( $parser, $inStr = '', $inSubStr = '' ) {
 		wfProfileIn( __METHOD__ );
@@ -656,12 +765,14 @@ class ExtParserFunctions {
 		$inSubStr = self::killMarkers( $parser, (string)$inSubStr );
 
 		if ( !self::checkLength( $inStr ) ||
-		    !self::checkLength( $inSubStr ) ) {
+			!self::checkLength( $inSubStr ) ) {
 			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
 		}
 
-		if ( $inSubStr == '' ) { $inSubStr = ' '; }
+		if ( $inSubStr == '' ) {
+			$inSubStr = ' ';
+		}
 
 		$result = mb_substr_count( $inStr, $inSubStr );
 
@@ -677,6 +788,12 @@ class ExtParserFunctions {
 	 *
 	 * Note: Armored against replacements that would generate huge strings.
 	 * Note: If "from" is an empty string, single space is used instead.
+	 * @param $parser Parser
+	 * @param $inStr string
+	 * @param $inReplaceFrom string
+	 * @param $inReplaceTo string
+	 * @param $inLimit int
+	 * @return mixed|string
 	 */
 	public static function runReplace( $parser, $inStr = '',
 			$inReplaceFrom = '', $inReplaceTo = '', $inLimit = -1 ) {
@@ -735,6 +852,12 @@ class ExtParserFunctions {
 	 * Note: Negative position can be used to specify tokens from the end.
 	 * Note: If the divider is an empty string, single space is used instead.
 	 * Note: Empty string is returned if there are not enough exploded chunks.
+	 * @param $parser Parser
+	 * @param $inStr string
+	 * @param $inDiv string
+	 * @param $inPos int
+	 * @param $inLim int|null
+	 * @return string
 	 */
 	public static function runExplode ( $parser, $inStr = '', $inDiv = '', $inPos = 0, $inLim = null ) {
 		wfProfileIn( __METHOD__ );
@@ -742,7 +865,9 @@ class ExtParserFunctions {
 		$inStr = self::killMarkers( $parser, (string)$inStr );
 		$inDiv = self::killMarkers( $parser, (string)$inDiv );
 
-		if ( $inDiv == '' ) { $inDiv = ' '; }
+		if ( $inDiv == '' ) {
+			$inDiv = ' ';
+		}
 
 		if ( !self::checkLength( $inStr ) ||
 		    !self::checkLength( $inDiv ) ) {
@@ -770,6 +895,9 @@ class ExtParserFunctions {
 	 * {{#urldecode:string}}
 	 *
 	 * Decodes URL-encoded (like%20that) strings.
+	 * @param $parser Parser
+	 * @param $inStr string
+	 * @return string
 	 */
 	public static function runUrlDecode( $parser, $inStr = '' ) {
 		wfProfileIn( __METHOD__ );
