@@ -85,6 +85,15 @@ Explicitly specified timezone: America/New_York (UTC-5)
 !! end
 
 !! test
+Explicitely specified output language (Dutch)
+!! input
+{{#time:d F Y|1988-02-28|nl}}
+!! result
+<p>28 februari 1988
+</p>
+!! end
+
+!! test
 Bug 19093: Default values don't fall through in switch
 !! input
 <{{#switch: foo | bar | #default = DEF }}>
