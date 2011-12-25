@@ -3635,7 +3635,7 @@ $messages['nn'] = array(
  * @author Jon Harald Søby
  * @author Laaknor
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'pfunc_desc' => 'Utvid parser med logiske funksjoner',
 	'pfunc_time_error' => 'Feil: ugyldig tid',
 	'pfunc_time_too_long' => 'Feil: #time brukt for mange ganger',
