@@ -637,7 +637,7 @@ class ExtParserFunctions {
 		$inNeedle = self::killMarkers( $parser, (string)$inNeedle );
 
 		if ( !self::checkLength( $inStr ) ||
-		    !self::checkLength( $inNeedle ) ) {
+			!self::checkLength( $inNeedle ) ) {
 			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
 		}
@@ -670,7 +670,7 @@ class ExtParserFunctions {
 		$inNeedle = self::killMarkers( $parser, (string)$inNeedle );
 
 		if ( !self::checkLength( $inStr ) ||
-		    !self::checkLength( $inNeedle ) ) {
+			!self::checkLength( $inNeedle ) ) {
 			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
 		}
@@ -780,8 +780,8 @@ class ExtParserFunctions {
 		$inReplaceTo = self::killMarkers( $parser, (string)$inReplaceTo );
 
 		if ( !self::checkLength( $inStr ) ||
-		    !self::checkLength( $inReplaceFrom ) ||
-		    !self::checkLength( $inReplaceTo ) ) {
+			!self::checkLength( $inReplaceFrom ) ||
+			!self::checkLength( $inReplaceTo ) ) {
 			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
 		}
@@ -845,7 +845,7 @@ class ExtParserFunctions {
 		}
 
 		if ( !self::checkLength( $inStr ) ||
-		    !self::checkLength( $inDiv ) ) {
+			!self::checkLength( $inDiv ) ) {
 			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
 		}
