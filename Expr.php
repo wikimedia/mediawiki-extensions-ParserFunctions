@@ -47,6 +47,10 @@ define( 'EXPR_POW', 35 );
 define( 'EXPR_PI', 36 );
 
 class ExprError extends MWException {
+	/**
+	 * @param $msg string
+	 * @param $parameter string
+	 */
 	public function __construct( $msg, $parameter = '' ) {
 		$this->message = '<strong class="error">' . wfMsgForContent( "pfunc_expr_$msg", htmlspecialchars( $parameter ) ) . '</strong>';
 	}
@@ -158,6 +162,7 @@ class ExprParser {
 	 * http://montcs.bloomu.edu/~bobmon/Information/RPN/infix2rpn.shtml
 	 * It's essentially the same as Dijkstra's shunting yard algorithm.
 	 * @param $expr string
+	 * @throws ExprError
 	 * @return string
 	 */
 	function doExpression( $expr ) {

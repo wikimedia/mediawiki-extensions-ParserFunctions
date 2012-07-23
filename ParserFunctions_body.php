@@ -372,7 +372,7 @@ class ExtParserFunctions {
 				 * since their existence can be checked without
 				 * accessing the database.
 				 */
-				return SpecialPage::exists( $title->getDBkey() ) ? $then : $else;
+				return SpecialPageFactory::exists( $title->getDBkey() ) ? $then : $else;
 			} elseif ( $title->isExternal() ) {
 				/* Can't check the existence of pages on other sites,
 				 * so just return $else.  Makes a sort of sense, since
@@ -524,7 +524,7 @@ class ExtParserFunctions {
 	 * Obtain a specified number of slash-separated parts of a title,
 	 * e.g. {{#titleparts:Hello/World|1}} => "Hello"
 	 *
-	 * @param $parser Parent parser
+	 * @param $parser Parser Parent parser
 	 * @param $title string Title to split
 	 * @param $parts int Number of parts to keep
 	 * @param $offset int Offset starting at 1
@@ -626,7 +626,7 @@ class ExtParserFunctions {
 	 * Note: If the needle is not found, empty string is returned.
 	 * @param $parser Parser
 	 * @param $inStr string
-	 * @param $inNeedle int
+	 * @param $inNeedle int|string
 	 * @param $inOffset int
 	 * @return int|string
 	 */
@@ -660,7 +660,7 @@ class ExtParserFunctions {
 	 * Note: If the needle is not found, -1 is returned.
 	 * @param $parser Parser
 	 * @param $inStr string
-	 * @param $inNeedle int
+	 * @param $inNeedle int|string
 	 * @return int|string
 	 */
 	public static function runRPos ( $parser, $inStr = '', $inNeedle = '' ) {

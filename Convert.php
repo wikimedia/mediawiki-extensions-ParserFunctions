@@ -5,6 +5,10 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 class ConvertError extends MWException {
+
+	/**
+	 * @param $msg string
+	 */
 	public function __construct( $msg /*...*/ ) {
 		$args = func_get_args();
 		array_shift( $args );
@@ -203,7 +207,8 @@ class ConvertParser {
 	/**
 	 * Find the unit at the end of the string and load $this->sourceUnit with an appropriate
 	 * ConvertUnit, or throw an exception if the unit is unrecognised.
-	 * @param  $string
+	 * @param $string string
+	 * @throws ConvertError
 	 */
 	protected function deduceSourceUnit( $string ){
 		# Get the unit from the end of the string
@@ -406,10 +411,11 @@ class ConvertDimension {
 
 	/**
 	 * Constructor
-	 * @param  $var ConvertDimension|Int a dimension constant or existing unit
-	 * @param  $var2 ConvertDimension|Int optionally another dimension constant for a compound unit $var/$var2
+	 * @param $var ConvertDimension|Int a dimension constant or existing unit
+	 * @param $var2 ConvertDimension|Int|null optionally another dimension constant for a compound unit $var/$var2
+	 * @throws ConvertError
 	 */
-	public function __construct( $var, $var2=null ){
+	public function __construct( $var, $var2 = null ){
 		static $legalDimensionsFlip;
 
 		if( is_string( $var ) ){
@@ -706,7 +712,8 @@ class ConvertUnit {
 
 	/**
 	 * Parse a raw unit string, and populate member variables
-	 * @param  $rawUnit String
+	 * @param $rawUnit String
+	 * @throws ConvertError
 	 */
 	protected function parseUnit( $rawUnit ){
 
@@ -721,7 +728,7 @@ class ConvertUnit {
 		array_map( 'trim', $parts );
 		if( count( $parts ) == 1 ){
 			# Single unit
-			foreach( self::$units as $dimension => $units ){
+			foreach( self::$units as $units ){
 				foreach( $units as $unit => $data ){
 					if( $rawUnit == $unit
 						|| ( !$data[2] && preg_match( "/^({$data[1]})$/u", $parts[0] ) )
@@ -770,7 +777,7 @@ class ConvertUnit {
 	/**
 	 * Get the mathematical factor which will convert a measurement in this unit into a
 	 * measurement in the SI base unit for the dimension
-	 * @return double
+	 * @return number double
 	 */
 	public function getConversion(){
 		return $this->conversion * $this->getPrefixConversion();
@@ -778,7 +785,7 @@ class ConvertUnit {
 
 	/**
 	 * Get the conversion factor associated with the prefix(es) in the unit
-	 * @return double
+	 * @return number double
 	 */
 	public function getPrefixConversion(){
 		if( !$this->prefix ){
