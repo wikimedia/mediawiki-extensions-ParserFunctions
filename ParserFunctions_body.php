@@ -554,29 +554,6 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * Get a ConvertParser object
-	 * @return ConvertParser
-	 */
-	protected static function &getConvertParser() {
-		if ( !isset( self::$mConvertParser ) ) {
-			self::$mConvertParser = new ConvertParser;
-		}
-		return self::$mConvertParser;
-	}
-
-	/**
-	 * @return string
-	 */
-	public static function convert( /*...*/ ) {
-		try {
-			$args = func_get_args();
-			return self::getConvertParser()->execute( $args );
-		} catch ( ConvertError $e ) {
-			return $e->getMessage();
-		}
-	}
-
-	/**
 	 *  Verifies parameter is less than max string length.
 	 * @param $text
 	 * @return bool

@@ -30,11 +30,6 @@ $wgPFStringLengthLimit = 1000;
 $wgPFEnableStringFunctions = false;
 
 /**
- * Enable Convert parser for converting between units of measurement
- */
-$wgPFEnableConvert = false;
-
-/**
  * The language for 'en' is actually 'en-us', which insists on using non-canonical translations
  * of the SI base units ("meter" rather than "metre" and "liter" rather than "litre").  We
  * can avoid contaminatng dialects by internally mapping languages by default; this is
@@ -74,7 +69,7 @@ $wgHooks['ParserFirstCallInit'][] = 'wfRegisterParserFunctions';
  * @return bool
  */
 function wfRegisterParserFunctions( $parser ) {
-	global $wgPFEnableStringFunctions, $wgPFEnableConvert;
+	global $wgPFEnableStringFunctions;
 
 	// These functions accept DOM-style arguments
 	$parser->setFunctionHook( 'if', 'ExtParserFunctions::ifObj', SFH_OBJECT_ARGS );
@@ -100,10 +95,6 @@ function wfRegisterParserFunctions( $parser ) {
 		$parser->setFunctionHook( 'replace',   'ExtParserFunctions::runReplace'   );
 		$parser->setFunctionHook( 'explode',   'ExtParserFunctions::runExplode'   );
 		$parser->setFunctionHook( 'urldecode', 'ExtParserFunctions::runUrlDecode' );
-	}
-
-	if( $wgPFEnableConvert ) {
-		$parser->setFunctionHook( 'convert', 'ExtParserFunctions::convert' );
 	}
 
 	return true;

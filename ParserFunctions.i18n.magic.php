@@ -22,7 +22,6 @@ $magicWords['en'] = array(
 	'timel' => array( 0, 'timel' ),
 	'rel2abs' => array( 0, 'rel2abs' ),
 	'titleparts' => array( 0, 'titleparts' ),
-	'convert' => array( 0, 'convert' ),
 	'sourceunit' => array( 0, '#sourceunit' ),
 	'targetunit' => array( 0, '#targetunit' ),
 	'linkunit' => array( 0, '#linkunit' ),
@@ -96,7 +95,6 @@ $magicWords['arz'] = array(
 /** Breton (Brezhoneg) */
 $magicWords['br'] = array(
 	'time' => array( 0, 'amzer' ),
-	'convert' => array( 0, 'amdreiñ' ),
 	'count' => array( 0, 'kontañ' ),
 	'replace' => array( 0, 'erlec\'hiañ' ),
 );
@@ -330,7 +328,6 @@ $magicWords['mk'] = array(
 	'timel' => array( 0, 'времел' ),
 	'rel2abs' => array( 0, 'релдоапс' ),
 	'titleparts' => array( 0, 'насловделови' ),
-	'convert' => array( 0, 'претвори' ),
 	'sourceunit' => array( 0, '#изворнаединица' ),
 	'targetunit' => array( 0, '#целнаединица' ),
 	'linkunit' => array( 0, '#врскаединица' ),
@@ -417,7 +414,6 @@ $magicWords['nl'] = array(
 	'timel' => array( 0, 'tijdl' ),
 	'rel2abs' => array( 0, 'relatiefnaarabsoluut' ),
 	'titleparts' => array( 0, 'paginanaamdelen' ),
-	'convert' => array( 0, 'converteren' ),
 	'sourceunit' => array( 0, '#broneenheid' ),
 	'targetunit' => array( 0, '#doeleenheid' ),
 	'linkunit' => array( 0, '#verbindingseenheid' ),
@@ -449,7 +445,6 @@ $magicWords['nn'] = array(
 /** Oriya (ଓଡ଼ିଆ) */
 $magicWords['or'] = array(
 	'time' => array( 0, 'ସମୟ' ),
-	'convert' => array( 0, 'ବଦଳାଇବା' ),
 );
 
 /** Polish (Polski) */
@@ -490,7 +485,6 @@ $magicWords['sq'] = array(
 $magicWords['sr-ec'] = array(
 	'default' => array( 0, '#подразумевано' ),
 	'time' => array( 0, 'време' ),
-	'convert' => array( 0, 'претвори' ),
 	'sourceunit' => array( 0, '#изворнајединица', '#изворна_јединица' ),
 	'targetunit' => array( 0, '#крајњајединица', '#крајња_јединица' ),
 	'linkunit' => array( 0, '#везајединице', '#веза_јединице' ),
