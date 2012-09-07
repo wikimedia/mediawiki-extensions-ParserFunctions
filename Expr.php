@@ -52,7 +52,8 @@ class ExprError extends MWException {
 	 * @param $parameter string
 	 */
 	public function __construct( $msg, $parameter = '' ) {
-		$this->message = '<strong class="error">' . wfMsgForContent( "pfunc_expr_$msg", htmlspecialchars( $parameter ) ) . '</strong>';
+		$msg = wfMessage( "pfunc_expr_$msg", $parameter )->inContentLanguage()->escaped();
+		$this->message = '<strong class="error">' . $msg . '</strong>';
 	}
 }
 

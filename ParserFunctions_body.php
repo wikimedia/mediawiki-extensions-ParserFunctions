@@ -303,7 +303,8 @@ class ExtParserFunctions {
 			if ( $current == '..' ) { // removing one level
 				if ( !count( $newExploded ) ) {
 					// attempted to access a node above root node
-					return '<strong class="error">' . wfMsgForContent( 'pfunc_rel2abs_invalid_depth', $fullPath ) . '</strong>';
+					$msg = wfMessage( 'pfunc_rel2abs_invalid_depth', $fullPath )->inContentLanguage()->escaped();
+					return '<strong class="error">' . $msg . '</strong>';
 				}
 				// remove last level from the stack
 				array_pop( $newExploded );
@@ -413,7 +414,8 @@ class ExtParserFunctions {
 		self::registerClearHook();
 		if ( $date === '' ) {
 			$cacheKey = $parser->getOptions()->getTimestamp();
-			$date = wfTimestamp( TS_ISO_8601, $cacheKey );
+			$timestamp = new MWTimestamp( $cacheKey );
+			$date = $timestamp->getTimestamp( TS_ISO_8601 );
 		} else {
 			$cacheKey = $date;
 		}
@@ -463,11 +465,11 @@ class ExtParserFunctions {
 
 		# format the timestamp and return the result
 		if ( $invalidTime ) {
-			$result = '<strong class="error">' . wfMsgForContent( 'pfunc_time_error' ) . '</strong>';
+			$result = '<strong class="error">' . wfMessage( 'pfunc_time_error' )->inContentLanguage()->escaped() . '</strong>';
 		} else {
 			self::$mTimeChars += strlen( $format );
 			if ( self::$mTimeChars > self::$mMaxTimeChars ) {
-				return '<strong class="error">' . wfMsgForContent( 'pfunc_time_too_long' ) . '</strong>';
+				return '<strong class="error">' . wfMessage( 'pfunc_time_too_long' )->inContentLanguage()->escaped() . '</strong>';
 			} else {
 				if ( $ts < 100000000000000 ) { // Language can't deal with years after 9999
 					if ( $language !== '' && Language::isValidBuiltInCode( $language ) ) {
@@ -479,7 +481,7 @@ class ExtParserFunctions {
 						$result = $parser->getFunctionLang()->sprintfDate( $format, $ts );
 					}
 				} else {
-					return '<strong class="error">' . wfMsgForContent( 'pfunc_time_too_big' ) . '</strong>';
+					return '<strong class="error">' . wfMessage( 'pfunc_time_too_big' )->inContentLanguage()->escaped() . '</strong>';
 				}
 			}
 		}
@@ -546,12 +548,9 @@ class ExtParserFunctions {
 	 * @return string
 	 */
 	private static function tooLongError() {
-		global $wgPFStringLengthLimit, $wgContLang;
-		return '<strong class="error">' .
-			wfMsgExt( 'pfunc_string_too_long',
-				array( 'escape', 'parsemag', 'content' ),
-				$wgContLang->formatNum( $wgPFStringLengthLimit ) ) .
-			'</strong>';
+		global $wgPFStringLengthLimit;
+		$msg = wfMessage( 'pfunc_string_too_long' )->numParams( $wgPFStringLengthLimit );
+		return '<strong class="error">' . $msg->inContentLanguage()->escaped() . '</strong>';
 	}
 
 	/**
