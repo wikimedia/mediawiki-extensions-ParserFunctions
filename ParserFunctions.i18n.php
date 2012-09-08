@@ -823,9 +823,10 @@ $messages['de-ch'] = array(
 
 /** Zazaki (Zazaki)
  * @author Aspar
+ * @author Erdemaslancan
  */
 $messages['diq'] = array(
-	'pfunc_desc' => 'Enhance parser with logical functions',
+	'pfunc_desc' => 'Peserkerden fonksiyanane mantıxin weş kere',
 	'pfunc_time_error' => 'xeta: zemano nemeqbul',
 	'pfunc_time_too_long' => 'xeta:zaf zêd mesajê #timeyi',
 	'pfunc_rel2abs_invalid_depth' => 'Hata: Yolda geçersiz derinlik: "$1" (kök düğümünün üstünde bir düğüme erişmeye çalıştı)',
@@ -839,8 +840,8 @@ $messages['diq'] = array(
 	'pfunc_expr_unrecognised_punctuation' => 'xetaya ifadeyi: karakterê noqtakerdışê "$1"i yo ke nêşınasiyeno',
 	'pfunc_expr_unclosed_bracket' => 'xetaya ifadeyi: parantezo nêqefelnaye',
 	'pfunc_expr_division_by_zero' => 'pê sıfır teqsim ker',
-	'pfunc_expr_invalid_argument' => 'Invalid argument for $1: < -1 or > 1',
-	'pfunc_expr_invalid_argument_ln' => 'Invalid argument for ln: <= 0',
+	'pfunc_expr_invalid_argument' => 'Qande $1 vurnayeno xoser: : < -1 or > 1.',
+	'pfunc_expr_invalid_argument_ln' => 'Qande Ln vurnayeno xoser: < = 0.',
 	'pfunc_expr_unknown_error' => 'xetaya ifadeyi: neticeya ke nêzaniyena ($1)',
 	'pfunc_expr_not_a_number' => '$1 de: netice yew amar niyo',
 	'pfunc_string_too_long' => 'xeta: rêze heddê karakteri yo $1i veciyaya',
@@ -2148,27 +2149,28 @@ $messages['it'] = array(
  * @author Fryed-peach
  * @author JtFuruhata
  * @author Ohgi
+ * @author Shirayuki
  * @author 青子守歌
  */
 $messages['ja'] = array(
 	'pfunc_desc' => 'パーサーに論理関数を追加して拡張する',
-	'pfunc_time_error' => 'エラー: 時刻が不正です',
-	'pfunc_time_too_long' => 'エラー: #time 呼び出しが多すぎます',
+	'pfunc_time_error' => 'エラー: 時刻が無効です。',
+	'pfunc_time_too_long' => 'エラー: #time の呼び出しが多すぎます。',
 	'pfunc_time_too_big' => 'エラー: #timeは最大で9999年までです。',
-	'pfunc_rel2abs_invalid_depth' => 'エラー: パス "$1" の階層が不正です(ルート階層からのアクセスをお試しください)',
+	'pfunc_rel2abs_invalid_depth' => 'エラー: パス「$1」の階層が無効です (ルート階層からのアクセスをお試しください)。',
 	'pfunc_expr_stack_exhausted' => '構文エラー: スタックが空です',
-	'pfunc_expr_unexpected_number' => '構文エラー: 予期せぬ数字です',
-	'pfunc_expr_preg_match_failure' => '構文エラー: 予期せぬ形で preg_match に失敗しました',
-	'pfunc_expr_unrecognised_word' => '構文エラー: "$1" は認識できません',
-	'pfunc_expr_unexpected_operator' => '構文エラー: 予期せぬ演算子 $1 があります',
-	'pfunc_expr_missing_operand' => '構文エラー: $1 の演算対象がありません',
-	'pfunc_expr_unexpected_closing_bracket' => '構文エラー: 予期せぬ閉じ括弧です',
-	'pfunc_expr_unrecognised_punctuation' => '構文エラー: 認識できない区切り文字 "$1" があります',
-	'pfunc_expr_unclosed_bracket' => '構文エラー: 括弧が閉じられていません',
-	'pfunc_expr_division_by_zero' => '0で除算しました',
+	'pfunc_expr_unexpected_number' => '構文エラー: 予期しない数字です。',
+	'pfunc_expr_preg_match_failure' => '構文エラー: preg_match で予期しない失敗をしました。',
+	'pfunc_expr_unrecognised_word' => '構文エラー: 「$1」を認識できません。',
+	'pfunc_expr_unexpected_operator' => '構文エラー: 予期しない演算子 $1 です。',
+	'pfunc_expr_missing_operand' => '構文エラー: $1 の演算対象がありません。',
+	'pfunc_expr_unexpected_closing_bracket' => '構文エラー: 予期しない閉じ括弧です。',
+	'pfunc_expr_unrecognised_punctuation' => '構文エラー: 認識できない区切り文字「$1」です。',
+	'pfunc_expr_unclosed_bracket' => '構文エラー: 括弧が閉じられていません。',
+	'pfunc_expr_division_by_zero' => '0 で除算しました。',
 	'pfunc_expr_invalid_argument' => '$1の引数が無効です: < -1 または > 1',
 	'pfunc_expr_invalid_argument_ln' => 'ln の引数が無効です: <= 0',
-	'pfunc_expr_unknown_error' => '構文エラー: 予期せぬエラー($1)',
+	'pfunc_expr_unknown_error' => '構文エラー: 不明なエラー ($1) です。',
 	'pfunc_expr_not_a_number' => '$1: 結果が数字ではありません',
 	'pfunc_string_too_long' => 'エラー: 文字列が文字数制限 $1 を超えました',
 );
@@ -3116,6 +3118,40 @@ $messages['nah'] = array(
 	'pfunc_time_error' => 'Ahcuallōtl: ahcualli cāhuitl',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Event
+ * @author Jon Harald Søby
+ * @author Laaknor
+ */
+$messages['nb'] = array(
+	'pfunc_desc' => 'Utvid parser med logiske funksjoner',
+	'pfunc_time_error' => 'Feil: ugyldig tid',
+	'pfunc_time_too_long' => 'Feil: #time brukt for mange ganger',
+	'pfunc_time_too_big' => 'Feil: #time støtter kun år opp til 9999',
+	'pfunc_rel2abs_invalid_depth' => 'Feil: Ugyldig dybde i sti: «$1» (prøvde å få tilgang til en node over rotnoden)',
+	'pfunc_expr_stack_exhausted' => 'Uttrykksfeil: Stakk utbrukt',
+	'pfunc_expr_unexpected_number' => 'Uttrykksfeil: Uventet nummer',
+	'pfunc_expr_preg_match_failure' => 'Uttrykksfeil: Uventet preg_match-feil',
+	'pfunc_expr_unrecognised_word' => 'Uttrykksfeil: Ugjenkjennelig ord «$1»',
+	'pfunc_expr_unexpected_operator' => 'Uttrykksfeil: Uventet $1-operator',
+	'pfunc_expr_missing_operand' => 'Uttrykksfeil: Mangler operand for $1',
+	'pfunc_expr_unexpected_closing_bracket' => 'Uttrykksfeil: Uventet lukkende parentes',
+	'pfunc_expr_unrecognised_punctuation' => 'Uttrykksfeil: Ugjenkjennelig tegn «$1»',
+	'pfunc_expr_unclosed_bracket' => 'Uttrykksfeil: Åpen parentes',
+	'pfunc_expr_division_by_zero' => 'Deling på null',
+	'pfunc_expr_invalid_argument' => 'Ugyldig argument for $1: < -1 eller > 1',
+	'pfunc_expr_invalid_argument_ln' => 'Ugyldig argument for ln: <= 0',
+	'pfunc_expr_unknown_error' => 'Uttrykksfeil: Ukjent feil ($1)',
+	'pfunc_expr_not_a_number' => 'I $1: resultat er ikke et tall',
+	'pfunc_string_too_long' => 'Feil: Strengen går over grensen på $1 tegn',
+	'pfunc-convert-unit-pressure-bar' => 'bar',
+	'pfunc-convert-unit-pressure-decibar' => 'decibar',
+	'pfunc-convert-unit-pressure-millibar' => 'millibar',
+	'pfunc-convert-unit-pressure-atmosphere' => '{{PLURAL:$1|atmosfære|atmosfærer}',
+	'pfunc-convert-unit-pressure-torr' => '{{PLURAL:$1|Torr|Torr}}',
+	'pfunc-convert-unit-pressure-mmhg' => '{{PLURAL:$1|mmHg|mmHg}}',
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
@@ -3140,11 +3176,13 @@ $messages['nds'] = array(
 	'pfunc_expr_not_a_number' => 'In $1: wat rutkamen is, is kene Tall',
 );
 
-/** Nepali (नेपाली) */
+/** Nepali (नेपाली)
+ * @author RajeshPandey
+ */
 $messages['ne'] = array(
 	'pfunc_time_error' => 'त्रुटी: गलत/वा हुदैनहुने समय',
 	'pfunc_time_too_long' => 'त्रुटी: एकदम धेरै #time callहरु',
-	'pfunc_rel2abs_invalid_depth' => 'त्रुटी: पाथमा (इनभ्यालिड)गलत गहिराइ(डेप्थ) भयो: "$1" (ले रुट नोड भन्दापनि माथिको नोडलाइ चलाउन(एकसेस) गर्न खोज्यो)',
+	'pfunc_rel2abs_invalid_depth' => 'त्रुटी: पाथमा (इनभ्यालिड)गलत गहिराइ(डेप्थ) भयो: "$1" (ले रुट नोड भन्दापनि माथिको नोडलाइ चलाउन(एकसेस गर्न) खोज्यो)',
 );
 
 /** Dutch (Nederlands)
@@ -3390,40 +3428,6 @@ $messages['nn'] = array(
 	'pfunc_expr_unknown_error' => 'Feil i uttrykket: Ukjend feil ($1)',
 	'pfunc_expr_not_a_number' => 'Resultatet i $1 er ikkje eit tal',
 	'pfunc_string_too_long' => 'Feil: Strengen går over grensa på $1 teikn',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Event
- * @author Jon Harald Søby
- * @author Laaknor
- */
-$messages['nb'] = array(
-	'pfunc_desc' => 'Utvid parser med logiske funksjoner',
-	'pfunc_time_error' => 'Feil: ugyldig tid',
-	'pfunc_time_too_long' => 'Feil: #time brukt for mange ganger',
-	'pfunc_time_too_big' => 'Feil: #time støtter kun år opp til 9999',
-	'pfunc_rel2abs_invalid_depth' => 'Feil: Ugyldig dybde i sti: «$1» (prøvde å få tilgang til en node over rotnoden)',
-	'pfunc_expr_stack_exhausted' => 'Uttrykksfeil: Stakk utbrukt',
-	'pfunc_expr_unexpected_number' => 'Uttrykksfeil: Uventet nummer',
-	'pfunc_expr_preg_match_failure' => 'Uttrykksfeil: Uventet preg_match-feil',
-	'pfunc_expr_unrecognised_word' => 'Uttrykksfeil: Ugjenkjennelig ord «$1»',
-	'pfunc_expr_unexpected_operator' => 'Uttrykksfeil: Uventet $1-operator',
-	'pfunc_expr_missing_operand' => 'Uttrykksfeil: Mangler operand for $1',
-	'pfunc_expr_unexpected_closing_bracket' => 'Uttrykksfeil: Uventet lukkende parentes',
-	'pfunc_expr_unrecognised_punctuation' => 'Uttrykksfeil: Ugjenkjennelig tegn «$1»',
-	'pfunc_expr_unclosed_bracket' => 'Uttrykksfeil: Åpen parentes',
-	'pfunc_expr_division_by_zero' => 'Deling på null',
-	'pfunc_expr_invalid_argument' => 'Ugyldig argument for $1: < -1 eller > 1',
-	'pfunc_expr_invalid_argument_ln' => 'Ugyldig argument for ln: <= 0',
-	'pfunc_expr_unknown_error' => 'Uttrykksfeil: Ukjent feil ($1)',
-	'pfunc_expr_not_a_number' => 'I $1: resultat er ikke et tall',
-	'pfunc_string_too_long' => 'Feil: Strengen går over grensen på $1 tegn',
-	'pfunc-convert-unit-pressure-bar' => 'bar',
-	'pfunc-convert-unit-pressure-decibar' => 'decibar',
-	'pfunc-convert-unit-pressure-millibar' => 'millibar',
-	'pfunc-convert-unit-pressure-atmosphere' => '{{PLURAL:$1|atmosfære|atmosfærer}',
-	'pfunc-convert-unit-pressure-torr' => '{{PLURAL:$1|Torr|Torr}}',
-	'pfunc-convert-unit-pressure-mmhg' => '{{PLURAL:$1|mmHg|mmHg}}',
 );
 
 /** Occitan (Occitan)
