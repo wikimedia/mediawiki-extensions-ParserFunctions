@@ -2,7 +2,6 @@
 
 class ExtParserFunctions {
 	static $mExprParser;
-	static $mConvertParser;
 	static $mTimeCache = array();
 	static $mTimeChars = 0;
 	static $mMaxTimeChars = 6000; # ~10 seconds
