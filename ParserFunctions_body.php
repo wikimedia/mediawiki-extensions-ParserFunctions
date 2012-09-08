@@ -12,7 +12,6 @@ class ExtParserFunctions {
 	 */
 	public static function clearState( $parser ) {
 		self::$mTimeChars = 0;
-		$parser->pf_ifexist_breakdown = array();
 		$parser->pf_markerRegex = null;
 		return true;
 	}
@@ -321,26 +320,6 @@ class ExtParserFunctions {
 	/**
 	 * @param $parser Parser
 	 * @param $frame PPFrame
-	 * @return bool
-	 */
-	public static function incrementIfexistCount( $parser, $frame ) {
-		// Don't let this be called more than a certain number of times. It tends to make the database explode.
-		global $wgExpensiveParserFunctionLimit;
-		self::registerClearHook();
-		$parser->mExpensiveFunctionCount++;
-		if ( $frame ) {
-			$pdbk = $frame->getPDBK( 1 );
-			if ( !isset( $parser->pf_ifexist_breakdown[$pdbk] ) ) {
-				$parser->pf_ifexist_breakdown[$pdbk] = 0;
-			}
-			$parser->pf_ifexist_breakdown[$pdbk] ++;
-		}
-		return $parser->mExpensiveFunctionCount <= $wgExpensiveParserFunctionLimit;
-	}
-
-	/**
-	 * @param $parser Parser
-	 * @param $frame PPFrame
 	 * @param $titletext string
 	 * @param $then string
 	 * @param $else string
@@ -356,7 +335,7 @@ class ExtParserFunctions {
 				/* If namespace is specified as NS_MEDIA, then we want to
 				 * check the physical file, not the "description" page.
 				 */
-				if ( !self::incrementIfexistCount( $parser, $frame ) ) {
+				if ( !$parser->incrementExpensiveFunctionCount() ) {
 					return $else;
 				}
 				$file = wfFindFile( $title );
@@ -380,7 +359,7 @@ class ExtParserFunctions {
 				return $else;
 			} else {
 				$pdbk = $title->getPrefixedDBkey();
-				if ( !self::incrementIfexistCount( $parser, $frame ) ) {
+				if ( !$parser->incrementExpensiveFunctionCount() ) {
 					return $else;
 				}
 				$lc = LinkCache::singleton();
