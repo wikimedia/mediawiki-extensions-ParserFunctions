@@ -941,7 +941,8 @@ $messages['eo'] = array(
 	'pfunc_string_too_long' => 'Eraro: Ĉeno preterpasas signo-limon $1',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
+ * @author Bernardom
  * @author Crazymadlover
  * @author Muro de Aguas
  * @author Remember the dot
@@ -951,6 +952,7 @@ $messages['es'] = array(
 	'pfunc_desc' => 'Mejora el analizador lógico con funciones.',
 	'pfunc_time_error' => 'Error con la expresión: Tiempo no válido',
 	'pfunc_time_too_long' => 'Error con la expresión: se están utilizando demasiados "#time"',
+	'pfunc_time_too_big' => 'Error: #time solo admite años hasta 9999.',
 	'pfunc_rel2abs_invalid_depth' => 'Error: Profundidad no válida en la ruta: «$1» (trataste de acceder a un nodo por encima de la raíz)',
 	'pfunc_expr_stack_exhausted' => 'Error de expresión: Pila agotada',
 	'pfunc_expr_unexpected_number' => 'Error con la expresión: Número no esperado',
