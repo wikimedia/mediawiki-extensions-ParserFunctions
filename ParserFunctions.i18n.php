@@ -1772,32 +1772,33 @@ $messages['hi'] = array(
 	'pfunc_expr_not_a_number' => '$1 में: रिज़ल्ट संख्यामें नहीं हैं',
 );
 
-/** Croatian (Hrvatski)
+/** Croatian (hrvatski)
  * @author Dalibor Bosits
  * @author Dnik
  * @author Ex13
+ * @author Roberta F.
  * @author SpeedyGonsales
  */
 $messages['hr'] = array(
 	'pfunc_desc' => 'Mogućnost proširivanja parsera logičkim funkcijama',
-	'pfunc_time_error' => 'Greška: oblik vremena nije valjan',
+	'pfunc_time_error' => 'Pogrješka: oblik vremena nije valjan',
 	'pfunc_time_too_long' => 'Greška: prevelik broj #time (vremenskih) poziva',
-	'pfunc_rel2abs_invalid_depth' => 'Greška: Nevaljana dubina putanje: "$1" (pokušaj pristupanja čvoru iznad korijenskog)',
-	'pfunc_expr_stack_exhausted' => 'Greška u predlošku: prepunjen stog',
-	'pfunc_expr_unexpected_number' => 'Greška u predlošku: Neočekivan broj',
-	'pfunc_expr_preg_match_failure' => 'Greška u predlošku: Neočekivana preg_match greška',
-	'pfunc_expr_unrecognised_word' => 'Greška u predlošku: Nepoznata riječ "$1"',
-	'pfunc_expr_unexpected_operator' => 'Greška u predlošku: Neočekivani operator $1',
-	'pfunc_expr_missing_operand' => 'Greška u predlošku: Operator $1 nedostaje',
-	'pfunc_expr_unexpected_closing_bracket' => 'Greška u predlošku: Neočekivana zatvorena zagrada',
-	'pfunc_expr_unrecognised_punctuation' => 'Greška u predlošku: Nepoznat interpunkcijski znak "$1"',
-	'pfunc_expr_unclosed_bracket' => 'Greška u predlošku: Nezatvorene zagrade',
+	'pfunc_rel2abs_invalid_depth' => 'Pogrješka: Nevaljana dubina putanje: "$1" (pokušaj pristupanja čvoru iznad korijenskog)',
+	'pfunc_expr_stack_exhausted' => 'Pogrješka u predlošku: prepunjen stog',
+	'pfunc_expr_unexpected_number' => 'Pogrješka u predlošku: Neočekivan broj',
+	'pfunc_expr_preg_match_failure' => 'Pogrješka u predlošku: Neočekivana preg_match pogrješka',
+	'pfunc_expr_unrecognised_word' => 'Pogrješka u predlošku: Nepoznata riječ "$1"',
+	'pfunc_expr_unexpected_operator' => 'Pogrješka u predlošku: Neočekivani operator $1',
+	'pfunc_expr_missing_operand' => 'Pogrješka u predlošku: Operator $1 nedostaje',
+	'pfunc_expr_unexpected_closing_bracket' => 'Pogrješka u predlošku: Neočekivana zatvorena zagrada',
+	'pfunc_expr_unrecognised_punctuation' => 'Pogrješka u predlošku: Nepoznat interpunkcijski znak "$1"',
+	'pfunc_expr_unclosed_bracket' => 'Pogrješka u predlošku: Nezatvorene zagrade',
 	'pfunc_expr_division_by_zero' => 'Dijeljenje s nulom',
 	'pfunc_expr_invalid_argument' => 'Nevaljani argumenti za $1: < -1 ili > 1',
 	'pfunc_expr_invalid_argument_ln' => 'Nevaljani argument za ln: <= 0',
-	'pfunc_expr_unknown_error' => 'Greška u predlošku: Nepoznata greška ($1)',
+	'pfunc_expr_unknown_error' => 'Pogrješka u predlošku: Nepoznata pogrješka ($1)',
 	'pfunc_expr_not_a_number' => 'U $1: rezultat nije broj',
-	'pfunc_string_too_long' => 'Greška: Niz prelazi ograničenje od $1 znakova',
+	'pfunc_string_too_long' => 'Pogrješka: Niz prelazi ograničenje od $1 znakova',
 );
 
 /** Upper Sorbian (hornjoserbsce)
