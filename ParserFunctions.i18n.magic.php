@@ -119,15 +119,15 @@ $magicWords['eo'] = array(
 
 /** Spanish (español) */
 $magicWords['es'] = array(
-	'if' => array( 0, 'si', 'if' ),
-	'ifexpr' => array( 0, 'siexpr', 'ifexpr' ),
-	'iferror' => array( 0, 'sierror', 'iferror' ),
-	'switch' => array( 0, 'según', 'switch' ),
-	'ifexist' => array( 0, 'siexiste', 'ifexist' ),
-	'time' => array( 0, 'tiempo', 'time' ),
-	'len' => array( 0, 'long', 'longitud', 'len' ),
-	'replace' => array( 0, 'reemplazar', 'replace' ),
-	'explode' => array( 0, 'separar', 'explode' ),
+	'if' => array( 0, 'si' ),
+	'ifexpr' => array( 0, 'siexpr' ),
+	'iferror' => array( 0, 'sierror' ),
+	'switch' => array( 0, 'según' ),
+	'ifexist' => array( 0, 'siexiste' ),
+	'time' => array( 0, 'tiempo' ),
+	'len' => array( 0, 'long', 'longitud' ),
+	'replace' => array( 0, 'reemplazar' ),
+	'explode' => array( 0, 'separar' ),
 );
 
 /** Persian (فارسی) */
