@@ -239,18 +239,25 @@ $magicWords['ja'] = array(
 /** Korean (한국어) */
 $magicWords['ko'] = array(
 	'expr' => array( 0, '수식' ),
+	'if' => array( 0, '만약' ),
+	'ifeq' => array( 0, '만약일치' ),
+	'ifexpr' => array( 0, '만약계산' ),
+	'iferror' => array( 0, '만약오류' ),
 	'switch' => array( 0, '스위치' ),
 	'default' => array( 0, '#기본값' ),
+	'ifexist' => array( 0, '만약존재' ),
 	'time' => array( 0, '시간' ),
 	'timel' => array( 0, '지역시간' ),
 	'len' => array( 0, '길이' ),
+	'pos' => array( 0, '위치' ),
+	'rpos' => array( 0, '오른위치' ),
 	'count' => array( 0, '개수' ),
 	'replace' => array( 0, '교체' ),
 	'explode' => array( 0, '분리' ),
 	'urldecode' => array( 0, '주소디코딩:' ),
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬) */
+/** Kurdish (Latin script) (Kurdî (latînî)‎) */
 $magicWords['ku-latn'] = array(
 	'len' => array( 0, '#ziman' ),
 );
@@ -367,7 +374,7 @@ $magicWords['nl'] = array(
 	'urldecode' => array( 0, 'urldecoderen' ),
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬) */
+/** Norwegian Nynorsk (norsk (nynorsk)‎) */
 $magicWords['nn'] = array(
 	'expr' => array( 0, 'uttrykk', 'expr' ),
 	'if' => array( 0, 'om', 'if' ),
@@ -413,7 +420,7 @@ $magicWords['ru'] = array(
 	'replace' => array( 0, 'замена' ),
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬) */
+/** Serbian (Cyrillic script) (српски (ћирилица)‎) */
 $magicWords['sr-ec'] = array(
 	'default' => array( 0, '#подразумевано' ),
 	'time' => array( 0, 'време' ),
