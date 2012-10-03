@@ -103,6 +103,15 @@ $magicWords['cs'] = array(
 	'replace' => array( 0, 'nahradit', 'replace' ),
 );
 
+/** German (Deutsch) */
+$magicWords['de'] = array(
+	'switch' => array( 0, 'wechsle' ),
+	'default' => array( 0, '#standard' ),
+	'count' => array( 0, 'zähle' ),
+	'replace' => array( 0, 'ersetze' ),
+	'urldecode' => array( 0, 'dekodiereurl', 'dekodiere_url' ),
+);
+
 /** Esperanto (Esperanto) */
 $magicWords['eo'] = array(
 	'expr' => array( 0, 'espr', 'esprimo' ),
