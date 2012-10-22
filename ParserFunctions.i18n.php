@@ -1154,7 +1154,8 @@ $messages['ka'] = array(
 	'pfunc_string_too_long' => 'შეცდომა: სტრიქონის ზომა აღემატება $1 სიმბოლოს ლიმიტს',
 );
 
-/** Kazakh (Arabic script) (قازاقشا (تٴوتە)‏) */
+/** Kazakh (Arabic script) (قازاقشا (تٴوتە)‏)
+ */
 $messages['kk-arab'] = array(
 	'pfunc_time_error' => 'قاتە: جارامسىز ۋاقىت',
 	'pfunc_time_too_long' => 'قاتە: #time شاقىرۋى تىم كوپ',
@@ -1173,7 +1174,8 @@ $messages['kk-arab'] = array(
 	'pfunc_expr_not_a_number' => '$1 دەگەندە: ناتىيجە سان ەمەس',
 );
 
-/** Kazakh (Cyrillic script) (қазақша (кирил)‎) */
+/** Kazakh (Cyrillic script) (қазақша (кирил)‎)
+ */
 $messages['kk-cyrl'] = array(
 	'pfunc_time_error' => 'Қате: жарамсыз уақыт',
 	'pfunc_time_too_long' => 'Қате: #time шақыруы тым көп',
@@ -1192,7 +1194,8 @@ $messages['kk-cyrl'] = array(
 	'pfunc_expr_not_a_number' => '$1 дегенде: нәтиже сан емес',
 );
 
-/** Kazakh (Latin script) (qazaqşa (latın)‎) */
+/** Kazakh (Latin script) (qazaqşa (latın)‎)
+ */
 $messages['kk-latn'] = array(
 	'pfunc_time_error' => 'Qate: jaramsız waqıt',
 	'pfunc_time_too_long' => 'Qate: #time şaqırwı tım köp',
@@ -2505,4 +2508,3 @@ $messages['zh-hant'] = array(
 	'pfunc_expr_not_a_number' => '在 $1 中：結果不是數字',
 	'pfunc_string_too_long' => '錯誤：字符串超過$1字符限制',
 );
-
