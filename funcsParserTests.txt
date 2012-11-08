@@ -94,6 +94,15 @@ Explicitely specified output language (Dutch)
 !! end
 
 !! test
+Preserve tags in #switch default value
+!! input
+{{#switch:a|b|<div>c</div>}}
+!! result
+<div>c</div>
+
+!! end
+
+!! test
 Bug 19093: Default values don't fall through in switch
 !! input
 <{{#switch: foo | bar | #default = DEF }}>
