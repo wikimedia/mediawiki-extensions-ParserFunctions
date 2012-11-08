@@ -220,3 +220,15 @@ Bug 22866: #ifexpr should evaluate "-0" as false
 <p>false
 </p>
 !! end
+
+!! test
+Templates: Parser functions don't strip whitespace from positional parameters
+!! input
+{{#if: {{foo}}
+| no-pre-then
+| no-pre-else
+}}
+!! result
+<p>no-pre-then
+</p>
+!! end
