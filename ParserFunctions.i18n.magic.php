@@ -318,7 +318,7 @@ $magicWords['ml'] = array(
 	'ifexpr' => array( 0, 'എക്സ്പ്രെഷനെങ്കിൽ' ),
 	'iferror' => array( 0, 'പിഴവെങ്കിൽ' ),
 	'switch' => array( 0, 'മാറ്റുക' ),
-	'default' => array( 0, '#സ്വതവേ' ),
+	'default' => array( 0, '#സ്വതേ' ),
 	'ifexist' => array( 0, 'ഉണ്ടെങ്കിൽ' ),
 	'time' => array( 0, 'സമയം' ),
 	'timel' => array( 0, 'സമയം|' ),
@@ -352,15 +352,15 @@ $magicWords['mr'] = array(
 
 /** Nedersaksisch (Nedersaksisch) */
 $magicWords['nds-nl'] = array(
-	'if' => array( 0, 'as', 'als', 'if' ),
-	'ifeq' => array( 0, 'asgelieke', 'alsgelijk', 'ifeq' ),
-	'ifexpr' => array( 0, 'asexpressie', 'alsexpressie', 'ifexpr' ),
-	'iferror' => array( 0, 'asfout', 'alsfout', 'iferror' ),
-	'default' => array( 0, '#standard', '#standaard', '#default' ),
-	'ifexist' => array( 0, 'asbesteet', 'alsbestaat', 'ifexist' ),
-	'time' => array( 0, 'tied', 'tijd', 'time' ),
-	'timel' => array( 0, 'tiedl', 'tijdl', 'timel' ),
-	'rel2abs' => array( 0, 'relatiefnaorabseluut', 'relatiefnaarabsoluut', 'rel2abs' ),
+	'if' => array( 0, 'as', 'als' ),
+	'ifeq' => array( 0, 'asgelieke', 'alsgelijk' ),
+	'ifexpr' => array( 0, 'asexpressie', 'alsexpressie' ),
+	'iferror' => array( 0, 'asfout', 'alsfout' ),
+	'default' => array( 0, '#standard', '#standaard' ),
+	'ifexist' => array( 0, 'asbesteet', 'alsbestaat' ),
+	'time' => array( 0, 'tied', 'tijd' ),
+	'timel' => array( 0, 'tiedl', 'tijdl' ),
+	'rel2abs' => array( 0, 'relatiefnaorabseluut', 'relatiefnaarabsoluut' ),
 );
 
 /** Dutch (Nederlands) */
