@@ -35,11 +35,12 @@ $messages['en'] = array(
  * @author Jon Harald Søby
  * @author Kghbln
  * @author Meno25
+ * @author Shirayuki
  * @author Siebrand
  * @author The Evil IP address
  */
 $messages['qqq'] = array(
-	'pfunc_desc' => '{{desc}}',
+	'pfunc_desc' => '{{desc|name=Parser Functions|url=http://www.mediawiki.org/wiki/Extension:ParserFunctions}}',
 	'pfunc_expr_division_by_zero' => '{{Identical|Divizion by zero}}',
 	'pfunc_string_too_long' => 'PLURAL is supported for $1.',
 );
