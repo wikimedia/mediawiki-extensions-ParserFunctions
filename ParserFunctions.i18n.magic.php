@@ -218,7 +218,16 @@ $magicWords['ig'] = array(
 
 /** Italian (italiano) */
 $magicWords['it'] = array(
-	'ifexist' => array( 0, 'ifexist' ),
+	'expr' => array( 0, 'espr' ),
+	'if' => array( 0, 'se' ),
+	'ifeq' => array( 0, 'seeq' ),
+	'ifexpr' => array( 0, 'seespr' ),
+	'iferror' => array( 0, 'seerrore' ),
+	'ifexist' => array( 0, 'seesiste' ),
+	'time' => array( 0, 'tempo' ),
+	'titleparts' => array( 0, 'patititolo' ),
+	'count' => array( 0, 'conto' ),
+	'replace' => array( 0, 'sostituisci' ),
 );
 
 /** Japanese (日本語) */
