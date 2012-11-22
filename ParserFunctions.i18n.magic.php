@@ -488,6 +488,11 @@ $magicWords['uk'] = array(
 	'ifexist' => array( 0, 'якщоіснує', 'ifexist' ),
 );
 
+/** Urdu (اردو) */
+$magicWords['ur'] = array(
+	'if' => array( 0, 'اگر' ),
+);
+
 /** Vietnamese (Tiếng Việt) */
 $magicWords['vi'] = array(
 	'expr' => array( 0, 'côngthức' ),
