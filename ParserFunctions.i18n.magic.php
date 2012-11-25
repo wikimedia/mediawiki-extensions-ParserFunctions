@@ -414,6 +414,11 @@ $magicWords['or'] = array(
 	'time' => array( 0, 'ସମୟ' ),
 );
 
+/** Punjabi (ਪੰਜਾਬੀ) */
+$magicWords['pa'] = array(
+	'time' => array( 0, 'ਸਮੇ' ),
+);
+
 /** Pashto (پښتو) */
 $magicWords['ps'] = array(
 	'if' => array( 0, 'که', 'if' ),
