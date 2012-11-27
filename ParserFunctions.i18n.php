@@ -2313,11 +2313,13 @@ $messages['tr'] = array(
 /** Ukrainian (українська)
  * @author AS
  * @author Ahonc
+ * @author Base
  */
 $messages['uk'] = array(
 	'pfunc_desc' => 'Покращений синтаксичний аналізатор з логічними функціями',
 	'pfunc_time_error' => 'Помилка: неправильний час',
 	'pfunc_time_too_long' => 'Помилка: забагато викликів функції #time',
+	'pfunc_time_too_big' => 'Помилка: Параметр #time підтримує роки лише до 9999.',
 	'pfunc_rel2abs_invalid_depth' => 'Помилка: неправильна глибина шляху: «$1» (спроба доступу до вузла, що знаходиться вище, ніж кореневий)',
 	'pfunc_expr_stack_exhausted' => 'Помилка виразу: стек переповнений',
 	'pfunc_expr_unexpected_number' => 'Помилка виразу: неочікуване число',

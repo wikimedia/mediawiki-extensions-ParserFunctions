@@ -359,7 +359,7 @@ $magicWords['mr'] = array(
 	'explode' => array( 0, 'एकफोड', 'explode' ),
 );
 
-/** Nedersaksisch (Nedersaksisch) */
+/** Nedersaksies (Nedersaksies) */
 $magicWords['nds-nl'] = array(
 	'if' => array( 0, 'as', 'als' ),
 	'ifeq' => array( 0, 'asgelieke', 'alsgelijk' ),
