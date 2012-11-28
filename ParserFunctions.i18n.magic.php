@@ -109,7 +109,7 @@ $magicWords['de'] = array(
 	'default' => array( 0, '#standard' ),
 	'count' => array( 0, 'zähle' ),
 	'replace' => array( 0, 'ersetze' ),
-	'urldecode' => array( 0, 'dekodiereurl', 'dekodiere_url' ),
+	'urldecode' => array( 0, 'URLDEKODIERT:' ),
 );
 
 /** Esperanto (Esperanto) */
