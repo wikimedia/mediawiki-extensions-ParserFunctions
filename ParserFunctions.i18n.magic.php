@@ -280,6 +280,12 @@ $magicWords['ku-latn'] = array(
 	'len' => array( 0, '#ziman' ),
 );
 
+/** Cornish (kernowek) */
+$magicWords['kw'] = array(
+	'if' => array( 0, 'mar' ),
+	'time' => array( 0, 'termyn' ),
+);
+
 /** Ladino (Ladino) */
 $magicWords['lad'] = array(
 	'switch' => array( 0, 'asegún', 'según', 'switch' ),
