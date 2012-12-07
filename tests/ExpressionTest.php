@@ -67,6 +67,8 @@ class ExpressionTest extends MediaWikiTestCase {
 			array( 'ln(exp(1))', '1' ),
 			array( 'trunc(4.5)', '4' ),
 			array( 'trunc(-4.5)', '-4' ),
+			array( '123 mod (2^64-1)', '123' ),
+			array( '5.7 mod 1.3', '0.5' ),
 		);
 	}
 }

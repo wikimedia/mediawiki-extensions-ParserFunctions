@@ -412,7 +412,7 @@ class ExprParser {
 				}
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				if ( $right == 0 ) {
+				if ( !$right ) {
 					throw new ExprError( 'division_by_zero', $this->names[$op] );
 				}
 				$stack[] = $left / $right;
@@ -423,10 +423,10 @@ class ExprParser {
 				}
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				if ( $right == 0 ) {
+				if ( !$right ) {
 					throw new ExprError( 'division_by_zero', $this->names[$op] );
 				}
-				$stack[] = $left % $right;
+				$stack[] = fmod( (float)$left, (float)$right );
 				break;
 			case EXPR_PLUS:
 				if ( count( $stack ) < 2 ) {
