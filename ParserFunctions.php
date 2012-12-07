@@ -85,3 +85,14 @@ function wfRegisterParserFunctions( $parser ) {
 
 	return true;
 }
+
+$wgHooks['UnitTestsList'][] = 'wfParserFunctionsTests';
+
+/**
+ * @param $files array
+ * @return bool
+ */
+function wfParserFunctionsTests( &$files ) {
+	$files[] = dirname( __FILE__ ) . '/tests/ExpressionTest.php';
+	return true;
+}
