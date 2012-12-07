@@ -405,14 +405,14 @@ class ExprParser {
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
 				$stack[] = $left * $right;
-				break;
+					break;
 			case EXPR_DIVIDE:
 				if ( count( $stack ) < 2 ) {
 					throw new ExprError( 'missing_operand', $this->names[$op] );
 				}
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				if ( (int)$right === 0 ) {
+				if ( $right == 0 ) {
 					throw new ExprError( 'division_by_zero', $this->names[$op] );
 				}
 				$stack[] = $left / $right;
@@ -423,7 +423,7 @@ class ExprParser {
 				}
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				if ( (int)$right === 0 ) {
+				if ( $right == 0 ) {
 					throw new ExprError( 'division_by_zero', $this->names[$op] );
 				}
 				$stack[] = $left % $right;
