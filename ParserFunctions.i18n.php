@@ -689,6 +689,7 @@ $messages['eu'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Amire80
  * @author Ebraminio
  * @author Huji
  * @author Wayiran
@@ -697,7 +698,7 @@ $messages['fa'] = array(
 	'pfunc_desc' => 'به تجزیه‌گر، دستورهای منطقی می‌افزاید',
 	'pfunc_time_error' => 'خطا: زمان غیرمجاز',
 	'pfunc_time_too_long' => 'خطا: فراخوانی بیش از حد #time',
-	'pfunc_time_too_big' => 'خطا: <span style="direction: ltr; unicode-bidi: bidi-override;">#time</span> تا سال ۹۹۹۹ را فقط حمایت می‌کند.',
+	'pfunc_time_too_big' => 'خطا: #زمان تا سال ۹۹۹۹ را فقط حمایت می‌کند.',
 	'pfunc_rel2abs_invalid_depth' => 'خطا: عمق غیر مجاز در نشانی «$1» (تلاش برای دسترسی به یک نشانی فراتر از نشانی ریشه)',
 	'pfunc_expr_stack_exhausted' => 'خطای عبارت: پشته از دست رفته',
 	'pfunc_expr_unexpected_number' => 'خطای عبارت: عدد دور از انتظار',
@@ -1256,6 +1257,7 @@ $messages['ko'] = array(
 );
 
 /** Colognian (Ripoarisch)
+ * @author Amire80
  * @author Purodha
  * @author Rentenirer
  */
@@ -1263,7 +1265,7 @@ $messages['ksh'] = array(
 	'pfunc_desc' => 'Deit em Wiki Funxione för Entscheidunge un esu jät dobei.',
 	'pfunc_time_error' => 'Fähler: Onjöltijje Zick.',
 	'pfunc_time_too_long' => 'Fähler: <code>#time</code> weed zo öff jebruch.',
-	'pfunc_time_too_big' => 'Ene Fähleres opjefalle: <code lang="en">#time</code> kann bloß bes nohm Johr 9999 jonn.',
+	'pfunc_time_too_big' => 'Ene Fähleres opjefalle: #time kann bloß bes nohm Johr 9999 jonn.',
 	'pfunc_rel2abs_invalid_depth' => 'Fähler: Zo fill „retuur“ em Pahdt „$1“ — mer wöre wigger wi för der Aanfang zeröck jejange.',
 	'pfunc_expr_stack_exhausted' => 'Fähler en enem Ußdrock: Dä löht der <i lang="en">stack</i> övverloufe.',
 	'pfunc_expr_unexpected_number' => 'Fähler en enem Ußdrock: En Zahl dom_mer nit äwaade.',
