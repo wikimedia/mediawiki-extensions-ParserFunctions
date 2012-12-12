@@ -426,7 +426,7 @@ class ExprParser {
 				if ( !$right ) {
 					throw new ExprError( 'division_by_zero', $this->names[$op] );
 				}
-				$stack[] = fmod( (float)$left, (float)$right );
+				$stack[] = fmod( (double)$left, (double)$right );
 				break;
 			case EXPR_PLUS:
 				if ( count( $stack ) < 2 ) {
