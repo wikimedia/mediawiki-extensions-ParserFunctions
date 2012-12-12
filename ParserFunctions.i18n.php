@@ -167,10 +167,12 @@ $messages['arz'] = array(
 );
 
 /** Assamese (অসমীয়া)
+ * @author Bishnu Saikia
  * @author Rajuonline
  */
 $messages['as'] = array(
 	'pfunc_time_error' => 'ভুল: অযোগ্য সময়',
+	'pfunc_expr_division_by_zero' => 'শূন্যৰ দ্বাৰা হৰণ কৰা হৈছে',
 );
 
 /** Asturian (asturianu)
@@ -205,6 +207,13 @@ $messages['ast'] = array(
  */
 $messages['az'] = array(
 	'pfunc_time_error' => 'Xəta: yanlış zaman',
+);
+
+/** South Azerbaijani (تورکجه)
+ * @author Amir a57
+ */
+$messages['azb'] = array(
+	'pfunc_time_error' => 'ختا: یانلیش زامان',
 );
 
 /** Bashkir (башҡортса)
