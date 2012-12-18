@@ -79,6 +79,14 @@ $magicWords['arz'] = array(
 	'explode' => array( 0, 'انفجار', 'explode' ),
 );
 
+/** South Azerbaijani (تورکجه) */
+$magicWords['azb'] = array(
+	'ifeq' => array( 0, 'ایربیر' ),
+	'ifexpr' => array( 0, 'ایرحساب' ),
+	'iferror' => array( 0, 'ایریالنیش' ),
+	'ifexist' => array( 0, 'ایراولسا' ),
+);
+
 /** Breton (brezhoneg) */
 $magicWords['br'] = array(
 	'time' => array( 0, 'amzer' ),
