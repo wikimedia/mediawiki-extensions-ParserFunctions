@@ -603,12 +603,14 @@ $messages['dsb'] = array(
  * @author Dead3y3
  * @author Lou
  * @author Omnipaedista
+ * @author Protnet
  * @author Απεργός
  */
 $messages['el'] = array(
 	'pfunc_desc' => 'Βελτιώνει το συντακτικό αναλυτή με λογικές συναρτήσεις',
 	'pfunc_time_error' => 'Σφάλμα: άκυρος χρόνος',
 	'pfunc_time_too_long' => 'Σφάλμα: πάρα πολλές κλήσεις της #time',
+	'pfunc_time_too_big' => 'Σφάλμα: το #time υποστηρίζει έτη μέχρι το 9999.',
 	'pfunc_rel2abs_invalid_depth' => 'Σφάλμα: Άκυρο βάθος στη διαδρομή: «$1» (έγινε προσπάθεια για πρόσβαση σε έναν κόμβο πάνω από τον ριζικό κόμβο)',
 	'pfunc_expr_stack_exhausted' => 'Σφάλμα έκφρασης: Η στοίβα εξαντλήθηκε',
 	'pfunc_expr_unexpected_number' => 'Σφάλμα έκφρασης: Μη αναμενόμενος αριθμός',

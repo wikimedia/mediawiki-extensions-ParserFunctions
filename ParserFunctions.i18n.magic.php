@@ -497,14 +497,15 @@ $magicWords['tr'] = array(
 
 /** Ukrainian (українська) */
 $magicWords['uk'] = array(
-	'expr' => array( 0, 'вираз', 'expr' ),
-	'if' => array( 0, 'якщо', 'if' ),
-	'ifeq' => array( 0, 'якщорівні', 'рівні', 'ifeq' ),
-	'ifexpr' => array( 0, 'якщовираз', 'ifexpr' ),
-	'iferror' => array( 0, 'якщопомилка', 'iferror' ),
-	'switch' => array( 0, 'вибірка', 'switch' ),
-	'default' => array( 0, '#інакше', '#default' ),
-	'ifexist' => array( 0, 'якщоіснує', 'ifexist' ),
+	'expr' => array( 0, 'вираз' ),
+	'if' => array( 0, 'якщо' ),
+	'ifeq' => array( 0, 'якщорівні', 'рівні' ),
+	'ifexpr' => array( 0, 'якщовираз' ),
+	'iferror' => array( 0, 'якщопомилка' ),
+	'switch' => array( 0, 'вибірка' ),
+	'default' => array( 0, '#інакше' ),
+	'ifexist' => array( 0, 'якщоіснує' ),
+	'replace' => array( 0, 'заміна' ),
 );
 
 /** Urdu (اردو) */
