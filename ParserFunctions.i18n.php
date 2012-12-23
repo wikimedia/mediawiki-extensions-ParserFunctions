@@ -636,6 +636,7 @@ $messages['eo'] = array(
 	'pfunc_desc' => 'Etendi sintaksan analizilon kun logikaj funkcioj',
 	'pfunc_time_error' => 'Eraro: malvalida tempo',
 	'pfunc_time_too_long' => "Eraro: tro da vokoj ''#time''",
+	'pfunc_time_too_big' => 'Eraro: #time nur subtenas jaroj ĝis 9999.',
 	'pfunc_rel2abs_invalid_depth' => 'Eraro: Malvalida profundo en vojo: "$1" (provis atingi nodon super la radika nodo)',
 	'pfunc_expr_stack_exhausted' => 'Esprima eraro: Stako estis malplenigita',
 	'pfunc_expr_unexpected_number' => 'Esprima eraro: Neatendita numeralo',
