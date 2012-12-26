@@ -2177,6 +2177,13 @@ $messages['sv'] = array(
 	'pfunc_string_too_long' => 'Fel: Strängen överskrider gränsen på $1 tecken',
 );
 
+/** Tamil (தமிழ்)
+ * @author Shanmugamp7
+ */
+$messages['ta'] = array(
+	'pfunc_time_error' => 'பிழை: செல்லாத நேரம்',
+);
+
 /** Telugu (తెలుగు)
  * @author Mpradeep
  * @author Veeven
