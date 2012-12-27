@@ -750,11 +750,13 @@ $messages['fa'] = array(
  * @author Agony
  * @author Cimon Avaro
  * @author Nike
+ * @author VezonThunder
  */
 $messages['fi'] = array(
 	'pfunc_desc' => 'Laajentaa jäsennintä loogisilla funktiolla.',
 	'pfunc_time_error' => 'Virhe: kelvoton aika',
 	'pfunc_time_too_long' => 'Virhe: liian monta #time-kutsua',
+	'pfunc_time_too_big' => 'Virhe: #time tukee vuosilukuja vain vuoteen 9999 asti.',
 	'pfunc_rel2abs_invalid_depth' => 'Virhe: Virheellinen syvyys polussa: $1 (ei juurisolmun sisällä)',
 	'pfunc_expr_stack_exhausted' => 'Virhe lausekkeessa: pino loppui',
 	'pfunc_expr_unexpected_number' => 'Virhe lausekkeessa: odottamaton numero',
