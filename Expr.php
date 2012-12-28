@@ -45,6 +45,7 @@ define( 'EXPR_TRUNC', 33 );
 define( 'EXPR_CEIL', 34 );
 define( 'EXPR_POW', 35 );
 define( 'EXPR_PI', 36 );
+define( 'EXPR_FMOD', 37 );
 
 class ExprError extends MWException {
 	/**
@@ -81,6 +82,7 @@ class ExprParser {
 		EXPR_TIMES => 7,
 		EXPR_DIVIDE => 7,
 		EXPR_MOD => 7,
+		EXPR_FMOD => 7,
 		EXPR_PLUS => 6,
 		EXPR_MINUS => 6,
 		EXPR_ROUND => 5,
@@ -104,6 +106,7 @@ class ExprParser {
 		EXPR_TIMES => '*',
 		EXPR_DIVIDE => '/',
 		EXPR_MOD => 'mod',
+		EXPR_FMOD => 'fmod',
 		EXPR_PLUS => '+',
 		EXPR_MINUS => '-',
 		EXPR_ROUND => 'round',
@@ -135,6 +138,7 @@ class ExprParser {
 
 	var $words = array(
 		'mod' => EXPR_MOD,
+		'fmod' => EXPR_FMOD,
 		'and' => EXPR_AND,
 		'or' => EXPR_OR,
 		'not' => EXPR_NOT,
@@ -421,12 +425,23 @@ class ExprParser {
 				if ( count( $stack ) < 2 ) {
 					throw new ExprError( 'missing_operand', $this->names[$op] );
 				}
-				$right = array_pop( $stack );
-				$left = array_pop( $stack );
+				$right = (int)array_pop( $stack );
+				$left = (int)array_pop( $stack );
 				if ( !$right ) {
 					throw new ExprError( 'division_by_zero', $this->names[$op] );
 				}
-				$stack[] = fmod( (double)$left, (double)$right );
+				$stack[] = $left % $right;
+				break;
+			case EXPR_FMOD:
+				if ( count( $stack ) < 2 ) {
+					throw new ExprError( 'missing_operand', $this->names[$op] );
+				}
+				$right = (double)array_pop( $stack );
+				$left = (double)array_pop( $stack );
+				if ( !$right ) {
+					throw new ExprError( 'division_by_zero', $this->names[$op] );
+				}
+				$stack[] = fmod( $left, $right );
 				break;
 			case EXPR_PLUS:
 				if ( count( $stack ) < 2 ) {
