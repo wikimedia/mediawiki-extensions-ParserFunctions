@@ -822,7 +822,7 @@ $messages['frp'] = array(
 	'pfunc_expr_preg_match_failure' => 'Èrror d’èxprèssion : falyita emprèvua de preg_match',
 	'pfunc_expr_unrecognised_word' => 'Èrror d’èxprèssion : mot « $1 » pas recognu',
 	'pfunc_expr_unexpected_operator' => 'Èrror d’èxprèssion : opèrator « $1 » emprèvu',
-	'pfunc_expr_missing_operand' => 'Èrror d’èxprèssion : opèrando manquent por « $1 »',
+	'pfunc_expr_missing_operand' => 'Fôta d’èxprèssion : opèrando manquent por « $1 ».',
 	'pfunc_expr_unexpected_closing_bracket' => 'Èrror d’èxprèssion : parentèsa cllosenta emprèvua',
 	'pfunc_expr_unrecognised_punctuation' => 'Èrror d’èxprèssion : caractèro de ponctuacion « $1 » pas recognu',
 	'pfunc_expr_unclosed_bracket' => 'Èrror d’èxprèssion : parentèsa pas cllôsa',
@@ -2348,6 +2348,13 @@ $messages['tr'] = array(
 	'pfunc_expr_unknown_error' => 'İfade hatası: Bilinmeyen hata ($1)',
 	'pfunc_expr_not_a_number' => "$1'de: sonuç bir sayı değil",
 	'pfunc_string_too_long' => 'Hata: Dize $1 karakter sınırını geçiyor',
+);
+
+/** Uyghur (Arabic script) (ئۇيغۇرچە)
+ * @author Sahran
+ */
+$messages['ug-arab'] = array(
+	'pfunc_expr_division_by_zero' => 'نۆلگە بۆلۈنگەن.',
 );
 
 /** Ukrainian (українська)
