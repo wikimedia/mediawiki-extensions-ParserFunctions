@@ -1,9 +1,9 @@
 <?php
-
-$magicWords = array();
-
 /**
- * English
+ * Internationalisation file for extension ParserFunctions.
+ *
+ * @file
+ * @ingroup Extensions
  */
 
 $magicWords = array();
