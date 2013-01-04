@@ -181,6 +181,7 @@ class ExprParser {
 		$p = 0;
 		$end = strlen( $expr );
 		$expecting = 'expression';
+		$name = '';
 
 		while ( $p < $end ) {
 			if ( count( $operands ) > $this->maxStackSize || count( $operators ) > $this->maxStackSize ) {
