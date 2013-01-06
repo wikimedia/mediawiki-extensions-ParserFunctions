@@ -46,6 +46,7 @@ define( 'EXPR_CEIL', 34 );
 define( 'EXPR_POW', 35 );
 define( 'EXPR_PI', 36 );
 define( 'EXPR_FMOD', 37 );
+define( 'EXPR_SQRT' , 38 );
 
 class ExprError extends MWException {
 	/**
@@ -78,6 +79,7 @@ class ExprParser {
 		EXPR_TRUNC => 9,
 		EXPR_CEIL => 9,
 		EXPR_NOT => 9,
+		EXPR_SQRT => 9,
 		EXPR_POW => 8,
 		EXPR_TIMES => 7,
 		EXPR_DIVIDE => 7,
@@ -133,8 +135,8 @@ class ExprParser {
 		EXPR_CEIL => 'ceil',
 		EXPR_POW => '^',
 		EXPR_PI => 'pi',
+		EXPR_SQRT => 'sqrt',
 	);
-
 
 	var $words = array(
 		'mod' => EXPR_MOD,
@@ -158,6 +160,7 @@ class ExprParser {
 		'floor' => EXPR_FLOOR,
 		'ceil' => EXPR_CEIL,
 		'pi' => EXPR_PI,
+		'sqrt' => EXPR_SQRT,
 	);
 
 	/**
@@ -259,6 +262,7 @@ class ExprParser {
 				case EXPR_FLOOR:
 				case EXPR_TRUNC:
 				case EXPR_CEIL:
+				case EXPR_SQRT:
 					if ( $expecting != 'expression' ) {
 						throw new ExprError( 'unexpected_operator', $word );
 					}
@@ -649,6 +653,17 @@ class ExprParser {
 				if ( false === ( $stack[] = pow( $left, $right ) ) ) {
 					throw new ExprError( 'division_by_zero', $this->names[$op] );
 				}
+				break;
+			case EXPR_SQRT:
+				if ( count( $stack ) < 1 ) {
+					throw new ExprError( 'missing_operand', $this->names[$op] );
+				}
+				$arg = array_pop( $stack );
+				$result = sqrt( $arg );
+				if ( is_nan( $result ) ) {
+					throw new ExprError( 'not_a_number', $this->names[$op] );
+				}
+				$stack[] = $result;
 				break;
 			default:
 				// Should be impossible to reach here.
