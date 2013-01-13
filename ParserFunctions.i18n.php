@@ -1648,6 +1648,16 @@ $messages['oc'] = array(
 	'pfunc_string_too_long' => 'Error : La cadena depassa lo limit maximal de $1 caractèr{{PLURAL:$1||s}}',
 );
 
+/** Oriya (ଓଡ଼ିଆ)
+ * @author Jnanaranjan Sahu
+ */
+$messages['or'] = array(
+	'pfunc_desc' => 'ପାର୍ସରକୁ ଯୁକ୍ତିମୂଳକ ବ୍ୟବହାରିତା ଦେଇ ଉନ୍ନତ କରନ୍ତୁ',
+	'pfunc_time_error' => 'ଅସୁବିଧା: ଅବୈଧ ସମୟ ।',
+	'pfunc_time_too_long' => 'ଅସୁବିଧା: ଅତ୍ୟଧିକ #time ଡକରା ।',
+	'pfunc_time_too_big' => 'ଅସୁବିଧା: #time କେବଳ 9999ବର୍ଷ ପର୍ଯ୍ୟନ୍ତ ଭିତରେ ରହିପାରିବ ।',
+);
+
 /** Polish (polski)
  * @author Derbeth
  * @author Grzechooo
