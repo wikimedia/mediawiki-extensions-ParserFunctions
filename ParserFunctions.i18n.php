@@ -1656,6 +1656,8 @@ $messages['or'] = array(
 	'pfunc_time_error' => 'ଅସୁବିଧା: ଅବୈଧ ସମୟ ।',
 	'pfunc_time_too_long' => 'ଅସୁବିଧା: ଅତ୍ୟଧିକ #time ଡକରା ।',
 	'pfunc_time_too_big' => 'ଅସୁବିଧା: #time କେବଳ 9999ବର୍ଷ ପର୍ଯ୍ୟନ୍ତ ଭିତରେ ରହିପାରିବ ।',
+	'pfunc_expr_division_by_zero' => 'ଶୁନ ଦ୍ଵାରା ଭାଗ ।',
+	'pfunc_expr_invalid_argument' => '$1 ପାଇଁ ଅବୈଧ ଯୁକ୍ତି:< -୧ କିମ୍ବା > ୧ ।',
 );
 
 /** Polish (polski)
