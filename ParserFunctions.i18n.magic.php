@@ -140,6 +140,7 @@ $magicWords['es'] = array(
 	'ifexpr' => array( 0, 'siexpr' ),
 	'iferror' => array( 0, 'sierror' ),
 	'switch' => array( 0, 'según' ),
+	'default' => array( 0, '#predeterminado' ),
 	'ifexist' => array( 0, 'siexiste' ),
 	'time' => array( 0, 'tiempo' ),
 	'len' => array( 0, 'long', 'longitud' ),
