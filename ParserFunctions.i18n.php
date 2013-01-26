@@ -1263,9 +1263,10 @@ $messages['km'] = array(
  * @author Kwj2772
  * @author ToePeu
  * @author Yknok29
+ * @author 아라
  */
 $messages['ko'] = array(
-	'pfunc_desc' => '파서에 논리 함수를 추가',
+	'pfunc_desc' => '파서에 논리 함수를 추가합니다',
 	'pfunc_time_error' => '오류: 시간이 잘못되었습니다.',
 	'pfunc_time_too_long' => '오류: #time을 너무 많이 썼습니다.',
 	'pfunc_time_too_big' => '오류: #time 함수는 9999년까지만을 지원합니다.',
