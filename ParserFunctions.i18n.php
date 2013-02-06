@@ -517,7 +517,7 @@ $messages['da'] = array(
  * @author Rillke
  */
 $messages['de'] = array(
-	'pfunc_desc' => 'Ergänzt Parserfunktionen, die logische Funktionen auf Wikiseiten ermöglichen',
+	'pfunc_desc' => 'Ergänzt Parserfunktionen zur Durchführung logischer Funktionen',
 	'pfunc_time_error' => 'Fehler: Ungültige Zeitangabe',
 	'pfunc_time_too_long' => 'Fehler: Zu viele #time-Aufrufe',
 	'pfunc_time_too_big' => 'Fehler: #time unterstützt nur Jahre bis 9999',
