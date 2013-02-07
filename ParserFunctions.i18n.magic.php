@@ -410,7 +410,7 @@ $magicWords['nl'] = array(
 	'urldecode' => array( 0, 'urldecoderen' ),
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎) */
+/** Norwegian Nynorsk (norsk nynorsk) */
 $magicWords['nn'] = array(
 	'expr' => array( 0, 'uttrykk', 'expr' ),
 	'if' => array( 0, 'om', 'if' ),
