@@ -1176,9 +1176,11 @@ $messages['jv'] = array(
 
 /** Georgian (ქართული)
  * @author BRUTE
+ * @author David1010
  * @author Dawid Deutschland
  */
 $messages['ka'] = array(
+	'pfunc_desc' => 'გაუმჯებესებული სინტაქსური ანალიზატორი ლოგიკური ფუნქციებით',
 	'pfunc_time_error' => 'შეცდომა: არასწორი დრო',
 	'pfunc_expr_division_by_zero' => 'გაყოფა ნულით',
 	'pfunc_expr_invalid_argument' => 'მცდარი არგუმენტი $1: < -1 ან > 1',
