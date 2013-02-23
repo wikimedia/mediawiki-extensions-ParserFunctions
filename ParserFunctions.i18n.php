@@ -1637,7 +1637,7 @@ $messages['nn'] = array(
  * @author Jfblanc
  */
 $messages['oc'] = array(
-	'pfunc_desc' => 'Augmenta lo parser amb de foncions logicas',
+	'pfunc_desc' => 'Aumenta lo parser amb de foncions logicas',
 	'pfunc_time_error' => 'Error: durada invalida',
 	'pfunc_time_too_long' => 'Error: parser #time apelat tròp de còps',
 	'pfunc_rel2abs_invalid_depth' => 'Error: nivèl de repertòri invalid dins lo camin : "$1" (a ensajat d’accedir a un nivèl al-dessús del repertòri raiç)',
