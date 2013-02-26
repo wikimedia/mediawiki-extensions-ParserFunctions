@@ -517,6 +517,23 @@ $magicWords['ur'] = array(
 	'if' => array( 0, 'اگر' ),
 );
 
+/** Uzbek (oʻzbekcha) */
+$magicWords['uz'] = array(
+	'expr' => array( 0, 'ifoda' ),
+	'if' => array( 0, 'agar' ),
+	'ifeq' => array( 0, 'agarteng' ),
+	'ifexpr' => array( 0, 'agarifoda' ),
+	'iferror' => array( 0, 'agarxato' ),
+	'switch' => array( 0, 'tanlov' ),
+	'default' => array( 0, '#boshlangʻich' ),
+	'ifexist' => array( 0, 'agarbor' ),
+	'time' => array( 0, 'vaqt' ),
+	'len' => array( 0, 'uzunlik' ),
+	'pos' => array( 0, 'oʻrin' ),
+	'count' => array( 0, 'miqdor' ),
+	'replace' => array( 0, 'almashtirish' ),
+);
+
 /** Vietnamese (Tiếng Việt) */
 $magicWords['vi'] = array(
 	'expr' => array( 0, 'côngthức' ),
