@@ -629,6 +629,14 @@ $messages['el'] = array(
 	'pfunc_string_too_long' => 'Σφάλμα: ο ορμαθός υπερβαίνει $1 το όριο χαρακτήρων',
 );
 
+/** British English (British English)
+ * @author Shirayuki
+ */
+$messages['en-gb'] = array(
+	'pfunc_expr_unrecognised_word' => 'Expression error: Unrecognised word "$1".',
+	'pfunc_expr_unrecognised_punctuation' => 'Expression error: Unrecognised punctuation character "$1".',
+);
+
 /** Esperanto (Esperanto)
  * @author Yekrats
  */
@@ -1136,7 +1144,7 @@ $messages['ja'] = array(
 	'pfunc_expr_stack_exhausted' => '構文エラー: スタックを使い果たしました。',
 	'pfunc_expr_unexpected_number' => '構文エラー: 予期しない数字です。',
 	'pfunc_expr_preg_match_failure' => '構文エラー: preg_match で予期しない失敗をしました。',
-	'pfunc_expr_unrecognised_word' => '構文エラー: 「$1」を認識できません。',
+	'pfunc_expr_unrecognised_word' => '構文エラー:「$1」を認識できません。',
 	'pfunc_expr_unexpected_operator' => '構文エラー: 予期しない演算子 $1 です。',
 	'pfunc_expr_missing_operand' => '構文エラー: $1 の演算対象がありません。',
 	'pfunc_expr_unexpected_closing_bracket' => '構文エラー: 予期しない閉じ括弧です。',

@@ -537,6 +537,19 @@ $magicWords['uz'] = array(
 /** Vietnamese (Tiếng Việt) */
 $magicWords['vi'] = array(
 	'expr' => array( 0, 'côngthức' ),
+	'if' => array( 0, 'nếu' ),
+	'ifeq' => array( 0, 'nếubằng' ),
+	'ifexpr' => array( 0, 'nếucôngthức' ),
+	'iferror' => array( 0, 'nếulỗi' ),
+	'default' => array( 0, '#mặcđịnh' ),
+	'ifexist' => array( 0, 'nếutồntại' ),
+	'time' => array( 0, 'giờ' ),
+	'timel' => array( 0, 'giờđịaphương' ),
+	'pos' => array( 0, 'vịtrí' ),
+	'rpos' => array( 0, 'vịtríphải' ),
+	'sub' => array( 0, 'chuỗicon' ),
+	'replace' => array( 0, 'thaythế' ),
+	'urldecode' => array( 0, 'giảimãurl' ),
 );
 
 /** Yiddish (ייִדיש) */
