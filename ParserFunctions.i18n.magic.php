@@ -412,19 +412,19 @@ $magicWords['nl'] = array(
 
 /** Norwegian Nynorsk (norsk nynorsk) */
 $magicWords['nn'] = array(
-	'expr' => array( 0, 'uttrykk', 'expr' ),
-	'if' => array( 0, 'om', 'if' ),
-	'ifeq' => array( 0, 'omlik', 'ifeq' ),
-	'ifexpr' => array( 0, 'omuttrykk', 'ifexpr' ),
-	'iferror' => array( 0, 'omfeil', 'iferror' ),
-	'switch' => array( 0, 'byt', 'switch' ),
-	'ifexist' => array( 0, 'omfinst', 'ifexist' ),
-	'time' => array( 0, 'tid', 'time' ),
-	'timel' => array( 0, 'tidl', 'timel' ),
-	'rel2abs' => array( 0, 'reltilabs', 'rel2abs' ),
-	'titleparts' => array( 0, 'titteldelar', 'titleparts' ),
-	'len' => array( 0, 'lengd', 'len' ),
-	'replace' => array( 0, 'erstatt', 'replace' ),
+	'expr' => array( 0, 'uttrykk' ),
+	'if' => array( 0, 'om' ),
+	'ifeq' => array( 0, 'omlik' ),
+	'ifexpr' => array( 0, 'omuttrykk' ),
+	'iferror' => array( 0, 'omfeil' ),
+	'switch' => array( 0, 'byt' ),
+	'ifexist' => array( 0, 'omfinst' ),
+	'time' => array( 0, 'tid' ),
+	'timel' => array( 0, 'tidl' ),
+	'rel2abs' => array( 0, 'reltilabs' ),
+	'titleparts' => array( 0, 'titteldelar' ),
+	'len' => array( 0, 'lengd' ),
+	'replace' => array( 0, 'erstatt' ),
 );
 
 /** Oriya (ଓଡ଼ିଆ) */
