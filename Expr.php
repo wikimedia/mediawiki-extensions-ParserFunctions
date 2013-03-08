@@ -54,6 +54,12 @@ class ExprError extends MWException {
 	 * @param $parameter string
 	 */
 	public function __construct( $msg, $parameter = '' ) {
+		// Give grep a chance to find the usages:
+		// pfunc_expr_stack_exhausted, pfunc_expr_unexpected_number, pfunc_expr_preg_match_failure,
+		// pfunc_expr_unrecognised_word, pfunc_expr_unexpected_operator, pfunc_expr_missing_operand,
+		// pfunc_expr_unexpected_closing_bracket, pfunc_expr_unrecognised_punctuation,
+		// pfunc_expr_unclosed_bracket, pfunc_expr_division_by_zero, pfunc_expr_invalid_argument,
+		// pfunc_expr_invalid_argument_ln, pfunc_expr_unknown_error, pfunc_expr_not_a_number
 		$msg = wfMessage( "pfunc_expr_$msg", $parameter )->inContentLanguage()->escaped();
 		$this->message = '<strong class="error">' . $msg . '</strong>';
 	}
