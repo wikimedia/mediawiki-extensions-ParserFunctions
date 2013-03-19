@@ -41,7 +41,51 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'pfunc_desc' => '{{desc|name=Parser Functions|url=http://www.mediawiki.org/wiki/Extension:ParserFunctions}}',
-	'pfunc_expr_division_by_zero' => '{{Identical|Divizion by zero}}',
+	'pfunc_rel2abs_invalid_depth' => 'Used as error message. Parameters:
+* $1 - full path',
+	'pfunc_expr_stack_exhausted' => 'Used as error message.
+{{Related|Pfunc expr}}',
+	'pfunc_expr_unexpected_number' => 'Used as error message.
+{{Related|Pfunc expr}}',
+	'pfunc_expr_preg_match_failure' => '{{doc-important|Do not translate <code>preg_match</code>. It is a PHP function name.}}
+Used as error message.
+{{Related|Pfunc expr}}',
+	'pfunc_expr_unrecognised_word' => 'Used as error message. Parameters:
+* $1 - word
+{{Related|Pfunc expr}}',
+	'pfunc_expr_unexpected_operator' => 'Used as error message. Parameters:
+* $1 - operator
+{{Related|Pfunc expr}}',
+	'pfunc_expr_missing_operand' => 'Used as error message. Parameters:
+* $1 - operator name. e.g. +, -, not, mod, sin, cos, sqrt
+{{Related|Pfunc expr}}',
+	'pfunc_expr_unexpected_closing_bracket' => 'Used as error message.
+{{Related|Pfunc expr}}',
+	'pfunc_expr_unrecognised_punctuation' => 'Used as error message. Parameters:
+* $1 - invalid character
+{{Related|Pfunc expr}}',
+	'pfunc_expr_unclosed_bracket' => 'Used as error message.
+{{Related|Pfunc expr}}',
+	'pfunc_expr_division_by_zero' => 'Used as error message.
+{{Related|Pfunc expr}}',
+	'pfunc_expr_invalid_argument' => 'Used as error message when the operand is invalid. Parameters:
+* $1 - operator name. Any one of the following: asin, acos
+{{Related|Pfunc expr}}',
+	'pfunc_expr_invalid_argument_ln' => '{{doc-important|Do not translate <code>ln</code>. It is an operator.}}
+Used as error message when the operand for the operator "ln" is invalid.
+{{Related|Pfunc expr}}',
+	'pfunc_expr_unknown_error' => 'Used as error message.
+
+In the source code, there is a comment "// Should be impossible to reach here.".
+
+Parameters:
+* $1 - (Undefined in the source code)
+{{Related|Pfunc expr}}',
+	'pfunc_expr_not_a_number' => 'Used as error message when the result of "sqrt" (square root) is not a number.
+
+Parameters:
+* $1 - operator name: sqrt
+{{Related|Pfunc expr}}',
 	'pfunc_string_too_long' => 'PLURAL is supported for $1.',
 );
 
