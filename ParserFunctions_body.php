@@ -452,10 +452,10 @@ class ExtParserFunctions {
 				} else {
 					$tz = new DateTimeZone( date_default_timezone_get() );
 				}
-				$dateObject->setTimezone( $tz );
 			} else {
-				$dateObject->setTimezone( $utc );
+				$tz = $utc;
 			}
+			$dateObject->setTimezone( $tz );
 			# Generate timestamp
 			$ts = $dateObject->format( 'YmdHis' );
 
@@ -475,10 +475,10 @@ class ExtParserFunctions {
 					if ( $language !== '' && Language::isValidBuiltInCode( $language ) ) {
 						// use whatever language is passed as a parameter
 						$langObject = Language::factory( $language );
-						$result = $langObject->sprintfDate( $format, $ts );
+						$result = $langObject->sprintfDate( $format, $ts, $tz );
 					} else {
 						// use wiki's content language
-						$result = $parser->getFunctionLang()->sprintfDate( $format, $ts );
+						$result = $parser->getFunctionLang()->sprintfDate( $format, $ts, $tz );
 					}
 				} else {
 					return '<strong class="error">' . wfMessage( 'pfunc_time_too_big' )->inContentLanguage()->escaped() . '</strong>';
