@@ -128,10 +128,12 @@ $magicWords['eo'] = array(
 	'ifexpr' => array( 0, 'seespr', 'seeksprimo' ),
 	'iferror' => array( 0, 'seeraras' ),
 	'switch' => array( 0, 'ŝaltu', 'ŝalti', 'sxaltu', 'sxalti' ),
-	'default' => array( 0, '#defaŭlte', '#defauxlte' ),
+	'default' => array( 0, '#apriore', '#defaŭlte', '#defauxlte' ),
 	'ifexist' => array( 0, 'seekzistas' ),
 	'time' => array( 0, 'tempo' ),
 	'timel' => array( 0, 'tempoo' ),
+	'len' => array( 0, 'lungo' ),
+	'replace' => array( 0, 'anstataŭigi' ),
 );
 
 /** Spanish (español) */
