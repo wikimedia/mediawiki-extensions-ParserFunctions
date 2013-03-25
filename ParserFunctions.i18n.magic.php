@@ -548,9 +548,11 @@ $magicWords['vi'] = array(
 	'ifexist' => array( 0, 'nếutồntại' ),
 	'time' => array( 0, 'giờ' ),
 	'timel' => array( 0, 'giờđịaphương' ),
+	'len' => array( 0, 'sốchữ', 'sốkýtự', 'sốkítự' ),
 	'pos' => array( 0, 'vịtrí' ),
 	'rpos' => array( 0, 'vịtríphải' ),
 	'sub' => array( 0, 'chuỗicon' ),
+	'count' => array( 0, 'số' ),
 	'replace' => array( 0, 'thaythế' ),
 	'urldecode' => array( 0, 'giảimãurl' ),
 );
