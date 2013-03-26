@@ -41,6 +41,21 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'pfunc_desc' => '{{desc|name=Parser Functions|url=http://www.mediawiki.org/wiki/Extension:ParserFunctions}}',
+	'pfunc_time_error' => 'Used as error message about DateTime object, so this "time" means "date and time".
+
+See also:
+* {{msg-mw|Pfunc time too long}}
+* {{msg-mw|Pfunc time too big}}',
+	'pfunc_time_too_long' => 'Used as error message.
+
+See also:
+* {{msg-mw|Pfunc time error}}
+* {{msg-mw|Pfunc time too big}}',
+	'pfunc_time_too_big' => 'Used as error message.
+
+See also:
+* {{msg-mw|Pfunc time error}}
+* {{msg-mw|Pfunc time too long}}',
 	'pfunc_rel2abs_invalid_depth' => 'Used as error message. Parameters:
 * $1 - full path',
 	'pfunc_expr_stack_exhausted' => 'Used as error message.
@@ -1193,7 +1208,7 @@ $messages['it'] = array(
  */
 $messages['ja'] = array(
 	'pfunc_desc' => 'パーサーに論理関数を追加して拡張する',
-	'pfunc_time_error' => 'エラー: 時刻が無効です。',
+	'pfunc_time_error' => 'エラー: 日時が無効です。',
 	'pfunc_time_too_long' => 'エラー: #time の呼び出しが多すぎます。',
 	'pfunc_time_too_big' => 'エラー: #time が対応しているのは 9999 年までです。',
 	'pfunc_rel2abs_invalid_depth' => 'エラー: パス「$1」の階層が無効です (ルート階層からのアクセスをお試しください)。',
