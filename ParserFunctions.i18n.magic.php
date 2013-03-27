@@ -176,18 +176,19 @@ $magicWords['fa'] = array(
 
 /** Hebrew (עברית) */
 $magicWords['he'] = array(
-	'expr' => array( 0, 'חשב', 'expr' ),
-	'if' => array( 0, 'תנאי', 'if' ),
-	'ifeq' => array( 0, 'שווה', 'ifeq' ),
-	'ifexpr' => array( 0, 'חשב תנאי', 'ifexpr' ),
-	'iferror' => array( 0, 'תנאי שגיאה', 'iferror' ),
-	'switch' => array( 0, 'בחר', 'switch' ),
-	'default' => array( 0, '#ברירת מחדל', '#default' ),
-	'ifexist' => array( 0, 'קיים', 'ifexist' ),
-	'time' => array( 0, 'זמן', 'time' ),
-	'timel' => array( 0, 'זמןמ', 'timel' ),
-	'rel2abs' => array( 0, 'יחסי למוחלט', 'rel2abs' ),
-	'titleparts' => array( 0, 'חלק בכותרת', 'titleparts' ),
+	'expr' => array( 0, 'חשב' ),
+	'if' => array( 0, 'תנאי' ),
+	'ifeq' => array( 0, 'שווה' ),
+	'ifexpr' => array( 0, 'חשב תנאי' ),
+	'iferror' => array( 0, 'תנאי שגיאה' ),
+	'switch' => array( 0, 'בחר' ),
+	'default' => array( 0, '#ברירת מחדל' ),
+	'ifexist' => array( 0, 'קיים' ),
+	'time' => array( 0, 'זמן' ),
+	'timel' => array( 0, 'זמןמ' ),
+	'rel2abs' => array( 0, 'יחסי למוחלט' ),
+	'titleparts' => array( 0, 'חלק בכותרת' ),
+	'count' => array( 0, 'מספר' ),
 );
 
 /** Hungarian (magyar) */
