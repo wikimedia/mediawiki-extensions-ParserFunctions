@@ -461,6 +461,10 @@ $magicWords['pt'] = array(
 
 /** Russian (русский) */
 $magicWords['ru'] = array(
+	'if' => array( 0, 'если' ),
+	'switch' => array( 0, 'переключатель' ),
+	'default' => array( 0, '#умолчание' ),
+	'timel' => array( 0, 'время' ),
 	'replace' => array( 0, 'замена' ),
 );
 
@@ -568,4 +572,22 @@ $magicWords['yi'] = array(
 	'ifexist' => array( 0, 'עקזיסט' ),
 	'time' => array( 0, 'צייט' ),
 	'timel' => array( 0, 'צייטל' ),
+);
+
+/** Chinese (中文) */
+$magicWords['zh'] = array(
+	'expr' => array( 0, '计算式' ),
+	'if' => array( 0, '非空式' ),
+	'ifeq' => array( 0, '相同式', '匹配式' ),
+	'iferror' => array( 0, '错误式' ),
+	'switch' => array( 0, '多选式', '多条件式', '双射式' ),
+	'default' => array( 0, '#默认' ),
+	'ifexist' => array( 0, '存在式' ),
+	'len' => array( 0, '长度' ),
+	'pos' => array( 0, '位置' ),
+	'rpos' => array( 0, '最近位置' ),
+	'sub' => array( 0, '截取' ),
+	'count' => array( 0, '计数' ),
+	'replace' => array( 0, '替换' ),
+	'explode' => array( 0, '爆炸', '炸开' ),
 );
