@@ -430,7 +430,7 @@ $magicWords['nn'] = array(
 	'replace' => array( 0, 'erstatt' ),
 );
 
-/** Oriya (ଓଡ଼ିଆ) */
+/** Oriya (ଓଡ଼ିଆ) */
 $magicWords['or'] = array(
 	'time' => array( 0, 'ସମୟ' ),
 );
@@ -462,9 +462,11 @@ $magicWords['pt'] = array(
 /** Russian (русский) */
 $magicWords['ru'] = array(
 	'if' => array( 0, 'если' ),
+	'iferror' => array( 0, 'еслиошибка' ),
 	'switch' => array( 0, 'переключатель' ),
 	'default' => array( 0, '#умолчание' ),
-	'timel' => array( 0, 'время' ),
+	'time' => array( 0, 'время' ),
+	'timel' => array( 0, 'мвремя' ),
 	'replace' => array( 0, 'замена' ),
 );
 
