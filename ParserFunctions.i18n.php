@@ -13,6 +13,7 @@ $messages['en'] = array(
 	'pfunc_time_error'                      => 'Error: Invalid time.',
 	'pfunc_time_too_long'                   => 'Error: Too many #time calls.',
 	'pfunc_time_too_big'                    => 'Error: #time only supports years up to 9999.',
+	'pfunc_time_too_small'                  => 'Error: #time only supports years from 0.',
 	'pfunc_rel2abs_invalid_depth'           => 'Error: Invalid depth in path: "$1" (tried to access a node above the root node).',
 	'pfunc_expr_stack_exhausted'            => 'Expression error: Stack exhausted.',
 	'pfunc_expr_unexpected_number'          => 'Expression error: Unexpected number.',
@@ -45,17 +46,26 @@ $messages['qqq'] = array(
 
 See also:
 * {{msg-mw|Pfunc time too long}}
-* {{msg-mw|Pfunc time too big}}',
+* {{msg-mw|Pfunc time too big}}
+* {{msg-mw|Pfunc time too small}}',
 	'pfunc_time_too_long' => 'Used as error message.
 
 See also:
 * {{msg-mw|Pfunc time error}}
-* {{msg-mw|Pfunc time too big}}',
+* {{msg-mw|Pfunc time too big}}
+* {{msg-mw|Pfunc time too small}}',
 	'pfunc_time_too_big' => 'Used as error message.
 
 See also:
 * {{msg-mw|Pfunc time error}}
-* {{msg-mw|Pfunc time too long}}',
+* {{msg-mw|Pfunc time too long}}
+* {{msg-mw|Pfunc time too small}}',
+	'pfunc_time_too_small' => 'Used as error message.
+
+See also:
+* {{msg-mw|Pfunc time error}}
+* {{msg-mw|Pfunc time too long}}
+* {{msg-mw|Pfunc time too big}}',
 	'pfunc_rel2abs_invalid_depth' => 'Used as error message. Parameters:
 * $1 - full path',
 	'pfunc_expr_stack_exhausted' => 'Used as error message.

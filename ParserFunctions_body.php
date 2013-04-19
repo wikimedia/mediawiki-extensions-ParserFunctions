@@ -471,7 +471,9 @@ class ExtParserFunctions {
 			if ( self::$mTimeChars > self::$mMaxTimeChars ) {
 				return '<strong class="error">' . wfMessage( 'pfunc_time_too_long' )->inContentLanguage()->escaped() . '</strong>';
 			} else {
-				if ( $ts < 100000000000000 ) { // Language can't deal with years after 9999
+				if ( $ts < 0 ) { // Language can't deal with BC years
+					return '<strong class="error">' . wfMessage( 'pfunc_time_too_small' )->inContentLanguage()->escaped() . '</strong>';
+				} elseif ( $ts < 100000000000000 ) { // Language can't deal with years after 9999
 					if ( $language !== '' && Language::isValidBuiltInCode( $language ) ) {
 						// use whatever language is passed as a parameter
 						$langObject = Language::factory( $language );
