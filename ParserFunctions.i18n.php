@@ -270,6 +270,7 @@ $messages['ast'] = array(
 	'pfunc_time_error' => 'Error: tiempu non válidu',
 	'pfunc_time_too_long' => 'Error: demasiaes llamaes #time',
 	'pfunc_time_too_big' => 'Error: #time sólo almite años fasta 9999.',
+	'pfunc_time_too_small' => 'Error: #time sólo almite años dende 0.',
 	'pfunc_rel2abs_invalid_depth' => 'Error: Nivel de subdireutoriu non válidu: "$1" (intentu d\'accesu penriba del direutoriu raíz)',
 	'pfunc_expr_stack_exhausted' => "Error d'espresión: Pila escosada",
 	'pfunc_expr_unexpected_number' => "Error d'espresión: Númberu inesperáu",
@@ -1794,6 +1795,7 @@ $messages['or'] = array(
  * @author Derbeth
  * @author Grzechooo
  * @author Sp5uhe
+ * @author WTM
  * @author Woytecr
  */
 $messages['pl'] = array(
@@ -1801,6 +1803,7 @@ $messages['pl'] = array(
 	'pfunc_time_error' => 'Błąd – niepoprawny czas',
 	'pfunc_time_too_long' => 'Błąd – zbyt wiele wywołań funkcji #time',
 	'pfunc_time_too_big' => 'Błąd – rok w #time nie może być większy niż 9999',
+	'pfunc_time_too_small' => 'Błąd: #time obsługuje tylko lata od 0',
 	'pfunc_rel2abs_invalid_depth' => 'Błąd – nieprawidłowa głębokość w ścieżce „$1” (próba dostępu do węzła powyżej korzenia)',
 	'pfunc_expr_stack_exhausted' => 'Błąd w wyrażeniu – stos wyczerpany',
 	'pfunc_expr_unexpected_number' => 'Błąd w wyrażeniu – nieoczekiwana liczba',
