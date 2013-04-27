@@ -1792,6 +1792,7 @@ $messages['or'] = array(
 );
 
 /** Polish (polski)
+ * @author Chrumps
  * @author Derbeth
  * @author Grzechooo
  * @author Sp5uhe
@@ -1803,7 +1804,7 @@ $messages['pl'] = array(
 	'pfunc_time_error' => 'Błąd – niepoprawny czas',
 	'pfunc_time_too_long' => 'Błąd – zbyt wiele wywołań funkcji #time',
 	'pfunc_time_too_big' => 'Błąd – rok w #time nie może być większy niż 9999',
-	'pfunc_time_too_small' => 'Błąd: #time obsługuje tylko lata od 0',
+	'pfunc_time_too_small' => 'Błąd: #time obsługuje tylko lata od 0.',
 	'pfunc_rel2abs_invalid_depth' => 'Błąd – nieprawidłowa głębokość w ścieżce „$1” (próba dostępu do węzła powyżej korzenia)',
 	'pfunc_expr_stack_exhausted' => 'Błąd w wyrażeniu – stos wyczerpany',
 	'pfunc_expr_unexpected_number' => 'Błąd w wyrażeniu – nieoczekiwana liczba',
