@@ -2541,6 +2541,7 @@ $messages['vec'] = array(
 	'pfunc_time_error' => 'Eror: orario mìa valido',
 	'pfunc_time_too_long' => 'Eror: massa chiamate a #time',
 	'pfunc_time_too_big' => 'Eror: #time suporta soło che fin al ano 9999',
+	'pfunc_time_too_small' => "Eror: #time suporta soło che da l'ano 0.",
 	'pfunc_rel2abs_invalid_depth' => 'Eror: profondità mìa valida nel percorso "$1" (se gà proà a accédar a un nodo piassè sora de la raìsa)',
 	'pfunc_expr_stack_exhausted' => "Eror ne l'espression: stack esaurìo",
 	'pfunc_expr_unexpected_number' => "Eror ne l'espression: xe vegnù fora un nùmaro che no se se spetava",
