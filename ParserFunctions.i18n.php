@@ -552,6 +552,7 @@ $messages['cs'] = array(
 
 /** Danish (dansk)
  * @author Byrial
+ * @author HenrikKbh
  * @author Morten LJ
  * @author Peter Alberti
  */
@@ -560,6 +561,7 @@ $messages['da'] = array(
 	'pfunc_time_error' => 'Fejl: Ugyldig tid',
 	'pfunc_time_too_long' => 'Fejl: for mange kald af #time',
 	'pfunc_time_too_big' => 'Fejl: #time understøtter kun årstal frem til 9999',
+	'pfunc_time_too_small' => 'Fejl: #tid understøtter kun år fra 0.',
 	'pfunc_rel2abs_invalid_depth' => 'Fejl: Ugyldig dybde i sti: "$1" (prøvede at tilgå en knude over rodknuden)',
 	'pfunc_expr_stack_exhausted' => 'Udtryksfejl: Stak tømt',
 	'pfunc_expr_unexpected_number' => 'Fejl: Uventet tal',
