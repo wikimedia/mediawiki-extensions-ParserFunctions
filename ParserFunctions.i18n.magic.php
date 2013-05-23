@@ -574,6 +574,7 @@ $magicWords['yi'] = array(
 	'ifexist' => array( 0, 'עקזיסט' ),
 	'time' => array( 0, 'צייט' ),
 	'timel' => array( 0, 'צייטל' ),
+	'count' => array( 0, 'צאל' ),
 );
 
 /** Chinese (中文) */
