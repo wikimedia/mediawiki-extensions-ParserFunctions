@@ -96,8 +96,8 @@ $magicWords['br'] = array(
 
 /** Chechen (нохчийн) */
 $magicWords['ce'] = array(
-	'time' => array( 0, 'хан', 'time' ),
-	'replace' => array( 0, 'хийцарна', 'замена', 'replace' ),
+	'time' => array( 0, 'хан' ),
+	'replace' => array( 0, 'хийцарна', 'замена' ),
 );
 
 /** Czech (česky) */
