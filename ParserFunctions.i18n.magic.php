@@ -449,14 +449,14 @@ $magicWords['ps'] = array(
 
 /** Portuguese (português) */
 $magicWords['pt'] = array(
-	'if' => array( 0, 'se', 'if' ),
-	'ifeq' => array( 0, 'seigual', 'ifeq' ),
-	'ifexpr' => array( 0, 'seexpr', 'ifexpr' ),
-	'iferror' => array( 0, 'seerro', 'iferror' ),
-	'default' => array( 0, '#padrão', '#padrao', '#default' ),
-	'ifexist' => array( 0, 'seexiste', 'ifexist' ),
-	'titleparts' => array( 0, 'partesdotítulo', 'partesdotitulo', 'titleparts' ),
-	'len' => array( 0, 'comprimento', 'len' ),
+	'if' => array( 0, 'se' ),
+	'ifeq' => array( 0, 'seigual' ),
+	'ifexpr' => array( 0, 'seexpr' ),
+	'iferror' => array( 0, 'seerro' ),
+	'default' => array( 0, '#padrão', '#padrao' ),
+	'ifexist' => array( 0, 'seexiste' ),
+	'titleparts' => array( 0, 'partesdotítulo', 'partesdotitulo' ),
+	'len' => array( 0, 'comprimento' ),
 );
 
 /** Russian (русский) */
