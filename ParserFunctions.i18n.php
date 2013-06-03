@@ -235,7 +235,7 @@ $messages['arz'] = array(
 	'pfunc_expr_not_a_number' => 'فى $1: النتيجه مش رقم',
 );
 
-/** Assamese (অসমীয়া)
+/** Assamese (অসমীয়া)
  * @author Bishnu Saikia
  * @author Rajuonline
  */
@@ -1625,7 +1625,7 @@ $messages['nah'] = array(
 	'pfunc_time_error' => 'Ahcuallōtl: ahcualli cāhuitl',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Event
  * @author Laaknor
  */
@@ -1713,7 +1713,7 @@ $messages['nl'] = array(
 	'pfunc_string_too_long' => 'Fout: De tekst is langer dan de limiet van $1 {{PLURAL:$1|karakter|karakters}}',
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎)
+/** Norwegian Nynorsk (norsk nynorsk)
  * @author Eirik
  * @author Frokor
  * @author Gunnernett
@@ -1768,7 +1768,7 @@ $messages['oc'] = array(
 	'pfunc_string_too_long' => 'Error : La cadena depassa lo limit maximal de $1 caractèr{{PLURAL:$1||s}}',
 );
 
-/** Oriya (ଓଡ଼ିଆ)
+/** Oriya (ଓଡ଼ିଆ)
  * @author Jnanaranjan Sahu
  */
 $messages['or'] = array(
