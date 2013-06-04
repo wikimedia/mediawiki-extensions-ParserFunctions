@@ -2007,6 +2007,7 @@ $messages['roa-tara'] = array(
 
 /** Russian (русский)
  * @author G0rn
+ * @author Putnik
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -2014,6 +2015,7 @@ $messages['ru'] = array(
 	'pfunc_time_error' => 'Ошибка: неправильное время',
 	'pfunc_time_too_long' => 'Ошибка: слишком много вызовов функции #time',
 	'pfunc_time_too_big' => 'Ошибка. Параметр #time не может превышать 9999',
+	'pfunc_time_too_small' => 'Ошибка: #time поддерживает только года от 0.',
 	'pfunc_rel2abs_invalid_depth' => 'Ошибка: ошибочная глубина пути: «$1» (попытка доступа к узлу, находящемуся выше, чем корневой)',
 	'pfunc_expr_stack_exhausted' => 'Ошибка выражения: переполнение стека',
 	'pfunc_expr_unexpected_number' => 'Ошибка выражения: неожидаемое число',
