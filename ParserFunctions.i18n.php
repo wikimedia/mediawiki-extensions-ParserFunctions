@@ -1498,6 +1498,13 @@ $messages['lv'] = array(
 	'pfunc_expr_division_by_zero' => 'Dalīšana ar nulli',
 );
 
+/** Minangkabau (Baso Minangkabau)
+ * @author Iwan Novirion
+ */
+$messages['min'] = array(
+	'pfunc_time_error' => 'Kasalahan: wakatu indak tapek',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  * @author Brest
@@ -2691,6 +2698,7 @@ $messages['zh-hans'] = array(
  * @author Liangent
  * @author Mark85296341
  * @author Shinjiman
+ * @author Simon Shek
  * @author Waihorace
  */
 $messages['zh-hant'] = array(
@@ -2698,6 +2706,7 @@ $messages['zh-hant'] = array(
 	'pfunc_time_error' => '錯誤：無效時間。',
 	'pfunc_time_too_long' => '錯誤：過多#time呼叫。',
 	'pfunc_time_too_big' => '錯誤：#time只支援至9999年。',
+	'pfunc_time_too_small' => '錯誤：#time只支援至0。',
 	'pfunc_rel2abs_invalid_depth' => '錯誤：無效路徑深度：「$1」（嘗試訪問頂點以上節點）',
 	'pfunc_expr_stack_exhausted' => '表達式錯誤：堆疊耗盡',
 	'pfunc_expr_unexpected_number' => '表達式錯誤：未預料的數字',
