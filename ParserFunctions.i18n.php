@@ -2177,6 +2177,7 @@ $messages['sl'] = array(
 	'pfunc_time_error' => 'Napaka: neveljaven čas',
 	'pfunc_time_too_long' => 'Napaka: preveč klicev #time',
 	'pfunc_time_too_big' => 'Napaka: #time podpira samo leta do 9999',
+	'pfunc_time_too_small' => 'Napaka: #time podpira samo leta od 0.',
 	'pfunc_rel2abs_invalid_depth' => 'Napaka: Neveljavna globina poti: »$1« (poskus dostopanja do vozlišča višjega od korenskega vozlišča)',
 	'pfunc_expr_stack_exhausted' => 'Napaka v izrazu: Sklad je izčrpan',
 	'pfunc_expr_unexpected_number' => 'Napaka v izrazu: Nepričakovani število',
