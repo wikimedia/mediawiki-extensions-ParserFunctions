@@ -844,6 +844,7 @@ $messages['fa'] = array(
 /** Finnish (suomi)
  * @author Agony
  * @author Cimon Avaro
+ * @author Linnea
  * @author Nike
  * @author VezonThunder
  */
@@ -852,6 +853,7 @@ $messages['fi'] = array(
 	'pfunc_time_error' => 'Virhe: kelvoton aika',
 	'pfunc_time_too_long' => 'Virhe: liian monta #time-kutsua',
 	'pfunc_time_too_big' => 'Virhe: #time tukee vuosilukuja vain vuoteen 9999 asti.',
+	'pfunc_time_too_small' => 'Virhe: #time tukee vain vuosia 0:sta eteenpäin.',
 	'pfunc_rel2abs_invalid_depth' => 'Virhe: Virheellinen syvyys polussa: $1 (ei juurisolmun sisällä)',
 	'pfunc_expr_stack_exhausted' => 'Virhe lausekkeessa: pino loppui',
 	'pfunc_expr_unexpected_number' => 'Virhe lausekkeessa: odottamaton numero',
