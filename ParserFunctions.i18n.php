@@ -356,12 +356,14 @@ $messages['bcc'] = array(
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
+ * @author Wizardist
  */
 $messages['be-tarask'] = array(
 	'pfunc_desc' => 'Палепшаны парсэр зь лягічнымі функцыямі',
 	'pfunc_time_error' => 'Памылка: няслушны час',
 	'pfunc_time_too_long' => 'Памылка: зашмат выклікаў функцыі #time',
 	'pfunc_time_too_big' => 'Памылка: #time падтрымлівае гады толькі ў дыяпазоне да 9999',
+	'pfunc_time_too_small' => 'Памылка: #time падтрымлівае толькі гады ад 0.',
 	'pfunc_rel2abs_invalid_depth' => 'Памылка: няслушная глыбіня шляху: «$1» (спроба доступу да вузла, які знаходзіцца вышэй карэннага)',
 	'pfunc_expr_stack_exhausted' => 'Памылка выразу: стэк перапоўнены',
 	'pfunc_expr_unexpected_number' => 'Памылка выразу: нечаканая лічба',
