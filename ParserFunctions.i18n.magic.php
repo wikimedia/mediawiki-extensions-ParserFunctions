@@ -415,10 +415,10 @@ $magicWords['nl'] = array(
 
 /** Norwegian Nynorsk (norsk nynorsk) */
 $magicWords['nn'] = array(
-	'expr' => array( 0, 'uttrykk' ),
+	'expr' => array( 0, 'uttrykk', 'uttr' ),
 	'if' => array( 0, 'om' ),
 	'ifeq' => array( 0, 'omlik' ),
-	'ifexpr' => array( 0, 'omuttrykk' ),
+	'ifexpr' => array( 0, 'omuttrykk', 'omuttr' ),
 	'iferror' => array( 0, 'omfeil' ),
 	'switch' => array( 0, 'byt' ),
 	'ifexist' => array( 0, 'omfinst' ),
@@ -427,7 +427,7 @@ $magicWords['nn'] = array(
 	'rel2abs' => array( 0, 'reltilabs' ),
 	'titleparts' => array( 0, 'titteldelar' ),
 	'len' => array( 0, 'lengd' ),
-	'replace' => array( 0, 'erstatt' ),
+	'replace' => array( 0, 'byt_ut', 'erstatt' ),
 );
 
 /** Oriya (ଓଡ଼ିଆ) */
