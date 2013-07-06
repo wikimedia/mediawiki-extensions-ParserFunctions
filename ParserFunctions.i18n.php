@@ -352,6 +352,27 @@ $messages['bcc'] = array(
 	'pfunc_expr_not_a_number' => 'ته $1: نتیجه یک عددی نهنت',
 );
 
+/** Bikol Central (Bikol Central)
+ * @author Geopoet
+ */
+$messages['bcl'] = array(
+	'pfunc_desc' => 'Minapabuswang kan parabangay na igwang lohikal na mga punksyon',
+	'pfunc_time_error' => 'Kasalaan: Imbalidong oras.',
+	'pfunc_time_too_long' => 'Kasalaan:Grabe kadakol na #time na mga apod.',
+	'pfunc_time_too_big' => 'Kasalaan: #time minasuporta sana nin mga taon sagkod sa 9999.',
+	'pfunc_time_too_small' => 'Kasalaan: #time minasuporta sana nin mga taon magpoon 0.',
+	'pfunc_rel2abs_invalid_depth' => 'Kasalaan:Imbalidong rarom nin agihan: "$1" (nagprubar na makalaog sa sarong boko-boko sa ibabaw kan ugat nin boko-boko).',
+	'pfunc_expr_stack_exhausted' => 'Kasalaan sa pagpapasabot:An bangay ubos na.',
+	'pfunc_expr_unexpected_number' => 'Kasalaan sa pagpapasabot: Dae pinag-asahang numero.',
+	'pfunc_expr_preg_match_failure' => 'Kasalaan nin pagpapasabot: Dae pinag-aasahang pagpalya kan preg_match.',
+	'pfunc_expr_unrecognised_word' => 'Kasalaan nin pagpapasabot: Dae rekonosidong tataramon an "$1".',
+	'pfunc_expr_unexpected_operator' => 'Kasalaan nin pagpapasabot: Dae pinag-asahan an $1 na operador.',
+	'pfunc_expr_missing_operand' => 'Kasalaan nin pagpapasabot: Nawawara an halaga para sa $1.',
+	'pfunc_expr_unexpected_closing_bracket' => 'Kasalaan nin pagpapasabot: Dae pinag-asahang pagseserado kan pangudal.',
+	'pfunc_expr_unrecognised_punctuation' => 'Kasalaan nin pagpapasabot: Dae rekonosidong panbalangkay na karakter an "$1".',
+	'pfunc_expr_unclosed_bracket' => 'Kasalaan nin pagpapasabot: Dae nakaseradong pangudal.',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
