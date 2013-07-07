@@ -371,6 +371,12 @@ $messages['bcl'] = array(
 	'pfunc_expr_unexpected_closing_bracket' => 'Kasalaan nin pagpapasabot: Dae pinag-asahang pagseserado kan pangudal.',
 	'pfunc_expr_unrecognised_punctuation' => 'Kasalaan nin pagpapasabot: Dae rekonosidong panbalangkay na karakter an "$1".',
 	'pfunc_expr_unclosed_bracket' => 'Kasalaan nin pagpapasabot: Dae nakaseradong pangudal.',
+	'pfunc_expr_division_by_zero' => 'Barangaan sa paagi ni sero.',
+	'pfunc_expr_invalid_argument' => 'Imbalidong argumento para sa $1: < -1 or > 1.',
+	'pfunc_expr_invalid_argument_ln' => 'Imbalidong argumento para sa ln: <= 0.',
+	'pfunc_expr_unknown_error' => 'Kasalaan nin pagpapasabot:Dae aram na kasalaan ($1).',
+	'pfunc_expr_not_a_number' => 'Sa $1:An resulta bako sarong numero.',
+	'pfunc_string_too_long' => 'Kasalaan:An panunod nagsobra sa $1 na limit nin karakter.',
 );
 
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
