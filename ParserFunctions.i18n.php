@@ -542,11 +542,13 @@ $messages['ca'] = array(
 
 /** Chechen (нохчийн)
  * @author Sasan700
+ * @author Умар
  */
 $messages['ce'] = array(
 	'pfunc_time_error' => 'Гlалато: хан нийса яц',
 	'pfunc_expr_stack_exhausted' => 'Яздарехь гlалат ду: хьаладуьззина татол',
 	'pfunc_expr_unrecognised_word' => 'Яздарехь гlалат ду: дойзуш доцу дош «$1»',
+	'pfunc_expr_unrecognised_punctuation' => 'Дешнашан гӀалат: евзина йоцу пунктуацин символ «$1»',
 );
 
 /** Czech (česky)
