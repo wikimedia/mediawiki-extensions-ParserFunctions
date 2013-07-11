@@ -847,6 +847,7 @@ $messages['eu'] = array(
  * @author Amire80
  * @author Ebraminio
  * @author Huji
+ * @author Reza1615
  * @author Wayiran
  */
 $messages['fa'] = array(
@@ -854,6 +855,7 @@ $messages['fa'] = array(
 	'pfunc_time_error' => 'خطا: زمان غیرمجاز',
 	'pfunc_time_too_long' => 'خطا: فراخوانی بیش از حد #time',
 	'pfunc_time_too_big' => 'خطا: #زمان تا سال ۹۹۹۹ را فقط حمایت می‌کند.',
+	'pfunc_time_too_small' => 'خطا: #time تنها  از سال  0 به بعد را پشتیبانی می‌کند.',
 	'pfunc_rel2abs_invalid_depth' => 'خطا: عمق غیر مجاز در نشانی «$1» (تلاش برای دسترسی به یک نشانی فراتر از نشانی ریشه)',
 	'pfunc_expr_stack_exhausted' => 'خطای عبارت: پشته از دست رفته',
 	'pfunc_expr_unexpected_number' => 'خطای عبارت: عدد دور از انتظار',
