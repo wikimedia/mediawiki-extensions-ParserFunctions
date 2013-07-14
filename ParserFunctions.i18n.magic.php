@@ -174,6 +174,30 @@ $magicWords['fa'] = array(
 	'urldecode' => array( 0, 'نشانی‌بی‌کد' ),
 );
 
+/** French (français) */
+$magicWords['fr'] = array(
+	'expr' => array( 0, 'expr' ),
+	'if' => array( 0, 'si' ),
+	'ifeq' => array( 0, 'si=' ),
+	'ifexpr' => array( 0, 'siexpr' ),
+	'iferror' => array( 0, 'sierreur' ),
+	'switch' => array( 0, 'selon' ),
+	'default' => array( 0, '#défaut' ),
+	'ifexist' => array( 0, 'siexiste' ),
+	'time' => array( 0, 'heure' ),
+	'timel' => array( 0, 'heurel' ),
+	'rel2abs' => array( 0, 'relenabs' ),
+	'titleparts' => array( 0, 'partiestitre' ),
+	'len' => array( 0, 'nbcar' ),
+	'pos' => array( 0, 'pos' ),
+	'rpos' => array( 0, 'posr' ),
+	'sub' => array( 0, 'stxt' ),
+	'count' => array( 0, 'nb' ),
+	'replace' => array( 0, 'remplacer' ),
+	'explode' => array( 0, 'exploser' ),
+	'urldecode' => array( 0, 'décoderurl', 'decodeurl' ),
+);
+
 /** Hebrew (עברית) */
 $magicWords['he'] = array(
 	'expr' => array( 0, 'חשב' ),
