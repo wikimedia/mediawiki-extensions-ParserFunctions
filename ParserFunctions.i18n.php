@@ -1914,10 +1914,11 @@ $messages['ps'] = array(
 
 /** Portuguese (português)
  * @author Hamilton Abreu
+ * @author Luckas
  * @author Malafaya
  */
 $messages['pt'] = array(
-	'pfunc_desc' => 'Adiciona funções lógicas ao analisador sintáctico',
+	'pfunc_desc' => 'Melhora o analisador sintático com funções lógicas',
 	'pfunc_time_error' => 'Erro: tempo inválido',
 	'pfunc_time_too_long' => 'Erro: demasiadas chamadas a #time',
 	'pfunc_time_too_big' => 'Erro: #time só lida com anos até 9999',
