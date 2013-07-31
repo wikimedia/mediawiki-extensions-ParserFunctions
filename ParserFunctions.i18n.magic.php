@@ -232,17 +232,17 @@ $magicWords['hu'] = array(
 
 /** Indonesian (Bahasa Indonesia) */
 $magicWords['id'] = array(
-	'expr' => array( 0, 'hitung', 'expr' ),
-	'if' => array( 0, 'jika', 'if' ),
-	'ifeq' => array( 0, 'jikasama', 'ifeq' ),
-	'ifexpr' => array( 0, 'jikahitung', 'ifexpr' ),
-	'iferror' => array( 0, 'jikasalah', 'iferror' ),
-	'switch' => array( 0, 'pilih', 'switch' ),
-	'default' => array( 0, '#baku', '#default' ),
-	'ifexist' => array( 0, 'jikaada', 'ifexist' ),
-	'time' => array( 0, 'waktu', 'time' ),
-	'timel' => array( 0, 'waktu1', 'timel' ),
-	'titleparts' => array( 0, 'bagianjudul', 'titleparts' ),
+	'expr' => array( 0, 'hitung' ),
+	'if' => array( 0, 'jika' ),
+	'ifeq' => array( 0, 'jikasama' ),
+	'ifexpr' => array( 0, 'jikahitung' ),
+	'iferror' => array( 0, 'jikasalah' ),
+	'switch' => array( 0, 'pilih' ),
+	'default' => array( 0, '#baku' ),
+	'ifexist' => array( 0, 'jikaada' ),
+	'time' => array( 0, 'waktu' ),
+	'timel' => array( 0, 'waktu1' ),
+	'titleparts' => array( 0, 'bagianjudul' ),
 );
 
 /** Igbo (Igbo) */
