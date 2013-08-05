@@ -406,15 +406,15 @@ $magicWords['mr'] = array(
 
 /** Low Saxon (Netherlands) (Nedersaksies) */
 $magicWords['nds-nl'] = array(
-	'if' => array( 0, 'as', 'als' ),
-	'ifeq' => array( 0, 'asgelieke', 'alsgelijk' ),
-	'ifexpr' => array( 0, 'asexpressie', 'alsexpressie' ),
-	'iferror' => array( 0, 'asfout', 'alsfout' ),
-	'default' => array( 0, '#standard', '#standaard' ),
-	'ifexist' => array( 0, 'asbesteet', 'alsbestaat' ),
-	'time' => array( 0, 'tied', 'tijd' ),
-	'timel' => array( 0, 'tiedl', 'tijdl' ),
-	'rel2abs' => array( 0, 'relatiefnaorabseluut', 'relatiefnaarabsoluut' ),
+	'if' => array( 0, 'as' ),
+	'ifeq' => array( 0, 'asgelieke' ),
+	'ifexpr' => array( 0, 'asexpressie' ),
+	'iferror' => array( 0, 'asfout' ),
+	'default' => array( 0, '#standard' ),
+	'ifexist' => array( 0, 'asbesteet' ),
+	'time' => array( 0, 'tied' ),
+	'timel' => array( 0, 'tiedl' ),
+	'rel2abs' => array( 0, 'relatiefnaorabseluut' ),
 );
 
 /** Dutch (Nederlands) */
