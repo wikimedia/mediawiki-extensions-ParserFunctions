@@ -1436,7 +1436,7 @@ $messages['ko'] = array(
 	'pfunc_expr_invalid_argument_ln' => '자연로그의 진수가 잘못되었습니다: <= 0',
 	'pfunc_expr_unknown_error' => '표현 오류: 알 수 없는 오류($1)입니다.',
 	'pfunc_expr_not_a_number' => '$1: 결과가 숫자가 아닙니다.',
-	'pfunc_string_too_long' => '오류: $1자 제한을 초과하였습니다.',
+	'pfunc_string_too_long' => '오류: 문자열이 $1 글자 제한을 초과하였습니다.',
 );
 
 /** Colognian (Ripoarisch)
