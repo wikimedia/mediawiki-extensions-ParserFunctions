@@ -102,13 +102,13 @@ $magicWords['ce'] = array(
 
 /** Czech (česky) */
 $magicWords['cs'] = array(
-	'expr' => array( 0, 'výraz', 'expr' ),
-	'if' => array( 0, 'když', 'if' ),
-	'ifexist' => array( 0, 'kdyžexist', 'ifexist' ),
-	'time' => array( 0, 'čas', 'time' ),
-	'len' => array( 0, 'délka', 'len' ),
-	'count' => array( 0, 'počet', 'count' ),
-	'replace' => array( 0, 'nahradit', 'replace' ),
+	'expr' => array( 0, 'výraz' ),
+	'if' => array( 0, 'když' ),
+	'ifexist' => array( 0, 'kdyžexist' ),
+	'time' => array( 0, 'čas' ),
+	'len' => array( 0, 'délka' ),
+	'count' => array( 0, 'počet' ),
+	'replace' => array( 0, 'nahradit' ),
 );
 
 /** German (Deutsch) */
