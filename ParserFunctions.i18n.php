@@ -582,6 +582,14 @@ $messages['cs'] = array(
 	'pfunc_string_too_long' => 'Chyba: Řetězec je delší než $1 {{PLURAL:$1|znak|znaky|znaků}}, což je limit',
 );
 
+/** Welsh (Cymraeg)
+ * @author Lloffiwr
+ */
+$messages['cy'] = array(
+	'pfunc_time_error' => 'Gwall: Amser annilys',
+	'pfunc_expr_division_by_zero' => 'Yn rhannu gyda sero.',
+);
+
 /** Danish (dansk)
  * @author Byrial
  * @author HenrikKbh
