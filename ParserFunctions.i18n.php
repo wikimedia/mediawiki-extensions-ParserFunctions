@@ -587,6 +587,8 @@ $messages['cs'] = array(
  */
 $messages['cy'] = array(
 	'pfunc_time_error' => 'Gwall: Amser annilys',
+	'pfunc_time_too_long' => 'Gwall: Gormod o alwadau #time.',
+	'pfunc_time_too_big' => 'Gwall: nid yw #time yn cynnal blynyddoedd wedi 9999.',
 	'pfunc_expr_division_by_zero' => 'Yn rhannu gyda sero.',
 );
 
