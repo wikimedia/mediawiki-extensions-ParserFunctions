@@ -1958,6 +1958,7 @@ $messages['pt'] = array(
 );
 
 /** Brazilian Portuguese (português do Brasil)
+ * @author Cainamarques
  * @author Eduardo.mps
  * @author Giro720
  */
@@ -1966,6 +1967,7 @@ $messages['pt-br'] = array(
 	'pfunc_time_error' => 'Erro: tempo inválido',
 	'pfunc_time_too_long' => 'Erro: muitas chamadas a #time',
 	'pfunc_time_too_big' => 'Erro: #time só lida com anos até 9999',
+	'pfunc_time_too_small' => 'Erro: #time suporta apenas anos superiores a 0.',
 	'pfunc_rel2abs_invalid_depth' => 'Erro: Profundidade inválida no caminho: "$1" (foi tentado o acesso a um nó acima do nó raiz)',
 	'pfunc_expr_stack_exhausted' => 'Erro de expressão: Pilha esgotada',
 	'pfunc_expr_unexpected_number' => 'Erro de expressão: Número inesperado',
