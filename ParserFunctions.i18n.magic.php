@@ -367,6 +367,7 @@ $magicWords['mk'] = array(
 
 /** Malayalam (മലയാളം) */
 $magicWords['ml'] = array(
+	'expr' => array( 0, 'ദ്യോതകം' ),
 	'if' => array( 0, 'എങ്കിൽ' ),
 	'ifeq' => array( 0, 'സമെമെങ്കിൽ' ),
 	'ifexpr' => array( 0, 'എക്സ്പ്രെഷനെങ്കിൽ' ),
@@ -376,10 +377,14 @@ $magicWords['ml'] = array(
 	'ifexist' => array( 0, 'ഉണ്ടെങ്കിൽ' ),
 	'time' => array( 0, 'സമയം' ),
 	'timel' => array( 0, 'സമയം|' ),
+	'len' => array( 0, 'നീളം' ),
+	'pos' => array( 0, 'സ്ഥാനം' ),
+	'rpos' => array( 0, 'ആപേക്ഷികസ്ഥാനം' ),
 	'sub' => array( 0, 'ഉപം' ),
 	'count' => array( 0, 'എണ്ണുക' ),
 	'replace' => array( 0, 'മാറ്റിച്ചേർക്കുക' ),
 	'explode' => array( 0, 'വിസ്ഫോടനം' ),
+	'urldecode' => array( 0, 'വിലാസഗൂഢീകരണമൊഴിവാക്കൽ' ),
 );
 
 /** Marathi (मराठी) */
