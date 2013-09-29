@@ -120,6 +120,12 @@ $magicWords['de'] = array(
 	'urldecode' => array( 0, 'URLDEKODIERT:' ),
 );
 
+/** Zazaki (Zazaki) */
+$magicWords['diq'] = array(
+	'if' => array( 0, 'se' ),
+	'ifeq' => array( 0, 'sek' ),
+);
+
 /** Esperanto (Esperanto) */
 $magicWords['eo'] = array(
 	'expr' => array( 0, 'espr', 'esprimo' ),
