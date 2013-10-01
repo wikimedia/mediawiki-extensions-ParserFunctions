@@ -1485,9 +1485,10 @@ $messages['ksh'] = array(
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
-	'pfunc_desc' => 'Erweidert Parser mat logesche Fonctiounen',
+	'pfunc_desc' => 'Erweidert Parser mat logesche Funktiounen',
 	'pfunc_time_error' => 'Feeler: ongëlteg Zäit',
 	'pfunc_time_too_long' => 'Feeler: ze dacks #time opgeruff',
 	'pfunc_time_too_big' => 'Feeler: #time ënnerstëtzt nëmme Jore bis 9999',
