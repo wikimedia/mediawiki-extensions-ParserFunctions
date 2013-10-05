@@ -298,3 +298,14 @@ Second default
 a&amp;#39;b
 </p>
 !!end
+
+!! test
+#switch #default should match next and not last named parameter
+!! input
+<{{#switch: foo | #default | bar = DEF }}>
+<{{#switch: foo | #default | bar = DEF | baz = GHI }}>
+!! result
+<p>&lt;DEF&gt;
+&lt;DEF&gt;
+</p>
+!! end

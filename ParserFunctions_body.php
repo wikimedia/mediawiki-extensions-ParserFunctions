@@ -226,6 +226,7 @@ class ExtParserFunctions {
 						return trim( $frame->expand( $valueNode ) );
 					} elseif ( $defaultFound || $mwDefault->matchStartAndRemove( $test ) ) {
 						$default = $valueNode;
+						$defaultFound = false;
 					} # else wrong case, continue
 				}
 			} else {
