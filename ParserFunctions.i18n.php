@@ -669,12 +669,14 @@ $messages['de-ch'] = array(
 /** Zazaki (Zazaki)
  * @author Aspar
  * @author Erdemaslancan
+ * @author Gorizon
  */
 $messages['diq'] = array(
 	'pfunc_desc' => 'Peserkerden fonksiyanane mantıxin weş kere',
 	'pfunc_time_error' => 'xeta: zemano nemeqbul',
 	'pfunc_time_too_long' => 'xeta:zaf zêd mesajê #timeyi',
 	'pfunc_time_too_big' => 'Xırabin: #time honke qebuliya cı hetana 9999.',
+	'pfunc_time_too_small' => 'Xırab: #time ancağ 0 serra beno qebul.',
 	'pfunc_rel2abs_invalid_depth' => 'Hata: Yolda geçersiz derinlik: "$1" (kök düğümünün üstünde bir düğüme erişmeye çalıştı)',
 	'pfunc_expr_stack_exhausted' => 'xetaya ifadeyi: stack qediya',
 	'pfunc_expr_unexpected_number' => 'xetaya ifadeyi: amaro bêtexmin',
