@@ -629,3 +629,9 @@ $magicWords['zh'] = array(
 	'replace' => array( 0, '替换' ),
 	'explode' => array( 0, '爆炸', '炸开' ),
 );
+
+/** Simplified Chinese (中文（简体）‎) */
+$magicWords['zh-hans'] = array(
+	'default' => array( 0, '#默认' ),
+	'ifexist' => array( 0, '若有', '如果存在' ),
+);
