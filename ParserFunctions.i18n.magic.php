@@ -632,6 +632,7 @@ $magicWords['zh'] = array(
 
 /** Simplified Chinese (中文（简体）‎) */
 $magicWords['zh-hans'] = array(
+	'ifeq' => array( 0, '若相等', '如果相等' ),
 	'default' => array( 0, '#默认' ),
 	'ifexist' => array( 0, '若有', '如果存在' ),
 );
