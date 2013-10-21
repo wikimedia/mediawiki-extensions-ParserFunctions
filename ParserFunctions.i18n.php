@@ -870,7 +870,7 @@ $messages['eu'] = array(
  */
 $messages['fa'] = array(
 	'pfunc_desc' => 'به تجزیه‌گر، دستورهای منطقی می‌افزاید',
-	'pfunc_time_error' => 'خطا: زمان غیرمجاز',
+	'pfunc_time_error' => 'خطا: زمان نامجاز',
 	'pfunc_time_too_long' => 'خطا: فراخوانی بیش از حد #time',
 	'pfunc_time_too_big' => 'خطا: #زمان تا سال ۹۹۹۹ را فقط حمایت می‌کند.',
 	'pfunc_time_too_small' => 'خطا: #time تنها  از سال  0 به بعد را پشتیبانی می‌کند.',
