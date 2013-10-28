@@ -580,22 +580,22 @@ $magicWords['uz'] = array(
 
 /** Vietnamese (Tiếng Việt) */
 $magicWords['vi'] = array(
-	'expr' => array( 0, 'côngthức' ),
+	'expr' => array( 0, 'công_thức', 'côngthức' ),
 	'if' => array( 0, 'nếu' ),
-	'ifeq' => array( 0, 'nếubằng' ),
-	'ifexpr' => array( 0, 'nếucôngthức' ),
-	'iferror' => array( 0, 'nếulỗi' ),
-	'default' => array( 0, '#mặcđịnh' ),
-	'ifexist' => array( 0, 'nếutồntại' ),
+	'ifeq' => array( 0, 'nếu_bằng', 'nếubằng' ),
+	'ifexpr' => array( 0, 'nếu_công_thức', 'nếucôngthức' ),
+	'iferror' => array( 0, 'nếu_lỗi', 'nếulỗi' ),
+	'default' => array( 0, '#mặc_định', '#mặcđịnh' ),
+	'ifexist' => array( 0, 'nếu_tồn_tại', 'nếutồntại' ),
 	'time' => array( 0, 'giờ' ),
-	'timel' => array( 0, 'giờđịaphương' ),
-	'len' => array( 0, 'sốchữ', 'sốkýtự', 'sốkítự' ),
-	'pos' => array( 0, 'vịtrí' ),
-	'rpos' => array( 0, 'vịtríphải' ),
-	'sub' => array( 0, 'chuỗicon' ),
+	'timel' => array( 0, 'giờ_địa_phương', 'giờđịaphương' ),
+	'len' => array( 0, 'số_chữ', 'sốchữ', 'số_ký_tự', 'sốkýtự', 'số_kí_tự', 'sốkítự' ),
+	'pos' => array( 0, 'vị_trí', 'vịtrí' ),
+	'rpos' => array( 0, 'vị_trí_phải', 'vịtríphải' ),
+	'sub' => array( 0, 'chuỗi_con', 'chuỗicon' ),
 	'count' => array( 0, 'số' ),
-	'replace' => array( 0, 'thaythế' ),
-	'urldecode' => array( 0, 'giảimãurl' ),
+	'replace' => array( 0, 'thay_thế', 'thaythế' ),
+	'urldecode' => array( 0, 'giải_mã_url', 'giảimãurl' ),
 );
 
 /** Yiddish (ייִדיש) */
