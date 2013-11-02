@@ -100,7 +100,7 @@ $magicWords['ce'] = array(
 	'replace' => array( 0, 'хийцарна', 'замена' ),
 );
 
-/** Czech (česky) */
+/** Czech (čeština) */
 $magicWords['cs'] = array(
 	'expr' => array( 0, 'výraz' ),
 	'if' => array( 0, 'když' ),
