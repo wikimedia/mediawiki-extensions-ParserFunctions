@@ -552,7 +552,7 @@ $messages['ce'] = array(
 	'pfunc_expr_unrecognised_punctuation' => 'Дешнашан гӀалат: евзина йоцу пунктуацин символ «$1»',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Danny B.
  * @author Li-sung
  * @author Matěj Grabovský
@@ -1791,7 +1791,7 @@ $messages['nl'] = array(
 	'pfunc_expr_preg_match_failure' => 'Fout in uitdrukking: onverwacht falen van preg_match.',
 	'pfunc_expr_unrecognised_word' => 'Fout in uitdrukking: woord "$1" niet herkend.',
 	'pfunc_expr_unexpected_operator' => 'Fout in uitdrukking: niet verwachte operator $1.',
-	'pfunc_expr_missing_operand' => 'Fout in uitdrukking: operand voor $1 mist.',
+	'pfunc_expr_missing_operand' => 'Fout in uitdrukking: operand voor $1 ontbreekt.',
 	'pfunc_expr_unexpected_closing_bracket' => 'Fout in uitdrukking: haakje sluiten op onverwachte plaats.',
 	'pfunc_expr_unrecognised_punctuation' => 'Fout in uitdrukking: niet herkend leesteken "$1".',
 	'pfunc_expr_unclosed_bracket' => 'Fout in uitdrukking: niet gesloten haakje openen.',
