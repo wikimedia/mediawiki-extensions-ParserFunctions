@@ -122,8 +122,15 @@ $magicWords['de'] = array(
 
 /** Zazaki (Zazaki) */
 $magicWords['diq'] = array(
+	'expr' => array( 0, 'ifade' ),
 	'if' => array( 0, 'se' ),
 	'ifeq' => array( 0, 'sek' ),
+	'ifexpr' => array( 0, 'ifadeyose' ),
+	'iferror' => array( 0, 'çınyose' ),
+	'time' => array( 0, 'zeman' ),
+	'sub' => array( 0, 'bın' ),
+	'count' => array( 0, 'hesabk' ),
+	'replace' => array( 0, 'vırnayen' ),
 );
 
 /** Esperanto (Esperanto) */
