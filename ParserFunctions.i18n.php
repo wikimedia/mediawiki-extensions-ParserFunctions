@@ -564,6 +564,7 @@ $messages['cs'] = array(
 	'pfunc_time_error' => 'Chyba: neplatný čas',
 	'pfunc_time_too_long' => 'Chyba: příliš mnoho volání #time',
 	'pfunc_time_too_big' => 'Chyba: #time nepodporuje roky nad 9999',
+	'pfunc_time_too_small' => 'Chyba: #time nepodporuje roky menší než 0.',
 	'pfunc_rel2abs_invalid_depth' => 'Chyba: Neplatná hloubka v cestě: "$1" (pokus o přístup do uzlu vyššího než kořen)',
 	'pfunc_expr_stack_exhausted' => 'Chyba ve výrazu: Zásobník plně obsazen',
 	'pfunc_expr_unexpected_number' => 'Chyba ve výrazu: Očekáváno číslo',
