@@ -300,7 +300,7 @@ $magicWords['ja'] = array(
 	'count' => array( 0, '回数' ),
 	'replace' => array( 0, '置き換え' ),
 	'explode' => array( 0, '分割' ),
-	'urldecode' => array( 0, 'URLデコード' ),
+	'urldecode' => array( 0, 'URLデコード', 'ＵＲＬデコード' ),
 );
 
 /** Korean (한국어) */
