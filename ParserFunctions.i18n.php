@@ -237,6 +237,7 @@ $messages['arz'] = array(
 
 /** Assamese (অসমীয়া)
  * @author Bishnu Saikia
+ * @author Gitartha.bordoloi
  * @author Rajuonline
  */
 $messages['as'] = array(
@@ -254,7 +255,7 @@ $messages['as'] = array(
 	'pfunc_expr_unexpected_closing_bracket' => 'এক্সপ্ৰেছন ত্ৰুটী: অবাঞ্চিত সমাপ্তকাৰী বন্ধনী',
 	'pfunc_expr_unrecognised_punctuation' => 'এক্সপ্ৰেছন ত্ৰুটী: অপৰিচিত বিৰামচিহ্ন কেৰেক্টাৰ "$1"',
 	'pfunc_expr_unclosed_bracket' => 'এক্সপ্ৰেছন ত্ৰুটী: উন্মুক্ত বন্ধনী',
-	'pfunc_expr_division_by_zero' => 'শূন্যৰ দ্বাৰা হৰণ কৰা হৈছে',
+	'pfunc_expr_division_by_zero' => 'শূন্যৰে হৰণ কৰা হৈছে।',
 	'pfunc_expr_invalid_argument' => '$1 ৰ বাবে ভুল চৰ্ত: < -1 অথবা > 1',
 	'pfunc_expr_invalid_argument_ln' => 'ln ৰ বাবে অমান্য চৰ্ত: <= 0',
 	'pfunc_expr_unknown_error' => 'এক্সপ্ৰেছন ত্ৰুটী: : অজ্ঞাত ত্ৰুটী ($1)',
