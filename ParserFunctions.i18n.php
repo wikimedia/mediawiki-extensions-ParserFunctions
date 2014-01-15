@@ -1193,6 +1193,7 @@ $messages['ia'] = array(
 	'pfunc_time_error' => 'Error: tempore invalide',
 	'pfunc_time_too_long' => 'Error: troppo de appellos a #time',
 	'pfunc_time_too_big' => 'Error: #time supporta solmente annos usque a 9999',
+	'pfunc_time_too_small' => 'Error: #time supporta solmente annos desde 0.',
 	'pfunc_rel2abs_invalid_depth' => 'Error: Profunditate invalide in cammino: "$1" (essayava acceder a un nodo superior al radice)',
 	'pfunc_expr_stack_exhausted' => 'Error in expression: Pila exhaurite',
 	'pfunc_expr_unexpected_number' => 'Error in expression: Numero non expectate',
