@@ -546,6 +546,7 @@ $messages['ca'] = array(
  * @author Умар
  */
 $messages['ce'] = array(
+	'pfunc_desc' => 'Дика тайина маьӀнийн функцешца анализатор',
 	'pfunc_time_error' => 'Гlалато: хан нийса яц',
 	'pfunc_expr_stack_exhausted' => 'Яздарехь гlалат ду: хьаладуьззина татол',
 	'pfunc_expr_unrecognised_word' => 'Яздарехь гlалат ду: дойзуш доцу дош «$1»',
