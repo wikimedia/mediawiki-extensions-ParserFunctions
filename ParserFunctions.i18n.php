@@ -1597,6 +1597,13 @@ $messages['li'] = array(
 	'pfunc_string_too_long' => 'Fout: De teks is lenger es de limiet van $1 {{PLURAL:$1|teike|teikes}}',
 );
 
+/** لوری (لوری)
+ * @author Bonevarluri
+ */
+$messages['lrc'] = array(
+	'pfunc_time_error' => 'خطا:وخت نامعتور.',
+);
+
 /** Lithuanian (lietuvių)
  * @author Hugo.arg
  */
