@@ -635,12 +635,13 @@ $messages['da'] = array(
  * @author Kghbln
  * @author LWChris
  * @author Metalhead64
+ * @author Purodha
  * @author Raimond Spekking
  * @author Rentenirer
  * @author Rillke
  */
 $messages['de'] = array(
-	'pfunc_desc' => 'Ergänzt den Parser um logische Funktionen',
+	'pfunc_desc' => 'Erweitert den Parser um logische Funktionen',
 	'pfunc_time_error' => 'Fehler: Ungültige Zeitangabe',
 	'pfunc_time_too_long' => 'Fehler: Zu viele #time-Aufrufe',
 	'pfunc_time_too_big' => 'Fehler: #time unterstützt nur Jahre bis 9999',
