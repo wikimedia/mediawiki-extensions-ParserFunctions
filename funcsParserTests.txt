@@ -174,6 +174,23 @@ no
 !! end
 
 !! test
+#ifeq entities
+!!input
+{{#ifeq: {{PAGENAME:*foo&bar}} | *foo&bar | yes | no}}
+{{#ifeq: a'b | a&#39;b | yes | no}}
+{{#ifeq: a'b | a&amp;#39;b | yes | no}}
+{{#ifeq: foo | Foo | *yes | *no}}
+!! result
+<p>yes
+yes
+no
+</p>
+<ul><li>no</li></ul>
+
+!! end
+
+
+!! test
 #iferror
 !!input
 {{#iferror: {{#expr: 1 + 2 }} | error | correct }}
@@ -232,3 +249,25 @@ Templates: Parser functions don't strip whitespace from positional parameters
 <p>no-pre-then
 </p>
 !! end
+
+!! test
+#switch
+!! input
+{{#switch:foo&bar|foo&amp;bar=yes|no}}
+{{#switch:foo&bar|fred=1|foo&amp;bar|g=yes|no}}
+{{#switch:foo&bar|fred=1|foo&amp;&#39;bar|g=yes|no}}
+{{#switch:foo|bar|baz=no|*default}}
+{{#switch:none|foo=1|bar=2|#default=no match|baz=3}}
+{{#switch:none|foo=1|bar=2|#default=ignored|baz=3|Second default}}
+{{#switch:|a&amp;#39;b}}
+!! result
+<p>yes
+yes
+no
+</p>
+<ul><li>default</li></ul>
+<p>no match
+Second default
+a&amp;#39;b
+</p>
+!!end

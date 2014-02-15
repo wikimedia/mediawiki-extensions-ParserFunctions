@@ -147,8 +147,8 @@ class ExtParserFunctions {
 	 * @return string
 	 */
 	public static function ifeqObj( $parser, $frame, $args ) {
-		$left = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
-		$right = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
+		$left = isset( $args[0] ) ? self::decodeTrimExpand( $args[0], $frame ) : '';
+		$right = isset( $args[1] ) ? self::decodeTrimExpand( $args[1], $frame ) : '';
 		if ( $left == $right ) {
 			return isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
 		} else {
@@ -201,10 +201,11 @@ class ExtParserFunctions {
 		if ( count( $args ) == 0 ) {
 			return '';
 		}
-		$primary = trim( $frame->expand( array_shift( $args ) ) );
+		$primary = self::decodeTrimExpand( array_shift( $args ), $frame );
 		$found = $defaultFound = false;
 		$default = null;
 		$lastItemHadNoEquals = false;
+		$lastItem = '';
 		$mwDefault =& MagicWord::get( 'default' );
 		foreach ( $args as $arg ) {
 			$bits = $arg->splitArg();
@@ -219,7 +220,7 @@ class ExtParserFunctions {
 					# Multiple input match
 					return trim( $frame->expand( $valueNode ) );
 				} else {
-					$test = trim( $frame->expand( $nameNode ) );
+					$test = self::decodeTrimExpand( $nameNode, $frame );
 					if ( $test == $primary ) {
 						# Found a match, return now
 						return trim( $frame->expand( $valueNode ) );
@@ -231,10 +232,11 @@ class ExtParserFunctions {
 				# Multiple input, single output
 				# If the value matches, set a flag and continue
 				$lastItemHadNoEquals = true;
-				$test = trim( $frame->expand( $valueNode ) );
-				if ( $test == $primary ) {
+				// $lastItem is an "out" variable
+				$decodedTest = self::decodeTrimExpand( $valueNode, $frame, $lastItem );
+				if ( $decodedTest == $primary ) {
 					$found = true;
-				} elseif ( $mwDefault->matchStartAndRemove( $test ) ) {
+				} elseif ( $mwDefault->matchStartAndRemove( $decodedTest ) ) {
 					$defaultFound = true;
 				}
 			}
@@ -242,7 +244,7 @@ class ExtParserFunctions {
 		# Default case
 		# Check if the last item had no = sign, thus specifying the default case
 		if ( $lastItemHadNoEquals ) {
-			return $test;
+			return $lastItem;
 		} elseif ( !is_null( $default ) ) {
 			return trim( $frame->expand( $default ) );
 		} else {
@@ -894,5 +896,22 @@ class ExtParserFunctions {
 
 		wfProfileOut( __METHOD__ );
 		return $result;
+	}
+
+	/**
+	 * Take a PPNode (-ish thing), expand it, remove entities, and trim.
+	 *
+	 * For use when doing string comparisions, where user expects entities
+	 * to be equal for what they stand for (e.g. comparisions with {{PAGENAME}})
+	 *
+	 * @param $obj PPNode|string Thing to expand
+	 * @param $frame PPFrame
+	 * @param &$trimExpanded String Expanded and trimmed version of PPNode, but with char refs intact
+	 * @return String The trimmed, expanded and entity reference decoded version of the PPNode
+	 */
+	private static function decodeTrimExpand( $obj, $frame, &$trimExpanded = null ) {
+		$expanded = $frame->expand( $obj );
+		$trimExpanded = trim( $expanded );
+		return trim( Sanitizer::decodeCharReferences( $expanded ) );
 	}
 }
