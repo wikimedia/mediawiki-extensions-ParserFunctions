@@ -177,6 +177,7 @@ $messages['an'] = array(
 
 /** Arabic (العربية)
  * @author Aiman titi
+ * @author Asaifm
  * @author Meno25
  */
 $messages['ar'] = array(
@@ -184,6 +185,7 @@ $messages['ar'] = array(
 	'pfunc_time_error' => 'خطأ: زمن غير صحيح',
 	'pfunc_time_too_long' => 'خطأ: استدعاءات #time كثيرة جدا',
 	'pfunc_time_too_big' => 'خطأ : # الوقت يدعم فقط حتى 9999 سنة',
+	'pfunc_time_too_small' => 'خطأ: #time تدعم الأعوام بدءاً من 0.',
 	'pfunc_rel2abs_invalid_depth' => 'خطأ: عمق غير صحيح في المسار: "$1" (حاول دخول عقدة فوق العقدة الجذرية)',
 	'pfunc_expr_stack_exhausted' => 'خطأ في التعبير: ستاك مجهد',
 	'pfunc_expr_unexpected_number' => 'خطأ في التعبير: رقم غير متوقع',
