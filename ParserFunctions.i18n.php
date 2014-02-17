@@ -2248,6 +2248,15 @@ $messages['scn'] = array(
 	'pfunc_string_too_long' => 'Erruri: la stringa supira lu limiti di $1 carattiri',
 );
 
+/** Serbo-Croatian (srpskohrvatski / српскохрватски)
+ * @author Kolega2357
+ */
+$messages['sh'] = array(
+	'pfunc_time_error' => 'Greška: pogrešno vreme',
+	'pfunc_time_too_long' => 'Greška: previše pozivanja funkcije #time',
+	'pfunc_rel2abs_invalid_depth' => 'Greška: Nepravilna dubina u putanji: "$1"',
+);
+
 /** Sinhala (සිංහල)
  * @author Budhajeewa
  * @author නන්දිමිතුරු
