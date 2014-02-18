@@ -35,7 +35,7 @@ $wgPFEnableStringFunctions = false;
   * Running Jenkins unit tests without setting $wgPFEnableStringFunctions = true;
   * will cause all the parser tests for string functions to be skipped.
   */
-if ( $wgWikimediaJenkinsCI === true ) {
+if ( isset( $wgWikimediaJenkinsCI ) && ( $wgWikimediaJenkinsCI === true ) ) {
 	$wgPFEnableStringFunctions = true ;
 }
 
