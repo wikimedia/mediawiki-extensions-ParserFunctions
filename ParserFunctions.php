@@ -29,6 +29,16 @@ $wgPFStringLengthLimit = 1000;
  */
 $wgPFEnableStringFunctions = false;
 
+/**
+  * Enable string functions, when running Wikimedia Jenkins unit tests.
+  *
+  * Running Jenkins unit tests without setting $wgPFEnableStringFunctions = true;
+  * will cause all the parser tests for string functions to be skipped.
+  */
+if ( $wgWikimediaJenkinsCI === true ) {
+	$wgPFEnableStringFunctions = true ;
+}
+
 /** REGISTRATION */
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
