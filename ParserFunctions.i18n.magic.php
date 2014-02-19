@@ -77,6 +77,7 @@ $magicWords['arz'] = array(
 	'count' => array( 0, 'عدد' ),
 	'replace' => array( 0, 'استبدال' ),
 	'explode' => array( 0, 'انفجار' ),
+	'urldecode' => array( 0, 'فك_مسار' ),
 );
 
 /** South Azerbaijani (تورکجه) */
@@ -152,12 +153,14 @@ $magicWords['eo'] = array(
 /** Spanish (español) */
 $magicWords['es'] = array(
 	'if' => array( 0, 'si' ),
+	'ifeq' => array( 0, 'siigual' ),
 	'ifexpr' => array( 0, 'siexpr' ),
 	'iferror' => array( 0, 'sierror' ),
 	'switch' => array( 0, 'según' ),
 	'default' => array( 0, '#predeterminado' ),
 	'ifexist' => array( 0, 'siexiste' ),
 	'time' => array( 0, 'tiempo' ),
+	'timel' => array( 0, 'tiempol' ),
 	'len' => array( 0, 'long', 'longitud' ),
 	'replace' => array( 0, 'reemplazar' ),
 	'explode' => array( 0, 'separar' ),
@@ -639,7 +642,21 @@ $magicWords['zh'] = array(
 
 /** Simplified Chinese (中文（简体）‎) */
 $magicWords['zh-hans'] = array(
+	'if' => array( 0, '若' ),
 	'ifeq' => array( 0, '若相等', '如果相等' ),
+	'switch' => array( 0, '开关' ),
 	'default' => array( 0, '#默认' ),
 	'ifexist' => array( 0, '若有', '如果存在' ),
+	'time' => array( 0, '时间' ),
+	'pos' => array( 0, '终端' ),
+	'rpos' => array( 0, '反终端' ),
+	'sub' => array( 0, 'PF子' ),
+	'count' => array( 0, '计数' ),
+);
+
+/** Traditional Chinese (中文（繁體）‎) */
+$magicWords['zh-hant'] = array(
+	'if' => array( 0, '若' ),
+	'time' => array( 0, '時間' ),
+	'timel' => array( 0, '時間L' ),
 );
