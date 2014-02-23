@@ -1635,7 +1635,7 @@ $messages['min'] = array(
  * @author Brest
  */
 $messages['mk'] = array(
-	'pfunc_desc' => 'Проширување на можностите на парсерот со логички функции',
+	'pfunc_desc' => 'Проширување на можностите на расчленувачот со логички функции',
 	'pfunc_time_error' => 'Грешка: погрешен формат за време',
 	'pfunc_time_too_long' => 'Грешка: премногу повикувања на функцијата #time',
 	'pfunc_time_too_big' => 'Грешка: #time поддржува само години до 9999',
@@ -2013,7 +2013,8 @@ $messages['pt'] = array(
 	'pfunc_desc' => 'Melhora o analisador sintático com funções lógicas',
 	'pfunc_time_error' => 'Erro: tempo inválido',
 	'pfunc_time_too_long' => 'Erro: demasiadas chamadas a #time',
-	'pfunc_time_too_big' => 'Erro: #time só lida com anos até 9999',
+	'pfunc_time_too_big' => 'Erro: #time só permite anos até 9999',
+	'pfunc_time_too_small' => 'Erro: #time só permite anos a partir de 0.',
 	'pfunc_rel2abs_invalid_depth' => 'Erro: Profundidade inválida no caminho: "$1" (foi tentado o acesso a um nó acima do nó raiz)',
 	'pfunc_expr_stack_exhausted' => 'Erro de expressão: Pilha esgotada',
 	'pfunc_expr_unexpected_number' => 'Erro de expressão: Número inesperado',
