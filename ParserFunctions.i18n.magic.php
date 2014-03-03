@@ -231,6 +231,22 @@ $magicWords['he'] = array(
 	'count' => array( 0, 'מספר' ),
 );
 
+/** Hindi (हिन्दी) */
+$magicWords['hi'] = array(
+	'expr' => array( 0, 'सूत्र' ),
+	'if' => array( 0, 'यदि' ),
+	'ifeq' => array( 0, 'यदिसम', 'यदि_समान', 'यदि_बराबर' ),
+	'ifexpr' => array( 0, 'यदि_सूत्र' ),
+	'iferror' => array( 0, 'यदि_त्रुटि' ),
+	'switch' => array( 0, 'बदलें' ),
+	'default' => array( 0, '#मूल' ),
+	'ifexist' => array( 0, 'यदि_मौजूद' ),
+	'time' => array( 0, 'समय' ),
+	'timel' => array( 0, 'समय_स्थानीय' ),
+	'rel2abs' => array( 0, 'सम्बन्धित_से_पूर्ण', 'संबंधित_से_पूर्ण' ),
+	'titleparts' => array( 0, 'शीर्षक_भाग' ),
+);
+
 /** Hungarian (magyar) */
 $magicWords['hu'] = array(
 	'expr' => array( 0, 'kif', 'expr' ),
