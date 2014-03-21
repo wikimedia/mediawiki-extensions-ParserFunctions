@@ -797,6 +797,7 @@ $messages['eo'] = array(
 /** Spanish (español)
  * @author Bernardom
  * @author Crazymadlover
+ * @author Fitoschido
  * @author Muro de Aguas
  * @author Remember the dot
  * @author Sanbec
@@ -817,7 +818,7 @@ $messages['es'] = array(
 	'pfunc_expr_unrecognised_punctuation' => 'Error con la expresión: Carácter de puntuación no reconocido "$1"',
 	'pfunc_expr_unclosed_bracket' => 'Error con la expresión: Paréntesis sin cerrar',
 	'pfunc_expr_division_by_zero' => 'División entre cero',
-	'pfunc_expr_invalid_argument' => 'Argumento incorrecto para $1: < -1 ó > 1',
+	'pfunc_expr_invalid_argument' => 'Argumento no válido para $1: < -1 o > 1.',
 	'pfunc_expr_invalid_argument_ln' => 'Argumento incorrecto para ln: <= 0',
 	'pfunc_expr_unknown_error' => 'Error con la expresión: Error desconocido ($1)',
 	'pfunc_expr_not_a_number' => 'En $1: el resultado no es un número',
