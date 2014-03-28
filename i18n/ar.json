@@ -22,8 +22,8 @@
     "pfunc_expr_unrecognised_punctuation": "خطأ في التعبير: علامة ترقيم غير متعرف عليها \"$1\"",
     "pfunc_expr_unclosed_bracket": "خطأ في التعبير: قوس غير مغلق",
     "pfunc_expr_division_by_zero": "القسمة على صفر",
-    "pfunc_expr_invalid_argument": "مدخلة غير صحيحة ل $1: < -1 أو > 1",
-    "pfunc_expr_invalid_argument_ln": "مدخلة غير صحيحة ل ln: <= 0",
+    "pfunc_expr_invalid_argument": "مدخلة غير صحيحة ل $1: \u003C -1 أو \u003E 1",
+    "pfunc_expr_invalid_argument_ln": "مدخلة غير صحيحة ل ln: \u003C= 0",
     "pfunc_expr_unknown_error": "خطأ في التعبير: خطأ غير معروف ($1)",
     "pfunc_expr_not_a_number": "في $1: النتيجة ليست رقما",
     "pfunc_string_too_long": "خطأ: السلسلة تتجاوز الحد $1 حرف"

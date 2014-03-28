@@ -26,8 +26,8 @@
     "pfunc_expr_unrecognised_punctuation": "Expression-Fehler: Unerkanntes Satzzeichen „$1“",
     "pfunc_expr_unclosed_bracket": "Expression-Fehler: Nicht geschlossene eckige Klammer",
     "pfunc_expr_division_by_zero": "Division durch Null",
-    "pfunc_expr_invalid_argument": "Ungültiges Argument für $1: < -1 oder > 1",
-    "pfunc_expr_invalid_argument_ln": "Ungültiges Argument für ln: <= 0",
+    "pfunc_expr_invalid_argument": "Ungültiges Argument für $1: \u003C -1 oder \u003E 1",
+    "pfunc_expr_invalid_argument_ln": "Ungültiges Argument für ln: \u003C= 0",
     "pfunc_expr_unknown_error": "Expression-Fehler: Unbekannter Fehler ($1)",
     "pfunc_expr_not_a_number": "In $1: Ergebnis ist keine Zahl",
     "pfunc_string_too_long": "Fehler: Zeichenkette überschreitet Zeichenlimit von $1"

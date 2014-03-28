@@ -19,8 +19,8 @@
     "pfunc_expr_unrecognised_punctuation": "Avaldistõrge: Tundmatu kirjavahemärk \"$1\"",
     "pfunc_expr_unclosed_bracket": "Avaldistõrge: sulgemata sulg",
     "pfunc_expr_division_by_zero": "Nulliga jagamine",
-    "pfunc_expr_invalid_argument": "Vigane $1-tehte argument: < -1 või > 1",
-    "pfunc_expr_invalid_argument_ln": "Vigane ln-tehte argument: <= 0",
+    "pfunc_expr_invalid_argument": "Vigane $1-tehte argument: \u003C -1 või \u003E 1",
+    "pfunc_expr_invalid_argument_ln": "Vigane ln-tehte argument: \u003C= 0",
     "pfunc_expr_unknown_error": "Avaldistõrge: Tundmatu tõrge ($1).",
     "pfunc_expr_not_a_number": "$1-tehtes: Vastus pole number",
     "pfunc_string_too_long": "Tõrge: Sõne ületab $1 märgi piirangu."

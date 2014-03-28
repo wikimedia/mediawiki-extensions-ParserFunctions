@@ -20,8 +20,8 @@
     "pfunc_expr_unrecognised_punctuation": "Wurazowa zmólka: Njespóznane interpunkciske znamuško \"$1\"",
     "pfunc_expr_unclosed_bracket": "Wurazowa zmólka: Žedna kóńcajuca spinka",
     "pfunc_expr_division_by_zero": "Diwizija pśez nul",
-    "pfunc_expr_invalid_argument": "Njepłaśiwy argument $1: < -1 abo > 1",
-    "pfunc_expr_invalid_argument_ln": "Njepłaśiwy argument za ln: <= 0",
+    "pfunc_expr_invalid_argument": "Njepłaśiwy argument $1: \u003C -1 abo \u003E 1",
+    "pfunc_expr_invalid_argument_ln": "Njepłaśiwy argument za ln: \u003C= 0",
     "pfunc_expr_unknown_error": "Wurazowa zmólka: Njeznata zmólka ($1)",
     "pfunc_expr_not_a_number": "W $1: wuslědk njejo licba",
     "pfunc_string_too_long": "Zmólka: Znamješkowy rěd pśekčaca limit $1 znamješkow"
