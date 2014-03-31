@@ -665,6 +665,7 @@ $magicWords['zh-hans'] = array(
 	'default' => array( 0, '#默认' ),
 	'ifexist' => array( 0, '若有', '如果存在' ),
 	'time' => array( 0, '时间' ),
+	'timel' => array( 0, '时间l' ),
 	'pos' => array( 0, '终端' ),
 	'rpos' => array( 0, '反终端' ),
 	'sub' => array( 0, 'PF子' ),
