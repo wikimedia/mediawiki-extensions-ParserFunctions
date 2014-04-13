@@ -666,10 +666,12 @@ $magicWords['zh-hans'] = array(
 	'ifexist' => array( 0, '若有', '如果存在' ),
 	'time' => array( 0, '时间' ),
 	'timel' => array( 0, '时间l' ),
+	'titleparts' => array( 0, '标题部分' ),
 	'pos' => array( 0, '终端' ),
 	'rpos' => array( 0, '反终端' ),
 	'sub' => array( 0, 'PF子' ),
 	'count' => array( 0, '计数' ),
+	'replace' => array( 0, '取代' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
