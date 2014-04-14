@@ -3,12 +3,15 @@
         "authors": [
             "Jordi Roqué",
             "Qllach",
-            "SMP"
+            "SMP",
+            "Vriullop"
         ]
     },
     "pfunc_desc": "Millora el processat amb funcions lògiques",
     "pfunc_time_error": "Error: temps invàlid",
     "pfunc_time_too_long": "Error: massa crides #time",
+    "pfunc_time_too_big": "Error: #time només admet anys fins al 9999.",
+    "pfunc_time_too_small": "Error: #time només admet anys des de 0.",
     "pfunc_rel2abs_invalid_depth": "Error: Adreça invàlida al directori: «$1» (s'intentava accedir a un node superior de l'arrel)",
     "pfunc_expr_stack_exhausted": "Error de l'expressió: Pila exhaurida",
     "pfunc_expr_unexpected_number": "Error de l'expressió: Nombre inesperat",
