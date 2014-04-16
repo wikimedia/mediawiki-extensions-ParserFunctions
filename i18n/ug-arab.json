@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Sahran"
-        ]
-    },
-    "pfunc_expr_division_by_zero": "نۆلگە بۆلۈنگەن."
+	"@metadata": {
+		"authors": [
+			"Sahran"
+		]
+	},
+	"pfunc_expr_division_by_zero": "نۆلگە بۆلۈنگەن."
 }
