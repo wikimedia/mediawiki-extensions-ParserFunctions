@@ -8,7 +8,7 @@
 			"Sp5uhe"
 		]
 	},
-	"pfunc_desc": "Rozšíření parseru o logické funkce",
+	"pfunc_desc": "Rozšíření syntaktického analyzátoru o logické funkce",
 	"pfunc_time_error": "Chyba: neplatný čas",
 	"pfunc_time_too_long": "Chyba: příliš mnoho volání #time",
 	"pfunc_time_too_big": "Chyba: #time nepodporuje roky nad 9999",
