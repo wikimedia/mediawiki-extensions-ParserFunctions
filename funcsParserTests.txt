@@ -21,6 +21,18 @@ File:Dionysos-Brunnen am Kölner Dom.jpg
 blah blah
 !! endarticle
 
+!! article
+File:Redirect_to_Foobar.jpg
+!! text
+#REDIRECT[[File:Foobar.jpg]]
+!! endarticle
+
+!! article
+File:Redirect_to_nowhere.jpg
+!! text
+#REDIRECT[[File:Missing target file.jpg]]
+!! endarticle
+
 !! test
 Input times are UTC, not local time
 !! input
@@ -125,6 +137,21 @@ Found
 Not found
 </p>
 !! end
+
+!! test
+{{#ifexist:}} media redirect (bug 32031)
+!! input
+{{#ifexist:Media:Redirect_to_Foobar.jpg|Found|Not found}}
+{{#ifexist:Media:Redirect_to_nowhere.jpg|Found|Not found}}
+{{#ifexist:Media:Missing file.jpg|Found|Not found}}
+{{#ifexist:Media:Dionysos-Brunnen am Kölner Dom.jpg|Found|Not found}}
+!!result
+<p>Found
+Not found
+Not found
+Not found
+</p>
+!!end
 
 !! test
 #if
