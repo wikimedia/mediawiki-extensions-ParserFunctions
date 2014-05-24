@@ -665,7 +665,7 @@ $magicWords['zh-hans'] = array(
 	'iferror' => array( 0, '如果错误' ),
 	'switch' => array( 0, '开关', '转换' ),
 	'default' => array( 0, '#默认' ),
-	'ifexist' => array( 0, '若有', '如果存在' ),
+	'ifexist' => array( 0, '若有', '如有' ),
 	'time' => array( 0, '时间' ),
 	'timel' => array( 0, '时间l' ),
 	'titleparts' => array( 0, '标题部分' ),
@@ -674,6 +674,8 @@ $magicWords['zh-hans'] = array(
 	'sub' => array( 0, 'PF子' ),
 	'count' => array( 0, '计数' ),
 	'replace' => array( 0, '取代' ),
+	'explode' => array( 0, '粉碎' ),
+	'urldecode' => array( 0, 'url解码' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
