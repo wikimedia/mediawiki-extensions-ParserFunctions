@@ -579,7 +579,7 @@ $magicWords['uk'] = array(
 	'ifexpr' => array( 0, 'якщовираз' ),
 	'iferror' => array( 0, 'якщопомилка' ),
 	'switch' => array( 0, 'вибірка' ),
-	'default' => array( 0, '#інакше' ),
+	'default' => array( 0, '#інакше', '#за_замовчуванням' ),
 	'ifexist' => array( 0, 'якщоіснує' ),
 	'replace' => array( 0, 'заміна' ),
 );
