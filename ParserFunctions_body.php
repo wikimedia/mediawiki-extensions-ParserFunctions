@@ -403,24 +403,31 @@ class ExtParserFunctions {
 
 	/**
 	 * @param $parser Parser
+	 * @param $frame PPFrame
 	 * @param $format string
 	 * @param $date string
 	 * @param $language string
 	 * @param $local string|bool
 	 * @return string
 	 */
-	public static function time( $parser, $format = '', $date = '', $language = '', $local = false ) {
+	public static function timeCommon( $parser, $frame = null, $format = '', $date = '', $language = '', $local = false ) {
 		global $wgLocaltimezone;
 		self::registerClearHook();
 		if ( $date === '' ) {
 			$cacheKey = $parser->getOptions()->getTimestamp();
 			$timestamp = new MWTimestamp( $cacheKey );
 			$date = $timestamp->getTimestamp( TS_ISO_8601 );
+			$useTTL = true;
 		} else {
 			$cacheKey = $date;
+			$useTTL = false;
 		}
 		if ( isset( self::$mTimeCache[$format][$cacheKey][$language][$local] ) ) {
-			return self::$mTimeCache[$format][$cacheKey][$language][$local];
+			$cachedVal = self::$mTimeCache[$format][$cacheKey][$language][$local];
+			if ( $useTTL && $cachedVal[1] !== null && $frame && is_callable( array( $frame, 'setTTL' ) ) ) {
+				$frame->setTTL( $cachedVal[1] );
+			}
+			return $cachedVal[0];
 		}
 
 		# compute the timestamp string $ts
@@ -463,6 +470,7 @@ class ExtParserFunctions {
 			$invalidTime = true;
 		}
 
+		$ttl = null;
 		# format the timestamp and return the result
 		if ( $invalidTime ) {
 			$result = '<strong class="error">' . wfMessage( 'pfunc_time_error' )->inContentLanguage()->escaped() . '</strong>';
@@ -477,18 +485,48 @@ class ExtParserFunctions {
 					if ( $language !== '' && Language::isValidBuiltInCode( $language ) ) {
 						// use whatever language is passed as a parameter
 						$langObject = Language::factory( $language );
-						$result = $langObject->sprintfDate( $format, $ts, $tz );
+						$result = $langObject->sprintfDate( $format, $ts, $tz, $ttl );
 					} else {
 						// use wiki's content language
-						$result = $parser->getFunctionLang()->sprintfDate( $format, $ts, $tz );
+						$result = $parser->getFunctionLang()->sprintfDate( $format, $ts, $tz, $ttl );
 					}
 				} else {
 					return '<strong class="error">' . wfMessage( 'pfunc_time_too_big' )->inContentLanguage()->escaped() . '</strong>';
 				}
 			}
 		}
-		self::$mTimeCache[$format][$cacheKey][$language][$local] = $result;
+		self::$mTimeCache[$format][$cacheKey][$language][$local] = array( $result, $ttl );
+		if ( $useTTL && $ttl !== null && $frame && is_callable( array( $frame, 'setTTL' ) ) ) {
+			$frame->setTTL( $ttl );
+		}
 		return $result;
+	}
+
+	/**
+	 * @param $parser Parser
+	 * @param $format string
+	 * @param $date string
+	 * @param $language string
+	 * @param $local string|bool
+	 * @return string
+	 */
+	public static function time( $parser, $format = '', $date = '', $language = '', $local = false ) {
+		return self::timeCommon( $parser, null, $format, $date, $language, $local );
+	}
+
+
+	/**
+	 * @param $parser Parser
+	 * @param $frame PPFrame
+	 * @param $args array
+	 * @return string
+	 */
+	public static function timeObj( $parser, $frame, $args ) {
+		$format = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
+		$date = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
+		$language = isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
+		$local = isset( $args[3] ) && trim( $frame->expand( $args[3] ) );
+		return self::timeCommon( $parser, $frame, $format, $date, $language, $local );
 	}
 
 	/**
@@ -499,7 +537,20 @@ class ExtParserFunctions {
 	 * @return string
 	 */
 	public static function localTime( $parser, $format = '', $date = '', $language = '' ) {
-		return self::time( $parser, $format, $date, $language, true );
+		return self::timeCommon( $parser, null, $format, $date, $language, true );
+	}
+
+	/**
+	 * @param $parser Parser
+	 * @param $frame PPFrame
+	 * @param $args array
+	 * @return string
+	 */
+	public static function localTimeObj( $parser, $frame, $args ) {
+		$format = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
+		$date = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
+		$language = isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
+		return self::timeCommon( $parser, $frame, $format, $date, $language, true );
 	}
 
 	/**
