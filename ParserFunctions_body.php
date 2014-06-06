@@ -81,7 +81,7 @@ class ExtParserFunctions {
 		try {
 			return self::getExprParser()->doExpression( $expr );
 		} catch ( ExprError $e ) {
-			return $e->getMessage();
+			return '<strong class="error">' . htmlspecialchars( $e->getMessage() ) . '</strong>';
 		}
 	}
 
@@ -104,7 +104,7 @@ class ExtParserFunctions {
 				return $else;
 			}
 		} catch ( ExprError $e ) {
-			return $e->getMessage();
+			return '<strong class="error">' . htmlspecialchars( $e->getMessage() ) . '</strong>';
 		}
 	}
 

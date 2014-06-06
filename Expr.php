@@ -60,8 +60,7 @@ class ExprError extends MWException {
 		// pfunc_expr_unexpected_closing_bracket, pfunc_expr_unrecognised_punctuation,
 		// pfunc_expr_unclosed_bracket, pfunc_expr_division_by_zero, pfunc_expr_invalid_argument,
 		// pfunc_expr_invalid_argument_ln, pfunc_expr_unknown_error, pfunc_expr_not_a_number
-		$msg = wfMessage( "pfunc_expr_$msg", $parameter )->inContentLanguage()->escaped();
-		$this->message = '<strong class="error">' . $msg . '</strong>';
+		$this->message = wfMessage( "pfunc_expr_$msg", $parameter )->inContentLanguage()->text();
 	}
 }
 

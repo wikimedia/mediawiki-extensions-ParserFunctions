@@ -52,6 +52,7 @@ $wgExtensionCredits['parserhook'][] = array(
 $wgAutoloadClasses['ExtParserFunctions'] = __DIR__ . '/ParserFunctions_body.php';
 $wgAutoloadClasses['ExprParser'] = __DIR__ . '/Expr.php';
 $wgAutoloadClasses['ExprError'] = __DIR__ . '/Expr.php';
+$wgAutoloadClasses['Scribunto_LuaParserFunctionsLibrary'] = __DIR__ . '/ParserFunctions.library.php';
 
 $wgMessagesDirs['ParserFunctions'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['ParserFunctions'] = __DIR__ . '/ParserFunctions.i18n.php';
@@ -108,3 +109,10 @@ function wfParserFunctionsTests( &$files ) {
 	$files[] = __DIR__ . '/tests/ExpressionTest.php';
 	return true;
 }
+
+$wgHooks['ScribuntoExternalLibraries'][] = function( $engine, array &$extraLibraries ) {
+	if( $engine == 'lua' ) {
+		$extraLibraries['mw.ext.ParserFunctions'] = 'Scribunto_LuaParserFunctionsLibrary';
+	}
+	return true;
+};
