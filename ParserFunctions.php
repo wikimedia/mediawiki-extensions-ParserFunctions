@@ -77,10 +77,10 @@ function wfRegisterParserFunctions( $parser ) {
 	$parser->setFunctionHook( 'ifexist', 'ExtParserFunctions::ifexistObj', SFH_OBJECT_ARGS );
 	$parser->setFunctionHook( 'ifexpr', 'ExtParserFunctions::ifexprObj', SFH_OBJECT_ARGS );
 	$parser->setFunctionHook( 'iferror', 'ExtParserFunctions::iferrorObj', SFH_OBJECT_ARGS );
+	$parser->setFunctionHook( 'time', 'ExtParserFunctions::timeObj', SFH_OBJECT_ARGS );
+	$parser->setFunctionHook( 'timel', 'ExtParserFunctions::localTimeObj', SFH_OBJECT_ARGS );
 
 	$parser->setFunctionHook( 'expr', 'ExtParserFunctions::expr' );
-	$parser->setFunctionHook( 'time', 'ExtParserFunctions::time' );
-	$parser->setFunctionHook( 'timel', 'ExtParserFunctions::localTime' );
 	$parser->setFunctionHook( 'rel2abs', 'ExtParserFunctions::rel2abs' );
 	$parser->setFunctionHook( 'titleparts', 'ExtParserFunctions::titleparts' );
 
