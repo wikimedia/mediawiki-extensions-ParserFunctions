@@ -487,11 +487,12 @@ class ExtParserFunctions {
 					if ( $language !== '' && Language::isValidBuiltInCode( $language ) ) {
 						// use whatever language is passed as a parameter
 						$langObject = Language::factory( $language );
-						$result = $langObject->sprintfDate( $format, $ts, $tz, $ttl );
 					} else {
 						// use wiki's content language
-						$result = $parser->getFunctionLang()->sprintfDate( $format, $ts, $tz, $ttl );
+						$langObject = $parser->getFunctionLang();
+						StubObject::unstub( $langObject ); // $ttl is passed by reference, which doesn't work right on stub objects
 					}
+					$result = $langObject->sprintfDate( $format, $ts, $tz, $ttl );
 				} else {
 					return '<strong class="error">' . wfMessage( 'pfunc_time_too_big' )->inContentLanguage()->escaped() . '</strong>';
 				}
