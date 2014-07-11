@@ -309,3 +309,14 @@ a&amp;#39;b
 &lt;DEF&gt;
 </p>
 !! end
+
+!! test
+#switch should not match #default as a prefix
+!! input
+<{{#switch: foo | #defaultWTF? = This is crazy }}>
+<{{#switch: foo | #defaultWTF? | bar = This is crazy }}>
+!! result
+<p>&lt;&gt;
+&lt;&gt;
+</p>
+!! end

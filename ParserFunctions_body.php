@@ -224,7 +224,7 @@ class ExtParserFunctions {
 					if ( $test == $primary ) {
 						# Found a match, return now
 						return trim( $frame->expand( $valueNode ) );
-					} elseif ( $defaultFound || $mwDefault->matchStartAndRemove( $test ) ) {
+					} elseif ( $defaultFound || $mwDefault->matchStartToEnd( $test ) ) {
 						$default = $valueNode;
 						$defaultFound = false;
 					} # else wrong case, continue
@@ -237,7 +237,7 @@ class ExtParserFunctions {
 				$decodedTest = self::decodeTrimExpand( $valueNode, $frame, $lastItem );
 				if ( $decodedTest == $primary ) {
 					$found = true;
-				} elseif ( $mwDefault->matchStartAndRemove( $decodedTest ) ) {
+				} elseif ( $mwDefault->matchStartToEnd( $decodedTest ) ) {
 					$defaultFound = true;
 				}
 			}
