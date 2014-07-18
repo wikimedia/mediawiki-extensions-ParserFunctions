@@ -522,6 +522,24 @@ $magicWords['pt'] = array(
 	'len' => array( 0, 'comprimento' ),
 );
 
+/** Quechua (Runa Simi) */
+$magicWords['qu'] = array(
+	'expr' => array( 0, 'rikuchiy' ),
+	'if' => array( 0, 'kaptin' ),
+	'ifeq' => array( 0, 'kaqllakaptin' ),
+	'ifexpr' => array( 0, 'rikuchiykaptin' ),
+	'iferror' => array( 0, 'pantasqakaptin' ),
+	'switch' => array( 0, 'winkuy' ),
+	'default' => array( 0, '#kikinmanta' ),
+	'ifexist' => array( 0, 'kachkaptin' ),
+	'time' => array( 0, 'pacha' ),
+	'timel' => array( 0, 'pachal' ),
+	'len' => array( 0, 'suni' ),
+	'pos' => array( 0, 'tiyay' ),
+	'replace' => array( 0, 'rantichay', 'huknachay' ),
+	'explode' => array( 0, 'phatmay' ),
+);
+
 /** Russian (русский) */
 $magicWords['ru'] = array(
 	'if' => array( 0, 'если' ),
