@@ -1,13 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dani"
+			"Dani",
+			"Tacsipacsi"
 		]
 	},
 	"pfunc_desc": "Az értelmező kiegészítése logikai funkciókkal",
-	"pfunc_time_error": "Hiba: érvénytelen idő",
+	"pfunc_time_error": "Hiba: Érvénytelen idő.",
 	"pfunc_time_too_long": "Hiba: a #time túl sokszor lett meghívva",
 	"pfunc_time_too_big": "Hiba: a #time csak 9999-ig támogatja az éveket",
+	"pfunc_time_too_small": "Hiba: A #time csak 0-tól támogatja az éveket.",
 	"pfunc_rel2abs_invalid_depth": "Hiba: nem megfelelő a mélység az elérési útban: „$1” (egy olyan csomópontot akartál elérni, amely a gyökércsomópont felett van)",
 	"pfunc_expr_stack_exhausted": "Hiba a kifejezésben: a verem kiürült",
 	"pfunc_expr_unexpected_number": "Hiba a kifejezésben: nem várt szám",
