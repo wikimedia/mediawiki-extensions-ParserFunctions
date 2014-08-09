@@ -678,8 +678,10 @@ $magicWords['zh'] = array(
 
 /** Simplified Chinese (中文（简体）‎) */
 $magicWords['zh-hans'] = array(
+	'expr' => array( 0, '表达式' ),
 	'if' => array( 0, '若', '如果' ),
 	'ifeq' => array( 0, '若相等', '如果相等' ),
+	'ifexpr' => array( 0, '若表达式' ),
 	'iferror' => array( 0, '如果错误' ),
 	'switch' => array( 0, '开关', '转换' ),
 	'default' => array( 0, '#默认' ),
