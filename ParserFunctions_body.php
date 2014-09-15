@@ -377,7 +377,9 @@ class ExtParserFunctions {
 				}
 				$id = $title->getArticleID();
 				$parser->mOutput->addLink( $title, $id );
-				if ( $id ) {
+
+				// bug 70495: don't just check whether the ID != 0
+				if ( $title->exists() ) {
 					return $then;
 				}
 			}
