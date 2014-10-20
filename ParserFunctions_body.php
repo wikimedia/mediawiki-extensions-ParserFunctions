@@ -12,7 +12,6 @@ class ExtParserFunctions {
 	 */
 	public static function clearState( $parser ) {
 		self::$mTimeChars = 0;
-		$parser->pf_markerRegex = null;
 		return true;
 	}
 
@@ -28,38 +27,6 @@ class ExtParserFunctions {
 			$wgHooks['ParserClearState'][] = __CLASS__ . '::clearState';
 			$done = true;
 		}
-	}
-
-	/**
-	 * Get the marker regex. Cached.
-	 * @param $parser Parser
-	 * @return
-	 */
-	public static function getMarkerRegex( $parser ) {
-		self::registerClearHook();
-		if ( isset( $parser->pf_markerRegex ) ) {
-			return $parser->pf_markerRegex;
-		}
-
-		wfProfileIn( __METHOD__ );
-
-		$prefix = preg_quote( $parser->uniqPrefix(), '/' );
-
-		$suffix = preg_quote( Parser::MARKER_SUFFIX, '/' );
-
-		$parser->pf_markerRegex = '/' . $prefix . '(?:(?!' . $suffix . ').)*' . $suffix . '/us';
-
-		wfProfileOut( __METHOD__ );
-		return $parser->pf_markerRegex;
-	}
-
-	/**
-	 * @param $parser Parser
-	 * @param $text string
-	 * @return string
-	 */
-	private static function killMarkers ( $parser, $text ) {
-		return preg_replace( self::getMarkerRegex( $parser ), '' , $text );
 	}
 
 	/**
@@ -623,7 +590,7 @@ class ExtParserFunctions {
 	public static function runLen ( $parser, $inStr = '' ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = self::killMarkers( $parser, (string)$inStr );
+		$inStr = $parser->killMarkers( (string)$inStr );
 		$len = mb_strlen( $inStr );
 
 		wfProfileOut( __METHOD__ );
@@ -646,8 +613,8 @@ class ExtParserFunctions {
 	public static function runPos ( $parser, $inStr = '', $inNeedle = '', $inOffset = 0 ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = self::killMarkers( $parser, (string)$inStr );
-		$inNeedle = self::killMarkers( $parser, (string)$inNeedle );
+		$inStr = $parser->killMarkers( (string)$inStr );
+		$inNeedle = $parser->killMarkers( (string)$inNeedle );
 
 		if ( !self::checkLength( $inStr ) ||
 			!self::checkLength( $inNeedle ) ) {
@@ -679,8 +646,8 @@ class ExtParserFunctions {
 	public static function runRPos ( $parser, $inStr = '', $inNeedle = '' ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = self::killMarkers( $parser, (string)$inStr );
-		$inNeedle = self::killMarkers( $parser, (string)$inNeedle );
+		$inStr = $parser->killMarkers( (string)$inStr );
+		$inNeedle = $parser->killMarkers( (string)$inNeedle );
 
 		if ( !self::checkLength( $inStr ) ||
 			!self::checkLength( $inNeedle ) ) {
@@ -718,7 +685,7 @@ class ExtParserFunctions {
 	public static function runSub ( $parser, $inStr = '', $inStart = 0, $inLength = 0 ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = self::killMarkers( $parser, (string)$inStr );
+		$inStr = $parser->killMarkers( (string)$inStr );
 
 		if ( !self::checkLength( $inStr ) ) {
 			wfProfileOut( __METHOD__ );
@@ -749,8 +716,8 @@ class ExtParserFunctions {
 	public static function runCount ( $parser, $inStr = '', $inSubStr = '' ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = self::killMarkers( $parser, (string)$inStr );
-		$inSubStr = self::killMarkers( $parser, (string)$inSubStr );
+		$inStr = $parser->killMarkers( (string)$inStr );
+		$inSubStr = $parser->killMarkers( (string)$inSubStr );
 
 		if ( !self::checkLength( $inStr ) ||
 			!self::checkLength( $inSubStr ) ) {
@@ -788,9 +755,9 @@ class ExtParserFunctions {
 		global $wgPFStringLengthLimit;
 		wfProfileIn( __METHOD__ );
 
-		$inStr = self::killMarkers( $parser, (string)$inStr );
-		$inReplaceFrom = self::killMarkers( $parser, (string)$inReplaceFrom );
-		$inReplaceTo = self::killMarkers( $parser, (string)$inReplaceTo );
+		$inStr = $parser->killMarkers( (string)$inStr );
+		$inReplaceFrom = $parser->killMarkers( (string)$inReplaceFrom );
+		$inReplaceTo = $parser->killMarkers( (string)$inReplaceTo );
 
 		if ( !self::checkLength( $inStr ) ||
 			!self::checkLength( $inReplaceFrom ) ||
@@ -850,8 +817,8 @@ class ExtParserFunctions {
 	public static function runExplode ( $parser, $inStr = '', $inDiv = '', $inPos = 0, $inLim = null ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = self::killMarkers( $parser, (string)$inStr );
-		$inDiv = self::killMarkers( $parser, (string)$inDiv );
+		$inStr = $parser->killMarkers( (string)$inStr );
+		$inDiv = $parser->killMarkers( (string)$inDiv );
 
 		if ( $inDiv == '' ) {
 			$inDiv = ' ';
@@ -890,7 +857,7 @@ class ExtParserFunctions {
 	public static function runUrlDecode( $parser, $inStr = '' ) {
 		wfProfileIn( __METHOD__ );
 
-		$inStr = self::killMarkers( $parser, (string)$inStr );
+		$inStr = $parser->killMarkers( (string)$inStr );
 		if ( !self::checkLength( $inStr ) ) {
 			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
