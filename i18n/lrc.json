@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bonevarluri"
+			"Bonevarluri",
+			"Mogoeilor"
 		]
 	},
-	"pfunc_time_error": "خطا:وخت نامعتور."
+	"pfunc_time_error": "خطا:وخت نامعتور.",
+	"pfunc_expr_invalid_argument_ln": "چک چنه گن سی درینده:<=0."
 }
