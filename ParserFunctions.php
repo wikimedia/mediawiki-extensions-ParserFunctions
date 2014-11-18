@@ -71,14 +71,14 @@ function wfRegisterParserFunctions( $parser ) {
 	global $wgPFEnableStringFunctions;
 
 	// These functions accept DOM-style arguments
-	$parser->setFunctionHook( 'if', 'ExtParserFunctions::ifObj', SFH_OBJECT_ARGS );
-	$parser->setFunctionHook( 'ifeq', 'ExtParserFunctions::ifeqObj', SFH_OBJECT_ARGS );
-	$parser->setFunctionHook( 'switch', 'ExtParserFunctions::switchObj', SFH_OBJECT_ARGS );
-	$parser->setFunctionHook( 'ifexist', 'ExtParserFunctions::ifexistObj', SFH_OBJECT_ARGS );
-	$parser->setFunctionHook( 'ifexpr', 'ExtParserFunctions::ifexprObj', SFH_OBJECT_ARGS );
-	$parser->setFunctionHook( 'iferror', 'ExtParserFunctions::iferrorObj', SFH_OBJECT_ARGS );
-	$parser->setFunctionHook( 'time', 'ExtParserFunctions::timeObj', SFH_OBJECT_ARGS );
-	$parser->setFunctionHook( 'timel', 'ExtParserFunctions::localTimeObj', SFH_OBJECT_ARGS );
+	$parser->setFunctionHook( 'if', 'ExtParserFunctions::ifObj', Parser::SFH_OBJECT_ARGS );
+	$parser->setFunctionHook( 'ifeq', 'ExtParserFunctions::ifeqObj', Parser::SFH_OBJECT_ARGS );
+	$parser->setFunctionHook( 'switch', 'ExtParserFunctions::switchObj', Parser::SFH_OBJECT_ARGS );
+	$parser->setFunctionHook( 'ifexist', 'ExtParserFunctions::ifexistObj', Parser::SFH_OBJECT_ARGS );
+	$parser->setFunctionHook( 'ifexpr', 'ExtParserFunctions::ifexprObj', Parser::SFH_OBJECT_ARGS );
+	$parser->setFunctionHook( 'iferror', 'ExtParserFunctions::iferrorObj', Parser::SFH_OBJECT_ARGS );
+	$parser->setFunctionHook( 'time', 'ExtParserFunctions::timeObj', Parser::SFH_OBJECT_ARGS );
+	$parser->setFunctionHook( 'timel', 'ExtParserFunctions::localTimeObj', Parser::SFH_OBJECT_ARGS );
 
 	$parser->setFunctionHook( 'expr', 'ExtParserFunctions::expr' );
 	$parser->setFunctionHook( 'rel2abs', 'ExtParserFunctions::rel2abs' );
