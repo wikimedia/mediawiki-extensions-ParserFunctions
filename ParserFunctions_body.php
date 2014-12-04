@@ -624,7 +624,7 @@ class ExtParserFunctions {
 
 		if ( $inNeedle == '' ) { $inNeedle = ' '; }
 
-		$pos = mb_strpos( $inStr, $inNeedle, $inOffset );
+		$pos = mb_strpos( $inStr, $inNeedle, intval( $inOffset ) );
 		if ( $pos === false ) { $pos = ""; }
 
 		wfProfileOut( __METHOD__ );
