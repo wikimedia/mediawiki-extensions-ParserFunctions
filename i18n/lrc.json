@@ -6,5 +6,6 @@
 		]
 	},
 	"pfunc_time_error": "خطا:وخت نامعتور.",
+	"pfunc_expr_division_by_zero": "بهرکنون وا صفر",
 	"pfunc_expr_invalid_argument_ln": "چک چنه گن سی درینده:<=0."
 }
