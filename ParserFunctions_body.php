@@ -588,13 +588,8 @@ class ExtParserFunctions {
 	 * @return int
 	 */
 	public static function runLen ( $parser, $inStr = '' ) {
-		wfProfileIn( __METHOD__ );
-
 		$inStr = $parser->killMarkers( (string)$inStr );
-		$len = mb_strlen( $inStr );
-
-		wfProfileOut( __METHOD__ );
-		return $len;
+		return mb_strlen( $inStr );
 	}
 
 	/**
@@ -611,14 +606,11 @@ class ExtParserFunctions {
 	 * @return int|string
 	 */
 	public static function runPos ( $parser, $inStr = '', $inNeedle = '', $inOffset = 0 ) {
-		wfProfileIn( __METHOD__ );
-
 		$inStr = $parser->killMarkers( (string)$inStr );
 		$inNeedle = $parser->killMarkers( (string)$inNeedle );
 
 		if ( !self::checkLength( $inStr ) ||
 			!self::checkLength( $inNeedle ) ) {
-			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
 		}
 
@@ -627,7 +619,6 @@ class ExtParserFunctions {
 		$pos = mb_strpos( $inStr, $inNeedle, intval( $inOffset ) );
 		if ( $pos === false ) { $pos = ""; }
 
-		wfProfileOut( __METHOD__ );
 		return $pos;
 	}
 
@@ -644,14 +635,11 @@ class ExtParserFunctions {
 	 * @return int|string
 	 */
 	public static function runRPos ( $parser, $inStr = '', $inNeedle = '' ) {
-		wfProfileIn( __METHOD__ );
-
 		$inStr = $parser->killMarkers( (string)$inStr );
 		$inNeedle = $parser->killMarkers( (string)$inNeedle );
 
 		if ( !self::checkLength( $inStr ) ||
 			!self::checkLength( $inNeedle ) ) {
-			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
 		}
 
@@ -660,7 +648,6 @@ class ExtParserFunctions {
 		$pos = mb_strrpos( $inStr, $inNeedle );
 		if ( $pos === false ) { $pos = -1; }
 
-		wfProfileOut( __METHOD__ );
 		return $pos;
 	}
 
@@ -683,12 +670,9 @@ class ExtParserFunctions {
 	 * @return string
 	 */
 	public static function runSub ( $parser, $inStr = '', $inStart = 0, $inLength = 0 ) {
-		wfProfileIn( __METHOD__ );
-
 		$inStr = $parser->killMarkers( (string)$inStr );
 
 		if ( !self::checkLength( $inStr ) ) {
-			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
 		}
 
@@ -698,7 +682,6 @@ class ExtParserFunctions {
 			$result = mb_substr( $inStr, intval( $inStart ), intval( $inLength ) );
 		}
 
-		wfProfileOut( __METHOD__ );
 		return $result;
 	}
 
@@ -714,14 +697,11 @@ class ExtParserFunctions {
 	 * @return int|string
 	 */
 	public static function runCount ( $parser, $inStr = '', $inSubStr = '' ) {
-		wfProfileIn( __METHOD__ );
-
 		$inStr = $parser->killMarkers( (string)$inStr );
 		$inSubStr = $parser->killMarkers( (string)$inSubStr );
 
 		if ( !self::checkLength( $inStr ) ||
 			!self::checkLength( $inSubStr ) ) {
-			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
 		}
 
@@ -731,7 +711,6 @@ class ExtParserFunctions {
 
 		$result = mb_substr_count( $inStr, $inSubStr );
 
-		wfProfileOut( __METHOD__ );
 		return $result;
 	}
 
@@ -753,7 +732,6 @@ class ExtParserFunctions {
 	public static function runReplace( $parser, $inStr = '',
 			$inReplaceFrom = '', $inReplaceTo = '', $inLimit = -1 ) {
 		global $wgPFStringLengthLimit;
-		wfProfileIn( __METHOD__ );
 
 		$inStr = $parser->killMarkers( (string)$inStr );
 		$inReplaceFrom = $parser->killMarkers( (string)$inReplaceFrom );
@@ -762,7 +740,6 @@ class ExtParserFunctions {
 		if ( !self::checkLength( $inStr ) ||
 			!self::checkLength( $inReplaceFrom ) ||
 			!self::checkLength( $inReplaceTo ) ) {
-			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
 		}
 
@@ -789,11 +766,9 @@ class ExtParserFunctions {
 						$inReplaceTo, $inStr, $limit );
 
 		if ( !self::checkLength( $result ) ) {
-			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
 		}
 
-		wfProfileOut( __METHOD__ );
 		return $result;
 	}
 
@@ -815,8 +790,6 @@ class ExtParserFunctions {
 	 * @return string
 	 */
 	public static function runExplode ( $parser, $inStr = '', $inDiv = '', $inPos = 0, $inLim = null ) {
-		wfProfileIn( __METHOD__ );
-
 		$inStr = $parser->killMarkers( (string)$inStr );
 		$inDiv = $parser->killMarkers( (string)$inDiv );
 
@@ -826,7 +799,6 @@ class ExtParserFunctions {
 
 		if ( !self::checkLength( $inStr ) ||
 			!self::checkLength( $inDiv ) ) {
-			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
 		}
 
@@ -842,7 +814,6 @@ class ExtParserFunctions {
 			$result = '';
 		}
 
-		wfProfileOut( __METHOD__ );
 		return $result;
 	}
 
@@ -855,18 +826,12 @@ class ExtParserFunctions {
 	 * @return string
 	 */
 	public static function runUrlDecode( $parser, $inStr = '' ) {
-		wfProfileIn( __METHOD__ );
-
 		$inStr = $parser->killMarkers( (string)$inStr );
 		if ( !self::checkLength( $inStr ) ) {
-			wfProfileOut( __METHOD__ );
 			return self::tooLongError();
 		}
 
-		$result = urldecode( $inStr );
-
-		wfProfileOut( __METHOD__ );
-		return $result;
+		return urldecode( $inStr );
 	}
 
 	/**
