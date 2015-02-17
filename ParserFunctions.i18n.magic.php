@@ -607,7 +607,7 @@ $magicWords['ur'] = array(
 	'if' => array( 0, 'اگر' ),
 );
 
-/** Uzbek (oʻzbekcha) */
+/** Uzbek (oʻzbekcha/ўзбекча) */
 $magicWords['uz'] = array(
 	'expr' => array( 0, 'ifoda' ),
 	'if' => array( 0, 'agar' ),
