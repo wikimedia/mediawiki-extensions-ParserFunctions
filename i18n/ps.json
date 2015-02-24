@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"عثمان خان شاہ"
 		]
 	},
 	"pfunc_time_error": "ستونزه: ناسم وخت",
+	"pfunc_expr_unrecognised_punctuation": "ښکاره کولو خطا:\"$1\" تلفظ ونه پېژاندې شو",
 	"pfunc_expr_division_by_zero": "وېش په صفر"
 }
