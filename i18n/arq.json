@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bachounda"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "غلط فالتعبير: كلمة غير متعرف عليها \"$1\"",
+	"pfunc_expr_unrecognised_punctuation": "غلطه فالتعبير: علامة تنقيط ماشي متعرف عليها \"$1\""
+}
