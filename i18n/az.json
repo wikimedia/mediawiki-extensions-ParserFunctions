@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cekli829"
+			"Cekli829",
+			"Dağlı95"
 		]
 	},
-	"pfunc_time_error": "Xəta: yanlış zaman"
+	"pfunc_time_error": "Xəta: yanlış zaman",
+	"pfunc_expr_missing_operand": "İfadə xətası: $1 operantı çatışmır.",
+	"pfunc_expr_unknown_error": "İfadə xətası: naməlum xəta ($1)"
 }
