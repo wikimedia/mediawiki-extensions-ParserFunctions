@@ -701,7 +701,15 @@ $magicWords['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎) */
 $magicWords['zh-hant'] = array(
+	'expr' => array( 0, '表達式' ),
 	'if' => array( 0, '若' ),
+	'ifexpr' => array( 0, '若表達式' ),
+	'iferror' => array( 0, '如果錯誤' ),
+	'switch' => array( 0, '轉換' ),
+	'default' => array( 0, '#默認' ),
 	'time' => array( 0, '時間' ),
 	'timel' => array( 0, '時間L' ),
+	'len' => array( 0, '長度' ),
+	'count' => array( 0, '計算' ),
+	'urldecode' => array( 0, 'URI解碼' ),
 );
