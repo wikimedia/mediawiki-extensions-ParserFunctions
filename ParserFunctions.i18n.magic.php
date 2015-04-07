@@ -216,6 +216,20 @@ $magicWords['fr'] = array(
 	'urldecode' => array( 0, 'décoderurl', 'decodeurl' ),
 );
 
+/** Western Frisian (Frysk) */
+$magicWords['fy'] = array(
+	'expr' => array( 0, 'ekspresje' ),
+	'if' => array( 0, 'as' ),
+	'ifeq' => array( 0, 'asgelyk' ),
+	'ifexpr' => array( 0, 'asekspresje' ),
+	'iferror' => array( 0, 'asflater' ),
+	'switch' => array( 0, 'skeakelje' ),
+	'default' => array( 0, '#standert' ),
+	'ifexist' => array( 0, 'asbestiet' ),
+	'time' => array( 0, 'tiid' ),
+	'timel' => array( 0, 'tiidl' ),
+);
+
 /** Hebrew (עברית) */
 $magicWords['he'] = array(
 	'expr' => array( 0, 'חשב' ),
