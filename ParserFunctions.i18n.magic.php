@@ -338,6 +338,11 @@ $magicWords['ja'] = array(
 	'urldecode' => array( 0, 'URLデコード', 'ＵＲＬデコード' ),
 );
 
+/** Georgian (ქართული) */
+$magicWords['ka'] = array(
+	'time' => array( 0, 'დრო' ),
+);
+
 /** Korean (한국어) */
 $magicWords['ko'] = array(
 	'expr' => array( 0, '수식' ),
