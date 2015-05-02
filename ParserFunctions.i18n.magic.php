@@ -112,6 +112,30 @@ $magicWords['cs'] = array(
 	'replace' => array( 0, 'nahradit' ),
 );
 
+/** Chuvash (Чӑвашла) */
+$magicWords['cv'] = array(
+	'expr' => array( 0, 'expr' ),
+	'if' => array( 0, 'if' ),
+	'ifeq' => array( 0, 'ifeq' ),
+	'ifexpr' => array( 0, 'ifexpr' ),
+	'iferror' => array( 0, 'iferror' ),
+	'switch' => array( 0, 'switch' ),
+	'default' => array( 0, '#default' ),
+	'ifexist' => array( 0, 'ifexist' ),
+	'time' => array( 0, 'time' ),
+	'timel' => array( 0, 'timel' ),
+	'rel2abs' => array( 0, 'rel2abs' ),
+	'titleparts' => array( 0, 'titleparts' ),
+	'len' => array( 0, 'len' ),
+	'pos' => array( 0, 'pos' ),
+	'rpos' => array( 0, 'rpos' ),
+	'sub' => array( 0, 'sub' ),
+	'count' => array( 0, 'count' ),
+	'replace' => array( 0, 'replace' ),
+	'explode' => array( 0, 'explode' ),
+	'urldecode' => array( 0, 'urldecode' ),
+);
+
 /** German (Deutsch) */
 $magicWords['de'] = array(
 	'switch' => array( 0, 'wechsle' ),
