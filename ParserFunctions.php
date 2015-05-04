@@ -55,7 +55,6 @@ $wgAutoloadClasses['ExprError'] = __DIR__ . '/Expr.php';
 $wgAutoloadClasses['Scribunto_LuaParserFunctionsLibrary'] = __DIR__ . '/ParserFunctions.library.php';
 
 $wgMessagesDirs['ParserFunctions'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['ParserFunctions'] = __DIR__ . '/ParserFunctions.i18n.php';
 $wgExtensionMessagesFiles['ParserFunctionsMagic'] = __DIR__ . '/ParserFunctions.i18n.magic.php';
 
 $wgParserTestFiles[] = __DIR__ . "/funcsParserTests.txt";
