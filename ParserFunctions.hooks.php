@@ -1,6 +1,19 @@
 <?php
 
 class ParserFunctionsHooks {
+
+	/**
+	 * Enable string functions, when running Wikimedia Jenkins unit tests.
+	 *
+	 * Running Jenkins unit tests without setting $wgPFEnableStringFunctions = true;
+	 * will cause all the parser tests for string functions to be skipped.
+	 */
+	public static function onRegistration() {
+		if ( isset( $GLOBALS['wgWikimediaJenkinsCI'] ) && $GLOBALS['wgWikimediaJenkinsCI'] === true ) {
+			$GLOBALS['wgPFEnableStringFunctions'] = true;
+		}
+	}
+
 	/**
 	 * @param $parser Parser
 	 * @return bool
