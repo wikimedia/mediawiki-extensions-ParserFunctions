@@ -56,7 +56,7 @@ $magicWords['ar'] = array(
 	'urldecode' => array( 0, 'فك_مسار' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $magicWords['arz'] = array(
 	'expr' => array( 0, 'تعبير' ),
 	'if' => array( 0, 'لو' ),
