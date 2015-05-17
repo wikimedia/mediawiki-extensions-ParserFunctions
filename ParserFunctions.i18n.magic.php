@@ -80,7 +80,7 @@ $magicWords['arz'] = array(
 	'urldecode' => array( 0, 'فك_مسار' ),
 );
 
-/** South Azerbaijani (تورکجه) */
+/** South Azerbaijani (تۆرکجه) */
 $magicWords['azb'] = array(
 	'ifeq' => array( 0, 'ایربیر' ),
 	'ifexpr' => array( 0, 'ایرحساب' ),
