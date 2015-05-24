@@ -1,7 +1,13 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Arystanbek"
+		]
+	},
 	"pfunc_time_error": "Қате: жарамсыз уақыт",
 	"pfunc_time_too_long": "Қате: #time шақыруы тым көп",
+	"pfunc_time_too_big": "Қате: #time 9999 дейінгі жылды қолдайды.",
+	"pfunc_time_too_small": "Қате: #time 0 кейінгі жылды қолдайды.",
 	"pfunc_rel2abs_invalid_depth": "Қате: Мына жолдың жарамсыз терендігі «$1» (тамыр түйіннің үстіндегі түйінге қатынау талабы)",
 	"pfunc_expr_stack_exhausted": "Айтылым қатесі: Стек сарқылды",
 	"pfunc_expr_unexpected_number": "Айтылым қатесі: Күтілмеген сан",
