@@ -19,6 +19,8 @@
 	"pfunc_expr_unrecognised_punctuation": "Айтылым қатесі: Танылмаған тыныс белгісі «$1»",
 	"pfunc_expr_unclosed_bracket": "Айтылым қатесі: Жабылмаған жақша",
 	"pfunc_expr_division_by_zero": "Нөлге бөлінуі",
+	"pfunc_expr_invalid_argument": "$1 үшін жарамсыз аргумент: < -1 немесе > 1.",
+	"pfunc_expr_invalid_argument_ln": "ln үшін жарамсыз аргумент: <= 0.",
 	"pfunc_expr_unknown_error": "Айтылым қатесі: Белгісіз қате ($1)",
 	"pfunc_expr_not_a_number": "$1 дегенде: нәтиже сан емес"
 }
