@@ -44,5 +44,6 @@
 	"ParserTestFiles": [
 		"funcsParserTests.txt",
 		"stringFunctionTests.txt"
-	]
+	],
+	"manifest_version": 1
 }
