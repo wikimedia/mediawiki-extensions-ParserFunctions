@@ -6,5 +6,6 @@
 	},
 	"pfunc_expr_unrecognised_word": "خطای عبارت:کلمه ناشناخته \"$1\"",
 	"pfunc_expr_unexpected_operator": "خطای عبارت:اپراتور$1 غیر منتظره.",
-	"pfunc_expr_missing_operand": "خطای عبارت: عملوند از دست رته سی $1."
+	"pfunc_expr_missing_operand": "خطای عبارت: عملوند از دست رته سی $1.",
+	"pfunc_expr_unrecognised_punctuation": "خطای عبارت: نویسه نقطه گذاری \"$1\" نوم آشنا نیسس."
 }
