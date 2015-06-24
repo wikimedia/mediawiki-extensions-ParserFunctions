@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Satdeep gill"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "ਗ਼ਲਤੀ:ਅਣਪਛਾਤਾ ਸ਼ਬਦ \"$1\"।",
+	"pfunc_expr_unrecognised_punctuation": "ਗ਼ਲਤੀ:ਅਣਪਛਾਤਾ ਚਿੰਨ੍ਹ \"$1\"।"
+}
