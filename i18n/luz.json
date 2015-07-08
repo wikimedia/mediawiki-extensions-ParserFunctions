@@ -4,8 +4,8 @@
 			"علی ساکی لرستانی"
 		]
 	},
-	"pfunc_expr_unrecognised_word": "خطای عبارت:کلمه ناشناخته \"$1\"",
+	"pfunc_expr_unrecognised_word": "خطای عبارت:کألمە نوٙم دیارنی ھ \"$1\"",
 	"pfunc_expr_unexpected_operator": "خطای عبارت:اپراتۉر$1 غیر منتظرھ.",
 	"pfunc_expr_missing_operand": "خطای عبارت: عملۉند از دست رته سی $1.",
-	"pfunc_expr_unrecognised_punctuation": "خطای عبارت: نۉیسه نقطه گذاری \"$1\" نۉم دیار نیسس."
+	"pfunc_expr_unrecognised_punctuation": "خطای عبارت: نیڤیسه نۉقطە گذاری \"$1\" نوٙم دیار نیسس."
 }
