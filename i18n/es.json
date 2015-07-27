@@ -11,7 +11,7 @@
 			"Ryo567"
 		]
 	},
-	"pfunc_desc": "Mejora el analizador lógico con funciones.",
+	"pfunc_desc": "Mejora el analizador con funciones lógicas.",
 	"pfunc_time_error": "Error: fecha y hora no válidos.",
 	"pfunc_time_too_long": "Error: demasiados \"#time\".",
 	"pfunc_time_too_big": "Error: #time solo admite años hasta 9999.",
