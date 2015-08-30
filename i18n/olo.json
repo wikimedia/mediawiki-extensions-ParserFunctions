@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ilja.mos"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "Haireh: tundematoi sana \"$1\"",
+	"pfunc_expr_unrecognised_punctuation": "Haireh: tundematoi välimerki \"$1\"."
+}
