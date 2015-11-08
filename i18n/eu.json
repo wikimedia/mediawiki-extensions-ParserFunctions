@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"An13sa",
-			"Kobazulo"
+			"Kobazulo",
+			"Theklan"
 		]
 	},
 	"pfunc_time_error": "Errorea: baliogabeko ordua",
@@ -12,6 +13,7 @@
 	"pfunc_expr_unexpected_number": "Adierazpen errorea: Ustekabeko zenbakia",
 	"pfunc_expr_unrecognised_word": "Adierazpen errorea: Hitz ezezaguna \"$1\"",
 	"pfunc_expr_unexpected_operator": "Adierazpen errorea: Ustekabeko $1 eragilea",
+	"pfunc_expr_missing_operand": "Espresio akatsa: Ez dago operadorerik $1(r)entzat",
 	"pfunc_expr_unexpected_closing_bracket": "Adierazpen errorea: Ustekabeko kortxete itxiera",
 	"pfunc_expr_unrecognised_punctuation": "Adierazpen errorea: puntuazio karaktere ezezaguna \"$1\"",
 	"pfunc_expr_unclosed_bracket": "Adierazpen errorea: Itxi gabeko kortxetea",
