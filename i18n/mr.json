@@ -14,7 +14,7 @@
 	"pfunc_expr_stack_exhausted": "एक्स्प्रेशन त्रुटी: स्टॅक संपला",
 	"pfunc_expr_unexpected_number": "एक्स्प्रेशन त्रुटी: अनपेक्षित क्रमांक",
 	"pfunc_expr_preg_match_failure": "एक्स्प्रेशन त्रुटी: अनपेक्षित preg_match रद्दीकरण",
-	"pfunc_expr_unrecognised_word": "अभिव्यक्ती त्रूटी: अनोळखी शब्द \"$1\"",
+	"pfunc_expr_unrecognised_word": "अभिव्यक्ती त्रुटी: अनोळखी शब्द \"$1\"",
 	"pfunc_expr_unexpected_operator": "एक्स्प्रेशन त्रुटी: अनोळखी $1 कार्यवाहक",
 	"pfunc_expr_missing_operand": "एक्स्प्रेशन त्रुटी: $1 चा घटक सापडला नाही",
 	"pfunc_expr_unexpected_closing_bracket": "एक्स्प्रेशन त्रुटी: अनपेक्षित समाप्ती कंस",
