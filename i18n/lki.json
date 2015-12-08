@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hosseinblue"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "خطای عبارت: کلمه ناشنائۀ $1",
+	"pfunc_expr_unexpected_operator": "خطای عبارت: عملگر $1 دور از انتظار",
+	"pfunc_expr_missing_operand": "خطای عبارت: عملگر گمشده برای$1",
+	"pfunc_expr_unrecognised_punctuation": "$1خطای عبارت: نویسه نقطه‌گذاری شناخته نؤی"
+}
