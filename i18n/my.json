@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ninjastrikers"
+			"Ninjastrikers",
+			"9.sinistra"
 		]
 	},
-	"pfunc_expr_unrecognised_word": "ဖော်ပြချက် အမှား - မမှတ်သားထားသော စကားလုံး \"$1\"။",
+	"pfunc_expr_unrecognised_word": "ဖော်ပြချက် အမှား - နားမလည်သော စကားလုံး \"$1\"။",
 	"pfunc_expr_unexpected_operator": "ဖော်ပြချက် အမှား - Unexpected $1 operator.",
-	"pfunc_expr_unrecognised_punctuation": "ဖော်ပြချက် အမှား - မမှတ်သားထားသော ပုဒ်ဖြတ် စာလုံး \"$1\"။"
+	"pfunc_expr_unrecognised_punctuation": "ဖော်ပြချက် အမှား - နားမလည်သော ပုဒ်ဖြတ် စာလုံး \"$1\"။"
 }
