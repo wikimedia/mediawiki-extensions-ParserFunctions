@@ -178,7 +178,7 @@ class ExprParser {
 	 * @throws ExprError
 	 * @return string
 	 */
-	function doExpression( $expr ) {
+	public function doExpression( $expr ) {
 		$operands = array();
 		$operators = array();
 
@@ -398,7 +398,7 @@ class ExprParser {
 	 * @param $stack array
 	 * @throws ExprError
 	 */
-	function doOperation( $op, &$stack ) {
+	public function doOperation( $op, &$stack ) {
 		switch ( $op ) {
 			case EXPR_NEGATIVE:
 				if ( count( $stack ) < 1 ) {

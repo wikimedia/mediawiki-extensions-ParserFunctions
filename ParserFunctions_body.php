@@ -1,10 +1,10 @@
 <?php
 
 class ExtParserFunctions {
-	static $mExprParser;
-	static $mTimeCache = array();
-	static $mTimeChars = 0;
-	static $mMaxTimeChars = 6000; # ~10 seconds
+	public static $mExprParser;
+	public static $mTimeCache = array();
+	public static $mTimeChars = 0;
+	public static $mMaxTimeChars = 6000; # ~10 seconds
 
 	/**
 	 * @param $parser Parser
