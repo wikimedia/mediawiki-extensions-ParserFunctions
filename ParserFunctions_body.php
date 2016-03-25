@@ -622,7 +622,7 @@ class ExtParserFunctions {
 		if ( $inNeedle === '' ) { $inNeedle = ' '; }
 
 		$pos = mb_strpos( $inStr, $inNeedle, (int)$inOffset );
-		if ( $pos === false ) { $pos = ""; }
+		if ( $pos === false ) { $pos = ''; }
 
 		return $pos;
 	}
