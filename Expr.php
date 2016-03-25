@@ -217,7 +217,7 @@ class ExprParser {
 				// Find the rest of it
 				$length = strspn( $expr, EXPR_NUMBER_CLASS, $p );
 				// Convert it to float, silently removing double decimal points
-				$operands[] = floatval( substr( $expr, $p, $length ) );
+				$operands[] = (float)substr( $expr, $p, $length );
 				$p += $length;
 				$expecting = 'operator';
 				continue;
@@ -504,7 +504,7 @@ class ExprParser {
 				if ( count( $stack ) < 2 ) {
 					throw new ExprError( 'missing_operand', $this->names[$op] );
 				}
-				$digits = intval( array_pop( $stack ) );
+				$digits = (int)array_pop( $stack );
 				$value = array_pop( $stack );
 				$stack[] = round( $value, $digits );
 				break;

@@ -63,7 +63,7 @@ class ExtParserFunctions {
 		try {
 			$ret = self::getExprParser()->doExpression( $expr );
 			if ( is_numeric( $ret ) ) {
-				$ret = floatval( $ret );
+				$ret = (float)$ret;
 			}
 			if ( $ret ) {
 				return $then;
@@ -542,8 +542,8 @@ class ExtParserFunctions {
 	 * @return string
 	 */
 	public static function titleparts( $parser, $title = '', $parts = 0, $offset = 0 ) {
-		$parts = intval( $parts );
-		$offset = intval( $offset );
+		$parts = (int)$parts;
+		$offset = (int)$offset;
 		$ntitle = Title::newFromText( $title );
 		if ( $ntitle instanceof Title ) {
 			$bits = explode( '/', $ntitle->getPrefixedText(), 25 );
@@ -621,7 +621,7 @@ class ExtParserFunctions {
 
 		if ( $inNeedle === '' ) { $inNeedle = ' '; }
 
-		$pos = mb_strpos( $inStr, $inNeedle, intval( $inOffset ) );
+		$pos = mb_strpos( $inStr, $inNeedle, (int)$inOffset );
 		if ( $pos === false ) { $pos = ""; }
 
 		return $pos;
@@ -681,10 +681,10 @@ class ExtParserFunctions {
 			return self::tooLongError();
 		}
 
-		if ( intval( $inLength ) === 0 ) {
-			$result = mb_substr( $inStr, intval( $inStart ) );
+		if ( (int)$inLength === 0 ) {
+			$result = mb_substr( $inStr, (int)$inStart );
 		} else {
-			$result = mb_substr( $inStr, intval( $inStart ), intval( $inLength ) );
+			$result = mb_substr( $inStr, (int)$inStart, (int)$inLength );
 		}
 
 		return $result;
@@ -758,7 +758,7 @@ class ExtParserFunctions {
 			$limit = -1;
 		}
 
-		$inLimit = intval( $inLimit );
+		$inLimit = (int)$inLimit;
 		if ( $inLimit >= 0 ) {
 			if ( $limit > $inLimit || $limit == -1 ) {
 				$limit = $inLimit;
