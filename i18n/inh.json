@@ -4,6 +4,6 @@
 			"Adam-Yourist"
 		]
 	},
-	"pfunc_expr_unexpected_operator": "Гойтара гӀалат: дага доаца оператор $1",
-	"pfunc_expr_unrecognised_punctuation": "Дешай гӀалат: йовзанза йола пунктуацен символ «$1»"
+	"pfunc_expr_unexpected_operator": "Дешаш белгалдаккхара гIалат: цIаьхха хинна оператор $1",
+	"pfunc_expr_unrecognised_punctuation": "Дешаш белгалдаккхара гӀалат: йовзанза йола пунктуацен хьарак «$1»"
 }
