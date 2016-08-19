@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amahoney"
+			"Amahoney",
+			"UV"
 		]
 	},
-	"pfunc_expr_unrecognised_punctuation": "Punctum ignotum: \"$1\""
+	"pfunc_expr_unrecognised_punctuation": "Punctum ignotum: \"$1\"."
 }
