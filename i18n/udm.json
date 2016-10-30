@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wadorgurt"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "Выражениын янгыш: тодмамтэ кыл «$1».",
+	"pfunc_expr_unrecognised_punctuation": "Выражениын янгыш: тодмамтэ пунктуаци пус «$1»."
+}
