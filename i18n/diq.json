@@ -3,7 +3,8 @@
 		"authors": [
 			"Aspar",
 			"Erdemaslancan",
-			"Gorizon"
+			"Gorizon",
+			"Gırd"
 		]
 	},
 	"pfunc_desc": "Peserkerden fonksiyanane mantıxin weş kere",
@@ -15,11 +16,11 @@
 	"pfunc_expr_stack_exhausted": "xetaya ifadeyi: stack qediya",
 	"pfunc_expr_unexpected_number": "xetaya ifadeyi: amaro bêtexmin",
 	"pfunc_expr_preg_match_failure": "xetaya ifadeyi: arızaya preg_matchi yo bêtexmin",
-	"pfunc_expr_unrecognised_word": "xetaya ifadeyi: çekuya \"$1\"i nêşinasiyeno",
+	"pfunc_expr_unrecognised_word": "Ğeletê ifadekerdışi: Vatekê \"$1\"iyo ke nêşınasiyeno.",
 	"pfunc_expr_unexpected_operator": "xetaya ifadeyi: operatorê $1i yo bêtexmin",
 	"pfunc_expr_missing_operand": "xetaya ifadeyi: qey $1i termo kêm",
 	"pfunc_expr_unexpected_closing_bracket": "xetaya ifadeyi: parantez bıqefelno bêtexmin",
-	"pfunc_expr_unrecognised_punctuation": "xetaya ifadeyi: karakterê noqtakerdışê \"$1\"i yo ke nêşınasiyeno",
+	"pfunc_expr_unrecognised_punctuation": "Ğeletê ifadekerdışi: Karakterê noxtakerdışê \"$1\"iyo ke nêşınasiyeno.",
 	"pfunc_expr_unclosed_bracket": "xetaya ifadeyi: parantezo nêqefelnaye",
 	"pfunc_expr_division_by_zero": "pê sıfır teqsim ker",
 	"pfunc_expr_invalid_argument": "Qande $1 vurnayeno xoser: : < -1 or > 1.",
