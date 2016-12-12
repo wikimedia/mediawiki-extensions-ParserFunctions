@@ -4,7 +4,8 @@
 			"Aspar",
 			"Erdemaslancan",
 			"Gorizon",
-			"Gırd"
+			"Gırd",
+			"1917 Ekim Devrimi"
 		]
 	},
 	"pfunc_desc": "Peserkerden fonksiyanane mantıxin weş kere",
@@ -18,7 +19,7 @@
 	"pfunc_expr_preg_match_failure": "xetaya ifadeyi: arızaya preg_matchi yo bêtexmin",
 	"pfunc_expr_unrecognised_word": "Ğeletê ifadekerdışi: Vatekê \"$1\"iyo ke nêşınasiyeno.",
 	"pfunc_expr_unexpected_operator": "xetaya ifadeyi: operatorê $1i yo bêtexmin",
-	"pfunc_expr_missing_operand": "xetaya ifadeyi: qey $1i termo kêm",
+	"pfunc_expr_missing_operand": "Ğeletê ifadey: Qandë $1'i terimo kemi.",
 	"pfunc_expr_unexpected_closing_bracket": "xetaya ifadeyi: parantez bıqefelno bêtexmin",
 	"pfunc_expr_unrecognised_punctuation": "Ğeletê ifadekerdışi: Karakterê noxtakerdışê \"$1\"iyo ke nêşınasiyeno.",
 	"pfunc_expr_unclosed_bracket": "xetaya ifadeyi: parantezo nêqefelnaye",
