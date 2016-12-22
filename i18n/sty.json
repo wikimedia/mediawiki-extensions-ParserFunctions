@@ -4,5 +4,6 @@
 			"Khanmarat"
 		]
 	},
+	"pfunc_expr_unrecognised_word": "Аңнатма ҡата: танылмаған \"$1\" сүс",
 	"pfunc_expr_unrecognised_punctuation": "Аңнатма ҡата: танылмаған \"$1\" пунктуация тамғасы"
 }
