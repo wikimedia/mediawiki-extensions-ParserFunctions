@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Girmitya"
+		]
+	},
+	"pfunc_expr_missing_operand": "Expression error: Missing operand for $1."
+}
