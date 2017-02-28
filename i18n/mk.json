@@ -24,6 +24,6 @@
 	"pfunc_expr_invalid_argument": "Неважечки аргумент за $1: < -1 или > 1",
 	"pfunc_expr_invalid_argument_ln": "Неважечки аргумент за ln: <= 0",
 	"pfunc_expr_unknown_error": "Грешка во изразот: Непозната грешка ($1)",
-	"pfunc_expr_not_a_number": "Во $1: резултатот не е број",
+	"pfunc_expr_not_a_number": "Во $1: Исходот не е број",
 	"pfunc_string_too_long": "Грешка: низата го надминува ограничувањето од $1 знаци"
 }
