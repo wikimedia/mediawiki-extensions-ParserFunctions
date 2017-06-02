@@ -134,7 +134,10 @@ class ExtParserFunctions {
 	 * @return bool|string
 	 */
 	public static function iferror( $parser, $test = '', $then = '', $else = false ) {
-		if ( preg_match( '/<(?:strong|span|p|div)\s(?:[^\s>]*\s+)*?class="(?:[^"\s>]*\s+)*?error(?:\s[^">]*)?"/', $test ) ) {
+		if ( preg_match(
+			'/<(?:strong|span|p|div)\s(?:[^\s>]*\s+)*?class="(?:[^"\s>]*\s+)*?error(?:\s[^">]*)?"/',
+			$test )
+		) {
 			return $then;
 		} elseif ( $else === false ) {
 			return $test;
@@ -278,7 +281,8 @@ class ExtParserFunctions {
 			if ( $current === '..' ) { // removing one level
 				if ( !count( $newExploded ) ) {
 					// attempted to access a node above root node
-					$msg = wfMessage( 'pfunc_rel2abs_invalid_depth', $fullPath )->inContentLanguage()->escaped();
+					$msg = wfMessage( 'pfunc_rel2abs_invalid_depth', $fullPath )
+						->inContentLanguage()->escaped();
 					return '<strong class="error">' . $msg . '</strong>';
 				}
 				// remove last level from the stack
@@ -302,7 +306,9 @@ class ExtParserFunctions {
 	 *
 	 * @return string
 	 */
-	public static function ifexistCommon( $parser, $frame, $titletext = '', $then = '', $else = '' ) {
+	public static function ifexistCommon(
+		$parser, $frame, $titletext = '', $then = '', $else = ''
+	) {
 		global $wgContLang;
 		$title = Title::newFromText( $titletext );
 		$wgContLang->findVariantLink( $titletext, $title, true );
@@ -387,7 +393,9 @@ class ExtParserFunctions {
 	 * @param $local string|bool
 	 * @return string
 	 */
-	public static function timeCommon( $parser, $frame = null, $format = '', $date = '', $language = '', $local = false ) {
+	public static function timeCommon(
+		$parser, $frame = null, $format = '', $date = '', $language = '', $local = false
+	) {
 		global $wgLocaltimezone;
 		self::registerClearHook();
 		if ( $date === '' ) {
@@ -401,7 +409,9 @@ class ExtParserFunctions {
 		}
 		if ( isset( self::$mTimeCache[$format][$cacheKey][$language][$local] ) ) {
 			$cachedVal = self::$mTimeCache[$format][$cacheKey][$language][$local];
-			if ( $useTTL && $cachedVal[1] !== null && $frame && is_callable( array( $frame, 'setTTL' ) ) ) {
+			if ( $useTTL
+				&& $cachedVal[1] !== null && $frame && is_callable( array( $frame, 'setTTL' ) )
+			) {
 				$frame->setTTL( $cachedVal[1] );
 			}
 			return $cachedVal[0];
@@ -450,14 +460,20 @@ class ExtParserFunctions {
 		$ttl = null;
 		# format the timestamp and return the result
 		if ( $invalidTime ) {
-			$result = '<strong class="error">' . wfMessage( 'pfunc_time_error' )->inContentLanguage()->escaped() . '</strong>';
+			$result = '<strong class="error">' .
+				wfMessage( 'pfunc_time_error' )->inContentLanguage()->escaped() .
+				'</strong>';
 		} else {
 			self::$mTimeChars += strlen( $format );
 			if ( self::$mTimeChars > self::$mMaxTimeChars ) {
-				return '<strong class="error">' . wfMessage( 'pfunc_time_too_long' )->inContentLanguage()->escaped() . '</strong>';
+				return '<strong class="error">' .
+					wfMessage( 'pfunc_time_too_long' )->inContentLanguage()->escaped() .
+					'</strong>';
 			} else {
 				if ( $ts < 0 ) { // Language can't deal with BC years
-					return '<strong class="error">' . wfMessage( 'pfunc_time_too_small' )->inContentLanguage()->escaped() . '</strong>';
+					return '<strong class="error">' .
+						wfMessage( 'pfunc_time_too_small' )->inContentLanguage()->escaped() .
+						'</strong>';
 				} elseif ( $ts < 100000000000000 ) { // Language can't deal with years after 9999
 					if ( $language !== '' && Language::isValidBuiltInCode( $language ) ) {
 						// use whatever language is passed as a parameter
@@ -465,11 +481,14 @@ class ExtParserFunctions {
 					} else {
 						// use wiki's content language
 						$langObject = $parser->getFunctionLang();
-						StubObject::unstub( $langObject ); // $ttl is passed by reference, which doesn't work right on stub objects
+						// $ttl is passed by reference, which doesn't work right on stub objects
+						StubObject::unstub( $langObject );
 					}
 					$result = $langObject->sprintfDate( $format, $ts, $tz, $ttl );
 				} else {
-					return '<strong class="error">' . wfMessage( 'pfunc_time_too_big' )->inContentLanguage()->escaped() . '</strong>';
+					return '<strong class="error">' .
+						wfMessage( 'pfunc_time_too_big' )->inContentLanguage()->escaped() .
+						'</strong>';
 				}
 			}
 		}
@@ -488,7 +507,9 @@ class ExtParserFunctions {
 	 * @param $local string|bool
 	 * @return string
 	 */
-	public static function time( $parser, $format = '', $date = '', $language = '', $local = false ) {
+	public static function time(
+		$parser, $format = '', $date = '', $language = '', $local = false
+	) {
 		return self::timeCommon( $parser, null, $format, $date, $language, $local );
 	}
 
@@ -796,7 +817,9 @@ class ExtParserFunctions {
 	 * @param $inLim int|null
 	 * @return string
 	 */
-	public static function runExplode ( $parser, $inStr = '', $inDiv = '', $inPos = 0, $inLim = null ) {
+	public static function runExplode (
+		$parser, $inStr = '', $inDiv = '', $inPos = 0, $inLim = null
+	) {
 		$inStr = $parser->killMarkers( (string)$inStr );
 		$inDiv = $parser->killMarkers( (string)$inDiv );
 
@@ -849,7 +872,8 @@ class ExtParserFunctions {
 	 *
 	 * @param $obj PPNode|string Thing to expand
 	 * @param $frame PPFrame
-	 * @param &$trimExpanded String Expanded and trimmed version of PPNode, but with char refs intact
+	 * @param &$trimExpanded String Expanded and trimmed version of PPNode,
+	 *   but with char refs intact
 	 * @return String The trimmed, expanded and entity reference decoded version of the PPNode
 	 */
 	private static function decodeTrimExpand( $obj, $frame, &$trimExpanded = null ) {
