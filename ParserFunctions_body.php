@@ -2,7 +2,7 @@
 
 class ExtParserFunctions {
 	public static $mExprParser;
-	public static $mTimeCache = array();
+	public static $mTimeCache = [];
 	public static $mTimeChars = 0;
 	public static $mMaxTimeChars = 6000; # ~10 seconds
 
@@ -22,7 +22,7 @@ class ExtParserFunctions {
 	 */
 	public static function registerClearHook() {
 		static $done = false;
-		if( !$done ) {
+		if ( !$done ) {
 			global $wgHooks;
 			$wgHooks['ParserClearState'][] = __CLASS__ . '::clearState';
 			$done = true;
@@ -248,7 +248,7 @@ class ExtParserFunctions {
 			$from = $parser->getTitle()->getPrefixedText();
 		}
 
-		$to = rtrim( $to , ' /' );
+		$to = rtrim( $to, ' /' );
 
 		// if we have an empty path, or just one containing a dot
 		if ( $to === '' || $to === '.' ) {
@@ -256,9 +256,9 @@ class ExtParserFunctions {
 		}
 
 		// if the path isn't relative
-		if ( substr( $to , 0 , 1 ) !== '/' &&
-		 substr( $to , 0 , 2 ) !== './' &&
-		 substr( $to , 0 , 3 ) !== '../' &&
+		if ( substr( $to, 0, 1 ) !== '/' &&
+		 substr( $to, 0, 2 ) !== './' &&
+		 substr( $to, 0, 3 ) !== '../' &&
 		 $to !== '..' )
 		{
 			$from = '';
@@ -273,9 +273,9 @@ class ExtParserFunctions {
 		$fullPath = preg_replace( '!/{2,}!', '/', $fullPath );
 
 		// remove the enclosing slashes now
-		$fullPath = trim( $fullPath , '/' );
-		$exploded = explode ( '/' , $fullPath );
-		$newExploded = array();
+		$fullPath = trim( $fullPath, '/' );
+		$exploded = explode( '/', $fullPath );
+		$newExploded = [];
 
 		foreach ( $exploded as $current ) {
 			if ( $current === '..' ) { // removing one level
@@ -294,7 +294,7 @@ class ExtParserFunctions {
 		}
 
 		// we can now join it again
-		return implode( '/' , $newExploded );
+		return implode( '/', $newExploded );
 	}
 
 	/**
@@ -350,7 +350,7 @@ class ExtParserFunctions {
 					$parser->mOutput->addLink( $title, 0 );
 					return $else;
 				}
-				if (  !$parser->incrementExpensiveFunctionCount() ) {
+				if ( !$parser->incrementExpensiveFunctionCount() ) {
 					return $else;
 				}
 				$id = $title->getArticleID();
@@ -410,7 +410,7 @@ class ExtParserFunctions {
 		if ( isset( self::$mTimeCache[$format][$cacheKey][$language][$local] ) ) {
 			$cachedVal = self::$mTimeCache[$format][$cacheKey][$language][$local];
 			if ( $useTTL
-				&& $cachedVal[1] !== null && $frame && is_callable( array( $frame, 'setTTL' ) )
+				&& $cachedVal[1] !== null && $frame && is_callable( [ $frame, 'setTTL' ] )
 			) {
 				$frame->setTTL( $cachedVal[1] );
 			}
@@ -492,8 +492,8 @@ class ExtParserFunctions {
 				}
 			}
 		}
-		self::$mTimeCache[$format][$cacheKey][$language][$local] = array( $result, $ttl );
-		if ( $useTTL && $ttl !== null && $frame && is_callable( array( $frame, 'setTTL' ) ) ) {
+		self::$mTimeCache[$format][$cacheKey][$language][$local] = [ $result, $ttl ];
+		if ( $useTTL && $ttl !== null && $frame && is_callable( [ $frame, 'setTTL' ] ) ) {
 			$frame->setTTL( $ttl );
 		}
 		return $result;
@@ -512,7 +512,6 @@ class ExtParserFunctions {
 	) {
 		return self::timeCommon( $parser, null, $format, $date, $language, $local );
 	}
-
 
 	/**
 	 * @param $parser Parser
@@ -613,7 +612,7 @@ class ExtParserFunctions {
 	 * @param $inStr string
 	 * @return int
 	 */
-	public static function runLen ( $parser, $inStr = '' ) {
+	public static function runLen( $parser, $inStr = '' ) {
 		$inStr = $parser->killMarkers( (string)$inStr );
 		return mb_strlen( $inStr );
 	}
@@ -631,7 +630,7 @@ class ExtParserFunctions {
 	 * @param $inOffset int
 	 * @return int|string
 	 */
-	public static function runPos ( $parser, $inStr = '', $inNeedle = '', $inOffset = 0 ) {
+	public static function runPos( $parser, $inStr = '', $inNeedle = '', $inOffset = 0 ) {
 		$inStr = $parser->killMarkers( (string)$inStr );
 		$inNeedle = $parser->killMarkers( (string)$inNeedle );
 
@@ -640,10 +639,14 @@ class ExtParserFunctions {
 			return self::tooLongError();
 		}
 
-		if ( $inNeedle === '' ) { $inNeedle = ' '; }
+		if ( $inNeedle === '' ) {
+			$inNeedle = ' ';
+		}
 
 		$pos = mb_strpos( $inStr, $inNeedle, (int)$inOffset );
-		if ( $pos === false ) { $pos = ''; }
+		if ( $pos === false ) {
+			$pos = '';
+		}
 
 		return $pos;
 	}
@@ -660,7 +663,7 @@ class ExtParserFunctions {
 	 * @param $inNeedle int|string
 	 * @return int|string
 	 */
-	public static function runRPos ( $parser, $inStr = '', $inNeedle = '' ) {
+	public static function runRPos( $parser, $inStr = '', $inNeedle = '' ) {
 		$inStr = $parser->killMarkers( (string)$inStr );
 		$inNeedle = $parser->killMarkers( (string)$inNeedle );
 
@@ -669,10 +672,14 @@ class ExtParserFunctions {
 			return self::tooLongError();
 		}
 
-		if ( $inNeedle === '' ) { $inNeedle = ' '; }
+		if ( $inNeedle === '' ) {
+			$inNeedle = ' ';
+		}
 
 		$pos = mb_strrpos( $inStr, $inNeedle );
-		if ( $pos === false ) { $pos = -1; }
+		if ( $pos === false ) {
+			$pos = -1;
+		}
 
 		return $pos;
 	}
@@ -695,7 +702,7 @@ class ExtParserFunctions {
 	 * @param $inLength int
 	 * @return string
 	 */
-	public static function runSub ( $parser, $inStr = '', $inStart = 0, $inLength = 0 ) {
+	public static function runSub( $parser, $inStr = '', $inStart = 0, $inLength = 0 ) {
 		$inStr = $parser->killMarkers( (string)$inStr );
 
 		if ( !self::checkLength( $inStr ) ) {
@@ -722,7 +729,7 @@ class ExtParserFunctions {
 	 * @param $inSubStr string
 	 * @return int|string
 	 */
-	public static function runCount ( $parser, $inStr = '', $inSubStr = '' ) {
+	public static function runCount( $parser, $inStr = '', $inSubStr = '' ) {
 		$inStr = $parser->killMarkers( (string)$inStr );
 		$inSubStr = $parser->killMarkers( (string)$inSubStr );
 
@@ -769,7 +776,9 @@ class ExtParserFunctions {
 			return self::tooLongError();
 		}
 
-		if ( $inReplaceFrom === '' ) { $inReplaceFrom = ' '; }
+		if ( $inReplaceFrom === '' ) {
+			$inReplaceFrom = ' ';
+		}
 
 		// Precompute limit to avoid generating enormous string:
 		$diff = mb_strlen( $inReplaceTo ) - mb_strlen( $inReplaceFrom );
@@ -800,7 +809,6 @@ class ExtParserFunctions {
 		return $result;
 	}
 
-
 	/**
 	 * {{#explode:string | delimiter | position | limit}}
 	 *
@@ -817,7 +825,7 @@ class ExtParserFunctions {
 	 * @param $inLim int|null
 	 * @return string
 	 */
-	public static function runExplode (
+	public static function runExplode(
 		$parser, $inStr = '', $inDiv = '', $inPos = 0, $inLim = null
 	) {
 		$inStr = $parser->killMarkers( (string)$inStr );
