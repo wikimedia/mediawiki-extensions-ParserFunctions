@@ -162,18 +162,26 @@ $magicWords['diq'] = [
 
 /** Esperanto (Esperanto) */
 $magicWords['eo'] = [
-	'expr' => [ 0, 'espr', 'esprimo' ],
+	'expr' => [ 0, 'espr', 'esprimo', 'esprime' ],
 	'if' => [ 0, 'se' ],
-	'ifeq' => [ 0, 'seekv', 'seekvacio' ],
-	'ifexpr' => [ 0, 'seespr', 'seeksprimo' ],
-	'iferror' => [ 0, 'seeraras' ],
-	'switch' => [ 0, 'ŝaltu', 'ŝalti', 'sxaltu', 'sxalti' ],
+	'ifeq' => [ 0, 'seekv', 'seekvacio', 'seeglas', 'laŭsamvalorade', 'lauxsamvalorade' ],
+	'ifexpr' => [ 0, 'seespr', 'seeksprimo', 'seesprimo', 'laŭevaluade', 'laŭevaluade' ],
+	'iferror' => [ 0, 'seeraras', 'laŭerarade', 'lauxerarade' ],
+	'switch' => [ 0, 'ŝaltu', 'ŝalti', 'sxaltu', 'sxalti', 'ŝalte', 'sxalte' ],
 	'default' => [ 0, '#apriore', '#defaŭlte', '#defauxlte' ],
-	'ifexist' => [ 0, 'seekzistas' ],
-	'time' => [ 0, 'tempo' ],
-	'timel' => [ 0, 'tempoo' ],
-	'len' => [ 0, 'lungo' ],
-	'replace' => [ 0, 'anstataŭigi' ],
+	'ifexist' => [ 0, 'seekzistas', 'laŭasignade', 'lauxasignade' ],
+	'time' => [ 0, 'tempo', 'datformu' ],
+	'timel' => [ 0, 'tempoo', 'lokaĵdatdonu', 'lokajxdatdonu' ],
+	'len' => [ 0, 'lungo', 'longo', 'longdonu', 'pesu', 'pese' ],
+	'replace' => [ 0, 'anstataŭigi', 'anstataŭigu', 'anstatauxigi', 'anstatauxigu' ],
+	'rel2abs' => [ 0, 'absolutvojdonu', 'malrelativige' ],
+	'titleparts' => [ 0, 'titolpartdonu' ],
+	'pos' => [ 0, 'ejdonu', 'lokdonu' ],
+	'rpos' => [ 0, 'lastejdonu', 'lastlokdonu' ],
+	'sub' => [ 0, 'subĉendonu', 'subcxendonu' ],
+	'count' => [ 0, 'subĉennombru', 'subcxennombru' ],
+	'explode' => [ 0, 'disĉenigu' ],
+	'urldecode' => [ 0, 'URL-malkodu', 'URI-malkodu' ],
 ];
 
 /** Spanish (español) */
