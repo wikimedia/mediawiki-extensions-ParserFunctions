@@ -242,7 +242,6 @@ class ExtParserFunctions {
 	 * @return string
 	 */
 	public static function rel2abs( $parser , $to = '' , $from = '' ) {
-
 		$from = trim( $from );
 		if ( $from === '' ) {
 			$from = $parser->getTitle()->getPrefixedText();
@@ -257,10 +256,10 @@ class ExtParserFunctions {
 
 		// if the path isn't relative
 		if ( substr( $to, 0, 1 ) !== '/' &&
-		 substr( $to, 0, 2 ) !== './' &&
-		 substr( $to, 0, 3 ) !== '../' &&
-		 $to !== '..' )
-		{
+			substr( $to, 0, 2 ) !== './' &&
+			substr( $to, 0, 3 ) !== '../' &&
+			$to !== '..'
+		) {
 			$from = '';
 		}
 		// Make a long path, containing both, enclose it in /.../
@@ -568,7 +567,7 @@ class ExtParserFunctions {
 		if ( $ntitle instanceof Title ) {
 			$bits = explode( '/', $ntitle->getPrefixedText(), 25 );
 			if ( count( $bits ) <= 0 ) {
-				 return $ntitle->getPrefixedText();
+				return $ntitle->getPrefixedText();
 			} else {
 				if ( $offset > 0 ) {
 					--$offset;

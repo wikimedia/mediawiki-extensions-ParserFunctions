@@ -330,7 +330,7 @@ class ExprParser {
 				$name = $char;
 				$op = EXPR_POW;
 				++$p;
-			} elseif ( $char === '(' )  {
+			} elseif ( $char === '(' ) {
 				if ( $expecting === 'operator' ) {
 					throw new ExprError( 'unexpected_operator', '(' );
 				}
