@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <ruleset>
-	<rule ref="vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
+	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
 		<exclude name="Squiz.Classes.ValidClassName.NotCamelCaps" />
-		<exclude name="MediaWiki.ControlStructures.IfElseStructure" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingParamName" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingParamTag" />
+		<exclude name="MediaWiki.Files.ClassMatchesFilename.NotMatch" />
+		<exclude name="MediaWiki.Files.OneClassPerFile.MultipleFound" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPublic" />
 		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment" />
 	</rule>
