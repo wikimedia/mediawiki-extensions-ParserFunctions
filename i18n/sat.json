@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Manik Soren"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "Expression error: ᱵᱟᱝ ᱧᱮᱞ ᱴᱷᱤᱠᱚᱜᱠᱟᱱ ᱟᱹᱲᱟᱹ \"$1\".",
+	"pfunc_expr_unrecognised_punctuation": "Expression error: ᱵᱟᱝ ᱧᱮᱞ ᱴᱷᱤᱠᱚᱜᱠᱟᱱ ᱪᱤᱱᱦᱟᱹ ᱠᱚ \"$1\"."
+}
