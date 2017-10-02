@@ -18,5 +18,7 @@
 	"pfunc_expr_unclosed_bracket": "sakamu tu nizateng sasakawawen mungangaw: caay pahezek a kwahaw.",
 	"pfunc_expr_division_by_zero": "sapiwada’ nu piasip u inayi’.",
 	"pfunc_expr_invalid_argument_ln": "ln a aazihan a sulyang la’cus: <= 0.",
-	"pfunc_expr_not_a_number": "ilabu $1: kya heci caay ku asip-bacu."
+	"pfunc_expr_unknown_error": "sakamu tu nizateng sasakawawen mungangaw：caay katinengay a mungangaw ($1)",
+	"pfunc_expr_not_a_number": "ilabu $1: kya heci caay ku asip-bacu.",
+	"pfunc_string_too_long": "mungangaw: sulisulitan mangasiw $1 tatebanan-nisulitan kelec."
 }
