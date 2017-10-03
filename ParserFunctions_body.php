@@ -480,8 +480,6 @@ class ExtParserFunctions {
 					} else {
 						// use wiki's content language
 						$langObject = $parser->getFunctionLang();
-						// $ttl is passed by reference, which doesn't work right on stub objects
-						StubObject::unstub( $langObject );
 					}
 					$result = $langObject->sprintfDate( $format, $ts, $tz, $ttl );
 				} else {
