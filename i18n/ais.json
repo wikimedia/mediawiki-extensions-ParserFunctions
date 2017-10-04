@@ -8,6 +8,7 @@
 	"pfunc_desc": "sangaleb papulita-sakaluk, nipabeli loci sapisausi sasahicaan",
 	"pfunc_time_error": "mungangaw: la’cusay a tuki",
 	"pfunc_time_too_long": "mungangaw: mangsiw #time miawaw.",
+	"pfunc_time_too_small": "mungangaw: #time midama sainayi'ay ku 0 a mihca.",
 	"pfunc_expr_stack_exhausted": "sakamu tu nizateng sasakawawen mungangaw: kalud kihkih tuway.",
 	"pfunc_expr_unexpected_number": "sakamu tu nizateng sasakawawen mungangaw: talibahalay asip-bacu.",
 	"pfunc_expr_unrecognised_word": "sakamu tu nizateng sasakawawen mungangaw: la’cusay sapulitaan a sulit \"$1\".",
