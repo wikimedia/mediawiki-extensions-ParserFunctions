@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Manik Soren"
+			"Manik Soren",
+			"Ramjit Tudu"
 		]
 	},
+	"pfunc_time_error": "ᱦᱩᱲᱟᱹᱜ : ᱚᱢᱟᱱᱚᱛ ᱚᱠᱛᱚ ᱾",
 	"pfunc_expr_unrecognised_word": "Expression error: ᱵᱟᱝ ᱧᱮᱞ ᱴᱷᱤᱠᱚᱜᱠᱟᱱ ᱟᱹᱲᱟᱹ \"$1\".",
 	"pfunc_expr_unrecognised_punctuation": "Expression error: ᱵᱟᱝ ᱧᱮᱞ ᱴᱷᱤᱠᱚᱜᱠᱟᱱ ᱪᱤᱱᱦᱟᱹ ᱠᱚ \"$1\"."
 }
