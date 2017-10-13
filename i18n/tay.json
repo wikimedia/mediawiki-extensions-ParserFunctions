@@ -6,6 +6,7 @@
 			"Translatealcd"
 		]
 	},
+	"pfunc_time_error": "Min’uqu’: ungat zyuwaw zikang.",
 	"pfunc_expr_unrecognised_word": "min’uqu’ bniru’ su’: ungat qqbaq mita’ biru’ tay \"$1\"",
 	"pfunc_expr_unexpected_operator": "Min’uqu’ pinkaykita’ su’：Iyat sinpngan sa sawn naha Yuswanc’ $1",
 	"pfunc_expr_missing_operand": "Min’uqu’ quw sinbbaq kay’ su’：wal su’ zhuqan biru’ sa bbiru’ na pplpgan tay $1",
