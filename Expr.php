@@ -52,8 +52,8 @@ define( 'EXPR_SQRT', 38 );
 
 class ExprError extends Exception {
 	/**
-	 * @param $msg string
-	 * @param $parameter string
+	 * @param string $msg
+	 * @param string $parameter
 	 */
 	public function __construct( $msg, $parameter = '' ) {
 		// Give grep a chance to find the usages:
@@ -176,7 +176,7 @@ class ExprParser {
 	 * The algorithm here is based on the infix to RPN algorithm given in
 	 * http://montcs.bloomu.edu/~bobmon/Information/RPN/infix2rpn.shtml
 	 * It's essentially the same as Dijkstra's shunting yard algorithm.
-	 * @param $expr string
+	 * @param string $expr
 	 * @throws ExprError
 	 * @return string
 	 */
@@ -396,8 +396,8 @@ class ExprParser {
 	}
 
 	/**
-	 * @param $op int
-	 * @param $stack array
+	 * @param int $op
+	 * @param array &$stack
 	 * @throws ExprError
 	 */
 	public function doOperation( $op, &$stack ) {
