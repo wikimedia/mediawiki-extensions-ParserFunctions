@@ -15,7 +15,7 @@ class ParserFunctionsHooks {
 	}
 
 	/**
-	 * @param $parser Parser
+	 * @param Parser $parser
 	 * @return bool
 	 */
 	public static function onParserFirstCallInit( $parser ) {

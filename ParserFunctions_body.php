@@ -7,7 +7,7 @@ class ExtParserFunctions {
 	public static $mMaxTimeChars = 6000; # ~10 seconds
 
 	/**
-	 * @param $parser Parser
+	 * @param Parser $parser
 	 * @return bool
 	 */
 	public static function clearState( $parser ) {
@@ -40,8 +40,8 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $expr string
+	 * @param Parser $parser
+	 * @param string $expr
 	 * @return string
 	 */
 	public static function expr( $parser, $expr = '' ) {
@@ -53,10 +53,10 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $expr string
-	 * @param $then string
-	 * @param $else string
+	 * @param Parser $parser
+	 * @param string $expr
+	 * @param string $then
+	 * @param string $else
 	 * @return string
 	 */
 	public static function ifexpr( $parser, $expr = '', $then = '', $else = '' ) {
@@ -76,9 +76,9 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $frame PPFrame
-	 * @param $args array
+	 * @param Parser $parser
+	 * @param PPFrame $frame
+	 * @param array $args
 	 * @return string
 	 */
 	public static function ifexprObj( $parser, $frame, $args ) {
@@ -93,9 +93,9 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $frame PPFrame
-	 * @param $args array
+	 * @param Parser $parser
+	 * @param PPFrame $frame
+	 * @param array $args
 	 * @return string
 	 */
 	public static function ifObj( $parser, $frame, $args ) {
@@ -108,9 +108,9 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $frame PPFrame
-	 * @param $args array
+	 * @param Parser $parser
+	 * @param PPFrame $frame
+	 * @param array $args
 	 * @return string
 	 */
 	public static function ifeqObj( $parser, $frame, $args ) {
@@ -127,10 +127,10 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $test string
-	 * @param $then string
-	 * @param $else bool
+	 * @param Parser $parser
+	 * @param string $test
+	 * @param string $then
+	 * @param bool $else
 	 * @return bool|string
 	 */
 	public static function iferror( $parser, $test = '', $then = '', $else = false ) {
@@ -147,9 +147,9 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $frame PPFrame
-	 * @param $args array
+	 * @param Parser $parser
+	 * @param PPFrame $frame
+	 * @param array $args
 	 * @return string
 	 */
 	public static function iferrorObj( $parser, $frame, $args ) {
@@ -165,9 +165,9 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $frame PPFrame
-	 * @param $args
+	 * @param Parser $parser
+	 * @param PPFrame $frame
+	 * @param array $args
 	 * @return string
 	 */
 	public static function switchObj( $parser, $frame, $args ) {
@@ -235,9 +235,9 @@ class ExtParserFunctions {
 	 * Following subpage link syntax instead of standard path syntax, an
 	 * initial slash is treated as a relative path, and vice versa.
 	 *
-	 * @param $parser Parser
-	 * @param $to string
-	 * @param $from string
+	 * @param Parser $parser
+	 * @param string $to
+	 * @param string $from
 	 *
 	 * @return string
 	 */
@@ -297,11 +297,11 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $frame PPFrame
-	 * @param $titletext string
-	 * @param $then string
-	 * @param $else string
+	 * @param Parser $parser
+	 * @param PPFrame $frame
+	 * @param string $titletext
+	 * @param string $then
+	 * @param string $else
 	 *
 	 * @return string
 	 */
@@ -365,9 +365,9 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $frame PPFrame
-	 * @param $args array
+	 * @param Parser $parser
+	 * @param PPFrame $frame
+	 * @param array $args
 	 * @return string
 	 */
 	public static function ifexistObj( $parser, $frame, $args ) {
@@ -384,12 +384,12 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $frame PPFrame
-	 * @param $format string
-	 * @param $date string
-	 * @param $language string
-	 * @param $local string|bool
+	 * @param Parser $parser
+	 * @param PPFrame $frame
+	 * @param string $format
+	 * @param string $date
+	 * @param string $language
+	 * @param string|bool $local
 	 * @return string
 	 */
 	public static function timeCommon(
@@ -499,11 +499,11 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $format string
-	 * @param $date string
-	 * @param $language string
-	 * @param $local string|bool
+	 * @param Parser $parser
+	 * @param string $format
+	 * @param string $date
+	 * @param string $language
+	 * @param string|bool $local
 	 * @return string
 	 */
 	public static function time(
@@ -513,9 +513,9 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $frame PPFrame
-	 * @param $args array
+	 * @param Parser $parser
+	 * @param PPFrame $frame
+	 * @param array $args
 	 * @return string
 	 */
 	public static function timeObj( $parser, $frame, $args ) {
@@ -527,10 +527,10 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $format string
-	 * @param $date string
-	 * @param $language string
+	 * @param Parser $parser
+	 * @param string $format
+	 * @param string $date
+	 * @param string $language
 	 * @return string
 	 */
 	public static function localTime( $parser, $format = '', $date = '', $language = '' ) {
@@ -538,9 +538,9 @@ class ExtParserFunctions {
 	}
 
 	/**
-	 * @param $parser Parser
-	 * @param $frame PPFrame
-	 * @param $args array
+	 * @param Parser $parser
+	 * @param PPFrame $frame
+	 * @param array $args
 	 * @return string
 	 */
 	public static function localTimeObj( $parser, $frame, $args ) {
@@ -554,10 +554,10 @@ class ExtParserFunctions {
 	 * Obtain a specified number of slash-separated parts of a title,
 	 * e.g. {{#titleparts:Hello/World|1}} => "Hello"
 	 *
-	 * @param $parser Parser Parent parser
-	 * @param $title string Title to split
-	 * @param $parts int Number of parts to keep
-	 * @param $offset int Offset starting at 1
+	 * @param Parser $parser Parent parser
+	 * @param string $title Title to split
+	 * @param int $parts Number of parts to keep
+	 * @param int $offset Offset starting at 1
 	 * @return string
 	 */
 	public static function titleparts( $parser, $title = '', $parts = 0, $offset = 0 ) {
@@ -585,7 +585,7 @@ class ExtParserFunctions {
 
 	/**
 	 *  Verifies parameter is less than max string length.
-	 * @param $text
+	 * @param string $text
 	 * @return bool
 	 */
 	private static function checkLength( $text ) {
@@ -607,8 +607,8 @@ class ExtParserFunctions {
 	 * {{#len:string}}
 	 *
 	 * Reports number of characters in string.
-	 * @param $parser Parser
-	 * @param $inStr string
+	 * @param Parser $parser
+	 * @param string $inStr
 	 * @return int
 	 */
 	public static function runLen( $parser, $inStr = '' ) {
@@ -623,10 +623,10 @@ class ExtParserFunctions {
 	 *
 	 * Note: If the needle is an empty string, single space is used instead.
 	 * Note: If the needle is not found, empty string is returned.
-	 * @param $parser Parser
-	 * @param $inStr string
-	 * @param $inNeedle int|string
-	 * @param $inOffset int
+	 * @param Parser $parser
+	 * @param string $inStr
+	 * @param int|string $inNeedle
+	 * @param int $inOffset
 	 * @return int|string
 	 */
 	public static function runPos( $parser, $inStr = '', $inNeedle = '', $inOffset = 0 ) {
@@ -657,9 +657,9 @@ class ExtParserFunctions {
 	 *
 	 * Note: If the needle is an empty string, single space is used instead.
 	 * Note: If the needle is not found, -1 is returned.
-	 * @param $parser Parser
-	 * @param $inStr string
-	 * @param $inNeedle int|string
+	 * @param Parser $parser
+	 * @param string $inStr
+	 * @param int|string $inNeedle
 	 * @return int|string
 	 */
 	public static function runRPos( $parser, $inStr = '', $inNeedle = '' ) {
@@ -695,10 +695,10 @@ class ExtParserFunctions {
 	 * Note: A negative value for "length" returns a string reduced in
 	 *   length by that amount.
 	 *
-	 * @param $parser Parser
-	 * @param $inStr string
-	 * @param $inStart int
-	 * @param $inLength int
+	 * @param Parser $parser
+	 * @param string $inStr
+	 * @param int $inStart
+	 * @param int $inLength
 	 * @return string
 	 */
 	public static function runSub( $parser, $inStr = '', $inStart = 0, $inLength = 0 ) {
@@ -723,9 +723,9 @@ class ExtParserFunctions {
 	 * Returns number of occurrences of "substr" in "string".
 	 *
 	 * Note: If "substr" is empty, a single space is used.
-	 * @param $parser Parser
-	 * @param $inStr string
-	 * @param $inSubStr string
+	 * @param Parser $parser
+	 * @param string $inStr
+	 * @param string $inSubStr
 	 * @return int|string
 	 */
 	public static function runCount( $parser, $inStr = '', $inSubStr = '' ) {
@@ -754,11 +754,11 @@ class ExtParserFunctions {
 	 *
 	 * Note: Armored against replacements that would generate huge strings.
 	 * Note: If "from" is an empty string, single space is used instead.
-	 * @param $parser Parser
-	 * @param $inStr string
-	 * @param $inReplaceFrom string
-	 * @param $inReplaceTo string
-	 * @param $inLimit int
+	 * @param Parser $parser
+	 * @param string $inStr
+	 * @param string $inReplaceFrom
+	 * @param string $inReplaceTo
+	 * @param int $inLimit
 	 * @return mixed|string
 	 */
 	public static function runReplace( $parser, $inStr = '',
@@ -817,11 +817,11 @@ class ExtParserFunctions {
 	 * Note: Negative position can be used to specify tokens from the end.
 	 * Note: If the divider is an empty string, single space is used instead.
 	 * Note: Empty string is returned if there are not enough exploded chunks.
-	 * @param $parser Parser
-	 * @param $inStr string
-	 * @param $inDiv string
-	 * @param $inPos int
-	 * @param $inLim int|null
+	 * @param Parser $parser
+	 * @param string $inStr
+	 * @param string $inDiv
+	 * @param int $inPos
+	 * @param int|null $inLim
 	 * @return string
 	 */
 	public static function runExplode(
@@ -858,8 +858,8 @@ class ExtParserFunctions {
 	 * {{#urldecode:string}}
 	 *
 	 * Decodes URL-encoded (like%20that) strings.
-	 * @param $parser Parser
-	 * @param $inStr string
+	 * @param Parser $parser
+	 * @param string $inStr
 	 * @return string
 	 */
 	public static function runUrlDecode( $parser, $inStr = '' ) {
@@ -877,11 +877,11 @@ class ExtParserFunctions {
 	 * For use when doing string comparisions, where user expects entities
 	 * to be equal for what they stand for (e.g. comparisions with {{PAGENAME}})
 	 *
-	 * @param $obj PPNode|string Thing to expand
-	 * @param $frame PPFrame
-	 * @param &$trimExpanded String Expanded and trimmed version of PPNode,
+	 * @param PPNode|string $obj Thing to expand
+	 * @param PPFrame $frame
+	 * @param string &$trimExpanded Expanded and trimmed version of PPNode,
 	 *   but with char refs intact
-	 * @return String The trimmed, expanded and entity reference decoded version of the PPNode
+	 * @return string The trimmed, expanded and entity reference decoded version of the PPNode
 	 */
 	private static function decodeTrimExpand( $obj, $frame, &$trimExpanded = null ) {
 		$expanded = $frame->expand( $obj );
