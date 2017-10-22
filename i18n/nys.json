@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gnangarra"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "Expression error: Unrecognized word \"$1\"."
+}
