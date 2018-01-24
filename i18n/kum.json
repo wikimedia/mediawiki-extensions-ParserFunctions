@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Arsenekoumyk"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "Жумла хата: белгисиз сёз \"$1\".‎",
+	"pfunc_expr_unrecognised_punctuation": "Жумла хата: белгисиз бюртюклев ишара \"$1\".‎"
+}
