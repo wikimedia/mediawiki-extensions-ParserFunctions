@@ -363,7 +363,8 @@ class ExprParser {
 				$op = EXPR_GREATER;
 				++$p;
 	} else {
-				throw new ExprError( 'unrecognised_punctuation', Validator::cleanUp( $char ) );
+				$utfExpr = Validator::cleanUp( substr( $expr, $p ) );
+				throw new ExprError( 'unrecognised_punctuation', mb_substr( $utfExpr, 0, 1 ) );
 	}
 
 			// Binary operator processing
