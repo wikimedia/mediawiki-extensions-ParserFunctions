@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"ArmenBakkalian",
-			"Azniv Stepanian"
+			"Azniv Stepanian",
+			"Rajemian"
 		]
 	},
 	"pfunc_expr_unrecognised_word": "Արտայայտութեան սխալ․ անհասկնալի բառ՝ «$1»։",
+	"pfunc_expr_missing_operand": "Արտայայտութեան սխալ. $1ին կը պակսի գործարկեալը։",
 	"pfunc_expr_unrecognised_punctuation": "Արտայայտութեան սխալ․ անհասկնալի կէտադրական նշան՝ «$1»։"
 }
