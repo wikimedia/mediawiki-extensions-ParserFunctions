@@ -179,7 +179,7 @@ class ExtParserFunctions {
 		$default = null;
 		$lastItemHadNoEquals = false;
 		$lastItem = '';
-		$mwDefault =& MagicWord::get( 'default' );
+		$mwDefault = MagicWord::get( 'default' );
 		foreach ( $args as $arg ) {
 			$bits = $arg->splitArg();
 			$nameNode = $bits['name'];
