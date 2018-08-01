@@ -4,6 +4,6 @@
 			"Jawadywn"
 		]
 	},
-	"pfunc_expr_unrecognised_word": "Salah jingok: Kato \"$1\" dak ketemu.",
-	"pfunc_expr_unrecognised_punctuation": "Salah jingok: Karakter tando baco \"$1\" dak ketemu."
+	"pfunc_expr_unrecognised_word": "Kesalahan ekspresi: Kato \"$1\" idak ketemu.",
+	"pfunc_expr_unrecognised_punctuation": "Kesalahan ekspresi: Karakter tando baco \"$1\" idak ketemu."
 }
