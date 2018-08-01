@@ -179,7 +179,11 @@ class ExtParserFunctions {
 		$default = null;
 		$lastItemHadNoEquals = false;
 		$lastItem = '';
-		$mwDefault = MagicWord::get( 'default' );
+		if ( class_exists( MagicWordFactory::class ) ) {
+			$mwDefault = $parser->getMagicWordFactory()->get( 'default' );
+		} else {
+			$mwDefault = MagicWord::get( 'default' );
+		}
 		foreach ( $args as $arg ) {
 			$bits = $arg->splitArg();
 			$nameNode = $bits['name'];
