@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Htawmonzel"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "မဗမံက်ထ္ၜး ဗၠေတ် - မလိက် \"$1\" ဂှ် ဟွံတီ၊၊",
+	"pfunc_expr_missing_operand": "ဗၟံက်ထ္ၜး ဗၠေတ်- $1 မကၠောန်ဗဒှ် ကၠေအ်ဒၟံင်",
+	"pfunc_expr_unrecognised_punctuation": "မဗမံက်ထ္ၜး ဗၠေတ်: \"$1\"ဂှ် ဒှ်မလိက် မဟွံလုပ်အဝေါင်မွဲ"
+}
