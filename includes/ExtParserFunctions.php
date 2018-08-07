@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class ExtParserFunctions {
 	public static $mExprParser;
 	public static $mTimeCache = [];
@@ -330,12 +332,13 @@ class ExtParserFunctions {
 				$parser->mOutput->addImage(
 					$file->getName(), $file->getTimestamp(), $file->getSha1() );
 				return $file->exists() ? $then : $else;
-			} elseif ( $title->getNamespace() === NS_SPECIAL ) {
+			} elseif ( $title->isSpecialPage() ) {
 				/* Don't bother with the count for special pages,
 				 * since their existence can be checked without
 				 * accessing the database.
 				 */
-				return SpecialPageFactory::exists( $title->getDBkey() ) ? $then : $else;
+				return MediaWikiServices::getInstance()->getSpecialPageFactory()
+					->exists( $title->getDBkey() ) ? $then : $else;
 			} elseif ( $title->isExternal() ) {
 				/* Can't check the existence of pages on other sites,
 				 * so just return $else.  Makes a sort of sense, since
