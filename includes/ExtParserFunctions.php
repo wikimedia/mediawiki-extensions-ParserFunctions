@@ -247,7 +247,7 @@ class ExtParserFunctions {
 	 *
 	 * @return string
 	 */
-	public static function rel2abs( $parser , $to = '' , $from = '' ) {
+	public static function rel2abs( $parser, $to = '', $from = '' ) {
 		$from = trim( $from );
 		if ( $from === '' ) {
 			$from = $parser->getTitle()->getPrefixedText();
@@ -269,7 +269,7 @@ class ExtParserFunctions {
 			$from = '';
 		}
 		// Make a long path, containing both, enclose it in /.../
-		$fullPath = '/' . $from . '/' .  $to . '/';
+		$fullPath = '/' . $from . '/' . $to . '/';
 
 		// remove redundant current path dots
 		$fullPath = preg_replace( '!/(\./)+!', '/', $fullPath );
@@ -438,7 +438,7 @@ class ExtParserFunctions {
 
 			# Correct for DateTime interpreting 'XXXX' as XX:XX o'clock
 			if ( preg_match( '/^[0-9]{4}$/', $date ) ) {
-				$date = '00:00 '.$date;
+				$date = '00:00 ' . $date;
 			}
 
 			# Parse date
