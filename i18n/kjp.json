@@ -4,5 +4,6 @@
 			"Rul1902"
 		]
 	},
+	"pfunc_expr_unrecognised_word": "ၮဲဖှ်ေ ဆ်ုမး - ၮးလ်ုသှ်ေ လိက်ဖၠုံး \"$1\"။",
 	"pfunc_expr_missing_operand": "ၮဲဖှ်ေဆ်ုမး: Missing operand for $1."
 }
