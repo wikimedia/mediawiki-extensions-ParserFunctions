@@ -18,14 +18,14 @@ class ExpressionTest extends MediaWikiTestCase {
 	/**
 	 * @dataProvider provideExpressions
 	 */
-	function testExpression( $input, $expected ) {
+	public function testExpression( $input, $expected ) {
 		$this->assertEquals(
 			$expected,
 			$this->parser->doExpression( $input )
 		);
 	}
 
-	function provideExpressions() {
+	public function provideExpressions() {
 		return [
 			[ '1 or 0', '1' ],
 			[ 'not (1 and 0)', '1' ],
