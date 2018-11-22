@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Axel xadolik"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "Rokla : \"$1\" ravlem me zo kagruper.",
+	"pfunc_expr_unrecognised_punctuation": "Rokla : \"$1\" staa me zo kagruper."
+}
