@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
 <ruleset>
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
-		<exclude name="Squiz.Classes.ValidClassName.NotCamelCaps" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPublic" />
 		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment" />
+	</rule>
+	<rule ref="Squiz.Classes.ValidClassName.NotCamelCaps">
+		<exclude-pattern>Scribunto_LuaParserFunctionsLibrary\.php</exclude-pattern>
 	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php,php5,inc" />
