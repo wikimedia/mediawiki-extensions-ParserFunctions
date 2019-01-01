@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Iwan Novirion"
+			"Iwan Novirion",
+			"Muhraz"
 		]
 	},
-	"pfunc_time_error": "Kasalahan: wakatu indak tapek"
+	"pfunc_time_error": "Kasalahan: wakatu indak tapek",
+	"pfunc_expr_unrecognised_word": "Kasalahan ekspresi: Kato \"$1\" indak dikenali",
+	"pfunc_expr_unrecognised_punctuation": "Kasalahan ekspresi: Tando baco \"$1\" indak dikenal."
 }
