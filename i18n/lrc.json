@@ -3,11 +3,12 @@
 		"authors": [
 			"Bonevarluri",
 			"Mogoeilor",
-			"Beyronvan"
+			"Beyronvan",
+			"Lorestani"
 		]
 	},
 	"pfunc_time_error": "خطا:وخت نامعتور.",
-	"pfunc_expr_unrecognised_word": "خطا جمله ای: کلیمه دسه بنی نبیه \"$1\".",
+	"pfunc_expr_unrecognised_word": "ختای عبارٱت: کلٱمٱ نٱشنٱختٱ «$1»",
 	"pfunc_expr_unexpected_operator": "خطا جمله: عملدیارکن ناحاستنی $1",
 	"pfunc_expr_missing_operand": "خطا جمله ای:عملیار گم بیه سی $1",
 	"pfunc_expr_unrecognised_punctuation": "خٱتا جۏملاٛیی: کاراکتر نۏقتٱ نیاین دٱسٱ بٱنی ناٛییٱ\"$1\".",
