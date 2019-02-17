@@ -10,7 +10,7 @@
 	"pfunc_time_error": "خطا:وخت نامعتور.",
 	"pfunc_expr_unrecognised_word": "ختای عبارٱت: کلٱمٱ نٱشنٱختٱ «$1»",
 	"pfunc_expr_unexpected_operator": "خطا جمله: عملدیارکن ناحاستنی $1",
-	"pfunc_expr_missing_operand": "خطا جمله ای:عملیار گم بیه سی $1",
+	"pfunc_expr_missing_operand": "ختا جۏملاٛیی:عملیار گوم بیٱ سی $1",
 	"pfunc_expr_unrecognised_punctuation": "خٱتا جۏملاٛیی: کاراکتر نۏقتٱ نیاین دٱسٱ بٱنی ناٛییٱ\"$1\".",
 	"pfunc_expr_division_by_zero": "بهرکنون وا صفر",
 	"pfunc_expr_invalid_argument_ln": "چک چنه گن سی درینده:<=0."
