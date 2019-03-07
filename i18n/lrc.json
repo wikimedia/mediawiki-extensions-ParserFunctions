@@ -7,7 +7,7 @@
 			"Lorestani"
 		]
 	},
-	"pfunc_time_error": "خطا:وخت نامعتور.",
+	"pfunc_time_error": "ختا:ڤٱخت ناموعتٱبٱر.",
 	"pfunc_expr_unrecognised_word": "ختای عبارٱت: کلٱمٱ نٱشنٱختٱ «$1»",
 	"pfunc_expr_unexpected_operator": "خٱتا جۏملٱ: عملدؽارکن ناهاستنی $1",
 	"pfunc_expr_missing_operand": "ختا جۏملاٛیی:عملیار گوم بیٱ سی $1",
