@@ -85,8 +85,8 @@ class ExtParserFunctions {
 	 */
 	public static function ifexprObj( $parser, $frame, $args ) {
 		$expr = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
-		$then = isset( $args[1] ) ? $args[1] : '';
-		$else = isset( $args[2] ) ? $args[2] : '';
+		$then = $args[1] ?? '';
+		$else = $args[2] ?? '';
 		$result = self::ifexpr( $parser, $expr, $then, $else );
 		if ( is_object( $result ) ) {
 			$result = trim( $frame->expand( $result ) );
@@ -156,8 +156,8 @@ class ExtParserFunctions {
 	 */
 	public static function iferrorObj( $parser, $frame, $args ) {
 		$test = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
-		$then = isset( $args[1] ) ? $args[1] : false;
-		$else = isset( $args[2] ) ? $args[2] : false;
+		$then = $args[1] ?? false;
+		$else = $args[2] ?? false;
 		$result = self::iferror( $parser, $test, $then, $else );
 		if ( $result === false ) {
 			return '';
@@ -379,8 +379,8 @@ class ExtParserFunctions {
 	 */
 	public static function ifexistObj( $parser, $frame, $args ) {
 		$title = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
-		$then = isset( $args[1] ) ? $args[1] : null;
-		$else = isset( $args[2] ) ? $args[2] : null;
+		$then = $args[1] ?? null;
+		$else = $args[2] ?? null;
 
 		$result = self::ifexistCommon( $parser, $frame, $title, $then, $else );
 		if ( $result === null ) {
