@@ -7,6 +7,10 @@ use Parser;
 class Hooks {
 
 	/**
+	 * Enables string functions during parser tests.
+	 *
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ParserTestGlobals
+	 *
 	 * @param array &$globals
 	 */
 	public static function onParserTestGlobals( array &$globals ) {
@@ -14,8 +18,11 @@ class Hooks {
 	}
 
 	/**
+	 * Registers our parser functions with a fresh parser.
+	 *
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ParserFirstCallInit
+	 *
 	 * @param Parser $parser
-	 * @return bool
 	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
 		global $wgPFEnableStringFunctions;
@@ -46,14 +53,19 @@ class Hooks {
 			$parser->setFunctionHook( 'explode',   "$class::runExplode" );
 			$parser->setFunctionHook( 'urldecode', "$class::runUrlDecode" );
 		}
-
-		return true;
 	}
 
+	/**
+	 * Registers ParserFunctions' lua function with Scribunto
+	 *
+	 * @see https://www.mediawiki.org/wiki/Extension:Scribunto/ScribuntoExternalLibraries
+	 *
+	 * @param string $engine
+	 * @param string[] &$extraLibraries
+	 */
 	public static function onScribuntoExternalLibraries( $engine, array &$extraLibraries ) {
 		if ( $engine === 'lua' ) {
 			$extraLibraries['mw.ext.ParserFunctions'] = LuaLibrary::class;
 		}
-		return true;
 	}
 }
