@@ -21,7 +21,9 @@ class ParserFunctions {
 	public static $mExprParser;
 	public static $mTimeCache = [];
 	public static $mTimeChars = 0;
-	public static $mMaxTimeChars = 6000; # ~10 seconds
+
+	/** ~10 seconds */
+	const MAX_TIME_CHARS = 6000;
 
 	/**
 	 * @param Parser $parser
@@ -482,7 +484,7 @@ class ParserFunctions {
 				'</strong>';
 		} else {
 			self::$mTimeChars += strlen( $format );
-			if ( self::$mTimeChars > self::$mMaxTimeChars ) {
+			if ( self::$mTimeChars > self::MAX_TIME_CHARS ) {
 				return '<strong class="error">' .
 					wfMessage( 'pfunc_time_too_long' )->inContentLanguage()->escaped() .
 					'</strong>';
