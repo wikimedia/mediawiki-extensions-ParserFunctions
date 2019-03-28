@@ -6,22 +6,13 @@
 class ExpressionTest extends MediaWikiTestCase {
 
 	/**
-	 * @var ExprParser
-	 */
-	protected $parser;
-
-	protected function setUp() {
-		parent::setUp();
-		$this->parser = new ExprParser();
-	}
-
-	/**
 	 * @dataProvider provideExpressions
 	 */
 	public function testExpression( $input, $expected ) {
+		$parser = new ExprParser();
 		$this->assertEquals(
 			$expected,
-			$this->parser->doExpression( $input )
+			$parser->doExpression( $input )
 		);
 	}
 
