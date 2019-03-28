@@ -7,8 +7,6 @@ use DateTimeZone;
 use Exception;
 use Language;
 use LinkCache;
-use MagicWord;
-use MagicWordFactory;
 use MediaWiki\MediaWikiServices;
 use MWTimestamp;
 use Parser;
@@ -198,11 +196,7 @@ class ParserFunctions {
 		$default = null;
 		$lastItemHadNoEquals = false;
 		$lastItem = '';
-		if ( class_exists( MagicWordFactory::class ) ) {
-			$mwDefault = $parser->getMagicWordFactory()->get( 'default' );
-		} else {
-			$mwDefault = MagicWord::get( 'default' );
-		}
+		$mwDefault = $parser->getMagicWordFactory()->get( 'default' );
 		foreach ( $args as $arg ) {
 			$bits = $arg->splitArg();
 			$nameNode = $bits['name'];
