@@ -1,8 +1,25 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
+namespace MediaWiki\Extensions\ParserFunctions;
 
-class ExtParserFunctions {
+use DateTime;
+use DateTimeZone;
+use Exception;
+use Language;
+use LinkCache;
+use MagicWord;
+use MagicWordFactory;
+use MediaWiki\MediaWikiServices;
+use MWTimestamp;
+use Parser;
+use PPFrame;
+use PPNode;
+use Sanitizer;
+use StringUtils;
+use StubObject;
+use Title;
+
+class ParserFunctions {
 	public static $mExprParser;
 	public static $mTimeCache = [];
 	public static $mTimeChars = 0;

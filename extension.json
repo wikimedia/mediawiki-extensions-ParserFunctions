@@ -28,21 +28,17 @@
 	},
 	"Hooks": {
 		"ParserTestGlobals": [
-			"ParserFunctionsHooks::onParserTestGlobals"
+			"MediaWiki\\Extensions\\ParserFunctions\\Hooks::onParserTestGlobals"
 		],
 		"ParserFirstCallInit": [
-			"ParserFunctionsHooks::onParserFirstCallInit"
+			"MediaWiki\\Extensions\\ParserFunctions\\Hooks::onParserFirstCallInit"
 		],
 		"ScribuntoExternalLibraries": [
-			"ParserFunctionsHooks::onScribuntoExternalLibraries"
+			"MediaWiki\\Extensions\\ParserFunctions\\Hooks::onScribuntoExternalLibraries"
 		]
 	},
-	"AutoloadClasses": {
-		"ExtParserFunctions": "includes/ExtParserFunctions.php",
-		"ExprParser": "includes/ExprParser.php",
-		"ExprError": "includes/ExprError.php",
-		"Scribunto_LuaParserFunctionsLibrary": "includes/Scribunto_LuaParserFunctionsLibrary.php",
-		"ParserFunctionsHooks": "includes/ParserFunctionsHooks.php"
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extensions\\ParserFunctions\\": "includes/"
 	},
 	"manifest_version": 1
 }

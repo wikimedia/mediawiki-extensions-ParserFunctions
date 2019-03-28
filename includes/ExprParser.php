@@ -16,6 +16,8 @@
  *
  */
 
+namespace MediaWiki\Extensions\ParserFunctions;
+
 use UtfNormal\Validator;
 
 // Character classes

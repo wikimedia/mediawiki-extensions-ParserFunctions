@@ -1,7 +1,9 @@
 <?php
 
+use MediaWiki\Extensions\ParserFunctions\ExprParser;
+
 /**
- * @covers ExprParser
+ * @covers \MediaWiki\Extensions\ParserFunctions\ExprParser
  */
 class ExpressionTest extends MediaWikiTestCase {
 
