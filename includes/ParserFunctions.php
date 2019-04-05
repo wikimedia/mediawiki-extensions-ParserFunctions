@@ -26,15 +26,6 @@ class ParserFunctions {
 	const MAX_TIME_CHARS = 6000;
 
 	/**
-	 * @param Parser $parser
-	 * @return bool
-	 */
-	public static function clearState( $parser ) {
-		self::$mTimeChars = 0;
-		return true;
-	}
-
-	/**
 	 * Register ParserClearState hook.
 	 * We defer this until needed to avoid the loading of the code of this file
 	 * when no parser function is actually called.
@@ -43,7 +34,9 @@ class ParserFunctions {
 		static $done = false;
 		if ( !$done ) {
 			global $wgHooks;
-			$wgHooks['ParserClearState'][] = __CLASS__ . '::clearState';
+			$wgHooks['ParserClearState'][] = function () {
+				self::$mTimeChars = 0;
+			};
 			$done = true;
 		}
 	}
