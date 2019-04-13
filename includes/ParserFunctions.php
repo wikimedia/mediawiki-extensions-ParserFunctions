@@ -66,41 +66,29 @@ class ParserFunctions {
 
 	/**
 	 * @param Parser $parser
-	 * @param string $expr
-	 * @param string $then
-	 * @param string $else
-	 * @return string
-	 */
-	public static function ifexpr( $parser, $expr = '', $then = '', $else = '' ) {
-		try {
-			$ret = self::getExprParser()->doExpression( $expr );
-			if ( is_numeric( $ret ) ) {
-				$ret = (float)$ret;
-			}
-			if ( $ret ) {
-				return $then;
-			} else {
-				return $else;
-			}
-		} catch ( ExprError $e ) {
-			return '<strong class="error">' . htmlspecialchars( $e->getMessage() ) . '</strong>';
-		}
-	}
-
-	/**
-	 * @param Parser $parser
 	 * @param PPFrame $frame
 	 * @param array $args
 	 * @return string
 	 */
-	public static function ifexprObj( $parser, $frame, $args ) {
+	public static function ifexpr( $parser, $frame, $args ) {
 		$expr = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$then = $args[1] ?? '';
 		$else = $args[2] ?? '';
-		$result = self::ifexpr( $parser, $expr, $then, $else );
+
+		try {
+			$result = self::getExprParser()->doExpression( $expr );
+			if ( is_numeric( $result ) ) {
+				$result = (float)$result;
+			}
+			$result = $result ? $then : $else;
+		} catch ( ExprError $e ) {
+			return '<strong class="error">' . htmlspecialchars( $e->getMessage() ) . '</strong>';
+		}
+
 		if ( is_object( $result ) ) {
 			$result = trim( $frame->expand( $result ) );
 		}
+
 		return $result;
 	}
 
@@ -110,7 +98,7 @@ class ParserFunctions {
 	 * @param array $args
 	 * @return string
 	 */
-	public static function ifObj( $parser, $frame, $args ) {
+	public static function if( $parser, $frame, $args ) {
 		$test = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		if ( $test !== '' ) {
 			return isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
@@ -125,7 +113,7 @@ class ParserFunctions {
 	 * @param array $args
 	 * @return string
 	 */
-	public static function ifeqObj( $parser, $frame, $args ) {
+	public static function ifeq( $parser, $frame, $args ) {
 		$left = isset( $args[0] ) ? self::decodeTrimExpand( $args[0], $frame ) : '';
 		$right = isset( $args[1] ) ? self::decodeTrimExpand( $args[1], $frame ) : '';
 
@@ -140,40 +128,30 @@ class ParserFunctions {
 
 	/**
 	 * @param Parser $parser
-	 * @param string $test
-	 * @param string $then
-	 * @param bool $else
-	 * @return bool|string
+	 * @param PPFrame $frame
+	 * @param array $args
+	 * @return string
 	 */
-	public static function iferror( $parser, $test = '', $then = '', $else = false ) {
+	public static function iferror( $parser, $frame, $args ) {
+		$test = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
+		$then = $args[1] ?? false;
+		$else = $args[2] ?? false;
+
 		if ( preg_match(
 			'/<(?:strong|span|p|div)\s(?:[^\s>]*\s+)*?class="(?:[^"\s>]*\s+)*?error(?:\s[^">]*)?"/',
 			$test )
 		) {
-			return $then;
+			$result = $then;
 		} elseif ( $else === false ) {
-			return $test;
+			$result = $test;
 		} else {
-			return $else;
+			$result = $else;
 		}
-	}
-
-	/**
-	 * @param Parser $parser
-	 * @param PPFrame $frame
-	 * @param array $args
-	 * @return string
-	 */
-	public static function iferrorObj( $parser, $frame, $args ) {
-		$test = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
-		$then = $args[1] ?? false;
-		$else = $args[2] ?? false;
-		$result = self::iferror( $parser, $test, $then, $else );
 		if ( $result === false ) {
 			return '';
-		} else {
-			return trim( $frame->expand( $result ) );
 		}
+
+		return trim( $frame->expand( $result ) );
 	}
 
 	/**
@@ -182,7 +160,7 @@ class ParserFunctions {
 	 * @param array $args
 	 * @return string
 	 */
-	public static function switchObj( $parser, $frame, $args ) {
+	public static function switch( $parser, $frame, $args ) {
 		if ( count( $args ) === 0 ) {
 			return '';
 		}
@@ -317,7 +295,7 @@ class ParserFunctions {
 	 *
 	 * @return string
 	 */
-	public static function ifexistCommon(
+	private static function ifexistInternal(
 		$parser, $frame, $titletext = '', $then = '', $else = ''
 	) {
 		$title = Title::newFromText( $titletext );
@@ -382,12 +360,12 @@ class ParserFunctions {
 	 * @param array $args
 	 * @return string
 	 */
-	public static function ifexistObj( $parser, $frame, $args ) {
+	public static function ifexist( $parser, $frame, $args ) {
 		$title = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$then = $args[1] ?? null;
 		$else = $args[2] ?? null;
 
-		$result = self::ifexistCommon( $parser, $frame, $title, $then, $else );
+		$result = self::ifexistInternal( $parser, $frame, $title, $then, $else );
 		if ( $result === null ) {
 			return '';
 		} else {
@@ -512,25 +490,11 @@ class ParserFunctions {
 
 	/**
 	 * @param Parser $parser
-	 * @param string $format
-	 * @param string $date
-	 * @param string $language
-	 * @param string|bool $local
-	 * @return string
-	 */
-	public static function time(
-		$parser, $format = '', $date = '', $language = '', $local = false
-	) {
-		return self::timeCommon( $parser, null, $format, $date, $language, $local );
-	}
-
-	/**
-	 * @param Parser $parser
 	 * @param PPFrame $frame
 	 * @param array $args
 	 * @return string
 	 */
-	public static function timeObj( $parser, $frame, $args ) {
+	public static function time( $parser, $frame, $args ) {
 		$format = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$date = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
 		$language = isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
@@ -540,22 +504,11 @@ class ParserFunctions {
 
 	/**
 	 * @param Parser $parser
-	 * @param string $format
-	 * @param string $date
-	 * @param string $language
-	 * @return string
-	 */
-	public static function localTime( $parser, $format = '', $date = '', $language = '' ) {
-		return self::timeCommon( $parser, null, $format, $date, $language, true );
-	}
-
-	/**
-	 * @param Parser $parser
 	 * @param PPFrame $frame
 	 * @param array $args
 	 * @return string
 	 */
-	public static function localTimeObj( $parser, $frame, $args ) {
+	public static function localTime( $parser, $frame, $args ) {
 		$format = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$date = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
 		$language = isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
