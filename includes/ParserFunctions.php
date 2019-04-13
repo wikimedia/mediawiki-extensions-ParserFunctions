@@ -420,9 +420,7 @@ class ParserFunctions {
 		}
 		if ( isset( self::$mTimeCache[$format][$cacheKey][$language][$local] ) ) {
 			$cachedVal = self::$mTimeCache[$format][$cacheKey][$language][$local];
-			if ( $useTTL
-				&& $cachedVal[1] !== null && $frame && is_callable( [ $frame, 'setTTL' ] )
-			) {
+			if ( $useTTL && $cachedVal[1] !== null && $frame ) {
 				$frame->setTTL( $cachedVal[1] );
 			}
 			return $cachedVal[0];
@@ -504,7 +502,7 @@ class ParserFunctions {
 			}
 		}
 		self::$mTimeCache[$format][$cacheKey][$language][$local] = [ $result, $ttl ];
-		if ( $useTTL && $ttl !== null && $frame && is_callable( [ $frame, 'setTTL' ] ) ) {
+		if ( $useTTL && $ttl !== null && $frame ) {
 			$frame->setTTL( $ttl );
 		}
 		return $result;
