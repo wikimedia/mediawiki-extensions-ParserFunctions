@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Carma citrawati"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "Kaiwangan ekspresi: Kruna \"$1\" tan kauningin.",
+	"pfunc_expr_unrecognised_punctuation": "Kaiwangan ekspresi: Karakter tanda baca \"$1\" tan kauningin."
+}
