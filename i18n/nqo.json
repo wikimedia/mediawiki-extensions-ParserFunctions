@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lanciné.kounfantoh.fofana"
+			"Lanciné.kounfantoh.fofana",
+			"Lancine.kounfantoh.fofana"
 		]
 	},
-	"pfunc_expr_unrecognised_word": "ߛߓߍߟߌ ߝߎ߬ߕߎ߲߬ߕߌ$1"
+	"pfunc_time_error": "ߝߎ߬ߕߎ߲߬ߕߌ:ߕߎ߬ߡߊ߬ ߡߊߟߐ߲ߓߊߟߌ",
+	"pfunc_expr_unrecognised_word": "ߛߓߍߟߌ ߝߎ߬ߕߎ߲߬ߕߌ$1",
+	"pfunc_expr_division_by_zero": "ߘߐ߬ߕߟߊ߬ߟߌ ߘߐ߬ߞߏߟߏ߲ ߕߍ߫"
 }
