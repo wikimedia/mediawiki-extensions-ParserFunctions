@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Carma citrawati"
+			"Carma citrawati",
+			"Joseagush"
 		]
 	},
+	"pfunc_time_error": "Pidabda: tempo ten pantes",
 	"pfunc_expr_unrecognised_word": "Kaiwangan ekspresi: Kruna \"$1\" tan kauningin.",
-	"pfunc_expr_unrecognised_punctuation": "Kaiwangan ekspresi: Karakter tanda baca \"$1\" tan kauningin."
+	"pfunc_expr_unrecognised_punctuation": "Kaiwangan ekspresi: Karakter tanda baca \"$1\" tan kauningin.",
+	"pfunc_expr_division_by_zero": "Kabagi nul."
 }
