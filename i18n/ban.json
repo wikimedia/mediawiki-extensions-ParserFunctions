@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Carma citrawati",
-			"Joseagush"
+			"Joseagush",
+			"NoiX180"
 		]
 	},
-	"pfunc_time_error": "Pidabda: tempo ten pantes",
+	"pfunc_time_error": "Kaiwangan: Galah tan valid.",
 	"pfunc_expr_unrecognised_word": "Kaiwangan ekspresi: Kruna \"$1\" tan kauningin.",
 	"pfunc_expr_unrecognised_punctuation": "Kaiwangan ekspresi: Karakter tanda baca \"$1\" tan kauningin.",
 	"pfunc_expr_division_by_zero": "Kabagi nul."
