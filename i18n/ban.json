@@ -3,11 +3,13 @@
 		"authors": [
 			"Carma citrawati",
 			"Joseagush",
-			"NoiX180"
+			"NoiX180",
+			"Luh Gede Krismayanti"
 		]
 	},
 	"pfunc_time_error": "Kaiwangan: Galah tan valid.",
 	"pfunc_expr_unrecognised_word": "Kaiwangan ekspresi: Kruna \"$1\" tan kauningin.",
+	"pfunc_expr_missing_operand": "Pikobet wiraga: Operand nénten katepukin anggen $1",
 	"pfunc_expr_unrecognised_punctuation": "Kaiwangan ekspresi: Karakter tanda baca \"$1\" tan kauningin.",
 	"pfunc_expr_division_by_zero": "Kabagi nul."
 }
