@@ -18,9 +18,9 @@ use StubObject;
 use Title;
 
 class ParserFunctions {
-	public static $mExprParser;
-	public static $mTimeCache = [];
-	public static $mTimeChars = 0;
+	private static $mExprParser;
+	private static $mTimeCache = [];
+	private static $mTimeChars = 0;
 
 	/** ~10 seconds */
 	const MAX_TIME_CHARS = 6000;
@@ -30,7 +30,7 @@ class ParserFunctions {
 	 * We defer this until needed to avoid the loading of the code of this file
 	 * when no parser function is actually called.
 	 */
-	public static function registerClearHook() {
+	private static function registerClearHook() {
 		static $done = false;
 		if ( !$done ) {
 			global $wgHooks;
@@ -44,7 +44,7 @@ class ParserFunctions {
 	/**
 	 * @return ExprParser
 	 */
-	public static function &getExprParser() {
+	private static function &getExprParser() {
 		if ( !isset( self::$mExprParser ) ) {
 			self::$mExprParser = new ExprParser;
 		}
@@ -382,7 +382,7 @@ class ParserFunctions {
 	 * @param string|bool $local
 	 * @return string
 	 */
-	public static function timeCommon(
+	private static function timeCommon(
 		$parser, $frame = null, $format = '', $date = '', $language = '', $local = false
 	) {
 		global $wgLocaltimezone;
