@@ -5,7 +5,7 @@ use MediaWiki\Extensions\ParserFunctions\ExprParser;
 /**
  * @covers \MediaWiki\Extensions\ParserFunctions\ExprParser
  */
-class ExpressionTest extends MediaWikiTestCase {
+class ExpressionTest extends MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideExpressions
