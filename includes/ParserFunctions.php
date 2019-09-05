@@ -69,7 +69,7 @@ class ParserFunctions {
 		try {
 			return self::getExprParser()->doExpression( $expr );
 		} catch ( ExprError $e ) {
-			return '<strong class="error">' . htmlspecialchars( $e->getMessage() ) . '</strong>';
+			return '<strong class="error">' . htmlspecialchars( $e->getUserFriendlyMessage() ) . '</strong>';
 		}
 	}
 
@@ -95,7 +95,7 @@ class ParserFunctions {
 			}
 			$result = $result ? $then : $else;
 		} catch ( ExprError $e ) {
-			return '<strong class="error">' . htmlspecialchars( $e->getMessage() ) . '</strong>';
+			return '<strong class="error">' . htmlspecialchars( $e->getUserFriendlyMessage() ) . '</strong>';
 		}
 
 		if ( is_object( $result ) ) {
