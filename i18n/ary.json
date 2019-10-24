@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"SADIQUI"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "خطأ في التعبير: كلمة ما معروفاش \"$1\"",
+	"pfunc_expr_unrecognised_punctuation": "خطأ في التعبير: علامة ترقيم ما معروفاش \"$1\""
+}
