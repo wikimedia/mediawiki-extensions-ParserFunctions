@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jaeminlovetaejoon"
+			"Jaeminlovetaejoon",
+			"Khing"
 		]
 	},
-	"pfunc_time_error": "တၢ်ကမၣ်: တၢ်ဆၢကတီၢ်တဘၣ်ဘၤ"
+	"pfunc_time_error": "တၢ်ကမၣ်: တၢ်ဆၢကတီၢ်တဘၣ်ဘၤ",
+	"pfunc_expr_unexpected_operator": "Expression error: Unexpected $1 operator.",
+	"pfunc_expr_unrecognised_punctuation": "Expression error: Unrecognized punctuation character \"$1\"."
 }
