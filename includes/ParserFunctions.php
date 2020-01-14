@@ -248,7 +248,7 @@ class ParserFunctions {
 		# Check if the last item had no = sign, thus specifying the default case
 		if ( $lastItemHadNoEquals ) {
 			return $lastItem;
-		} elseif ( !is_null( $default ) ) {
+		} elseif ( $default !== null ) {
 			return trim( $frame->expand( $default ) );
 		} else {
 			return '';
@@ -910,7 +910,7 @@ class ParserFunctions {
 	 *
 	 * @param PPNode|string $obj Thing to expand
 	 * @param PPFrame $frame
-	 * @param string &$trimExpanded Expanded and trimmed version of PPNode,
+	 * @param string|null &$trimExpanded Expanded and trimmed version of PPNode,
 	 *   but with char refs intact
 	 * @return string The trimmed, expanded and entity reference decoded version of the PPNode
 	 */
