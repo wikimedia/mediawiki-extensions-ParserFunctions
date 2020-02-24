@@ -5,6 +5,7 @@
 		]
 	},
 	"pfunc_expr_unrecognised_word": "Feilâ ciälkkusist: Tubdâmettum sääni: $1",
+	"pfunc_expr_unexpected_operator": "Feilâ ciälhástuvvâst: vyerdihánnáá $1-operaattor",
 	"pfunc_expr_missing_operand": "Feilâ ciälhástuvvâst: operaattor $1 vaattâm operand operandi váilu",
 	"pfunc_expr_unrecognised_punctuation": "Feilâ celhâstuvvâst: Tubdâmettum koskâmerkkâ \"$1\"."
 }
