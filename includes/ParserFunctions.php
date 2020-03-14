@@ -6,7 +6,6 @@ use DateTime;
 use DateTimeZone;
 use Exception;
 use Language;
-use LinkCache;
 use MediaWiki\MediaWikiServices;
 use MWTimestamp;
 use Parser;
@@ -371,7 +370,7 @@ class ParserFunctions {
 				return $else;
 			} else {
 				$pdbk = $title->getPrefixedDBkey();
-				$lc = LinkCache::singleton();
+				$lc = MediaWikiServices::getInstance()->getLinkCache();
 				$id = $lc->getGoodLinkID( $pdbk );
 				if ( $id !== 0 ) {
 					$parser->mOutput->addLink( $title, $id );
