@@ -349,7 +349,7 @@ class ParserFunctions {
 				if ( !$parser->incrementExpensiveFunctionCount() ) {
 					return $else;
 				}
-				$file = wfFindFile( $title );
+				$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
 				if ( !$file ) {
 					return $else;
 				}
