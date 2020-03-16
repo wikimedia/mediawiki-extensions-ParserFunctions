@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Candalua",
-			"GatoSelvadego"
+			"GatoSelvadego",
+			"Fierodelveneto"
 		]
 	},
 	"pfunc_desc": "Zonta al parser na serie de funsion logiche",
@@ -18,9 +19,9 @@
 	"pfunc_expr_unexpected_operator": "Eror ne l'espression: operator $1 inateso",
 	"pfunc_expr_missing_operand": "Eror ne l'espression: operando mancante par $1",
 	"pfunc_expr_unexpected_closing_bracket": "Eror ne l'espression: parentesi chiusa inatesa",
-	"pfunc_expr_unrecognised_punctuation": "Eror ne l'espression: caràtere de puntegiatura \"$1\" mìa riconossiùo",
+	"pfunc_expr_unrecognised_punctuation": "Eror ne l'espresion: caràtare de pontejatura \"$1\" mìa riconosùo",
 	"pfunc_expr_unclosed_bracket": "Eror ne l'espression: parentesi verta e mìa sarà",
-	"pfunc_expr_division_by_zero": "Division par zero",
+	"pfunc_expr_division_by_zero": "Divixion par xèro",
 	"pfunc_expr_invalid_argument": "Argomento mìa valido par $1: < -1 or > 1",
 	"pfunc_expr_invalid_argument_ln": "Argomento mìa valido par ln: <= 0",
 	"pfunc_expr_unknown_error": "Eror ne l'espression: eror sconossiùo ($1)",
