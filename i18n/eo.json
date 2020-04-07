@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yekrats",
 			"Lucas",
 			"Mirin",
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Yekrats"
 		]
 	},
 	"pfunc_desc": "Etendi sintaksan analizilon kun logikaj funkcioj",

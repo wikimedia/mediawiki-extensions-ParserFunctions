@@ -2,10 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"G0rn",
-			"Putnik",
-			"Александр Сигачёв",
 			"Jack who built the house",
-			"MaxBioHazard"
+			"MaxBioHazard",
+			"Putnik",
+			"Александр Сигачёв"
 		]
 	},
 	"pfunc_desc": "Улучшенный синтаксический анализатор с логическими функциями",

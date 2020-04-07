@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Omnipaedista",
-			"Gts-tg"
+			"Gts-tg",
+			"Omnipaedista"
 		]
 	},
 	"pfunc_expr_unrecognised_word": "Σφάλμα ἐκφράσεως: Μῆ άναγνωρισμένη λέξις \"$1\".",
