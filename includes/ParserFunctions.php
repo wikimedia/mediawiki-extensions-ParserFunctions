@@ -5,6 +5,7 @@ namespace MediaWiki\Extensions\ParserFunctions;
 use DateTime;
 use DateTimeZone;
 use Exception;
+use ILanguageConverter;
 use Language;
 use MediaWiki\MediaWikiServices;
 use MWTimestamp;
@@ -339,7 +340,8 @@ class ParserFunctions {
 		Parser $parser, PPFrame $frame, $titletext = '', $then = '', $else = ''
 	) {
 		$title = Title::newFromText( $titletext );
-		$parser->getContentLanguage()->findVariantLink( $titletext, $title, true );
+		self::getLanguageConverter( $parser->getContentLanguage() )
+			->findVariantLink( $titletext, $title, true );
 		if ( $title ) {
 			if ( $title->getNamespace() === NS_MEDIA ) {
 				/* If namespace is specified as NS_MEDIA, then we want to
@@ -917,5 +919,16 @@ class ParserFunctions {
 		$expanded = $frame->expand( $obj );
 		$trimExpanded = trim( $expanded );
 		return trim( Sanitizer::decodeCharReferences( $expanded ) );
+	}
+
+	/**
+	 * @since 1.35
+	 * @param Language $language
+	 * @return ILanguageConverter
+	 */
+	private static function getLanguageConverter( Language $language ) : ILanguageConverter {
+		return MediaWikiServices::getInstance()
+			->getLanguageConverterFactory()
+			->getLanguageConverter( $language );
 	}
 }
