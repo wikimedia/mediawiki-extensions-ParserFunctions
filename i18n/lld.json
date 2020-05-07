@@ -5,6 +5,7 @@
 			"Starladin"
 		]
 	},
+	"pfunc_time_error": "Fal: orar nia coret",
 	"pfunc_expr_unrecognised_word": "Fal te la esprescion: parola \"$1\" nia recunesciuda.",
 	"pfunc_expr_unexpected_operator": "Fal tl'espresciun: operadú $1 nia aspeté.",
 	"pfunc_expr_missing_operand": "Fal de esprescion: L mancia n operand per $1.",
