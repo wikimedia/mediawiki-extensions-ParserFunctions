@@ -28,7 +28,7 @@ class ParserFunctions {
 	private static $mTimeChars = 0;
 
 	/** ~10 seconds */
-	const MAX_TIME_CHARS = 6000;
+	private const MAX_TIME_CHARS = 6000;
 
 	/**
 	 * Register ParserClearState hook.
