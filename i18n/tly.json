@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Patriot Kur"
+			"Patriot Kur",
+			"Гусейн"
 		]
 	},
-	"pfunc_time_error": "Error: Yanliş vaxt"
+	"pfunc_time_error": "Error: Yanliş vaxt",
+	"pfunc_expr_unrecognised_word": "İfodə xəto: Zınə nıbə sıxan \"$1\".",
+	"pfunc_expr_unrecognised_punctuation": "İfodə xəto: Punktuasiyə zınə nıbə rəmz \"$1\"."
 }
