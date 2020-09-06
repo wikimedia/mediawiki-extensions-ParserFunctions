@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Iohanen"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "Fehler im Ausdruck: Unerkanntes Wort \"$1\".",
+	"pfunc_expr_unrecognised_punctuation": "Fehler im Ausdruck: Net erkanntes Satzzeiche \"$1\"."
+}
