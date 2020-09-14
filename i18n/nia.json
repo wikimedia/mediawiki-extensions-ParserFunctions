@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Slaia"
+		]
+	},
+	"pfunc_time_error": "Sala: Lö atulö ginötö",
+	"pfunc_expr_unrecognised_word": "Sifasala: Lö mu'ila wehede \"$1\"",
+	"pfunc_expr_unrecognised_punctuation": "Sifasala: Lö mu'ila hurufo \"$1\"."
+}
