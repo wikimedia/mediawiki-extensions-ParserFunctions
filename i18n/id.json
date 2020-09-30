@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Daud I.F. Argana",
 			"IvanLanin",
 			"Iwan Novirion",
 			"Meursault2004",
@@ -12,6 +13,7 @@
 	"pfunc_time_error": "Kesalahan: waktu tidak valid",
 	"pfunc_time_too_long": "Kesalahan: Pemanggilan #time terlalu banyak",
 	"pfunc_time_too_big": "Galat: #time hanya mendukung tahun hingga 9999",
+	"pfunc_time_too_small": "Galat: #time hanya mendukung tahun dari 0",
 	"pfunc_rel2abs_invalid_depth": "Kesalahan: Kedalaman path tidak valid: \"$1\" (mencoba mengakses simpul di atas simpul akar)",
 	"pfunc_expr_stack_exhausted": "Kesalahan ekspresi: Stack habis",
 	"pfunc_expr_unexpected_number": "Kesalahan ekspresi: Angka yang tak terduga",
