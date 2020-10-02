@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Boesenbergia"
+		]
+	},
+	"pfunc_time_error": "Kasalaan: bâkto ta' teppa'",
+	"pfunc_expr_unrecognised_word": "Kasalaan èksprèsi: Oca' \"$1\" ta' èkennal.",
+	"pfunc_expr_missing_operand": "Kasalaan èksprèsi: Operand ta' ètemmoè ghâbây $1",
+	"pfunc_expr_unrecognised_punctuation": "Kasalaan èksprèsi: Tandhâ bâca \"$1\" ta' èkennal."
+}
