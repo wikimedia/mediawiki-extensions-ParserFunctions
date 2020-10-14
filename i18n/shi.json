@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ayour2002",
 			"Lhoussine AIT TAYFST"
 		]
 	},
 	"pfunc_time_error": "Tazglt: Akud ur izri",
-	"pfunc_expr_division_by_zero": "Bḍut f amya."
+	"pfunc_expr_unrecognised_word": "Tazgalt: taguri ur ittyawssan :$1",
+	"pfunc_expr_missing_operand": "Tazgalt: agzzum ijlan i $1",
+	"pfunc_expr_division_by_zero": "Tibḍit f amya."
 }
