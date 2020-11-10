@@ -385,7 +385,7 @@ class ExtParserFunctions {
 
 	/**
 	 * @param Parser $parser
-	 * @param PPFrame $frame
+	 * @param PPFrame|null $frame
 	 * @param string $format
 	 * @param string $date
 	 * @param string $language
