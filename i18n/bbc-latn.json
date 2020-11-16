@@ -4,5 +4,8 @@
 			"Herryz"
 		]
 	},
-	"pfunc_time_error": "Sala:Tingki na so pate"
+	"pfunc_time_error": "Sala:Tingki na so pate",
+	"pfunc_expr_unrecognised_word": "Hasalahan ekspresi: Hata \"$1\" dang tinanda.",
+	"pfunc_expr_unexpected_operator": "Ekpresi na sala: Operator $1 dang tarduga",
+	"pfunc_expr_unrecognised_punctuation": "Hasalahan ekspresi: Karakter tanda baca \"$1\" dang tinanda."
 }
