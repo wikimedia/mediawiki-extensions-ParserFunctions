@@ -209,12 +209,12 @@ class ExprParser {
 			// First the unlimited length classes
 
 			// @phan-suppress-next-line PhanParamSuspiciousOrder false positive
-			if ( false !== strpos( EXPR_WHITE_CLASS, $char ) ) {
+			if ( strpos( EXPR_WHITE_CLASS, $char ) !== false ) {
 				// Whitespace
 				$p += strspn( $expr, EXPR_WHITE_CLASS, $p );
 				continue;
 				// @phan-suppress-next-line PhanParamSuspiciousOrder false positive
-			} elseif ( false !== strpos( EXPR_NUMBER_CLASS, $char ) ) {
+			} elseif ( strpos( EXPR_NUMBER_CLASS, $char ) !== false ) {
 				// Number
 				if ( $expecting !== 'expression' ) {
 					throw new ExprError( 'unexpected_number' );
