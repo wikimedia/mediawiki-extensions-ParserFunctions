@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bikarhêner"
+			"Bikarhêner",
+			"Biyolojiyabikurdi"
 		]
 	},
 	"pfunc_time_error": "Çewtî: Wextê nederbasdar.",
@@ -9,5 +10,5 @@
 	"pfunc_expr_unexpected_operator": "Çewtiya îfadeyê: Operatora $1 a nehêvîkirî.",
 	"pfunc_expr_missing_operand": "Çewtiya îfadeyê: Hedefa kiryarê kêm e ji bo $1.",
 	"pfunc_expr_unrecognised_punctuation": "Çewtiya îfadeyê: Karaktera nuqteşaniyê a nenas \"$1\".",
-	"pfunc_expr_division_by_zero": "Dabeşkirinna bi sifirê."
+	"pfunc_expr_division_by_zero": "Dabeşkirina bi sifirê."
 }
