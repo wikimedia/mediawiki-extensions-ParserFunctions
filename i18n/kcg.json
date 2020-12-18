@@ -5,5 +5,8 @@
 		]
 	},
 	"pfunc_time_error": "Ghyuap: A̠kace njen.",
-	"pfunc_expr_division_by_zero": "Ka̠u ma̠ng gum."
+	"pfunc_expr_unrecognised_word": "Ghyuap lyuut: A̠kace swang a̠lyiat \"$1\".",
+	"pfunc_expr_missing_operand": "Ghyuap lyuut: A̠buk operand mat $1.",
+	"pfunc_expr_unrecognised_punctuation": "Ghyuap lyuut: A̠kace zwunzwuo lyuut \"$1\".",
+	"pfunc_expr_division_by_zero": "Ka̠u ma̠ng piit."
 }
