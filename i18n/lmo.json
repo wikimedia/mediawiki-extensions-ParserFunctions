@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Salvemm el lombard"
+		]
+	},
+	"pfunc_time_error": "Eror: ora minga giusta",
+	"pfunc_expr_unrecognised_word": "Eror de espression: Parola\"$1\" minga reconossuda.",
+	"pfunc_expr_unexpected_operator": "Eror ind l'espression: operador $1 minga spetad.",
+	"pfunc_expr_missing_operand": "Eror ind l'espression: a gh'è nò l'operand per $1.",
+	"pfunc_expr_unrecognised_punctuation": "Eror ind l'espression: carater de pontesgiadura \"$1\" minga reconossud.",
+	"pfunc_expr_division_by_zero": "Division per zero"
+}
