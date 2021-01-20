@@ -6,7 +6,7 @@
 	},
 	"pfunc_desc": "El sgionta al parser una serie de fonzion logiche",
 	"pfunc_time_error": "Eror: ora minga giusta",
-	"pfunc_time_too_long": "Eror: trope tante chiamade a #time.",
+	"pfunc_time_too_long": "Eror: trope ciamade a #time.",
 	"pfunc_time_too_big": "Eror: #time el suporta doma fina a l'ann 9999.",
 	"pfunc_time_too_small": "Eror: #time el suporta doma a partì de l'ann 0.",
 	"pfunc_rel2abs_invalid_depth": "Eror: profondità minga valida in del percorsː \"$1\" (a s'è tentà de andà dent in d'un grop sora la radis).",
