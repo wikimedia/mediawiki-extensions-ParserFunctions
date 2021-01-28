@@ -15,14 +15,14 @@
 	"pfunc_expr_preg_match_failure": "Eror ni l'espression: eror che se spetava minga in preg_match.",
 	"pfunc_expr_unrecognised_word": "Eror de espression: Parola\"$1\" minga reconossuda.",
 	"pfunc_expr_unexpected_operator": "Eror in l'espression: operador $1 minga spetad.",
-	"pfunc_expr_missing_operand": "Eror ind l'espression: a gh'è nò l'operand per $1.",
+	"pfunc_expr_missing_operand": "Eror in l'espression: a gh'è nò l'operand per $1.",
 	"pfunc_expr_unexpected_closing_bracket": "Eror in l'espressione: parentesi sarada che se spetava minga.",
-	"pfunc_expr_unrecognised_punctuation": "Eror ind l'espression: carater de pontesgiadura \"$1\" minga reconossud.",
+	"pfunc_expr_unrecognised_punctuation": "Eror in l'espression: carater de pontesgiadura \"$1\" minga reconossud.",
 	"pfunc_expr_unclosed_bracket": "Eror in l'espressione: parentesi minga sarada.",
 	"pfunc_expr_division_by_zero": "Division per zero",
 	"pfunc_expr_invalid_argument": "Argoment minga valid per $1: < -1 o > 1.",
 	"pfunc_expr_invalid_argument_ln": "Argoment minga valid per ln: <= 0.",
-	"pfunc_expr_unknown_error": "Eror ind l'espression: eror conossud de nissun ($1).",
+	"pfunc_expr_unknown_error": "Eror in l'espression: eror conossud de nissun ($1).",
 	"pfunc_expr_not_a_number": "In $1: el risultad a l'è minga un numer.",
 	"pfunc_string_too_long": "Eror: la stringa la sorpassa el limet de  $1 {{PLURAL:$1|caratter}}."
 }
