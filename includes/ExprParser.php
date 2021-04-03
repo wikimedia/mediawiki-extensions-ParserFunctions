@@ -382,9 +382,8 @@ class ExprParser {
 		}
 
 		// Finish off the operator array
-		// @codingStandardsIgnoreStart
+		// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures
 		while ( $op = array_pop( $operators ) ) {
-		// @codingStandardsIgnoreEnd
 			if ( $op == EXPR_OPEN ) {
 				throw new ExprError( 'unclosed_bracket' );
 			}
