@@ -5,7 +5,7 @@
 			"Dnshitobu"
 		]
 	},
-	"pfunc_time_error": "Saha din kani",
+	"pfunc_time_error": "Error: Saha din kani",
 	"pfunc_expr_missing_operand": "Expression error: Missing operand for $1.",
 	"pfunc_expr_unrecognised_punctuation": "Expression error: Ti bi baŋ a yɛltɔɣa bahibu bia maa \"$1\".",
 	"pfunc_expr_division_by_zero": "Pirigimli ni yoli"
