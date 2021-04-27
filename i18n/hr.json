@@ -5,6 +5,7 @@
 			"Dalibor Bosits",
 			"Dnik",
 			"Ex13",
+			"Ponor",
 			"Roberta F.",
 			"SpeedyGonsales"
 		]
@@ -18,7 +19,7 @@
 	"pfunc_expr_unexpected_number": "Pogrješka u predlošku: Neočekivan broj",
 	"pfunc_expr_preg_match_failure": "Pogrješka u predlošku: Neočekivana preg_match pogrješka",
 	"pfunc_expr_unrecognised_word": "Pogrješka u predlošku: Nepoznata riječ \"$1\"",
-	"pfunc_expr_unexpected_operator": "Pogrješka u predlošku: Neočekivani operator $1",
+	"pfunc_expr_unexpected_operator": "Pogreška u predlošku: Neočekivani operator $1",
 	"pfunc_expr_missing_operand": "Pogrješka u predlošku: Operator $1 nedostaje",
 	"pfunc_expr_unexpected_closing_bracket": "Pogrješka u predlošku: Neočekivana zatvorena zagrada",
 	"pfunc_expr_unrecognised_punctuation": "Pogrješka u predlošku: Nepoznat interpunkcijski znak \"$1\"",
