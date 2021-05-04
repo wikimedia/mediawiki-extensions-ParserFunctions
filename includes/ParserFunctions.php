@@ -39,7 +39,7 @@ class ParserFunctions {
 		static $done = false;
 		if ( !$done ) {
 			global $wgHooks;
-			$wgHooks['ParserClearState'][] = function () {
+			$wgHooks['ParserClearState'][] = static function () {
 				self::$mTimeChars = 0;
 			};
 			$done = true;
