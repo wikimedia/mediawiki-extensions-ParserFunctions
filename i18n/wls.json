@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lea.Fakauvea"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "Hala:mole fakamo'oni te kupu \"$1\".",
+	"pfunc_expr_missing_operand": "Hala i te puaki: Ne'e galo te kupu a te $1.",
+	"pfunc_expr_unrecognised_punctuation": "Hala: Mole tali te tohi o te \"$1\"."
+}

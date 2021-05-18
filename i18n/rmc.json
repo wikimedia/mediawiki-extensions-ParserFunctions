@@ -5,5 +5,6 @@
 		]
 	},
 	"pfunc_expr_unrecognised_word": "Chibno nav: Napindžardo lav \"$1\".",
+	"pfunc_expr_missing_operand": "Chibno nav: Nane o operandos le $1.",
 	"pfunc_expr_unrecognised_punctuation": "Chibno nav: Napindžargutno diakriticko znamienkos \"$1\"."
 }
