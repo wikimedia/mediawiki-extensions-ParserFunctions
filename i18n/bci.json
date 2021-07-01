@@ -4,6 +4,7 @@
 			"Kjeanclaude"
 		]
 	},
+	"pfunc_time_error": "Sa to fouanlè: Dô nga i klèlè tia sou.",
 	"pfunc_expr_unrecognised_word": "Idjôlè sou sa to fouanlè: Bé si man ndè nga \"$1\".",
 	"pfunc_expr_unexpected_operator": "Idjôlè sou sa to fouanlè: E si man kè \"$1\" liké yè ô fité ô.",
 	"pfunc_expr_missing_operand": "Idjôlè sou sa to fouanlè: Liké koun nouman \"$1\" noun.",
