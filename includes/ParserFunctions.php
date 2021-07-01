@@ -352,6 +352,8 @@ class ParserFunctions {
 				}
 				$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
 				if ( !$file ) {
+					$parser->getOutput()->addImage(
+						$title->getDBKey(), false, false );
 					return $else;
 				}
 				$parser->getOutput()->addImage(
