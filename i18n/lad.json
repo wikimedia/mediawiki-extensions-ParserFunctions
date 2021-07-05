@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiiiTranslator"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "Error de ekspresión: No se rekonose la palabra $1.",
+	"pfunc_expr_unrecognised_punctuation": "Error de ekspresión: No se rekonose el karácter de puntuasión \"$1\""
+}
