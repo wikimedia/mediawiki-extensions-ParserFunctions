@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Robin Owain",
 			"Shirayuki"
 		]
 	},
 	"pfunc_expr_unrecognised_word": "Expression error: Unrecognised word \"$1\".",
+	"pfunc_expr_missing_operand": "Gwall mynegiad: Operand ar gyfer $1 ar goll.",
 	"pfunc_expr_unrecognised_punctuation": "Expression error: Unrecognised punctuation character \"$1\"."
 }
