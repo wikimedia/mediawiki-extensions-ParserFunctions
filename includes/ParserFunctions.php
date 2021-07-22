@@ -928,7 +928,7 @@ class ParserFunctions {
 	 * @param Language $language
 	 * @return ILanguageConverter
 	 */
-	private static function getLanguageConverter( Language $language ) : ILanguageConverter {
+	private static function getLanguageConverter( Language $language ): ILanguageConverter {
 		return MediaWikiServices::getInstance()
 			->getLanguageConverterFactory()
 			->getLanguageConverter( $language );
