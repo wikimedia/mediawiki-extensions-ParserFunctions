@@ -5,6 +5,7 @@
 		]
 	},
 	"pfunc_expr_unrecognised_word": "Ovonya wa olavula: Nlove \"$1\" noohisuweliwa",
+	"pfunc_expr_unexpected_operator": "Ovonya wa elavulelo: Namavara $1 ahaalipeleliwa",
 	"pfunc_expr_missing_operand": "Ovonya woolavula: vannihala evarala ni $1",
 	"pfunc_expr_unrecognised_punctuation": "Ovonya woolavula: ettapuheryo yoottonyana soolempwa \"$1\" yoohisuweliwa"
 }
