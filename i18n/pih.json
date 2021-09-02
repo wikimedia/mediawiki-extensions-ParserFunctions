@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"MinecraftAustralia"
+		]
+	},
+	"pfunc_expr_unrecognised_word": "Ekspresh'n probl'm: Unrekignais'd werd \"$1\"",
+	"pfunc_expr_unexpected_operator": "Ekspresh'n problem: Unekspekt'd $1 opereitaa.",
+	"pfunc_expr_missing_operand": "Ekspresh'n probl'm: Missen operend f' $1.",
+	"pfunc_expr_unrecognised_punctuation": "Ekspresh'n probl'm: Unrekignais'd punkshuash'n karekta \"$1\"."
+}
