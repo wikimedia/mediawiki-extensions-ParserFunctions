@@ -5,5 +5,6 @@
 		]
 	},
 	"pfunc_expr_unrecognised_word": "Mmejọ ngosipụta:okwu a na-amaghị \"$1\"",
+	"pfunc_expr_missing_operand": "Mmejọ ngosipụta: Ọrụ na-ahụghị na $1.",
 	"pfunc_expr_unrecognised_punctuation": "Mmekọ ngosipụta: Akara edemede a na-amaghị \"$1\""
 }
