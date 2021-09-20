@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kanags",
 			"MinecraftAustralia",
 			"Shanmugamp7"
 		]
@@ -10,5 +11,5 @@
 	"pfunc_expr_unexpected_operator": "வெளிப்பாடு பிழை: எதிர்பாராத $1 ஆபரேட்டர்.",
 	"pfunc_expr_missing_operand": "எக்ஸ்பிரஷன் பிழை: ஆபரேண்டைக் காணவில்லை $1.",
 	"pfunc_expr_unrecognised_punctuation": "வெளிப்பாடு பிழை: அடையாளம் காணப்படாத நிறுத்தற்குறிகள் \"$1\".",
-	"pfunc_expr_division_by_zero": "பூஜ்ஜியத்தால் வகுத்தல்."
+	"pfunc_expr_division_by_zero": "சுழியத்தால் வகுத்தல்."
 }
