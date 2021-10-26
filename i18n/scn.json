@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Melos",
 			"Santu"
 		]
 	},
-	"pfunc_desc": "Ci junci ô parser na sèrii di funzioni lòggichi",
+	"pfunc_desc": "C'agghiunci ô parser na sèrii di funzioni lòggichi",
 	"pfunc_time_error": "Sbàgghiu: uràriu nun vàlidu",
 	"pfunc_time_too_long": "Sbàgghiu: troppi chiamati a #time",
 	"pfunc_rel2abs_invalid_depth": "Sbàgghiu: prufunnità non vàlida ntô pircorsu \"$1\" (si tintau di tràsiri a nu nodu cchiù supra di la ràdica)",
