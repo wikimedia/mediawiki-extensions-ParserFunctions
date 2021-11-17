@@ -17,7 +17,7 @@
 	"pfunc_expr_unexpected_operator": "שגיאה בביטוי: אופרטור $1 בלתי־צפוי.",
 	"pfunc_expr_missing_operand": "שגיאה בביטוי: חסר אופרנד ל־$1.",
 	"pfunc_expr_unexpected_closing_bracket": "שגיאה בביטוי: סוגריים סוגרים בלתי צפויים",
-	"pfunc_expr_unrecognised_punctuation": "שגיאה בביטוי: תו פיסוק בלתי מזוהה, \"$1\"",
+	"pfunc_expr_unrecognised_punctuation": "שגיאה בביטוי: תו פיסוק בלתי מזוהה, \"$1\".",
 	"pfunc_expr_unclosed_bracket": "שגיאה בביטוי: סוגריים בלתי סגורים",
 	"pfunc_expr_division_by_zero": "חלוקה באפס.",
 	"pfunc_expr_invalid_argument": "ארגומנט בלתי תקין לפונקציה $1: < -1 או > 1",
