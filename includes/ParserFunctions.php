@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\Extensions\ParserFunctions;
+namespace MediaWiki\Extension\ParserFunctions;
 
 use DateTime;
 use DateTimeZone;
