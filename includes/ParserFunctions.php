@@ -512,9 +512,10 @@ class ParserFunctions {
 						wfMessage( 'pfunc_time_too_small' )->inContentLanguage()->escaped() .
 						'</strong>';
 				} elseif ( $ts < 100000000000000 ) { // Language can't deal with years after 9999
-					if ( $language !== '' && Language::isValidBuiltInCode( $language ) ) {
+					$services = MediaWikiServices::getInstance();
+					if ( $language !== '' && $services->getLanguageNameUtils()->isValidBuiltInCode( $language ) ) {
 						// use whatever language is passed as a parameter
-						$langObject = Language::factory( $language );
+						$langObject = $services->getLanguageFactory()->getLanguage( $language );
 					} else {
 						// use wiki's content language
 						$langObject = $parser->getFunctionLang();
