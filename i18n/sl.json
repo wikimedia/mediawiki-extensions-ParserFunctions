@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dbc334"
+			"Dbc334",
+			"Eleassar"
 		]
 	},
 	"pfunc_desc": "Izboljša razčlenjevalnik z logičnimi funkcijami",
@@ -23,6 +24,6 @@
 	"pfunc_expr_invalid_argument": "Napačen argument za $1: < -1 ali > 1",
 	"pfunc_expr_invalid_argument_ln": "Napačen argument za ln: <= 0",
 	"pfunc_expr_unknown_error": "Napaka v izrazu: Neznana napaka ($1)",
-	"pfunc_expr_not_a_number": "V $1: rezultat ni število",
+	"pfunc_expr_not_a_number": "V $1: Rezultat ni število.",
 	"pfunc_string_too_long": "Napaka: Niz presega omejitev $1 {{PLURAL:$1|znaka|znakov}}"
 }
