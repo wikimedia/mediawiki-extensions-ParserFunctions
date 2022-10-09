@@ -914,11 +914,11 @@ class ParserFunctions {
 	 *
 	 * @param PPNode|string $obj Thing to expand
 	 * @param PPFrame $frame
-	 * @param string|null &$trimExpanded Expanded and trimmed version of PPNode,
+	 * @param string &$trimExpanded @phan-output-reference Expanded and trimmed version of PPNode,
 	 *   but with char refs intact
 	 * @return string The trimmed, expanded and entity reference decoded version of the PPNode
 	 */
-	private static function decodeTrimExpand( $obj, PPFrame $frame, &$trimExpanded = null ) {
+	private static function decodeTrimExpand( $obj, PPFrame $frame, &$trimExpanded = '' ) {
 		$expanded = $frame->expand( $obj );
 		$trimExpanded = trim( $expanded );
 		return trim( Sanitizer::decodeCharReferences( $expanded ) );
