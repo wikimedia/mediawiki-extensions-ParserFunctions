@@ -329,16 +329,11 @@ class ParserFunctions {
 
 	/**
 	 * @param Parser $parser
-	 * @param PPFrame $frame
 	 * @param string $titletext
-	 * @param PPNode|string|null $then
-	 * @param PPNode|string|null $else
 	 *
-	 * @return PPNode|string|null
+	 * @return bool
 	 */
-	private static function ifexistInternal(
-		Parser $parser, PPFrame $frame, $titletext, $then, $else
-	) {
+	private static function ifexistInternal( Parser $parser, $titletext ): bool {
 		$title = Title::newFromText( $titletext );
 		self::getLanguageConverter( $parser->getContentLanguage() )
 			->findVariantLink( $titletext, $title, true );
@@ -348,54 +343,54 @@ class ParserFunctions {
 				 * check the physical file, not the "description" page.
 				 */
 				if ( !$parser->incrementExpensiveFunctionCount() ) {
-					return $else;
+					return false;
 				}
 				$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
 				if ( !$file ) {
 					$parser->getOutput()->addImage(
 						$title->getDBKey(), false, false );
-					return $else;
+					return false;
 				}
 				$parser->getOutput()->addImage(
 					$file->getName(), $file->getTimestamp(), $file->getSha1() );
-				return $file->exists() ? $then : $else;
+				return $file->exists();
 			} elseif ( $title->isSpecialPage() ) {
 				/* Don't bother with the count for special pages,
 				 * since their existence can be checked without
 				 * accessing the database.
 				 */
 				return MediaWikiServices::getInstance()->getSpecialPageFactory()
-					->exists( $title->getDBkey() ) ? $then : $else;
+					->exists( $title->getDBkey() );
 			} elseif ( $title->isExternal() ) {
 				/* Can't check the existence of pages on other sites,
-				 * so just return $else.  Makes a sort of sense, since
+				 * so just return false.  Makes a sort of sense, since
 				 * they don't exist _locally_.
 				 */
-				return $else;
+				return false;
 			} else {
 				$pdbk = $title->getPrefixedDBkey();
 				$lc = MediaWikiServices::getInstance()->getLinkCache();
 				$id = $lc->getGoodLinkID( $pdbk );
 				if ( $id !== 0 ) {
 					$parser->getOutput()->addLink( $title, $id );
-					return $then;
+					return true;
 				} elseif ( $lc->isBadLink( $pdbk ) ) {
 					$parser->getOutput()->addLink( $title, 0 );
-					return $else;
+					return false;
 				}
 				if ( !$parser->incrementExpensiveFunctionCount() ) {
-					return $else;
+					return false;
 				}
 				$id = $title->getArticleID();
 				$parser->getOutput()->addLink( $title, $id );
 
 				// bug 70495: don't just check whether the ID != 0
 				if ( $title->exists() ) {
-					return $then;
+					return true;
 				}
 			}
 		}
-		return $else;
+		return false;
 	}
 
 	/**
@@ -413,7 +408,7 @@ class ParserFunctions {
 		$then = $args[1] ?? null;
 		$else = $args[2] ?? null;
 
-		$result = self::ifexistInternal( $parser, $frame, $title, $then, $else );
+		$result = self::ifexistInternal( $parser, $title ) ? $then : $else;
 		if ( $result === null ) {
 			return '';
 		} else {
