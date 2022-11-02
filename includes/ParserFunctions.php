@@ -337,7 +337,7 @@ class ParserFunctions {
 	 * @return PPNode|string|null
 	 */
 	private static function ifexistInternal(
-		Parser $parser, PPFrame $frame, $titletext = '', $then = '', $else = ''
+		Parser $parser, PPFrame $frame, $titletext, $then, $else
 	) {
 		$title = Title::newFromText( $titletext );
 		self::getLanguageConverter( $parser->getContentLanguage() )
@@ -425,7 +425,7 @@ class ParserFunctions {
 	 * Used by time() and localTime()
 	 *
 	 * @param Parser $parser
-	 * @param PPFrame|null $frame
+	 * @param PPFrame $frame
 	 * @param string $format
 	 * @param string $date
 	 * @param string $language
@@ -433,7 +433,7 @@ class ParserFunctions {
 	 * @return string
 	 */
 	private static function timeCommon(
-		Parser $parser, PPFrame $frame = null, $format = '', $date = '', $language = '', $local = false
+		Parser $parser, PPFrame $frame, $format, $date, $language, $local
 	) {
 		global $wgLocaltimezone;
 		self::registerClearHook();
@@ -448,7 +448,7 @@ class ParserFunctions {
 		}
 		if ( isset( self::$mTimeCache[$format][$cacheKey][$language][$local] ) ) {
 			$cachedVal = self::$mTimeCache[$format][$cacheKey][$language][$local];
-			if ( $useTTL && $cachedVal[1] !== null && $frame ) {
+			if ( $useTTL && $cachedVal[1] !== null ) {
 				$frame->setTTL( $cachedVal[1] );
 			}
 			return $cachedVal[0];
@@ -531,7 +531,7 @@ class ParserFunctions {
 			}
 		}
 		self::$mTimeCache[$format][$cacheKey][$language][$local] = [ $result, $ttl ];
-		if ( $useTTL && $ttl !== null && $frame ) {
+		if ( $useTTL && $ttl !== null ) {
 			$frame->setTTL( $ttl );
 		}
 		return $result;
