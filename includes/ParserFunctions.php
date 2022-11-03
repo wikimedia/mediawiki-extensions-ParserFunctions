@@ -321,60 +321,59 @@ class ParserFunctions {
 		$title = Title::newFromText( $titletext );
 		self::getLanguageConverter( $parser->getContentLanguage() )
 			->findVariantLink( $titletext, $title, true );
-		if ( $title ) {
-			if ( $title->getNamespace() === NS_MEDIA ) {
-				/* If namespace is specified as NS_MEDIA, then we want to
-				 * check the physical file, not the "description" page.
-				 */
-				if ( !$parser->incrementExpensiveFunctionCount() ) {
-					return false;
-				}
-				$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
-				if ( !$file ) {
-					$parser->getOutput()->addImage(
-						$title->getDBKey(), false, false );
-					return false;
-				}
-				$parser->getOutput()->addImage(
-					$file->getName(), $file->getTimestamp(), $file->getSha1() );
-				return $file->exists();
-			} elseif ( $title->isSpecialPage() ) {
-				/* Don't bother with the count for special pages,
-				 * since their existence can be checked without
-				 * accessing the database.
-				 */
-				return MediaWikiServices::getInstance()->getSpecialPageFactory()
-					->exists( $title->getDBkey() );
-			} elseif ( $title->isExternal() ) {
-				/* Can't check the existence of pages on other sites,
-				 * so just return false.  Makes a sort of sense, since
-				 * they don't exist _locally_.
-				 */
-				return false;
-			} else {
-				$pdbk = $title->getPrefixedDBkey();
-				$lc = MediaWikiServices::getInstance()->getLinkCache();
-				$id = $lc->getGoodLinkID( $pdbk );
-				if ( $id !== 0 ) {
-					$parser->getOutput()->addLink( $title, $id );
-					return true;
-				} elseif ( $lc->isBadLink( $pdbk ) ) {
-					$parser->getOutput()->addLink( $title, 0 );
-					return false;
-				}
-				if ( !$parser->incrementExpensiveFunctionCount() ) {
-					return false;
-				}
-				$id = $title->getArticleID();
-				$parser->getOutput()->addLink( $title, $id );
-
-				// bug 70495: don't just check whether the ID != 0
-				if ( $title->exists() ) {
-					return true;
-				}
-			}
+		if ( !$title ) {
+			return false;
 		}
-		return false;
+
+		if ( $title->getNamespace() === NS_MEDIA ) {
+			/* If namespace is specified as NS_MEDIA, then we want to
+			 * check the physical file, not the "description" page.
+			 */
+			if ( !$parser->incrementExpensiveFunctionCount() ) {
+				return false;
+			}
+			$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
+			if ( !$file ) {
+				$parser->getOutput()->addImage(
+					$title->getDBKey(), false, false );
+				return false;
+			}
+			$parser->getOutput()->addImage(
+				$file->getName(), $file->getTimestamp(), $file->getSha1() );
+			return $file->exists();
+		} elseif ( $title->isSpecialPage() ) {
+			/* Don't bother with the count for special pages,
+			 * since their existence can be checked without
+			 * accessing the database.
+			 */
+			return MediaWikiServices::getInstance()->getSpecialPageFactory()
+				->exists( $title->getDBkey() );
+		} elseif ( $title->isExternal() ) {
+			/* Can't check the existence of pages on other sites,
+			 * so just return false.  Makes a sort of sense, since
+			 * they don't exist _locally_.
+			 */
+			return false;
+		} else {
+			$pdbk = $title->getPrefixedDBkey();
+			$lc = MediaWikiServices::getInstance()->getLinkCache();
+			$id = $lc->getGoodLinkID( $pdbk );
+			if ( $id !== 0 ) {
+				$parser->getOutput()->addLink( $title, $id );
+				return true;
+			} elseif ( $lc->isBadLink( $pdbk ) ) {
+				$parser->getOutput()->addLink( $title, 0 );
+				return false;
+			}
+			if ( !$parser->incrementExpensiveFunctionCount() ) {
+				return false;
+			}
+			$id = $title->getArticleID();
+			$parser->getOutput()->addLink( $title, $id );
+
+			// bug 70495: don't just check whether the ID != 0
+			return $title->exists();
+		}
 	}
 
 	/**
@@ -464,11 +463,7 @@ class ParserFunctions {
 
 			# Set output timezone.
 			if ( $local ) {
-				if ( isset( $wgLocaltimezone ) ) {
-					$tz = new DateTimeZone( $wgLocaltimezone );
-				} else {
-					$tz = new DateTimeZone( date_default_timezone_get() );
-				}
+				$tz = new DateTimeZone( $wgLocaltimezone ?? date_default_timezone_get() );
 			} else {
 				$tz = $utc;
 			}
@@ -492,29 +487,29 @@ class ParserFunctions {
 				return '<strong class="error">' .
 					wfMessage( 'pfunc_time_too_long' )->inContentLanguage()->escaped() .
 					'</strong>';
-			} else {
-				if ( $ts < 0 ) { // Language can't deal with BC years
-					return '<strong class="error">' .
-						wfMessage( 'pfunc_time_too_small' )->inContentLanguage()->escaped() .
-						'</strong>';
-				} elseif ( $ts < 100000000000000 ) { // Language can't deal with years after 9999
-					$services = MediaWikiServices::getInstance();
-					if ( $language !== '' && $services->getLanguageNameUtils()->isValidBuiltInCode( $language ) ) {
-						// use whatever language is passed as a parameter
-						$langObject = $services->getLanguageFactory()->getLanguage( $language );
-					} else {
-						// use wiki's content language
-						$langObject = $parser->getTargetLanguage();
-						// $ttl is passed by reference, which doesn't work right on stub objects
-						StubObject::unstub( $langObject );
-					}
-					$result = $langObject->sprintfDate( $format, $ts, $tz, $ttl );
-				} else {
-					return '<strong class="error">' .
-						wfMessage( 'pfunc_time_too_big' )->inContentLanguage()->escaped() .
-						'</strong>';
-				}
 			}
+
+			if ( $ts < 0 ) { // Language can't deal with BC years
+				return '<strong class="error">' .
+					wfMessage( 'pfunc_time_too_small' )->inContentLanguage()->escaped() .
+					'</strong>';
+			} elseif ( $ts >= 100000000000000 ) { // Language can't deal with years after 9999
+				return '<strong class="error">' .
+					wfMessage( 'pfunc_time_too_big' )->inContentLanguage()->escaped() .
+					'</strong>';
+			}
+
+			$services = MediaWikiServices::getInstance();
+			if ( $language !== '' && $services->getLanguageNameUtils()->isValidBuiltInCode( $language ) ) {
+				// use whatever language is passed as a parameter
+				$langObject = $services->getLanguageFactory()->getLanguage( $language );
+			} else {
+				// use wiki's content language
+				$langObject = $parser->getTargetLanguage();
+				// $ttl is passed by reference, which doesn't work right on stub objects
+				StubObject::unstub( $langObject );
+			}
+			$result = $langObject->sprintfDate( $format, $ts, $tz, $ttl );
 		}
 		self::$mTimeCache[$format][$cacheKey][$language][$local] = [ $result, $ttl ];
 		if ( $useTTL && $ttl !== null ) {
@@ -579,15 +574,15 @@ class ParserFunctions {
 		$parts = (int)$parts;
 		$offset = (int)$offset;
 		$ntitle = Title::newFromText( $title );
-		if ( $ntitle instanceof Title ) {
-			$bits = explode( '/', $ntitle->getPrefixedText(), 25 );
-			if ( $offset > 0 ) {
-				--$offset;
-			}
-			return implode( '/', array_slice( $bits, $offset, $parts ?: null ) );
-		} else {
+		if ( !$ntitle ) {
 			return $title;
 		}
+
+		$bits = explode( '/', $ntitle->getPrefixedText(), 25 );
+		if ( $offset > 0 ) {
+			--$offset;
+		}
+		return implode( '/', array_slice( $bits, $offset, $parts ?: null ) );
 	}
 
 	/**
