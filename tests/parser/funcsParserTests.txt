@@ -106,6 +106,48 @@ Explicitely specified output language (Dutch)
 !! end
 
 !! test
+#titleparts
+!! wikitext
+{{#titleparts:A/b/c/d}}
+{{#titleparts:A/b/c/d|1}}
+{{#titleparts:A/b/c/d|2}}
+{{#titleparts:A/b/c/d|-3}}
+{{#titleparts:A/b/c/d||1}}
+{{#titleparts:A/b/c/d||2}}
+{{#titleparts:A/b/c/d||-2}}
+{{#titleparts:A/b/c/d|1|1}}
+{{#titleparts:A/b/c/d|1|2}}
+{{#titleparts:A/b/c/d|1|-2}}
+!! html
+<p>A/b/c/d
+A
+A/b
+A
+A/b/c/d
+b/c/d
+c/d
+A
+b
+c
+</p>
+!! end
+
+!! test
+#titleparts stops splitting after 25 parts
+!! wikitext
+{{#titleparts:A/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/!/!/!|24}}
+{{#titleparts:A/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/!/!/!|25}}
+{{#titleparts:A/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/!/!/!|-1}}
+{{#titleparts:A/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/!/!/!||-1}}
+!! html
+<p>A/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x
+A/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/!/!/!
+A/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x
+!/!/!
+</p>
+!! end
+
+!! test
 Preserve tags in #switch default value
 !! wikitext
 {{#switch:a|b|<div>c</div>}}

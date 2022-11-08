@@ -590,18 +590,10 @@ class ParserFunctions {
 		$ntitle = Title::newFromText( $title );
 		if ( $ntitle instanceof Title ) {
 			$bits = explode( '/', $ntitle->getPrefixedText(), 25 );
-			if ( count( $bits ) <= 0 ) {
-				return $ntitle->getPrefixedText();
-			} else {
-				if ( $offset > 0 ) {
-					--$offset;
-				}
-				if ( $parts === 0 ) {
-					return implode( '/', array_slice( $bits, $offset ) );
-				} else {
-					return implode( '/', array_slice( $bits, $offset, $parts ) );
-				}
+			if ( $offset > 0 ) {
+				--$offset;
 			}
+			return implode( '/', array_slice( $bits, $offset, $parts ?: null ) );
 		} else {
 			return $title;
 		}
