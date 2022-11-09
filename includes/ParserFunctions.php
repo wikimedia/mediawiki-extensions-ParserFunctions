@@ -31,22 +31,6 @@ class ParserFunctions {
 	private const MAX_TIME_CHARS = 6000;
 
 	/**
-	 * Register ParserClearState hook.
-	 * We defer this until needed to avoid the loading of the code of this file
-	 * when no parser function is actually called.
-	 */
-	private static function registerClearHook() {
-		static $done = false;
-		if ( !$done ) {
-			global $wgHooks;
-			$wgHooks['ParserClearState'][] = static function () {
-				self::$mTimeChars = 0;
-			};
-			$done = true;
-		}
-	}
-
-	/**
 	 * @return ExprParser
 	 */
 	private static function &getExprParser() {
@@ -431,7 +415,14 @@ class ParserFunctions {
 		Parser $parser, PPFrame $frame, $format, $date, $language, $local
 	) {
 		global $wgLocaltimezone;
-		self::registerClearHook();
+
+		MediaWikiServices::getInstance()->getHookContainer()->register(
+			'ParserClearState',
+			static function () {
+				self::$mTimeChars = 0;
+			}
+		);
+
 		if ( $date === '' ) {
 			$cacheKey = $parser->getOptions()->getTimestamp();
 			$timestamp = new MWTimestamp( $cacheKey );
