@@ -504,7 +504,7 @@ class ParserFunctions {
 						$langObject = $services->getLanguageFactory()->getLanguage( $language );
 					} else {
 						// use wiki's content language
-						$langObject = $parser->getFunctionLang();
+						$langObject = $parser->getTargetLanguage();
 						// $ttl is passed by reference, which doesn't work right on stub objects
 						StubObject::unstub( $langObject );
 					}
