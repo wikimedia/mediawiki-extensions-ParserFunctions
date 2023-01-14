@@ -263,17 +263,17 @@ class ParserFunctions {
 				if ( $found ) {
 					# Multiple input match
 					return trim( $frame->expand( $valueNode ) );
-				} else {
-					$test = self::decodeTrimExpand( $nameNode, $frame );
-					/** @noinspection TypeUnsafeComparisonInspection */
-					if ( $test == $primary ) {
-						# Found a match, return now
-						return trim( $frame->expand( $valueNode ) );
-					} elseif ( $defaultFound || $mwDefault->matchStartToEnd( $test ) ) {
-						$default = $valueNode;
-						$defaultFound = false;
-					} # else wrong case, continue
 				}
+				$test = self::decodeTrimExpand( $nameNode, $frame );
+				/** @noinspection TypeUnsafeComparisonInspection */
+				if ( $test == $primary ) {
+					# Found a match, return now
+					return trim( $frame->expand( $valueNode ) );
+				}
+				if ( $defaultFound || $mwDefault->matchStartToEnd( $test ) ) {
+					$default = $valueNode;
+					$defaultFound = false;
+				} # else wrong case, continue
 			} else {
 				# Multiple input, single output
 				# If the value matches, set a flag and continue
@@ -292,11 +292,11 @@ class ParserFunctions {
 		# Check if the last item had no = sign, thus specifying the default case
 		if ( $lastItemHadNoEquals ) {
 			return $lastItem;
-		} elseif ( $default !== null ) {
-			return trim( $frame->expand( $default ) );
-		} else {
+		}
+		if ( $default === null ) {
 			return '';
 		}
+		return trim( $frame->expand( $default ) );
 	}
 
 	/**
@@ -401,37 +401,39 @@ class ParserFunctions {
 			$parser->getOutput()->addImage(
 				$file->getName(), $file->getTimestamp(), $file->getSha1() );
 			return $file->exists();
-		} elseif ( $title->isSpecialPage() ) {
+		}
+		if ( $title->isSpecialPage() ) {
 			/* Don't bother with the count for special pages,
 			 * since their existence can be checked without
 			 * accessing the database.
 			 */
 			return $this->specialPageFactory->exists( $title->getDBkey() );
-		} elseif ( $title->isExternal() ) {
+		}
+		if ( $title->isExternal() ) {
 			/* Can't check the existence of pages on other sites,
 			 * so just return false.  Makes a sort of sense, since
 			 * they don't exist _locally_.
 			 */
 			return false;
-		} else {
-			$pdbk = $title->getPrefixedDBkey();
-			$id = $this->linkCache->getGoodLinkID( $pdbk );
-			if ( $id !== 0 ) {
-				$parser->getOutput()->addLink( $title, $id );
-				return true;
-			} elseif ( $this->linkCache->isBadLink( $pdbk ) ) {
-				$parser->getOutput()->addLink( $title, 0 );
-				return false;
-			}
-			if ( !$parser->incrementExpensiveFunctionCount() ) {
-				return false;
-			}
-			$id = $title->getArticleID();
-			$parser->getOutput()->addLink( $title, $id );
-
-			// bug 70495: don't just check whether the ID != 0
-			return $title->exists();
 		}
+		$pdbk = $title->getPrefixedDBkey();
+		$id = $this->linkCache->getGoodLinkID( $pdbk );
+		if ( $id !== 0 ) {
+			$parser->getOutput()->addLink( $title, $id );
+			return true;
+		}
+		if ( $this->linkCache->isBadLink( $pdbk ) ) {
+			$parser->getOutput()->addLink( $title, 0 );
+			return false;
+		}
+		if ( !$parser->incrementExpensiveFunctionCount() ) {
+			return false;
+		}
+		$id = $title->getArticleID();
+		$parser->getOutput()->addLink( $title, $id );
+
+		// bug 70495: don't just check whether the ID != 0
+		return $title->exists();
 	}
 
 	/**
@@ -452,9 +454,8 @@ class ParserFunctions {
 		$result = $this->ifexistInternal( $parser, $title ) ? $then : $else;
 		if ( $result === null ) {
 			return '';
-		} else {
-			return trim( $frame->expand( $result ) );
 		}
+		return trim( $frame->expand( $result ) );
 	}
 
 	/**
@@ -556,7 +557,8 @@ class ParserFunctions {
 				return '<strong class="error">' .
 					wfMessage( 'pfunc_time_too_small' )->inContentLanguage()->escaped() .
 					'</strong>';
-			} elseif ( $ts >= 100000000000000 ) { // Language can't deal with years after 9999
+			}
+			if ( $ts >= 100000000000000 ) { // Language can't deal with years after 9999
 				return '<strong class="error">' .
 					wfMessage( 'pfunc_time_too_big' )->inContentLanguage()->escaped() .
 					'</strong>';
