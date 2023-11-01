@@ -7,10 +7,10 @@ use DateTime;
 use DateTimeZone;
 use Exception;
 use LinkCache;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Languages\LanguageConverterFactory;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MWTimestamp;
 use Parser;
@@ -39,6 +39,9 @@ class ParserFunctions {
 	/** @var Config */
 	private $config;
 
+	/** @var HookContainer */
+	private $hookContainer;
+
 	/** @var LanguageConverterFactory */
 	private $languageConverterFactory;
 
@@ -59,6 +62,7 @@ class ParserFunctions {
 
 	/**
 	 * @param Config $config
+	 * @param HookContainer $hookContainer
 	 * @param LanguageConverterFactory $languageConverterFactory
 	 * @param LanguageFactory $languageFactory
 	 * @param LanguageNameUtils $languageNameUtils
@@ -68,6 +72,7 @@ class ParserFunctions {
 	 */
 	public function __construct(
 		Config $config,
+		HookContainer $hookContainer,
 		LanguageConverterFactory $languageConverterFactory,
 		LanguageFactory $languageFactory,
 		LanguageNameUtils $languageNameUtils,
@@ -76,6 +81,7 @@ class ParserFunctions {
 		SpecialPageFactory $specialPageFactory
 	) {
 		$this->config = $config;
+		$this->hookContainer = $hookContainer;
 		$this->languageConverterFactory = $languageConverterFactory;
 		$this->languageFactory = $languageFactory;
 		$this->languageNameUtils = $languageNameUtils;
@@ -465,7 +471,7 @@ class ParserFunctions {
 	private function timeCommon(
 		Parser $parser, PPFrame $frame, $format, $date, $language, $local
 	) {
-		MediaWikiServices::getInstance()->getHookContainer()->register(
+		$this->hookContainer->register(
 			'ParserClearState',
 			static function () {
 				self::$mTimeChars = 0;
