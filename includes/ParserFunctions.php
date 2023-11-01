@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\ParserFunctions;
 
+use Config;
 use DateTime;
 use DateTimeZone;
 use Exception;
@@ -31,6 +32,18 @@ class ParserFunctions {
 	/** ~10 seconds */
 	private const MAX_TIME_CHARS = 6000;
 
+	/** @var Config */
+	private $config;
+
+	/**
+	 * @param Config $config
+	 */
+	public function __construct(
+		Config $config
+	) {
+		$this->config = $config;
+	}
+
 	/**
 	 * @return ExprParser
 	 */
@@ -50,7 +63,7 @@ class ParserFunctions {
 	 * @param string $expr
 	 * @return string
 	 */
-	public static function expr( Parser $parser, $expr = '' ) {
+	public function expr( Parser $parser, $expr = '' ) {
 		try {
 			return self::getExprParser()->doExpression( $expr );
 		} catch ( ExprError $e ) {
@@ -68,7 +81,7 @@ class ParserFunctions {
 	 * @param PPNode[] $args
 	 * @return string
 	 */
-	public static function ifexpr( Parser $parser, PPFrame $frame, array $args ) {
+	public function ifexpr( Parser $parser, PPFrame $frame, array $args ) {
 		$expr = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$then = $args[1] ?? '';
 		$else = $args[2] ?? '';
@@ -100,7 +113,7 @@ class ParserFunctions {
 	 * @param PPNode[] $args
 	 * @return string
 	 */
-	public static function if( Parser $parser, PPFrame $frame, array $args ) {
+	public function if( Parser $parser, PPFrame $frame, array $args ) {
 		$test = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		if ( $test !== '' ) {
 			return isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
@@ -119,7 +132,7 @@ class ParserFunctions {
 	 * @param PPNode[] $args
 	 * @return string
 	 */
-	public static function ifeq( Parser $parser, PPFrame $frame, array $args ) {
+	public function ifeq( Parser $parser, PPFrame $frame, array $args ) {
 		$left = isset( $args[0] ) ? self::decodeTrimExpand( $args[0], $frame ) : '';
 		$right = isset( $args[1] ) ? self::decodeTrimExpand( $args[1], $frame ) : '';
 
@@ -145,7 +158,7 @@ class ParserFunctions {
 	 * @param PPNode[] $args
 	 * @return string
 	 */
-	public static function iferror( Parser $parser, PPFrame $frame, array $args ) {
+	public function iferror( Parser $parser, PPFrame $frame, array $args ) {
 		$test = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$then = $args[1] ?? false;
 		$else = $args[2] ?? false;
@@ -182,7 +195,7 @@ class ParserFunctions {
 	 * @param PPNode[] $args
 	 * @return string
 	 */
-	public static function switch( Parser $parser, PPFrame $frame, array $args ) {
+	public function switch( Parser $parser, PPFrame $frame, array $args ) {
 		if ( count( $args ) === 0 ) {
 			return '';
 		}
@@ -257,7 +270,7 @@ class ParserFunctions {
 	 *
 	 * @return string
 	 */
-	public static function rel2abs( Parser $parser, $to = '', $from = '' ) {
+	public function rel2abs( Parser $parser, $to = '', $from = '' ) {
 		$from = trim( $from );
 		if ( $from === '' ) {
 			$from = $parser->getTitle()->getPrefixedText();
@@ -387,7 +400,7 @@ class ParserFunctions {
 	 * @param PPNode[] $args
 	 * @return string
 	 */
-	public static function ifexist( Parser $parser, PPFrame $frame, array $args ) {
+	public function ifexist( Parser $parser, PPFrame $frame, array $args ) {
 		$title = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$then = $args[1] ?? null;
 		$else = $args[2] ?? null;
@@ -411,11 +424,9 @@ class ParserFunctions {
 	 * @param string|bool $local
 	 * @return string
 	 */
-	private static function timeCommon(
+	private function timeCommon(
 		Parser $parser, PPFrame $frame, $format, $date, $language, $local
 	) {
-		global $wgLocaltimezone;
-
 		MediaWikiServices::getInstance()->getHookContainer()->register(
 			'ParserClearState',
 			static function () {
@@ -464,7 +475,10 @@ class ParserFunctions {
 
 			# Set output timezone.
 			if ( $local ) {
-				$tz = new DateTimeZone( $wgLocaltimezone ?? date_default_timezone_get() );
+				$tz = new DateTimeZone(
+					$this->config->get( 'Localtimezone' ) ??
+					date_default_timezone_get()
+				);
 			} else {
 				$tz = $utc;
 			}
@@ -535,12 +549,12 @@ class ParserFunctions {
 	 * @param PPNode[] $args
 	 * @return string
 	 */
-	public static function time( Parser $parser, PPFrame $frame, array $args ) {
+	public function time( Parser $parser, PPFrame $frame, array $args ) {
 		$format = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$date = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
 		$language = isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
 		$local = isset( $args[3] ) && trim( $frame->expand( $args[3] ) );
-		return self::timeCommon( $parser, $frame, $format, $date, $language, $local );
+		return $this->timeCommon( $parser, $frame, $format, $date, $language, $local );
 	}
 
 	/**
@@ -556,11 +570,11 @@ class ParserFunctions {
 	 * @param PPNode[] $args
 	 * @return string
 	 */
-	public static function localTime( Parser $parser, PPFrame $frame, array $args ) {
+	public function localTime( Parser $parser, PPFrame $frame, array $args ) {
 		$format = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$date = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
 		$language = isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
-		return self::timeCommon( $parser, $frame, $format, $date, $language, true );
+		return $this->timeCommon( $parser, $frame, $format, $date, $language, true );
 	}
 
 	/**
@@ -575,7 +589,7 @@ class ParserFunctions {
 	 * @param string|int $offset Offset starting at 1
 	 * @return string
 	 */
-	public static function titleparts( Parser $parser, $title = '', $parts = 0, $offset = 0 ) {
+	public function titleparts( Parser $parser, $title = '', $parts = 0, $offset = 0 ) {
 		$parts = (int)$parts;
 		$offset = (int)$offset;
 		$ntitle = Title::newFromText( $title );
@@ -596,18 +610,17 @@ class ParserFunctions {
 	 * @param string $text
 	 * @return bool
 	 */
-	private static function checkLength( $text ) {
-		global $wgPFStringLengthLimit;
-		return ( mb_strlen( $text ) < $wgPFStringLengthLimit );
+	private function checkLength( $text ) {
+		return ( mb_strlen( $text ) < $this->config->get( 'PFStringLengthLimit' ) );
 	}
 
 	/**
 	 * Generates error message. Called when string is too long.
 	 * @return string
 	 */
-	private static function tooLongError() {
-		global $wgPFStringLengthLimit;
-		$msg = wfMessage( 'pfunc_string_too_long' )->numParams( $wgPFStringLengthLimit );
+	private function tooLongError() {
+		$msg = wfMessage( 'pfunc_string_too_long' )
+			->numParams( $this->config->get( 'PFStringLengthLimit' ) );
 		return '<strong class="error">' . $msg->inContentLanguage()->escaped() . '</strong>';
 	}
 
@@ -620,7 +633,7 @@ class ParserFunctions {
 	 * @param string $inStr
 	 * @return int
 	 */
-	public static function runLen( Parser $parser, $inStr = '' ) {
+	public function runLen( Parser $parser, $inStr = '' ) {
 		$inStr = $parser->killMarkers( (string)$inStr );
 		return mb_strlen( $inStr );
 	}
@@ -638,13 +651,13 @@ class ParserFunctions {
 	 * @param string|int $inOffset
 	 * @return int|string
 	 */
-	public static function runPos( Parser $parser, $inStr = '', $inNeedle = '', $inOffset = 0 ) {
+	public function runPos( Parser $parser, $inStr = '', $inNeedle = '', $inOffset = 0 ) {
 		$inStr = $parser->killMarkers( (string)$inStr );
 		$inNeedle = $parser->killMarkers( (string)$inNeedle );
 
-		if ( !self::checkLength( $inStr ) ||
-			!self::checkLength( $inNeedle ) ) {
-			return self::tooLongError();
+		if ( !$this->checkLength( $inStr ) ||
+			!$this->checkLength( $inNeedle ) ) {
+			return $this->tooLongError();
 		}
 
 		if ( $inNeedle === '' ) {
@@ -671,13 +684,13 @@ class ParserFunctions {
 	 * @param string $inNeedle
 	 * @return int|string
 	 */
-	public static function runRPos( Parser $parser, $inStr = '', $inNeedle = '' ) {
+	public function runRPos( Parser $parser, $inStr = '', $inNeedle = '' ) {
 		$inStr = $parser->killMarkers( (string)$inStr );
 		$inNeedle = $parser->killMarkers( (string)$inNeedle );
 
-		if ( !self::checkLength( $inStr ) ||
-			!self::checkLength( $inNeedle ) ) {
-			return self::tooLongError();
+		if ( !$this->checkLength( $inStr ) ||
+			!$this->checkLength( $inNeedle ) ) {
+			return $this->tooLongError();
 		}
 
 		if ( $inNeedle === '' ) {
@@ -710,11 +723,11 @@ class ParserFunctions {
 	 * @param string|int $inLength
 	 * @return string
 	 */
-	public static function runSub( Parser $parser, $inStr = '', $inStart = 0, $inLength = 0 ) {
+	public function runSub( Parser $parser, $inStr = '', $inStart = 0, $inLength = 0 ) {
 		$inStr = $parser->killMarkers( (string)$inStr );
 
-		if ( !self::checkLength( $inStr ) ) {
-			return self::tooLongError();
+		if ( !$this->checkLength( $inStr ) ) {
+			return $this->tooLongError();
 		}
 
 		if ( (int)$inLength === 0 ) {
@@ -738,13 +751,13 @@ class ParserFunctions {
 	 * @param string $inSubStr
 	 * @return int|string
 	 */
-	public static function runCount( Parser $parser, $inStr = '', $inSubStr = '' ) {
+	public function runCount( Parser $parser, $inStr = '', $inSubStr = '' ) {
 		$inStr = $parser->killMarkers( (string)$inStr );
 		$inSubStr = $parser->killMarkers( (string)$inSubStr );
 
-		if ( !self::checkLength( $inStr ) ||
-			!self::checkLength( $inSubStr ) ) {
-			return self::tooLongError();
+		if ( !$this->checkLength( $inStr ) ||
+			!$this->checkLength( $inSubStr ) ) {
+			return $this->tooLongError();
 		}
 
 		if ( $inSubStr === '' ) {
@@ -772,18 +785,16 @@ class ParserFunctions {
 	 * @param string|int $inLimit
 	 * @return string
 	 */
-	public static function runReplace( Parser $parser, $inStr = '',
+	public function runReplace( Parser $parser, $inStr = '',
 			$inReplaceFrom = '', $inReplaceTo = '', $inLimit = -1 ) {
-		global $wgPFStringLengthLimit;
-
 		$inStr = $parser->killMarkers( (string)$inStr );
 		$inReplaceFrom = $parser->killMarkers( (string)$inReplaceFrom );
 		$inReplaceTo = $parser->killMarkers( (string)$inReplaceTo );
 
-		if ( !self::checkLength( $inStr ) ||
-			!self::checkLength( $inReplaceFrom ) ||
-			!self::checkLength( $inReplaceTo ) ) {
-			return self::tooLongError();
+		if ( !$this->checkLength( $inStr ) ||
+			!$this->checkLength( $inReplaceFrom ) ||
+			!$this->checkLength( $inReplaceTo ) ) {
+			return $this->tooLongError();
 		}
 
 		if ( $inReplaceFrom === '' ) {
@@ -793,7 +804,7 @@ class ParserFunctions {
 		// Precompute limit to avoid generating enormous string:
 		$diff = mb_strlen( $inReplaceTo ) - mb_strlen( $inReplaceFrom );
 		if ( $diff > 0 ) {
-			$limit = ( ( $wgPFStringLengthLimit - mb_strlen( $inStr ) ) / $diff ) + 1;
+			$limit = ( ( $this->config->get( 'PFStringLengthLimit' ) - mb_strlen( $inStr ) ) / $diff ) + 1;
 		} else {
 			$limit = -1;
 		}
@@ -812,8 +823,8 @@ class ParserFunctions {
 		$result = preg_replace( '/' . $inReplaceFrom . '/u',
 						$inReplaceTo, $inStr, $limit );
 
-		if ( !self::checkLength( $result ) ) {
-			return self::tooLongError();
+		if ( !$this->checkLength( $result ) ) {
+			return $this->tooLongError();
 		}
 
 		return $result;
@@ -836,7 +847,7 @@ class ParserFunctions {
 	 * @param string|null $inLim
 	 * @return string
 	 */
-	public static function runExplode(
+	public function runExplode(
 		Parser $parser, $inStr = '', $inDiv = '', $inPos = 0, $inLim = null
 	) {
 		$inStr = $parser->killMarkers( (string)$inStr );
@@ -846,9 +857,9 @@ class ParserFunctions {
 			$inDiv = ' ';
 		}
 
-		if ( !self::checkLength( $inStr ) ||
-			!self::checkLength( $inDiv ) ) {
-			return self::tooLongError();
+		if ( !$this->checkLength( $inStr ) ||
+			!$this->checkLength( $inDiv ) ) {
+			return $this->tooLongError();
 		}
 
 		$inDiv = preg_quote( $inDiv, '/' );
@@ -875,10 +886,10 @@ class ParserFunctions {
 	 * @param string $inStr
 	 * @return string
 	 */
-	public static function runUrlDecode( Parser $parser, $inStr = '' ) {
+	public function runUrlDecode( Parser $parser, $inStr = '' ) {
 		$inStr = $parser->killMarkers( (string)$inStr );
-		if ( !self::checkLength( $inStr ) ) {
-			return self::tooLongError();
+		if ( !$this->checkLength( $inStr ) ) {
+			return $this->tooLongError();
 		}
 
 		return urldecode( $inStr );

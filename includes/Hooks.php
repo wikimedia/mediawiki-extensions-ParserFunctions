@@ -13,6 +13,9 @@ class Hooks implements
 	/** @var Config */
 	private $config;
 
+	/** @var ParserFunctions */
+	private $parserFunctions;
+
 	/**
 	 * @param Config $config
 	 */
@@ -20,6 +23,7 @@ class Hooks implements
 		Config $config
 	) {
 		$this->config = $config;
+		$this->parserFunctions = new ParserFunctions( $config );
 	}
 
 	/**
@@ -42,29 +46,29 @@ class Hooks implements
 	 */
 	public function onParserFirstCallInit( $parser ) {
 		// These functions accept DOM-style arguments
-		$parser->setFunctionHook( 'if', [ ParserFunctions::class, 'if' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'ifeq', [ ParserFunctions::class, 'ifeq' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'switch', [ ParserFunctions::class, 'switch' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'ifexist', [ ParserFunctions::class, 'ifexist' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'ifexpr', [ ParserFunctions::class, 'ifexpr' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'iferror', [ ParserFunctions::class, 'iferror' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'time', [ ParserFunctions::class, 'time' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'timel', [ ParserFunctions::class, 'localTime' ], Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'if', [ $this->parserFunctions, 'if' ], Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'ifeq', [ $this->parserFunctions, 'ifeq' ], Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'switch', [ $this->parserFunctions, 'switch' ], Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'ifexist', [ $this->parserFunctions, 'ifexist' ], Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'ifexpr', [ $this->parserFunctions, 'ifexpr' ], Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'iferror', [ $this->parserFunctions, 'iferror' ], Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'time', [ $this->parserFunctions, 'time' ], Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'timel', [ $this->parserFunctions, 'localTime' ], Parser::SFH_OBJECT_ARGS );
 
-		$parser->setFunctionHook( 'expr', [ ParserFunctions::class, 'expr' ] );
-		$parser->setFunctionHook( 'rel2abs', [ ParserFunctions::class, 'rel2abs' ] );
-		$parser->setFunctionHook( 'titleparts', [ ParserFunctions::class, 'titleparts' ] );
+		$parser->setFunctionHook( 'expr', [ $this->parserFunctions, 'expr' ] );
+		$parser->setFunctionHook( 'rel2abs', [ $this->parserFunctions, 'rel2abs' ] );
+		$parser->setFunctionHook( 'titleparts', [ $this->parserFunctions, 'titleparts' ] );
 
 		// String Functions: enable if configured
 		if ( $this->config->get( 'PFEnableStringFunctions' ) ) {
-			$parser->setFunctionHook( 'len', [ ParserFunctions::class, 'runLen' ] );
-			$parser->setFunctionHook( 'pos', [ ParserFunctions::class, 'runPos' ] );
-			$parser->setFunctionHook( 'rpos', [ ParserFunctions::class, 'runRPos' ] );
-			$parser->setFunctionHook( 'sub', [ ParserFunctions::class, 'runSub' ] );
-			$parser->setFunctionHook( 'count', [ ParserFunctions::class, 'runCount' ] );
-			$parser->setFunctionHook( 'replace', [ ParserFunctions::class, 'runReplace' ] );
-			$parser->setFunctionHook( 'explode', [ ParserFunctions::class, 'runExplode' ] );
-			$parser->setFunctionHook( 'urldecode', [ ParserFunctions::class, 'runUrlDecode' ] );
+			$parser->setFunctionHook( 'len', [ $this->parserFunctions, 'runLen' ] );
+			$parser->setFunctionHook( 'pos', [ $this->parserFunctions, 'runPos' ] );
+			$parser->setFunctionHook( 'rpos', [ $this->parserFunctions, 'runRPos' ] );
+			$parser->setFunctionHook( 'sub', [ $this->parserFunctions, 'runSub' ] );
+			$parser->setFunctionHook( 'count', [ $this->parserFunctions, 'runCount' ] );
+			$parser->setFunctionHook( 'replace', [ $this->parserFunctions, 'runReplace' ] );
+			$parser->setFunctionHook( 'explode', [ $this->parserFunctions, 'runExplode' ] );
+			$parser->setFunctionHook( 'urldecode', [ $this->parserFunctions, 'runUrlDecode' ] );
 		}
 	}
 
