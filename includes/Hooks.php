@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\ParserFunctions;
 
 use Config;
+use MediaWiki\SpecialPage\SpecialPageFactory;
 use Parser;
 use RepoGroup;
 
@@ -20,15 +21,18 @@ class Hooks implements
 	/**
 	 * @param Config $config
 	 * @param RepoGroup $repoGroup
+	 * @param SpecialPageFactory $specialPageFactory
 	 */
 	public function __construct(
 		Config $config,
-		RepoGroup $repoGroup
+		RepoGroup $repoGroup,
+		SpecialPageFactory $specialPageFactory
 	) {
 		$this->config = $config;
 		$this->parserFunctions = new ParserFunctions(
 			$config,
-			$repoGroup
+			$repoGroup,
+			$specialPageFactory
 		);
 	}
 

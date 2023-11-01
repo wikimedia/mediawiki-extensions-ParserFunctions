@@ -40,7 +40,8 @@
 			"class": "MediaWiki\\Extension\\ParserFunctions\\Hooks",
 			"services": [
 				"MainConfig",
-				"RepoGroup"
+				"RepoGroup",
+				"SpecialPageFactory"
 			]
 		}
 	},

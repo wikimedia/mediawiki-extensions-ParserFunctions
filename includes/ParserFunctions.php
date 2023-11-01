@@ -9,6 +9,7 @@ use Exception;
 use ILanguageConverter;
 use Language;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\SpecialPage\SpecialPageFactory;
 use MWTimestamp;
 use Parser;
 use PPFrame;
@@ -39,16 +40,22 @@ class ParserFunctions {
 	/** @var RepoGroup */
 	private $repoGroup;
 
+	/** @var SpecialPageFactory */
+	private $specialPageFactory;
+
 	/**
 	 * @param Config $config
 	 * @param RepoGroup $repoGroup
+	 * @param SpecialPageFactory $specialPageFactory
 	 */
 	public function __construct(
 		Config $config,
-		RepoGroup $repoGroup
+		RepoGroup $repoGroup,
+		SpecialPageFactory $specialPageFactory
 	) {
 		$this->config = $config;
 		$this->repoGroup = $repoGroup;
+		$this->specialPageFactory = $specialPageFactory;
 	}
 
 	/**
@@ -367,8 +374,7 @@ class ParserFunctions {
 			 * since their existence can be checked without
 			 * accessing the database.
 			 */
-			return MediaWikiServices::getInstance()->getSpecialPageFactory()
-				->exists( $title->getDBkey() );
+			return $this->specialPageFactory->exists( $title->getDBkey() );
 		} elseif ( $title->isExternal() ) {
 			/* Can't check the existence of pages on other sites,
 			 * so just return false.  Makes a sort of sense, since
