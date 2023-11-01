@@ -13,6 +13,7 @@ use MWTimestamp;
 use Parser;
 use PPFrame;
 use PPNode;
+use RepoGroup;
 use Sanitizer;
 use StringUtils;
 use StubObject;
@@ -35,13 +36,19 @@ class ParserFunctions {
 	/** @var Config */
 	private $config;
 
+	/** @var RepoGroup */
+	private $repoGroup;
+
 	/**
 	 * @param Config $config
+	 * @param RepoGroup $repoGroup
 	 */
 	public function __construct(
-		Config $config
+		Config $config,
+		RepoGroup $repoGroup
 	) {
 		$this->config = $config;
+		$this->repoGroup = $repoGroup;
 	}
 
 	/**
@@ -331,7 +338,7 @@ class ParserFunctions {
 	 *
 	 * @return bool
 	 */
-	private static function ifexistInternal( Parser $parser, $titletext ): bool {
+	private function ifexistInternal( Parser $parser, $titletext ): bool {
 		$title = Title::newFromText( $titletext );
 		self::getLanguageConverter( $parser->getContentLanguage() )
 			->findVariantLink( $titletext, $title, true );
@@ -346,7 +353,7 @@ class ParserFunctions {
 			if ( !$parser->incrementExpensiveFunctionCount() ) {
 				return false;
 			}
-			$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
+			$file = $this->repoGroup->findFile( $title );
 			if ( !$file ) {
 				$parser->getOutput()->addImage(
 					$title->getDBKey(), false, false );
@@ -405,7 +412,7 @@ class ParserFunctions {
 		$then = $args[1] ?? null;
 		$else = $args[2] ?? null;
 
-		$result = self::ifexistInternal( $parser, $title ) ? $then : $else;
+		$result = $this->ifexistInternal( $parser, $title ) ? $then : $else;
 		if ( $result === null ) {
 			return '';
 		} else {

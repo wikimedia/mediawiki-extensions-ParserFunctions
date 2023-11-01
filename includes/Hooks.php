@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\ParserFunctions;
 
 use Config;
 use Parser;
+use RepoGroup;
 
 class Hooks implements
 	\MediaWiki\Hook\ParserFirstCallInitHook,
@@ -18,12 +19,17 @@ class Hooks implements
 
 	/**
 	 * @param Config $config
+	 * @param RepoGroup $repoGroup
 	 */
 	public function __construct(
-		Config $config
+		Config $config,
+		RepoGroup $repoGroup
 	) {
 		$this->config = $config;
-		$this->parserFunctions = new ParserFunctions( $config );
+		$this->parserFunctions = new ParserFunctions(
+			$config,
+			$repoGroup
+		);
 	}
 
 	/**
