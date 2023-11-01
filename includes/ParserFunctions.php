@@ -8,6 +8,7 @@ use DateTimeZone;
 use Exception;
 use ILanguageConverter;
 use Language;
+use LinkCache;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MWTimestamp;
@@ -37,6 +38,9 @@ class ParserFunctions {
 	/** @var Config */
 	private $config;
 
+	/** @var LinkCache */
+	private $linkCache;
+
 	/** @var RepoGroup */
 	private $repoGroup;
 
@@ -45,15 +49,18 @@ class ParserFunctions {
 
 	/**
 	 * @param Config $config
+	 * @param LinkCache $linkCache
 	 * @param RepoGroup $repoGroup
 	 * @param SpecialPageFactory $specialPageFactory
 	 */
 	public function __construct(
 		Config $config,
+		LinkCache $linkCache,
 		RepoGroup $repoGroup,
 		SpecialPageFactory $specialPageFactory
 	) {
 		$this->config = $config;
+		$this->linkCache = $linkCache;
 		$this->repoGroup = $repoGroup;
 		$this->specialPageFactory = $specialPageFactory;
 	}
@@ -383,12 +390,11 @@ class ParserFunctions {
 			return false;
 		} else {
 			$pdbk = $title->getPrefixedDBkey();
-			$lc = MediaWikiServices::getInstance()->getLinkCache();
-			$id = $lc->getGoodLinkID( $pdbk );
+			$id = $this->linkCache->getGoodLinkID( $pdbk );
 			if ( $id !== 0 ) {
 				$parser->getOutput()->addLink( $title, $id );
 				return true;
-			} elseif ( $lc->isBadLink( $pdbk ) ) {
+			} elseif ( $this->linkCache->isBadLink( $pdbk ) ) {
 				$parser->getOutput()->addLink( $title, 0 );
 				return false;
 			}
