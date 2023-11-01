@@ -4,6 +4,9 @@ namespace MediaWiki\Extension\ParserFunctions;
 
 use Config;
 use LinkCache;
+use MediaWiki\Languages\LanguageConverterFactory;
+use MediaWiki\Languages\LanguageFactory;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use Parser;
 use RepoGroup;
@@ -21,12 +24,18 @@ class Hooks implements
 
 	/**
 	 * @param Config $config
+	 * @param LanguageConverterFactory $languageConverterFactory
+	 * @param LanguageFactory $languageFactory
+	 * @param LanguageNameUtils $languageNameUtils
 	 * @param LinkCache $linkCache
 	 * @param RepoGroup $repoGroup
 	 * @param SpecialPageFactory $specialPageFactory
 	 */
 	public function __construct(
 		Config $config,
+		LanguageConverterFactory $languageConverterFactory,
+		LanguageFactory $languageFactory,
+		LanguageNameUtils $languageNameUtils,
 		LinkCache $linkCache,
 		RepoGroup $repoGroup,
 		SpecialPageFactory $specialPageFactory
@@ -34,6 +43,9 @@ class Hooks implements
 		$this->config = $config;
 		$this->parserFunctions = new ParserFunctions(
 			$config,
+			$languageConverterFactory,
+			$languageFactory,
+			$languageNameUtils,
 			$linkCache,
 			$repoGroup,
 			$specialPageFactory

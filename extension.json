@@ -40,6 +40,9 @@
 			"class": "MediaWiki\\Extension\\ParserFunctions\\Hooks",
 			"services": [
 				"MainConfig",
+				"LanguageConverterFactory",
+				"LanguageFactory",
+				"LanguageNameUtils",
 				"LinkCache",
 				"RepoGroup",
 				"SpecialPageFactory"

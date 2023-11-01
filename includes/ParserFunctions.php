@@ -6,9 +6,10 @@ use Config;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ILanguageConverter;
-use Language;
 use LinkCache;
+use MediaWiki\Languages\LanguageConverterFactory;
+use MediaWiki\Languages\LanguageFactory;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MWTimestamp;
@@ -38,6 +39,15 @@ class ParserFunctions {
 	/** @var Config */
 	private $config;
 
+	/** @var LanguageConverterFactory */
+	private $languageConverterFactory;
+
+	/** @var LanguageFactory */
+	private $languageFactory;
+
+	/** @var LanguageNameUtils */
+	private $languageNameUtils;
+
 	/** @var LinkCache */
 	private $linkCache;
 
@@ -49,17 +59,26 @@ class ParserFunctions {
 
 	/**
 	 * @param Config $config
+	 * @param LanguageConverterFactory $languageConverterFactory
+	 * @param LanguageFactory $languageFactory
+	 * @param LanguageNameUtils $languageNameUtils
 	 * @param LinkCache $linkCache
 	 * @param RepoGroup $repoGroup
 	 * @param SpecialPageFactory $specialPageFactory
 	 */
 	public function __construct(
 		Config $config,
+		LanguageConverterFactory $languageConverterFactory,
+		LanguageFactory $languageFactory,
+		LanguageNameUtils $languageNameUtils,
 		LinkCache $linkCache,
 		RepoGroup $repoGroup,
 		SpecialPageFactory $specialPageFactory
 	) {
 		$this->config = $config;
+		$this->languageConverterFactory = $languageConverterFactory;
+		$this->languageFactory = $languageFactory;
+		$this->languageNameUtils = $languageNameUtils;
 		$this->linkCache = $linkCache;
 		$this->repoGroup = $repoGroup;
 		$this->specialPageFactory = $specialPageFactory;
@@ -354,7 +373,7 @@ class ParserFunctions {
 	 */
 	private function ifexistInternal( Parser $parser, $titletext ): bool {
 		$title = Title::newFromText( $titletext );
-		self::getLanguageConverter( $parser->getContentLanguage() )
+		$this->languageConverterFactory->getLanguageConverter( $parser->getContentLanguage() )
 			->findVariantLink( $titletext, $title, true );
 		if ( !$title ) {
 			return false;
@@ -537,10 +556,9 @@ class ParserFunctions {
 					'</strong>';
 			}
 
-			$services = MediaWikiServices::getInstance();
-			if ( $language !== '' && $services->getLanguageNameUtils()->isValidBuiltInCode( $language ) ) {
+			if ( $language !== '' && $this->languageNameUtils->isValidBuiltInCode( $language ) ) {
 				// use whatever language is passed as a parameter
-				$langObject = $services->getLanguageFactory()->getLanguage( $language );
+				$langObject = $this->languageFactory->getLanguage( $language );
 			} else {
 				// use wiki's content language
 				$langObject = $parser->getTargetLanguage();
@@ -930,16 +948,5 @@ class ParserFunctions {
 		$expanded = $frame->expand( $obj );
 		$trimExpanded = trim( $expanded );
 		return trim( Sanitizer::decodeCharReferences( $expanded ) );
-	}
-
-	/**
-	 * @since 1.35
-	 * @param Language $language
-	 * @return ILanguageConverter
-	 */
-	private static function getLanguageConverter( Language $language ): ILanguageConverter {
-		return MediaWikiServices::getInstance()
-			->getLanguageConverterFactory()
-			->getLanguageConverter( $language );
 	}
 }
