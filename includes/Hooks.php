@@ -101,18 +101,4 @@ class Hooks implements
 			$parser->setFunctionHook( 'urldecode', [ $this->parserFunctions, 'runUrlDecode' ] );
 		}
 	}
-
-	/**
-	 * Registers ParserFunctions' lua function with Scribunto
-	 *
-	 * @see https://www.mediawiki.org/wiki/Extension:Scribunto/ScribuntoExternalLibraries
-	 *
-	 * @param string $engine
-	 * @param string[] &$extraLibraries
-	 */
-	public static function onScribuntoExternalLibraries( $engine, array &$extraLibraries ) {
-		if ( $engine === 'lua' ) {
-			$extraLibraries['mw.ext.ParserFunctions'] = LuaLibrary::class;
-		}
-	}
 }

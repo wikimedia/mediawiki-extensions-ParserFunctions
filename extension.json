@@ -33,7 +33,7 @@
 	"Hooks": {
 		"ParserTestGlobals": "ParserFunctionsHookHandler",
 		"ParserFirstCallInit": "ParserFunctionsHookHandler",
-		"ScribuntoExternalLibraries": "MediaWiki\\Extension\\ParserFunctions\\Hooks::onScribuntoExternalLibraries"
+		"ScribuntoExternalLibraries": "ParserFunctionsScribuntoHookHandler"
 	},
 	"HookHandlers": {
 		"ParserFunctionsHookHandler": {
@@ -48,6 +48,9 @@
 				"RepoGroup",
 				"SpecialPageFactory"
 			]
+		},
+		"ParserFunctionsScribuntoHookHandler": {
+			"class": "MediaWiki\\Extension\\ParserFunctions\\ScribuntoHooks"
 		}
 	},
 	"AutoloadNamespaces": {
