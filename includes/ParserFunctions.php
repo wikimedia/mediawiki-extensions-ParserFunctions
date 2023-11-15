@@ -788,7 +788,7 @@ class ParserFunctions {
 		// Precompute limit to avoid generating enormous string:
 		$diff = mb_strlen( $inReplaceTo ) - mb_strlen( $inReplaceFrom );
 		if ( $diff > 0 ) {
-			$limit = ( ( $wgPFStringLengthLimit - mb_strlen( $inStr ) ) / $diff ) + 1;
+			$limit = (int)( ( $wgPFStringLengthLimit - mb_strlen( $inStr ) ) / $diff ) + 1;
 		} else {
 			$limit = -1;
 		}
