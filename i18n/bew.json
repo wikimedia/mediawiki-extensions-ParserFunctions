@@ -9,7 +9,7 @@
 	"pfunc_time_too_long": "Kengabluan: Kebanyakan penggeroan #time.",
 	"pfunc_time_too_big": "Kengabluan: #time cuman ndukung tahon ampé 9999.",
 	"pfunc_time_too_small": "Kengabluan: #time cuman ndukung tahon deri 0.",
-	"pfunc_rel2abs_invalid_depth": "Kengabluan: Kedaleman jalur kaga' aci: \"$1\" (ngejal ngaksès simpul di atas simpul oyod).",
+	"pfunc_rel2abs_invalid_depth": "Kengabluan: Kedaleman jalur kaga' aci: \"$1\" (ngejal ngaksès simpul di atas sumpé oyod).",
 	"pfunc_expr_stack_exhausted": "Haturan ngablu: Tumpukan abis.",
 	"pfunc_expr_unexpected_number": "Haturan ngablu: Angka kaga' keancer.",
 	"pfunc_expr_preg_match_failure": "Haturan ngablu: Keboncosan preg_match kaga' keancer.",
