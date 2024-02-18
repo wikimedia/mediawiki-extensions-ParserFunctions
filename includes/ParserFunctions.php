@@ -327,8 +327,8 @@ class ParserFunctions {
 			if ( $current === '..' ) { // removing one level
 				if ( !count( $newExploded ) ) {
 					// attempted to access a node above root node
-					$msg = wfMessage( 'pfunc_rel2abs_invalid_depth', $fullPath )
-						->inContentLanguage()->escaped();
+					$msg = $parser->msg( 'pfunc_rel2abs_invalid_depth', $fullPath )
+						->escaped();
 					return '<strong class="error">' . $msg . '</strong>';
 				}
 				// remove last level from the stack
@@ -501,24 +501,24 @@ class ParserFunctions {
 		# format the timestamp and return the result
 		if ( $invalidTime ) {
 			$result = '<strong class="error">' .
-				wfMessage( 'pfunc_time_error' )->inContentLanguage()->escaped() .
+				$parser->msg( 'pfunc_time_error' )->escaped() .
 				'</strong>';
 		} else {
 			self::$mTimeChars += strlen( $format );
 			if ( self::$mTimeChars > self::MAX_TIME_CHARS ) {
 				return '<strong class="error">' .
-					wfMessage( 'pfunc_time_too_long' )->inContentLanguage()->escaped() .
+					$parser->msg( 'pfunc_time_too_long' )->escaped() .
 					'</strong>';
 			}
 
 			if ( $ts < 0 ) { // Language can't deal with BC years
 				return '<strong class="error">' .
-					wfMessage( 'pfunc_time_too_small' )->inContentLanguage()->escaped() .
+					$parser->msg( 'pfunc_time_too_small' )->escaped() .
 					'</strong>';
 			}
 			if ( $ts >= 100000000000000 ) { // Language can't deal with years after 9999
 				return '<strong class="error">' .
-					wfMessage( 'pfunc_time_too_big' )->inContentLanguage()->escaped() .
+					$parser->msg( 'pfunc_time_too_big' )->escaped() .
 					'</strong>';
 			}
 
@@ -678,10 +678,10 @@ class ParserFunctions {
 	/**
 	 * Generates error message. Called when string is too long.
 	 */
-	private function tooLongError(): string {
-		$msg = wfMessage( 'pfunc_string_too_long' )
+	private function tooLongError( Parser $parser ): string {
+		$msg = $parser->msg( 'pfunc_string_too_long' )
 			->numParams( $this->config->get( 'PFStringLengthLimit' ) );
-		return '<strong class="error">' . $msg->inContentLanguage()->escaped() . '</strong>';
+		return '<strong class="error">' . $msg->escaped() . '</strong>';
 	}
 
 	/**
@@ -717,7 +717,7 @@ class ParserFunctions {
 
 		if ( !$this->checkLength( $inStr ) ||
 			!$this->checkLength( $inNeedle ) ) {
-			return $this->tooLongError();
+			return $this->tooLongError( $parser );
 		}
 
 		if ( $inNeedle === '' ) {
@@ -750,7 +750,7 @@ class ParserFunctions {
 
 		if ( !$this->checkLength( $inStr ) ||
 			!$this->checkLength( $inNeedle ) ) {
-			return $this->tooLongError();
+			return $this->tooLongError( $parser );
 		}
 
 		if ( $inNeedle === '' ) {
@@ -787,7 +787,7 @@ class ParserFunctions {
 		$inStr = $parser->killMarkers( (string)$inStr );
 
 		if ( !$this->checkLength( $inStr ) ) {
-			return $this->tooLongError();
+			return $this->tooLongError( $parser );
 		}
 
 		if ( (int)$inLength === 0 ) {
@@ -817,7 +817,7 @@ class ParserFunctions {
 
 		if ( !$this->checkLength( $inStr ) ||
 			!$this->checkLength( $inSubStr ) ) {
-			return $this->tooLongError();
+			return $this->tooLongError( $parser );
 		}
 
 		if ( $inSubStr === '' ) {
@@ -854,7 +854,7 @@ class ParserFunctions {
 		if ( !$this->checkLength( $inStr ) ||
 			!$this->checkLength( $inReplaceFrom ) ||
 			!$this->checkLength( $inReplaceTo ) ) {
-			return $this->tooLongError();
+			return $this->tooLongError( $parser );
 		}
 
 		if ( $inReplaceFrom === '' ) {
@@ -884,7 +884,7 @@ class ParserFunctions {
 						$inReplaceTo, $inStr, $limit );
 
 		if ( !$this->checkLength( $result ) ) {
-			return $this->tooLongError();
+			return $this->tooLongError( $parser );
 		}
 
 		return $result;
@@ -919,7 +919,7 @@ class ParserFunctions {
 
 		if ( !$this->checkLength( $inStr ) ||
 			!$this->checkLength( $inDiv ) ) {
-			return $this->tooLongError();
+			return $this->tooLongError( $parser );
 		}
 
 		$inDiv = preg_quote( $inDiv, '/' );
@@ -949,7 +949,7 @@ class ParserFunctions {
 	public function runUrlDecode( Parser $parser, $inStr = '' ) {
 		$inStr = $parser->killMarkers( (string)$inStr );
 		if ( !$this->checkLength( $inStr ) ) {
-			return $this->tooLongError();
+			return $this->tooLongError( $parser );
 		}
 
 		return urldecode( $inStr );
