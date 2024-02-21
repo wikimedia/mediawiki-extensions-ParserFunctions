@@ -12,6 +12,7 @@ use MediaWiki\Languages\LanguageConverterFactory;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\SpecialPage\SpecialPageFactory;
+use MediaWiki\Title\Title;
 use MWTimestamp;
 use Parser;
 use PPFrame;
@@ -19,7 +20,6 @@ use PPNode;
 use RepoGroup;
 use Sanitizer;
 use StringUtils;
-use Title;
 use Wikimedia\RequestTimeout\TimeoutException;
 
 /**
