@@ -29,7 +29,7 @@ use Wikimedia\RequestTimeout\TimeoutException;
  * @link https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions
  */
 class ParserFunctions {
-	private static $mExprParser;
+	private static $mExprParser = null;
 	private static $mTimeCache = [];
 	private static $mTimeChars = 0;
 
@@ -94,7 +94,7 @@ class ParserFunctions {
 	 * @return ExprParser
 	 */
 	private static function &getExprParser() {
-		if ( !isset( self::$mExprParser ) ) {
+		if ( self::$mExprParser === null ) {
 			self::$mExprParser = new ExprParser;
 		}
 		return self::$mExprParser;
