@@ -106,6 +106,26 @@ Explicitly specified output language (Dutch)
 !! end
 
 !! test
+#timel: UTC
+!! wikitext
+{{#timel: Y-m-d H:i | 15 January 2001}}
+!! html
+<p>2001-01-15 00:00
+</p>
+!! end
+
+!! test
+#timel: Melbourne
+!! options
+wgLocaltimezone=Australia/Melbourne
+!! wikitext
+{{#timel: Y-m-d H:i | 16 January 2001}}
+!! html
+<p>2001-01-16 11:00
+</p>
+!! end
+
+!! test
 #timef: one parameter
 !! wikitext
 {{#timef:15 January 2001}}
@@ -162,11 +182,13 @@ language=ja
 !! end
 
 !! test
-#timefl: one parameter (can't actually customise timezone)
+#timefl: one parameter
+!! options
+wgLocaltimezone=Australia/Melbourne
 !! wikitext
-{{#timefl:15 January 2001}}
+{{#timefl:17 January 2001}}
 !! html
-<p>00:00, 15 January 2001
+<p>11:00, 17 January 2001
 </p>
 !! end
 
