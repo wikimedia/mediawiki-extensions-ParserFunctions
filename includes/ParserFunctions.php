@@ -28,8 +28,11 @@ use Wikimedia\RequestTimeout\TimeoutException;
  * @link https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions
  */
 class ParserFunctions {
+	/** @var ExprParser|null */
 	private static $mExprParser = null;
+	/** @var array[][][][] */
 	private static $mTimeCache = [];
+	/** @var int */
 	private static $mTimeChars = 0;
 
 	/** ~10 seconds */
