@@ -3,7 +3,8 @@
 		"authors": [
 			"Cekli829",
 			"Dağlı95",
-			"NMW03"
+			"NMW03",
+			"Nemoralis"
 		]
 	},
 	"pfunc_time_error": "Xəta: Yanlış zaman.",
@@ -17,7 +18,7 @@
 	"pfunc_expr_unrecognised_punctuation": "İfadə xətası: \"$1\" punktuasiyasının tanınmayan simvolu.",
 	"pfunc_expr_unclosed_bracket": "İfadə xətası: Mötərizə bağlanılmamışdır.",
 	"pfunc_expr_division_by_zero": "Sıfıra bölmə",
-	"pfunc_expr_invalid_argument_ln": "ln üçün xətalı arqument: <= 0",
+	"pfunc_expr_invalid_argument_ln": "ln üçün etibarsız arqument: 0-dan kiçik və ya bərabərdir.",
 	"pfunc_expr_unknown_error": "İfadə xətası: naməlum xəta ($1)",
 	"pfunc_expr_not_a_number": "$1-də: nəticə ədəd deyildir."
 }
