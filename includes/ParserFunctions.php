@@ -2,23 +2,23 @@
 
 namespace MediaWiki\Extension\ParserFunctions;
 
-use Config;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use LinkCache;
+use MediaWiki\Cache\LinkCache;
+use MediaWiki\Config\Config;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Languages\LanguageConverterFactory;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Parser\Parser;
+use MediaWiki\Parser\PPFrame;
+use MediaWiki\Parser\PPNode;
+use MediaWiki\Parser\Sanitizer;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\Title\Title;
-use MWTimestamp;
-use Parser;
-use PPFrame;
-use PPNode;
+use MediaWiki\Utils\MWTimestamp;
 use RepoGroup;
-use Sanitizer;
 use StringUtils;
 use Wikimedia\RequestTimeout\TimeoutException;
 

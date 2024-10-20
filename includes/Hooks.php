@@ -2,14 +2,14 @@
 
 namespace MediaWiki\Extension\ParserFunctions;
 
-use Config;
-use LinkCache;
+use MediaWiki\Cache\LinkCache;
+use MediaWiki\Config\Config;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Languages\LanguageConverterFactory;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Parser\Parser;
 use MediaWiki\SpecialPage\SpecialPageFactory;
-use Parser;
 use RepoGroup;
 
 class Hooks implements
