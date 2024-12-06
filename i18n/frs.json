@@ -1,8 +1,0 @@
-{
-	"@metadata": {
-		"authors": []
-	},
-	"pfunc_expr_unrecognised_word": "Ūtdrüksfail: Wōrd \"$1\" näit bīkäent.",
-	"pfunc_expr_missing_operand": "Ūtdrüksfail: ğīn täiken föör $1.",
-	"pfunc_expr_unrecognised_punctuation": "Ūtdrüksfail: Täiken \"$1\" is näit bīkäent."
-}
