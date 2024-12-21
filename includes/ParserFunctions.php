@@ -245,7 +245,8 @@ class ParserFunctions {
 				if ( $defaultFound || $mwDefault->matchStartToEnd( $test ) ) {
 					$default = $valueNode;
 					$defaultFound = false;
-				} # else wrong case, continue
+				}
+				# else wrong case, continue
 			} else {
 				# Multiple input, single output
 				# If the value matches, set a flag and continue
@@ -324,7 +325,8 @@ class ParserFunctions {
 		$newExploded = [];
 
 		foreach ( $exploded as $current ) {
-			if ( $current === '..' ) { // removing one level
+			// removing one level
+			if ( $current === '..' ) {
 				if ( !count( $newExploded ) ) {
 					// attempted to access a node above root node
 					$msg = $parser->msg( 'pfunc_rel2abs_invalid_depth', $fullPath )
@@ -511,12 +513,14 @@ class ParserFunctions {
 					'</strong>';
 			}
 
-			if ( $ts < 0 ) { // Language can't deal with BC years
+			// Language can't deal with BC years
+			if ( $ts < 0 ) {
 				return '<strong class="error">' .
 					$parser->msg( 'pfunc_time_too_small' )->escaped() .
 					'</strong>';
 			}
-			if ( $ts >= 100000000000000 ) { // Language can't deal with years after 9999
+			// Language can't deal with years after 9999
+			if ( $ts >= 100000000000000 ) {
 				return '<strong class="error">' .
 					$parser->msg( 'pfunc_time_too_big' )->escaped() .
 					'</strong>';
