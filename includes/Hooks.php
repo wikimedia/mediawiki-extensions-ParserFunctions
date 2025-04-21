@@ -4,13 +4,13 @@ namespace MediaWiki\Extension\ParserFunctions;
 
 use MediaWiki\Cache\LinkCache;
 use MediaWiki\Config\Config;
+use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Languages\LanguageConverterFactory;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Parser\Parser;
 use MediaWiki\SpecialPage\SpecialPageFactory;
-use RepoGroup;
 
 class Hooks implements
 	\MediaWiki\Hook\ParserFirstCallInitHook,

@@ -7,6 +7,7 @@ use DateTimeZone;
 use Exception;
 use MediaWiki\Cache\LinkCache;
 use MediaWiki\Config\Config;
+use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Languages\LanguageConverterFactory;
 use MediaWiki\Languages\LanguageFactory;
@@ -18,7 +19,6 @@ use MediaWiki\Parser\Sanitizer;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\Title\Title;
 use MediaWiki\Utils\MWTimestamp;
-use RepoGroup;
 use StringUtils;
 use Wikimedia\RequestTimeout\TimeoutException;
 
