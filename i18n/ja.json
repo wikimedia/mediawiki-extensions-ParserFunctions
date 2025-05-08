@@ -6,7 +6,8 @@
 			"JtFuruhata",
 			"Ohgi",
 			"Shirayuki",
-			"青子守歌"
+			"青子守歌",
+			"Waki285"
 		]
 	},
 	"pfunc_desc": "パーサーに論理関数を追加して拡張する",
@@ -25,8 +26,8 @@
 	"pfunc_expr_unrecognised_punctuation": "構文エラー: 認識できない区切り文字「$1」です。",
 	"pfunc_expr_unclosed_bracket": "構文エラー: 括弧が閉じられていません。",
 	"pfunc_expr_division_by_zero": "0 で除算しました。",
-	"pfunc_expr_invalid_argument": "$1 の引数が無効です: < -1 または > 1",
-	"pfunc_expr_invalid_argument_ln": "ln の引数が無効です: <= 0",
+	"pfunc_expr_invalid_argument": "$1 の引数が無効です: -1 未満または 1 より大きいです。",
+	"pfunc_expr_invalid_argument_ln": "ln の引数が無効です: 0 以下です。",
 	"pfunc_expr_unknown_error": "構文エラー: 不明なエラー ($1) です。",
 	"pfunc_expr_not_a_number": "$1: 結果が数値ではありません。",
 	"pfunc_string_too_long": "エラー: 文字列の長さが上限の $1 文字を超えています。"
