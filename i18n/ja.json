@@ -7,7 +7,8 @@
 			"Ohgi",
 			"Shirayuki",
 			"青子守歌",
-			"Waki285"
+			"Waki285",
+			"Foomin10"
 		]
 	},
 	"pfunc_desc": "パーサーに論理関数を追加して拡張する",
@@ -18,7 +19,7 @@
 	"pfunc_timef_bad_format": "エラー: #timef の形式が無効です",
 	"pfunc_rel2abs_invalid_depth": "エラー: パス「$1」の階層が無効です (ルート階層からのアクセスをお試しください)。",
 	"pfunc_expr_stack_exhausted": "構文エラー: スタックを使い果たしました。",
-	"pfunc_expr_unexpected_number": "構文エラー: 予期しない数字です。",
+	"pfunc_expr_unexpected_number": "構文エラー: 予期しない数値です。",
 	"pfunc_expr_preg_match_failure": "構文エラー: preg_match で予期しない失敗をしました。",
 	"pfunc_expr_unrecognised_word": "構文エラー:「$1」を認識できません。",
 	"pfunc_expr_unexpected_operator": "構文エラー: 予期しない演算子 $1 です。",
