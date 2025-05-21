@@ -385,20 +385,18 @@ class ParserFunctions {
 			return false;
 		}
 		$pdbk = $title->getPrefixedDBkey();
-		$id = $this->linkCache->getGoodLinkID( $pdbk );
-		if ( $id !== 0 ) {
-			$parser->getOutput()->addLink( $title, $id );
+		if ( $this->linkCache->getGoodLinkID( $pdbk ) !== 0 ) {
+			$parser->getOutput()->addExistenceDependency( $title );
 			return true;
 		}
 		if ( $this->linkCache->isBadLink( $pdbk ) ) {
-			$parser->getOutput()->addLink( $title, 0 );
+			$parser->getOutput()->addExistenceDependency( $title );
 			return false;
 		}
 		if ( !$parser->incrementExpensiveFunctionCount() ) {
 			return false;
 		}
-		$id = $title->getArticleID();
-		$parser->getOutput()->addLink( $title, $id );
+		$parser->getOutput()->addExistenceDependency( $title );
 
 		// bug 70495: don't just check whether the ID != 0
 		return $title->exists();
