@@ -27,8 +27,8 @@ class ParserFunctionsTest extends \MediaWikiIntegrationTestCase {
 		$this->assertStatusGood( $status );
 		$sourceId = $status->getNewRevision()->getPageId();
 
-		// Run jobs, so that the link is inserted
-		$this->runJobs();
+		// Run updates, so that the link is inserted
+		$this->runDeferredUpdates();
 
 		// Cache its ParserOutput as if for a page view
 		$parserOutput = $this->parse( 'Source' );
@@ -72,7 +72,7 @@ class ParserFunctionsTest extends \MediaWikiIntegrationTestCase {
 		$this->editPage( 'Target', 'x' );
 
 		// Run jobs, so that page_touched is updated
-		$this->runJobs();
+		$this->runJobs( [], [ 'type' => 'htmlCacheUpdate' ] );
 		$this->assertTouched( 'Source', $fakeTime );
 
 		// The parser cache should now be invalidated
@@ -87,7 +87,7 @@ class ParserFunctionsTest extends \MediaWikiIntegrationTestCase {
 		$fakeTime = '2025-01-01T13:00:00';
 		ConvertibleTimestamp::setFakeTime( $fakeTime );
 		$this->deletePage( 'Target' );
-		$this->runJobs();
+		$this->runJobs( [], [ 'type' => 'htmlCacheUpdate' ] );
 		$this->assertTouched( 'Source', $fakeTime );
 	}
 
