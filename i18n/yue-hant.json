@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"JeffreyKim",
-			"Winston Sung"
+			"Winston Sung",
+			"Yueman"
 		]
 	},
 	"pfunc_desc": "用邏輯功能去加強處理器",
@@ -22,8 +23,8 @@
 	"pfunc_expr_unrecognised_punctuation": "表達錯: 未能認得到嘅標點 \"$1\"",
 	"pfunc_expr_unclosed_bracket": "表達錯: 未閂好嘅括號",
 	"pfunc_expr_division_by_zero": "除以零",
-	"pfunc_expr_invalid_argument": "$1 嘅無效引數：小於 -1 或者大過 1 。",
-	"pfunc_expr_invalid_argument_ln": "ln嘅無效引數：小於或者等於0。",
+	"pfunc_expr_invalid_argument": "$1 嘅無效引數：細過 -1 或者大過 1 。",
+	"pfunc_expr_invalid_argument_ln": "ln嘅無效引數：細過或者等如0。",
 	"pfunc_expr_unknown_error": "表達錯: 未知嘅錯 ($1)",
 	"pfunc_expr_not_a_number": "響 $1: 結果唔係數字",
 	"pfunc_string_too_long": "出錯：字串超過 $1 個字元嘅限制。"
