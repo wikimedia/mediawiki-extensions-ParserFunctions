@@ -36,33 +36,16 @@ class ParserFunctions {
 	/** ~10 seconds */
 	private const MAX_TIME_CHARS = 6000;
 
-	private Config $config;
-	private HookContainer $hookContainer;
-	private LanguageConverterFactory $languageConverterFactory;
-	private LanguageFactory $languageFactory;
-	private LanguageNameUtils $languageNameUtils;
-	private LinkCache $linkCache;
-	private RepoGroup $repoGroup;
-	private SpecialPageFactory $specialPageFactory;
-
 	public function __construct(
-		Config $config,
-		HookContainer $hookContainer,
-		LanguageConverterFactory $languageConverterFactory,
-		LanguageFactory $languageFactory,
-		LanguageNameUtils $languageNameUtils,
-		LinkCache $linkCache,
-		RepoGroup $repoGroup,
-		SpecialPageFactory $specialPageFactory
+		private readonly Config $config,
+		private readonly HookContainer $hookContainer,
+		private readonly LanguageConverterFactory $languageConverterFactory,
+		private readonly LanguageFactory $languageFactory,
+		private readonly LanguageNameUtils $languageNameUtils,
+		private readonly LinkCache $linkCache,
+		private readonly RepoGroup $repoGroup,
+		private readonly SpecialPageFactory $specialPageFactory,
 	) {
-		$this->config = $config;
-		$this->hookContainer = $hookContainer;
-		$this->languageConverterFactory = $languageConverterFactory;
-		$this->languageFactory = $languageFactory;
-		$this->languageNameUtils = $languageNameUtils;
-		$this->linkCache = $linkCache;
-		$this->repoGroup = $repoGroup;
-		$this->specialPageFactory = $specialPageFactory;
 	}
 
 	private static function &getExprParser(): ExprParser {
