@@ -20,6 +20,7 @@ use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\Title\Title;
 use MediaWiki\Utils\MWTimestamp;
 use StringUtils;
+use WeakMap;
 use Wikimedia\RequestTimeout\TimeoutException;
 
 /**
@@ -31,7 +32,7 @@ class ParserFunctions {
 	private static ?ExprParser $mExprParser = null;
 	/** @var array[][][][] */
 	private static array $mTimeCache = [];
-	private static int $mTimeChars = 0;
+	private static ?WeakMap $timeCharsLimits = null;
 
 	/** ~10 seconds */
 	private const MAX_TIME_CHARS = 6000;
@@ -53,6 +54,29 @@ class ParserFunctions {
 			self::$mExprParser = new ExprParser;
 		}
 		return self::$mExprParser;
+	}
+
+	// Limit the length of the format string (per parser)
+	public static function getLimit( Parser $parser ): int {
+		return (
+			self::$timeCharsLimits !== null &&
+			self::$timeCharsLimits->offsetExists( $parser )
+		) ? self::$timeCharsLimits->offsetGet( $parser ) : 0;
+	}
+
+	public static function incrLimit( Parser $parser, int $amt ): bool {
+		$newValue = self::getLimit( $parser ) + $amt;
+		if ( self::$timeCharsLimits === null ) {
+			self::$timeCharsLimits = new WeakMap;
+		}
+		self::$timeCharsLimits->offsetSet( $parser, $newValue );
+		return $newValue > self::MAX_TIME_CHARS;
+	}
+
+	public static function resetLimit( Parser $parser ): void {
+		if ( self::$timeCharsLimits !== null ) {
+			self::$timeCharsLimits->offsetSet( $parser, 0 );
+		}
 	}
 
 	/**
@@ -413,13 +437,6 @@ class ParserFunctions {
 	private function timeCommon(
 		Parser $parser, PPFrame $frame, string $format, string $date, string $language, bool $local
 	): string {
-		$this->hookContainer->register(
-			'ParserClearState',
-			static function () {
-				self::$mTimeChars = 0;
-			}
-		);
-
 		if ( $date === '' ) {
 			$cacheKey = $parser->getOptions()->getTimestamp();
 			$timestamp = new MWTimestamp( $cacheKey );
@@ -487,8 +504,7 @@ class ParserFunctions {
 				$parser->msg( 'pfunc_time_error' )->escaped() .
 				'</strong>';
 		} else {
-			self::$mTimeChars += strlen( $format );
-			if ( self::$mTimeChars > self::MAX_TIME_CHARS ) {
+			if ( self::incrLimit( $parser, strlen( $format ) ) ) {
 				return '<strong class="error">' .
 					$parser->msg( 'pfunc_time_too_long' )->escaped() .
 					'</strong>';

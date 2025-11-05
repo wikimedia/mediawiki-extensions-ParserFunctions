@@ -33,6 +33,7 @@
 	"Hooks": {
 		"ParserTestGlobals": "ParserFunctionsHookHandler",
 		"ParserFirstCallInit": "ParserFunctionsHookHandler",
+		"ParserClearState": "ParserFunctionsHookHandler",
 		"ScribuntoExternalLibraries": "ParserFunctionsScribuntoHookHandler"
 	},
 	"HookHandlers": {

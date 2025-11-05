@@ -14,7 +14,8 @@ use MediaWiki\SpecialPage\SpecialPageFactory;
 
 class Hooks implements
 	\MediaWiki\Hook\ParserFirstCallInitHook,
-	\MediaWiki\Hook\ParserTestGlobalsHook
+	\MediaWiki\Hook\ParserTestGlobalsHook,
+	\MediaWiki\Hook\ParserClearStateHook
 {
 	private readonly ParserFunctions $parserFunctions;
 
@@ -49,6 +50,16 @@ class Hooks implements
 	 */
 	public function onParserTestGlobals( &$globals ) {
 		$globals['wgPFEnableStringFunctions'] = true;
+	}
+
+	/**
+	 * Resets the resource limit in ParserFunctions.
+	 * @param Parser $parser
+	 * @return true
+	 */
+	public function onParserClearState( $parser ): bool {
+		ParserFunctions::resetLimit( $parser );
+		return true;
 	}
 
 	/**
