@@ -12,6 +12,7 @@ use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Languages\LanguageConverterFactory;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Parser\CoreMagicVariables;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\PPFrame;
 use MediaWiki\Parser\PPNode;
@@ -435,12 +436,14 @@ class ParserFunctions {
 	 * Used by time() and localTime()
 	 */
 	private function timeCommon(
-		Parser $parser, PPFrame $frame, string $format, string $date, string $language, bool $local
+		Parser $parser, string $format, string $date, string $language, bool $local
 	): string {
+		$unixTimestamp = '0';
 		if ( $date === '' ) {
-			$cacheKey = $parser->getOptions()->getTimestamp();
-			$timestamp = new MWTimestamp( $cacheKey );
+			$timestamp = new MWTimestamp( $parser->getParseTime() );
+			$cacheKey = $timestamp->getTimestamp( TS_MW );
 			$date = $timestamp->getTimestamp( TS_ISO_8601 );
+			$unixTimestamp = $timestamp->getTimestamp( TS_UNIX );
 			$useTTL = true;
 		} else {
 			$cacheKey = $date;
@@ -449,7 +452,7 @@ class ParserFunctions {
 		if ( isset( self::$mTimeCache[$format][$cacheKey][$language][(int)$local] ) ) {
 			$cachedVal = self::$mTimeCache[$format][$cacheKey][$language][(int)$local];
 			if ( $useTTL && $cachedVal[1] !== null ) {
-				$frame->setTTL( $cachedVal[1] );
+				CoreMagicVariables::applyCacheExpiry( $parser, $cachedVal[1], (int)$unixTimestamp );
 			}
 			return $cachedVal[0];
 		}
@@ -529,7 +532,7 @@ class ParserFunctions {
 		}
 		self::$mTimeCache[$format][$cacheKey][$language][(int)$local] = [ $result, $ttl ];
 		if ( $useTTL && $ttl !== null ) {
-			$frame->setTTL( $ttl );
+			CoreMagicVariables::applyCacheExpiry( $parser, $ttl, (int)$unixTimestamp );
 		}
 		return $result;
 	}
@@ -562,7 +565,7 @@ class ParserFunctions {
 		$date = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
 		$language = isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
 		$local = isset( $args[3] ) && trim( $frame->expand( $args[3] ) );
-		return $this->timeCommon( $parser, $frame, $format, $date, $language, $local );
+		return $this->timeCommon( $parser, $format, $date, $language, $local );
 	}
 
 	/**
@@ -582,7 +585,7 @@ class ParserFunctions {
 		$format = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$date = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
 		$language = isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
-		return $this->timeCommon( $parser, $frame, $format, $date, $language, true );
+		return $this->timeCommon( $parser, $format, $date, $language, true );
 	}
 
 	/**
@@ -639,7 +642,7 @@ class ParserFunctions {
 		$langCode = $this->normalizeLangCode( $parser, $langCode );
 		$lang = $this->languageFactory->getLanguage( $langCode );
 		$format = $lang->getDateFormatString( $type, 'default' );
-		return $this->timeCommon( $parser, $frame, $format, $date, $langCode, $local );
+		return $this->timeCommon( $parser, $format, $date, $langCode, $local );
 	}
 
 	/**
