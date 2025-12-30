@@ -7,7 +7,8 @@
 			"M.M.S.",
 			"Najami",
 			"Skalman",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"pfunc_desc": "Lägger till logiska funktioner i parsern",
@@ -26,8 +27,8 @@
 	"pfunc_expr_unrecognised_punctuation": "Fel i uttryck: Okänt skiljetecken \"$1\"",
 	"pfunc_expr_unclosed_bracket": "Fel i uttryck: Oavslutad parentes",
 	"pfunc_expr_division_by_zero": "Division med noll",
-	"pfunc_expr_invalid_argument": "Ogiltigt argument för $1: < -1 eller > 1",
-	"pfunc_expr_invalid_argument_ln": "Ogiltigt argument för ln: <= 0",
+	"pfunc_expr_invalid_argument": "Ogiltigt argument för $1 : mindre än -1 eller större än 1.",
+	"pfunc_expr_invalid_argument_ln": "Ogiltigt argument för ln: mindre än eller lika med 0.",
 	"pfunc_expr_unknown_error": "Fel i uttryck: Okänt fel ($1)",
 	"pfunc_expr_not_a_number": "I $1: resultatet är inte ett tal",
 	"pfunc_string_too_long": "Fel: Strängen överskrider gränsen på $1 tecken"
