@@ -433,10 +433,18 @@ class ParserFunctions {
 	}
 
 	/**
+	 * Build a human-readable label identifying what caused a cache TTL reduction.
+	 */
+	private static function makeCacheExpirySource( PPFrame $frame, string $funcName ): string {
+		return $frame->getTitle()->getPrefixedText() . " ($funcName)";
+	}
+
+	/**
 	 * Used by time() and localTime()
 	 */
 	private function timeCommon(
-		Parser $parser, string $format, string $date, string $language, bool $local
+		Parser $parser, string $format, string $date, string $language,
+		bool $local, string $source
 	): string {
 		$unixTimestamp = '0';
 		if ( $date === '' ) {
@@ -452,7 +460,7 @@ class ParserFunctions {
 		if ( isset( self::$mTimeCache[$format][$cacheKey][$language][(int)$local] ) ) {
 			$cachedVal = self::$mTimeCache[$format][$cacheKey][$language][(int)$local];
 			if ( $useTTL && $cachedVal[1] !== null ) {
-				CoreMagicVariables::applyCacheExpiry( $parser, $cachedVal[1], (int)$unixTimestamp );
+				CoreMagicVariables::applyCacheExpiry( $parser, $cachedVal[1], (int)$unixTimestamp, $source );
 			}
 			return $cachedVal[0];
 		}
@@ -532,7 +540,7 @@ class ParserFunctions {
 		}
 		self::$mTimeCache[$format][$cacheKey][$language][(int)$local] = [ $result, $ttl ];
 		if ( $useTTL && $ttl !== null ) {
-			CoreMagicVariables::applyCacheExpiry( $parser, $ttl, (int)$unixTimestamp );
+			CoreMagicVariables::applyCacheExpiry( $parser, $ttl, (int)$unixTimestamp, $source );
 		}
 		return $result;
 	}
@@ -565,7 +573,8 @@ class ParserFunctions {
 		$date = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
 		$language = isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
 		$local = isset( $args[3] ) && trim( $frame->expand( $args[3] ) );
-		return $this->timeCommon( $parser, $format, $date, $language, $local );
+		return $this->timeCommon( $parser, $format, $date, $language, $local,
+			self::makeCacheExpirySource( $frame, '#time' ) );
 	}
 
 	/**
@@ -585,7 +594,8 @@ class ParserFunctions {
 		$format = isset( $args[0] ) ? trim( $frame->expand( $args[0] ) ) : '';
 		$date = isset( $args[1] ) ? trim( $frame->expand( $args[1] ) ) : '';
 		$language = isset( $args[2] ) ? trim( $frame->expand( $args[2] ) ) : '';
-		return $this->timeCommon( $parser, $format, $date, $language, true );
+		return $this->timeCommon( $parser, $format, $date, $language, true,
+			self::makeCacheExpirySource( $frame, '#timel' ) );
 	}
 
 	/**
@@ -642,7 +652,8 @@ class ParserFunctions {
 		$langCode = $this->normalizeLangCode( $parser, $langCode );
 		$lang = $this->languageFactory->getLanguage( $langCode );
 		$format = $lang->getDateFormatString( $type, 'default' );
-		return $this->timeCommon( $parser, $format, $date, $langCode, $local );
+		return $this->timeCommon( $parser, $format, $date, $langCode, $local,
+			self::makeCacheExpirySource( $frame, $local ? '#timefl' : '#timef' ) );
 	}
 
 	/**
