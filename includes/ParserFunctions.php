@@ -522,6 +522,7 @@ class ParserFunctions {
 			}
 
 			// Language can't deal with BC years
+			// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 			if ( $ts < 0 ) {
 				return '<strong class="error">' .
 					$parser->msg( 'pfunc_time_too_small' )->escaped() .
@@ -536,6 +537,7 @@ class ParserFunctions {
 
 			$langObject = $this->languageFactory->getLanguage(
 				$this->normalizeLangCode( $parser, $language ) );
+			// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 			$result = $langObject->sprintfDate( $format, $ts, $tz, $ttl );
 		}
 		self::$mTimeCache[$format][$cacheKey][$language][(int)$local] = [ $result, $ttl ];
