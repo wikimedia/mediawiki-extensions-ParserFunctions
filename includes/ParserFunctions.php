@@ -436,7 +436,7 @@ class ParserFunctions {
 	 * Build a human-readable label identifying what caused a cache TTL reduction.
 	 */
 	private static function makeCacheExpirySource( PPFrame $frame, string $funcName ): string {
-		return $frame->getTitle()->getPrefixedText() . " ($funcName)";
+		return $frame->getTitle()->getPrefixedDBkey() . " ($funcName)";
 	}
 
 	/**
