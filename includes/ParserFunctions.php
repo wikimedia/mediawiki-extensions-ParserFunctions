@@ -8,9 +8,9 @@ use Exception;
 use MediaWiki\Config\Config;
 use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\HookContainer\HookContainer;
-use MediaWiki\Languages\LanguageConverterFactory;
-use MediaWiki\Languages\LanguageFactory;
-use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Language\LanguageConverterFactory;
+use MediaWiki\Language\LanguageFactory;
+use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Page\LinkCache;
 use MediaWiki\Parser\CoreMagicVariables;
 use MediaWiki\Parser\Parser;
@@ -20,9 +20,9 @@ use MediaWiki\Parser\Sanitizer;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\Title\Title;
 use MediaWiki\Utils\MWTimestamp;
-use StringUtils;
 use WeakMap;
 use Wikimedia\RequestTimeout\TimeoutException;
+use Wikimedia\StringUtils\StringUtils;
 
 /**
  * Parser function handlers

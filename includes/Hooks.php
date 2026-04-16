@@ -5,17 +5,17 @@ namespace MediaWiki\Extension\ParserFunctions;
 use MediaWiki\Config\Config;
 use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\HookContainer\HookContainer;
-use MediaWiki\Languages\LanguageConverterFactory;
-use MediaWiki\Languages\LanguageFactory;
-use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Language\LanguageConverterFactory;
+use MediaWiki\Language\LanguageFactory;
+use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Page\LinkCache;
 use MediaWiki\Parser\Parser;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 
 class Hooks implements
-	\MediaWiki\Hook\ParserFirstCallInitHook,
+	\MediaWiki\Parser\Hook\ParserFirstCallInitHook,
 	\MediaWiki\Hook\ParserTestGlobalsHook,
-	\MediaWiki\Hook\ParserClearStateHook
+	\MediaWiki\Parser\Hook\ParserClearStateHook
 {
 	private readonly ParserFunctions $parserFunctions;
 
