@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\ParserFunctions\Tests;
 
 use MediaWiki\MainConfigNames;
-use MediaWiki\Page\WikiPage;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Parser\ParserOutputLinkTypes;
@@ -143,11 +142,12 @@ class ParserFunctionsTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	private function parse( string $title ): ParserOutput {
-		$parserOutputAccess = $this->getServiceContainer()->getParserOutputAccess();
+		$services = $this->getServiceContainer();
+		$parserOutputAccess = $services->getParserOutputAccess();
 		$parserOutputAccess->clearLocalCache();
 		$parserOptions = ParserOptions::newFromAnon();
 		$status = $parserOutputAccess->getParserOutput(
-			new WikiPage( Title::newFromText( $title ) ),
+			$services->getWikiPageFactory()->newFromTitle( Title::newFromText( $title ) ),
 			$parserOptions
 		);
 		$this->assertStatusGood( $status );
