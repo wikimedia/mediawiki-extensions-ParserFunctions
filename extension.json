@@ -57,5 +57,12 @@
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\ParserFunctions\\": "includes/"
 	},
+	"attributes": {
+		"CodeMirror": {
+			"ParserFunctionNsIds": {
+				"ifexist": 0
+			}
+		}
+	},
 	"manifest_version": 2
 }
