@@ -71,31 +71,31 @@ class Hooks implements
 	 */
 	public function onParserFirstCallInit( $parser ) {
 		// These functions accept DOM-style arguments
-		$parser->setFunctionHook( 'if', [ $this->parserFunctions, 'if' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'ifeq', [ $this->parserFunctions, 'ifeq' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'switch', [ $this->parserFunctions, 'switch' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'ifexist', [ $this->parserFunctions, 'ifexist' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'ifexpr', [ $this->parserFunctions, 'ifexpr' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'iferror', [ $this->parserFunctions, 'iferror' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'time', [ $this->parserFunctions, 'time' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'timel', [ $this->parserFunctions, 'localTime' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'timef', [ $this->parserFunctions, 'timef' ], Parser::SFH_OBJECT_ARGS );
-		$parser->setFunctionHook( 'timefl', [ $this->parserFunctions, 'timefl' ], Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'if', $this->parserFunctions->if( ... ), Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'ifeq', $this->parserFunctions->ifeq( ... ), Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'switch', $this->parserFunctions->switch( ... ), Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'ifexist', $this->parserFunctions->ifexist( ... ), Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'ifexpr', $this->parserFunctions->ifexpr( ... ), Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'iferror', $this->parserFunctions->iferror( ... ), Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'time', $this->parserFunctions->time( ... ), Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'timel', $this->parserFunctions->localTime( ... ), Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'timef', $this->parserFunctions->timef( ... ), Parser::SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'timefl', $this->parserFunctions->timefl( ... ), Parser::SFH_OBJECT_ARGS );
 
-		$parser->setFunctionHook( 'expr', [ $this->parserFunctions, 'expr' ] );
-		$parser->setFunctionHook( 'rel2abs', [ $this->parserFunctions, 'rel2abs' ] );
-		$parser->setFunctionHook( 'titleparts', [ $this->parserFunctions, 'titleparts' ] );
+		$parser->setFunctionHook( 'expr', $this->parserFunctions->expr( ... ) );
+		$parser->setFunctionHook( 'rel2abs', $this->parserFunctions->rel2abs( ... ) );
+		$parser->setFunctionHook( 'titleparts', $this->parserFunctions->titleparts( ... ) );
 
 		// String Functions: enable if configured
 		if ( $this->config->get( 'PFEnableStringFunctions' ) ) {
-			$parser->setFunctionHook( 'len', [ $this->parserFunctions, 'runLen' ] );
-			$parser->setFunctionHook( 'pos', [ $this->parserFunctions, 'runPos' ] );
-			$parser->setFunctionHook( 'rpos', [ $this->parserFunctions, 'runRPos' ] );
-			$parser->setFunctionHook( 'sub', [ $this->parserFunctions, 'runSub' ] );
-			$parser->setFunctionHook( 'count', [ $this->parserFunctions, 'runCount' ] );
-			$parser->setFunctionHook( 'replace', [ $this->parserFunctions, 'runReplace' ] );
-			$parser->setFunctionHook( 'explode', [ $this->parserFunctions, 'runExplode' ] );
-			$parser->setFunctionHook( 'urldecode', [ $this->parserFunctions, 'runUrlDecode' ] );
+			$parser->setFunctionHook( 'len', $this->parserFunctions->runLen( ... ) );
+			$parser->setFunctionHook( 'pos', $this->parserFunctions->runPos( ... ) );
+			$parser->setFunctionHook( 'rpos', $this->parserFunctions->runRPos( ... ) );
+			$parser->setFunctionHook( 'sub', $this->parserFunctions->runSub( ... ) );
+			$parser->setFunctionHook( 'count', $this->parserFunctions->runCount( ... ) );
+			$parser->setFunctionHook( 'replace', $this->parserFunctions->runReplace( ... ) );
+			$parser->setFunctionHook( 'explode', $this->parserFunctions->runExplode( ... ) );
+			$parser->setFunctionHook( 'urldecode', $this->parserFunctions->runUrlDecode( ... ) );
 		}
 	}
 }
