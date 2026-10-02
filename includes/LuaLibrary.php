@@ -9,7 +9,7 @@ class LuaLibrary extends LibraryBase {
 	/** @inheritDoc */
 	public function register() {
 		$lib = [
-			'expr' => [ $this, 'expr' ],
+			'expr' => $this->expr( ... ),
 		];
 
 		return $this->getEngine()->registerInterface(
@@ -24,7 +24,7 @@ class LuaLibrary extends LibraryBase {
 	 * @return string[]
 	 * @throws LuaError
 	 */
-	public function expr( $expression = null ) {
+	private function expr( $expression = null ) {
 		$this->checkType( 'mw.ext.ParserFunctions.expr', 1, $expression, 'string' );
 		try {
 			$exprParser = new ExprParser();
