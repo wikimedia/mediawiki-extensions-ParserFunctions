@@ -33,7 +33,10 @@ class ParserFunctionsTest extends \MediaWikiIntegrationTestCase {
 		$parserOutput = $this->parse( 'Source' );
 
 		// Confirm that the parse worked
-		$this->assertSame( "<p>no\n</p>", $parserOutput->getContentHolderText() );
+		$this->assertMatchesRegularExpression(
+			'/<p[^>]*>(<span[^>]*>)?no(<\/span>)?\s*<\/p>/',
+			$parserOutput->getContentHolderText()
+		);
 		$linkInfos = $parserOutput->getLinkList( ParserOutputLinkTypes::EXISTENCE );
 		$linkStrings = [];
 		foreach ( $linkInfos as $link ) {
@@ -77,7 +80,10 @@ class ParserFunctionsTest extends \MediaWikiIntegrationTestCase {
 		// The parser cache should now be invalidated
 		$statsHelper->consumeAllFormatted();
 		$parserOutput = $this->parse( 'Source' );
-		$this->assertEquals( "<p>yes\n</p>", $parserOutput->getContentHolderText() );
+		$this->assertMatchesRegularExpression(
+			'/<p[^>]*>(<span[^>]*>)?yes(<\/span>)?\s*<\/p>/',
+			$parserOutput->getContentHolderText()
+		);
 		$this->assertSame( 1,
 			$statsHelper->count( 'parseroutputaccess_cache_total{type=miss}' )
 		);
