@@ -60,6 +60,7 @@
 	"attributes": {
 		"CodeMirror": {
 			"ParserFunctionNsIds": {
+				"titleparts": 0,
 				"ifexist": 0
 			}
 		}
