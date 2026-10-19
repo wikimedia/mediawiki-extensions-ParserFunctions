@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\ParserFunctions;
 
 use MediaWiki\Config\Config;
 use MediaWiki\FileRepo\RepoGroup;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Language\LanguageConverterFactory;
 use MediaWiki\Language\LanguageFactory;
 use MediaWiki\Language\LanguageNameUtils;
@@ -21,7 +20,6 @@ class Hooks implements
 
 	public function __construct(
 		private readonly Config $config,
-		HookContainer $hookContainer,
 		LanguageConverterFactory $languageConverterFactory,
 		LanguageFactory $languageFactory,
 		LanguageNameUtils $languageNameUtils,
@@ -31,7 +29,6 @@ class Hooks implements
 	) {
 		$this->parserFunctions = new ParserFunctions(
 			$config,
-			$hookContainer,
 			$languageConverterFactory,
 			$languageFactory,
 			$languageNameUtils,

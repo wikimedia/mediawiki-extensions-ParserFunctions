@@ -7,7 +7,6 @@ use DateTimeZone;
 use Exception;
 use MediaWiki\Config\Config;
 use MediaWiki\FileRepo\RepoGroup;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Language\LanguageConverterFactory;
 use MediaWiki\Language\LanguageFactory;
 use MediaWiki\Language\LanguageNameUtils;
@@ -40,7 +39,6 @@ class ParserFunctions {
 
 	public function __construct(
 		private readonly Config $config,
-		private readonly HookContainer $hookContainer,
 		private readonly LanguageConverterFactory $languageConverterFactory,
 		private readonly LanguageFactory $languageFactory,
 		private readonly LanguageNameUtils $languageNameUtils,
