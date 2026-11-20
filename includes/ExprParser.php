@@ -448,12 +448,18 @@ class ExprParser {
 				if ( count( $stack ) < 2 ) {
 					throw new ExprError( 'missing_operand', self::NAMES[$op] );
 				}
-				$right = (int)array_pop( $stack );
-				$left = (int)array_pop( $stack );
-				if ( !$right ) {
-					throw new ExprError( 'division_by_zero', self::NAMES[$op] );
+				$right = array_pop( $stack );
+				$left = array_pop( $stack );
+				// There is no meaningful calculation to do outside of this range
+				if ( self::isOutsideIntRange( $right ) ) {
+					$stack[] = $left;
+				} else {
+					$right = (int)$right;
+					if ( !$right ) {
+						throw new ExprError( 'division_by_zero', self::NAMES[$op] );
+					}
+					$stack[] = self::isOutsideIntRange( $left ) ? $left : (int)$left % $right;
 				}
-				$stack[] = $left % $right;
 				break;
 			case self::EXPR_FMOD:
 				if ( count( $stack ) < 2 ) {
@@ -517,9 +523,9 @@ class ExprParser {
 				if ( count( $stack ) < 2 ) {
 					throw new ExprError( 'missing_operand', self::NAMES[$op] );
 				}
-				$digits = (int)array_pop( $stack );
+				$digits = array_pop( $stack );
 				$value = array_pop( $stack );
-				$stack[] = round( $value, $digits );
+				$stack[] = self::isOutsideIntRange( $digits ) ? $value : round( $value, (int)$digits );
 				break;
 			case self::EXPR_LESS:
 				if ( count( $stack ) < 2 ) {
@@ -653,7 +659,7 @@ class ExprParser {
 					throw new ExprError( 'missing_operand', self::NAMES[$op] );
 				}
 				$arg = array_pop( $stack );
-				$stack[] = (int)$arg;
+				$stack[] = self::isOutsideIntRange( $arg ) ? $arg : (int)$arg;
 				break;
 			case self::EXPR_CEIL:
 				if ( count( $stack ) < 1 ) {
@@ -688,5 +694,17 @@ class ExprParser {
 				throw new ExprError( 'unknown_error' );
 				// @codeCoverageIgnoreEnd
 		}
+	}
+
+	/**
+	 * There is no meaningful calculation to do outside of the int range, and casting
+	 * such a float to int warns since PHP 8.5.
+	 *
+	 * PHP_INT_MAX + 1 overflows to the float 2^63, the first value outside the int range.
+	 * Use >= instead of > PHP_INT_MAX, as comparing a float with PHP_INT_MAX also rounds
+	 * it up to 2^63, which would then be accepted.
+	 */
+	private static function isOutsideIntRange( int|float $value ): bool {
+		return is_float( $value ) && ( is_nan( $value ) || $value < PHP_INT_MIN || $value >= PHP_INT_MAX + 1 );
 	}
 }
