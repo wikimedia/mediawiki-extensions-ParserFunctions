@@ -387,7 +387,22 @@ class ExprParser {
 			$this->doOperation( $op, $operands );
 		}
 
+		// Casting NAN to string warns since PHP 8.5, and is planned to error in PHP 9
+		$operands = array_map(
+			static fn ( $operand ) => is_float( $operand ) && is_nan( $operand ) ? 'NAN' : $operand,
+			$operands
+		);
 		return implode( "<br />\n", $operands );
+	}
+
+	/**
+	 * Use when an int or float operand is used in boolean logic (and, or, not).
+	 *
+	 * NAN has always been truthy there.
+	 * Casting NAN to bool warns since PHP 8.5, and is planned to error in PHP 9.
+	 */
+	private static function toBool( int|float $value ): bool {
+		return ( is_float( $value ) && is_nan( $value ) ) || $value;
 	}
 
 	/**
@@ -423,7 +438,8 @@ class ExprParser {
 				}
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				if ( !$right ) {
+				// int 0 and float 0.0
+				if ( $right == 0 ) {
 					throw new ExprError( 'division_by_zero', self::NAMES[$op] );
 				}
 				$stack[] = $left / $right;
@@ -445,7 +461,7 @@ class ExprParser {
 				}
 				$right = (float)array_pop( $stack );
 				$left = (float)array_pop( $stack );
-				if ( !$right ) {
+				if ( $right === 0.0 ) {
 					throw new ExprError( 'division_by_zero', self::NAMES[$op] );
 				}
 				$stack[] = fmod( $left, $right );
@@ -472,7 +488,7 @@ class ExprParser {
 				}
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $left && $right ) ? 1 : 0;
+				$stack[] = ( self::toBool( $left ) && self::toBool( $right ) ) ? 1 : 0;
 				break;
 			case self::EXPR_OR:
 				if ( count( $stack ) < 2 ) {
@@ -480,7 +496,7 @@ class ExprParser {
 				}
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				$stack[] = ( $left || $right ) ? 1 : 0;
+				$stack[] = ( self::toBool( $left ) || self::toBool( $right ) ) ? 1 : 0;
 				break;
 			case self::EXPR_EQUALITY:
 				if ( count( $stack ) < 2 ) {
@@ -495,7 +511,7 @@ class ExprParser {
 					throw new ExprError( 'missing_operand', self::NAMES[$op] );
 				}
 				$arg = array_pop( $stack );
-				$stack[] = ( !$arg ) ? 1 : 0;
+				$stack[] = self::toBool( $arg ) ? 0 : 1;
 				break;
 			case self::EXPR_ROUND:
 				if ( count( $stack ) < 2 ) {
