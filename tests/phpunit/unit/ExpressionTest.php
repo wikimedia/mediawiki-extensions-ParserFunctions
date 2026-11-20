@@ -77,6 +77,21 @@ class ExpressionTest extends MediaWikiUnitTestCase {
 			[ 'acos(1)', '0' ],
 			[ 'atan(0)', '0' ],
 			[ 'sqrt(4)', '2' ],
+
+			// Very large numbers, INF and NAN
+			[ '1e400', 'INF' ],
+			[ '-1e400', '-INF' ],
+			[ '1e400-1e400', 'NAN' ],
+			[ '0e400', 'NAN' ],
+			[ '(-8)^0.5', 'NAN' ],
+			[ 'sin 1e400', 'NAN' ],
+			[ '1/(1e400*0)', 'NAN' ],
+			[ '1 fmod (1e400*0)', 'NAN' ],
+
+			// NAN in boolean logic
+			[ 'not (1e400*0)', '0' ],
+			[ '(1e400*0) and 1', '1' ],
+			[ '(1e400*0) or 0', '1' ],
 		];
 	}
 
