@@ -450,9 +450,8 @@ class ExprParser {
 				}
 				$right = array_pop( $stack );
 				$left = array_pop( $stack );
-				// There is no meaningful calculation to do outside of this range
 				if ( self::isOutsideIntRange( $right ) ) {
-					$stack[] = $left;
+					$stack[] = is_nan( $right ) ? NAN : $left;
 				} else {
 					$right = (int)$right;
 					if ( !$right ) {
@@ -525,7 +524,11 @@ class ExprParser {
 				}
 				$digits = array_pop( $stack );
 				$value = array_pop( $stack );
-				$stack[] = self::isOutsideIntRange( $digits ) ? $value : round( $value, (int)$digits );
+				if ( self::isOutsideIntRange( $digits ) ) {
+					$stack[] = is_nan( $digits ) ? NAN : ( $digits < PHP_INT_MIN ? 0 : $value );
+				} else {
+					$stack[] = round( $value, (int)$digits );
+				}
 				break;
 			case self::EXPR_LESS:
 				if ( count( $stack ) < 2 ) {
